@@ -4,18 +4,6 @@
   
   
   <url>
-    <loc>https://yuxiaoba.github.io/home/about/</loc></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/home/projects/</loc></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/home/talks/</loc></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/home/featured/</loc></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/home/publications/</loc></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/home/tags/</loc></url>
-  <url>
     <loc>https://yuxiaoba.github.io/talk/example-talk/</loc><lastmod>2030-06-01T13:00:00+00:00</lastmod></url>
   <url>
     <loc>https://yuxiaoba.github.io/</loc><lastmod>2030-06-01T13:00:00+00:00</lastmod></url>
@@ -64,6 +52,4 @@
   <url>
     <loc></loc><lastmod>2013-07-01T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://yuxiaoba.github.io/admin/</loc></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/home/</loc></url></urlset>
+    <loc>https://yuxiaoba.github.io/admin/</loc></url></urlset>
