@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>RCA | Welcome to Guangba Yu&#39;s HomePage</title>
+    <title>RCA | Welcome to Guangba&#39;s HomePage</title>
     <link>https://yuxiaoba.github.io/tag/rca/</link>
       <atom:link href="https://yuxiaoba.github.io/tag/rca/index.xml" rel="self" type="application/rss+xml" />
     <description>RCA</description>
@@ -17,7 +17,8 @@
       <link>https://yuxiaoba.github.io/publication/microrank/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
       <guid>https://yuxiaoba.github.io/publication/microrank/</guid>
-      <description>&lt;p&gt;
+      <description>&lt;p&gt;The blow figure shows the framework of MicroRank.
+
 
 
 
