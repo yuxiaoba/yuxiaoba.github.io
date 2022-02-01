@@ -60,10 +60,10 @@
   
     
   
-  <meta name="description" content="In this article, we propose TopoMAD, a stochastic seq2seq model which can robustly model spatial and temporal dependence among contaminated data." />
+  <meta name="description" content="This paper proposes a novel system, named T-Rank, which analyzes clues provided by normal and abnormal traces to locate root causes of latency issues." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://yuxiaoba.github.io/publication/topomad20/" />
+  <link rel="alternate" hreflang="en-us" href="https://yuxiaoba.github.io/publication/trank/" />
 
   
   
@@ -276,7 +276,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://yuxiaoba.github.io/publication/topomad20/" />
+  <link rel="canonical" href="https://yuxiaoba.github.io/publication/trank/" />
 
   
   
@@ -298,10 +298,10 @@
   <meta property="twitter:card" content="summary_large_image" />
   
   <meta property="og:site_name" content="Welcome to Guangba&#39;s HomePage" />
-  <meta property="og:url" content="https://yuxiaoba.github.io/publication/topomad20/" />
-  <meta property="og:title" content="A Spatiotemporal Deep Learning Approach for Unsupervised Anomaly Detection in Cloud Systems | Welcome to Guangba&#39;s HomePage" />
-  <meta property="og:description" content="In this article, we propose TopoMAD, a stochastic seq2seq model which can robustly model spatial and temporal dependence among contaminated data." /><meta property="og:image" content="https://yuxiaoba.github.io/publication/topomad20/featured.jpg" />
-    <meta property="twitter:image" content="https://yuxiaoba.github.io/publication/topomad20/featured.jpg" /><meta property="og:locale" content="en-us" />
+  <meta property="og:url" content="https://yuxiaoba.github.io/publication/trank/" />
+  <meta property="og:title" content="MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments | Welcome to Guangba&#39;s HomePage" />
+  <meta property="og:description" content="This paper proposes a novel system, named T-Rank, which analyzes clues provided by normal and abnormal traces to locate root causes of latency issues." /><meta property="og:image" content="https://yuxiaoba.github.io/publication/trank/featured.jpg" />
+    <meta property="twitter:image" content="https://yuxiaoba.github.io/publication/trank/featured.jpg" /><meta property="og:locale" content="en-us" />
   
     
       <meta
@@ -309,7 +309,7 @@
         content="2022-02-01T00:00:00&#43;00:00"
       />
     
-    <meta property="article:modified_time" content="2020-10-16T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2021-08-02T00:00:00&#43;00:00">
   
 
   
@@ -331,20 +331,20 @@
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://yuxiaoba.github.io/publication/topomad20/"
+    "@id": "https://yuxiaoba.github.io/publication/trank/"
   },
-  "headline": "A Spatiotemporal Deep Learning Approach for Unsupervised Anomaly Detection in Cloud Systems",
+  "headline": "MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments",
   
   "image": [
-    "https://yuxiaoba.github.io/publication/topomad20/featured.jpg"
+    "https://yuxiaoba.github.io/publication/trank/featured.jpg"
   ],
   
   "datePublished": "2022-02-01T00:00:00Z",
-  "dateModified": "2020-10-16T00:00:00Z",
+  "dateModified": "2021-08-02T00:00:00Z",
   
   "author": {
     "@type": "Person",
-    "name": "Zilong He"
+    "name": "Guangba Yu (余广坝)"
   },
   
   "publisher": {
@@ -355,7 +355,7 @@
       "url": "https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "In this article, we propose TopoMAD, a stochastic seq2seq model which can robustly model spatial and temporal dependence among contaminated data."
+  "description": "This paper proposes a novel system, named T-Rank, which analyzes clues provided by normal and abnormal traces to locate root causes of latency issues."
 }
 </script>
 
@@ -371,11 +371,11 @@
 
 
 
-  <title>A Spatiotemporal Deep Learning Approach for Unsupervised Anomaly Detection in Cloud Systems | Welcome to Guangba&#39;s HomePage</title>
+  <title>MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments | Welcome to Guangba&#39;s HomePage</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="9d28915585314db5e03d4c6d71bc33c3" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="acdd6de933d9c344852cfa8000e4b20b" >
 
   
   
@@ -714,7 +714,7 @@
 
 
 <div class="article-container pt-3">
-  <h1>A Spatiotemporal Deep Learning Approach for Unsupervised Anomaly Detection in Cloud Systems</h1>
+  <h1>MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments</h1>
 
   
 
@@ -730,15 +730,16 @@
   <div>
     
 
-  <span >
-      Zilong He</span>, <span >
+  <span class="author-highlighted">
+      Guangba Yu (余广坝)</span>, <span >
       Pengfei Chen</span>, <span >
-      Xiaoyun Li</span>, <span >
-      Yongfeng Wang</span>, <span >
-      Guangba Yu</span>, <span >
-      Cailin Chen</span>, <span >
-      Xinrui Li</span>, <span >
-      Zibin Zheng</span>
+      Hongyang Chen</span>, <span >
+      Zijie Guan</span>, <span >
+      Zicheng Huang</span>, <span >
+      Linxiao Jing</span>, <span >
+      Tianjun Weng</span>, <span >
+      Xinmeng Sun</span>, <span >
+      Xiaoyun Li</span>
   </div>
   
   
@@ -749,7 +750,7 @@
     
       
     
-    October 2020
+    August 2021
   </span>
   
 
@@ -789,14 +790,14 @@
 
 
 
-<a class="btn btn-outline-primary btn-page-header" href="/publication/topomad20/topomad20.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header" href="/publication/trank/trank.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
 
 
 <a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
-        data-filename="/publication/topomad20/cite.bib">
+        data-filename="/publication/trank/cite.bib">
   Cite
 </a>
 
@@ -822,7 +823,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 540px;">
   <div style="position: relative">
-    <img src="/publication/topomad20/featured_hu420d41f336781662d1a5983802273c1d_4261325_720x2500_fit_q75_h2_lanczos.webp" width="720" height="540" alt="" class="featured-image">
+    <img src="/publication/trank/featured_huf55e82c31afdee8612bf5043ac6006d6_554621_720x2500_fit_q75_h2_lanczos.webp" width="720" height="540" alt="" class="featured-image">
     
   </div>
 </div>
@@ -833,7 +834,7 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract">Anomaly detection is a critical task for maintaining the performance of a cloud system. Using data-driven methods to address this issue is the mainstream in recent years. However, due to the lack of labeled data for training in practice, it is necessary to enable an anomaly detection model trained on contaminated data in an unsupervised way. Besides, with the increasing complexity of cloud systems, effectively organizing data collected from a wide range of components of a system and modeling spatiotemporal dependence among them become a challenge. In this article, we propose TopoMAD, a stochastic seq2seq model which can robustly model spatial and temporal dependence among contaminated data. We include system topological information to organize metrics from different components and apply sliding windows over metrics collected continuously to capture the temporal dependence. We extract spatial features with the help of graph neural networks and temporal features with long short-term memory networks. Moreover, we develop our model based on variational auto-encoder, enabling it to work well robustly even when trained on contaminated data. Our approach is validated on the run-time performance data collected from two representative cloud systems, namely, a big data batch processing system and a microservice-based transaction processing system. The experimental results show that TopoMAD outperforms some state-of-the-art methods on these two data sets.</p>
+    <p class="pub-abstract">The cloud-native system is shifting from traditional monolithic architecture to microservice architecture because of loosely coupling, better maintainability and availability, faster deployment, and richer ecology brought by it. Except for these advantages, it still has an inevitable weakness-the communication over RPC (Remote Procedure Call) between services makes the system performance more unpredictable. Moreover, the complex interactions amongst services make it hard to reveal the root cause of performance issues. To address this challenge, we propose a lightweight spectrum-based performance diagnosis tool, named T-Rank. T-Rank provides the ranked suspicious score in a list of microservices to localize root causes with very few resources. We demonstrate the high accuracy and the low cost of T-Rank by conducting experiments with the data collected from a real-world production microservice system. Moreover, comparison results show that T-Rank outperforms other state-of-the-art approaches.</p>
     
 
     
@@ -844,8 +845,8 @@
         <div class="row">
           <div class="col-12 col-md-3 pub-row-heading">Type</div>
           <div class="col-12 col-md-9">
-            <a href="/publication/#2">
-              Journal article
+            <a href="/publication/#1">
+              Conference paper
             </a>
           </div>
         </div>
@@ -861,7 +862,7 @@
       <div class="col-md-10">
         <div class="row">
           <div class="col-12 col-md-3 pub-row-heading">Publication</div>
-          <div class="col-12 col-md-9">In <em>IEEE Transactions on Neural Networks and Learning Systems  (Impact Factor 10.451, CCF B)</em></div>
+          <div class="col-12 col-md-9">In <em>2021 IEEE/ACM 21st International Symposium on Cluster, Cloud and Internet Computing (CCF C, CORE A )</em></div>
         </div>
       </div>
       <div class="col-md-1"></div>
@@ -871,29 +872,7 @@
 
     <div class="space-below"></div>
 
-    <div class="article-style"><p>The blow figure shows the framework of Topomad.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  >
-  <div class="d-flex justify-content-center">
-    <div class="w-100" ><img src="./topomad20.jpg" alt="Topomad Framework" loading="lazy" data-zoomable /></div>
-  </div></figure>
-</p>
-</div>
+    <div class="article-style"></div>
 
     
 
@@ -904,7 +883,11 @@
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tag/anomaly-detection/">Anomaly Detection</a>
+  <a class="badge badge-light" href="/tag/microservice/">Microservice</a>
+  
+  <a class="badge badge-light" href="/tag/rca/">RCA</a>
+  
+  <a class="badge badge-light" href="/tag/spectrum/">Spectrum</a>
   
   <a class="badge badge-light" href="/tag/reliability/">Reliability</a>
   
@@ -925,7 +908,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://yuxiaoba.github.io/publication/topomad20/&amp;text=A%20Spatiotemporal%20Deep%20Learning%20Approach%20for%20Unsupervised%20Anomaly%20Detection%20in%20Cloud%20Systems" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://yuxiaoba.github.io/publication/trank/&amp;text=MicroRank:%20End-to-End%20Latency%20Issue%20Localization%20with%20Extended%20Spectrum%20Analysis%20in%20Microservice%20Environments" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -938,7 +921,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://yuxiaoba.github.io/publication/topomad20/&amp;t=A%20Spatiotemporal%20Deep%20Learning%20Approach%20for%20Unsupervised%20Anomaly%20Detection%20in%20Cloud%20Systems" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://yuxiaoba.github.io/publication/trank/&amp;t=MicroRank:%20End-to-End%20Latency%20Issue%20Localization%20with%20Extended%20Spectrum%20Analysis%20in%20Microservice%20Environments" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -951,7 +934,7 @@
       
       
       <li>
-        <a href="mailto:?subject=A%20Spatiotemporal%20Deep%20Learning%20Approach%20for%20Unsupervised%20Anomaly%20Detection%20in%20Cloud%20Systems&amp;body=https://yuxiaoba.github.io/publication/topomad20/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=MicroRank:%20End-to-End%20Latency%20Issue%20Localization%20with%20Extended%20Spectrum%20Analysis%20in%20Microservice%20Environments&amp;body=https://yuxiaoba.github.io/publication/trank/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -964,7 +947,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://yuxiaoba.github.io/publication/topomad20/&amp;title=A%20Spatiotemporal%20Deep%20Learning%20Approach%20for%20Unsupervised%20Anomaly%20Detection%20in%20Cloud%20Systems" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=https://yuxiaoba.github.io/publication/trank/&amp;title=MicroRank:%20End-to-End%20Latency%20Issue%20Localization%20with%20Extended%20Spectrum%20Analysis%20in%20Microservice%20Environments" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -977,7 +960,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=A%20Spatiotemporal%20Deep%20Learning%20Approach%20for%20Unsupervised%20Anomaly%20Detection%20in%20Cloud%20Systems%20https://yuxiaoba.github.io/publication/topomad20/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=MicroRank:%20End-to-End%20Latency%20Issue%20Localization%20with%20Extended%20Spectrum%20Analysis%20in%20Microservice%20Environments%20https://yuxiaoba.github.io/publication/trank/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -990,7 +973,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://yuxiaoba.github.io/publication/topomad20/&amp;title=A%20Spatiotemporal%20Deep%20Learning%20Approach%20for%20Unsupervised%20Anomaly%20Detection%20in%20Cloud%20Systems" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://yuxiaoba.github.io/publication/trank/&amp;title=MicroRank:%20End-to-End%20Latency%20Issue%20Localization%20with%20Extended%20Spectrum%20Analysis%20in%20Microservice%20Environments" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1009,6 +992,117 @@
 
 
   
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://yuxiaoba.github.io"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu24219dffe8bd126862aae4376823be01_155445_270x270_fill_q75_lanczos_center.jpg" alt="Guangba Yu (余广坝)"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://yuxiaoba.github.io">Guangba Yu (余广坝)</a></h5>
+      <h6 class="card-subtitle">Ph.D. Candidate Focus on Cloud Native</h6>
+      <p class="card-text">My research interests include cloud computing, microservices, Serverless, AIOps</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:yugb5@mail2.sysu.edu.cn" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=wXY0D6YAAAAJ" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/yuxiaoba" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/guangba-yu-07b216192/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/uploads/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
   
     
 
@@ -1078,15 +1172,15 @@
     <h3>Related</h3>
     <ul>
       
-      <li><a href="/publication/swisslog20/">SwissLog: Robust and Unified Deep Learning Based Log Anomaly Detection for Diverse Faults</a></li>
-      
-      <li><a href="/publication/trank/">MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments</a></li>
-      
       <li><a href="/publication/microrank/">MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments</a></li>
       
       <li><a href="/publication/tracerank/">TraceRank: Abnormal service localization with dis-aggregated end-to-end tracing data in cloud native systems</a></li>
       
-      <li><a href="/publication/vwr20/">A Framework of Virtual War Room and Matrix Sketch-Based Streaming Anomaly Detection for Microservice Systems</a></li>
+      <li><a href="/publication/topomad20/">A Spatiotemporal Deep Learning Approach for Unsupervised Anomaly Detection in Cloud Systems</a></li>
+      
+      <li><a href="/publication/microscaler19/">Microscaler: Automatic Scaling for Microservices with an Online Learning Approach</a></li>
+      
+      <li><a href="/publication/microscaler20/">Microscaler: Cost-effective Scaling for Microservice Applications in the Cloud with an Online Learning Approach</a></li>
       
     </ul>
   </div>
