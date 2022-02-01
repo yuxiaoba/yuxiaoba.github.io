@@ -63,10 +63,10 @@
     </item>
     
     <item>
-      <title>A Learning-based Dynamic Load Balancing Approach for Microservice Systems in Multi-cloud Environment</title>
-      <link>https://yuxiaoba.github.io/publication/icpads20/</link>
-      <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/publication/icpads20/</guid>
+      <title>Sieve: Attention-based Sampling of End-to-End Trace Data in Distributed Microservice Systems</title>
+      <link>https://yuxiaoba.github.io/publication/sieve21/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/publication/sieve21/</guid>
       <description></description>
     </item>
     
@@ -183,6 +183,14 @@
 &lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Released under the &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/blob/master/LICENSE.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>A Learning-based Dynamic Load Balancing Approach for Microservice Systems in Multi-cloud Environment</title>
+      <link>https://yuxiaoba.github.io/publication/icpads20/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/publication/icpads20/</guid>
+      <description></description>
     </item>
     
     <item>

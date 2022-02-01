@@ -43,10 +43,10 @@
     </item>
     
     <item>
-      <title>A Learning-based Dynamic Load Balancing Approach for Microservice Systems in Multi-cloud Environment</title>
-      <link>https://yuxiaoba.github.io/publication/icpads20/</link>
-      <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/publication/icpads20/</guid>
+      <title>Sieve: Attention-based Sampling of End-to-End Trace Data in Distributed Microservice Systems</title>
+      <link>https://yuxiaoba.github.io/publication/sieve21/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/publication/sieve21/</guid>
       <description></description>
     </item>
     
@@ -86,6 +86,14 @@
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>A Learning-based Dynamic Load Balancing Approach for Microservice Systems in Multi-cloud Environment</title>
+      <link>https://yuxiaoba.github.io/publication/icpads20/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/publication/icpads20/</guid>
+      <description></description>
     </item>
     
     <item>
