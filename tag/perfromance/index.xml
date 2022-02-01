@@ -5,12 +5,20 @@
     <link>https://yuxiaoba.github.io/tag/perfromance/</link>
       <atom:link href="https://yuxiaoba.github.io/tag/perfromance/index.xml" rel="self" type="application/rss+xml" />
     <description>Perfromance</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 06 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 02 Aug 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Perfromance</title>
       <link>https://yuxiaoba.github.io/tag/perfromance/</link>
     </image>
+    
+    <item>
+      <title>A Learning-based Dynamic Load Balancing Approach for Microservice Systems in Multi-cloud Environment</title>
+      <link>https://yuxiaoba.github.io/publication/icpads20/</link>
+      <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/publication/icpads20/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Microscaler: Cost-effective Scaling for Microservice Applications in the Cloud with an Online Learning Approach</title>
