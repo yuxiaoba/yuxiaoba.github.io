@@ -59,6 +59,14 @@
     </item>
     
     <item>
+      <title>Kmon: An In-kernel Transparent Monitoring System for Microservice Systems with eBPF</title>
+      <link>https://yuxiaoba.github.io/publication/kmon/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/publication/kmon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments</title>
       <link>https://yuxiaoba.github.io/publication/microrank/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
