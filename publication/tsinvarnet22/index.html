@@ -64,10 +64,10 @@
   
     
   
-  <meta name="description" content="Ph.D. Candidate Focus on Cloud Native" />
+  <meta name="description" content="In this paper, we design and implement TS-InvarNet, an interpretable end-to-end anomaly detection and diagnosis framework based on tempo-spatial KPI invariants." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://yuxiaoba.github.io/publication-type/1/" />
+  <link rel="alternate" hreflang="en-us" href="https://yuxiaoba.github.io/publication/tsinvarnet22/" />
 
   
   
@@ -272,8 +272,6 @@
   
 
   
-    <link rel="alternate" href="/publication-type/1/index.xml" type="application/rss+xml" title="Welcome to Guangba&#39;s HomePage" />
-  
 
   
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -282,7 +280,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://yuxiaoba.github.io/publication-type/1/" />
+  <link rel="canonical" href="https://yuxiaoba.github.io/publication/tsinvarnet22/" />
 
   
   
@@ -293,7 +291,6 @@
   
   
     
-    
   
   
 
@@ -302,36 +299,87 @@
     
     
   
-  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:card" content="summary_large_image" />
   
   <meta property="og:site_name" content="Welcome to Guangba&#39;s HomePage" />
-  <meta property="og:url" content="https://yuxiaoba.github.io/publication-type/1/" />
-  <meta property="og:title" content="1 | Welcome to Guangba&#39;s HomePage" />
-  <meta property="og:description" content="Ph.D. Candidate Focus on Cloud Native" /><meta property="og:image" content="https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  <meta property="og:url" content="https://yuxiaoba.github.io/publication/tsinvarnet22/" />
+  <meta property="og:title" content="TS-InvarNet: Anomaly Detection and Localization based on Tempo-spatial KPI Invariants in Distributed Services | Welcome to Guangba&#39;s HomePage" />
+  <meta property="og:description" content="In this paper, we design and implement TS-InvarNet, an interpretable end-to-end anomaly detection and diagnosis framework based on tempo-spatial KPI invariants." /><meta property="og:image" content="https://yuxiaoba.github.io/publication/tsinvarnet22/featured.jpg" />
+    <meta property="twitter:image" content="https://yuxiaoba.github.io/publication/tsinvarnet22/featured.jpg" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2022-05-15T00:00:00&#43;00:00" />
+      <meta
+        property="article:published_time"
+        content="2022-05-15T00:00:00&#43;00:00"
+      />
     
+    <meta property="article:modified_time" content="2022-05-15T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://yuxiaoba.github.io/publication/tsinvarnet22/"
+  },
+  "headline": "TS-InvarNet: Anomaly Detection and Localization based on Tempo-spatial KPI Invariants in Distributed Services",
+  
+  "image": [
+    "https://yuxiaoba.github.io/publication/tsinvarnet22/featured.jpg"
+  ],
+  
+  "datePublished": "2022-05-15T00:00:00Z",
+  "dateModified": "2022-05-15T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Zijun Hu"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Welcome to Guangba's HomePage",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "In this paper, we design and implement TS-InvarNet, an interpretable end-to-end anomaly detection and diagnosis framework based on tempo-spatial KPI invariants."
+}
+</script>
+
+  
+
+  
+
   
 
   
 
 
 
-  
-
-  
 
 
-
-
-
-  <title>1 | Welcome to Guangba&#39;s HomePage</title>
+  <title>TS-InvarNet: Anomaly Detection and Localization based on Tempo-spatial KPI Invariants in Distributed Services | Welcome to Guangba&#39;s HomePage</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  dark "  >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  dark " data-wc-page-id="eae9bb9c6c34f6a3e9b1d66a42674db6" >
 
   
   
@@ -666,73 +714,50 @@
 
 
 
+<div class="pub">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
   
+  
+
+
+<div class="article-container pt-3">
+  <h1>TS-InvarNet: Anomaly Detection and Localization based on Tempo-spatial KPI Invariants in Distributed Services</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
 
   
   
   
+  
+  <div>
     
-  
-<div class="universal-wrapper pt-3">
-  <h1>1</h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/tsinvarnet22/" >TS-InvarNet: Anomaly Detection and Localization based on Tempo-spatial KPI Invariants in Distributed Services</a>
-    </div>
-
-    
-    <a href="/publication/tsinvarnet22/"  class="summary-link">
-      <div class="article-style">
-        In this paper, we design and implement TS-InvarNet, an interpretable end-to-end anomaly detection and diagnosis framework based on tempo-spatial KPI invariants.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-      <div>
-        
 
   <span >
       Zijun Hu</span>, <span >
@@ -740,504 +765,419 @@
       Guangba Yu</span>, <span >
       Zilong He</span>, <span >
       Xiaoyun Li</span>
-      </div>
-      
-    </div>
-
-    
-
   </div>
-  <div class="ml-3">
+  
+  
+
+  
+  <span class="article-date">
     
     
+      
     
-    <a href="/publication/tsinvarnet22/" >
-      <img src="/publication/tsinvarnet22/featured_hu79c6c2fa87e056430165b74f5e497b66_800623_150x0_resize_q75_h2_lanczos.webp" height="72" width="150"
-           alt="TS-InvarNet: Anomaly Detection and Localization based on Tempo-spatial KPI Invariants in Distributed Services" loading="lazy">
-    </a>
+    May 2022
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
+        data-filename="/publication/tsinvarnet22/cite.bib">
+  Cite
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 348px;">
+  <div style="position: relative">
+    <img src="/publication/tsinvarnet22/featured_hu79c6c2fa87e056430165b74f5e497b66_800623_720x2500_fit_q75_h2_lanczos.webp" width="720" height="348" alt="" class="featured-image">
     
   </div>
 </div>
 
-  
-    
 
 
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/sieve21/" >Sieve: Attention-based Sampling of End-to-End Trace Data in Distributed Microservice Systems</a>
-    </div>
+  <div class="article-container">
 
     
-    <a href="/publication/sieve21/"  class="summary-link">
-      <div class="article-style">
-        In this paper, we design and implement Sieve, an online sampler that aims to bias sampling towards uncommon traces by taking advantage of the attention mechanism.
+    <h3>Abstract</h3>
+    <p class="pub-abstract">Modern industrial systems are often large-scale distributed systems composed of dozens to thousands of services, leading to difficulty in anomaly detection and localization. KPIs (Key Performance Indicators) record the states of different services and are presented as time series, which reflect the status of the system. However, due to the dynamic and complex periodic patterns embedded in  KPIs, pinpointing anomalous behavior of these multivariate time series data quickly and accurately is a challenging problem. The current state-of-the-art deep-learning-based anomaly detection methods model global inter-KPI dependency, causing the limited ability to detect local subtle anomalies and poor interpretability.In practice, interpreting anomalies can accelerate problem localization and further troubleshooting.  In this study, we propose TS-InvarNet, an interpretable end-to-end anomaly detection and diagnosis framework based on tempo-spatial KPI invariants. Extensive empirical studies on three real-world industrial datasets and a widely-used open-source system demonstrate that TS-InvarNet can outperform state-of-the-art baseline methods in detection and diagnosis performance. Specifically, TS-InvarNet increases F1-scores by up to 27% compared to the baselines.</p>
+    
+
+    
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            <a href="/publication/#1">
+              Conference paper
+            </a>
+          </div>
+        </div>
       </div>
-    </a>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
     
 
-    <div class="stream-meta article-metadata">
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">In <em>Proceeidings of 2022 IEEE International Conference on Web Services (CCF B)</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
 
-      
+    <div class="space-below"></div>
 
+    <div class="article-style"><p>The  evolution  of  an  invariant  network  when  a  failure  occurred.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./invariant.jpg" alt="Tracerank Framework" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+</div>
+
+    
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/microservice/">Microservice</a>
+  
+  <a class="badge badge-light" href="/tag/anomaly-detection/">Anomaly Detection</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
       
-      <div>
+      
+      
         
-
-  <span >
-      Zicheng Huang</span>, <span >
-      Pengfei Chen</span>, <span class="author-highlighted">
-      Guangba Yu</span>, <span >
-      Hongyang Chen</span>, <span >
-      Zibin Zheng</span>
-      </div>
       
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/publication/sieve21/" >
-      <img src="/publication/sieve21/featured_hu79c6c2fa87e056430165b74f5e497b66_800623_150x0_resize_q75_h2_lanczos.webp" height="72" width="150"
-           alt="Sieve: Attention-based Sampling of End-to-End Trace Data in Distributed Microservice Systems" loading="lazy">
-    </a>
-    
-  </div>
-</div>
-
-  
-    
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/trank/" >T-Rank:A Lightweight Spectrum based Fault Localization Approach for Microservice Systems</a>
-    </div>
-
-    
-    <a href="/publication/trank/"  class="summary-link">
-      <div class="article-style">
-        This paper proposes a novel system, named T-Rank, which analyzes clues provided by normal and abnormal traces to locate root causes of latency issues.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
       
-      <div>
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://yuxiaoba.github.io/publication/tsinvarnet22/&amp;text=TS-InvarNet:%20Anomaly%20Detection%20and%20Localization%20based%20on%20Tempo-spatial%20KPI%20Invariants%20in%20Distributed%20Services" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
         
-
-  <span >
-      Zihao Ye</span>, <span >
-      Pengfei Chen</span>, <span class="author-highlighted">
-      Guangba Yu</span>
-      </div>
       
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/publication/trank/" >
-      <img src="/publication/trank/featured_huf55e82c31afdee8612bf5043ac6006d6_554621_150x0_resize_q75_h2_lanczos.webp" height="113" width="150"
-           alt="T-Rank:A Lightweight Spectrum based Fault Localization Approach for Microservice Systems" loading="lazy">
-    </a>
-    
-  </div>
-</div>
-
-  
-    
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/kmon/" >Kmon: An In-kernel Transparent Monitoring System for Microservice Systems with eBPF</a>
-    </div>
-
-    
-    <a href="/publication/kmon/"  class="summary-link">
-      <div class="article-style">
-        This paper proposes a novel system, named Kmon, which is an In-kernel transparent monitoring system for microservice systems with extended Berkeley Packet Filter (eBPF).
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
       
-      <div>
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://yuxiaoba.github.io/publication/tsinvarnet22/&amp;t=TS-InvarNet:%20Anomaly%20Detection%20and%20Localization%20based%20on%20Tempo-spatial%20KPI%20Invariants%20in%20Distributed%20Services" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
         
-
-  <span >
-      Tianjun Weng</span>, <span >
-      Wanqi Yang</span>, <span class="author-highlighted">
-      Guangba Yu</span>, <span >
-      Pengfei Chen</span>, <span >
-      Jieqi Cui</span>, <span >
-      Chuangfu Zhang</span>
-      </div>
       
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/publication/kmon/" >
-      <img src="/publication/kmon/featured_hu1447e9646bf19d10a570099574f23993_5445461_150x0_resize_q75_h2_lanczos.webp" height="113" width="150"
-           alt="Kmon: An In-kernel Transparent Monitoring System for Microservice Systems with eBPF" loading="lazy">
-    </a>
-    
-  </div>
-</div>
-
-  
-    
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/microrank/" >MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments</a>
-    </div>
-
-    
-    <a href="/publication/microrank/"  class="summary-link">
-      <div class="article-style">
-        This paper proposes a novel system, named MicroRank, which analyzes clues provided by normal and abnormal traces to locate root causes of latency issues.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
       
-      <div>
+      <li>
+        <a href="mailto:?subject=TS-InvarNet:%20Anomaly%20Detection%20and%20Localization%20based%20on%20Tempo-spatial%20KPI%20Invariants%20in%20Distributed%20Services&amp;body=https://yuxiaoba.github.io/publication/tsinvarnet22/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
         
-
-  <span class="author-highlighted">
-      Guangba Yu</span>, <span >
-      Pengfei Chen</span>, <span >
-      Hongyang Chen</span>, <span >
-      Zijie Guan</span>, <span >
-      Zicheng Huang</span>, <span >
-      Linxiao Jing</span>, <span >
-      Tianjun Weng</span>, <span >
-      Xinmeng Sun</span>, <span >
-      Xiaoyun Li</span>
-      </div>
       
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/publication/microrank/" >
-      <img src="/publication/microrank/featured_hu3d03a01dcc18bc5be0e67db3d8d209a6_312700_150x0_resize_q75_h2_lanczos.webp" height="100" width="150"
-           alt="MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments" loading="lazy">
-    </a>
-    
-  </div>
-</div>
-
-  
-    
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/icpads20/" >A Learning-based Dynamic Load Balancing Approach for Microservice Systems in Multi-cloud Environment</a>
-    </div>
-
-    
-    <a href="/publication/icpads20/"  class="summary-link">
-      <div class="article-style">
-        This paper presents a learning-based approach to route requests in order to balance the load in the multi-cloud environment .
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
       
-      <div>
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://yuxiaoba.github.io/publication/tsinvarnet22/&amp;title=TS-InvarNet:%20Anomaly%20Detection%20and%20Localization%20based%20on%20Tempo-spatial%20KPI%20Invariants%20in%20Distributed%20Services" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
         
-
-  <span >
-      Jieqi Cui</span>, <span >
-      Pengfei Chen</span>, <span class="author-highlighted">
-      Guangba Yu</span>
-      </div>
       
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/publication/icpads20/" >
-      <img src="/publication/icpads20/featured_hu816961204e8082c765475fe28960f964_157569_150x0_resize_q75_h2_lanczos.webp" height="100" width="150"
-           alt="A Learning-based Dynamic Load Balancing Approach for Microservice Systems in Multi-cloud Environment" loading="lazy">
-    </a>
-    
-  </div>
-</div>
-
-  
-    
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/swisslog20/" >SwissLog: Robust and Unified Deep Learning Based Log Anomaly Detection for Diverse Faults</a>
-    </div>
-
-    
-    <a href="/publication/swisslog20/"  class="summary-link">
-      <div class="article-style">
-        In this paper, we propose SwissLog, namely a robust and unified deep learning based anomaly detection model for detecting diverse faults based on logs.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
       
-      <div>
+      <li>
+        <a href="whatsapp://send?text=TS-InvarNet:%20Anomaly%20Detection%20and%20Localization%20based%20on%20Tempo-spatial%20KPI%20Invariants%20in%20Distributed%20Services%20https://yuxiaoba.github.io/publication/tsinvarnet22/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
         
-
-  <span >
-      Xiaoyun Li</span>, <span >
-      Pengfei Chen</span>, <span >
-      Linxiao Jing</span>, <span >
-      Zilong He</span>, <span class="author-highlighted">
-      Guangba Yu</span>
-      </div>
       
-    </div>
-
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://yuxiaoba.github.io/publication/tsinvarnet22/&amp;title=TS-InvarNet:%20Anomaly%20Detection%20and%20Localization%20based%20on%20Tempo-spatial%20KPI%20Invariants%20in%20Distributed%20Services" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
     
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/publication/swisslog20/" >
-      <img src="/publication/swisslog20/featured_hu5438825b9b6d1014226d20d231e650c2_1574006_150x0_resize_q75_h2_lanczos.webp" height="100" width="150"
-           alt="SwissLog: Robust and Unified Deep Learning Based Log Anomaly Detection for Diverse Faults" loading="lazy">
-    </a>
-    
-  </div>
+  </ul>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+  
   
     
 
 
 
 
-
-
-
   
-
-
-
+    
 
 
 
 
   
+    
 
 
-<div class="media stream-item view-compact">
-  <div class="media-body">
 
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/microscaler19/" >Microscaler: Automatic Scaling for Microservices with an Online Learning Approach</a>
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://yuxiaoba.github.io"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu24219dffe8bd126862aae4376823be01_155445_270x270_fill_q75_lanczos_center.jpg" alt="Guangba Yu"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://yuxiaoba.github.io">Guangba Yu</a></h5>
+      <h6 class="card-subtitle">Ph.D. Candidate Focus on Cloud Native</h6>
+      <p class="card-text">My research interests include cloud computing, microservices, Serverless, AIOps</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:yugb5@mail2.sysu.edu.cn" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=wXY0D6YAAAAJ" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/yuxiaoba" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/guangba-yu-07b216192/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/uploads/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
     </div>
+  </div>
 
-    
-    <a href="/publication/microscaler19/"  class="summary-link">
-      <div class="article-style">
-        In this paper, we present a novel system named Microscaler to automatically identify the scaling-needed services and scale them to meet the service level agreement (SLA) with an optimal cost for micro-service systems.
-      </div>
-    </a>
+
+  
     
 
-    <div class="stream-meta article-metadata">
 
-      
 
-      
-      <div>
-        
 
-  <span class="author-highlighted">
-      Guangba Yu</span>, <span >
-      Pengfei Chen</span>, <span >
-      Zibin Zheng</span>
-      </div>
-      
-    </div>
-
+  
     
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/publication/microscaler19/" >
-      <img src="/publication/microscaler19/featured_hu3b844b6fa96edcfc00a905b9a8c22a4b_5531461_150x0_resize_q75_h2_lanczos.webp" height="113" width="150"
-           alt="Microscaler: Automatic Scaling for Microservices with an Online Learning Approach" loading="lazy">
-    </a>
-    
-  </div>
-</div>
-
-  
-
-  
-
 </div>
   </div>
 
