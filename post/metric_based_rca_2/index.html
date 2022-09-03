@@ -64,10 +64,10 @@
   
     
   
-  <meta name="description" content="Ph.D. Candidate Focus on Cloud Native" />
+  <meta name="description" content="Metrics, Traces, Logs 被誉为可观测性的三大支柱。Metrics 又是三者中在根因定位中最常用的数据源，阅读本文可快速了解当前学术界热门的基于 Metric 的根因定位算法类型——因果关系图" />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://yuxiaoba.github.io/category/demo/" />
+  <link rel="alternate" hreflang="en-us" href="https://yuxiaoba.github.io/post/metric_based_rca_2/" />
 
   
   
@@ -272,8 +272,6 @@
   
 
   
-    <link rel="alternate" href="/category/demo/index.xml" type="application/rss+xml" title="Welcome to Guangba&#39;s HomePage" />
-  
 
   
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -282,7 +280,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://yuxiaoba.github.io/category/demo/" />
+  <link rel="canonical" href="https://yuxiaoba.github.io/post/metric_based_rca_2/" />
 
   
   
@@ -305,33 +303,82 @@
   <meta property="twitter:card" content="summary" />
   
   <meta property="og:site_name" content="Welcome to Guangba&#39;s HomePage" />
-  <meta property="og:url" content="https://yuxiaoba.github.io/category/demo/" />
-  <meta property="og:title" content="Demo | Welcome to Guangba&#39;s HomePage" />
-  <meta property="og:description" content="Ph.D. Candidate Focus on Cloud Native" /><meta property="og:image" content="https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:url" content="https://yuxiaoba.github.io/post/metric_based_rca_2/" />
+  <meta property="og:title" content="基于 Metrics 的根因定位 (二)：因果关系图 | Welcome to Guangba&#39;s HomePage" />
+  <meta property="og:description" content="Metrics, Traces, Logs 被誉为可观测性的三大支柱。Metrics 又是三者中在根因定位中最常用的数据源，阅读本文可快速了解当前学术界热门的基于 Metric 的根因定位算法类型——因果关系图" /><meta property="og:image" content="https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2020-12-13T00:00:00&#43;00:00" />
+      <meta
+        property="article:published_time"
+        content="2022-09-03T00:00:00&#43;00:00"
+      />
     
+    <meta property="article:modified_time" content="2022-09-03T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://yuxiaoba.github.io/post/metric_based_rca_2/"
+  },
+  "headline": "基于 Metrics 的根因定位 (二)：因果关系图",
+  
+  "datePublished": "2022-09-03T00:00:00Z",
+  "dateModified": "2022-09-03T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Guangba Yu"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Welcome to Guangba's HomePage",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Metrics, Traces, Logs 被誉为可观测性的三大支柱。Metrics 又是三者中在根因定位中最常用的数据源，阅读本文可快速了解当前学术界热门的基于 Metric 的根因定位算法类型——因果关系图"
+}
+</script>
+
+  
+
+  
+
   
 
   
 
 
 
-  
-
-  
 
 
-
-
-
-  <title>Demo | Welcome to Guangba&#39;s HomePage</title>
+  <title>基于 Metrics 的根因定位 (二)：因果关系图 | Welcome to Guangba&#39;s HomePage</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  dark "  >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  dark " data-wc-page-id="151c586f57beaef6df96e85ea1d2369c" >
 
   
   
@@ -657,7 +704,9 @@
     
     
 
-    
+    <article class="article">
+
+  
 
 
 
@@ -675,61 +724,15 @@
   
   
   
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1>Demo</h1>
+<div class="article-container pt-3">
+  <h1>基于 Metrics 的根因定位 (二)：因果关系图</h1>
 
   
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
+  <p class="page-subtitle">Metrics, Traces, Logs 被誉为可观测性的三大支柱。Metrics 又是三者中在根因定位中最常用的数据源，阅读本文可快速了解当前学术界热门的基于 Metric 的根因定位算法类型——因果关系图。</p>
   
 
-  
   
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/getting-started/" >Test</a>
-    </div>
-
-    
-    <a href="/post/getting-started/"  class="summary-link">
-      <div class="article-style">
-        Welcome 👋 We know that first impressions are important, so we&rsquo;ve populated your new site with some initial content to help you get familiar with everything in no time.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
 
 
 <div class="article-metadata">
@@ -753,7 +756,7 @@
     
       
     
-    Dec 13, 2020
+    Sep 3, 2022
   </span>
   
 
@@ -762,7 +765,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 min read
+    1 min read
   </span>
   
 
@@ -775,31 +778,28 @@
   
   <span class="middot-divider"></span>
   <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/demo/">Demo</a>, <a href="/category/%E6%95%99%E7%A8%8B/">教程</a></span>
+    <i class="fas fa-folder mr-1"></i><a href="/category/weekly-paper/">Weekly Paper</a></span>
   
 
 </div>
 
-      
-    </div>
-
     
 
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/getting-started/" >
-      <img src="/post/getting-started/featured_hub9ee31969f44a6711206a2baf9f065b4_241861_150x0_resize_q75_h2_lanczos.webp" height="84" width="150"
-           alt="Test" loading="lazy">
-    </a>
-    
-  </div>
+
+
+
+
+  
 </div>
 
-  
-    
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>上周的文章 基于 Metrics 的根因定位 (一)：故障刻画 介绍了使用故障刻画思想定位根因的几种算法。除故障刻画外，还有另外一种根因定位的思想是通过 Metrics 之间的依赖关系构建出因果关系图，然后基于相关性或随机游走算法在图上游走从而定位出根因。下面简要介绍典型的几个 Micro.X 算法。</p>
+<h2 id="18_icsoc_microscope-pinpoint-the-abnormal-services-with-causal-graphs-in-micro-service-environments">18_ICSOC_Microscope: Pinpoint the Abnormal Services with Causal Graphs in Micro-service Environments</h2>
+<p>
 
 
 
@@ -813,97 +813,280 @@
 
 
 
-  
 
 
-<div class="media stream-item view-compact">
-  <div class="media-body">
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./microscope1.jpg" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p><strong>论文简介:</strong> 在不进行源代码进行插桩的情况下，Microscope 通过拦截网络连接信息和指标之间的相关性构建出微服务之间的因果关系图。在根因定位被触发时，Microscope 从前端对因果关系图进行遍历，找到因果关系图每个分支中最深的 SLO 异常服务并判定为根因候选。最后计算根因候选与前端服务的相关性为每个根因候选赋予得分。</p>
+<p>
 
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/metric_based_rca_1/" >Test</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./microscope.jpg" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p><strong>个人评论：</strong> 论文是我导师来了中大以后组内的第一篇论文,发布在CCF B类会议 ICSOC上。第一作者的师兄去了外交部，现在在非洲为国奋斗。论文的主要贡献放在因果关系图的构建，根因的推断是比较简单的深度优先搜索和根节点的相关性计算。</p>
+<p>论文链接：https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1</p>
+
     </div>
 
     
-    <a href="/post/metric_based_rca_1/"  class="summary-link">
-      <div class="article-style">
-        Welcome 👋 We know that first impressions are important, so we&rsquo;ve populated your new site with some initial content to help you get familiar with everything in no time.
-      </div>
-    </a>
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/root-cause-analysis/">Root Cause Analysis</a>
+  
+  <a class="badge badge-light" href="/tag/metrics/">Metrics</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
     
-
-    <div class="stream-meta article-metadata">
-
       
-
+      
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-  
-  
-  <div>
-    
-
-  <span class="author-highlighted">
-      Guangba Yu</span>
-  </div>
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://yuxiaoba.github.io/post/metric_based_rca_2/&amp;text=%e5%9f%ba%e4%ba%8e%20Metrics%20%e7%9a%84%e6%a0%b9%e5%9b%a0%e5%ae%9a%e4%bd%8d%20%28%e4%ba%8c%29%ef%bc%9a%e5%9b%a0%e6%9e%9c%e5%85%b3%e7%b3%bb%e5%9b%be" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
     
       
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://yuxiaoba.github.io/post/metric_based_rca_2/&amp;t=%e5%9f%ba%e4%ba%8e%20Metrics%20%e7%9a%84%e6%a0%b9%e5%9b%a0%e5%ae%9a%e4%bd%8d%20%28%e4%ba%8c%29%ef%bc%9a%e5%9b%a0%e6%9e%9c%e5%85%b3%e7%b3%bb%e5%9b%be" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
     
-    Dec 13, 2020
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    3 min read
-  </span>
-  
-
-  
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/demo/">Demo</a>, <a href="/category/%E6%95%99%E7%A8%8B/">教程</a></span>
-  
-
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%e5%9f%ba%e4%ba%8e%20Metrics%20%e7%9a%84%e6%a0%b9%e5%9b%a0%e5%ae%9a%e4%bd%8d%20%28%e4%ba%8c%29%ef%bc%9a%e5%9b%a0%e6%9e%9c%e5%85%b3%e7%b3%bb%e5%9b%be&amp;body=https://yuxiaoba.github.io/post/metric_based_rca_2/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://yuxiaoba.github.io/post/metric_based_rca_2/&amp;title=%e5%9f%ba%e4%ba%8e%20Metrics%20%e7%9a%84%e6%a0%b9%e5%9b%a0%e5%ae%9a%e4%bd%8d%20%28%e4%ba%8c%29%ef%bc%9a%e5%9b%a0%e6%9e%9c%e5%85%b3%e7%b3%bb%e5%9b%be" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=%e5%9f%ba%e4%ba%8e%20Metrics%20%e7%9a%84%e6%a0%b9%e5%9b%a0%e5%ae%9a%e4%bd%8d%20%28%e4%ba%8c%29%ef%bc%9a%e5%9b%a0%e6%9e%9c%e5%85%b3%e7%b3%bb%e5%9b%be%20https://yuxiaoba.github.io/post/metric_based_rca_2/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://yuxiaoba.github.io/post/metric_based_rca_2/&amp;title=%e5%9f%ba%e4%ba%8e%20Metrics%20%e7%9a%84%e6%a0%b9%e5%9b%a0%e5%ae%9a%e4%bd%8d%20%28%e4%ba%8c%29%ef%bc%9a%e5%9b%a0%e6%9e%9c%e5%85%b3%e7%b3%bb%e5%9b%be" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
       
+      <a href="https://yuxiaoba.github.io"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu24219dffe8bd126862aae4376823be01_155445_270x270_fill_q75_lanczos_center.jpg" alt="Guangba Yu"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://yuxiaoba.github.io">Guangba Yu</a></h5>
+      <h6 class="card-subtitle">Ph.D. Candidate Focus on Cloud Native</h6>
+      <p class="card-text">My research interests include cloud computing, microservices, Serverless, AIOps</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:yugb5@mail2.sysu.edu.cn" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=wXY0D6YAAAAJ" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/yuxiaoba" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/guangba-yu-07b216192/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/uploads/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
     </div>
-
-    
-
   </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
+
 
   
 
-  
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
   </div>
 
   <div class="page-footer">
