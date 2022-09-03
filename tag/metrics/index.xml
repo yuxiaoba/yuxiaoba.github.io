@@ -17,7 +17,7 @@
       <link>https://yuxiaoba.github.io/post/metric_based_rca_2/</link>
       <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
       <guid>https://yuxiaoba.github.io/post/metric_based_rca_2/</guid>
-      <description>&lt;p&gt;上周的文章 基于 Metrics 的根因定位 (一)：故障刻画 介绍了使用故障刻画思想定位根因的几种算法。除故障刻画外，还有另外一种根因定位的思想是通过 Metrics 之间的依赖关系构建出因果关系图，然后基于相关性或随机游走算法在图上游走从而定位出根因。下面简要介绍典型的几个 Micro.X 算法。&lt;/p&gt;
+      <description>&lt;p&gt;上篇文章&lt;a href=&#34;https://yuxiaoba.github.io/post/metric_based_rca_1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;基于 Metrics 的根因定位 (一)：故障刻画&lt;/a&gt; 介绍了使用故障刻画思想定位根因的几种算法。除故障刻画外，还有另外一种根因定位的思想是通过 Metrics 之间的依赖关系构建出因果关系图，然后基于相关性或随机游走算法在图上游走从而定位出根因。下面简要介绍典型的几个 Micro.X 算法。&lt;/p&gt;
 &lt;h2 id=&#34;center-font-color0080001fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;01&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;center18_icsoc_microscope-pinpoint-the-abnormal-services-with-causal-graphs-in-micro-service-environmentscenter&#34;&gt;&lt;center&gt;18_ICSOC_Microscope: Pinpoint the Abnormal Services with Causal Graphs in Micro-service Environments&lt;/center&gt;&lt;/h3&gt;
 &lt;p&gt;
@@ -227,6 +227,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;论文链接：&lt;a href=&#34;https://arxiv.org/pdf/2103.01782.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/pdf/2103.01782.pdf&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
