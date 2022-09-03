@@ -40,7 +40,7 @@
       <description>&lt;p&gt;故障刻画是指通过提取历史的故障发生时不同 Metric 变化的特征，挖掘出不同种类故障发生时 Metric 变化的特征集合。在运行时阶段，可通过匹配特征集合定位到具体的故障种类。&lt;/p&gt;
 &lt;p&gt;例如：CPU 竞争的故障的指标变化特征是 {&amp;ldquo;CPU 利用率升高&amp;rdquo;, &amp;ldquo;响应延迟升高&amp;rdquo;}。那么当在线程序出现  {&amp;ldquo;CPU 利用率升高&amp;rdquo;, &amp;ldquo;响应延迟升高&amp;rdquo;} 的情况时可推断为 CPU 竞争的故障。&lt;/p&gt;
 &lt;h2 id=&#34;center-font-color00800u01ufontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;&lt;u&gt;01&lt;/u&gt;&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;centerfont-colororange22_fse_actionable-and-interpretable-fault-localization-for-recurring-failures-in-online-service-systemfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#orange&gt;22_FSE_Actionable and Interpretable Fault Localization for Recurring Failures in Online Service System&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;centerfont-colorffa50022_fse_actionable-and-interpretable-fault-localization-for-recurring-failures-in-online-service-systemfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;22_FSE_Actionable and Interpretable Fault Localization for Recurring Failures in Online Service System&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
 &lt;p&gt;
 
 
@@ -90,7 +90,7 @@
 代码链接：&lt;a href=&#34;https://github.com/NetManAIOps/DejaVu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/NetManAIOps/DejaVu&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;center-font-color00800u02ufontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;&lt;u&gt;02&lt;/u&gt;&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;center20_vldb_diagnosing-root-causes-of-intermittent-slow-queries-in-cloud-databasescenter&#34;&gt;&lt;center&gt;20_VLDB_Diagnosing Root Causes of Intermittent Slow Queries in Cloud Databases&lt;/center&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;centerfont-colorffa50020_vldb_diagnosing-root-causes-of-intermittent-slow-queries-in-cloud-databasesfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;20_VLDB_Diagnosing Root Causes of Intermittent Slow Queries in Cloud Databases&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
 &lt;p&gt;
 
 
@@ -162,7 +162,7 @@
 &lt;p&gt;代码链接：&lt;a href=&#34;https://github.com/NetManAIOps/DejaVu/blob/master/iSQUAD/iSQ.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/NetManAIOps/DejaVu/blob/master/iSQUAD/iSQ.py&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;center-font-color00800u03ufontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;&lt;u&gt;03&lt;/u&gt;&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;center21_issre_identifying-root-cause-metrics-for-incident-diagnosis-in-online-service-systemscenter&#34;&gt;&lt;center&gt;21_ISSRE_Identifying Root-Cause Metrics for Incident Diagnosis in Online Service Systems&lt;/center&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;centerfont-colorffa50021_issre_identifying-root-cause-metrics-for-incident-diagnosis-in-online-service-systemsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_ISSRE_Identifying Root-Cause Metrics for Incident Diagnosis in Online Service Systems&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
 &lt;p&gt;
 
 
@@ -243,7 +243,7 @@
       <guid>https://yuxiaoba.github.io/post/metric_based_rca_2/</guid>
       <description>&lt;p&gt;上篇文章&lt;a href=&#34;https://yuxiaoba.github.io/post/metric_based_rca_1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;基于 Metrics 的根因定位 (一)：故障刻画&lt;/a&gt; 介绍了使用故障刻画思想定位根因的几种算法。除故障刻画外，还有另外一种根因定位的思想是通过 Metrics 之间的依赖关系构建出因果关系图，然后基于相关性或随机游走算法在图上游走从而定位出根因。下面简要介绍典型的几个 Micro.X 算法。&lt;/p&gt;
 &lt;h2 id=&#34;center-font-color0080001fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;01&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;center18_icsoc_microscope-pinpoint-the-abnormal-services-with-causal-graphs-in-micro-service-environmentscenter&#34;&gt;&lt;center&gt;18_ICSOC_Microscope: Pinpoint the Abnormal Services with Causal Graphs in Micro-service Environments&lt;/center&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;centerfont-colorffa50018_icsoc_microscope-pinpoint-the-abnormal-services-with-causal-graphs-in-micro-service-environmentsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;18_ICSOC_Microscope: Pinpoint the Abnormal Services with Causal Graphs in Micro-service Environments&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
 &lt;p&gt;
 
 
@@ -292,7 +292,7 @@
 &lt;p&gt;论文链接：&lt;a href=&#34;https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;center-font-color0080002fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;02&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;center20_microrca-root-cause-localization-of-performance-issues-in-microservicescenter&#34;&gt;&lt;center&gt;20_MicroRCA: Root Cause Localization of Performance Issues in Microservices&lt;/center&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;centerfont-colorffa50020_microrca-root-cause-localization-of-performance-issues-in-microservicesfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;20_MicroRCA: Root Cause Localization of Performance Issues in Microservices&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
 &lt;p&gt;
 
 
@@ -342,7 +342,7 @@
 &lt;p&gt;代码链接：&lt;a href=&#34;https://github.com/elastisys/MicroRCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/elastisys/MicroRCA&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;center-font-color0080003fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;03&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;center21_microdiag-fine-grained-performance-diagnosis-for-microservice-systemscenter&#34;&gt;&lt;center&gt;21_MicroDiag: Fine-grained Performance Diagnosis for Microservice Systems&lt;/center&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;centerfont-colorffa50021_microdiag-fine-grained-performance-diagnosis-for-microservice-systemsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_MicroDiag: Fine-grained Performance Diagnosis for Microservice Systems&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
 &lt;p&gt;
 
 
@@ -397,7 +397,7 @@
 &lt;p&gt;论文链接：&lt;a href=&#34;https://hal.inria.fr/hal-03155797/document&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://hal.inria.fr/hal-03155797/document&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;center-font-color0080004fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;04&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;center21_microhecl-high-efﬁcient-root-cause-localization-in-large-scale-microservice-systemscenter&#34;&gt;&lt;center&gt;21_MicroHECL: High-Efﬁcient Root Cause Localization in Large-Scale Microservice Systems&lt;/center&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;centerfont-colorffa50021_microhecl-high-efﬁcient-root-cause-localization-in-large-scale-microservice-systemsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_MicroHECL: High-Efﬁcient Root Cause Localization in Large-Scale Microservice Systems&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
 &lt;p&gt;
 
 
