@@ -18,7 +18,8 @@
       <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
       <guid>https://yuxiaoba.github.io/post/metric_based_rca_2/</guid>
       <description>&lt;p&gt;上周的文章 基于 Metrics 的根因定位 (一)：故障刻画 介绍了使用故障刻画思想定位根因的几种算法。除故障刻画外，还有另外一种根因定位的思想是通过 Metrics 之间的依赖关系构建出因果关系图，然后基于相关性或随机游走算法在图上游走从而定位出根因。下面简要介绍典型的几个 Micro.X 算法。&lt;/p&gt;
-&lt;h2 id=&#34;18_icsoc_microscope-pinpoint-the-abnormal-services-with-causal-graphs-in-micro-service-environments&#34;&gt;18_ICSOC_Microscope: Pinpoint the Abnormal Services with Causal Graphs in Micro-service Environments&lt;/h2&gt;
+&lt;h2 id=&#34;center-font-color0080001fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;01&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;center18_icsoc_microscope-pinpoint-the-abnormal-services-with-causal-graphs-in-micro-service-environmentscenter&#34;&gt;&lt;center&gt;18_ICSOC_Microscope: Pinpoint the Abnormal Services with Causal Graphs in Micro-service Environments&lt;/center&gt;&lt;/h3&gt;
 &lt;p&gt;
 
 
@@ -63,7 +64,59 @@
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文是我导师来了中大以后组内的第一篇论文,发布在CCF B类会议 ICSOC上。第一作者的师兄去了外交部，现在在非洲为国奋斗。论文的主要贡献放在因果关系图的构建，根因的推断是比较简单的深度优先搜索和根节点的相关性计算。&lt;/p&gt;
-&lt;p&gt;论文链接：https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;center-font-color0080002fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;02&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;center20_microrca-root-cause-localization-of-performance-issues-in-microservicescenter&#34;&gt;&lt;center&gt;20_MicroRCA: Root Cause Localization of Performance Issues in Microservices&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microrca1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; MicroRCA首先构建一个包含服务调用路径对应主机的属性图。在异常发生时，MicroRCA通过判断服务之间的边的响应延迟是否异常提取异常子图。然后通过对子图进行加权计算连接节点之间的相似度，接着使用异常服务节点的响应时间与其容器资源利用率之间的最大相关系数来调整服务异常的分数，最后使用 PageRank 算法进行定位根因。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microrca.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文通过构建因果关系图，然后通过对图上的节点和边赋予权重进行 PageRank 计算，是一个通用的根因定位思路。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://hal.inria.fr/hal-02441640/document&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://hal.inria.fr/hal-02441640/document&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码链接：&lt;a href=&#34;https://github.com/elastisys/MicroRCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/elastisys/MicroRCA&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     

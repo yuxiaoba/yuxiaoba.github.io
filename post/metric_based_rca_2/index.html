@@ -798,7 +798,8 @@
 
     <div class="article-style">
       <p>上周的文章 基于 Metrics 的根因定位 (一)：故障刻画 介绍了使用故障刻画思想定位根因的几种算法。除故障刻画外，还有另外一种根因定位的思想是通过 Metrics 之间的依赖关系构建出因果关系图，然后基于相关性或随机游走算法在图上游走从而定位出根因。下面简要介绍典型的几个 Micro.X 算法。</p>
-<h2 id="18_icsoc_microscope-pinpoint-the-abnormal-services-with-causal-graphs-in-micro-service-environments">18_ICSOC_Microscope: Pinpoint the Abnormal Services with Causal Graphs in Micro-service Environments</h2>
+<h2 id="center-font-color0080001fontcenter"><center> <font color=#00800>01</font></center></h2>
+<h3 id="center18_icsoc_microscope-pinpoint-the-abnormal-services-with-causal-graphs-in-micro-service-environmentscenter"><center>18_ICSOC_Microscope: Pinpoint the Abnormal Services with Causal Graphs in Micro-service Environments</center></h3>
 <p>
 
 
@@ -843,7 +844,59 @@
   </div></figure>
 </p>
 <p><strong>个人评论：</strong> 论文是我导师来了中大以后组内的第一篇论文,发布在CCF B类会议 ICSOC上。第一作者的师兄去了外交部，现在在非洲为国奋斗。论文的主要贡献放在因果关系图的构建，根因的推断是比较简单的深度优先搜索和根节点的相关性计算。</p>
-<p>论文链接：https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1</p>
+<blockquote>
+<p>论文链接：<a href="https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1" target="_blank" rel="noopener">https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1</a></p>
+</blockquote>
+<h2 id="center-font-color0080002fontcenter"><center> <font color=#00800>02</font></center></h2>
+<h3 id="center20_microrca-root-cause-localization-of-performance-issues-in-microservicescenter"><center>20_MicroRCA: Root Cause Localization of Performance Issues in Microservices</center></h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./microrca1.jpg" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p><strong>论文简介:</strong> MicroRCA首先构建一个包含服务调用路径对应主机的属性图。在异常发生时，MicroRCA通过判断服务之间的边的响应延迟是否异常提取异常子图。然后通过对子图进行加权计算连接节点之间的相似度，接着使用异常服务节点的响应时间与其容器资源利用率之间的最大相关系数来调整服务异常的分数，最后使用 PageRank 算法进行定位根因。</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./microrca.jpg" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p><strong>个人评论：</strong> 论文通过构建因果关系图，然后通过对图上的节点和边赋予权重进行 PageRank 计算，是一个通用的根因定位思路。</p>
+<blockquote>
+<p>论文链接：<a href="https://hal.inria.fr/hal-02441640/document" target="_blank" rel="noopener">https://hal.inria.fr/hal-02441640/document</a></p>
+<p>代码链接：<a href="https://github.com/elastisys/MicroRCA" target="_blank" rel="noopener">https://github.com/elastisys/MicroRCA</a></p>
+</blockquote>
 
     </div>
 
