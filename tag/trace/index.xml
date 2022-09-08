@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cloud | Welcome to Guangba&#39;s HomePage</title>
-    <link>https://yuxiaoba.github.io/tag/cloud/</link>
-      <atom:link href="https://yuxiaoba.github.io/tag/cloud/index.xml" rel="self" type="application/rss+xml" />
-    <description>Cloud</description>
+    <title>Trace | Welcome to Guangba&#39;s HomePage</title>
+    <link>https://yuxiaoba.github.io/tag/trace/</link>
+      <atom:link href="https://yuxiaoba.github.io/tag/trace/index.xml" rel="self" type="application/rss+xml" />
+    <description>Trace</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 03 Sep 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
-      <title>Cloud</title>
-      <link>https://yuxiaoba.github.io/tag/cloud/</link>
+      <title>Trace</title>
+      <link>https://yuxiaoba.github.io/tag/trace/</link>
     </image>
     
     <item>
@@ -37,36 +37,6 @@
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microsketch.jpg&#34; alt=&#34;indecident type&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Going through the Life Cycle of Faults in Clouds:Guidelines on Fault Handling</title>
-      <link>https://yuxiaoba.github.io/publication/incident22/</link>
-      <pubDate>Tue, 19 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/publication/incident22/</guid>
-      <description>&lt;p&gt;The blow figure shows the fault type of cloud incident.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./incident.jpg&#34; alt=&#34;indecident type&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 </description>
