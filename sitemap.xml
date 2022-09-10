@@ -52,6 +52,8 @@
   <url>
     <loc>https://yuxiaoba.github.io/post/metric_based_rca_2/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
   <url>
+    <loc></loc><lastmod>2022-07-19T00:00:00+00:00</lastmod></url>
+  <url>
     <loc>https://yuxiaoba.github.io/publication/incident22/</loc><lastmod>2022-07-19T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://yuxiaoba.github.io/publication/gied22/</loc><lastmod>2022-07-19T00:00:00+00:00</lastmod></url>
@@ -64,7 +66,11 @@
   <url>
     <loc>https://yuxiaoba.github.io/tag/pagerank/</loc><lastmod>2022-07-19T00:00:00+00:00</lastmod></url>
   <url>
+    <loc></loc><lastmod>2022-07-19T00:00:00+00:00</lastmod></url>
+  <url>
     <loc>https://yuxiaoba.github.io/tag/reliability/</loc><lastmod>2022-07-19T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc></loc><lastmod>2022-07-19T00:00:00+00:00</lastmod></url>
   <url>
     <loc></loc><lastmod>2022-07-19T00:00:00+00:00</lastmod></url>
   <url>
@@ -162,4 +168,8 @@
   <url>
     <loc>https://yuxiaoba.github.io/slides/example/</loc><lastmod>2019-02-05T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://yuxiaoba.github.io/admin/</loc></url></urlset>
+    <loc>https://yuxiaoba.github.io/admin/</loc></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/tag/anomaly-detetion/</loc></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/post/recent_paper1/</loc></url></urlset>
