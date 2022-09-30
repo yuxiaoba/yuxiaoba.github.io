@@ -10,27 +10,43 @@
   <url>
     <loc>https://yuxiaoba.github.io/</loc><lastmod>2030-06-01T13:00:00+00:00</lastmod></url>
   <url>
-    <loc></loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
+    <loc></loc><lastmod>2022-09-30T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/tag/aiops/</loc><lastmod>2022-09-30T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/tag/anomaly-detetion/</loc><lastmod>2022-09-30T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/categories/</loc><lastmod>2022-09-30T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/tag/change/</loc><lastmod>2022-09-30T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc></loc><lastmod>2022-09-30T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/post/</loc><lastmod>2022-09-30T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/tags/</loc><lastmod>2022-09-30T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/category/weekly-paper/</loc><lastmod>2022-09-30T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/post/change_1/</loc><lastmod>2022-09-30T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/post/recent_paper1/</loc><lastmod>2022-09-09T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/tag/root-cause-analysis/</loc><lastmod>2022-09-09T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/tag/metrics/</loc><lastmod>2022-09-04T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://yuxiaoba.github.io/post/metric_based_rca_2/</loc><lastmod>2022-09-04T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://yuxiaoba.github.io/publication-type/1/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/tag/aiops/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/categories/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
   <url>
     <loc></loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://yuxiaoba.github.io/tag/cloud/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
   <url>
-    <loc></loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/tag/metrics/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://yuxiaoba.github.io/publication/microsketch22/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
   <url>
     <loc></loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/post/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://yuxiaoba.github.io/publication_types/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
   <url>
@@ -38,19 +54,11 @@
   <url>
     <loc>https://yuxiaoba.github.io/tag/rca/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://yuxiaoba.github.io/tag/root-cause-analysis/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/tags/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://yuxiaoba.github.io/tag/trace/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/category/weekly-paper/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
   <url>
     <loc></loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://yuxiaoba.github.io/post/metric_based_rca_1/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/post/metric_based_rca_2/</loc><lastmod>2022-09-03T00:00:00+00:00</lastmod></url>
   <url>
     <loc></loc><lastmod>2022-07-19T00:00:00+00:00</lastmod></url>
   <url>
@@ -168,8 +176,4 @@
   <url>
     <loc>https://yuxiaoba.github.io/slides/example/</loc><lastmod>2019-02-05T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://yuxiaoba.github.io/admin/</loc></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/tag/anomaly-detetion/</loc></url>
-  <url>
-    <loc>https://yuxiaoba.github.io/post/recent_paper1/</loc></url></urlset>
+    <loc>https://yuxiaoba.github.io/admin/</loc></url></urlset>

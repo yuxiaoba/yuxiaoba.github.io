@@ -33,6 +33,612 @@
     </item>
     
     <item>
+      <title>异常变更识别</title>
+      <link>https://yuxiaoba.github.io/post/change_1/</link>
+      <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/post/change_1/</guid>
+      <description>&lt;p&gt;微服务架构和CI/CD的出现让现代应用快速和频繁的开发和发布新的特性成为可能，但是代码频繁的变更为系统引入了更多的不稳定因素。根据 Google SRE book 的描述有 70% 的 incident 都是由变更导致的，因此及时的发现异常的变更，尽快的采取 rollback 的策略是非常重要的。本文介绍几个前沿的异常变更识别方法。&lt;/p&gt;
+&lt;h2 id=&#34;center-font-color0080001fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;01&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50021_fse_identifying-bad-software-changes-via-multimodal-anomaly-detection-for-online-service-systemsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_FSE_Identifying Bad Software Changes via Multimodal Anomaly Detection for Online Service Systems&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./scwarn.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 随着微服务架构和 CICD 的普遍应用以及业务的压力，现代应用的变更越来越频繁。频繁的变更可以带来业务的快速迭代，但也增大了系统发生故障的概率。这篇论文首先对一个银行系统的历史故障进行了分析，然后得出 50 % 的故障是由于变更导致的，并且不同的变更反应在不同的 Metric 和 Log 上。因此作者提出将 Log 时序化，并通过融合Metric 和 Log 训练一个 LSTM 模型用于异常检测，如果LSTM模型预测值与实际值相差较大则会进行告警。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./scwarn1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 清华大学裴丹老师团队和天津大学陈俊洁老师合作的论文，论文发表在 CCF A 类会议 FSE 2021 上，论文从结构和语言上都非常值得学习。但是不是很能够理解变更系统引入日志，因为很有可能程序员在变更的时候就会打印新的日志，那这样也会被认定为程序出现了新的日志从而产生告警。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://netman.aiops.org/wp-content/uploads/2021/09/SCWarn.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://netman.aiops.org/wp-content/uploads/2021/09/SCWarn.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码链接：&lt;a href=&#34;https://github.com/FSEwork/SCWarn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/FSEwork/SCWarn&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;center-font-color0080002fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;02&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50015_conext_rapid-and-robust-impact-assessment-of-software-changes-in-large-internet-based-servicesfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;15_CoNEXT_Rapid and Robust Impact Assessment of Software Changes in Large Internet-based Services&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./funnel.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 当服务更新后，论文首先获得已更新服务实例、changed 服务以及 affected 服务的 KPI，然后基于一个改进版的 Singular Spectrum Transform 检测出异常的 KPI 。如果changed 服务发生性能变化，则基于 difference-in-difference (DiD) 检测属于changed 服务的已更新的服务实例（tinstance）和未更新服务实例（cinstance）的KPI 是否存在差异，如果存在差异可以直观的理解为更新导致他们的差异。如果是上游的 affected 服务的 KPI 发生变化，那则将服务更新前的 KPI 视为（cservice）和更新后的 KPI 视为（tservice），然后同样基于 DiD 检测他们是否有显著性的差异，如果存在差异则认为 affected 服务的变化是由于下游服务更新导致的。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./funnel1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文是南开大学张圣林老师在读博士时在百度的工作，发表在 CCF B 类会议 CoNEXT 2015 上，论文只判断单个变更是否异常，如果上下游都有变更，很难进行处理。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://conferences2.sigcomm.org/co-next/2015/img/papers/conext15-final2.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://conferences2.sigcomm.org/co-next/2015/img/papers/conext15-final2.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;center-font-color0080003fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;03&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50020_nsdi_gandalf-an-intelligent-end-to-end-analytics-service-for-safe-deployment-in-large-scale-cloud-infrastructurefontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;20_NSDI_Gandalf: An Intelligent, End-To-End Analytics Service for Safe Deployment in Large-Scale Cloud Infrastructure&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gandalf.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 当程序变更后，论文先统计失败的日志事件出现的次数，然后基于 Holt-Winters forecasting 检测出现异常的日志事件并判定为 Error。 对每一个 Error ，Gandalf 会计算它与变更的时空相关性。时间相关性基于假设“对一个变更，如果一个故障发生时间与变更的时间越接近，他们更相关”。空间相关性基于假设“在变更期间，未变更节点中发生的故障百分比越高，变更和故障之间的因果关系越低”。最后对于每个变更的得分，Gandalf 通过 Gaussian discriminant classiﬁer 判断是否要继续变更还是 rollback。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gandalf1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; Gandalf 是 MicroSoft Azure 发表在 CCF A 类会议 NSDI 的论文，应该是有实际落地在用的。论文在投票阶段的描述应该是写错了，导致很难理解投票与反对的关系，建议可以看一下他的 presentation 来帮助理解。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://www.usenix.org/conference/nsdi20/presentation/li&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.usenix.org/conference/nsdi20/presentation/li&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DDS 第一手消息（一）</title>
+      <link>https://yuxiaoba.github.io/post/recent_paper1/</link>
+      <pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/post/recent_paper1/</guid>
+      <description>&lt;p&gt;实验室最近在 ASE2022，ISSRE2022, ICSOC2022, ICWS2022 等会议上，都有斩获，下面简单的分享一下我们的工作。&lt;/p&gt;
+&lt;h2 id=&#34;center-font-color0080001fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;01&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50022_ase_graph-based-incident-extraction-and-diagnosis-in-large-scale-online-systemsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;22_ASE_Graph based Incident Extraction and Diagnosis in Large-Scale Online Systems&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gied1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 在大规模微服务系统中，一个可用性的故障可能会因级联效应导致多个上游服务发生异常，这导致难以定位出真正的根因。为了解决这个问题，本文首先将 KPI 与前一天的 KPI 值进行对比对 KPI 进行异常检测，并基于 DBSCAN 和链路图抽取出与被故障影响的异常子图。接着将异常子图及其节点的特征输入到图神经网络中判断是否异常。如果异常，则在此异常子图上利用 Pagerank 定位出根因。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gied.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文发表在 CCF A 类会议 ASE 2022 上，论文比较详细地介绍了当前微信内部基于指标和服务依赖图的根因定位算法，久经考验，非常值得落地学习。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://yuxiaoba.github.io/publication/gied22/gied22.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://yuxiaoba.github.io/publication/gied22/gied22.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码链接：&lt;a href=&#34;https://github.com/IntelligentDDS/GIED&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/GIED&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;center-font-color0080002fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;02&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50022_issre_going-through-the-life-cycle-of-faults-in-cloudsguidelines-on-fault-handlingfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;22_ISSRE_Going through the Life Cycle of Faults in Clouds:Guidelines on Fault Handling&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./incident1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 即便是当前最先进的云平台，小范围的可用性故障依旧是层出不穷。云厂商在故障发生后，通常会公开自己对故障的事后分析来给用户一个解释。在本文中，我们收集并格式化了 354 个来自 AWS，Azure，Google 公开的故障的事后调查（incident）。在此数据集之上，我们从故障的生命周期：故障发生，故障检测，故障定位，故障修复四个方面对这些 incident 进行了定量和定性的研究，并获得了 10 个重要的发现。最后我们还基于这些发现指导当前云计算平台的智能运维，混沌工程和可观测性的研究。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./incident.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文发表在 CCF B 类会议 ISSRE 2022 上，采集这 300 多个 incident 的经历真的不堪回首，甚至还为我在微信实习的第一个工作打下了基础。在 rebuttal 的时候还出了突发情况，还好最后被录用了，不用再继续更新数据集了。当时我在读 Google SRE 书的时候突然想引用了几个名人名言，还挺有意思的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://yuxiaoba.github.io/publication/incident22/incident22.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://yuxiaoba.github.io/publication/incident22/incident22.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码链接：&lt;a href=&#34;https://github.com/IntelligentDDS/Post-mortems-Analysis&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/Post-mortems-Analysis&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;center-font-color0080003fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;03&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50022_icsoc_microsketch-lightweight-and-adaptive-sketch-based-performance-issue-detection-and-localization-in-microservice-systemsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;22_ICSOC_MicroSketch: Lightweight and Adaptive Sketch based Performance Issue Detection and Localization in Microservice Systems&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microsketch1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; Trace 是可观测性的重要组成部分，但是基于 Trace 的异常检测和根因定位算法一直受制于对每条 Trace 分析带来的巨大开销。本文借鉴了网络通信中常用的 Sketch 的思想，首先基于 Sketch 计算出每个调用对的百分位数延迟，然后所有调用对的延迟输入到随机砍伐森林 (Robust Random Cut Forest) 中检测出异常的调用对，最后根据投票机制定位出根因。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microsketch.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文发表在 CCF B 类会议 ICSOC 2022 上，考虑到大规模的生产系统上遍历分析每一条 Trace 的成本，把 Trace 指标化是当前工业界利用 Trace 进行分析的主要方式。本文提出了基于 Sketch 的轻量级 Trace 指标化方案，与遍历每条 Trace 进行分析的 Microrank 相比，速度提升明显。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://yuxiaoba.github.io/publication/microsketch22/microsketch22.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://yuxiaoba.github.io/publication/microsketch22/microsketch22.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;center-font-color0080004fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;04&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50022_icws_ts-invarnet-anomaly-detection-and-localization-based-on-tempo-spatial-kpi-invariants-in-distributed-servicesfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;22_ICWS_TS-InvarNet: Anomaly Detection and Localization based on Tempo-spatial KPI Invariants in Distributed Services&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tsnet1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 在大规模的分布式系统正常运行中，某两个 KPI 之间可能存在某种稳定的关系。例如，上下游服务因流量的一致性可能 CPU 利用率的变化存在相似的变化关系。我们把这种稳定的关系称为不变量。本文致力于在系统正常运行阶段挖掘出不同 KPI 之间的不变量关系，在系统发生故障后通过检测不变量是否被破坏来进行异常检测和根因定位。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tsnet.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论:&lt;/strong&gt; 当前的基于深度学习的异常检测算法通常可解释性比较差，我们提出的基于时空不变量的方法有较强的可解释性，易于工程师理解系统的变化。下图中展示了当故障发生时，不同节点的 KPI 之间不变量的变化的例子，非常容易理解。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tsnet2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://yuxiaoba.github.io/publication/tsinvarnet22/tsInvarNet22.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://yuxiaoba.github.io/publication/tsinvarnet22/tsInvarNet22.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>基于 Metrics 的根因定位 (二)：因果关系图</title>
+      <link>https://yuxiaoba.github.io/post/metric_based_rca_2/</link>
+      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/post/metric_based_rca_2/</guid>
+      <description>&lt;p&gt;上篇文章&lt;a href=&#34;https://yuxiaoba.github.io/post/metric_based_rca_1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;基于 Metrics 的根因定位 (一)：故障刻画&lt;/a&gt; 介绍了使用故障刻画思想定位根因的几种算法。除故障刻画外，还有另外一种根因定位的思想是通过 Metrics 之间的依赖关系构建出因果关系图，然后基于相关性或随机游走算法在图上游走从而定位出根因。下面简要介绍典型的几个 Micro.X 算法。&lt;/p&gt;
+&lt;h2 id=&#34;center-font-color0080001fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;01&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50018_icsoc_microscope-pinpoint-the-abnormal-services-with-causal-graphs-in-micro-service-environmentsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;18_ICSOC_Microscope: Pinpoint the Abnormal Services with Causal Graphs in Micro-service Environments&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microscope1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 在不进行源代码进行插桩的情况下，Microscope 通过拦截网络连接信息和指标之间的相关性构建出微服务之间的因果关系图。在根因定位被触发时，Microscope 从前端对因果关系图进行遍历，找到因果关系图每个分支中最深的 SLO 异常服务并判定为根因候选。最后计算根因候选与前端服务的相关性为每个根因候选赋予得分。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microscope.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文是我导师来了中大以后组内的第一篇论文,发布在 CCF B 类会议 ICSOC 上。第一作者的师兄去了外交部，现在在非洲为国奋斗。论文的主要贡献放在因果关系图的构建，根因的推断是比较简单的深度优先搜索和根节点的相关性计算。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;center-font-color0080002fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;02&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50020_microrca-root-cause-localization-of-performance-issues-in-microservicesfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;20_MicroRCA: Root Cause Localization of Performance Issues in Microservices&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microrca1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; MicroRCA 首先构建一个包含服务调用路径对应主机的属性图。在异常发生时，MicroRCA 通过判断服务之间的边的响应延迟是否异常提取异常子图。然后通过对子图进行加权计算连接节点之间的相似度，接着使用异常服务节点的响应时间与其容器资源利用率之间的最大相关系数来调整服务异常的分数，最后使用 PageRank 算法进行定位根因。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microrca.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文通过构建因果关系图，然后通过对图上的节点和边赋予权重进行 PageRank 计算，是一个通用的根因定位思路。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://hal.inria.fr/hal-02441640/document&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://hal.inria.fr/hal-02441640/document&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码链接：&lt;a href=&#34;https://github.com/elastisys/MicroRCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/elastisys/MicroRCA&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;center-font-color0080003fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;03&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50021_microdiag-fine-grained-performance-diagnosis-for-microservice-systemsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_MicroDiag: Fine-grained Performance Diagnosis for Microservice Systems&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microdiag1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; MicroDiag 首先构建不同指标类型之间的异常传播依赖关系：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对资源类指标（如 CPU）传播, MicroDiag 采用 SCM（Structural Causal Model）推断异常的传播方向&lt;/li&gt;
+&lt;li&gt;对业务指标传播（如 Latency）MicroDiag 先用 Istio 获得服务依赖图，然后根据服务依赖图的逆向推断传播方向&lt;/li&gt;
+&lt;li&gt;通过资源类和业务类指标传播, MicroDiag 采用 Granger causality tests 推断异常的传播方向&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接着 MicroDiag 通过皮尔逊相关系数计算指标间的相似性来判断异常传播的概率，在归一化权重后通过 PageRank 直接计算图中节点的重要性给出节点排序。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microdiag.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文发表在 ICSE 2021 的 Workshop 上，对不同种类的资源采用不同的因果推断异常传播的方向值得学习。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://hal.inria.fr/hal-03155797/document&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://hal.inria.fr/hal-03155797/document&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;center-font-color0080004fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;04&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50021_microhecl-high-efﬁcient-root-cause-localization-in-large-scale-microservice-systemsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_MicroHECL: High-Efﬁcient Root Cause Localization in Large-Scale Microservice Systems&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microhecl1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt;  MicroHECL 首先根据根据最近30分钟的服务调用关系构造出服务依赖图，然后通过划分三个异常类型，构建出异常的传播图，最后根据异常传播图找到最深的节点作为根因&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对性能故障，MicroHECL 采用 OC-SVM（one class support vector machine）以响应延迟的特征作为输入，判断是否存在性能故障。如果存在性能故障，故障传播从下游传播到上游&lt;/li&gt;
+&lt;li&gt;对可靠性故障，MicroHECL 采用随机森林以请求错误率的特征作为输入，判断是否存在可靠性故障。如果存在可靠性故障，故障传播从下游传播到上游&lt;/li&gt;
+&lt;li&gt;流量异常故障，MicroHECL 采用3-sigma 规则检测 QPS 的波动，判断是否存在流量异常故障。如果存在流量异常故障，故障传播从上游传播到下游&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后论文还提出了一个异常传播图剪枝的策略提高分析效率&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microhecl.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 本文是复旦大学彭鑫老师团队与阿里巴巴合作的论文，论文发表在 ICSE 2021 的 Workshop 上，论文预先对不同种类的异常进行分类，然后根据不同的传播方向分别构造异常传播图的思路值得学习。论文在阿里巴巴的数据上上取得 top3 为 68% 的准确率。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://arxiv.org/pdf/2103.01782.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/pdf/2103.01782.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>MicroSketch: Lightweight and Adaptive Sketch based Performance Issue Detection and Localization in Microservice Systems</title>
       <link>https://yuxiaoba.github.io/publication/microsketch22/</link>
       <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
@@ -261,225 +867,6 @@
 &lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文是清华大学裴丹老师团队的论文，论文总结出的典型的指标异常模式是很值得学习的。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;论文链接：&lt;a href=&#34;http://netman.aiops.org/wp-content/uploads/2021/10/wch_ISSRE-1.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://netman.aiops.org/wp-content/uploads/2021/10/wch_ISSRE-1.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>基于 Metrics 的根因定位 (二)：因果关系图</title>
-      <link>https://yuxiaoba.github.io/post/metric_based_rca_2/</link>
-      <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/post/metric_based_rca_2/</guid>
-      <description>&lt;p&gt;上篇文章&lt;a href=&#34;https://yuxiaoba.github.io/post/metric_based_rca_1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;基于 Metrics 的根因定位 (一)：故障刻画&lt;/a&gt; 介绍了使用故障刻画思想定位根因的几种算法。除故障刻画外，还有另外一种根因定位的思想是通过 Metrics 之间的依赖关系构建出因果关系图，然后基于相关性或随机游走算法在图上游走从而定位出根因。下面简要介绍典型的几个 Micro.X 算法。&lt;/p&gt;
-&lt;h2 id=&#34;center-font-color0080001fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;01&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;centerfont-colorffa50018_icsoc_microscope-pinpoint-the-abnormal-services-with-causal-graphs-in-micro-service-environmentsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;18_ICSOC_Microscope: Pinpoint the Abnormal Services with Causal Graphs in Micro-service Environments&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microscope1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 在不进行源代码进行插桩的情况下，Microscope 通过拦截网络连接信息和指标之间的相关性构建出微服务之间的因果关系图。在根因定位被触发时，Microscope 从前端对因果关系图进行遍历，找到因果关系图每个分支中最深的 SLO 异常服务并判定为根因候选。最后计算根因候选与前端服务的相关性为每个根因候选赋予得分。&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microscope.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文是我导师来了中大以后组内的第一篇论文,发布在 CCF B 类会议 ICSOC 上。第一作者的师兄去了外交部，现在在非洲为国奋斗。论文的主要贡献放在因果关系图的构建，根因的推断是比较简单的深度优先搜索和根节点的相关性计算。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://link.springer.com/chapter/10.1007/978-3-030-03596-9_1&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;center-font-color0080002fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;02&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;centerfont-colorffa50020_microrca-root-cause-localization-of-performance-issues-in-microservicesfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;20_MicroRCA: Root Cause Localization of Performance Issues in Microservices&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microrca1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; MicroRCA 首先构建一个包含服务调用路径对应主机的属性图。在异常发生时，MicroRCA 通过判断服务之间的边的响应延迟是否异常提取异常子图。然后通过对子图进行加权计算连接节点之间的相似度，接着使用异常服务节点的响应时间与其容器资源利用率之间的最大相关系数来调整服务异常的分数，最后使用 PageRank 算法进行定位根因。&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microrca.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文通过构建因果关系图，然后通过对图上的节点和边赋予权重进行 PageRank 计算，是一个通用的根因定位思路。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://hal.inria.fr/hal-02441640/document&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://hal.inria.fr/hal-02441640/document&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;代码链接：&lt;a href=&#34;https://github.com/elastisys/MicroRCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/elastisys/MicroRCA&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;center-font-color0080003fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;03&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;centerfont-colorffa50021_microdiag-fine-grained-performance-diagnosis-for-microservice-systemsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_MicroDiag: Fine-grained Performance Diagnosis for Microservice Systems&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microdiag1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; MicroDiag 首先构建不同指标类型之间的异常传播依赖关系：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;对资源类指标（如 CPU）传播, MicroDiag 采用 SCM（Structural Causal Model）推断异常的传播方向&lt;/li&gt;
-&lt;li&gt;对业务指标传播（如 Latency）MicroDiag 先用 Istio 获得服务依赖图，然后根据服务依赖图的逆向推断传播方向&lt;/li&gt;
-&lt;li&gt;通过资源类和业务类指标传播, MicroDiag 采用 Granger causality tests 推断异常的传播方向&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;接着 MicroDiag 通过皮尔逊相关系数计算指标间的相似性来判断异常传播的概率，在归一化权重后通过 PageRank 直接计算图中节点的重要性给出节点排序。&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microdiag.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文发表在 ICSE 2021 的 Workshop 上，对不同种类的资源采用不同的因果推断异常传播的方向值得学习。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://hal.inria.fr/hal-03155797/document&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://hal.inria.fr/hal-03155797/document&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;center-font-color0080004fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;04&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;centerfont-colorffa50021_microhecl-high-efﬁcient-root-cause-localization-in-large-scale-microservice-systemsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_MicroHECL: High-Efﬁcient Root Cause Localization in Large-Scale Microservice Systems&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microhecl1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt;  MicroHECL 首先根据根据最近30分钟的服务调用关系构造出服务依赖图，然后通过划分三个异常类型，构建出异常的传播图，最后根据异常传播图找到最深的节点作为根因&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;对性能故障，MicroHECL 采用 OC-SVM（one class support vector machine）以响应延迟的特征作为输入，判断是否存在性能故障。如果存在性能故障，故障传播从下游传播到上游&lt;/li&gt;
-&lt;li&gt;对可靠性故障，MicroHECL 采用随机森林以请求错误率的特征作为输入，判断是否存在可靠性故障。如果存在可靠性故障，故障传播从下游传播到上游&lt;/li&gt;
-&lt;li&gt;流量异常故障，MicroHECL 采用3-sigma 规则检测 QPS 的波动，判断是否存在流量异常故障。如果存在流量异常故障，故障传播从上游传播到下游&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;最后论文还提出了一个异常传播图剪枝的策略提高分析效率&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microhecl.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 本文是复旦大学彭鑫老师团队与阿里巴巴合作的论文，论文发表在 ICSE 2021 的 Workshop 上，论文预先对不同种类的异常进行分类，然后根据不同的传播方向分别构造异常传播图的思路值得学习。论文在阿里巴巴的数据上上取得 top3 为 68% 的准确率。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://arxiv.org/pdf/2103.01782.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/pdf/2103.01782.pdf&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -1023,235 +1410,6 @@ $$&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://yuxiaoba.github.io/admin/config.yml</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>DDS 第一手消息（一）</title>
-      <link>https://yuxiaoba.github.io/post/recent_paper1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/post/recent_paper1/</guid>
-      <description>&lt;p&gt;实验室最近在 ASE2022，ISSRE2022, ICSOC2022, ICWS2022 等会议上，都有斩获，下面简单的分享一下我们的工作。&lt;/p&gt;
-&lt;h2 id=&#34;center-font-color0080001fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;01&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;centerfont-colorffa50022_ase_graph-based-incident-extraction-and-diagnosis-in-large-scale-online-systemsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;22_ASE_Graph based Incident Extraction and Diagnosis in Large-Scale Online Systems&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gied1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 在大规模微服务系统中，一个可用性的故障可能会因级联效应导致多个上游服务发生异常，这导致难以定位出真正的根因。为了解决这个问题，本文首先将 KPI 与前一天的 KPI 值进行对比对 KPI 进行异常检测，并基于 DBSCAN 和链路图抽取出与被故障影响的异常子图。接着将异常子图及其节点的特征输入到图神经网络中判断是否异常。如果异常，则在此异常子图上利用 Pagerank 定位出根因。&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gied.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文发表在 CCF A 类会议 ASE 2022 上，论文比较详细地介绍了当前微信内部基于指标和服务依赖图的根因定位算法，久经考验，非常值得落地学习。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://yuxiaoba.github.io/publication/gied22/gied22.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://yuxiaoba.github.io/publication/gied22/gied22.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;代码链接：&lt;a href=&#34;https://github.com/IntelligentDDS/GIED&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/GIED&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;center-font-color0080002fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;02&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;centerfont-colorffa50022_issre_going-through-the-life-cycle-of-faults-in-cloudsguidelines-on-fault-handlingfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;22_ISSRE_Going through the Life Cycle of Faults in Clouds:Guidelines on Fault Handling&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./incident1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 即便是当前最先进的云平台，小范围的可用性故障依旧是层出不穷。云厂商在故障发生后，通常会公开自己对故障的事后分析来给用户一个解释。在本文中，我们收集并格式化了 354 个来自 AWS，Azure，Google 公开的故障的事后调查（incident）。在此数据集之上，我们从故障的生命周期：故障发生，故障检测，故障定位，故障修复四个方面对这些 incident 进行了定量和定性的研究，并获得了 10 个重要的发现。最后我们还基于这些发现指导当前云计算平台的智能运维，混沌工程和可观测性的研究。&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./incident.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文发表在 CCF B 类会议 ISSRE 2022 上，采集这 300 多个 incident 的经历真的不堪回首，甚至还为我在微信实习的第一个工作打下了基础。在 rebuttal 的时候还出了突发情况，还好最后被录用了，不用再继续更新数据集了。当时我在读 Google SRE 书的时候突然想引用了几个名人名言，还挺有意思的。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://yuxiaoba.github.io/publication/swisslog22/swisslog22.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://yuxiaoba.github.io/publication/swisslog22/swisslog22.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;代码链接：&lt;a href=&#34;https://github.com/IntelligentDDS/SwissLog&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/SwissLog&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;center-font-color0080003fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;03&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;centerfont-colorffa50022_icsoc_microsketch-lightweight-and-adaptive-sketch-based-performance-issue-detection-and-localization-in-microservice-systemsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;22_ICSOC_MicroSketch: Lightweight and Adaptive Sketch based Performance Issue Detection and Localization in Microservice Systems&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microsketch1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; Trace 是可观测性的重要组成部分，但是基于 Trace 的异常检测和根因定位算法一直受制于对每条 Trace 分析带来的巨大开销。本文借鉴了网络通信中常用的 Sketch 的思想，首先基于 Sketch 计算出每个调用对的百分位数延迟，然后所有调用对的延迟输入到随机砍伐森林 (Robust Random Cut Forest) 中检测出异常的调用对，最后根据投票机制定位出根因。&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microsketch.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt; 论文发表在 CCF B 类会议 ICSOC 2022 上，考虑到大规模的生产系统上遍历分析每一条 Trace 的成本，把 Trace 指标化是当前工业界利用 Trace 进行分析的主要方式。本文提出了基于 Sketch 的轻量级 Trace 指标化方案，与遍历每条 Trace 进行分析的 Microrank 相比，速度提升明显。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://yuxiaoba.github.io/publication/microsketch22/microsketch22.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://yuxiaoba.github.io/publication/microsketch22/microsketch22.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;center-font-color0080004fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;04&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;centerfont-colorffa50022_icws_ts-invarnet-anomaly-detection-and-localization-based-on-tempo-spatial-kpi-invariants-in-distributed-servicesfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;22_ICWS_TS-InvarNet: Anomaly Detection and Localization based on Tempo-spatial KPI Invariants in Distributed Services&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tsnet1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 在大规模的分布式系统正常运行中，某两个 KPI 之间可能存在某种稳定的关系。例如，上下游服务因流量的一致性可能 CPU 利用率的变化存在相似的变化关系。我们把这种稳定的关系称为不变量。本文致力于在系统正常运行阶段挖掘出不同 KPI 之间的不变量关系，在系统发生故障后通过检测不变量是否被破坏来进行异常检测和根因定位。&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tsnet.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论:&lt;/strong&gt; 当前的基于深度学习的异常检测算法通常可解释性比较差，我们提出的基于时空不变量的方法有较强的可解释性，易于工程师理解系统的变化。下图中展示了当故障发生时，不同节点的 KPI 之间不变量的变化的例子，非常容易理解。&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tsnet2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://yuxiaoba.github.io/publication/tsinvarnet22/tsInvarNet22.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://yuxiaoba.github.io/publication/tsinvarnet22/tsInvarNet22.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
-</description>
     </item>
     
   </channel>
