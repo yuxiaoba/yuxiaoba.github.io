@@ -64,10 +64,10 @@
   
     
   
-  <meta name="description" content="In this paper, we propose LogReducer, a non-intrusive and language-independent log reduction framework based on eBPF (Extended Berkeley Packet Filter), consisting of both online and offline processes. After two months of serving the offline process of LogReducer in WeChat, the log storage overhead has dropped from 19.7 PB per day to 12.0 PB (i.e., about a 39.08% decrease)." />
+  <meta name="description" content="Metrics, Traces, Logs 被誉为可观测性的三大支柱。Trace 记录了请求在分布式应用程序中运行的轨迹，能够完整的串联起请求的上下文关系，在大规模分布式系统根因定位中的作用举足轻重。阅读本文可快速了解当前学术界热门的基于 Trace 的根因定位算法类型 —— Trace 路径抽象。" />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://yuxiaoba.github.io/publication/logreducer22/" />
+  <link rel="alternate" hreflang="en-us" href="https://yuxiaoba.github.io/post/trace_based_rca_3/" />
 
   
   
@@ -280,7 +280,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://yuxiaoba.github.io/publication/logreducer22/" />
+  <link rel="canonical" href="https://yuxiaoba.github.io/post/trace_based_rca_3/" />
 
   
   
@@ -302,18 +302,18 @@
   <meta property="twitter:card" content="summary_large_image" />
   
   <meta property="og:site_name" content="Welcome to Guangba&#39;s HomePage" />
-  <meta property="og:url" content="https://yuxiaoba.github.io/publication/logreducer22/" />
-  <meta property="og:title" content="LogReducer: Identify and Reduce Log Hotspots inKernel on the Fly | Welcome to Guangba&#39;s HomePage" />
-  <meta property="og:description" content="In this paper, we propose LogReducer, a non-intrusive and language-independent log reduction framework based on eBPF (Extended Berkeley Packet Filter), consisting of both online and offline processes. After two months of serving the offline process of LogReducer in WeChat, the log storage overhead has dropped from 19.7 PB per day to 12.0 PB (i.e., about a 39.08% decrease)." /><meta property="og:image" content="https://yuxiaoba.github.io/publication/logreducer22/featured.jpg" />
-    <meta property="twitter:image" content="https://yuxiaoba.github.io/publication/logreducer22/featured.jpg" /><meta property="og:locale" content="en-us" />
+  <meta property="og:url" content="https://yuxiaoba.github.io/post/trace_based_rca_3/" />
+  <meta property="og:title" content="基于 Trace 的根因定位（三）：Trace 路径抽象 | Welcome to Guangba&#39;s HomePage" />
+  <meta property="og:description" content="Metrics, Traces, Logs 被誉为可观测性的三大支柱。Trace 记录了请求在分布式应用程序中运行的轨迹，能够完整的串联起请求的上下文关系，在大规模分布式系统根因定位中的作用举足轻重。阅读本文可快速了解当前学术界热门的基于 Trace 的根因定位算法类型 —— Trace 路径抽象。" /><meta property="og:image" content="https://yuxiaoba.github.io/post/trace_based_rca_3/featured.jpeg" />
+    <meta property="twitter:image" content="https://yuxiaoba.github.io/post/trace_based_rca_3/featured.jpeg" /><meta property="og:locale" content="en-us" />
   
     
       <meta
         property="article:published_time"
-        content="2022-12-09T00:00:00&#43;00:00"
+        content="2023-02-18T00:00:00&#43;00:00"
       />
     
-    <meta property="article:modified_time" content="2022-12-09T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2023-02-18T00:00:00&#43;00:00">
   
 
   
@@ -325,6 +325,8 @@
 
 
 
+
+  
 
 
 
@@ -332,19 +334,19 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://yuxiaoba.github.io/publication/logreducer22/"
+    "@id": "https://yuxiaoba.github.io/post/trace_based_rca_3/"
   },
-  "headline": "LogReducer: Identify and Reduce Log Hotspots inKernel on the Fly",
+  "headline": "基于 Trace 的根因定位（三）：Trace 路径抽象",
   
   "image": [
-    "https://yuxiaoba.github.io/publication/logreducer22/featured.jpg"
+    "https://yuxiaoba.github.io/post/trace_based_rca_3/featured.jpeg"
   ],
   
-  "datePublished": "2022-12-09T00:00:00Z",
-  "dateModified": "2022-12-09T00:00:00Z",
+  "datePublished": "2023-02-18T00:00:00Z",
+  "dateModified": "2023-02-18T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -359,7 +361,7 @@
       "url": "https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "In this paper, we propose LogReducer, a non-intrusive and language-independent log reduction framework based on eBPF (Extended Berkeley Packet Filter), consisting of both online and offline processes. After two months of serving the offline process of LogReducer in WeChat, the log storage overhead has dropped from 19.7 PB per day to 12.0 PB (i.e., about a 39.08% decrease)."
+  "description": "Metrics, Traces, Logs 被誉为可观测性的三大支柱。Trace 记录了请求在分布式应用程序中运行的轨迹，能够完整的串联起请求的上下文关系，在大规模分布式系统根因定位中的作用举足轻重。阅读本文可快速了解当前学术界热门的基于 Trace 的根因定位算法类型 —— Trace 路径抽象。"
 }
 </script>
 
@@ -375,11 +377,11 @@
 
 
 
-  <title>LogReducer: Identify and Reduce Log Hotspots inKernel on the Fly | Welcome to Guangba&#39;s HomePage</title>
+  <title>基于 Trace 的根因定位（三）：Trace 路径抽象 | Welcome to Guangba&#39;s HomePage</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  dark " data-wc-page-id="68d51060464a56deb51c4188c2964bea" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  dark " data-wc-page-id="5881dab56cd3465731f9650e12a8a0df" >
 
   
   
@@ -705,16 +707,7 @@
     
     
 
-    
-
-
-
-
-
-
-
-
-<div class="pub">
+    <article class="article">
 
   
 
@@ -743,8 +736,10 @@
 
 
 <div class="article-container pt-3">
-  <h1>LogReducer: Identify and Reduce Log Hotspots inKernel on the Fly</h1>
+  <h1>基于 Trace 的根因定位（三）：Trace 路径抽象</h1>
 
+  
+  <p class="page-subtitle">Metrics, Traces, Logs 被誉为可观测性的三大支柱。Trace 记录了请求在分布式应用程序中运行的轨迹，能够完整的串联起请求的上下文关系，在大规模分布式系统根因定位中的作用举足轻重。阅读本文可快速了解当前学术界热门的基于 Trace 的根因定位算法类型 —— Trace 路径抽象。</p>
   
 
   
@@ -760,13 +755,7 @@
     
 
   <span class="author-highlighted">
-      Guangba Yu</span>, <span >
-      Pengfei Chen</span>, <span >
-      Pairui Li</span>, <span >
-      Tianjun Weng</span>, <span >
-      Haibing Zheng</span>, <span >
-      Yuetang Deng</span>, <span >
-      Zibin Zheng</span>
+      Guangba Yu</span>
   </div>
   
   
@@ -777,13 +766,18 @@
     
       
     
-    December 2022
+    Feb 18, 2023
   </span>
   
 
   
 
   
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
 
   
   
@@ -791,6 +785,10 @@
   
 
   
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/weekly-paper/">Weekly Paper</a></span>
   
 
 </div>
@@ -800,64 +798,14 @@
 
 
 
-<div class="btn-links mb-3">
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-<a class="btn btn-outline-primary btn-page-header" href="/publication/logreducer22/logreducer22.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
-        data-filename="/publication/logreducer22/cite.bib">
-  Cite
-</a>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="https://github.com/IntelligentDDS/LogReducer" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </div>
 
 
-</div>
-
-
-<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 540px;">
+<div class="article-header container featured-image-wrapper mt-4 mb-4" style="max-width: 1200px; max-height: 800px;">
   <div style="position: relative">
-    <img src="/publication/logreducer22/featured_hub67a5e846e12b30f2474be045827df40_1092195_720x2500_fit_q75_h2_lanczos.webp" width="720" height="540" alt="" class="featured-image">
-    
+    <img src="/post/trace_based_rca_3/featured_hudd92d82e7c4f7f5228995c73dd314da6_2956530_1200x2500_fit_q75_h2_lanczos.webp" width="1200" height="800" alt="" class="featured-image">
+    <span class="article-header-caption">Image credit: <a href="https://unsplash.com/photos/CpkOjOcXdUY"><strong>Unsplash</strong></a></span>
   </div>
 </div>
 
@@ -865,48 +813,25 @@
 
   <div class="article-container">
 
-    
-    <h3>Abstract</h3>
-    <p class="pub-abstract">Modern systems generate a massive amount of logs to detect and diagnose system faults, which incurs expensive storage cost and runtime overhead. After investigating real-world production logs, we observe that most of the logging overhead is due to a small number of log templates, referred to as log hotspots. Therefore, we conduct a systematical study about log hotspots in an industrial system WeChat, which motivates us to identify log hotspots and reduce them on the fly. In this paper, we propose LogReducer, a non-intrusive and language-independent log reduction framework based on eBPF (Extended Berkeley Packet Filter), consisting of both online and offline processes. After two months of serving the offline process of LogReducer in WeChat, the log storage overhead has dropped from 19.7 PB per day to 12.0 PB (i.e., about a 39.08% decrease). Practical implementation and experimental evaluations in the test environment demonstrate that the online process of LogReducer can control the logging overhead of hotspots while preserving logging effectiveness. Moreover, the log hotspot handling time can be reduced from average 9 days in production to 10 minutes in the test with the help of LogReducer.</p>
-    
-
-    
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Type</div>
-          <div class="col-12 col-md-9">
-            <a href="/publication/#1">
-              Conference paper
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
-          <div class="col-12 col-md-9">In <em>45th IEEE/ACM International Conference on Software Engineering (CCF A)</em></div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    <div class="space-below"></div>
-
-    <div class="article-style"><p>The blow figure shows the framework of LogReducer.
-
+    <div class="article-style">
+      <p>今日雨水，小楼一夜听春雨，深巷明朝卖杏花。</p>
+<p>之前我在 <a href="https://yuxiaoba.github.io/post/trace_based_rca_1/" target="_blank" rel="noopener">基于 Traces 的根因定位（一）: Trace 的演进之路</a> 简单地介绍了 Trace 的出现及其演进的过程。在 <a href="https://yuxiaoba.github.io/post/trace_based_rca_2/" target="_blank" rel="noopener">基于 Trace 的根因定位（二）： Spectrum-Based Fault Localization 算法</a> 中介绍了基于 Spectrum-Based Fault Localization（SFL，基于程序频谱的故障定位）算法的 Trace 根因定位算法。​</p>
+<p>这一期我们再来讨论一下另外一种基于 Trace 的根因定位算法：Trace 路径抽象。</p>
+<p>路径（Path）是请求在系统中运行路径的抽象，它记录了同一类请求经过的组件的性能和交互关系。</p>
+<p>例如对于五个 Trace：
+a → b → c → d</p>
+<p>a → e → f</p>
+<p>a → b → c → d</p>
+<p>a → e → f</p>
+<p>a → e → f</p>
+<p>我们可以将其抽象为两个 Path：
+a → b → c → d</p>
+<p>a → e →f</p>
+<p>然后可以通过统计分析，计算每个组件的平均延迟。</p>
+<p>基于 Trace 路径抽象进行根因定位的核心思想是：如果我们预先对没有故障的（fault-free）阶段的 Trace 进行 Path 的抽象，那么在故障发生（fault-suffering）阶段我们可以通过比对当前时间窗口的 Path 与历史的 Path 是否表现一致来检测异常和定位根因。</p>
+<h2 id="center-font-color0080001fontcenter"><center> <font color=#00800>01</font></center></h2>
+<h3 id="centerfont-colorffa50004_nsdi_path-based-failure-and-evolution-managementfontcenter"><center><font color=#FFA500>04_NSDI_Path-Based Failure and Evolution Management</font></center></h3>
+<p>
 
 
 
@@ -924,10 +849,177 @@
 
 <figure  >
   <div class="d-flex justify-content-center">
-    <div class="w-100" ><img src="./logredcuer.jpg" alt="GIED Framework" loading="lazy" data-zoomable /></div>
+    <div class="w-100" ><img src="./04nsdi1.jpg" alt="" loading="lazy" data-zoomable /></div>
   </div></figure>
 </p>
-</div>
+<p><strong>论文简介:</strong> 论文以 Trace 作为输入，在根因定位时主要分为两个步骤：</p>
+<p>第一步首先是检测哪些 Path 表现异常，其中包括结构异常和性能异常</p>
+<ul>
+<li>
+<p>对结构异常，论文首先通过 probabilistic context free grammar (PCFG) 根据训练过程中 的 fault-free data 抽象出 Path，并对给定 Path 发生的可能性进行建模。在生产阶段，如果抽象出来的 Path 不符合训练的 PCFG 模型，那么认为这个 Path 的结构是异常的</p>
+</li>
+<li>
+<p>对性能异常，系统延迟的偏差往往是问题的信号。尾延迟的增加可能表明部分故障，而平均延迟的增加可能表明过载。延迟的减少可能是由于错误造成的阻止一个请求执行完成</p>
+</li>
+</ul>
+<p>第二步是定位根因，其中包括只有一种 Path 异常和多种 Path 异常发生的情况</p>
+<ul>
+<li>
+<p>对只有一种 Path 异常，论文通过 Path 所体现的控制流引导着本地日志分析工具的使用，以将组件的细节与特定的请求联系起来。如果没有 Path ，单个组件的日志就不那么有用了，因为缺乏日志条目和其他系统状态之间的关联</p>
+</li>
+<li>
+<p>对多种 Path 异常的情况，其核心思想是搜索组件的使用和失败的请求之间的相关性。论文通过训练一个决策树模型来区分成功和失败的类别，其中导致失败的树边成为根因的候选</p>
+</li>
+</ul>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./04nsdi.jpg" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>下图展示了论文的可视化界面</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./04nsdi2.jpg" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p><strong>个人评论</strong>：论文来自 UC Berkeley David Patterson 的 20 年前发表在 NSDI （CCF A）的古董论文，对 Trace 已经有很深刻的见解，并且已经尝试使用 log 和 trace 的融合进行根因定位。20 年后的 Trace 分析方法也没有能逃出这个分析框架，只能说 RiseLab YYDS。</p>
+<blockquote>
+<p>论文链接：<a href="https://www.usenix.org/conference/nsdi-04/path-based-failure-and-evolution-management" target="_blank" rel="noopener">https://www.usenix.org/conference/nsdi-04/path-based-failure-and-evolution-management</a></p>
+</blockquote>
+<h2 id="center-font-color0080002fontcenter"><center> <font color=#00800>02</font></center></h2>
+<h3 id="centerfont-colorffa50020_fse_graph-based-trace-analysis-for-microservice-architecture-understanding-and-problem-diagnosisfontcenter"><center><font color=#FFA500>20_FSE_Graph-Based Trace Analysis for Microservice Architecture Understanding and Problem Diagnosis</font></center></h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./gmta.jpg" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p><strong>论文简介:</strong> 论文提出一种基于图形分析的微服务架构理解和问题诊断方法 GMTA。GMTA 将微服务中的 Trace 转换为Graph ，通过 Graph 的分析和可视化来发现微服务架构中的问题和瓶颈。它主要提供了四种 Graph 的展示方式：Trace, Path, BusinessFlow 和 Error Propagation Chains （EP Chains）</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./gmta1.jpg" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<ul>
+<li>Trace：GMTA 根据 Trace ID 对同一个请求的 Span 进行聚合，然后对一些缺乏 Root Span 和没有 Parent span 的 Trace 进行了修复</li>
+<li>Error Propagation Chains：给定一个带有 error attribute 的 Span，GMTA 检查该 Span 的一个Child Span 是否也有错误标记，从而构建出 EP Chains</li>
+<li>Path: 对每一条 Trace，GMTA 根据 Trace 访问的微服务名称和操作名称进行哈希，生成 Path ID。如果 Path ID 已经存在，那么更新 Path 的属性（如trace数、平均延迟等）。如果 Path 不存在，便为这条 Trace创建一个新 Path。</li>
+<li>Business Flow: 由运维人员按需求制定的调用某个微服务与当前操作之前/之后会调用某个微服务 的任意组合。</li>
+</ul>
+<p>最后 GMTA Explorer提供4类主要功能。前面两个可视化相关功能主要用于系统架构理解、后面两个功能主要用于故障诊断。下面是可视化的几个样例。</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./gmta2.jpg" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./gmta3.jpg" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<blockquote>
+<p>论文链接：<a href="https://taoxie.cs.illinois.edu/publications/esecfse20in-trace.pdf" target="_blank" rel="noopener">https://taoxie.cs.illinois.edu/publications/esecfse20in-trace.pdf</a></p>
+</blockquote>
+<p><strong>个人评论</strong>：论文是 eBay 与复旦大学彭鑫老师团队合作发表的论文。论文更多的是针对于 Path 的抽象和可视化的展示，对根因定位的自动化考虑的还是比较少。</p>
+<p>从 2004 年到 2020 年，16 年的时间里可观测性有了很大的发展，分布式的场景让 Trace 已经走进千家万户。现在大型互联网厂商每日产生的 Trace 数目上百亿条，手动地分析和查看单条 Trace 越来越不实际。对同种类型的 Trace 的路径进行抽象，再具象化，能够更直观地反映当前某种请求的处理状态，降低运维工程师的运维压力。但目前基于 Trace 路径抽象方法的根因定位大多还是 UI 展示功能，根因定位自动化能力不足，未来还需继续研究。</p>
+<p>CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 <a href="https://github.com/IntelligentDDS/awesome-papers" target="_blank" rel="noopener">https://github.com/IntelligentDDS/awesome-papers</a></p>
+
+    </div>
 
     
 
@@ -936,11 +1028,9 @@
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tag/log/">Log</a>
+  <a class="badge badge-light" href="/tag/root-cause-analysis/">Root Cause Analysis</a>
   
-  <a class="badge badge-light" href="/tag/ebpf/">eBPF</a>
-  
-  <a class="badge badge-light" href="/tag/telemetry/">Telemetry</a>
+  <a class="badge badge-light" href="/tag/trace/">Trace</a>
   
 </div>
 
@@ -957,7 +1047,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://yuxiaoba.github.io/publication/logreducer22/&amp;text=LogReducer:%20Identify%20and%20Reduce%20Log%20Hotspots%20inKernel%20on%20the%20Fly" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://yuxiaoba.github.io/post/trace_based_rca_3/&amp;text=%e5%9f%ba%e4%ba%8e%20Trace%20%e7%9a%84%e6%a0%b9%e5%9b%a0%e5%ae%9a%e4%bd%8d%ef%bc%88%e4%b8%89%ef%bc%89%ef%bc%9aTrace%20%e8%b7%af%e5%be%84%e6%8a%bd%e8%b1%a1" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -970,7 +1060,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://yuxiaoba.github.io/publication/logreducer22/&amp;t=LogReducer:%20Identify%20and%20Reduce%20Log%20Hotspots%20inKernel%20on%20the%20Fly" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://yuxiaoba.github.io/post/trace_based_rca_3/&amp;t=%e5%9f%ba%e4%ba%8e%20Trace%20%e7%9a%84%e6%a0%b9%e5%9b%a0%e5%ae%9a%e4%bd%8d%ef%bc%88%e4%b8%89%ef%bc%89%ef%bc%9aTrace%20%e8%b7%af%e5%be%84%e6%8a%bd%e8%b1%a1" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -983,7 +1073,7 @@
       
       
       <li>
-        <a href="mailto:?subject=LogReducer:%20Identify%20and%20Reduce%20Log%20Hotspots%20inKernel%20on%20the%20Fly&amp;body=https://yuxiaoba.github.io/publication/logreducer22/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=%e5%9f%ba%e4%ba%8e%20Trace%20%e7%9a%84%e6%a0%b9%e5%9b%a0%e5%ae%9a%e4%bd%8d%ef%bc%88%e4%b8%89%ef%bc%89%ef%bc%9aTrace%20%e8%b7%af%e5%be%84%e6%8a%bd%e8%b1%a1&amp;body=https://yuxiaoba.github.io/post/trace_based_rca_3/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -996,7 +1086,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://yuxiaoba.github.io/publication/logreducer22/&amp;title=LogReducer:%20Identify%20and%20Reduce%20Log%20Hotspots%20inKernel%20on%20the%20Fly" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=https://yuxiaoba.github.io/post/trace_based_rca_3/&amp;title=%e5%9f%ba%e4%ba%8e%20Trace%20%e7%9a%84%e6%a0%b9%e5%9b%a0%e5%ae%9a%e4%bd%8d%ef%bc%88%e4%b8%89%ef%bc%89%ef%bc%9aTrace%20%e8%b7%af%e5%be%84%e6%8a%bd%e8%b1%a1" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -1009,7 +1099,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=LogReducer:%20Identify%20and%20Reduce%20Log%20Hotspots%20inKernel%20on%20the%20Fly%20https://yuxiaoba.github.io/publication/logreducer22/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=%e5%9f%ba%e4%ba%8e%20Trace%20%e7%9a%84%e6%a0%b9%e5%9b%a0%e5%ae%9a%e4%bd%8d%ef%bc%88%e4%b8%89%ef%bc%89%ef%bc%9aTrace%20%e8%b7%af%e5%be%84%e6%8a%bd%e8%b1%a1%20https://yuxiaoba.github.io/post/trace_based_rca_3/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1022,7 +1112,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://yuxiaoba.github.io/publication/logreducer22/&amp;title=LogReducer:%20Identify%20and%20Reduce%20Log%20Hotspots%20inKernel%20on%20the%20Fly" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://yuxiaoba.github.io/post/trace_based_rca_3/&amp;title=%e5%9f%ba%e4%ba%8e%20Trace%20%e7%9a%84%e6%a0%b9%e5%9b%a0%e5%ae%9a%e4%bd%8d%ef%bc%88%e4%b8%89%ef%bc%89%ef%bc%9aTrace%20%e8%b7%af%e5%be%84%e6%8a%bd%e8%b1%a1" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1153,42 +1243,6 @@
 
 
   
-    
-
-
-
-
-  
-    
-
-
-
-
-  
-    
-
-
-
-
-  
-    
-
-
-
-
-  
-    
-
-
-
-
-  
-    
-
-
-
-
-  
 
 
 
@@ -1206,7 +1260,7 @@
 
 
   </div>
-</div>
+</article>
   </div>
 
   <div class="page-footer">
