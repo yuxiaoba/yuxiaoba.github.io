@@ -1419,7 +1419,7 @@ a → b → c → d&lt;/p&gt;
     </item>
     
     <item>
-      <title>基于 Metrics 的根因定位 (三)：多维下钻</title>
+      <title>基于 Logs 的根因定位 (三)：多维下钻</title>
       <link>https://yuxiaoba.github.io/post/log_based_rca_1/</link>
       <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
       <guid>https://yuxiaoba.github.io/post/log_based_rca_1/</guid>
