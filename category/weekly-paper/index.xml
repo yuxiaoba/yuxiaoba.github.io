@@ -5,12 +5,178 @@
     <link>https://yuxiaoba.github.io/category/weekly-paper/</link>
       <atom:link href="https://yuxiaoba.github.io/category/weekly-paper/index.xml" rel="self" type="application/rss+xml" />
     <description>Weekly Paper</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 06 Mar 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Weekly Paper</title>
       <link>https://yuxiaoba.github.io/category/weekly-paper/</link>
     </image>
+    
+    <item>
+      <title>基于 Trace 的根因定位（四）：Trace 频繁模式挖掘</title>
+      <link>https://yuxiaoba.github.io/post/trace_based_rca_4/</link>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/post/trace_based_rca_4/</guid>
+      <description>&lt;p&gt;今日雨水，小楼一夜听春雨，深巷明朝卖杏花。&lt;/p&gt;
+&lt;p&gt;之前我在 &lt;a href=&#34;https://yuxiaoba.github.io/post/trace_based_rca_1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;基于 Traces 的根因定位（一）: Trace 的演进之路&lt;/a&gt; 简单地介绍了 Trace 的出现及其演进的过程。在 &lt;a href=&#34;https://yuxiaoba.github.io/post/trace_based_rca_2/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;基于 Trace 的根因定位（二）： Spectrum-Based Fault Localization 算法&lt;/a&gt; 中介绍了基于 Spectrum-Based Fault Localization（SFL，基于程序频谱的故障定位）算法的 Trace 根因定位算法。​在 &lt;a href=&#34;https://yuxiaoba.github.io/post/trace_based_rca_3/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;基于 Trace 的根因定位（三）：Trace 路径抽象&lt;/a&gt; 介绍了如何用路径抽象定位根因。&lt;/p&gt;
+&lt;p&gt;这一期我们再来讨论一下另外一种基于 Trace 的根因定位算法：Trace 频繁模式挖掘。频繁模式，在 Trace 根因定位的背景下，可以理解为在一段时间内所有 Trace 中，出现频率较高的连续的 Span 集合。&lt;/p&gt;
+&lt;p&gt;举个例子🌰，下图中有 5 条 Trace，&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./640.jpeg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;其中 (Span2 Span3) 可以视为在 Trace 集合中出现的模式（Pattern）。传统的频繁模式挖掘方法通常并不在意 Pattern 中的项的前后依赖关系，但是在 Trace 的分析中，我们应该只考虑那些连续的有父子关系的Pattern，如(Span2 Span3 Span4)， 而没有直接父子关系的 Pattern (Span2 Span4) 则不被考虑。&lt;/p&gt;
+&lt;p&gt;这是因为 (Span2 Span4)  仅提供了 Span2 和 Span4 一起出现的证据，这个模式被破坏在根因定位中提供的作用较小。而 (Span2 Span3 Span4) 提供的是 Span2 调用了 Span3，且 Span3 调用了 Span4 的情况，如果这个模式被破坏则说明这个子调用链发生了问题，值得运维工程师关注。&lt;/p&gt;
+&lt;p&gt;确定一个 Pattern 出现是否是频繁模式（Frequent Pattern），可以通过计算这个 Pattern 的支持度（support）来衡量。一种 Pattern 的  support 是指在所有 Trace 集合中这个 Pattern 出现的频率。如上图中 (Span2 Span3) 的 support 是 3 ，因为它一共出现了三次。 通常我们会定义一个最小支持度的阈值 Support_min 来进行划分。也就是说，如果一个 Pattern 的 support &amp;gt; Support_min, 那么判定这个 Pattern 属于 Frequent Pattern。&lt;/p&gt;
+&lt;p&gt;在获得 Frequent Pattern 后，利用它们进行根因定位的核心思想是：对比正常 Trace 的频繁模式和异常 Trace 的频繁模式的差异，或者对比正常时间段 Trace 的频繁模式和异常时间段 Trace 的频繁模式的差异，找到只在异常时候发生，不在正常时候发生的频繁模式，从而将这些频繁模式判定为根因。&lt;/p&gt;
+&lt;p&gt;这个思路是比较直观的且可解释的，如果一个 Pattern 在正常的时候经常发生，但是在异常的时候不发生了，那么很有可能这个 Pattern 是因为故障发生导致它没有按正常的路径运行，运维工程师应该优先检查这个 Pattern。或者如果一个Pattern 之前从不发生，但是在异常的时候发生频繁了，那么很有可能是故障的发生导致它变频繁，也应该优先检查这个 Pattern。而在正常阶段和异常阶段发生频率相似的模式，是不太需要关注的。&lt;/p&gt;
+&lt;p&gt;下面我再简单介绍两篇使用频繁模式挖掘进行根因定位的论文。&lt;/p&gt;
+&lt;h2 id=&#34;center-font-color0080001fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;01&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50021_icse_scalable-statistical-root-cause-analysis-on-app-telemetryfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_ICSE_Scalable Statistical Root Cause Analysis on App Telemetry&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./facebook1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 论文提出了一个可扩展统计根因定位框架 Minesweeper。 Minesweeper 以没有故障的 Test 阶段的 Trace 和包含故障的 Control 阶段的 Trace 作为输入。 它首先通过 PrefixSpan 算法分别挖掘出 Test 和 Control 阶段的  Frequent Pattern 的 support 。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./facebook2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;对每一个 Frequent Pattern P，Minesweeper 会根据下面的公式计算出它的 Precision 和 Recall&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./facebook3.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;这里 Precision 描述了一个 P 在 Test 阶段出现，不在 Control 阶段出现的概率，也就是说在 T 中频繁出现，在 C 中出现不频繁的 P 可疑得分更高。Recall 描述了 P 能覆盖多少 Test 阶段的 Trace，它表示了 P 在 Test 阶段的代表性，越有代表性越重要。最后为了综合考虑两个参数，一个  Frequent Pattern 的可疑性是通过计算它的 F1-Score 得出的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：这篇论文是 Facebook 在 2021 年发表在 CCF A 类会议 ICSE 的 Industry Track 上的论文。Minesweeper 来自工业界的真实实践，使用简单的统计方法，可解释性比较强。不过论文似乎没有考虑并发和异步调用的情况。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://arxiv.org/abs/2010.09974&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/abs/2010.09974&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;center-font-color0080002fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;02&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50021_iwqos_practical-root-cause-localization-for-microservice-systems-via-trace-analysisfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_IWQoS_Practical Root Cause Localization for Microservice Systems via Trace Analysis&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tracerca1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 论文提出了一个 Spectrum 算法与频繁模式挖掘相结合的无监督根因定位算法 TraceRCA。TraceRCA 以一个时间窗口的 Trace 为输入，然后使用一个无监督多度量异常检测方法检测出异常的 Trace。Trace 异常检测是另外一个内容了，这里先不细说，我先挖个坑，以后再专门统一对 Trace 异常检测的论文进行分析。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tracerca2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;在划分好正常的 Trace 和异常的 Trace后，TraceRCA 通过 FP-Growth 算法 来挖掘满足支持度阈值的 Frequent Pattern （即可疑的微服务集），然后计算出 Frequent Pattern  的支持度 (support )和置信度 (confidence) 。&lt;/p&gt;
+&lt;p&gt;其中 support = P(X|Y)，X指的是通过某个 Pattern 的所有 Trace，Y是指所有异常的 Trace，这个 P 指的是在所有异常 Trace 中经过该 Pattern 的异常 Trace比例。 confidence = P(Y|X)，指的是所有经过该 Pattern 的 Trace中，异常 Trace所占的比例。&lt;/p&gt;
+&lt;p&gt;接着 TraceRCA 计算他们的 Jaccard Index (JI) 得分，也就是 support 和 confidence 的调和平均数，获得 Pattern 的可疑得分。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：论文是清华大学裴丹老师团队 2021 年发表在 CCF B 类会议 IWQoS 上的。与前面 Facebook 的方案比较大的不同是，TraceRCA 需要事先检测出异常的 Trace，这个 Trace 异常检测的效果会对后面根因定位的结果有较大的影响。并且对每条 Trace 进行准确异常检测，不仅难度比较大，计算的量也比较大，一定程度上限制了 TraceRCA 的使用。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://netman.aiops.org/wp-content/uploads/2021/05/1570705191.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://netman.aiops.org/wp-content/uploads/2021/05/1570705191.pdf&lt;/a&gt;
+代码链接：&lt;a href=&#34;https://github.com/NetManAIOps/TraceRCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/NetManAIOps/TraceRCA&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最后再来小结一下，与 Trace 路径抽象 中输出粗粒度的 Trace 路径不同，频繁模式挖掘最后输出的是一个更细粒度的路径子集，能够帮助运维工程师更快地聚焦到故障点。此外，基于统计的计算方式以及较强的可解释性，也为这种方法在工业界实际应用提供了可能。&lt;/p&gt;
+&lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>基于 Trace 的根因定位（三）：Trace 路径抽象</title>
@@ -215,10 +381,10 @@ a → b → c → d&lt;/p&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gmta3.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：论文是 eBay 与复旦大学彭鑫老师团队合作发表的论文。论文更多的是针对于 Path 的抽象和可视化的展示，对根因定位的自动化考虑的还是比较少。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;论文链接：&lt;a href=&#34;https://taoxie.cs.illinois.edu/publications/esecfse20in-trace.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://taoxie.cs.illinois.edu/publications/esecfse20in-trace.pdf&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：论文是 eBay 与复旦大学彭鑫老师团队合作发表的论文。论文更多的是针对于 Path 的抽象和可视化的展示，对根因定位的自动化考虑的还是比较少。&lt;/p&gt;
 &lt;p&gt;从 2004 年到 2020 年，16 年的时间里可观测性有了很大的发展，分布式的场景让 Trace 已经走进千家万户。现在大型互联网厂商每日产生的 Trace 数目上百亿条，手动地分析和查看单条 Trace 越来越不实际。对同种类型的 Trace 的路径进行抽象，再具象化，能够更直观地反映当前某种请求的处理状态，降低运维工程师的运维压力。但目前基于 Trace 路径抽象方法的根因定位大多还是 UI 展示功能，根因定位自动化能力不足，未来还需继续研究。&lt;/p&gt;
 &lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -396,9 +562,6 @@ a → b → c → d&lt;/p&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;与 T-Rank 类似的，MicroRank 首先根据 Trace 的延迟将 Trace 划分为异常 Trace 和 正常 Trace。然后  MicroRank 根据正常和异常 Trace 分别构建出正常，异常 operation-trace 图，并在这两个图上利用 PageRank 算法计算出每个 operation 的正常和异常的权重。最后，MicroRank 基于权重与覆盖统计信息相乘的结果计算 SFL 来得到根因。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://yuxiaoba.github.io/publication/microrank/microrank.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://yuxiaoba.github.io/publication/microrank/microrank.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：这两篇论文都是我自己写的，所以可以不需要顾忌，可以直接光明正大的嫌弃自己。基于 SFL 的 Trace 根因定位算法，从思想上是非常容易理解的，但是在实际应用中还是存在几个问题：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -411,6 +574,9 @@ a → b → c → d&lt;/p&gt;
 &lt;p&gt;基于 SFL 的 Trace 根因定位算法目前更倾向于去解决 Microservice 的性能问题，而不是可用性问题，在可用性问题上还需要进一步讨论。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://yuxiaoba.github.io/publication/microrank/microrank.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://yuxiaoba.github.io/publication/microrank/microrank.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;以上我简单介绍了基于 SFL 的 Trace 根因定位算法的思路，相对来说，这种基于统计的根因定位方法比基于深度学习的方法，更容易让运维工程师理解，可解释性也更强。但是要实际地落地，还需要进一步的研究，希望未来我们还会在这个领域有更大的进展。&lt;/p&gt;
 &lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -1410,10 +1576,11 @@ a → b → c → d&lt;/p&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./dapper1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt;     此外，为了达到低开销的设计目标，Dapper 还提出对 Trace 的采集进行采样。根据 Dapper 在谷歌的实践经验，对于许多常用的场景，即使对 1/1024 的请求进行采样收集，也能够得到足够的信息。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论：&lt;/strong&gt;  此外，为了达到低开销的设计目标，Dapper 还提出对 Trace 的采集进行采样。根据 Dapper 在谷歌的实践经验，对于许多常用的场景，即使对 1/1024 的请求进行采样收集，也能够得到足够的信息。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;论文链接：&lt;a href=&#34;https://static.googleusercontent.com/media/research.google.com/zh-CN//archive/papers/dapper-2010-1.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://static.googleusercontent.com/media/research.google.com/zh-CN//archive/papers/dapper-2010-1.pdf&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;在 Dapper 的论文发表之后，分布式链路系统日趋走向成熟，中间有一段百家争鸣的日子，Jaeger, Zipkin, OpenTracing, OpenCensus, Skywalking 等开源分布式链路系统都非常活跃。 随着2019年 Opentracing 和 Opencencus 的团队合并到 Opentelemtry 并加入 CNCF，Opentelemetry 的 OTEL 标准逐渐成为云原生 Trace 链路的主流并得到广泛使用。未来 Trace 还会如何进化，让我们保持期待！&lt;/p&gt;
 &lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>

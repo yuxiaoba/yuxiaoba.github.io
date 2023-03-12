@@ -274,8 +274,6 @@
   
 
   
-    <link rel="manifest" href="/manifest.webmanifest" />
-  
 
   <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
@@ -981,9 +979,6 @@
   </div></figure>
 </p>
 <p>与 T-Rank 类似的，MicroRank 首先根据 Trace 的延迟将 Trace 划分为异常 Trace 和 正常 Trace。然后  MicroRank 根据正常和异常 Trace 分别构建出正常，异常 operation-trace 图，并在这两个图上利用 PageRank 算法计算出每个 operation 的正常和异常的权重。最后，MicroRank 基于权重与覆盖统计信息相乘的结果计算 SFL 来得到根因。</p>
-<blockquote>
-<p>论文链接：<a href="https://yuxiaoba.github.io/publication/microrank/microrank.pdf" target="_blank" rel="noopener">https://yuxiaoba.github.io/publication/microrank/microrank.pdf</a></p>
-</blockquote>
 <p><strong>个人评论</strong>：这两篇论文都是我自己写的，所以可以不需要顾忌，可以直接光明正大的嫌弃自己。基于 SFL 的 Trace 根因定位算法，从思想上是非常容易理解的，但是在实际应用中还是存在几个问题：</p>
 <ul>
 <li>
@@ -996,6 +991,9 @@
 <p>基于 SFL 的 Trace 根因定位算法目前更倾向于去解决 Microservice 的性能问题，而不是可用性问题，在可用性问题上还需要进一步讨论。</p>
 </li>
 </ul>
+<blockquote>
+<p>论文链接：<a href="https://yuxiaoba.github.io/publication/microrank/microrank.pdf" target="_blank" rel="noopener">https://yuxiaoba.github.io/publication/microrank/microrank.pdf</a></p>
+</blockquote>
 <p>以上我简单介绍了基于 SFL 的 Trace 根因定位算法的思路，相对来说，这种基于统计的根因定位方法比基于深度学习的方法，更容易让运维工程师理解，可解释性也更强。但是要实际地落地，还需要进一步的研究，希望未来我们还会在这个领域有更大的进展。</p>
 <p>CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 <a href="https://github.com/IntelligentDDS/awesome-papers" target="_blank" rel="noopener">https://github.com/IntelligentDDS/awesome-papers</a></p>
 
