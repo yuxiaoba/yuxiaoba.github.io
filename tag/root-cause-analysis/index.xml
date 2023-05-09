@@ -5,12 +5,152 @@
     <link>https://yuxiaoba.github.io/tag/root-cause-analysis/</link>
       <atom:link href="https://yuxiaoba.github.io/tag/root-cause-analysis/index.xml" rel="self" type="application/rss+xml" />
     <description>Root Cause Analysis</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 06 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 21 Mar 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Root Cause Analysis</title>
       <link>https://yuxiaoba.github.io/tag/root-cause-analysis/</link>
     </image>
+    
+    <item>
+      <title>最新出炉！WWW 2023 云计算领域论文盘点（一）</title>
+      <link>https://yuxiaoba.github.io/post/www2023_1/</link>
+      <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/post/www2023_1/</guid>
+      <description>&lt;p&gt;WWW 全称 World Wide Web Conference，又称 The Web Conference，是一个CCF A 类的，旨在促进互联网技术的研究与发展国际性学术会议。&lt;/p&gt;
+&lt;p&gt;WWW 的历史可以追溯到 1994 年，首次会议在瑞士日内瓦举行。该会议汇集了来自学术界、产业界、政府和非营利组织的研究人员、开发者和实践者，共同探讨和分享有关互联网技术的最新进展、创新应用和未来发展方向。&lt;/p&gt;
+&lt;p&gt;WWW 2023 将于 2023年4月30日至5月4日在美国举行。本次会议共收到 1900 篇投稿， 录用了 365 篇，录用率为 19.2%。我们实验室投了一篇，做了分母。在这个链接 &lt;a href=&#34;https://www2023.thewebconf.org/program/accepted-papers/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www2023.thewebconf.org/program/accepted-papers/&lt;/a&gt; 中可以看到全部接收的 Paper。&lt;/p&gt;
+&lt;p&gt;下面跟随本文追踪 WWW 2023 中云计算领域的最新研究吧。&lt;/p&gt;
+&lt;h2 id=&#34;center-font-color0080001fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;01&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa5002023_www_diagnostor-an-ambiguity-aware-root-cause-localization-approach-based-on-call-metric-datafontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;2023_WWW_Diagnostor: An Ambiguity-Aware Root Cause Localization Approach Based on Call Metric Data&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./facebook1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 论文提出了一个无监督的通过分析服务之间 Call Metric 的因果关系进行根因定位方法 CMDiagnostor。这种指标根因定位的思路我们之前在 基于 Metrics 的根因定位 (二)：因果关系图 中概述过，它主要是通过Metrics 之间的依赖关系构建出调用关系图，然后基于相关性或随机游走算法在图上游走从而定位出根因。这种根因定位方法的准确性极大地依赖于调用关系图的构建是否准确。CMDiagnostor 的主要贡献就是优化了调用关系图的构建方式。&lt;/p&gt;
+&lt;p&gt;传统的调用图构建方式受限于 Call Metric 的有限信息，构建出的调用图有可能会带有歧义（Ambiguity）。 这里的歧义如下图所示，（a）中是 Call Metric 中包含的调用关系，（b）是根据这些调用关系组合出来的调用图。但是（b）的调用图在实际的运行中，可能包含（c）中的多种可能的控制流，这就导致了文章所言的歧义。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./facebook2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;对每一个 Frequent Pattern P，Minesweeper 会根据下面的公式计算出它的 Precision 和 Recall&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./facebook3.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;这里 Precision 描述了一个 P 在 Test 阶段出现，不在 Control 阶段出现的概率，也就是说在 T 中频繁出现，在 C 中出现不频繁的 P 可疑得分更高。Recall 描述了 P 能覆盖多少 Test 阶段的 Trace，它表示了 P 在 Test 阶段的代表性，越有代表性越重要。最后为了综合考虑两个参数，一个  Frequent Pattern 的可疑性是通过计算它的 F1-Score 得出的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：这篇论文是 Facebook 在 2021 年发表在 CCF A 类会议 ICSE 的 Industry Track 上的论文。Minesweeper 来自工业界的真实实践，使用简单的统计方法，可解释性比较强。不过论文似乎没有考虑并发和异步调用的情况。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://arxiv.org/abs/2010.09974&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/abs/2010.09974&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;center-font-color0080002fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;02&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa50021_iwqos_practical-root-cause-localization-for-microservice-systems-via-trace-analysisfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_IWQoS_Practical Root Cause Localization for Microservice Systems via Trace Analysis&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tracerca1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 论文提出了一个 Spectrum 算法与频繁模式挖掘相结合的无监督根因定位算法 TraceRCA。TraceRCA 以一个时间窗口的 Trace 为输入，然后使用一个无监督多度量异常检测方法检测出异常的 Trace。Trace 异常检测是另外一个内容了，这里先不细说，我先挖个坑，以后再专门统一对 Trace 异常检测的论文进行分析。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tracerca2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;在划分好正常的 Trace 和异常的 Trace后，TraceRCA 通过 FP-Growth 算法 来挖掘满足支持度阈值的 Frequent Pattern （即可疑的微服务集），然后计算出 Frequent Pattern  的支持度 (support )和置信度 (confidence) 。&lt;/p&gt;
+&lt;p&gt;其中 support = P(X|Y)，X指的是通过某个 Pattern 的所有 Trace，Y是指所有异常的 Trace，这个 P 指的是在所有异常 Trace 中经过该 Pattern 的异常 Trace比例。 confidence = P(Y|X)，指的是所有经过该 Pattern 的 Trace中，异常 Trace所占的比例。&lt;/p&gt;
+&lt;p&gt;接着 TraceRCA 计算他们的 Jaccard Index (JI) 得分，也就是 support 和 confidence 的调和平均数，获得 Pattern 的可疑得分。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：论文是清华大学裴丹老师团队 2021 年发表在 CCF B 类会议 IWQoS 上的。与前面 Facebook 的方案比较大的不同是，TraceRCA 需要事先检测出异常的 Trace，这个 Trace 异常检测的效果会对后面根因定位的结果有较大的影响。并且对每条 Trace 进行准确异常检测，不仅难度比较大，计算的量也比较大，一定程度上限制了 TraceRCA 的使用。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://netman.aiops.org/wp-content/uploads/2021/05/1570705191.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://netman.aiops.org/wp-content/uploads/2021/05/1570705191.pdf&lt;/a&gt;
+代码链接：&lt;a href=&#34;https://github.com/NetManAIOps/TraceRCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/NetManAIOps/TraceRCA&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最后再来小结一下，与 Trace 路径抽象 中输出粗粒度的 Trace 路径不同，频繁模式挖掘最后输出的是一个更细粒度的路径子集，能够帮助运维工程师更快地聚焦到故障点。此外，基于统计的计算方式以及较强的可解释性，也为这种方法在工业界实际应用提供了可能。&lt;/p&gt;
+&lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>基于 Trace 的根因定位（四）：Trace 频繁模式挖掘</title>
