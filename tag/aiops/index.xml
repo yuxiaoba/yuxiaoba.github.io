@@ -41,7 +41,7 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./facebook1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./cmd1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 论文提出了一个无监督的通过分析服务之间 Call Metric 的因果关系进行根因定位方法 CMDiagnostor。这种指标根因定位的思路我们之前在 基于 Metrics 的根因定位 (二)：因果关系图 中概述过，它主要是通过Metrics 之间的依赖关系构建出调用关系图，然后基于相关性或随机游走算法在图上游走从而定位出根因。这种根因定位方法的准确性极大地依赖于调用关系图的构建是否准确。CMDiagnostor 的主要贡献就是优化了调用关系图的构建方式。&lt;/p&gt;
@@ -64,10 +64,11 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./facebook2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./cmd2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;对每一个 Frequent Pattern P，Minesweeper 会根据下面的公式计算出它的 Precision 和 Recall&lt;/p&gt;
+&lt;p&gt;如果没有对上文的歧义进行进一步的划分，因果关系图的构建是不够准确的，从而也会影响到根因定位的准确性。CMDiagnostor 提出了一种流量回归方法（称为AmSitor）来处理模糊性，并构建无模糊调用图。其核心思想是：将一个下游流量与其可能的上游流量进行线性回归，每个上游流量的回归系数可以被视为其期望值。具有低系数（例如，小于或等于 0.005）的上游将被剪枝掉。&lt;/p&gt;
+&lt;p&gt;通过 AmSitor 进行剪枝，CMDiagnostor 就可以去除掉调用图中带有的歧义，剩下的根因定位过程（如下图所示）与我们之前分享的  MicroHECL 和 Microscope 大同小异，感兴趣也可看一下 &lt;a href=&#34;https://yuxiaoba.github.io/post/metric_based_rca_2/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;基于 Metrics 的根因定位 (二)：因果关系图&lt;/a&gt; 。&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -86,16 +87,17 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./facebook3.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./cmd3.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;这里 Precision 描述了一个 P 在 Test 阶段出现，不在 Control 阶段出现的概率，也就是说在 T 中频繁出现，在 C 中出现不频繁的 P 可疑得分更高。Recall 描述了 P 能覆盖多少 Test 阶段的 Trace，它表示了 P 在 Test 阶段的代表性，越有代表性越重要。最后为了综合考虑两个参数，一个  Frequent Pattern 的可疑性是通过计算它的 F1-Score 得出的。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：这篇论文是 Facebook 在 2021 年发表在 CCF A 类会议 ICSE 的 Industry Track 上的论文。Minesweeper 来自工业界的真实实践，使用简单的统计方法，可解释性比较强。不过论文似乎没有考虑并发和异步调用的情况。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：CMDiagnostor 是清华大学裴丹老师的团队，话题是一个老话题，但是裴老师的团队又做出了新的创新点，不失为在没有 Trace 的情况下的一种解决方式吧。但是如果系统的 Trace 已经比较完善，应该是还是使用 Trace 能获得更准确的调用关系。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://arxiv.org/abs/2010.09974&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/abs/2010.09974&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://netman.aiops.org/wp-content/uploads/2023/02/CMDiagnostor_www_2023.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://netman.aiops.org/wp-content/uploads/2023/02/CMDiagnostor_www_2023.pdf&lt;/a&gt;
+代码链接：&lt;a href=&#34;https://github.com/NetManAIOps/CMDiagnostor&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/NetManAIOps/CMDiagnostor&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;center-font-color0080002fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;02&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;centerfont-colorffa50021_iwqos_practical-root-cause-localization-for-microservice-systems-via-trace-analysisfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_IWQoS_Practical Root Cause Localization for Microservice Systems via Trace Analysis&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;centerfont-colorffa5002023_www_causil-causal-graph-for-instance-level-microservice-datafontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;2023_WWW_CausIL: Causal Graph for Instance Level Microservice Data&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
 &lt;p&gt;
 
 
@@ -114,10 +116,10 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tracerca1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./causIL1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 论文提出了一个 Spectrum 算法与频繁模式挖掘相结合的无监督根因定位算法 TraceRCA。TraceRCA 以一个时间窗口的 Trace 为输入，然后使用一个无监督多度量异常检测方法检测出异常的 Trace。Trace 异常检测是另外一个内容了，这里先不细说，我先挖个坑，以后再专门统一对 Trace 异常检测的论文进行分析。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 论文为微服务系统提出一个服务实例级别（service instance level）的因果关系图构建框架 CausIL 。传统的因果构建图方式如 MicroHECL、Microscope 和上文的 CMDiagnostor 一般都是在服务级别（service level）构建因果关系图，这种构造方式对 instance level metric 进行聚合，可能会平滑了某个服务实例的异常表现。如下图两个例子都是在服务级别进行 metric 的 average 后导致了失真，从而影响到后面的根因定位。&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -136,18 +138,105 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tracerca2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./causIL2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./causIL3.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;在划分好正常的 Trace 和异常的 Trace后，TraceRCA 通过 FP-Growth 算法 来挖掘满足支持度阈值的 Frequent Pattern （即可疑的微服务集），然后计算出 Frequent Pattern  的支持度 (support )和置信度 (confidence) 。&lt;/p&gt;
-&lt;p&gt;其中 support = P(X|Y)，X指的是通过某个 Pattern 的所有 Trace，Y是指所有异常的 Trace，这个 P 指的是在所有异常 Trace 中经过该 Pattern 的异常 Trace比例。 confidence = P(Y|X)，指的是所有经过该 Pattern 的 Trace中，异常 Trace所占的比例。&lt;/p&gt;
-&lt;p&gt;接着 TraceRCA 计算他们的 Jaccard Index (JI) 得分，也就是 support 和 confidence 的调和平均数，获得 Pattern 的可疑得分。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：论文是清华大学裴丹老师团队 2021 年发表在 CCF B 类会议 IWQoS 上的。与前面 Facebook 的方案比较大的不同是，TraceRCA 需要事先检测出异常的 Trace，这个 Trace 异常检测的效果会对后面根因定位的结果有较大的影响。并且对每条 Trace 进行准确异常检测，不仅难度比较大，计算的量也比较大，一定程度上限制了 TraceRCA 的使用。&lt;/p&gt;
+&lt;p&gt;为了克服在服务级别构建因果关系图的缺陷，本文就提出了构建服务实例级别的因果关系图。对于微服务S，设 x_ijt 是服务 S 的第 j 个实例在 t 时间的第 i 的指标，假设child metric  x_ijt 是因果依赖于 parent metric 集合 P( x_ijt )，那给定 P( x_ijt ) 下， 图片的条件分布可以表示为:&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./causIL5.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;因果关系估计算法的任务是识别每个 metric 的 parent metric P( x_ijt ) 以及因果函数 f_ij(.)。给定每个 child metric 的因果parent metric，通过估计器 f_ij(.) 估计 parent metric 和 child metric 之间的因果关系的强度。 CausIL 使用 Fast Greedy Equivalence Search（fGES）和 Bayesian Information Criterion (BIC) 进行因果发现&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./causIL6.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：这篇论文是 Adobe 印度研究院的团队发表的论文，最大的贡献是把因果关系细粒度化到服务实例级别，这么简单的 idea 我之前怎么没想到 。除此之外，论文里还融入了一些 domain knowledge，这些在工业界的实践值得参考&lt;/p&gt;
+&lt;p&gt;在任何情况下，同一服务中的任何其他 metric 都不会影响 workload
+latency 不会影响 resource 利用率。
+如果服务之间在调用图上没有连接，禁止服务之间的所有因果关联
+对服务内部的 metric 之间的因果关系进行假设（如下图）&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./causIL4.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://netman.aiops.org/wp-content/uploads/2021/05/1570705191.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://netman.aiops.org/wp-content/uploads/2021/05/1570705191.pdf&lt;/a&gt;
-代码链接：&lt;a href=&#34;https://github.com/NetManAIOps/TraceRCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/NetManAIOps/TraceRCA&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://arxiv.org/abs/2303.00554&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/abs/2303.00554&lt;/a&gt;
+代码链接：&lt;a href=&#34;https://github.com/sarthak-chakraborty/CausIL&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/sarthak-chakraborty/CausIL&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;最后再来小结一下，与 Trace 路径抽象 中输出粗粒度的 Trace 路径不同，频繁模式挖掘最后输出的是一个更细粒度的路径子集，能够帮助运维工程师更快地聚焦到故障点。此外，基于统计的计算方式以及较强的可解释性，也为这种方法在工业界实际应用提供了可能。&lt;/p&gt;
+&lt;p&gt;最后再来小结一下，今天我们分享了两篇在 WWW 2023 上有关因果关联的工作，在因果关联的这颗老树上又发出了新芽，而且这两篇论文，尤其是第二篇论文，都是有实际落地的可能，值得我们学习。&lt;/p&gt;
 &lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>

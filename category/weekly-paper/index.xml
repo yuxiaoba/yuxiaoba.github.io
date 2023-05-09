@@ -5,12 +5,310 @@
     <link>https://yuxiaoba.github.io/category/weekly-paper/</link>
       <atom:link href="https://yuxiaoba.github.io/category/weekly-paper/index.xml" rel="self" type="application/rss+xml" />
     <description>Weekly Paper</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 21 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 05 Apr 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Weekly Paper</title>
       <link>https://yuxiaoba.github.io/category/weekly-paper/</link>
     </image>
+    
+    <item>
+      <title>ICSE 2023 最新成果：颠覆传统云故障处理方法，GPT 大型语言模型引领未来</title>
+      <link>https://yuxiaoba.github.io/post/icse2023_1/</link>
+      <pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/post/icse2023_1/</guid>
+      <description>&lt;p&gt;今天我们来分享 ICSE 2023 上 Microsoft 团队发表的一篇将 GPT-3.x 应用在AIOps 领域的一篇论文 Recommending Root-Cause and Mitigation Steps for Cloud Incidents using Large Language Models。&lt;/p&gt;
+&lt;p&gt;CSE 全称为 International Conference on Software Engineering，是软件工程领域 CCF A 类会议，2023 年收到 796 篇投稿，录用了 209 篇，录用率为 26%。&lt;/p&gt;
+&lt;h2 id=&#34;center-font-color0080001fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;01&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;centerfont-colorffa5002023_icse_recommending-root-cause-and-mitigation-steps-for-cloud-incidents-using-large-language-modelsfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;2023_ICSE_Recommending Root-Cause and Mitigation Steps for Cloud Incidents using Large Language Models&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gpt1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;论文背景&#34;&gt;&lt;strong&gt;论文背景&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;在大型的 IT 软件系统中，由于软件的变更、运维的操作和外部环境变化等诸多因素，经常出现各种类型的故障。在故障发生后，运维工程师需要快速地进行根因定位并采取相应的恢复措施，以保障系统的可用性。&lt;/p&gt;
+&lt;p&gt;为了记录故障的全生命周期，运维工程师通过以文本和图片的形式记录故障的发生、检测、定位和修复过程，这个记录也被称为 Incident 。下图展现了一个典型的 Incident 样例。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gpt2.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;论文动机&#34;&gt;&lt;strong&gt;论文动机&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;从上面的图可以看出，故障的 incident 是一种自然语言的形式，GPT-3.x 对自然语言处理的成功让 Microsoft 的研究人员意识到，有可能将 GPT-3.x 应用到incident 分析中，即将 incident 的标题和摘要（如错误的信息，异常的表现）作为输入，自动化生成故障的根因和推荐故障修复的措施。&lt;/p&gt;
+&lt;p&gt;为了将  GPT-3.x 应用到 incident 分析中， 作者收集了 Microsoft 中从2018年1月1日至2022年7月15日期间的超过 40,000 个 incident  数据，得到了 57,520 个根因定位样例和 8,300 个故障修复样例。然后制定了六个研究问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GPT-3.x 是否能够有效诊断 incident 的根因？&lt;/li&gt;
+&lt;li&gt;GPT-3.x 是否能够有效地推荐缓解 incident 的措施？&lt;/li&gt;
+&lt;li&gt;是否需要对 GPT-3.x 进行微调以适应 incident 分析场景 ？&lt;/li&gt;
+&lt;li&gt;Multi-task learning 能提高 GPT-3.x 模型在根因诊断和故障修复推荐方面的准确率吗？&lt;/li&gt;
+&lt;li&gt;如果已确定根因， GPT-3.x 是否能找到更好的故障修复措施？&lt;/li&gt;
+&lt;li&gt;GPT-3.x 更擅长处理 machine-detected incident 还是更擅长处理human-detected incident ？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;论文方法&#34;&gt;&lt;strong&gt;论文方法&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;为了研究上面的六个问题，论文选取了两个当前最先进的 encoder-decoder 模型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RoBERTa : 训练数据集只包含文本 NLP 模型&lt;/li&gt;
+&lt;li&gt;CodeBERT：训练数据集包含文本和代码的 NLP 模型， 125M 个参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;此外还选取了 4 个 OpenAI 的 GPT 模型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Curie:  训练数据集包含文本的，速度最快的GPT-3 模型，6.7 Billion 个参数&lt;/li&gt;
+&lt;li&gt;CodeX: 训练数据集包含文本和代码的 GPT-3 模型， 12 Billion 个参数&lt;/li&gt;
+&lt;li&gt;Davinci: 训练数据集只包含文本的 GPT-3.5 模型，175 Billion 个参数&lt;/li&gt;
+&lt;li&gt;Code-davinci-002:  训练数据集包含文本和代码的 GPT-3.5 模型，175 Billion个参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在根因定位方面，论文选择了 35820， 3000，2000 根因案例作为 training，testing ，validation。&lt;/p&gt;
+&lt;p&gt;在故障恢复推荐方面，论文选择了 5455， 2000， 500 故障恢复案例作为training，testing ，validation。&lt;/p&gt;
+&lt;p&gt;为了验证方法的效果，论文还设置了六个 NLP 领域的指标 BLEU-4，ROUGE-L，METEOR，BERTScore，BLEURT，NUBIA。这六个指标解释起来有点复杂，简单的说，它们都是衡量生成的文本与参考的文本的相似程度，相似程度越高得分越高，说明与实际的根因定位和修复策略越接近。&lt;/p&gt;
+&lt;p&gt;除此之外，论文还将最近 2 个月的 50 个 incident 的结果与 incident 对应负责人进行采访，让他们对结果的正确性和可读性进行打分。&lt;/p&gt;
+&lt;h4 id=&#34;论文结果&#34;&gt;&lt;strong&gt;论文结果&lt;/strong&gt;&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;GPT-3.x 是否能够有效诊断 incident 的根因？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gpt3.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;直观地看上表，我们可以发现 GPT-3.x  的结果似乎与 BERT 模型的结果相差不大。文章解释说是因为：NLP 的指标不适用于对根因定位和故障修复措施的衡量。例如 “代码中有一个bug” 是 incident 中非常常见和通用的句子，可能是任何根因的一部分，因此 BERT 模型只需复制特定的字段就可以最大限度地提高准确率。&lt;/p&gt;
+&lt;p&gt;虽然 NLP 指标的结果差不多，但是作者在采访中发现，大多被采访者抱怨 BERT 模型返回的结果都是套路，例如返回 “代码中有一个bug”对故障的定位没有任何帮助。而 GPT-3.x  返回的结果则会更有针对性，更有利于根因定位。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;GPT-3.x 是否能够有效地推荐缓解 incident 的措施？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gpt4.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+在故障修复措施这里，结果也是类似的， GPT-3.x  的结果似乎与 BERT 模型的结果相差不大。这是因为 incident 的故障修复措施中同样包含一些常见的句子如 “问题自行缓解”，“已部署到所有地区” ，导致总是把这些句子输出就获得了一个不错的结果，但是这些句子没有用处。但总的来说， GPT-3.x 的结果还是会好一些。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;是否需要对 GPT-3.x 进行微调以适应 incident 分析场景 ？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gpt5.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+通用的 GPT-3 模型 pre-train 数据集中是不包含 incident 数据的，为了让它适应 incident 的场景，作者在 training 的数据集中使用包含 incident 数据对模型进行 find-tuned。从上表中可以发现，微调后的模型是要比没有微调的结果要好。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Multi-task learning  能提高 GPT-3.x 模型在根因诊断和故障修复推荐方面的准确率吗？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gpt6.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+前面的 GPT 模型是将根因定位和故障修复的任务分开训练，这一块论文将两个任务的训练数据作为输入一起训练，然后使用相应的测试集分别测试模型。总的来说，从表 V 中可以观察到 Multi-task learning 并没有显著优于单任务。论文认为这主要是因为根因和缓解措施之间缺乏联系。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果已确定根因， GPT-3.x 是否能找到更好的缓解措施？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gpt7.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+上表的结果说明额外的根因信息可以给故障修复带来的相当大的性能增益。也就是说，如果根因定位准确， GPT-3.x 能找到更好的缓解措施。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GPT-3.x 更擅长处理 machine-detected incident 还是更擅长处理human-detected incident ？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gpt8.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+上表的结果表明 machine-detected incident  的结果可以比 human-detected incident 更好。这是因为 machine-detected incident 通常遵循某些模式，这些模式更容易被机器学习模型识别。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;微软工程师对 GPT 生成结果的反馈采访
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gpt9.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gpt10.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+上表中 incident 负责人为 RoBERTa 和 CodeBERT 模型打了较低的正确性分数。尽管 GPT-3.x 的正确性得分在 2.28 到 3.16 之间，但工程师指出，GPT-3.x 模型推荐了有效的根因和缓解措施，或者可以给予工程师有价值的建议。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://arxiv.org/abs/2303.00554&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/abs/2303.00554&lt;/a&gt;
+代码链接：&lt;a href=&#34;https://github.com/sarthak-chakraborty/CausIL&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/sarthak-chakraborty/CausIL&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最后再来小结一下，本篇论文是我看到的在 AIOps 领域第一个使用 LLM 大模型的探索工作，论文对微软超过 40,000 个 incident 进行研究，证明先进的大型语言模型，可以有效地帮助 incident 管理，特别是在根因诊断和故障修复推荐方面。&lt;/p&gt;
+&lt;p&gt;这项工作是一个门槛非常高的工作，数据集、模型训练的成本都不是我这种小 Phd 可以完成的，非常羡慕能够完成一个这样的工作。同时也非常羡慕 Microsoft 的学术嗅觉，在我还没有意识到 GPT 的强悍之前，他们已经把工作做完了，这大概就是世界顶级团队。&lt;/p&gt;
+&lt;p&gt;论文的开头画了一个大饼，需要输入故障的描述和表现就可以自动化生成故障的根因和修复措施。但是论文的实验结果又不是很客观，缺乏了一个合理的指标对结果进行量化，总体上感觉没有那么让人信服。如果能够提出一个可以量化本文结果的指标，那也是一个很大的贡献。&lt;/p&gt;
+&lt;p&gt;现在的 GPT-4 据说已经是可以处理多模态的数据了，那么运维日常使用的 Metric、Trace 、 Log 等数据是不是也可以与 Incident 数据一起打包进模型里呢？也许我们苦苦追寻的基于多模态数据的根因定位就这么粗暴地被解决了。&lt;/p&gt;
+&lt;p&gt;除此之外，GPT 的可解释性是比较差的，日常的使用就会有一种一本正经地胡说八道的问题，如果在故障处理的时候，它一本正经地胡说，很可能进行错误的指引，把工程师往坑里带，反而会延长故障的修复时间。用一种不是很可靠的方法，去解决可靠性的问题，多少还是感觉有点让人心慌。期待这个方向有更有意思的东西！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://arxiv.org/pdf/2301.03797.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/pdf/2301.03797.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>最新出炉！WWW 2023 云计算领域论文盘点（一）</title>
@@ -41,7 +339,7 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./facebook1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./cmd1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 论文提出了一个无监督的通过分析服务之间 Call Metric 的因果关系进行根因定位方法 CMDiagnostor。这种指标根因定位的思路我们之前在 基于 Metrics 的根因定位 (二)：因果关系图 中概述过，它主要是通过Metrics 之间的依赖关系构建出调用关系图，然后基于相关性或随机游走算法在图上游走从而定位出根因。这种根因定位方法的准确性极大地依赖于调用关系图的构建是否准确。CMDiagnostor 的主要贡献就是优化了调用关系图的构建方式。&lt;/p&gt;
@@ -64,10 +362,11 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./facebook2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./cmd2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;对每一个 Frequent Pattern P，Minesweeper 会根据下面的公式计算出它的 Precision 和 Recall&lt;/p&gt;
+&lt;p&gt;如果没有对上文的歧义进行进一步的划分，因果关系图的构建是不够准确的，从而也会影响到根因定位的准确性。CMDiagnostor 提出了一种流量回归方法（称为AmSitor）来处理模糊性，并构建无模糊调用图。其核心思想是：将一个下游流量与其可能的上游流量进行线性回归，每个上游流量的回归系数可以被视为其期望值。具有低系数（例如，小于或等于 0.005）的上游将被剪枝掉。&lt;/p&gt;
+&lt;p&gt;通过 AmSitor 进行剪枝，CMDiagnostor 就可以去除掉调用图中带有的歧义，剩下的根因定位过程（如下图所示）与我们之前分享的  MicroHECL 和 Microscope 大同小异，感兴趣也可看一下 &lt;a href=&#34;https://yuxiaoba.github.io/post/metric_based_rca_2/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;基于 Metrics 的根因定位 (二)：因果关系图&lt;/a&gt; 。&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -86,16 +385,17 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./facebook3.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./cmd3.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;这里 Precision 描述了一个 P 在 Test 阶段出现，不在 Control 阶段出现的概率，也就是说在 T 中频繁出现，在 C 中出现不频繁的 P 可疑得分更高。Recall 描述了 P 能覆盖多少 Test 阶段的 Trace，它表示了 P 在 Test 阶段的代表性，越有代表性越重要。最后为了综合考虑两个参数，一个  Frequent Pattern 的可疑性是通过计算它的 F1-Score 得出的。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：这篇论文是 Facebook 在 2021 年发表在 CCF A 类会议 ICSE 的 Industry Track 上的论文。Minesweeper 来自工业界的真实实践，使用简单的统计方法，可解释性比较强。不过论文似乎没有考虑并发和异步调用的情况。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：CMDiagnostor 是清华大学裴丹老师的团队，话题是一个老话题，但是裴老师的团队又做出了新的创新点，不失为在没有 Trace 的情况下的一种解决方式吧。但是如果系统的 Trace 已经比较完善，应该是还是使用 Trace 能获得更准确的调用关系。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://arxiv.org/abs/2010.09974&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/abs/2010.09974&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://netman.aiops.org/wp-content/uploads/2023/02/CMDiagnostor_www_2023.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://netman.aiops.org/wp-content/uploads/2023/02/CMDiagnostor_www_2023.pdf&lt;/a&gt;
+代码链接：&lt;a href=&#34;https://github.com/NetManAIOps/CMDiagnostor&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/NetManAIOps/CMDiagnostor&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;center-font-color0080002fontcenter&#34;&gt;&lt;center&gt; &lt;font color=#00800&gt;02&lt;/font&gt;&lt;/center&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;centerfont-colorffa50021_iwqos_practical-root-cause-localization-for-microservice-systems-via-trace-analysisfontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;21_IWQoS_Practical Root Cause Localization for Microservice Systems via Trace Analysis&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;centerfont-colorffa5002023_www_causil-causal-graph-for-instance-level-microservice-datafontcenter&#34;&gt;&lt;center&gt;&lt;font color=#FFA500&gt;2023_WWW_CausIL: Causal Graph for Instance Level Microservice Data&lt;/font&gt;&lt;/center&gt;&lt;/h3&gt;
 &lt;p&gt;
 
 
@@ -114,10 +414,10 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tracerca1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./causIL1.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 论文提出了一个 Spectrum 算法与频繁模式挖掘相结合的无监督根因定位算法 TraceRCA。TraceRCA 以一个时间窗口的 Trace 为输入，然后使用一个无监督多度量异常检测方法检测出异常的 Trace。Trace 异常检测是另外一个内容了，这里先不细说，我先挖个坑，以后再专门统一对 Trace 异常检测的论文进行分析。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文简介:&lt;/strong&gt; 论文为微服务系统提出一个服务实例级别（service instance level）的因果关系图构建框架 CausIL 。传统的因果构建图方式如 MicroHECL、Microscope 和上文的 CMDiagnostor 一般都是在服务级别（service level）构建因果关系图，这种构造方式对 instance level metric 进行聚合，可能会平滑了某个服务实例的异常表现。如下图两个例子都是在服务级别进行 metric 的 average 后导致了失真，从而影响到后面的根因定位。&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -136,18 +436,105 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tracerca2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./causIL2.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./causIL3.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;在划分好正常的 Trace 和异常的 Trace后，TraceRCA 通过 FP-Growth 算法 来挖掘满足支持度阈值的 Frequent Pattern （即可疑的微服务集），然后计算出 Frequent Pattern  的支持度 (support )和置信度 (confidence) 。&lt;/p&gt;
-&lt;p&gt;其中 support = P(X|Y)，X指的是通过某个 Pattern 的所有 Trace，Y是指所有异常的 Trace，这个 P 指的是在所有异常 Trace 中经过该 Pattern 的异常 Trace比例。 confidence = P(Y|X)，指的是所有经过该 Pattern 的 Trace中，异常 Trace所占的比例。&lt;/p&gt;
-&lt;p&gt;接着 TraceRCA 计算他们的 Jaccard Index (JI) 得分，也就是 support 和 confidence 的调和平均数，获得 Pattern 的可疑得分。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：论文是清华大学裴丹老师团队 2021 年发表在 CCF B 类会议 IWQoS 上的。与前面 Facebook 的方案比较大的不同是，TraceRCA 需要事先检测出异常的 Trace，这个 Trace 异常检测的效果会对后面根因定位的结果有较大的影响。并且对每条 Trace 进行准确异常检测，不仅难度比较大，计算的量也比较大，一定程度上限制了 TraceRCA 的使用。&lt;/p&gt;
+&lt;p&gt;为了克服在服务级别构建因果关系图的缺陷，本文就提出了构建服务实例级别的因果关系图。对于微服务S，设 x_ijt 是服务 S 的第 j 个实例在 t 时间的第 i 的指标，假设child metric  x_ijt 是因果依赖于 parent metric 集合 P( x_ijt )，那给定 P( x_ijt ) 下， 图片的条件分布可以表示为:&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./causIL5.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;因果关系估计算法的任务是识别每个 metric 的 parent metric P( x_ijt ) 以及因果函数 f_ij(.)。给定每个 child metric 的因果parent metric，通过估计器 f_ij(.) 估计 parent metric 和 child metric 之间的因果关系的强度。 CausIL 使用 Fast Greedy Equivalence Search（fGES）和 Bayesian Information Criterion (BIC) 进行因果发现&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./causIL6.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;个人评论&lt;/strong&gt;：这篇论文是 Adobe 印度研究院的团队发表的论文，最大的贡献是把因果关系细粒度化到服务实例级别，这么简单的 idea 我之前怎么没想到 。除此之外，论文里还融入了一些 domain knowledge，这些在工业界的实践值得参考&lt;/p&gt;
+&lt;p&gt;在任何情况下，同一服务中的任何其他 metric 都不会影响 workload
+latency 不会影响 resource 利用率。
+如果服务之间在调用图上没有连接，禁止服务之间的所有因果关联
+对服务内部的 metric 之间的因果关系进行假设（如下图）&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./causIL4.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;论文链接：&lt;a href=&#34;https://netman.aiops.org/wp-content/uploads/2021/05/1570705191.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://netman.aiops.org/wp-content/uploads/2021/05/1570705191.pdf&lt;/a&gt;
-代码链接：&lt;a href=&#34;https://github.com/NetManAIOps/TraceRCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/NetManAIOps/TraceRCA&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;论文链接：&lt;a href=&#34;https://arxiv.org/abs/2303.00554&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/abs/2303.00554&lt;/a&gt;
+代码链接：&lt;a href=&#34;https://github.com/sarthak-chakraborty/CausIL&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/sarthak-chakraborty/CausIL&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;最后再来小结一下，与 Trace 路径抽象 中输出粗粒度的 Trace 路径不同，频繁模式挖掘最后输出的是一个更细粒度的路径子集，能够帮助运维工程师更快地聚焦到故障点。此外，基于统计的计算方式以及较强的可解释性，也为这种方法在工业界实际应用提供了可能。&lt;/p&gt;
+&lt;p&gt;最后再来小结一下，今天我们分享了两篇在 WWW 2023 上有关因果关联的工作，在因果关联的这颗老树上又发出了新芽，而且这两篇论文，尤其是第二篇论文，都是有实际落地的可能，值得我们学习。&lt;/p&gt;
 &lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
