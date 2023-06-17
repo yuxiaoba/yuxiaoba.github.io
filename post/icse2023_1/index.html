@@ -1090,10 +1090,7 @@
 上表中 incident 负责人为 RoBERTa 和 CodeBERT 模型打了较低的正确性分数。尽管 GPT-3.x 的正确性得分在 2.28 到 3.16 之间，但工程师指出，GPT-3.x 模型推荐了有效的根因和缓解措施，或者可以给予工程师有价值的建议。</p>
 </li>
 </ol>
-<blockquote>
-<p>论文链接：<a href="https://arxiv.org/abs/2303.00554" target="_blank" rel="noopener">https://arxiv.org/abs/2303.00554</a>
-代码链接：<a href="https://github.com/sarthak-chakraborty/CausIL" target="_blank" rel="noopener">https://github.com/sarthak-chakraborty/CausIL</a></p>
-</blockquote>
+<h4 id="论文小结"><strong>论文小结</strong></h4>
 <p>最后再来小结一下，本篇论文是我看到的在 AIOps 领域第一个使用 LLM 大模型的探索工作，论文对微软超过 40,000 个 incident 进行研究，证明先进的大型语言模型，可以有效地帮助 incident 管理，特别是在根因诊断和故障修复推荐方面。</p>
 <p>这项工作是一个门槛非常高的工作，数据集、模型训练的成本都不是我这种小 Phd 可以完成的，非常羡慕能够完成一个这样的工作。同时也非常羡慕 Microsoft 的学术嗅觉，在我还没有意识到 GPT 的强悍之前，他们已经把工作做完了，这大概就是世界顶级团队。</p>
 <p>论文的开头画了一个大饼，需要输入故障的描述和表现就可以自动化生成故障的根因和修复措施。但是论文的实验结果又不是很客观，缺乏了一个合理的指标对结果进行量化，总体上感觉没有那么让人信服。如果能够提出一个可以量化本文结果的指标，那也是一个很大的贡献。</p>

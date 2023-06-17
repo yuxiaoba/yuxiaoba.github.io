@@ -5,12 +5,42 @@
     <link>https://yuxiaoba.github.io/tag/aiops/</link>
       <atom:link href="https://yuxiaoba.github.io/tag/aiops/index.xml" rel="self" type="application/rss+xml" />
     <description>AIOps</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 21 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 16 Jun 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>AIOps</title>
       <link>https://yuxiaoba.github.io/tag/aiops/</link>
     </image>
+    
+    <item>
+      <title>MARS: Fault Localization in Programmable Networking Systems with Low-cost In-Band Network Telemetry</title>
+      <link>https://yuxiaoba.github.io/publication/mars23/</link>
+      <pubDate>Fri, 16 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/publication/mars23/</guid>
+      <description>&lt;p&gt;The blow figure shows the framework of GIED.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./mars.png&#34; alt=&#34;MARS Framework&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>最新出炉！WWW 2023 云计算领域论文盘点（一）</title>

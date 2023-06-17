@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep Reinforcement Learning | Welcome to Guangba&#39;s HomePage</title>
+    <link>https://yuxiaoba.github.io/tag/deep-reinforcement-learning/</link>
+      <atom:link href="https://yuxiaoba.github.io/tag/deep-reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
+    <description>Deep Reinforcement Learning</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 16 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Deep Reinforcement Learning</title>
+      <link>https://yuxiaoba.github.io/tag/deep-reinforcement-learning/</link>
+    </image>
+    
+    <item>
+      <title>DeepPower: Deep Reinforcement Learning based Power Management for Latency Critical Applications in Multi-core Systems</title>
+      <link>https://yuxiaoba.github.io/publication/deeppower23/</link>
+      <pubDate>Fri, 16 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/publication/deeppower23/</guid>
+      <description>&lt;p&gt;The blow figure shows the framework of GIED.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./DeepPower.jpg&#34; alt=&#34;DeepPower Framework&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
