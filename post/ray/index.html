@@ -856,7 +856,7 @@
 </p>
 <p>今天我们分享的论文就是 Ray 的论文原型，2018  年 UC Berkeley Rise Lab 团队发表在 CCF A 类的操作系统顶级会议 OSDI 上的论文：Ray: A Distributed Framework for Emerging AI Applications。值得注意的是，论文是  2018  年的，经过几年的迭代，当前的最新的  Ray 版本与论文的原型存在部分差异，但核心思想是不变的。</p>
 <h3 id="centerfont-colorffa5002018_osdi_ray-a-distributed-framework-for-emerging-ai-applicationsfontcenter"><center><font color=#FFA500>2018_OSDI_Ray: A Distributed Framework for Emerging AI Applications</font></center></h3>
-<h4 id="论文背景"><strong>论文背景</strong></h4>
+<h4 id="font-colorffa500论文背景-fontcenter"><font color=#FFA500><strong>论文背景</strong> </font></center></h4>
 <p>现代 AI 应用，如强化学习，它已经不是由一种机器学习任务组成，而是会包含多种机器学习任务，比如 Data Processing、Training、Serving 和Simulation 等。</p>
 <p>
 
@@ -923,7 +923,7 @@
     <div class="w-100" ><img src="./ray3.png" alt="" loading="lazy" data-zoomable /></div>
   </div></figure>
 </p>
-<h4 id="ray-框架"><strong>Ray 框架</strong></h4>
+<h4 id="font-colorffa500ray-框架-fontcenter"><font color=#FFA500><strong>Ray 框架</strong>* </font></center></h4>
 <p>Ray 采取一种新的可横向扩展的分布式结构。Ray 的结构由两部分组成：Application Layer 和 System Layer。Application Layer 实现 API 和计算模型，执行分布式计算任务。System Layer 负责任务调度和数据管理，来满足表现性能和容错的要求。</p>
 <p>
 
@@ -947,7 +947,7 @@
   </div></figure>
 </p>
 <ol>
-<li>Application Layer</li>
+<li><strong>Application Layer</strong></li>
 </ol>
 <p>Ray的 Application Layer 使用传统的 Driver-Worker 模式进行组织。</p>
 <ul>
@@ -958,7 +958,7 @@
 <li>Object store：本地存储器，用于存储task输入输出结果。它是一个基于内存的对象存储，同节点的 worker 可以通过 shared mem 机制来获取数据</li>
 </ul>
 <ol start="2">
-<li>System  Layer</li>
+<li><strong>System  Layer</strong></li>
 </ol>
 <ul>
 <li>
@@ -993,13 +993,13 @@
   </div></figure>
 </p>
 <ol start="3">
-<li>Ray Shedule Example</li>
+<li><strong>Ray Shedule Example</strong></li>
 </ol>
 <p>下图展示了由 Driver 调用 add.remote(a，b) 触发的逐步操作，其中 a 和 b 分别存储在节点 N1 和 N2 上。
 N1 的 Driver 将 add(a，b)提交给 Local Scheduler</p>
 <pre><code>1. Local Scheduler 发现 b 不在  N1  上，将  add(a，b) 转发给 Global Scheduler
 2. Global Scheduler 在 GCS 中查找 add(a，b) 的自变量的位置
-3. 3. Global Scheduler  决定在存储自变量 b 的节点 N2 上调度任务
+3. Global Scheduler  决定在存储自变量 b 的节点 N2 上调度任务
 4. 节点 N2 处的 Local Scheduler  检查 Local Object Store 是否包含 add(a，b) 的自变量
 5. 节点 N2 处的 Local Scheduler 发现 Local Object Store 没有 objetc a，它在 GCS 中查找 a 的位置 
 6. N2 Local Scheduler  得知 a 存储在 N1，N2 的 Object Store 复制它到本地
@@ -1027,7 +1027,7 @@ N1 的 Driver 将 add(a，b)提交给 Local Scheduler</p>
     <div class="w-100" ><img src="./ray6.png" alt="" loading="lazy" data-zoomable /></div>
   </div></figure>
 </p>
-<h4 id="论文结果"><strong>论文结果</strong></h4>
+<h4 id="font-colorffa500论文结果-fontcenter"><font color=#FFA500><strong>论文结果</strong> </font></center></h4>
 <p>Ray 中 GCS 的主要优势是增强系统的横向可扩展性。在实验中可以观察到几乎线性的任务吞吐量增长。在 60 节点，Ray 可以达到超过每秒 100 万个任务的吞吐量，并线性地在 100 个节点上超过每秒 180 万个任务。最右边的数据点显示，Ray 可以在不到一分钟的时间处理 1 亿个任务（54s）</p>
 <p>
 
