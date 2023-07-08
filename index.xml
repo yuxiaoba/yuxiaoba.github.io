@@ -2425,7 +2425,7 @@ a → b → c → d&lt;/p&gt;
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./logredcuer.jpg&#34; alt=&#34;GIED Framework&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./logredcuer.jpg&#34; alt=&#34;LogReducer Framework&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 </description>
@@ -4664,6 +4664,27 @@ $$&lt;/p&gt;
 &lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>News</title>
+      <link>https://yuxiaoba.github.io/news/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/news/</guid>
+      <description>
+
+
+
+
+
+
+
+
+&lt;p&gt;&lt;strong&gt;[13/04/20]&lt;/strong&gt; New paper on &lt;a href=&#34;https://yuxiaoba.github.io/publication/2020jpaturet/&#34;&gt;Stochastic Unit Commitment in Low-Inertia Grids&lt;/a&gt; published on IEEE Transactions on Power Systems.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[12/02/20]&lt;/strong&gt; Seminar presentation on &lt;a href=&#34;https://yuxiaoba.github.io/talk/2020-feb-ucy/&#34;&gt;Data-driven decentralised control design in Active Distribution Networks&lt;/a&gt; at &lt;a href=&#34;http://ucy.ac.cy&#34;&gt;UCY&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[31/12/19]&lt;/strong&gt; New paper on &lt;a href=&#34;https://yuxiaoba.github.io/publication/2020jdehghan/&#34;&gt; A Robust Coordinated Expansion Planning Model For Wind Farm-Integrated Power Systems With Flexibility Sources Using Affine Policies&lt;/a&gt; published on IEEE Systems Journal.&lt;/p&gt;
+
 </description>
     </item>
     
