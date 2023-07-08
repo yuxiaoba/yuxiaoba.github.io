@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>RCA | Welcome to Guangba&#39;s HomePage</title>
-    <link>https://yuxiaoba.github.io/tag/rca/</link>
-      <atom:link href="https://yuxiaoba.github.io/tag/rca/index.xml" rel="self" type="application/rss+xml" />
-    <description>RCA</description>
+    <title>Performance Optimiazation | Welcome to Guangba&#39;s HomePage</title>
+    <link>https://yuxiaoba.github.io/tag/performance-optimiazation/</link>
+      <atom:link href="https://yuxiaoba.github.io/tag/performance-optimiazation/index.xml" rel="self" type="application/rss+xml" />
+    <description>Performance Optimiazation</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
-      <title>RCA</title>
-      <link>https://yuxiaoba.github.io/tag/rca/</link>
+      <title>Performance Optimiazation</title>
+      <link>https://yuxiaoba.github.io/tag/performance-optimiazation/</link>
     </image>
     
     <item>
@@ -250,196 +250,6 @@
 &lt;p&gt;论文链接：&lt;a href=&#34;https://yuxiaoba.github.io/publication/deeppower23/deeppower23.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://yuxiaoba.github.io/publication/deeppower23/deeppower23.pdf&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 &lt;a href=&#34;https://github.com/IntelligentDDS/awesome-papers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/IntelligentDDS/awesome-papers&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>MARS: Fault Localization in Programmable Networking Systems with Low-cost In-Band Network Telemetry</title>
-      <link>https://yuxiaoba.github.io/publication/mars23/</link>
-      <pubDate>Fri, 16 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/publication/mars23/</guid>
-      <description>&lt;p&gt;The blow figure shows the framework of GIED.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./mars.png&#34; alt=&#34;MARS Framework&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>MicroSketch: Lightweight and Adaptive Sketch based Performance Issue Detection and Localization in Microservice Systems</title>
-      <link>https://yuxiaoba.github.io/publication/microsketch22/</link>
-      <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/publication/microsketch22/</guid>
-      <description>&lt;p&gt;The blow figure shows the framework of MicroSketch.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microsketch.jpg&#34; alt=&#34;indecident type&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Graph based Incident Extraction and Diagnosis in Large-Scale Online Systems</title>
-      <link>https://yuxiaoba.github.io/publication/gied22/</link>
-      <pubDate>Tue, 19 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/publication/gied22/</guid>
-      <description>&lt;p&gt;The blow figure shows the framework of GIED.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./gied.jpg&#34; alt=&#34;GIED Framework&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>MicroRank</title>
-      <link>https://yuxiaoba.github.io/project/microrank/</link>
-      <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/project/microrank/</guid>
-      <description>&lt;p&gt;MicroRank is a novel system to locate root causes that lead to latency issues in microservice environments.&lt;/p&gt;
-&lt;p&gt;MicroRank extracts service latency from tracing data then conducts the anomaly detection procedure.&lt;/p&gt;
-&lt;p&gt;By combining PageRank and spectrum analysis, the service instances that lead to latency issues are ranked with high scores.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microrank.jpg&#34; alt=&#34;microrank&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>TraceRank: Abnormal Service Localization with Dis-Aggregated End-to-End Tracing Data in Cloud Native Systems</title>
-      <link>https://yuxiaoba.github.io/publication/tracerank/</link>
-      <pubDate>Tue, 07 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/publication/tracerank/</guid>
-      <description>&lt;p&gt;The blow figure shows the framework of TraceRank.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tracerank.jpg&#34; alt=&#34;Tracerank Framework&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>T-Rank:A Lightweight Spectrum based Fault Localization Approach for Microservice Systems</title>
-      <link>https://yuxiaoba.github.io/publication/trank/</link>
-      <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/publication/trank/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments</title>
-      <link>https://yuxiaoba.github.io/publication/microrank/</link>
-      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/publication/microrank/</guid>
-      <description>&lt;p&gt;The blow figure shows the framework of MicroRank.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microrank.jpg&#34; alt=&#34;MicroRank Framework&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
 </description>
     </item>
     

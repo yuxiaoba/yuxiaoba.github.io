@@ -1,0 +1,1506 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.4.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Guangba Yu" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="DDS 实验室两篇论文被并行计算领域的顶级学术会议ICPP（International Conference on Parallel Processing）接收为长文。”" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://yuxiaoba.github.io/post/icpp23/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.2a85acfde01ecde91ff15c66a13984b7.css" />
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://yuxiaoba.github.io/post/icpp23/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Welcome to Guangba&#39;s HomePage" />
+  <meta property="og:url" content="https://yuxiaoba.github.io/post/icpp23/" />
+  <meta property="og:title" content="DDS 第一手研究曝光：ICPP 梅开二度 | Welcome to Guangba&#39;s HomePage" />
+  <meta property="og:description" content="DDS 实验室两篇论文被并行计算领域的顶级学术会议ICPP（International Conference on Parallel Processing）接收为长文。”" /><meta property="og:image" content="https://yuxiaoba.github.io/post/icpp23/featured.jpeg" />
+    <meta property="twitter:image" content="https://yuxiaoba.github.io/post/icpp23/featured.jpeg" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2023-07-07T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2023-07-07T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://yuxiaoba.github.io/post/icpp23/"
+  },
+  "headline": "DDS 第一手研究曝光：ICPP 梅开二度",
+  
+  "image": [
+    "https://yuxiaoba.github.io/post/icpp23/featured.jpeg"
+  ],
+  
+  "datePublished": "2023-07-07T00:00:00Z",
+  "dateModified": "2023-07-07T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Guangba Yu"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Welcome to Guangba's HomePage",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "DDS 实验室两篇论文被并行计算领域的顶级学术会议ICPP（International Conference on Parallel Processing）接收为长文。”"
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>DDS 第一手研究曝光：ICPP 梅开二度 | Welcome to Guangba&#39;s HomePage</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="688501d27fe3751e0a927ecaa112a0da" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.ced4c4e0190cf57ce42494e355f2bdf6.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Welcome to Guangba&#39;s HomePage</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Welcome to Guangba&#39;s HomePage</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#publications"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blogs</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>DDS 第一手研究曝光：ICPP 梅开二度</h1>
+
+  
+  <p class="page-subtitle">DDS 实验室两篇论文被并行计算领域的顶级学术会议ICPP（International Conference on Parallel Processing）接收为长文。”</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Guangba Yu</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jul 7, 2023
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/weekly-paper/">Weekly Paper</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header container featured-image-wrapper mt-4 mb-4" style="max-width: 1200px; max-height: 675px;">
+  <div style="position: relative">
+    <img src="/post/icpp23/featured_hubec72c35ce7bc0f2ebe03ff7af694e2f_746820_1200x2500_fit_q75_h2_lanczos.webp" width="1200" height="675" alt="" class="featured-image">
+    <span class="article-header-caption">Image credit: <a href="https://unsplash.com/photos/CpkOjOcXdUY"><strong>Unsplash</strong></a></span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>International Conference on Parallel Processing （ICPP）并行处理国际会议是世界上历史最悠久的并行计算学术会议之一，今已经在全球连续举办了52届。ICPP 被中国计算机学会（CCF）推荐国际学术会议列表认定为B类会议，是计算机并行计算领域最有学术影响力的顶级会议之一。</p>
+<p>ICPP 2023 将于2023年8月7日至10日在犹他州盐湖城举行，我们实验室这次共有两篇论文被接收为长文。下面我们首次曝光这两个工作，欢迎大家关注我们的公众号，我们会持续推送最新的研究进展。</p>
+<h2 id="center-font-color409dfemars-fault-localization-in-programmable-networking-systems-with-low-cost-in-band-network-telemetryfontcenter"><center> <font color=#409DFE>MARS: Fault Localization in Programmable Networking Systems with Low-cost In-Band Network Telemetry</font></center></h2>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./icpp0.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="font-color409dfe论文背景font"><font color=#409DFE>论文背景</font></h3>
+<p>在大规模数据中心中，除了服务器外，网络设备是重要的组成部分。软件定义网络（Software Defined Network，SDN）是由美国斯坦福大学 CLean State课题研究组提出的一种新型网络创新架构，是网络虚拟化的一种实现方式。其通过将网络设备的控制面与数据面分离开来，实现了网络流量的灵活控制。如今 SDN 交换机已被各大云数据中心广泛使用。</p>
+<p>由于一个 SDN 交换机通常负责一个区域的服务器网络，因此一旦 SDN 交换机出现故障，对上层应用的影响甚至大于服务器出现故障时的影响。因此在庞大的数据中心中，对 SDN 交换机进行实时监控和诊断对保证上层应用的可靠性来说非常重要。</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./icpp1.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>但是当前的 SDN 交换机监控和诊断方法存在以下几个局限性：</p>
+<ul>
+<li>当前的 SDN 交换机监控方法监控开销大，会带来额外的流量影响网络性能</li>
+<li>当前的 SDN 交换机异常检测方法，依赖于静态阈值，需要大量的专家知识</li>
+<li>当前的 SDN 交换机根因定位方法针对的故障类型有限，定位精度差</li>
+</ul>
+<h3 id="font-color409dfe论文方法font"><font color=#409DFE>论文方法</font></h3>
+<p>为了克服已有工作的局限性，我们提出了一个端到端的  SDN  网络环境监控、异常检测、根因定位系统：MARS。下图展现了  MARS  的整体架构。</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./icpp2.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>MARS 的贡献主要包括以下几点：</p>
+<ul>
+<li>按需监控：我们提出了一种新颖的路径感知方法来监控网络流量并按需报告数据。这种方法与网络传输路径的长度无关，不会随着网络规模的增大而产生额外的开销。</li>
+<li>自适应异常检测：我们提出了一种利用 reservoir model 自适应更新网络控制面中的阈值来进行 In-Network 异常检测的方法</li>
+<li>自动化根因定位，我们将将频繁序列挖掘和基于 Spectrum 的故障定位结合起来，实现了多个层次（flow level, switch level, and port level）的自动化根因定位 。</li>
+</ul>
+<h3 id="font-color409dfe论文实验font"><font color=#409DFE>论文实验</font></h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./icpp3.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>与对比方法相比，MARS 具有最小的 Bandwidth 开销和最小的 Diagnosis 开销。尽管 SpiderMon 和 MARS 的 Bandwidth 开销相近，但 MARS 以更全面的方式收集信息，提供了更维度和更彻底的根本原因分析。</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./icpp4.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>在根因定位方面，MARS 能够定位更多类型的故障，在  Top2 实现  95% 的召回率。</p>
+<blockquote>
+<p>论文链接：<a href="https://yuxiaoba.github.io/publication/mars23/mars23.pdf" target="_blank" rel="noopener">https://yuxiaoba.github.io/publication/mars23/mars23.pdf</a></p>
+</blockquote>
+<h2 id="center-font-color409dfedeeppower-deep-reinforcement-learning-based-power-management-for-latency-critical-applications-in-multi-core-systemsfontcenter"><center> <font color=#409DFE>DeepPower: Deep Reinforcement Learning based Power Management for Latency Critical Applications in Multi-core Systems</font></center></h2>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./icpp5.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="font-color409dfe论文背景font-1"><font color=#409DFE>论文背景</font></h3>
+<p>延迟敏感型(Latency-Critical) 应用是在现代数据中心中占有很高的比例，为用户提供电子支付、搜索等各种服务。Latency-Critical 顾名思义，是一种对延迟要求非常高（毫秒级）的应用，为了确保用户在短时间内收到响应，每个请求的尾部延迟应保持在特定水平以下，通常为几毫秒。</p>
+<p>当前数据中心通常通过长期保持较高的 CPU 频率以满足延迟要求，但是这种方式会导致 CPU 利用率低和功耗过大。现代处理器的 Dynamic voltage/frequency scaling (DVFS) 技术可以我们在运行时以几微秒的延迟动态调整每个线程的CPU 频率。因此，一个直观的节省能耗的想法是在应用高负载时将CPU频率设置在高水平，以提高其在高负载下的计算能力，从而确保QoS要求。当应用负载较低时，降低 CPU 频率，从而降低整体功耗。这也是本文的核心思想。</p>
+<h3 id="font-color409dfe论文方法font-1"><font color=#409DFE>论文方法</font></h3>
+<p>本文提出了 DeepPower，它是一个为 Latency-Critical 应用设计的的基于深度强化学习（DRL）的能耗管理解决方案。如下图所示，DeepPower 由两个关键组件组成，一个用于监控系统负载变化的 DRL Agent 和一个用于CPU频率调整的 Thread Controller。DRL Agent 以较长的间隔调整 Thread Controller 的参数，而 Thread Controller 以较短的间隔调整CPU频率，实现分级  CPU  频率控制。</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./icpp6.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>DeepPower 的贡献主要包括以下几点：</p>
+<ul>
+<li>据我们所知，DeepPower 是第一个在  Latency-Critica 应用中使用 DRL进行能耗管理的方法。由于 DRL 强大的学习能力，学习到的策略比启发式的方法更有效，从而使应用功耗降低更多</li>
+<li>DeepPower 提出了一种分级 CPU  频率控制机制。DRL Agent 以较长的间隔调整 Thread Controller 的参数，而 Thread Controller 以较短的间隔调整CPU频率。这种控制机制使 DeepPower 能够适应动态工作负载，并实现细粒度的频率调整</li>
+</ul>
+<h3 id="font-color409dfe论文结果font"><font color=#409DFE>论文结果</font></h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./icpp7.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>与 Gemini 和 ReTail 等最先进的方法相比，DeepPower 可以在满足尾部延迟限制的同时降低 28.4% 的功耗 。</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./icpp8.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>为了进一步了解DeepPower的优势，我们在图 9 中可视化了毫秒级延迟应用程序 Xapian 的运行过程，在图 10 中可视化了秒级延迟应用软件 Sphinx 。DeepPower 通过在请求处理过程中逐渐提高 CP频率来实现细粒度控制，如图 9a 和图 10a 所示。在请求处理期间，Thread Controller 缓慢地增加 CPU 频率。结果，CPU 频率在大部分时间内没有被提升到其最大水平。相反，Retail 和 Gemini 选择较粗粒度的频率（即，每个请求一次或两次）。这使得他们在许多情况下不得不提高CPU频率（即，出现长队列或请求超时），从而导致能耗更高。</p>
+<blockquote>
+<p>论文链接：<a href="https://yuxiaoba.github.io/publication/deeppower23/deeppower23.pdf" target="_blank" rel="noopener">https://yuxiaoba.github.io/publication/deeppower23/deeppower23.pdf</a></p>
+</blockquote>
+<p>CloudWeekly 每周分享与云计算相关论文，相关的论文集被收纳到 github 仓库 <a href="https://github.com/IntelligentDDS/awesome-papers" target="_blank" rel="noopener">https://github.com/IntelligentDDS/awesome-papers</a></p>
+
+    </div>
+
+    
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/cloud-computing/">Cloud Computing</a>
+  
+  <a class="badge badge-light" href="/tag/network/">Network</a>
+  
+  <a class="badge badge-light" href="/tag/rca/">RCA</a>
+  
+  <a class="badge badge-light" href="/tag/power/">Power</a>
+  
+  <a class="badge badge-light" href="/tag/performance-optimiazation/">Performance Optimiazation</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://yuxiaoba.github.io/post/icpp23/&amp;text=DDS%20%e7%ac%ac%e4%b8%80%e6%89%8b%e7%a0%94%e7%a9%b6%e6%9b%9d%e5%85%89%ef%bc%9aICPP%20%e6%a2%85%e5%bc%80%e4%ba%8c%e5%ba%a6" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://yuxiaoba.github.io/post/icpp23/&amp;t=DDS%20%e7%ac%ac%e4%b8%80%e6%89%8b%e7%a0%94%e7%a9%b6%e6%9b%9d%e5%85%89%ef%bc%9aICPP%20%e6%a2%85%e5%bc%80%e4%ba%8c%e5%ba%a6" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=DDS%20%e7%ac%ac%e4%b8%80%e6%89%8b%e7%a0%94%e7%a9%b6%e6%9b%9d%e5%85%89%ef%bc%9aICPP%20%e6%a2%85%e5%bc%80%e4%ba%8c%e5%ba%a6&amp;body=https://yuxiaoba.github.io/post/icpp23/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://yuxiaoba.github.io/post/icpp23/&amp;title=DDS%20%e7%ac%ac%e4%b8%80%e6%89%8b%e7%a0%94%e7%a9%b6%e6%9b%9d%e5%85%89%ef%bc%9aICPP%20%e6%a2%85%e5%bc%80%e4%ba%8c%e5%ba%a6" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=DDS%20%e7%ac%ac%e4%b8%80%e6%89%8b%e7%a0%94%e7%a9%b6%e6%9b%9d%e5%85%89%ef%bc%9aICPP%20%e6%a2%85%e5%bc%80%e4%ba%8c%e5%ba%a6%20https://yuxiaoba.github.io/post/icpp23/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://yuxiaoba.github.io/post/icpp23/&amp;title=DDS%20%e7%ac%ac%e4%b8%80%e6%89%8b%e7%a0%94%e7%a9%b6%e6%9b%9d%e5%85%89%ef%bc%9aICPP%20%e6%a2%85%e5%bc%80%e4%ba%8c%e5%ba%a6" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://yuxiaoba.github.io"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_huda5143898dbfb091b3de571e579696be_1505313_270x270_fill_q75_lanczos_center.jpg" alt="Guangba Yu"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://yuxiaoba.github.io">Guangba Yu</a></h5>
+      <h6 class="card-subtitle">Ph.D. Candidate Focus on Cloud Native</h6>
+      <p class="card-text">My research interests include cloud computing, microservices, Serverless, AIOps</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:yugb5@mail2.sysu.edu.cn" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=wXY0D6YAAAAJ" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/yuxiaoba" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/guangba-yu-07b216192/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/uploads/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
+
+    
+    
+    
+      
+      
+        <script src="https://cdn.jsdelivr.net/gh/desandro/imagesloaded@v4.1.4/imagesloaded.pkgd.min.js" integrity="sha512-S5PZ9GxJZO16tT9r3WJp/Safn31eu8uWrzglMahDT4dsmgqWonRY9grk3j+3tfuPr9WJNsfooOR7Gi7HL5W2jw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/metafizzy/isotope@v3.0.6/dist/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.79343bd00de25e04f03b6af2819f8643.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.f41ee09ba84b78e6bdd68fadc655c33f.js"></script>
+
+    
+    
+    
+    
+    
+    
+      
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <script src="/js/wowchemy-publication.ee00aa4e09ee62617fe2dc15bfcb3f7b.js" type="module"></script>
+
+
+
+
+
+
+</body>
+</html>
