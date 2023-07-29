@@ -33,6 +33,66 @@
     </item>
     
     <item>
+      <title>Nezha: Interpretable Fine-Grained Root Causes Analysis for Microservices on Multi-Modal Observability Data</title>
+      <link>https://yuxiaoba.github.io/publication/nezha23/</link>
+      <pubDate>Fri, 28 Jul 2023 01:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/publication/nezha23/</guid>
+      <description>&lt;p&gt;The blow figure shows the framework of Nezha.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./nezha23.jpg&#34; alt=&#34;Nazha Framework&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DiagConfig: Configuration Diagnosis of Performance Violations in Configurable Software Systems</title>
+      <link>https://yuxiaoba.github.io/publication/diagconfig23/</link>
+      <pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/publication/diagconfig23/</guid>
+      <description>&lt;p&gt;The blow figure shows the framework of Diagconfig.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./diagconfig23.jpg&#34; alt=&#34;Diagconfig Framework&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>DDS 第一手研究曝光：ICPP 梅开二度</title>
       <link>https://yuxiaoba.github.io/post/icpp23/</link>
       <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
@@ -534,7 +594,7 @@ N1 的 Driver 将 add(a，b)提交给 Local Scheduler&lt;/p&gt;
       <link>https://yuxiaoba.github.io/publication/deeppower23/</link>
       <pubDate>Fri, 16 Jun 2023 00:00:00 +0000</pubDate>
       <guid>https://yuxiaoba.github.io/publication/deeppower23/</guid>
-      <description>&lt;p&gt;The blow figure shows the framework of GIED.
+      <description>&lt;p&gt;The blow figure shows the framework of Deeppower.
 
 
 
@@ -5178,9 +5238,10 @@ $$&lt;/p&gt;
 
 
 
-&lt;p&gt;&lt;strong&gt;[16/06/23]&lt;/strong&gt; &lt;a href=&#34;https://yuxiaoba.github.io/publication/deeppower23/&#34;&gt;DeepPower&lt;/a&gt; and &lt;a href=&#34;https://yuxiaoba.github.io/publication/mars23/&#34;&gt;MARS&lt;/a&gt; are accepted by &lt;a href=&#34;https://icpp23.sci.utah.edu/&#34;&gt;ICPP 2023&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;[06/05/23]&lt;/strong&gt; &lt;a href=&#34;https://yuxiaoba.github.io/publication/faasdeliver23/&#34;&gt;FaaSDeliver&lt;/a&gt; is accepted by Transaction on Service Computing.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;[16/12/22]&lt;/strong&gt; &lt;a href=&#34;https://yuxiaoba.github.io/publication/logreducer22/&#34;&gt;LogReducer&lt;/a&gt; is accepted by &lt;a href=&#34;https://conf.researchr.org/home/icse-2023&#34;&gt;ICSE 2023&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[28/07/23]&lt;/strong&gt; Multi-modal Observability Data RCA Framework &lt;a href=&#34;https://yuxiaoba.github.io/publication/nezha23/&#34;&gt;Nezha&lt;/a&gt; and Configuration Optimization Framework &lt;a href=&#34;https://yuxiaoba.github.io/publication/diagconfig23/&#34;&gt;Diagconfig&lt;/a&gt; are accepted by &lt;a href=&#34;https://2023.esec-fse.org/&#34;&gt;FSE 2023&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[16/06/23]&lt;/strong&gt; Automatic Power Management Framwork &lt;a href=&#34;https://yuxiaoba.github.io/publication/deeppower23/&#34;&gt;DeepPower&lt;/a&gt; and Automatic Network Root Cause Analysis Framework &lt;a href=&#34;https://yuxiaoba.github.io/publication/mars23/&#34;&gt;MARS&lt;/a&gt; are accepted by &lt;a href=&#34;https://icpp23.sci.utah.edu/&#34;&gt;ICPP 2023&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[06/05/23]&lt;/strong&gt; Delivering FaaS Function to Computing Continuum Framework&lt;a href=&#34;https://yuxiaoba.github.io/publication/faasdeliver23/&#34;&gt;FaaSDeliver&lt;/a&gt; is accepted by Transaction on Service Computing.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[16/12/22]&lt;/strong&gt; Log Reduce Framework &lt;a href=&#34;https://yuxiaoba.github.io/publication/logreducer22/&#34;&gt;LogReducer&lt;/a&gt; is accepted by &lt;a href=&#34;https://conf.researchr.org/home/icse-2023&#34;&gt;ICSE 2023&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;[06/05/22]&lt;/strong&gt; Guangba is awarded Tencent Rhino-Bird Research Elite Program and Tencent Special Scholarship in 2022.&lt;/p&gt;
 
 </description>
