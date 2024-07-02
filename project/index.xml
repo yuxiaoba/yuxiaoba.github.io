@@ -5,12 +5,44 @@
     <link>https://yuxiaoba.github.io/project/</link>
       <atom:link href="https://yuxiaoba.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 02 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Projects</title>
       <link>https://yuxiaoba.github.io/project/</link>
     </image>
+    
+    <item>
+      <title>Augmented Microservice Benchmark Online Boutique</title>
+      <link>https://yuxiaoba.github.io/project/hipster/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://yuxiaoba.github.io/project/hipster/</guid>
+      <description>&lt;p&gt;Online Boutique is a cloud-native microservices demo application. Online Boutique consists of a 10-tier microservices application. The application is a web-based e-commerce app where users can browse items, add them to the cart, and purchase them. Google uses this application to demonstrate use of technologies like Kubernetes, Istio, Stackdriver, gRPC. This application works on any Kubernetes cluster (such as a local one). It’s easy to deploy with little to no configuration.&lt;/p&gt;
+&lt;p&gt;We  instrument the Opentelemetry API for each service to obtain traces and insert Trace ID and Span ID into each log to enhance observability.&lt;/p&gt;
+&lt;p&gt;This Augmented-Online Boutique is open-sourced by FSE 2023 paper &lt;a href=&#34;https://yuxiaoba.github.io/publication/nezha23/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Nezha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tracing.png&#34; alt=&#34;tracing&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>MicroRank</title>
@@ -39,37 +71,6 @@
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./microrank.jpg&#34; alt=&#34;microrank&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Opentelemetry Microservice Benchmark</title>
-      <link>https://yuxiaoba.github.io/project/hipster/</link>
-      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://yuxiaoba.github.io/project/hipster/</guid>
-      <description>&lt;p&gt;Online Boutique is a cloud-native microservices demo application. Online Boutique consists of a 10-tier microservices application. The application is a web-based e-commerce app where users can browse items, add them to the cart, and purchase them. Google uses this application to demonstrate use of technologies like Kubernetes, Istio, Stackdriver, gRPC. This application works on any Kubernetes cluster (such as a local one). It’s easy to deploy with little to no configuration.&lt;/p&gt;
-&lt;p&gt;We instrument OpenTelemetry API for each service to equip tracing ability for Online Boutique.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./tracing.png&#34; alt=&#34;tracing&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 </description>
