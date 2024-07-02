@@ -5,7 +5,7 @@
     <link>https://yuxiaoba.github.io/tag/config/</link>
       <atom:link href="https://yuxiaoba.github.io/tag/config/index.xml" rel="self" type="application/rss+xml" />
     <description>Config</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 18 Jun 2024 01:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 18 Jun 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yuxiaoba.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Config</title>
@@ -15,9 +15,9 @@
     <item>
       <title>CTuner: Automatic NoSQL Database Tuning with Causal Reinforcement Learning</title>
       <link>https://yuxiaoba.github.io/publication/ctune24/</link>
-      <pubDate>Tue, 18 Jun 2024 01:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
       <guid>https://yuxiaoba.github.io/publication/ctune24/</guid>
-      <description>&lt;p&gt;The blow figure shows the framework of ChangeRCA.
+      <description>&lt;p&gt;The blow figure shows the framework of Ctune.
 
 
 
@@ -36,7 +36,7 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./changerca24.jpg&#34; alt=&#34;ChangeRCA Framework&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./ctune.jpg&#34; alt=&#34;Ctune Framework&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 </description>
