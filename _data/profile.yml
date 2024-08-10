@@ -1,0 +1,67 @@
+primary_name: "Guangba Yu"
+secondary_name: ""
+navbar_name: "Guangba's Home Page"
+
+positions:
+  - '<span class="no-break"><img src="assets/images/badges/CUHK.JPG" alt="The Chinese University of Hong Kong" class="inline-badge"/></span> Postdoctoral Researcher, CUHK'
+
+email: "yugb5@mail2.sysu.edu.cn"
+gscholar: wXY0D6YAAAAJ
+github: yuxiaoba
+# twitter: yuxiaoba
+# wechat_qrcode: assets/images/etc/wechat.jpg
+# wechat_prompt: >-
+#   Please tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
+linkedin: guangba-yu-07b216192
+orcid: 0000-0001-6195-9088
+
+short_bio: >-
+  I am a postdoctoral researcher in <a href="http://ariselab.cse.cuhk.edu.hk/">ARISE Lab</a> at The Chinese University of Hong Kong, mentored by <a href="https://www.cse.cuhk.edu.hk/lyu/">Prof. Michael R. Lyu</a>.
+  Previously, I obtained my Ph.d and M.Eng degrees from Sun Yat-sen University, supervised by <a href="http://www.dds-sysu.tech/Teachers"> Prof.Pengfei Chen</a>. 
+  <br>
+  I have awarded Tencent Rhino-Bird Research Elite Program in 2022. I was a Ph.D. software engineering student researcher at WeChat in 2022, mentored by <a href="https://scholar.google.com/citations?user=jiPCz_cAAAAJ">Yuetang Deng</a>.
+  <br>
+  😃 <em>I always welcome the opportunity to collaborate research topics about system reliability. Feel free to drop me an email if you're interested in connecting with me.</em>
+
+show_portrait: true
+portrait_url: assets/images/photos/guangba.jpg
+portrait_caption: >-
+  Welcome to my personal website!
+
+education:
+- name: Sun Yat-sen University
+  logo: assets/images/badges/SYSU.jpeg
+  position: Ph.D. in Computer Science and Technology
+  date: 2020 - 2024
+- name: Sun Yat-sen University
+  logo: assets/images/badges/SYSU.jpeg
+  position: M.Eng in Computer Technology
+  date: 2018 - 2020
+
+awards:
+- name: Best Paper Award for CLOUD'24, IEEE
+  date: 2024
+- name: National Scholarship, Ministry of Education P.R.C.
+  date: 2020 & 2021
+- name: The First Prize Scholarship, SYSU
+  date: 2019 - 2021.
+  
+interest:
+- name: Reliability in Cloud and AI System
+  sub_interests:
+      - Performance Diagnose
+      - Performance Optimization
+      - Chaos Engineering
+      - Observability
+
+
+service:
+- name: "Reviewer : WWW'24, TSC, TCC, J Supercomput"
+- name: "Artifact Evaluation Committee: OSDI'22, ATC'22"
+- name: "Sub-reviewer: TOSEM, ICSOC'22"
+                      
+
+# Feel free to replace the footer text if you would like to, but I will greatly appreciate it 
+# if you keep the link to the template so that more people can benefit from it. Thanks!
+footer_text: >-
+  Copyright © 2024 <a href="https://github.com/yuxiaoba/yuxiaoba.github.io" target="_blank">Guangba Yu</a>. All Rights Reserved.
