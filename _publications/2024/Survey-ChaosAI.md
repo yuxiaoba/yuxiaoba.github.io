@@ -26,7 +26,8 @@ links:
   Paper: https://yuxiaoba.github.io/files/survey/chaosai.pdf
   Arxiv: https://arxiv.org/pdf/2407.00125
   Project: https://github.com/IntelligentDDS/awesome-papers/tree/main/Fault_tolerance#ai-system
+  BibTex: https://yuxiaoba.github.io/files/survey/chaosai-bibtex.txt
   # Slides: 
   # DOI: 
-  # BibTex: 
+  # 
 ---

@@ -1,0 +1,12 @@
+@article{huang2024trastrainer,
+author = {Huang, Haiyu and Zhang, Xiaoyu and Chen, Pengfei and He, Zilong and Chen, Zhiming and Yu, Guangba and Chen, Hongyang and Sun, Chen},
+title = {TraStrainer: Adaptive Sampling for Distributed Traces with System Runtime State},
+year = {2024},
+publisher = {ACM},
+volume = {1},
+number = {FSE},
+url = {https://doi.org/10.1145/3643748},
+doi = {10.1145/3643748},
+journal = {Proc. ACM Softw. Eng.},
+articleno = {22},
+}

@@ -1,0 +1,9 @@
+@ARTICLE{yu2023faasdeliver,
+  author={Yu, Guangba and Chen, Pengfei and Zheng, Zibin and Zhang, Jingrun and Li, Xiaoyun and He, Zilong},
+  journal={IEEE Transactions on Services Computing}, 
+  title={FaaSDeliver: Cost-Efficient and QoS-Aware Function Delivery in Computing Continuum}, 
+  year={2023},
+  volume={16},
+  number={5},
+  pages={3332-3347},
+  doi={10.1109/TSC.2023.3274769}}

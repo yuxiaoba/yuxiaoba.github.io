@@ -1,0 +1,11 @@
+@inproceedings{chen2023diagconfig,
+author = {Chen, Zhiming and Chen, Pengfei and Wang, Peipei and Yu, Guangba and He, Zilong and Mai, Genting},
+title = {DiagConfig: Configuration Diagnosis of Performance Violations in Configurable Software Systems},
+year = {2023},
+publisher = {ACM},
+url = {https://doi.org/10.1145/3611643.3616300},
+doi = {10.1145/3611643.3616300},
+booktitle = {Proceedings of the 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+pages = {566–578},
+series = {ESEC/FSE 2023}
+}

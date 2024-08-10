@@ -3,7 +3,7 @@ title:          "TraStrainer: Adaptive Sampling for Distributed Traces with Syst
 date:           2023-07-28 00:00:00 +0800
 selected:       true
 pub:            >-
-                In 32nd ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering
+                In 32nd ACM International Conference on the Foundations of Software Engineering.
 pub_pre:        >-
                 <span class="badge badge-pill badge-custom badge-success">FSE'24 (CCF A)</span>
 pub_last:       '🏆 <span style="color:red"><b>Distinguish Paper Award</b></span>'

@@ -5,7 +5,7 @@ selected:       true
 pub:            >-
                 In 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering
 pub_pre:        >-
-                <span class="badge badge-pill badge-custom badge-success">FSE'23</span>
+                <span class="badge badge-pill badge-custom badge-success">FSE'23 (CCF A)</span>
 # pub_post:       'Under review.'
 # pub_last:       '<span class="badge badge-pill badge-custom badge-secondary">Conference</span><span class="badge badge-pill badge-custom badge-warning">Poster</span>'
 abstract: >-

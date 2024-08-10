@@ -1,0 +1,11 @@
+@inproceedings{mai2024ctune,
+author = {Mai, Genting and He, Zilong and Yu, Guangba and Chen, Zhiming and Chen, Pengfei},
+title = {CTuner: Automatic NoSQL Database Tuning with Causal Reinforcement Learning},
+year = {2024},
+publisher = {ACM},
+url = {https://doi.org/10.1145/3671016.3674809},
+doi = {10.1145/3671016.3674809},
+booktitle = {Proceedings of the 15th Asia-Pacific Symposium on Internetware},
+pages = {269–278},
+series = {Internetware '24}
+}
