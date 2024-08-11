@@ -5,7 +5,7 @@ selected:       true
 pub:            >-
                 In Transaction on Service Computing
 pub_pre:        >-
-                <span class="badge badge-pill badge-custom badge-secondar">TSC (CCF A)</span>
+                <span class="badge badge-pill badge-custom badge-info">TSC (CCF A)</span>
 # pub_post:       'Under review.'
 # pub_last:       '<span class="badge badge-pill badge-custom badge-secondary">Conference</span><span class="badge badge-pill badge-custom badge-warning">Poster</span>'
 abstract: >-

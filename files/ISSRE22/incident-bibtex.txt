@@ -1,0 +1,9 @@
+@INPROCEEDINGS{li2022incident,
+  author={Li, Xiaoyun and Yu, Guangba and Chen, Pengfei and Chen, Hongyang and Chen, Zhekang},
+  booktitle={Proceedings of the IEEE 33rd International Symposium on Software Reliability Engineering (ISSRE)}, 
+  title={Going through the Life Cycle of Faults in Clouds: Guidelines on Fault Handling}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={121-132},
+  doi={10.1109/ISSRE55969.2022.00022}}

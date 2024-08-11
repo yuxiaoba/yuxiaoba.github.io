@@ -1,0 +1,11 @@
+@inproceedings{he2022gied,
+author = {He, Zilong and Chen, Pengfei and Luo, Yu and Yan, Qiuyu and Chen, Hongyang and Yu, Guangba and Li, Fangyuan},
+title = {Graph based Incident Extraction and Diagnosis in Large-Scale Online Systems},
+year = {2022},
+publisher = {ACM},
+url = {https://doi.org/10.1145/3551349.3556904},
+doi = {10.1145/3551349.3556904},
+booktitle = {Proceedings of the 37th IEEE/ACM International Conference on Automated Software Engineering},
+articleno = {48},
+series = {ASE '22}
+}
