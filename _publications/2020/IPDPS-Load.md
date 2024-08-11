@@ -13,7 +13,7 @@ abstract: >-
 # cover:          assets/images/covers/Prism-cover.png
 authors:
   - Jieqi Cui
-  - Pengfei Chen
+  - Pengfei Chen†
   - Guangba Yu
 links:
   Paper: https://yuxiaoba.github.io/files/ICPADS20/load.pdf

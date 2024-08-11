@@ -5,7 +5,7 @@ selected:       false
 pub:            >-
                 In Proceedings of 2021 IEEE/ACM International Workshop on Cloud Intelligence
 pub_pre:        >-
-                <span class="badge badge-pill badge-custom badge-success">CloudIntelligence'21 (CCF A)</span>
+                <span class="badge badge-pill badge-custom badge-success">CloudIntelligence'21</span>
 # pub_post:       'Under review.'
 # pub_last:       '<span class="badge badge-pill badge-custom badge-secondary">Conference</span><span class="badge badge-pill badge-custom badge-warning">Poster</span>'
 abstract: >-
@@ -15,7 +15,7 @@ authors:
   - Tianjun Weng
   - Wanqi Yang
   - Guangba Yu
-  - Pengfei Chen
+  - Pengfei Chen†
   - Jieqi Cui
   - Chuangfu Zhang
   

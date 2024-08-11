@@ -1,0 +1,12 @@
+@inproceedings{wang2023mars,
+author = {Wang, Benran and Chen, Hongyang and Chen, Pengfei and He, Zilong and Yu, Guangba},
+title = {MARS: Fault Localization in Programmable Networking Systems with Low-cost In-Band Network Telemetry},
+year = {2023},
+publisher = {ACM},
+url = {https://doi.org/10.1145/3605573.3605622},
+doi = {10.1145/3605573.3605622},
+booktitle = {Proceedings of the 52nd International Conference on Parallel Processing},
+pages = {347–357},
+numpages = {11},
+series = {ICPP '23}
+}

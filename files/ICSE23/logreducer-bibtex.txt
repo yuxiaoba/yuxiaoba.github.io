@@ -1,0 +1,11 @@
+@inproceedings{yu2023logreducer,
+author = {Yu, Guangba and Chen, Pengfei and Li, Pairui and Weng, Tianjun and Zheng, Haibing and Deng, Yuetang and Zheng, Zibin},
+title = {LogReducer: Identify and Reduce Log Hotspots in Kernel on the Fly},
+year = {2023},
+publisher = {IEEE},
+url = {https://doi.org/10.1109/ICSE48619.2023.00151},
+doi = {10.1109/ICSE48619.2023.00151},
+booktitle = {Proceedings of the 45th International Conference on Software Engineering},
+pages = {1763–1775},
+series = {ICSE '23}
+}

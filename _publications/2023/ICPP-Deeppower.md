@@ -16,11 +16,11 @@ authors:
   - Guangba Yu
   - Zilong He
   - Liang Ai
-  - Pengfei Chen
+  - Pengfei Chen†
   
 links:
   Paper: https://yuxiaoba.github.io/files/ICPP23/deeppower.pdf
-  DOI: https://doi.org/10.1145/3605573. 3605612
+  DOI: https://doi.org/10.1145/3605573.3605612
   BibTex: https://yuxiaoba.github.io/files/ICPP23/deeppower-bibtex.txt
   # Arxiv:
 ---

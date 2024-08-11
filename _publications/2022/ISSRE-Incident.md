@@ -14,7 +14,7 @@ abstract: >-
 authors:
   - Xiaoyun Li
   - Guangba Yu
-  - Pengfei Chen
+  - Pengfei Chen†
   - Hongyang Chen
   - Zhekang Chen
 links:

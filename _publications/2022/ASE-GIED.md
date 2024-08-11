@@ -13,7 +13,7 @@ abstract: >-
 # cover:          assets/images/covers/Prism-cover.png
 authors:
   - Zilong He
-  - Pengfei Chen
+  - Pengfei Chen†
   - Yu Luo
   - Qiuyu Yan
   - Hongyang Chen

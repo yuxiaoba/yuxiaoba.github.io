@@ -13,6 +13,7 @@ abstract: >-
 # cover:          assets/images/covers/Prism-cover.png
 authors:
   - Guangba Yu
+  - Pengfei Chen†
   - Zibin Zheng
   - Jingrun Zhang
   - Xiaoyun Li
