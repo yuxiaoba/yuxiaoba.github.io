@@ -3,7 +3,7 @@ title:          "FaaSDeliver: Cost-efﬁcient and QoS-aware Function Delivery in
 date:           2023-05-07 00:00:00 +0800
 selected:       true
 pub:            >-
-                In Transaction on Service Computing
+                In IEEE Transaction on Service Computing
 pub_pre:        >-
                 <span class="badge badge-pill badge-custom badge-info">TSC (CCF A)</span>
 # pub_post:       'Under review.'

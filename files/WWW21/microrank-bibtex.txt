@@ -1,0 +1,11 @@
+@inproceedings{10.1145/3442381.3449905,
+author = {Yu, Guangba and Chen, Pengfei and Chen, Hongyang and Guan, Zijie and Huang, Zicheng and Jing, Linxiao and Weng, Tianjun and Sun, Xinmeng and Li, Xiaoyun},
+title = {MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments},
+year = {2021},
+publisher = {ACM},
+url = {https://doi.org/10.1145/3442381.3449905},
+doi = {10.1145/3442381.3449905},
+booktitle = {Proceedings of the Web Conference 2021},
+pages = {3087–3098},
+series = {WWW '21}
+}

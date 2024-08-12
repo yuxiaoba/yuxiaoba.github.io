@@ -1,0 +1,12 @@
+@InProceedings{li2022microsketch,
+author="Li, Yufeng
+and Yu, Guangba
+and Chen, Pengfei
+and Zhang, Chuanfu
+and Zheng, Zibin",
+title="MicroSketch: Lightweight and Adaptive Sketch Based Performance Issue Detection and Localization in Microservice Systems",
+booktitle="Service-Oriented Computing",
+year="2022",
+publisher="Springer",
+pages="219--236",
+}
