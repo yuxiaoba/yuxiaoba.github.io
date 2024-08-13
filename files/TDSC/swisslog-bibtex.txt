@@ -1,0 +1,9 @@
+@ARTICLE{li2022siwsslog,
+  author={Li, Xiaoyun and Chen, Pengfei and Jing, Linxiao and He, Zilong and Yu, Guangba},
+  journal={IEEE Transactions on Dependable and Secure Computing}, 
+  title={SwissLog: Robust Anomaly Detection and Localization for Interleaved Unstructured Logs}, 
+  year={2023},
+  volume={20},
+  number={4},
+  pages={2762-2780},
+  doi={10.1109/TDSC.2022.3162857}}

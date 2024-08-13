@@ -1,0 +1,9 @@
+@ARTICLE{9228885,
+  author={He, Zilong and Chen, Pengfei and Li, Xiaoyun and Wang, Yongfeng and Yu, Guangba and Chen, Cailin and Li, Xinrui and Zheng, Zibin},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={A Spatiotemporal Deep Learning Approach for Unsupervised Anomaly Detection in Cloud Systems}, 
+  year={2023},
+  volume={34},
+  number={4},
+  pages={1705-1719},
+  doi={10.1109/TNNLS.2020.3027736}}

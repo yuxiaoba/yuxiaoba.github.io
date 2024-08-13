@@ -1,7 +1,7 @@
 ---
 title:          "Microscaler: Automatic Scaling for Microservices with an Online Learning Approach"
 date:           2019-08-29 00:00:00 +0800
-selected:       false
+selected:       true
 pub:            >-
                 In Proceedings of the 2019 IEEE International Conference on Web Services
 pub_pre:        >-
