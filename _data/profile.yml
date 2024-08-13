@@ -42,7 +42,9 @@ education:
 awards:
 - name: Distinguish Paper Award for FSE'24
   date: 2024
-- name: National Scholarship, SYSU.
+- name: Outstanding PhD Graduate, SYSU
+  date: 2024
+- name: National Scholarship, SYSU
   date: 2022-2023
 - name: Tencent Rhino-Bird Research Elite Program & Special Scholarship, Tencent
   date: 2022-2023
@@ -57,7 +59,7 @@ interest:
 
 
 service:
-- name: "Reviewer : WWW'24, TSC, TCC, J Supercomput"
+- name: "Reviewer: WWW'24, TSC, TCC, J Supercomput"
 - name: "Artifact Evaluation Committee: OSDI'22, ATC'22"
 - name: "Sub-reviewer: TOSEM, ICSOC'22"
                       
