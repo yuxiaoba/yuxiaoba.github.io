@@ -17,16 +17,17 @@ orcid: 0000-0001-6195-9088
 
 short_bio: >-
   I am a postdoctoral researcher in <a href="http://ariselab.cse.cuhk.edu.hk/">ARISE Lab</a> at The Chinese University of Hong Kong, mentored by <a href="https://www.cse.cuhk.edu.hk/lyu/">Prof. Michael R. Lyu</a>.
+  <br>
   Previously, I obtained my Ph.d and M.Eng degrees from Sun Yat-sen University, supervised by <a href="http://www.dds-sysu.tech/Teachers"> Prof.Pengfei Chen</a>. 
   <br>
-  I have awarded Tencent Rhino-Bird Research Elite Program in 2022. I was a Ph.D. software engineering student researcher at WeChat in 2022, mentored by <a href="https://scholar.google.com/citations?user=jiPCz_cAAAAJ">Yuetang Deng</a>.
+  I was a Ph.D. software engineering student researcher at WeChat in 2022, mentored by <a href="https://scholar.google.com/citations?user=jiPCz_cAAAAJ">Yuetang Deng</a>.
   <br>
   😃 <em>I always welcome the opportunity to collaborate research topics about system reliability. Feel free to drop me an email if you're interested in connecting with me.</em>
 
 show_portrait: true
 portrait_url: assets/images/photos/guangba.jpg
 portrait_caption: >-
-  Welcome to my personal website!
+  Welcome to Guangba's website!
 
 education:
 - name: Sun Yat-sen University
@@ -39,12 +40,12 @@ education:
   date: 2018 - 2020
 
 awards:
-- name: Best Paper Award for CLOUD'24, IEEE
+- name: Distinguish Paper Award for FSE'24
   date: 2024
-- name: National Scholarship, Ministry of Education P.R.C.
-  date: 2020 & 2021
-- name: The First Prize Scholarship, SYSU
-  date: 2019 - 2021.
+- name: National Scholarship, SYSU.
+  date: 2023
+- name: Tencent Rhino-Bird Research Elite Program & Special Scholarship, Tencent
+  date: 2022.
   
 interest:
 - name: Reliability in Cloud and AI System
