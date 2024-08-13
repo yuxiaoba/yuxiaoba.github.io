@@ -1,11 +1,11 @@
 ---
 title:          "FaaSRCA: Full Lifecycle Root Cause Analysis for Serverless Applications"
-date:           2024-06-12 00:00:00 +0800
-selected:       true
+date:           2024-07-12 00:00:00 +0800
+selected:       false
 pub:            >-
-                In 39th IEEE/ACM International Conference on Automated Software Engineering.
+                In 35th IEEE International Symposium on Software Reliability Engineering.
 pub_pre:        >-
-                <span class="badge badge-pill badge-custom badge-success">ASE'24 (CCF A)</span>
+                <span class="badge badge-pill badge-custom badge-success">ISSRE'24 (CCF B)</span>
 # <span class="badge badge-pill badge-custom badge-info">FSE'24</span>
 # pub_post:       'Under review.'
 # pub_last:       '🏆 <span style="color:red"><b>Best Paper Award</b></span>'
