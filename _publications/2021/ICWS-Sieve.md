@@ -22,6 +22,7 @@ links:
   Paper: https://yuxiaoba.github.io/files/ICWS21/sieve.pdf
   Project: https://github.com/IntelligentDDS/Sieve
   DOI: https://doi.org/10.1109/ICWS53863.2021.00063
+  Slides: https://yuxiaoba.github.io/files/ICWS21/sieve-slides.pdf
   BibTex: https://yuxiaoba.github.io/files/ICWS21/sieve-bibtex.txt
   # Arxiv:
 ---

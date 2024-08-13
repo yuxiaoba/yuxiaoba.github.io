@@ -1,0 +1,9 @@
+@INPROCEEDINGS{hu2022TSInvarNet,
+  author={Hu, Zijun and Chen, Pengfei and Yu, Guangba and He, Zilong and Li, Xiaoyun},
+  booktitle={2022 IEEE International Conference on Web Services (ICWS)}, 
+  title={TS-InvarNet: Anomaly Detection and Localization based on Tempo-spatial KPI Invariants in Distributed Services}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={109-119},
+  doi={10.1109/ICWS55610.2022.00031}}

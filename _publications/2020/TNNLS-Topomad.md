@@ -25,6 +25,6 @@ links:
   Paper: https://yuxiaoba.github.io/files/TNNLS/topomd.pdf
   DOI: https://doi.org/10.1109/TNNLS.2020.3027736
   BibTex: https://yuxiaoba.github.io/files/TNNLS/topomd-bibtex.txt
-  project: https://github.com/IntelligentDDS/TopoMAD
+  Project: https://github.com/IntelligentDDS/TopoMAD
   # Arxiv:
 ---
