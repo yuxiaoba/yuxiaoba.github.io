@@ -1,6 +1,6 @@
 ---
 title:          "TraStrainer: Adaptive Sampling for Distributed Traces with System Runtime State"
-date:           2023-07-28 00:00:00 +0800
+date:           2024-01-22 00:00:00 +0800
 selected:       true
 pub:            >-
                 In 32nd ACM International Conference on the Foundations of Software Engineering.
