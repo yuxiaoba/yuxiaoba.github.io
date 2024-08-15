@@ -23,5 +23,6 @@ links:
   DOI: https://doi.org/10.1109/ISSRE5003.2020.00018
   BibTex: https://yuxiaoba.github.io/files/ISSRE20/swisslog-bibtex.txt
   Project: https://github.com/IntelligentDDS/SwissLog
+  Slides: https://yuxiaoba.github.io/files/ISSRE20/swissLog_slides.pdf
   # Arxiv:
 ---

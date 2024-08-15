@@ -1,6 +1,6 @@
 ---
 title:          "LogReducer: Identify and Reduce Log Hotspots in Kernel on the Fly"
-date:           2022-12-09 00:00:00 +0800
+date:           2023-05-16 00:00:00 +0800
 selected:       true
 pub:            >-
                 In 45th IEEE/ACM International Conference on Software Engineering
