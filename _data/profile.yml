@@ -59,9 +59,8 @@ interest:
 
 
 service:
-- Name: "PC: Eurosys'25(Shadow)"
+- name: "PC: Eurosys'25(Shadow), OSDI'22(Artifact), ATC'22(Artifact)"
 - name: "Reviewer: WWW'24, TSC, TCC, J Supercomput, TOSEM"
-- name: "Artifact Evaluation Committee: OSDI'22, ATC'22"
 - name: "Sub-reviewer: TOSEM, ICSOC'22"
                       
 
