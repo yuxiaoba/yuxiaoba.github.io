@@ -5,7 +5,7 @@ navbar_name: "Guangba's Home Page"
 positions:
   - '<span class="no-break"><img src="assets/images/badges/CUHK.JPG" alt="The Chinese University of Hong Kong" class="inline-badge"/></span> Postdoctoral Researcher, CUHK'
 
-email: "yugb5@mail2.sysu.edu.cn"
+email: "guangbayu@cuhk.edu.hk"
 gscholar: wXY0D6YAAAAJ
 github: yuxiaoba
 # twitter: yuxiaoba
@@ -59,6 +59,7 @@ interest:
 
 
 service:
+- Name: "PC: Eurosys'25(Shadow)"
 - name: "Reviewer: WWW'24, TSC, TCC, J Supercomput, TOSEM"
 - name: "Artifact Evaluation Committee: OSDI'22, ATC'22"
 - name: "Sub-reviewer: TOSEM, ICSOC'22"
