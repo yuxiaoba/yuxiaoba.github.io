@@ -30,41 +30,41 @@ portrait_caption: >-
   Welcome to Guangba's website!
 
 education:
-- name: Sun Yat-sen University
-  logo: assets/images/badges/SYSU.jpeg
-  position: Ph.D. in Computer Science and Technology
-  date: 2020 - 2024
-- name: Sun Yat-sen University
-  logo: assets/images/badges/SYSU.jpeg
-  position: M.Eng in Computer Technology
-  date: 2018 - 2020
+  - name: Sun Yat-sen University
+    logo: assets/images/badges/SYSU.jpeg
+    position: Ph.D. in Computer Science and Technology
+    date: 2020 - 2024
+  - name: Sun Yat-sen University
+    logo: assets/images/badges/SYSU.jpeg
+    position: M.Eng in Computer Technology
+    date: 2018 - 2020
 
 awards:
-- name: Distinguish Paper Award for FSE'24
-  date: 2024
-- name: Outstanding PhD Graduate, SYSU
-  date: 2024
-- name: National Scholarship, SYSU
-  date: 2022-2023
-- name: Tencent Rhino-Bird Research Elite Program & Special Scholarship, Tencent
-  date: 2022-2023
-  
+  - name: ACM China(Zhuhai) Doctoroal Dissertation Award
+    date: 2024
+  - name: Distinguish Paper Award for FSE'24
+    date: 2024
+  - name: Outstanding PhD Graduate, SYSU
+    date: 2024
+  - name: National Scholarship, SYSU
+    date: 2022-2023
+  - name: Tencent Rhino-Bird Research Elite Program & Special Scholarship, Tencent
+    date: 2022-2023
+
 interest:
-- name: Reliability in Cloud and AI System
-  sub_interests:
+  - name: Reliability in Cloud and AI System
+    sub_interests:
       - Performance Diagnose
       - Performance Optimization
       - Chaos Engineering
       - Observability
 
-
 service:
-- name: "PC: Eurosys'25(Shadow), OSDI'22(Artifact), ATC'22(Artifact)"
-- name: "Reviewer: WWW'24, TSC, TCC, J Supercomput, TOSEM"
-- name: "Sub-reviewer: TOSEM, ICSOC'22"
-                      
+  - name: "PC: Eurosys'25(Shadow), OSDI'22(Artifact), ATC'22(Artifact)"
+  - name: "Reviewer: WWW'24, TSC, TCC, J Supercomput, TOSEM"
+  - name: "Sub-reviewer: TOSEM, ICSOC'22, ISSTA'25"
 
-# Feel free to replace the footer text if you would like to, but I will greatly appreciate it 
+# Feel free to replace the footer text if you would like to, but I will greatly appreciate it
 # if you keep the link to the template so that more people can benefit from it. Thanks!
 footer_text: >-
   Copyright © 2024 <a href="https://github.com/yuxiaoba/yuxiaoba.github.io" target="_blank">Guangba Yu</a>. All Rights Reserved.

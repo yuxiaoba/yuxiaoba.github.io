@@ -24,9 +24,9 @@ authors:
   - Qi Zhou
 
 links:
-  Paper: 
+  Paper: https://yuxiaoba.github.io/files/ASPLOS25/Mint.pdf
   Project: 
   DOI: 
   BibTex: 
-  # Arxiv:
+  Arxiv: https://arxiv.org/pdf/2411.04605
 ---
