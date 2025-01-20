@@ -1,6 +1,6 @@
 ---
 title:          "Mint: Cost-Efficient Tracing with All Requests Collection via Commonality and Variability Analysiss"
-date:           2024-10-30 00:00:00 +0800
+date:           2025-01-02 00:00:00 +0800
 selected:       true
 pub:            >-
                 In 30th ACM International Conference on Architectural Support for Programming Languages and Operating Systems.
