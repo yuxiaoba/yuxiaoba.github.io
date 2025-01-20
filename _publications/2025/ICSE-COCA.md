@@ -20,7 +20,7 @@ authors:
   - Zhihan Jiang
   - Zhuangbin Chen
   - Guangba Yu#
-  - Michael Lyu
+  - Michael R. Lyu
 
 links:
   Paper: 
