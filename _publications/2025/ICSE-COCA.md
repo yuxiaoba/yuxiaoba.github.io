@@ -19,7 +19,7 @@ authors:
   - Jinyang Liu
   - Zhihan Jiang
   - Zhuangbin Chen
-  - Guangba Yu*
+  - Guangba Yu#
   - Michael Lyu
 
 links:
