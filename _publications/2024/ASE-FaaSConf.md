@@ -15,7 +15,7 @@ abstract: >-
 authors:
   - Yilun Wang
   - Pengfei Chen
-  - Hui Dou
+  - Hui Dou†
   - Yiwen Zhang
   - Guangba Yu
   - Zilong He

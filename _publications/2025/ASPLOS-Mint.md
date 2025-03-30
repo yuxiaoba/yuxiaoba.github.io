@@ -16,7 +16,7 @@ authors:
   - Haiyu Huang
   - Cheng Chen
   - Kunyi Chen
-  - Pengfei Chen
+  - Pengfei Chen†
   - Guangba Yu
   - Zilong He
   - Yilun Wang
@@ -25,8 +25,7 @@ authors:
 
 links:
   Paper: https://yuxiaoba.github.io/files/ASPLOS25/Mint.pdf
-  Project: 
-  DOI: 
-  BibTex: 
+  DOI: https://doi.org/10.1145/3669940.3707287
+  BibTex: https://yuxiaoba.github.io/files/ASPLOS25/mint-bibtex.txt
   Arxiv: https://arxiv.org/pdf/2411.04605
 ---

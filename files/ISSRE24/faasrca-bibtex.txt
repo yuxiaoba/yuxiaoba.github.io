@@ -1,0 +1,10 @@
+@INPROCEEDINGS{FaaSRCA2024ISSRE,
+  author={Huang, Jin and Chen, Pengfei and Yu, Guangba and Wang, Yilun and Huang, Haiyu and He, Zilong},
+  booktitle={2024 IEEE 35th International Symposium on Software Reliability Engineering (ISSRE)}, 
+  title={FaaSRCA: Full Lifecycle Root Cause Analysis for Serverless Applications}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={415-426},
+  keywords={Root cause analysis;Analytical models;Computational modeling;Microservice architectures;Benchmark testing;Distance measurement;Software reliability;Complexity theory;Observability;Serverless;Function-as-a-Service;Root Cause Analysis;Graph Neural Network;Full Lifecycle},
+  doi={10.1109/ISSRE62328.2024.00047}}

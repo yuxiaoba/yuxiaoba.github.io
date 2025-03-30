@@ -19,13 +19,12 @@ authors:
   - Jinyang Liu
   - Zhihan Jiang
   - Zhuangbin Chen
-  - Guangba Yu#
+  - Guangba Yu†
   - Michael R. Lyu
 
 links:
-  Paper: 
+  Paper: https://yuxiaoba.github.io/files/ICSE25/COCA.pdf
   Project: 
-  DOI: 
-  BibTex: 
-  Arxiv: 
+  DOI: https://doi.ieeecomputersociety.org/10.1109/ICSE55347.2025.00234
+  BibTex: https://yuxiaoba.github.io/files/ICSE25/coca-bibtex.txt
 ---

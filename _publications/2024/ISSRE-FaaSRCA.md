@@ -14,7 +14,7 @@ abstract: >-
 # cover:          assets/images/covers/Prism-cover.png
 authors:
   - Jin Huang
-  - Pengfei Chen
+  - Pengfei Chen†
   - Guangba Yu
   - Yilun Wang
   - Haiyu Huang
@@ -22,8 +22,7 @@ authors:
 
 links:
   Paper: https://yuxiaoba.github.io/files/ISSRE24/faasrca.pdf
-  Project: 
-  DOI: 
-  BibTex: 
+  DOI: https://doi.org/10.1109/ISSRE62328.2024.00047
+  BibTex: https://yuxiaoba.github.io/files/ISSRE24/faasrca-bibtex.txt
   # Arxiv:
 ---

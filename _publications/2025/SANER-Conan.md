@@ -14,7 +14,7 @@ abstract: >-
 # cover:          assets/images/covers/Prism-cover.png
 authors:
   - Haojia Huang
-  - Pengfei Chen
+  - Pengfei Chen†
   - Guangba Yu
   - Haiyu Huang
   - Jia Chang

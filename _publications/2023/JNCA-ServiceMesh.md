@@ -13,7 +13,7 @@ abstract: >-
 # cover:          assets/images/covers/Prism-cover.png
 authors:
   - Wanqi Yang
-  - Pengfei Chen
+  - Pengfei Chen†
   - Guangba Yu
   - Haibin Zhang
   - Huxing Zhang
