@@ -60,8 +60,8 @@ interest:
       - Observability
 
 service:
-  - name: "PC: Eurosys'25(Shadow), OSDI'22(Artifact), ATC'22(Artifact)"
-  - name: "Reviewer: WWW'24, TOSEM, TMC, TSC, TCC, J Supercomput"
+  - name: "PC: APSEC'25, Eurosys'25(Shadow), OSDI'22(Artifact), ATC'22(Artifact)"
+  - name: "Reviewer: WWW'24, TPDS, TC, TSE, TOSEM, TMC, TSC, TCC, J Supercomput"
   - name: "Sub-reviewer: TOSEM, ICSOC'22, ISSTA'25"
 
 # Feel free to replace the footer text if you would like to, but I will greatly appreciate it

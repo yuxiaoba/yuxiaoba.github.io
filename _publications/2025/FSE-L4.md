@@ -24,7 +24,7 @@ authors:
   - Michael R. Lyu
 
 links:
-  Paper: https://arxiv.org/pdf/2503.20263
+  Paper: https://yuxiaoba.github.io/files/FSE25/L4.pdf
   DOI: 
   BibTex: 
   Arxiv: https://arxiv.org/pdf/2503.20263
