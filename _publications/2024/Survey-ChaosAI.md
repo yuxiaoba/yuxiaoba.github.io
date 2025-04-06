@@ -21,7 +21,7 @@ authors:
   - Gou Tan
   - Haojia Huang
   - Zhenyu Zhang
-  - Pengfei Chen
+  - Pengfei Chen†
   - Roberto Natella
   - Zibin Zheng
   - Michael R. Lyu
