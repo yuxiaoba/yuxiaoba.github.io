@@ -22,9 +22,8 @@ authors:
   - Jian Han
 
 links:
-  Paper: 
-  Project: 
-  DOI: 
-  BibTex: 
-  Arxiv: 
+  Paper: https://yuxiaoba.github.io/files/Saner25/conan.pdf
+  Project: https://github.com/huanghj78/conan
+  DOI: https://doi.org/10.1109/SANER64311.2025.00073
+  BibTex: https://yuxiaoba.github.io/files/Saner25/conan-bibtex.txt
 ---

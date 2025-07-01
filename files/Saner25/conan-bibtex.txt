@@ -1,0 +1,10 @@
+@INPROCEEDINGS{Conan2025SANER,
+  author={Huang, Haojia and Chen, Pengfei and Yu, Guangba and Huang, Haiyu and Chang, Jia and Li, Jun and Han, Jian},
+  booktitle={2025 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)}, 
+  title={Conan: Uncover Consensus Issues in Distributed Databases Using Fuzzing-Driven Fault Injection}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={716-727},
+  keywords={Distributed databases;Fuzzing;Software;Robustness;Consensus protocol;Distributed Databases;Fault Injection;Fuzz Testing;Consensus},
+  doi={10.1109/SANER64311.2025.00073}}
