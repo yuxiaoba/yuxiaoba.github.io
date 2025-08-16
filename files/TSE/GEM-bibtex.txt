@@ -1,0 +1,9 @@
+@ARTICLE{GEM2025TSE,
+  author={He, Zilong and Chen, Pengfei and Luo, Yu and Yan, Qiuyu and Chen, Hongyang and Yu, Guangba and Li, Fangyuan and Li, Xiaoyun and Zheng, Zibin},
+  journal={IEEE Transactions on Software Engineering}, 
+  title={Subgraphs as First-Class Citizens in Incident Management for Large-Scale Online Systems: An Evolution-Aware Framework}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-16},
+  doi={10.1109/TSE.2025.3590221}}

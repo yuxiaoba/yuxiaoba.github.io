@@ -1,8 +1,7 @@
 ---
-title:          "LLMPrism: Black-box Performance Diagnosis for
-Production LLM Training Platforms"
+title:          "LLMPrism: Black-box Performance Diagnosis for Production LLM Training Platforms"
 date:           2025-05-01 00:00:00 +0800
-selected:       true
+selected:       false
 pub:            >-
                 In 55th Annual IEEE/IFIP International Conference on Dependable Systems and Networks
 pub_pre:        >-
@@ -27,9 +26,9 @@ authors:
   - Michael R. Lyu
 
 links:
-  Paper: 
-  Project: 
-  DOI: 
-  BibTex: 
-  Arxiv: 
+  Paper: https://ieeexplore.ieee.org/document/11068334
+  # Project: 
+  DOI: https://doi.org/10.1109/DSN-S65789.2025.00034
+  BibTex: https://yuxiaoba.github.io/files/DSN25/LLMPrim-bibtex.txt
+  Arxiv: https://arxiv.org/pdf/2505.00342
 ---

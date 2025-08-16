@@ -1,0 +1,10 @@
+@INPROCEEDINGS{LLMPrism,
+  author={Jiang, Zhihan and Ren, Rui and Yu, Guangba and Wu, Yulun and Gu, Wenwei and Li, Yichen and Huang, Yujie and Feng, Cong and Yang, Zengyin and Yang, Yongqiang and Lyu, Michael R.},
+  booktitle={2025 55th Annual IEEE/IFIP International Conference on Dependable Systems and Networks - Supplemental Volume (DSN-S)}, 
+  title={LLMPrism: Black-box Performance Diagnosis for Production LLM Training Platforms}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-7},
+  keywords={Training;Large language models;Closed box;Production;Network analyzers;Parallel processing;Rendering (computer graphics);Complexity theory;Reliability;Monitoring;Distributed LLM Training;Performance Diagnosis;System Monitoring;System Reliability},
+  doi={10.1109/DSN-S65789.2025.00034}}

@@ -1,6 +1,5 @@
 ---
-title:          "COCA: Generative Root Cause Analysis for
-Distributed Systems with Code Knowledge"
+title:          "COCA: Generative Root Cause Analysis for Distributed Systems with Code Knowledge"
 date:           2025-01-20 00:00:00 +0800
 selected:       true
 pub:            >-

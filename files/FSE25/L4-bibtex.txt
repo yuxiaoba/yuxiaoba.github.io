@@ -1,0 +1,12 @@
+@inproceedings{L42025FSE,
+author = {Jiang, Zhihan and Huang, Junjie and Yu, Guangba and Chen, Zhuangbin and Li, Yichen and Zhong, Renyi and Feng, Cong and Yang, Yongqiang and Yang, Zengyin and Lyu, Michael},
+title = {L4: Diagnosing Large-scale LLM Training Failures via Automated Log Analysis},
+year = {2025},
+isbn = {9798400712760},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3696630.3728531},
+doi = {10.1145/3696630.3728531},
+booktitle = {Proceedings of the 33rd ACM International Conference on the Foundations of Software Engineering},
+pages = {51–63},
+}
