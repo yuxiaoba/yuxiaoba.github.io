@@ -1,5 +1,5 @@
 ---
-title:          ""Subgraphs as First-Class Citizens in Incident Management for Large-Scale Online Systems An Evolution-AwareFramework"
+title:          "Subgraphs as First-Class Citizens in Incident Management for Large-Scale Online Systems An Evolution-AwareFramework"
 date:           2025-07-29 00:00:00 +0800
 selected:       true
 pub:            >-
