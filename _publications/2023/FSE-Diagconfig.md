@@ -2,7 +2,7 @@
 title:          "DiagConfig: Configuration Diagnosis of Performance Violations
   in Configurable Software Systems"
 date:           2023-07-28 00:00:00 +0800
-selected:       true
+selected:       false
 pub:            >-
                 In 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering
 pub_pre:        >-
