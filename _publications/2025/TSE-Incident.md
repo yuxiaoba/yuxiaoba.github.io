@@ -18,7 +18,7 @@ authors:
   - Qiuyu Yan
   - Hongyang Chen
   - Guangba Yu
-  - Fangyuan Lo
+  - Fangyuan Li
   - Xiaoyun Li
   - Zibin Zheng
   

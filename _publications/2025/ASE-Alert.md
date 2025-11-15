@@ -22,7 +22,7 @@ authors:
   - Ruijie Xu
 
 links:
-  Paper: 
+  Paper: https://yuxiaoba.github.io/files/ASE25/AlertGuardian.pdf
   Project: 
   DOI: 
   BibTex: 
