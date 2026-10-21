@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["summary", "articles", "deferred", "evidence", "images"],
+  "properties": {
+    "summary": {"type": "string"},
+    "articles": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "source_ids", "zh_path", "en_path"],
+      "properties": {
+        "kind": {"type": "string", "enum": ["paper", "tech"]},
+        "source_ids": {"type": "array", "items": {"type": "string"}},
+        "zh_path": {"type": "string"}, "en_path": {"type": "string"}
+      }
+    }},
+    "deferred": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false, "required": ["id", "reason"],
+      "properties": {"id": {"type": "string"}, "reason": {"type": "string"}}
+    }},
+    "evidence": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_id", "url", "local_file", "sha256", "review_notes"],
+      "properties": {
+        "source_id": {"type": "string"}, "url": {"type": "string"},
+        "local_file": {"type": "string"}, "sha256": {"type": "string"}, "review_notes": {"type": "string"}
+      }
+    }},
+    "images": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "source_id", "source_url", "review_notes"],
+      "properties": {"path": {"type": "string"}, "source_id": {"type": "string"}, "source_url": {"type": "string"}, "review_notes": {"type": "string"}}
+    }}
+  }
+}

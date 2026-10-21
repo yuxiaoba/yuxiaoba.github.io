@@ -1,0 +1,18 @@
+{% assign languages = 'zh,en' | split: ',' %}
+<div class="language-switch" role="group" aria-label="{{ t.language }}">
+{% for target in languages %}
+{% assign target_prefix = '' %}{% if target == 'zh' %}{% assign target_prefix = '/zh' %}{% endif %}
+{% assign target_section = page.section | append: '/' %}{% if page.section == 'home' %}{% assign target_section = '' %}{% elsif page.section == 'kitchen' %}{% assign target_section = 'life/' %}{% endif %}
+{% assign target_url = target_prefix | append: '/' | append: target_section %}
+{% assign target_fallback = target_url | append: '?translation=missing' %}{% assign target_ids = '' %}
+{% if page.collection == 'digest' or page.collection == 'tech' or page.collection == 'kitchen' %}
+ {% assign source_prefix = '_' | append: page.collection | append: '/' | append: lang | append: '/' %}
+ {% assign pair_key = page.path | remove_first: source_prefix %}
+ {% assign pair_path = '_' | append: page.collection | append: '/' | append: target | append: '/' | append: pair_key %}
+ {% assign paired = false %}
+ {% for doc in site[page.collection] %}{% if doc.path == pair_path and doc.published == true %}{% assign target_url = doc.url %}{% assign paired = true %}{% assign target_ids = doc.paper_ids | join: ',' %}{% endif %}{% endfor %}
+ {% unless paired %}{% assign target_url = target_url | append: '?translation=missing' %}{% endunless %}
+{% endif %}
+<a {% if page.daily_digest %}data-daily-language data-daily-ids="{{ target_ids }}" data-day-url="{{ target_url | relative_url }}" data-missing-url="{{ target_fallback | relative_url }}"{% endif %} href="{{ target_url | relative_url }}" lang="{{ target }}" hreflang="{{ target }}" {% if target == lang %}aria-current="true"{% endif %}>{% if target == 'zh' %}中文{% else %}EN{% endif %}</a>
+{% endfor %}
+</div>

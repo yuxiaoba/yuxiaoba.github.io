@@ -1,0 +1,32 @@
+# Topic labels and translations restored from .handoff/reference/approved-homepage.fragment.html.
+# Explicit topics in a publication take precedence over these legacy labels.
+_publications/2025/FSE-L4.md:
+  en:
+  - LLM training
+  - Failure diagnosis
+  - Log analysis
+  zh:
+  - 大模型训练
+  - 故障诊断
+  - 日志分析
+_publications/2025/ICSE-COCA.md:
+  en:
+  - Distributed systems
+  - Root cause analysis
+  zh:
+  - 分布式系统
+  - 根因分析
+_publications/2025/ASE-Alert.md:
+  en:
+  - Cloud systems
+  - Alert management
+  zh:
+  - 云系统
+  - 告警管理
+_publications/2024/FSE-ChangeRCA.md:
+  en:
+  - Software changes
+  - Root cause analysis
+  zh:
+  - 软件变更
+  - 根因分析

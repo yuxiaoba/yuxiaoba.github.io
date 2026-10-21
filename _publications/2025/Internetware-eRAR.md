@@ -1,5 +1,5 @@
 ---
-title:          "Take Kernel Stack Overhead Out: eBPF-Enhanced Network  Acceleration for Distributed Training within Ethernet"
+title: 'Take Kernel Stack Overhead Out: eBPF-Enhanced Network Acceleration for Distributed Training within Ethernet'
 date:           2025-03-31 00:00:00 +0800
 selected:       false
 pub:            >-
@@ -24,4 +24,7 @@ links:
   DOI: 
   BibTex: 
   Arxiv: 
+year: 2025
+venue: Internetware
+ccf: C
 ---

@@ -1,0 +1,16 @@
+---
+layout: warm
+---
+{% include site-context.html %}
+{% assign searchable = false %}{% if page.collection == 'digest' or page.collection == 'tech' %}{% if page.published == true %}{% assign searchable = true %}{% endif %}{% endif %}
+<article class="subpage digest-reader" {% if page.long_read %}data-tech-reader{% endif %} {% if searchable %}data-pagefind-body data-pagefind-filter="type:{% if page.collection == 'digest' %}paper{% else %}tech{% endif %}"{% endif %}>
+{% assign section_route = page.section %}{% if page.section == 'kitchen' %}{% assign section_route = 'life' %}{% endif %}
+<a data-pagefind-ignore class="digest-back" href="{{ prefix | append: '/' | append: section_route | append: '/' | relative_url }}">{% if page.section == 'digest' %}{{ t.all_issues }}{% elsif page.section == 'tech' %}{{ t.all_tech }}{% else %}{{ t.all_notes }}{% endif %}</a>
+<header class="article-header"><div class="eyebrow">{{ t[page.section] }}</div><h1 data-pagefind-meta="title" data-pagefind-weight="5">{{ page.title | escape }}</h1><p class="door-detail"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{% include local-date.html date=page.date %}</time> · {{ t.name }}</p>
+{% if page.summary %}<p class="issue-intro">{{ page.summary | escape }}</p>{% endif %}{% if page.source_url %}<p class="note-source" data-pagefind-ignore><a href="{{ page.source_url | escape }}">{{ t.source }} ↗</a>{% if page.repo %} · <a href="{{ page.repo | escape }}">{{ t.code }} ↗</a>{% endif %}</p>{% endif %}
+{% if searchable %}<span data-pagefind-filter="year:{{ page.date | date: '%Y' }}"></span><span data-pagefind-filter="month:{{ page.date | date: '%Y-%m' }}"></span>{% endif %}
+{% if page.daily_digest %}{% for topic in site.data.note_tags %}{% if page.tags contains topic.id %}<span data-pagefind-filter="tag:{{ topic.id }}"></span>{% endif %}{% endfor %}{% elsif page.tags.size > 0 %}<ul class="note-tags" aria-label="{{ t.tags }}">{% for topic in site.data.note_tags %}{% if page.tags contains topic.id %}<li data-pagefind-filter="tag:{{ topic.id }}">{{ topic[lang] | escape }}</li>{% endif %}{% endfor %}</ul>{% endif %}
+</header>
+{% if page.daily_digest %}<nav class="daily-toc" data-pagefind-ignore data-daily-papers="{{ page.paper_ids | join: ',' }}" aria-label="{{ t.daily_contents }}"><div class="daily-toc-heading"><h2>{{ t.daily_contents }}</h2><span>{{ page.paper_count }} {{ t.papers_unit }}</span></div><ol>{% for paper in page.daily_papers %}<li><a href="#paper-{{ paper.id }}"><span class="toc-number" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><span>{{ paper.title | escape }}</span></a></li>{% endfor %}</ol></nav>{% endif %}
+<div class="article-body{% if page.daily_digest %} daily-digest-body{% endif %}">{{ content }}</div>
+</article>

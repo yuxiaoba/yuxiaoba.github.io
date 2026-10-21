@@ -31,4 +31,7 @@ links:
   DOI: https://doi.org/10.1109/DSN-S65789.2025.00034
   BibTex: https://yuxiaoba.github.io/files/DSN25/LLMPrim-bibtex.txt
   Arxiv: https://arxiv.org/pdf/2505.00342
+year: 2025
+venue: DSN
+ccf: B
 ---

@@ -1,0 +1,243 @@
+{
+  "date": "2026-10-01",
+  "checked_on": "2026-10-19",
+  "status": "source-checked; local preview only",
+  "content_files": [
+    "_digest/zh/obsidian/daily-2026-10-01.md",
+    "_tech/zh/tlx-jagged-attention.md",
+    "_tech/zh/lmcache-kv-cache-intro.md",
+    "_digest/en/obsidian/daily-2026-10-01.md",
+    "_tech/en/tlx-jagged-attention.md",
+    "_tech/en/lmcache-kv-cache-intro.md"
+  ],
+  "papers": {
+    "megaflux": "https://arxiv.org/pdf/2610.00671v1",
+    "leto": "https://arxiv.org/pdf/2610.00687v1",
+    "mas-issues": "https://arxiv.org/pdf/2610.00905v1",
+    "activesaddler": "https://arxiv.org/pdf/2610.00906v1",
+    "retire": "https://arxiv.org/pdf/2610.01160v1",
+    "rapidmoe": "https://arxiv.org/pdf/2610.01265v1",
+    "epact": "https://arxiv.org/pdf/2610.01784v1",
+    "fastci": "https://arxiv.org/pdf/2610.01967v1",
+    "logos": "https://arxiv.org/pdf/2610.02297v1",
+    "compound-ai": "https://arxiv.org/pdf/2610.02503v1",
+    "tlx": "https://pytorch.org/blog/optimizing-jagged-flash-attention-with-tlx-the-road-toward-sota-fa4-on-blackwell/",
+    "lmcache": "https://blog.lmcache.ai/en/2026/10/01/intro-to-kv-cache-and-lmcache-part-one/",
+    "traces": "https://raw.githubusercontent.com/Azure/AzurePublicDataset/master/GitHubCopilotCodingAgentDataset2026.md",
+    "active-project": "https://autosaddler-projectpage.github.io/activesaddler/"
+  },
+  "figures": [
+    {
+      "paper": "activesaddler",
+      "figure": 2,
+      "page": 5,
+      "crop": [
+        104,
+        55,
+        508,
+        266
+      ],
+      "pdf_sha256": "84990dd9269675d12214f4eb4b0ab3e4fa9bbab189e28aa46aa8240af4ea27c2",
+      "image": "assets/digest/2026-10-01/activesaddler.png"
+    },
+    {
+      "paper": "leto",
+      "figure": 3,
+      "page": 4,
+      "crop": [
+        315,
+        68,
+        561,
+        186
+      ],
+      "pdf_sha256": "0cca9b1ae70fd611736fc3ee0df45eb6750ecdb0a2af1384bc308ae6519184eb",
+      "image": "assets/digest/2026-10-01/leto.png"
+    },
+    {
+      "paper": "mas-issues",
+      "figure": 2,
+      "page": 3,
+      "crop": [
+        49,
+        45,
+        547,
+        204
+      ],
+      "pdf_sha256": "f6e4ba3a6e08048e94427955fb4299b0ed2cfa3bf56d91d64b29557c89ed0e7a",
+      "image": "assets/digest/2026-10-01/mas-issues.png"
+    },
+    {
+      "paper": "rapidmoe",
+      "figure": 7,
+      "page": 5,
+      "crop": [
+        52,
+        67,
+        563,
+        239
+      ],
+      "pdf_sha256": "ec0e49e18886a7501b268386cb536a7f998f6d326f938397123ef49fd10918b7",
+      "image": "assets/digest/2026-10-01/rapidmoe.png"
+    },
+    {
+      "paper": "epact",
+      "figure": 1,
+      "page": 4,
+      "crop": [
+        67,
+        65,
+        545,
+        306
+      ],
+      "pdf_sha256": "8e8aafd263d6b42aadb5582035f1ae8669b061800a68c5bb76120fdf3061cccb",
+      "image": "assets/digest/2026-10-01/epact.png"
+    },
+    {
+      "paper": "fastci",
+      "figure": 2,
+      "page": 3,
+      "crop": [
+        106,
+        52,
+        507,
+        245
+      ],
+      "pdf_sha256": "03a6c9555da851f5e801298e2d2c2d96ab840971650c3011840358b05125d33b",
+      "image": "assets/digest/2026-10-01/fastci.png"
+    },
+    {
+      "paper": "megaflux",
+      "figure": 2,
+      "page": 5,
+      "crop": [
+        105,
+        53,
+        509,
+        300
+      ],
+      "pdf_sha256": "856245ff803a8068e45d9bc75daff2cc6e43b0b52a4682ec7d538104aa860593",
+      "image": "assets/digest/2026-10-01/megaflux.png"
+    },
+    {
+      "paper": "retire",
+      "figure": 3,
+      "page": 7,
+      "crop": [
+        52,
+        62,
+        546,
+        254
+      ],
+      "pdf_sha256": "cc6b0eb0cd99e7f29268c1de7e9c12e333a08a0105ed262b72c62ab250e10ee1",
+      "image": "assets/digest/2026-10-01/retire.png"
+    },
+    {
+      "paper": "logos",
+      "figure": 2,
+      "page": 5,
+      "crop": [
+        52,
+        200,
+        561,
+        391
+      ],
+      "pdf_sha256": "acd97cfa365c1b04f6a3081a0195d2a3331185149de500da166225a6abe663e6",
+      "image": "assets/digest/2026-10-01/logos.png"
+    }
+  ],
+  "asset_sources": {
+    "assets/tech/tlx-jagged-attention/architecture.png": "https://pytorch.org/wp-content/uploads/2026/09/1.png",
+    "assets/tech/tlx-jagged-attention/scheduling.png": "https://pytorch.org/wp-content/uploads/2026/09/3.png",
+    "assets/tech/lmcache-kv-cache-intro/prefill-decode.png": "https://blog.lmcache.ai/wp-content/uploads/2026/10/image-6.png",
+    "assets/tech/lmcache-kv-cache-intro/storage-tiers.png": "https://blog.lmcache.ai/wp-content/uploads/2026/10/image-2.png",
+    "sources/tlx-readme.md": "https://raw.githubusercontent.com/facebookresearch/ads_model_kernel_library/main/tlx_jfa/README.md",
+    "sources/lmcache-readme.md": "https://raw.githubusercontent.com/LMCache/LMCache/dev/README.md",
+    "sources/tlx-clc.html": "https://pytorch.org/blog/enabling-cluster-launch-control-with-tlx/",
+    "assets/tech/tlx-jagged-attention/pipeline.png": "https://pytorch.org/wp-content/uploads/2026/09/2.png"
+  },
+  "translation": "Assistant authored Chinese and English together; not user-supplied translations.",
+  "x_timestamp": "2026-10-02 01:05 Asia/Shanghai supplied by user; precise minute not independently verified. Dataset claims checked against Azure official repository.",
+  "experiments": "Not reproduced; all results attributed to original authors.",
+  "compound_ai_image": "No suitable original architecture figure; text only.",
+  "existing_docs_sha256": {
+    "_digest/en/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "_digest/zh/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "_digest/en/obsidian/daily-2026-10-11.md": "bb79a1b071657a08ec87ef654ba639bba8d1b5e4592866e3c3858574871c85f9",
+    "_digest/zh/obsidian/daily-2026-10-11.md": "516e4a2a49b647208c1361a6c048aaa8ec91706f566f2df07467ec4bba6e36aa",
+    "_tech/en/anyscale-coding-agent-serving.md": "870aba47e0ed38d40b34a180bee2fe38ec300c2cb853eb6a80a46e39619592d4",
+    "_tech/en/aqua-production-quality.md": "1e0af1de0e57b2ab2860a27e4cf56f03f00b025bee279baa9f63625907fce511",
+    "_tech/en/pai-agent-observability.md": "ac2d90b399298f44266c8b06b0c558a92611369fdcc1ce76094dd708b46c916d",
+    "_tech/en/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "_tech/zh/anyscale-coding-agent-serving.md": "07edcf980811d533ed743ce82fce69ad85b9d9f068944f0570be74c4c54dec36",
+    "_tech/zh/aqua-production-quality.md": "69015827cb3495da81960a14572ef3259586271f574ae3804aaa0a1a9dfbd319",
+    "_tech/zh/pai-agent-observability.md": "17d51dc08180bb1c5538d139143a4a65cb989519aa0ff4117cc0badebaac505b",
+    "_tech/zh/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "_publications/2026/tse-ccisolver.md": "b16405cddab294b88bf312c08dd92dda87e8944c75506342df702e485b69c64f",
+    "_publications/2026/fse-ivr-state-snapshot.md": "f87de56a3cf5019b3667ed0cc6aede1d23d1d740353e3087e4e74470d4e08b12",
+    "_publications/2026/arxiv-llm-failures.md": "aafaba6b0a7d8f29d8084238818e555b6499740f92e0310b5dcd6ea728ffc936",
+    "_publications/2026/tos-efrc.md": "9e13f759340168ed619c702e0994c3f8bead58ac80ef5fef0b015da209f24a3e",
+    "_publications/2026/taas-serverless-tracing.md": "48aa087011c0942215968e6837d9aeb4e96b0a9cda3fcf4b452e351552c44ff3",
+    "_publications/2026/tosem-logging-generation.md": "fd700d03b40254d87482c3c306ad2ebf78a8a6b5dd80a238f2c692a659de8619",
+    "_publications/2026/emse-kpiroot-plus.md": "db2ca2a3f321a14d1c7c8ec0994b1ca6d0c3705fe79303f935a50d3ea5df555a",
+    "_publications/2026/dsn-llmguard.md": "a905f21371ff25652c557aa62356dd9a48ee9c152a45d709f4b64f0a03bf8c9e",
+    "_publications/2026/icse-preserve.md": "3391b7e3f60f2f5cee542f7bceb013dd990af836629f0b81baa7ffb25631e643",
+    "_publications/2026/kdd-star.md": "697880237cc181e8f260177c18017aa04116492e596c7f0896be0f49f10c9f44",
+    "_publications/2026/jss-logfun.md": "da14d2fb114eed4b5143094db402749a6426a01ff1aef48bcd5c34437a1a1fe5",
+    "_publications/2026/arxiv-cloud-opsbench.md": "1c787a2ee5496cd8c0b793ba747de9801989b64b94f6d77d2698f85c8cc48cfe",
+    "_publications/2026/tosem-autoscope.md": "90d0bbab37e00298be12fa923efd2036704e99ffd292cd2094bff29e28c16059",
+    "_publications/2026/ase-opslens.md": "21249b34740bb3566730daae8ce24c52fda13b9f6e5168e95a293976e4f3044b",
+    "_publications/2026/jsoftware-root-cause-change.md": "e219e4ea9ea2dab317f6dcc84de68e43da74a0be5e8f1f5e8dd0d566ac2dfd70",
+    "_publications/2026/tosem-ai-nativebench.md": "f443d836bdd649826be81826d538f5549d0efea61d965c8ac16340dbda877686",
+    "_publications/2025/arxiv-daifu.md": "006c02cb94d2cbfd35e3b2442a52ab710cfb2f0414471c7724c5384346920bb9",
+    "_publications/2025/ASPLOS-Mint.md": "5424da559be22c0e7d8ed7dca4a3266cb5e8c1a69d38539f58103b67bb6b2af5",
+    "_publications/2025/SANER-Conan.md": "914c776041785dcfe1029e90c03dd6e44e7a3610ec4bf2ab35eca272b7ba4f73",
+    "_publications/2025/TSE-Incident.md": "a63e059969b53cb1cb549c45d01424020e7f6d5f03b58a1fdd2c63e19b6e27fb",
+    "_publications/2025/ASE-Alert.md": "568198e78c1bf0759f33147b77ddbef9baf2b0e71ce932f121c6100a26f0481d",
+    "_publications/2025/Internetware-eRAR.md": "c943fc8f33f6206f1c4a24bad0204eb9c2f5ea6f55d6280a746a531bba18c093",
+    "_publications/2025/DSN-LLMPrism.md": "99da2f7046002fa872e8abc5c0c638e9defed9370a79d514b13955b330246935",
+    "_publications/2025/ASE-iKnow.md": "0e54b349a83537ec8d835b793581d6ad7308141ebe996e867e54e88138994e36",
+    "_publications/2025/IWQoS-CauseLens.md": "3002f7acc66e3395d211c5a83a49a03bc1a9b1c05341e7ea79289c82fb517c3b",
+    "_publications/2025/ToN-Network.md": "f0b48b6a6a088a1fdc42e2a79587f65d8b42c8a3c443b1d76be184231ee1f800",
+    "_publications/2025/FSE-L4.md": "1891af621fbaeec55e0dd00e01f90dfec9be6288feaac1cc61f98e5eedf2b961",
+    "_publications/2025/ICSE-COCA.md": "db53545037feea4a6a89937aaf3c6f86a960858254402345682465f7287f1d2f",
+    "_publications/2020/Access-VWR.md": "31f95db9ea4e901be2cb2ba382a8284f20e3792df6dd5ede677c44b341280046",
+    "_publications/2020/TCC-Microscaler.md": "fcbb693b6e911d0b2f2288662ba4489180dea9d606c9912a3f6d4e7f32e5d4a4",
+    "_publications/2020/IPDPS-Load.md": "98ba82f4f11a2ec9722058e60f4a383276fa74b7fac1b5529827114d5181df44",
+    "_publications/2020/TNNLS-Topomad.md": "a29b6c74b124cbc710ccb463c3a16ccdfddebf09cb30092f7540d1a50eea130a",
+    "_publications/2020/ISSRE-Swisslog.md": "db27d91ad1bf7417922fc67f4221c99fe062b59712bebe6c150d1203d9927a32",
+    "_publications/2019/ICWS-Microscaler.md": "a78462726b3d82813fe8df306709ea84ff6cafb9455d650cac315539b536657e",
+    "_publications/2022/TDSC-Swisslog.md": "53412e7adf3c0991187c4111e273948286c6ce2015f62005a0f6aa4428432747",
+    "_publications/2022/ICSOC-Microsketch.md": "6b183ebb4e199dbeb6900384336fb1800d24eeb252e01d623c577618facdbbf2",
+    "_publications/2022/ISSRE-Incident.md": "22c05687daab80ae69095290ec4b7f700ce96cf43d0fdd00d49b75495dace9b4",
+    "_publications/2022/ASE-GIED.md": "dbb3359bc3212b47429b9803a924160562f3602c1e3f10b85798aec761b8f524",
+    "_publications/2022/ICWS-TSInvarNet.md": "79a284bda0681ce7264e0dd4316aeee3c1f29969baeb309ec9cf62b80e460bbe",
+    "_publications/2023/FSE-Diagconfig.md": "03791fc1342fda81fab53098e1df61c959a200f21c085690007451a95646b254",
+    "_publications/2023/JNCA-ServiceMesh.md": "3047c46f2777d43731ee67b57cca2bce90c786de06b3332615ddcb59923f9eae",
+    "_publications/2023/TSC-FaaSDeliver.md": "5030720d8dedd539ed426159f6eecf1b526250ec53c26cd4893c0a5c37a0d937",
+    "_publications/2023/jsoftware-java-tracing.md": "bfc7ae40218f3db0067b8a9f01427c81bf8df60950bf65bebb34a795ba4c3588",
+    "_publications/2023/FSE-Nezha.md": "872acae71dc8abc2714afde418416193b0caa11e5648bc9d325b6bf8b2bf5a8f",
+    "_publications/2023/ICSE-Logreducer.md": "0d5436a4265d5794ba577104e2ca2c434643a948ebebd09999bcdf6ae0d714f1",
+    "_publications/2023/ICPP-Deeppower.md": "a606b1d289dadc7ae1215268da1a122065e33ecf045e80afbdc40b02bd827bd7",
+    "_publications/2023/ICPP-MARS.md": "17c2cff0f3fbe02b469464b0f9b25031ccebc32542b94549975aae0b47fc28ed",
+    "_publications/2021/CCGrid-Trank.md": "3fbb8b59b4d99e0bc5f00f5526f40771a067d59fe4c02e2c2596d1f5dd21bca9",
+    "_publications/2021/ICWS-Sieve.md": "5bb8e248e5c450f8fdab50c09f9e655ded64425d1e29ece655b46714d06227ad",
+    "_publications/2021/ICSE-Kmon.md": "567046aeb18f55c6f3e6b8012e873f0802d18e4deae8ec3c6ef41a6a68d0ce8a",
+    "_publications/2021/JSEP-Tracerank.md": "774de1f0207e84c7ef8eb7c4d08d9cffbf013dfa537b1c44989f6995fe09d8f4",
+    "_publications/2021/WWW-Microrank.md": "372562e995a27d31d2839a0c0f3dc3e9785928fe859ec032d2673ba659e0e00f",
+    "_publications/2024/ISSRE-FaaSRCA.md": "7e8ee2d01ebd2c61c951237020e7e15dc2a3c938fdb2aed892e1812779bd4186",
+    "_publications/2024/Internetware-CTune.md": "acfb4f1df3c2387f72247e8647b97a88357441defcfa694a7c95f5fd19a1c280",
+    "_publications/2024/Survey-ChaosAI.md": "70bc54c5979f3e681e1122664470a65e328e0c27c6cf1aa00e4754d10d385909",
+    "_publications/2024/ASE-FaaSConf.md": "232297860169eb95bf2dbd6940341c8ce0d49dae65f75189cb1cfc3d87812f74",
+    "_publications/2024/TDSC-MicroFI.md": "c758ee735cfb3c0b97057d7908145bea5f6850e716634a77741e6231366859c6",
+    "_publications/2024/FSE-ChangeRCA.md": "4e699a179da8d40465345c00f86c75618f244117eb32c3aa97b1f926e95b3ac0",
+    "_publications/2024/FSE-TraStrainer.md": "b2126e1e9bafb5ef7770860ed4775aaf4d05384c160dc6bbf927dc71ff743686",
+    "_data/note_tags.yml": "5ac1922f33ccf2308fd052c5aa6366ea0ec197ccd27a38187695dff5148055e4",
+    "_data/publication_topics.yml": "d5e557d1625a937628dfe4ddc820c842f53966630776faa174e86e6b8f835f1c",
+    "_data/navigation.yml": "79453781e079af16886271644dd37d0a98252e183f38a583fb4c4764dc98fa33",
+    "_data/authors.yml": "4a5ebd743e0de1f36e5561bcfc9f7a31e95f7be555960b8309f4fd0af61a1cb9",
+    "_data/news_zh.yml": "17f933ae01968f870c337535bc237d6cce8357a9697d31d3862a15ded3c12b59",
+    "_data/profile_zh.yml": "58681e60dcfca89369ce9a8bce3c28d323a34b4a5df69abb90d6239b410713b0",
+    "_data/profile.yml": "b176ab8b4f6c23185d8660150c0fc2ee9dc283ef9e22c6e6d261e524d75086c8",
+    "_data/locales.yml": "dd3b1aff069b42d9899abc9b2737fcb1e8f578c1d8b4be85ca9f3d8fdee86f7a"
+  }
+}

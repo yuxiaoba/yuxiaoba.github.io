@@ -25,4 +25,7 @@ links:
   DOI: https://doi.org/10.1109/TON.2025.3590034
   BibTex: https://yuxiaoba.github.io/files/ToN/NetScope-bibtex.txt
   # Arxiv:
+year: 2025
+venue: IEEE/ACM ToN
+ccf: A
 ---

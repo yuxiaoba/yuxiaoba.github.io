@@ -1,0 +1,166 @@
+{
+  "reviewed_on": "2026-10-18",
+  "status": "draft",
+  "sources": [
+    {
+      "paper": "mora",
+      "url": "https://arxiv.org/pdf/2610.09473v1",
+      "version": "2610.09473v1",
+      "pdf_sha256": "43e19fcd11556bdcde74e0e3b7354a8fba5ff2b9f5001609d283291a9a8fe265",
+      "pdf_pages": 9,
+      "figure": 2,
+      "pdf_page": 3,
+      "clip_points": [
+        90,
+        45,
+        515,
+        212
+      ],
+      "output": "figures/mora-fig2.png",
+      "image_sha256": "afc90bd00bbf2b2d0d3f8653f055e35394a1be4b83f90fada4679c5542f60e15",
+      "method": "Render original PDF region; no redrawing, relabeling or scientific-value editing.",
+      "figure_visual_check": "Complete diagram inspected after extraction; no clipped labels or arrows observed."
+    },
+    {
+      "paper": "nosracer",
+      "url": "https://arxiv.org/pdf/2610.11875v1",
+      "version": "2610.11875v1",
+      "pdf_sha256": "fd5656153f2a13b06f45a610a6973830f0f9601cf4c5a22d28a09600029af2e4",
+      "pdf_pages": 18,
+      "figure": 2,
+      "pdf_page": 3,
+      "clip_points": [
+        75,
+        68,
+        270,
+        214
+      ],
+      "output": "figures/nosracer-fig2.png",
+      "image_sha256": "f87469bae5d2716f2ba3c073343932ea125c0feb462b334e190a1cf4d1dbb74b",
+      "method": "Render original PDF region; no redrawing, relabeling or scientific-value editing.",
+      "figure_visual_check": "Complete diagram inspected after extraction; no clipped labels or arrows observed."
+    },
+    {
+      "paper": "resilience",
+      "url": "https://arxiv.org/pdf/2610.11260v1",
+      "version": "2610.11260v1",
+      "pdf_sha256": "71af76bb7160776b90b90e6f106edf0406a92601cdc0d77e77102b0c3bd4055c",
+      "pdf_pages": 11,
+      "figure": 2,
+      "pdf_page": 4,
+      "clip_points": [
+        45,
+        48,
+        565,
+        150
+      ],
+      "output": "figures/resilience-fig2.png",
+      "image_sha256": "6f2d1719e4762fa0e81d46c81766e372d6297fb1d1851594b282ba98be8f9725",
+      "method": "Render original PDF region; no redrawing, relabeling or scientific-value editing.",
+      "figure_visual_check": "Complete diagram inspected after extraction; no clipped labels or arrows observed."
+    },
+    {
+      "paper": "messages",
+      "url": "https://arxiv.org/pdf/2610.15459v1",
+      "version": "2610.15459v1",
+      "pdf_sha256": "aae31529bb5a45c04bca86d67dd22c8f9cbaca9f8e2da37f74273f81f9716ece",
+      "pdf_pages": 21,
+      "figure": 3,
+      "pdf_page": 8,
+      "clip_points": [
+        46,
+        85,
+        440,
+        211
+      ],
+      "output": "figures/messages-fig3.png",
+      "image_sha256": "eb9e067f0044da477c624ca5f3920daad860e3b43fb9d0d2de8c95cd15e3afab",
+      "method": "Render original PDF region; no redrawing, relabeling or scientific-value editing.",
+      "figure_visual_check": "Complete diagram inspected after extraction; no clipped labels or arrows observed."
+    },
+    {
+      "paper": "cadence",
+      "url": "https://arxiv.org/pdf/2610.12269v1",
+      "version": "2610.12269v1",
+      "pdf_sha256": "88a82ec39b422917081ad520abc4cc3edc638db813af6149b2af91285e675fdf",
+      "pdf_pages": 21,
+      "figure": 3,
+      "pdf_page": 6,
+      "clip_points": [
+        65,
+        82,
+        420,
+        221
+      ],
+      "output": "figures/cadence-fig3.png",
+      "image_sha256": "5ffbe6b1f0f97431f03fd214e21a0a821f4841b07fd865c72916f8ccf80a3494",
+      "method": "Render original PDF region; no redrawing, relabeling or scientific-value editing.",
+      "figure_visual_check": "Complete diagram inspected after extraction; no clipped labels or arrows observed."
+    },
+    {
+      "paper": "mass",
+      "url": "https://arxiv.org/pdf/2610.12176v1",
+      "version": "2610.12176v1",
+      "pdf_sha256": "9018fa312c4dac659426fab2b304357593f5f4ad7886d73589f34dd06012f282",
+      "pdf_pages": 39,
+      "figure": 1,
+      "pdf_page": 1,
+      "clip_points": [
+        125,
+        501,
+        484,
+        633
+      ],
+      "output": "figures/mass-fig1.png",
+      "image_sha256": "b9e20bd21e3b986546dd60b10daf1c8eaeb7e202f2d852a456d7bc622e1dffe3",
+      "method": "Render original PDF region; no redrawing, relabeling or scientific-value editing.",
+      "figure_visual_check": "Complete diagram inspected after extraction; no clipped labels or arrows observed."
+    },
+    {
+      "paper": "nosracer",
+      "url": "https://arxiv.org/pdf/2610.11875v1",
+      "version": "2610.11875v1",
+      "pdf_sha256": "fd5656153f2a13b06f45a610a6973830f0f9601cf4c5a22d28a09600029af2e4",
+      "pdf_pages": 18,
+      "figure": 3,
+      "pdf_page": 6,
+      "clip_points": [
+        62,
+        70,
+        550,
+        139
+      ],
+      "output": "figures/nosracer-fig3.png",
+      "image_sha256": "ab4feb41e6da682f51db3854527936eee4965c684117640d6e2410f7dae1ef65",
+      "method": "Render original PDF architecture diagram; no redraw or relabeling.",
+      "figure_visual_check": "Complete diagram visually checked: both phases, all four modules, input/output arrows and labels visible."
+    }
+  ],
+  "reading_scope": "Main problem, methods, experimental setup, primary results and limitations of all six papers; relevant MASS appendices B–E checked for data, evaluation and token accounting. References and long task prompts are not reproduced.",
+  "notes": [
+    {
+      "file": "cadence.md",
+      "sha256": "0889799c86db4290605c493d3d9d8e0b4e540ec0a84f72618e1e7caf62cf6bba"
+    },
+    {
+      "file": "messages.md",
+      "sha256": "4d043fa37a3d6be6178423abd8ad2386c9d3d947c52c8723f78fdbb9b499f9ad"
+    },
+    {
+      "file": "mass.md",
+      "sha256": "232831d1169dc7e624f1308a022cdd8cd568899eb08d06b6358609d2c3003463"
+    },
+    {
+      "file": "mora.md",
+      "sha256": "0baa5bbd9b8cdbd6bb0152a7f14dab2c6baf5c3ca7190d2951c468627a8e0403"
+    },
+    {
+      "file": "nosracer.md",
+      "sha256": "00282f569d4608ec3a758bbc668954c8cd82939dcb3598e502f50b9bcfc1194a"
+    },
+    {
+      "file": "resilience.md",
+      "sha256": "23c382f156883d5fda58337d0f443979514f423f63d68e1b3e5afcfd060f3417"
+    }
+  ]
+}

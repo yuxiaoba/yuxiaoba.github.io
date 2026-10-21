@@ -1,5 +1,5 @@
 ---
-title:          "Microscaler: Cost-effective Scaling for Microservice Applications in the Cloud with an Online Learning Approach"
+title: 'Microscaler: Cost-Effective Scaling for Microservice Applications in the Cloud With an Online Learning Approach'
 date:           2020-04-06 00:00:00 +0800
 selected:       false
 pub:            >-
@@ -21,4 +21,7 @@ links:
   DOI: https://doi.org/10.1109/TCC.2020.2985352
   BibTex: https://yuxiaoba.github.io/files/TCC/microscaler-bibtex.txt
   # Arxiv:
+year: 2022
+venue: IEEE TCC
+ccf: null
 ---

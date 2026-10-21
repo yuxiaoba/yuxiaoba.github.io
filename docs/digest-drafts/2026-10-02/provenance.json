@@ -1,0 +1,140 @@
+{
+  "summary": "完成双语日报（6篇论文，重点解读ByteSplat与Coda，附1条原帖阅读线索）及双语Helion技术长文，共4个Markdown、7张目视核验的原始配图。9个输入ID均已归档，Mooncake消息暂缓。输出路径、双语元数据、论文锚点、固定标签、图片链接及真实SHA-256检查通过。写作与翻译均标记为assistant。按要求未构建、启动服务或更新预览，交由外层程序继续检查；隔离目录未提供.handoff文件。",
+  "articles": [
+    {
+      "kind": "paper",
+      "source_ids": [
+        "arxiv-2610.02851",
+        "arxiv-2610.03088",
+        "arxiv-2610.02713",
+        "arxiv-2610.02732",
+        "arxiv-2610.03286",
+        "arxiv-2610.04037",
+        "x-learnk8s-96719994"
+      ],
+      "zh_path": "_digest/zh/daily-2026-10-02.md",
+      "en_path": "_digest/en/daily-2026-10-02.md"
+    },
+    {
+      "kind": "tech",
+      "source_ids": [
+        "pytorch-blog-building-a-high-performance-and-por"
+      ],
+      "zh_path": "_tech/zh/helion-linear.md",
+      "en_path": "_tech/en/helion-linear.md"
+    }
+  ],
+  "deferred": [
+    {
+      "id": "x-threataft-38770125",
+      "reason": "已取得原帖，但未能支持“两个CVSS 9.8”：链接报道正文列9.8与9.4，CNA VulnCheck对CVE-2026-103765的当前公告列CVSS 4.0为8.8。不同量表和版本不能直接比较，四项漏洞的评分版本、受影响范围和修复状态尚未统一核实，因此暂缓发布该安全结论。原帖、报道及CNA公告已保存至sources/；NVD直接下载返回403。"
+    }
+  ],
+  "evidence": [
+    {
+      "source_id": "arxiv-2610.02851",
+      "url": "https://arxiv.org/abs/2610.02851",
+      "local_file": "sources/arxiv-2610.02851.pdf",
+      "sha256": "c5c92bf1abb51c58555dad6f9f137ffcccfbb6b9774dd8ce0a4ec38d8c187619",
+      "review_notes": "下载完整https://arxiv.org/pdf/2610.02851v1，标题与摘要页、PDF首页一致。作者Shuo Wu、He Zhu、Han Zhao、Xiaohui Zhang、Yaqian Zhao、Hui Wei、Ruyang Li、Hongzhi Shi、Lihua Lu、Jingwen Leng、Yu Feng、Minyi Guo；首发2026-10-02 05:37:59 UTC，确认Minyi Guo参与。阅读§§4–6（PDF pp.8–12）的融合光栅化、tile内S3IM、硬件感知剪枝和精确零梯度省略，以及§§7–8（pp.13–18）的设置、质量与消融。六数据集、Grendel-GS基线，八A6000每轮平均/峰值加速3.4×/6.1×，八A100为2.7×/3.6×；不是从零达到同等质量的总训练加速。初始训练平均约200k轮，剪枝后30k轮微调。最大PSNR下降0.1dB、SSIM下降0.01。反向通信减少65.8%=去零46.2%+剪枝19.6%，均相对原始通信量。ACM模板含占位DOI，不据此宣称录用会议。作者报告，未复现；双语解读由assistant编写。"
+    },
+    {
+      "source_id": "arxiv-2610.03088",
+      "url": "https://arxiv.org/abs/2610.03088",
+      "local_file": "sources/arxiv-2610.03088.pdf",
+      "sha256": "038fd8f73527ac863905be3b394abb32c08d3d1f7e8c03ccab905aa4c2197658",
+      "review_notes": "下载完整https://arxiv.org/pdf/2610.03088v1；标题、作者与首发时间经摘要页和PDF核对。作者Youhe Jiang、Fangcheng Fu、Binhang Yuan、Krishna Malladi、Ehsan K. Ardestani、Zhan Shu、Adnan Aziz、Yi Xu；首发2026-10-02 10:07:36 UTC。阅读§3 pp.4–5轨迹分析、§§4–6 pp.5–10准入/注意力分组/路由/实现、§7 pp.10–14实验及Appendix A p.15校准。老化尺度5秒、最老可行请求优先阈值20秒，仍受HBM容量限制；分组保守预计收益至少5%，只拆注意力、保留所有请求和单次KV更新。四A100-80GB、Qwen3-Coder-30B-A3B-FP8、TraceLab派生3/5/7请求每秒，相对逐指标逐轨迹最强竞争基线，输出吞吐提高4.2–12.1%，SLO合规吞吐提高15.9–44.3%。保留作者SLO口径，不解释为任务正确率。关键限制：动机回放包含SSD，但附录明确原型与报告实验没有SSD层，加载项为零。结果未复现，双语稿由assistant编写。"
+    },
+    {
+      "source_id": "arxiv-2610.02713",
+      "url": "https://arxiv.org/abs/2610.02713",
+      "local_file": "sources/arxiv-2610.02713.pdf",
+      "sha256": "e6af7414b9765e78ce661a0aff3ff7294291443a0d6faef1364c60a15d7ce93d",
+      "review_notes": "完整PDF下载自https://arxiv.org/pdf/2610.02713v1。标题及作者Utkarsh Ranjan核对一致；首发2026-10-02 02:48:25 UTC。阅读§§2–3 pp.2–3头行为变化、预测局限与GPU LRU/CPU可恢复库，§§4–6 pp.3–4实验和局限及Appendix A p.7基线简化说明。Table2：A30 24GB、Mistral-7B、LEval 8k→1000、LongBench 4×30样本；每步重排R=1为153.6 tok/s、stock FlexiCache的1.34×、相对质量97.4%；R=16为266.6 tok/s、2.33×、95.0%。§5.2明确部分收益来自减少注意力工作。模拟测未命中率而非PCIe停顿，部分基线为简化重实现；实机仅一个模型和一张A30。图中方法分类归于作者，不宣称独立验证首次贡献。未复现，双语稿由assistant编写。"
+    },
+    {
+      "source_id": "arxiv-2610.02732",
+      "url": "https://arxiv.org/abs/2610.02732",
+      "local_file": "sources/arxiv-2610.02732.pdf",
+      "sha256": "d4c373e90ceb78e79c0769cb79c1c8661af8fa76ecf0410b1945d9d566ee90c7",
+      "review_notes": "下载完整https://arxiv.org/pdf/2610.02732v1。作者Sungjoon Park、Changue Jung、Kyungno Joo、Mincheol Kang、Jaehyung Ahn、Sehwan Lee、Sangjoon Kim；首发2026-10-02 03:06:15 UTC。标题、作者、时间经摘要页和PDF核对。阅读§§3.1–3.6 pp.3–6服务闭环、KV拉取与背压、iSTAGE非规则批次/CUDA Graph建模和成本归属，以及§4 pp.6–11校准与验证。InferenceX 27个工作点平均误差3.6%，留出点3.7%，校准点3.5%。多轮验证为Qwen3-32B FP8、两H100分别prefill/decode，基线1用户、20轮、2QPS、1k共享提示、10k历史、100输出token。9.9%为汇总误差，Table5仍有ISL×2的TTFT−20%、USERS×20的ITL−23%，不是逐指标上界。免目标算子profiling仍需组件级实测校准；芯片设计扫描属于模拟。未复现，双语稿由assistant编写。"
+    },
+    {
+      "source_id": "arxiv-2610.03286",
+      "url": "https://arxiv.org/abs/2610.03286",
+      "local_file": "sources/arxiv-2610.03286.pdf",
+      "sha256": "6abcf29589ad65437aa9071e07eb3ba03679c4f01ae7fcbf433019e9987340bc",
+      "review_notes": "完整PDF下载自https://arxiv.org/pdf/2610.03286v1；首发2026-10-02 13:29:40 UTC。核对标题及18位作者：Mingjun Zhang、Yucheng Li、Menghao Zhang、Shuyong Zhu、Ping Zhang、Xiaohe Hu、Jun Chen、Zhixin Wang、Xutong Wang、He Liu、Yanmin Jia、Shengrong Zhu、Peng Sun、Mingjie Zhang、Liming Liu、Jinlong Hou、Yuan Cheng、Yujun Zhang。阅读§3 p.4总览、§4 pp.4–7轨迹组优先调度/KV驻留/迁移、§5 pp.7–9实际内存准入与模板快照页共享、§6 pp.9–12实验及附录。32张Hopper分16生成/16训练，Qwen3-4B/32B、OpenSWE、GRPO每提示8样本，最多128k输出和300轮。Fig10相对RollFlash最高4.24×依赖批次与异步设置，严格on-policy收益较小。Fig13记录突发内存增长与迁移，不能承诺不会内存超限；共享采用写保护和COW。吞吐不等于学习质量改善。未复现，双语稿由assistant编写。"
+    },
+    {
+      "source_id": "arxiv-2610.04037",
+      "url": "https://arxiv.org/abs/2610.04037",
+      "local_file": "sources/arxiv-2610.04037.pdf",
+      "sha256": "59516f18ddd2ac2298c8db9b6597fdfd600e94ed5068fc29b1253d39b7ba8c4a",
+      "review_notes": "下载完整https://arxiv.org/pdf/2610.04037v1。标题与作者Maisy Dunlavy、Michael Papka、Zhiling Lan核对一致；首发2026-10-02 20:40:32 UTC，即上海10月3日。阅读§III pp.3–4参考输出、LLVM IR单比特XOR、语义位置对齐及分类；§§IV–V pp.5–8设置与结果，§VI pp.9–10微研究和§VIII p.11边界。A100/Polaris、Intel Max1550/Aurora、AMD MI250X/Frontier，选定HeCBench内核；1150候选位置中15个无法对齐而剔除。作者报告保留的对齐注入仅10.4%在三个后端同类结果。比较包含编译器与运行时，非自然故障率或纯芯片排名。分类使用任务比较器，浮点绝对容差1e-5、超时200秒；Intel结果在系统栈修复后采集。多比特、突发错误和完整应用仍为后续范围。未复现，双语稿由assistant编写。"
+    },
+    {
+      "source_id": "pytorch-blog-building-a-high-performance-and-por",
+      "url": "https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/",
+      "local_file": "sources/pytorch-blog-building-a-high-performance-and-por.html",
+      "sha256": "eb837c628d3092c688ffc4d287c9f7e11e940a3924314cde515e2e959dc3d611",
+      "review_notes": "下载官方完整HTML。核对原题、作者Sean Chen (Red Hat)和Shangdi Yu (PyTorch, Meta Platforms)、发布日期2026-10-02。阅读Scope、Kernel Implementation、Hybrid Dispatch、Kernel Autotuning、Performance Evaluation、Adoption Model和Future work。覆盖三种量化/缩放格式，Split-K搜索1–256二次幂、Swap-AB布尔选择；max_helion_size=32，调优token数1/2/4/8/16/24/32并开启CUDA Graph。原文称LLM种子模型Claude Opus4.8，不独立断言其优势。H10080GB HBM3，Qwen3的1.7/4/8/14/32B及Qwen3.8-27B；内核几何均值1.110/1.178/1.149/1.177分别对应CUTLASS/CUTLASS/FlashInfer/DeepGEMM比较。服务实验ShareGPT、TP1、最大序列32、关闭前缀缓存；超过10%吞吐改善仅指部分工作负载。保留数小时调优、JIT冷启动、图外CPU开销与配置维护成本。fork/RFC状态限定文章发布时；其他硬件和MoE为未来方向。新增部署判断明确为工程推导。未复现，完整中英文由assistant编写。"
+    },
+    {
+      "source_id": "x-learnk8s-96719994",
+      "url": "https://x.com/learnk8s/status/2106077007796719994",
+      "local_file": "sources/x-learnk8s-96719994.html",
+      "sha256": "7f7b211042495d9621cceb6c8e4ff13c6ea3002c215d4c6b95cd8cef0f5eb3ca",
+      "review_notes": "直接下载取得LearnKube @learnk8s完整原帖，正文介绍生产Agent轨迹回放、会话指标、调用依赖和OpenTelemetry Trace Replay for Inference Perf。可见时间为2026-10-02 5:41PM，未取得可靠时区字段；与输入10月3日的差异已在双语正文说明。短链https://ku.bz/Lr41DRrlf跳转到https://medium.com/inference-perf/benchmarking-llm-inference-with-production-agent-traces-f47f7f994aff，但目标返回403 Cloudflare，诊断页面保存在sources/learnk8s-linked-article.html。因此仅作为日报内经原帖核验的简短阅读线索，不创建独立技术文、不报告性能数字、不声称读过链接全文。双语转述由assistant编写。"
+    }
+  ],
+  "images": [
+    {
+      "path": "assets/images/digest/2026-10-02/bytesplat.png",
+      "source_id": "arxiv-2610.02851",
+      "source_url": "https://arxiv.org/pdf/2610.02851v1",
+      "review_notes": "PDF第8页Figure7，PyMuPDF按3倍分辨率提取完整双面板。使用view_image检查原页与最终PNG：常规/融合流程、全部箭头、DRAM带及面板标签完整，未混入相邻正文。中英文共享图片，分别提供alt与机制图注。"
+    },
+    {
+      "path": "assets/images/digest/2026-10-02/coda.png",
+      "source_id": "arxiv-2610.03088",
+      "source_url": "https://arxiv.org/pdf/2610.03088v1",
+      "review_notes": "PDF第8页Figure8，3倍分辨率提取。view_image目视确认顶部排序前后请求、两个cohort、共享QKV/KV更新、两次注意力、分离输出区域及底部整批dense/MoE均完整，符合正文同轮保留全部请求的说明。双语独立alt和图注。"
+    },
+    {
+      "path": "assets/images/digest/2026-10-02/wakekv.png",
+      "source_id": "arxiv-2610.02713",
+      "source_url": "https://arxiv.org/pdf/2610.02713v1",
+      "review_notes": "PDF第3页Figure1，完整提取两个面板。view_image检查方法分类、GPU/CPU节点、demote/fetch箭头及虚线不可恢复对照均保留。图中的方法定位明确归于作者；双语图注解释降级后取回机制。"
+    },
+    {
+      "path": "assets/images/digest/2026-10-02/servetwin.png",
+      "source_id": "arxiv-2610.02732",
+      "source_url": "https://arxiv.org/pdf/2610.02732v1",
+      "review_notes": "PDF第2页Figure2，提取右栏完整架构，排除相邻Figure1。view_image核对基准客户端、参数、服务状态、iSTAGE、ASTRA-sim及底部红色闭环反馈均完整；双语图注与正文反馈机制一致。"
+    },
+    {
+      "path": "assets/images/digest/2026-10-02/venusrl.png",
+      "source_id": "arxiv-2610.03286",
+      "source_url": "https://arxiv.org/pdf/2610.03286v1",
+      "review_notes": "PDF第4页Figure4，3倍分辨率提取完整系统图。view_image确认环境管理器、数据协调器、优先策略、请求迁移、rollout、消息队列、actor及底部权重同步箭头未截断；共享图片配双语alt和流程图注。"
+    },
+    {
+      "path": "assets/images/digest/2026-10-02/bitir.png",
+      "source_id": "arxiv-2610.04037",
+      "source_url": "https://arxiv.org/pdf/2610.04037v1",
+      "review_notes": "PDF第4页Figure2，提取完整四阶段示例。view_image核对CUDA源代码、注入前IR、bit13 XOR注入、后端表示和连接箭头全部完整。图注说明这是NVIDIA示例路径，不意味着三个后端产生相同指令。"
+    },
+    {
+      "path": "assets/images/tech/helion-linear/hybrid-dispatch.png",
+      "source_id": "pytorch-blog-building-a-high-performance-and-por",
+      "source_url": "https://pytorch.org/wp-content/uploads/2026/10/2.png",
+      "review_notes": "官方文章Hybrid Dispatch小节Figure2，下载原始PNG，另存sources/helion-figure-2.png；输出未改动图像内容。view_image确认runtime num_tokens横轴、max_helion_size、max_cudagraph_capture_size、max_num_batched_tokens边界及三个graph/eager区域完整。双语alt、图注和查看原图入口均指向同一本地文件。"
+    }
+  ],
+  "local_job": ".preview/research-jobs/runs/20261019-210856-b87c5a86d0-257479",
+  "input_sha256": "b87c5a86d052c50fc67d9c22e180d2abc69c890efcf288d0e79e22ab27143c3d",
+  "applied": true,
+  "preview_release": "/home/GB-Project/yuxiaoba.github.io/.preview/releases/research-20261020-080252-aedb7b42",
+  "authorship": "Assistant-authored Chinese and English, checked against original sources; no system experiments reproduced."
+}

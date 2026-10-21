@@ -1,0 +1,13 @@
+<div class="publication-links">
+{% for resource in paper.links %}
+ {% assign value = resource[1].url | default: resource[1] | strip %}
+ {% assign valid = true %}{% if value == '' or value == '#' or value == 'N/A' or value == '待补充' %}{% assign valid = false %}{% endif %}
+ {% assign local = value | replace: 'https://yuxiaoba.github.io', '' | replace: 'http://yuxiaoba.github.io', '' %}
+ {% assign first = local | slice: 0 %}
+ {% if first == '/' %}{% assign exists = false %}{% for file in site.static_files %}{% if file.path == local %}{% assign exists = true %}{% break %}{% endif %}{% endfor %}{% unless exists %}{% assign valid = false %}{% endunless %}{% endif %}
+ {% if valid %}
+ {% assign resource_key = resource[0] | downcase %}{% case resource_key %}{% when 'paper' %}{% assign label = t.pdf %}{% when 'pdf' %}{% assign label = t.pdf %}{% when 'slides' %}{% assign label = t.slides %}{% when 'code' %}{% assign label = t.code %}{% when 'project' %}{% assign label = t.project %}{% when 'bibtex' %}{% assign label = t.bib %}{% when 'bib' %}{% assign label = t.bib %}{% else %}{% assign label = resource[0] %}{% endcase %}
+ <a href="{% if first == '/' %}{{ local | relative_url }}{% else %}{{ value | escape }}{% endif %}">{{ label }} ↗</a>
+ {% endif %}
+{% endfor %}
+</div>

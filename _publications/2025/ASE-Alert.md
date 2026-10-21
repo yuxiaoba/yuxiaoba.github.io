@@ -26,4 +26,7 @@ links:
   Project: 
   DOI: 
   BibTex: 
+year: 2025
+venue: ASE
+ccf: A
 ---

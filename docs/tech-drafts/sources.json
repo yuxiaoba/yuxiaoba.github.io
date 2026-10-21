@@ -1,0 +1,83 @@
+{
+  "reviewed_on": "2026-10-18",
+  "scope": "Three separately authored Chinese draft notes based on official source material; no repository executed, no system deployed.",
+  "sources": [
+    {
+      "id": "aqua",
+      "url": "https://developers.googleblog.com/en/the-outer-loop-insights-first-an-ambient-quality-agent-that-diagnoses-your-production-agent/",
+      "sha256": "52860b807cd04ccd4e52169598e08145372d831633520988dbb8de3d544d91a1",
+      "cache": ".preview/tech-reread-2026-10-18/aqua.html"
+    },
+    {
+      "id": "anyscale",
+      "url": "https://www.anyscale.com/blog/run-coding-agents-on-your-own-gpus",
+      "sha256": "eacae4582d27111eb6f03511be2276ca7039c87ee5d15c613f70be6df1dc8842",
+      "cache": ".preview/tech-reread-2026-10-18/anyscale.html"
+    },
+    {
+      "id": "pai",
+      "url": "https://partnershiponai.org/wp-content/uploads/2026/10/PAI_obervability-gap-in-ai-agents.pdf",
+      "sha256": "f2e4e02e76d10b0fc8e5707fc1ec5e867f4040c6c9622414feaef2bbfb5e651e",
+      "cache": ".preview/tech-reread-2026-10-18/pai.pdf"
+    }
+  ],
+  "images": [
+    {
+      "file": "figures/anyscale-cache.png",
+      "sha256": "22071d7a8e70e8e2b90ebe8ca6bdb0183734362d984b0b881528ec814d3efb08",
+      "review": "Visually inspected full diagram, labels and boundaries; original diagram content unchanged.",
+      "url": "https://images.ctfassets.net/xjan103pcp94/7zFYRIyc9In83Bu4UD9jwd/49b95fb0102546d1df170092dd7daa46/Figure_5._KV_cache_offloading.png"
+    },
+    {
+      "file": "figures/anyscale-stack.png",
+      "sha256": "0d442e6fc291d71224f17dd8d6d632f64c4af4452ce473b46838facd7d78f21d",
+      "review": "Visually inspected full diagram, labels and boundaries; original diagram content unchanged.",
+      "url": "https://images.ctfassets.net/xjan103pcp94/2B2KnayenNTHG9uBliesX8/0fcfde15179582b3229c1394af7f35ba/Figure_1._The_LLM_serving_stack_on_Anyscale_-_vLLM_runs_the_model__Ray_Serve_LLM_orchestrates_and_routes_across_replicas__an.png"
+    },
+    {
+      "file": "figures/aqua-architecture.png",
+      "sha256": "34ffebc5a5d97c37acbee505bc01de3cb71e785444dda5699aa7ce8e0b3f1cdf",
+      "review": "Visually inspected full diagram, labels and boundaries; original diagram content unchanged.",
+      "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Figure-4-AQuA-Sidecar-Architecture.original.png"
+    },
+    {
+      "file": "figures/aqua-pipeline.png",
+      "sha256": "647a5701f2cab57550f3b74a20ac07283c719b8066a21ed6dd40dffe8913731a",
+      "review": "Visually inspected full diagram, labels and boundaries; original diagram content unchanged.",
+      "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Figure-5-Five-Stage-Sweep-and-Verification-Pipe.original.png"
+    },
+    {
+      "file": "figures/pai-framework.png",
+      "sha256": "cce716fa257b2aecf27b448e5554d330f5a7d9b66b8bdc32b3e556184829d973",
+      "review": "Visually inspected full diagram, labels and boundaries; original diagram content unchanged.",
+      "source": "pai.pdf",
+      "page": 5,
+      "clip_points": [
+        72,
+        104,
+        540,
+        433
+      ],
+      "type": "report analytical framework, not an implemented system architecture"
+    }
+  ],
+  "evidence": {
+    "aqua": [
+      "Architecture: sidecar outside request path, immutable deployment snapshots",
+      "Case: 32 replays, 42 findings, 9 candidate clusters, 6 retained",
+      "Revision comparison: seat bypass 15→2; vegan omission 7→0; all-session pass 5/32→13/32",
+      "Boundary: at most three full transcripts per candidate; replay not environment restoration"
+    ],
+    "pai": [
+      "Methodology PDF p6: two hypothetical financial use cases, documentation assessment, AI initial pass with human vetting",
+      "Framework and gaps PDF pp5,15–16",
+      "Limitations PDF p29 and grading p32"
+    ],
+    "anyscale": [
+      "Blog cost comparison: 1 GPU / 50 registered developers is planning, not TCO",
+      "KV cache offload: GLM-5.2, 8 RTX PRO 6000, 512 GiB CPU tier, nominal 900s",
+      "58→215 completed; median TTFT 48.4→9.2s on common 58 prompts",
+      "Blog architecture and routing sections; no live deployment tested"
+    ]
+  }
+}

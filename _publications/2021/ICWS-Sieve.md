@@ -25,4 +25,7 @@ links:
   Slides: https://yuxiaoba.github.io/files/ICWS21/sieve-slides.pdf
   BibTex: https://yuxiaoba.github.io/files/ICWS21/sieve-bibtex.txt
   # Arxiv:
+year: 2021
+venue: ICWS
+ccf: B
 ---

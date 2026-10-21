@@ -1,0 +1,6 @@
+{% assign entries = site.kitchen | where: 'lang', lang | where: 'published', true | sort: 'date' | reverse %}
+<section class="subpage life-page"><div class="eyebrow">{{ t.away }}</div><h1>{{ t.kitchen }}{% if lang == 'en' %}.{% endif %}</h1><p class="subpage-lead">{{ t.kitchen_note }}</p>
+<p class="translation-notice" data-translation-notice role="status" hidden>{{ t.missing }}</p>
+{% if entries.size == 0 %}<div class="life-empty"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 20h11l4-6h14l4 6h11v32H10z"/><circle cx="32" cy="35" r="10"/><path d="M46 26h3M16 10h5M8 58h48"/></svg><p class="empty-state">{{ t.empty_kitchen }}</p></div>{% else %}
+{% include kitchen-entries.html %}
+{% endif %}</section>

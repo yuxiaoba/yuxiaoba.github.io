@@ -1,5 +1,5 @@
 ---
-title:          "Subgraphs as First-Class Citizens in Incident Management for Large-Scale Online Systems An Evolution-AwareFramework"
+title: 'Subgraphs as First-Class Citizens in Incident Management for Large-Scale Online Systems: An Evolution-Aware Framework'
 date:           2025-07-29 00:00:00 +0800
 selected:       true
 pub:            >-
@@ -27,4 +27,7 @@ links:
   DOI: https://doi.org/10.1109/TSE.2025.3590221
   BibTex: https://yuxiaoba.github.io/files/TSE/GEM-bibtex.txt
   # Arxiv:
+year: 2025
+venue: TSE
+ccf: A
 ---

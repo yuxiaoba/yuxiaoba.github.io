@@ -1,0 +1,31 @@
+{% include site-context.html %}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ t[page.section] }}{% endif %} · {{ t.name }}</title>
+<link rel="icon" href="{{ '/assets/images/etc/guangba.ico' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url }}">
+<script src="{{ '/assets/js/homepage.js' | relative_url }}" defer></script>
+{% if page.long_read %}<link rel="stylesheet" href="{{ '/assets/css/tech-reader.css' | relative_url }}"><script src="{{ '/assets/js/tech-reader.js' | relative_url }}" defer></script>{% endif %}
+{% if page.collection == 'digest' or page.collection == 'tech' or page.collection == 'kitchen' %}<link rel="stylesheet" href="{{ '/assets/vendor/katex/katex.min.css' | relative_url }}">{% endif %}
+{% if page.section == 'digest' or page.section == 'tech' or page.section == 'search' %}<script type="module" src="{{ '/assets/js/search.js' | relative_url }}"></script>{% endif %}
+<link rel="stylesheet" href="{{ "/assets/css/editorial.css" | relative_url }}">
+</head>
+<body id="warm-directions"><div class="personal-site editorial" data-page="{{ page.section }}" lang="{{ lang }}">
+<a class="skip-link" href="#main">{{ t.skip }}</a>
+<header class="masthead">
+<a class="wordmark" href="{{ prefix | append: '/' | relative_url }}"><span class="brand-mark" aria-hidden="true">GY</span><span>{{ t.name }}{% if lang == 'en' %}.{% endif %}</span></a>
+<nav class="navigation" aria-label="{{ t.navigation }}">
+{% assign sections = 'home,publications,digest,tech,kitchen' | split: ',' %}
+{% for section in sections %}{% assign route = section | append: '/' %}{% if section == 'home' %}{% assign route = '' %}{% elsif section == 'kitchen' %}{% assign route = 'life/' %}{% endif %}
+<a href="{{ prefix | append: '/' | append: route | relative_url }}" {% if page.section == section %}aria-current="page"{% endif %}>{{ t[section] }}</a>{% endfor %}
+</nav>
+<div class="masthead-actions">
+<a class="search-entry" href="{{ prefix | append: "/search/" | relative_url }}" aria-label="{{ t.search }}" title="{{ t.search }}" {% if page.section == 'search' %}aria-current="page"{% endif %}><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+{% include language-switch.html %}
+</div>
+</header>
+<main id="main">{{ content }}</main>
+<footer class="footnote"><span>© {{ site.time | date: '%Y' }} {{ t.name }}</span><div class="footer-links"><a href="#warm-directions">{{ t.back_top }} ↑</a><a href="https://github.com/yuxiaoba/yuxiaoba.github.io">GitHub ↗</a></div></footer>
+</div></body></html>

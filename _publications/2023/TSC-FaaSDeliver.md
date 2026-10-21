@@ -1,5 +1,5 @@
 ---
-title:          "FaaSDeliver: Cost-efﬁcient and QoS-aware Function Delivery in Computing Continuum"
+title: 'FaaSDeliver: Cost-Efficient and QoS-Aware Function Delivery in Computing Continuum'
 date:           2023-05-07 00:00:00 +0800
 selected:       true
 pub:            >-
@@ -25,4 +25,7 @@ links:
   DOI: https://doi.org/10.1109/TSC.2023.3274769
   BibTex: https://yuxiaoba.github.io/files/TSC/faasdeliver-bibtex.txt
   # Arxiv:
+year: 2023
+venue: TSC
+ccf: A
 ---

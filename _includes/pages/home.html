@@ -1,0 +1,18 @@
+{% assign profile = site.data.profile %}{% assign localized = profile %}{% if lang == 'zh' %}{% assign localized = site.data.profile_zh %}{% endif %}
+<section class="identity-intro">
+<div class="identity-copy"><h1>{{ t.name }}{% if lang == 'en' %}.{% endif %}</h1>
+<div class="profile-affiliation"><span>{{ t.position }}</span><a href="https://www.cuhk.edu.hk/">{{ t.affiliation }}</a></div><p>{{ t.intro }}</p>
+<div class="hero-actions"><a class="hero-primary" href="{{ prefix | append: "/publications/" | relative_url }}">{{ t.publications }} <span aria-hidden="true">↗</span></a><a class="hero-secondary" href="#recent-updates-heading">{{ t.latest_reading }} <span aria-hidden="true">↓</span></a></div>
+<div class="socials"><a href="mailto:{{ profile.email }}">{{ profile.email }}</a><a href="https://scholar.google.com/citations?user={{ profile.gscholar }}">{{ t.scholar }} ↗</a><a href="https://github.com/{{ profile.github }}">{{ t.github }} ↗</a><a href="https://www.linkedin.com/in/{{ profile.linkedin }}/">LinkedIn ↗</a><a href="https://orcid.org/{{ profile.orcid }}">ORCID ↗</a></div></div>
+<figure class="hero-portrait"><div class="portrait-frame"><img class="portrait" src="{{ profile.portrait_url | relative_url }}" alt="{{ t.portrait }}" width="400" height="500"></div><figcaption class="portrait-caption">{{ t.name }}</figcaption></figure>
+</section>
+{% include homepage-updates.html %}
+{% include homepage-news.html %}
+<section class="profile-biography"><h2>{{ t.about }}</h2><div class="biography-copy">{{ localized.short_bio }}</div></section>
+<section class="areas-section"><div class="section-head"><div><div class="eyebrow">{{ t.work }}</div><h2>{{ t.areas }}</h2></div><a class="small-action" href="{{ prefix | append: '/publications/' | relative_url }}">{{ t.publications }} ↗</a></div>
+{% assign research_image = '/assets/images/research/research-map-' | append: lang | append: '-v2.png' %}
+<figure class="research-figure"><a class="research-image-link" href="{{ research_image | relative_url }}" target="_blank" rel="noopener" aria-label="{{ t.research_image_open }}"><img src="{{ research_image | relative_url }}" alt="{{ t.research_map_description }}" width="1536" height="1024" loading="lazy" decoding="async"></a><figcaption><span>{{ t.research_image_caption }}</span><a href="{{ research_image | relative_url }}" target="_blank" rel="noopener">{{ t.research_image_open }} ↗</a></figcaption></figure>
+
+</section>
+<section class="profile-credentials"><section><h2>{{ t.education }}</h2>{% for item in localized.education %}<div class="education-entry"><time>{{ item.date }}</time><h3>{{ item.name }}</h3><p>{{ item.position }}</p>{% if item.advisor %}<p class="education-advisor">{{ item.advisor }}</p>{% endif %}</div>{% endfor %}</section><section><h2>{{ t.awards }}</h2><ul class="awards-list">{% for item in localized.awards %}<li><time>{{ item.date }}</time><span>{{ item.name }}</span></li>{% endfor %}</ul></section></section>
+<section class="service"><h2>{{ t.service }}</h2><ul>{% for item in localized.service %}{% unless item.hidden %}<li>{{ item.name }}</li>{% endunless %}{% endfor %}</ul></section>

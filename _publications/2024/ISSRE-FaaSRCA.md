@@ -25,4 +25,7 @@ links:
   DOI: https://doi.org/10.1109/ISSRE62328.2024.00047
   BibTex: https://yuxiaoba.github.io/files/ISSRE24/faasrca-bibtex.txt
   # Arxiv:
+year: 2024
+venue: ISSRE
+ccf: B
 ---

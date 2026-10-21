@@ -1,0 +1,43 @@
+short_bio: "<p>自 2024 年 7 月起，我在香港中文大学<a href=\"http://ariselab.cse.cuhk.edu.hk/\" target=\"_blank\" rel=\"noopener noreferrer\">ARISE 实验室</a>担任博士后研究员，合作导师为<a href=\"https://www.cse.cuhk.edu.hk/lyu/\" target=\"_blank\" rel=\"noopener noreferrer\">吕荣聪教授</a>。我在中山大学获得博士和硕士学位，师从<a href=\"http://www.dds-sysu.tech/Teachers\" target=\"_blank\" rel=\"noopener noreferrer\">陈鹏飞教授</a>，2022—2023 年，我通过 CCF–腾讯犀牛鸟精英人才计划在腾讯微信事业群担任研究实习生，参与的 LogReducer 与 ChangeRCA 已部署于微信生产集群。</p>\n   <p>我本科就读于广州中医药大学医学信息工程专业。从关注人的健康，到研究软件系统的可靠性，“发现问题、理解原因”始终是一条贯穿其中的线索。</p>\n   <p>\U0001F603 热衷于为系统可靠性“开方”。如果你也对构建更稳健的软件感兴趣，欢迎联系！</p>"
+education:
+- name: 中山大学
+  position: 计算机科学与技术博士
+  date: 2020.09–2024.07
+  advisor: 导师：陈鹏飞教授
+- name: 中山大学
+  position: 计算机技术硕士
+  date: 2018.09–2020.07
+  advisor: 导师：陈鹏飞教授
+- name: 广州中医药大学
+  position: 医学信息工程学士
+  date: 2014.09–2018.07
+  advisor: 导师：刘秀峰教授
+awards:
+- date: '2026'
+  name: ACM SIGSOFT 杰出论文奖，ICSE 2026（PreServe）
+- date: '2025'
+  name: 广东省科技成果转化促进会科技成果创新奖一等奖
+- date: '2025'
+  name: 中国电子学会科技进步奖三等奖
+- date: '2025'
+  name: ACM SIGSOFT 杰出论文奖，ASE 2025（iKnow）
+- date: '2025'
+  name: APSEC 2025 杰出审稿人奖
+- date: '2024'
+  name: ACM 中国（珠海）优秀博士论文奖
+- date: '2024'
+  name: ACM SIGSOFT 杰出论文奖，FSE 2024（TraStrainer）
+- date: '2024'
+  name: IEEE–CCF 云计算最佳应用奖（LogReducer）
+- date: '2024'
+  name: 中山大学优秀毕业生
+- date: '2023'
+  name: 国家奖学金
+- date: 2022–2023
+  name: CCF–腾讯犀牛鸟精英人才计划及特别奖学金
+service:
+- name: 程序委员会：FSE 2027；FSE 2026（IVR）；ICSME 2026（TDDS 与 VER）；APSEC 2025；EuroSys 2025（影子委员会）
+- name: 工件评审：OSDI 2022；USENIX ATC 2022
+- name: 期刊／会议审稿：TSE、TOSEM、TSC、TPDS、TC、TMC、KDD 2026、WWW 2024、PR、EAAI、TCC、JSEP、JSS、EMSE、Computer Networks、J Supercomput
+- name: 协助审稿：TOSEM；ICSOC 2022；ISSTA 2025
+  hidden: true

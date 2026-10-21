@@ -1,5 +1,5 @@
 ---
-title:          "T-Rank:A Lightweight Spectrum based Fault Localization Approach for Microservice Systems"
+title: 'T-Rank: A Lightweight Spectrum based Fault Localization Approach for Microservice Systems'
 date:           2021-11-15 00:00:00 +0800
 selected:       false
 pub:            >-
@@ -21,4 +21,7 @@ links:
   DOI: https://doi.org/10.1109/CCGrid51090.2021.00051
   BibTex: https://yuxiaoba.github.io/files/CCGrid21/trank-bibtex.txt
   # Arxiv:
+year: 2021
+venue: CCGrid
+ccf: C
 ---

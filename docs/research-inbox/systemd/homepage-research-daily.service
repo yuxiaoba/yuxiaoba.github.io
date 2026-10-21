@@ -1,0 +1,15 @@
+[Unit]
+Description=Read research inbox, prepare bilingual notes and verify local preview
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/GB-Project/yuxiaoba.github.io
+Environment=PATH=/root/.nvm/versions/node/v24.12.0/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PYTHONUNBUFFERED=1
+Environment=PLAYWRIGHT_BROWSERS_PATH=/home/GB-Project/yuxiaoba.github.io/.preview/browsers
+ExecStart=/usr/bin/python3 scripts/research_daily.py run
+TimeoutStartSec=75min
+KillMode=control-group
+UMask=0077

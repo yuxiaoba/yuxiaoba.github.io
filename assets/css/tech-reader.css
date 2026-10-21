@@ -1,0 +1,35 @@
+/* Opt-in long-form reading; ordinary articles retain their existing layout. */
+#warm-directions [data-tech-reader] .article-body {line-height:1.9}
+#warm-directions [data-tech-reader] .article-body h2 {scroll-margin-top:84px}
+#warm-directions [data-tech-reader] .article-body p {margin:18px 0}
+#warm-directions .tech-toc {margin:26px 0;border:1px solid var(--rule);border-radius:10px;background:var(--paper)}
+#warm-directions .tech-toc summary {cursor:pointer;min-height:48px;padding:12px 18px;box-sizing:border-box;font-size:14px;color:var(--accent)}
+#warm-directions .tech-toc nav {max-height:55vh;overflow:auto;padding:0 18px 12px;overscroll-behavior:contain}
+#warm-directions .tech-toc ol {margin:0;padding-left:24px}
+#warm-directions .tech-toc a {display:flex;align-items:center;min-height:44px;font-size:14px;line-height:1.6;padding:6px 0;box-sizing:border-box}
+#warm-directions .tech-table-scroll {max-width:100%;overflow:auto;border-radius:6px;overscroll-behavior-x:contain}
+#warm-directions [data-tech-reader] .tech-table-scroll table {display:table;min-width:520px;width:100%;margin:0;font-size:14px;line-height:1.7}
+#warm-directions [data-tech-reader] .tech-table-scroll td,
+#warm-directions [data-tech-reader] .tech-table-scroll th {padding:12px;vertical-align:top}
+#warm-directions .tech-table-hint {font-size:12px;color:var(--quiet);margin:6px 0 10px}
+#warm-directions .tech-table-hint[hidden] {display:none}
+#warm-directions .tech-toc :focus-visible,
+#warm-directions .tech-table-scroll:focus-visible,
+.tech-image-dialog :focus-visible {outline:2px solid #750f6d;outline-offset:3px}
+.tech-image-dialog {box-sizing:border-box;width:min(1100px,calc(100vw - 20px));max-width:none;max-height:calc(100dvh - 24px);padding:0;border:1px solid #e7e1e9;border-radius:12px;background:#fff;color:#2c2630}
+.tech-image-dialog::backdrop {background:rgba(24,17,27,.72)}
+.tech-image-dialog .tech-image-toolbar {display:flex;justify-content:flex-end;gap:8px;padding:8px 12px;border-bottom:1px solid #e7e1e9}
+.tech-image-dialog button {min-height:44px;padding:8px 14px;border:1px solid #e7e1e9;border-radius:6px;background:#fff;color:#750f6d;font:inherit;font-size:14px;cursor:pointer}
+.tech-image-dialog .tech-image-title {font:500 14px/1.6 sans-serif;margin:12px 16px;overflow-wrap:anywhere}
+.tech-image-dialog .tech-image-viewport {max-height:calc(100dvh - 170px);overflow:auto;overscroll-behavior:contain;padding:8px;box-sizing:border-box}
+.tech-image-dialog img {display:block;margin:auto;width:auto;height:auto;max-width:100%;max-height:calc(100dvh - 190px);object-fit:contain}
+.tech-image-dialog[data-zoomed] img {max-width:none;max-height:none;margin:0}
+@media(max-width:600px){
+ #warm-directions [data-tech-reader] .article-header h1 {font-size:27px;line-height:1.45;overflow-wrap:anywhere}
+ #warm-directions [data-tech-reader] .article-body {font-size:16px;line-height:1.9}
+ #warm-directions [data-tech-reader] .article-body h2 {font-size:22px;margin-top:36px}
+ #warm-directions [data-tech-reader] .article-body h3 {font-size:19px}
+ #warm-directions .tech-toc {position:sticky;top:8px;z-index:20;box-shadow:0 3px 12px rgba(45,25,50,.06)}
+ #warm-directions .tech-toc summary {padding:12px 14px}
+ #warm-directions .tech-toc nav {padding:0 14px 10px}
+}

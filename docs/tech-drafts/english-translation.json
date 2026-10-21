@@ -1,0 +1,31 @@
+{
+  "translated_on": "2026-10-19",
+  "translator": "assistant",
+  "source": "Locally approved Chinese long-form articles",
+  "local_only": true,
+  "articles": [
+    {
+      "id": "aqua-production-quality",
+      "url": "/tech/en/aqua-production-quality/",
+      "title": "2026-10-08 | Google AQuA: Finding Quality Issues in Production Traces",
+      "source": "_tech/en/aqua-production-quality.md"
+    },
+    {
+      "id": "pai-agent-observability",
+      "url": "/tech/en/pai-agent-observability/",
+      "title": "2026-10-07 | PAI: What Agent Monitoring Needs from Telemetry",
+      "source": "_tech/en/pai-agent-observability.md"
+    },
+    {
+      "id": "anyscale-coding-agent-serving",
+      "url": "/tech/en/anyscale-coding-agent-serving/",
+      "title": "2026-10-08 | Anyscale: Caching, Routing, and the Cost of Coding Agents",
+      "source": "_tech/en/anyscale-coding-agent-serving.md"
+    }
+  ],
+  "chinese_source_hashes": {
+    "_tech/zh/aqua-production-quality.md": "71781fe9732b7e6b5f703fd6304a23ea13ea892b641e27dd6e436ec424dbdf72",
+    "_tech/zh/pai-agent-observability.md": "efb183265dc22520a3676244d0fda53c81633d0559445002f5cb02d0fcd8eab7",
+    "_tech/zh/anyscale-coding-agent-serving.md": "0f46372b1b57ba347587ad1327e5aa7e09b22e6709371dc8c63ab8ae2de1ea07"
+  }
+}

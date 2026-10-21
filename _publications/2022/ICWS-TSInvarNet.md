@@ -23,4 +23,7 @@ links:
   DOI: https://doi.org/10.1109/ICWS55610.2022.00031
   BibTex: https://yuxiaoba.github.io/files/ICWS22/tsnet-bibtex.txt
   # Arxiv:
+year: 2022
+venue: ICWS
+ccf: B
 ---

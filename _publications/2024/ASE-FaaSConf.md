@@ -27,4 +27,7 @@ links:
   DOI: https://doi.org/10.1145/3691620.3695477
   BibTex: https://yuxiaoba.github.io/files/ASE24/FaaSConf-bibtex.txt
   # Arxiv:
+year: 2024
+venue: ASE
+ccf: A
 ---

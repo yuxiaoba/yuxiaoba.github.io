@@ -1,5 +1,5 @@
 ---
-title:          "Going through the Life Cycle of Faults in Clouds:Guidelines on Fault Handling"
+title: 'Going through the Life Cycle of Faults in Clouds: Guidelines on Fault Handling'
 date:           2022-08-01 00:00:00 +0800
 selected:       false
 pub:            >-
@@ -23,4 +23,7 @@ links:
   DOI: https://doi.org/10.1109/ISSRE55969.2022.00022
   BibTex: https://yuxiaoba.github.io/files/ISSRE22/incident-bibtex.txt
   # Arxiv:
+year: 2022
+venue: ISSRE
+ccf: B
 ---

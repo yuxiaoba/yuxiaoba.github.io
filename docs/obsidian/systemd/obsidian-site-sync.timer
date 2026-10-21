@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily Obsidian sync at 03:00 Asia/Shanghai (template; not installed)
+
+[Timer]
+OnCalendar=*-*-* 03:00:00 Asia/Shanghai
+Persistent=true
+Unit=obsidian-site-sync.service
+
+[Install]
+WantedBy=timers.target

@@ -20,4 +20,7 @@ links:
   BibTex: https://yuxiaoba.github.io/files/ICWS19/microscaler-bibtex.txt
   DOI: https://doi.org/10.1109/ICWS.2019.00023
   # Arxiv:
+year: 2019
+venue: ICWS
+ccf: B
 ---

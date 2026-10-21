@@ -1,0 +1,1756 @@
+{
+  "source": "/home/GB-Project/GB-Resume",
+  "source_hashes": {
+    "build.py": "35c39da972bfa38600a052ad35e08eecb9a09474c8f71e46327f58d32ce34996",
+    "guangba.bib": "92a6c576649ee36930d6d61c843430cb43251d0cfb61d70f07f1292775ceac10",
+    "cv-A.html": "21c3ec28af64bd8441f9f1948300e99105784b56ee68dbef34ded9d059607b02",
+    "cv-A-zh.html": "b4b08ffdfe065a4150a0619dd130cd3e46f533fa45da07f7feecd6b6497bfc76",
+    "cv-en.html": "2cfebc9873f7cbf89e82453183f4bd0f01cd0d2574799c8b57196b0b025143db"
+  },
+  "added": [
+    {
+      "path": "_publications/2026/emse-kpiroot-plus.md",
+      "title": "KPIRoot+: An efficient integrated framework for anomaly detection and root cause analysis in large-scale cloud systems",
+      "preprint": false,
+      "links": {
+        "DOI": "https://doi.org/10.1007/s10664-025-10769-0",
+        "bib": "https://dblp.org/rec/journals/ese/GuZYSLHCZGYL26.bib"
+      },
+      "full_venue": "In Empirical Software Engineering."
+    },
+    {
+      "path": "_publications/2026/jss-logfun.md",
+      "title": "Logfun: An efficient function-Level log management framework for systems implemented with python",
+      "preprint": false,
+      "links": {
+        "DOI": "https://doi.org/10.1016/j.jss.2026.112854",
+        "bib": "https://dblp.org/rec/journals/jss/LiTHYCZ26.bib"
+      },
+      "full_venue": "In Journal of Systems and Software."
+    },
+    {
+      "path": "_publications/2026/taas-serverless-tracing.md",
+      "title": "Fine-grained Tracing for Performance Anomaly Diagnosis of Serverless Functions",
+      "preprint": false,
+      "links": {
+        "DOI": "https://doi.org/10.1145/3785005",
+        "bib": "https://dblp.org/rec/journals/taas/WangYCCF26.bib"
+      },
+      "full_venue": "In ACM Transactions on Autonomous and Adaptive Systems."
+    },
+    {
+      "path": "_publications/2026/arxiv-llm-failures.md",
+      "title": "Why Does the LLM Stop Computing: An Empirical Study of User-Reported Failures in Open-Source LLMs",
+      "preprint": true,
+      "links": {
+        "Arxiv": "https://doi.org/10.48550/arXiv.2601.13655",
+        "bib": "https://dblp.org/rec/journals/corr/abs-2601-13655.bib"
+      },
+      "full_venue": "arXiv."
+    },
+    {
+      "path": "_publications/2026/arxiv-cloud-opsbench.md",
+      "title": "Cloud-OpsBench: A Reproducible Benchmark for Agentic Root Cause Analysis in Cloud Systems",
+      "preprint": true,
+      "links": {
+        "Arxiv": "https://doi.org/10.48550/arXiv.2603.00468",
+        "bib": "https://dblp.org/rec/journals/corr/abs-2603-00468.bib"
+      },
+      "full_venue": "arXiv."
+    },
+    {
+      "path": "_publications/2026/dsn-llmguard.md",
+      "title": "LLMGuard: Multi-Agent Fault Diagnosis for Reliable Language-Model-as-a-Service",
+      "preprint": false,
+      "links": {
+        "DOI": "https://doi.org/10.1109/DSN69566.2026.00018"
+      },
+      "full_venue": "In IEEE/IFIP International Conference on Dependable Systems and Networks."
+    },
+    {
+      "path": "_publications/2026/fse-ivr-state-snapshot.md",
+      "title": "Freezing the Crime Scene: A State Snapshot Paradigm for Reproducible Agentic SRE Evaluation",
+      "preprint": false,
+      "links": {
+        "DOI": "https://doi.org/10.1145/3803437.3806092"
+      },
+      "full_venue": "In ACM International Conference on the Foundations of Software Engineering, Companion Proceedings (Ideas, Visions and Reflections)."
+    },
+    {
+      "path": "_publications/2026/jsoftware-root-cause-change.md",
+      "title": "面向大规模在线系统的故障根因变更识别 (Root Cause Change Identification for Failures in Large-scale Online System; in Chinese)",
+      "preprint": false,
+      "links": {},
+      "full_venue": "In Journal of Software (Chinese)."
+    },
+    {
+      "path": "_publications/2026/tosem-logging-generation.md",
+      "title": "Larger Is Not Always Better: Exploring Small Open-source Language Models in Logging Statement Generation",
+      "preprint": false,
+      "links": {
+        "Arxiv": "https://doi.org/10.48550/arXiv.2505.16590"
+      },
+      "full_venue": "In ACM Transactions on Software Engineering and Methodology."
+    },
+    {
+      "path": "_publications/2026/tse-ccisolver.md",
+      "title": "CCISolver: End-to-End Detection and Repair of Method-Level Code-Comment Inconsistency",
+      "preprint": false,
+      "links": {
+        "Arxiv": "https://doi.org/10.48550/arXiv.2506.20558"
+      },
+      "full_venue": "In IEEE Transactions on Software Engineering."
+    },
+    {
+      "path": "_publications/2026/tos-efrc.md",
+      "title": "EFRC is Adapted to Access-rate Imbalance: A Class of Efficient and Fair Replacement Algorithms for Cache Sharing",
+      "preprint": false,
+      "links": {},
+      "full_venue": "In ACM Transactions on Storage."
+    },
+    {
+      "path": "_publications/2026/tosem-ai-nativebench.md",
+      "title": "AI-NativeBench: An Open-Source White-Box Agentic Benchmark Suite for AI-Native Systems",
+      "preprint": false,
+      "links": {
+        "Arxiv": "https://doi.org/10.48550/arXiv.2601.09393"
+      },
+      "full_venue": "In ACM Transactions on Software Engineering and Methodology."
+    },
+    {
+      "path": "_publications/2026/icse-preserve.md",
+      "title": "PreServe: Intelligent Management for LMaaS Systems via Hierarchical Prediction",
+      "preprint": false,
+      "links": {
+        "Arxiv": "https://doi.org/10.48550/arXiv.2504.03702"
+      },
+      "full_venue": "In IEEE/ACM International Conference on Software Engineering."
+    },
+    {
+      "path": "_publications/2026/tosem-autoscope.md",
+      "title": "AutoScope: Code Knowledge Enhanced Span-level Sampling for Distributed Tracing",
+      "preprint": false,
+      "links": {
+        "Arxiv": "https://doi.org/10.48550/arXiv.2509.13852"
+      },
+      "full_venue": "In ACM Transactions on Software Engineering and Methodology."
+    },
+    {
+      "path": "_publications/2026/kdd-star.md",
+      "title": "StaR: Stateful Dynamic-Graph Root Cause Analysis through Memory-Enhanced Causality Discovery",
+      "preprint": false,
+      "links": {},
+      "full_venue": "In ACM SIGKDD Conference on Knowledge Discovery and Data Mining."
+    },
+    {
+      "path": "_publications/2026/ase-opslens.md",
+      "title": "OpsLens: Runbook-Free Root Cause Analysis via Multi-agent Collaboration and Tool Management",
+      "preprint": false,
+      "links": {},
+      "full_venue": "In IEEE/ACM International Conference on Automated Software Engineering."
+    },
+    {
+      "path": "_publications/2025/arxiv-daifu.md",
+      "title": "DaiFu: In-Situ Crash Recovery for Deep Learning Systems",
+      "preprint": true,
+      "links": {
+        "Arxiv": "https://doi.org/10.48550/arXiv.2507.01628",
+        "bib": "https://dblp.org/rec/journals/corr/abs-2507-01628.bib"
+      },
+      "full_venue": "arXiv."
+    },
+    {
+      "path": "_publications/2023/jsoftware-java-tracing.md",
+      "title": "面向Java微服务系统的透明请求追踪及采样方法 (Transparent Request Tracing and Sampling for Java Microservice Systems; in Chinese)",
+      "preprint": false,
+      "links": {},
+      "full_venue": "In Journal of Software (Chinese)."
+    }
+  ],
+  "updated": [
+    {
+      "path": "_publications/2024/Survey-ChaosAI.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2026
+        }
+      }
+    },
+    {
+      "path": "_publications/2025/ToN-Network.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2025
+        }
+      }
+    },
+    {
+      "path": "_publications/2025/TSE-Incident.md",
+      "changes": {
+        "title": {
+          "before": "Subgraphs as First-Class Citizens in Incident Management for Large-Scale Online Systems An Evolution-AwareFramework",
+          "after": "Subgraphs as First-Class Citizens in Incident Management for Large-Scale Online Systems: An Evolution-Aware Framework"
+        },
+        "year": {
+          "before": null,
+          "after": 2025
+        }
+      }
+    },
+    {
+      "path": "_publications/2025/ASPLOS-Mint.md",
+      "changes": {
+        "title": {
+          "before": "Mint: Cost-Efficient Tracing with All Requests Collection via Commonality and Variability Analysiss",
+          "after": "Mint: Cost-Efficient Tracing with All Requests Collection via Commonality and Variability Analysis"
+        },
+        "year": {
+          "before": null,
+          "after": 2025
+        }
+      }
+    },
+    {
+      "path": "_publications/2025/DSN-LLMPrism.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2025
+        }
+      }
+    },
+    {
+      "path": "_publications/2025/ICSE-COCA.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2025
+        }
+      }
+    },
+    {
+      "path": "_publications/2025/Internetware-eRAR.md",
+      "changes": {
+        "title": {
+          "before": "Take Kernel Stack Overhead Out: eBPF-Enhanced Network  Acceleration for Distributed Training within Ethernet",
+          "after": "Take Kernel Stack Overhead Out: eBPF-Enhanced Network Acceleration for Distributed Training within Ethernet"
+        },
+        "year": {
+          "before": null,
+          "after": 2025
+        }
+      }
+    },
+    {
+      "path": "_publications/2025/IWQoS-CauseLens.md",
+      "changes": {
+        "title": {
+          "before": "CauseLens: Causality-based Interpretable Root Cause Analysis for Microservice Systems",
+          "after": "Causelens: Causality-Based Interpretable Root Cause Analysis for Microservice Systems"
+        },
+        "year": {
+          "before": null,
+          "after": 2025
+        }
+      }
+    },
+    {
+      "path": "_publications/2025/ASE-Alert.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2025
+        }
+      }
+    },
+    {
+      "path": "_publications/2025/ASE-iKnow.md",
+      "changes": {
+        "authors": {
+          "before": [
+            "Junjie Huang",
+            "Yuedong Zhong",
+            "Guangba Yu†",
+            "Zihan Jiang",
+            "Minzhi Yan",
+            "Wenfei Luan",
+            "Tianyu Yang",
+            "Rui Ren",
+            "Michael Lyu"
+          ],
+          "after": [
+            "Junjie Huang",
+            "Yuedong Zhong",
+            "Guangba Yu†",
+            "Zhihan Jiang",
+            "Minzhi Yan",
+            "Wenfei Luan",
+            "Tianyu Yang",
+            "Rui Ren",
+            "Michael R. Lyu"
+          ]
+        },
+        "year": {
+          "before": null,
+          "after": 2025
+        },
+        "award": {
+          "before": null,
+          "after": "distinguished_paper"
+        }
+      }
+    },
+    {
+      "path": "_publications/2025/SANER-Conan.md",
+      "changes": {
+        "title": {
+          "before": "Conan: Uncover Consensus Issues in Distributed Databases Using Fuzzing-driven Fault Injection",
+          "after": "Conan: Uncover Consensus Issues in Distributed Databases Using Fuzzing-Driven Fault Injection"
+        },
+        "year": {
+          "before": null,
+          "after": 2025
+        }
+      }
+    },
+    {
+      "path": "_publications/2025/FSE-L4.md",
+      "changes": {
+        "authors": {
+          "before": [
+            "Zhihan Jiang",
+            "Junjie Huang",
+            "Guangba Yu†",
+            "Zhuangbin Chen",
+            "Yichen Li",
+            "Renyi Zhong",
+            "Cong Feng",
+            "Yongqiang Yang",
+            "Michael R. Lyu"
+          ],
+          "after": [
+            "Zhihan Jiang",
+            "Junjie Huang",
+            "Guangba Yu†",
+            "Zhuangbin Chen",
+            "Yichen Li",
+            "Renyi Zhong",
+            "Cong Feng",
+            "Yongqiang Yang",
+            "Zengyin Yang",
+            "Michael R. Lyu"
+          ]
+        },
+        "year": {
+          "before": null,
+          "after": 2025
+        }
+      }
+    },
+    {
+      "path": "_publications/2023/JNCA-ServiceMesh.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2024
+        }
+      }
+    },
+    {
+      "path": "_publications/2024/FSE-ChangeRCA.md",
+      "changes": {
+        "authors": {
+          "before": [
+            "Guangba Yu",
+            "Pengfei Chen†",
+            "Zilong He",
+            "Qiuyu Yan",
+            "Yu Luo",
+            "Fangyan Li",
+            "Zibin Zheng"
+          ],
+          "after": [
+            "Guangba Yu",
+            "Pengfei Chen†",
+            "Zilong He",
+            "Qiuyu Yan",
+            "Yu Luo",
+            "Fangyuan Li",
+            "Zibin Zheng"
+          ]
+        },
+        "year": {
+          "before": null,
+          "after": 2024
+        }
+      }
+    },
+    {
+      "path": "_publications/2024/FSE-TraStrainer.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2024
+        },
+        "award": {
+          "before": null,
+          "after": "distinguished_paper"
+        },
+        "pub_last": {
+          "before": "🏆 <span style=\"color:red\"><b>Distinguish Paper Award</b></span>",
+          "after": ""
+        }
+      }
+    },
+    {
+      "path": "_publications/2024/TDSC-MicroFI.md",
+      "changes": {
+        "authors": {
+          "before": [
+            "Hongyang Chen",
+            "Pengfei Chen†",
+            "Guangba Yu",
+            "Xiaoyun Li",
+            "Zilong He",
+            "Huxing Zhang"
+          ],
+          "after": [
+            "Hongyang Chen",
+            "Pengfei Chen†",
+            "Guangba Yu",
+            "Xiaoyun Li",
+            "Zilong He"
+          ]
+        },
+        "year": {
+          "before": null,
+          "after": 2024
+        }
+      }
+    },
+    {
+      "path": "_publications/2024/Internetware-CTune.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2024
+        }
+      }
+    },
+    {
+      "path": "_publications/2024/ISSRE-FaaSRCA.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2024
+        }
+      }
+    },
+    {
+      "path": "_publications/2024/ASE-FaaSConf.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2024
+        }
+      }
+    },
+    {
+      "path": "_publications/2021/JSEP-Tracerank.md",
+      "changes": {
+        "title": {
+          "before": "TraceRank: Abnormal Service Localization with Dis-Aggregated End-to-End Tracing Data in Cloud Native Systems",
+          "after": "TraceRank: Abnormal service localization with dis-aggregated end-to-end tracing data in cloud native systems"
+        },
+        "authors": {
+          "before": [
+            "Guangba Yu",
+            "Zicheng Huang",
+            "Pengfei Chen†",
+            null
+          ],
+          "after": [
+            "Guangba Yu",
+            "Zicheng Huang",
+            "Pengfei Chen†"
+          ]
+        },
+        "year": {
+          "before": null,
+          "after": 2023
+        }
+      }
+    },
+    {
+      "path": "_publications/2022/TDSC-Swisslog.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2023
+        }
+      }
+    },
+    {
+      "path": "_publications/2020/TNNLS-Topomad.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2023
+        },
+        "award": {
+          "before": null,
+          "after": "esi_highly_cited"
+        }
+      }
+    },
+    {
+      "path": "_publications/2023/TSC-FaaSDeliver.md",
+      "changes": {
+        "title": {
+          "before": "FaaSDeliver: Cost-efﬁcient and QoS-aware Function Delivery in Computing Continuum",
+          "after": "FaaSDeliver: Cost-Efficient and QoS-Aware Function Delivery in Computing Continuum"
+        },
+        "year": {
+          "before": null,
+          "after": 2023
+        }
+      }
+    },
+    {
+      "path": "_publications/2023/ICPP-Deeppower.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2023
+        }
+      }
+    },
+    {
+      "path": "_publications/2023/ICPP-MARS.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2023
+        }
+      }
+    },
+    {
+      "path": "_publications/2023/ICSE-Logreducer.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2023
+        }
+      }
+    },
+    {
+      "path": "_publications/2023/FSE-Nezha.md",
+      "changes": {
+        "title": {
+          "before": "Nezha: Interpretable Fine-Grained Root Causes Analysis for Microservices on Multi-Modal Observability Data",
+          "after": "Nezha: Interpretable Fine-Grained Root Causes Analysis for Microservices on Multi-modal Observability Data"
+        },
+        "year": {
+          "before": null,
+          "after": 2023
+        }
+      }
+    },
+    {
+      "path": "_publications/2023/FSE-Diagconfig.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2023
+        }
+      }
+    },
+    {
+      "path": "_publications/2020/TCC-Microscaler.md",
+      "changes": {
+        "title": {
+          "before": "Microscaler: Cost-effective Scaling for Microservice Applications in the Cloud with an Online Learning Approach",
+          "after": "Microscaler: Cost-Effective Scaling for Microservice Applications in the Cloud With an Online Learning Approach"
+        },
+        "year": {
+          "before": null,
+          "after": 2022
+        }
+      }
+    },
+    {
+      "path": "_publications/2022/ICSOC-Microsketch.md",
+      "changes": {
+        "title": {
+          "before": "MicroSketch: Lightweight and Adaptive Sketch based Performance Issue Detection and Localization in Microservice Systems",
+          "after": "MicroSketch: Lightweight and Adaptive Sketch Based Performance Issue Detection and Localization in Microservice Systems"
+        },
+        "authors": {
+          "before": [
+            "Xiaoyun Li",
+            "Guangba Yu",
+            "Pengfei Chen†",
+            "Hongyang Chen",
+            "Zhekang Chen"
+          ],
+          "after": [
+            "Yufeng Li",
+            "Guangba Yu",
+            "Pengfei Chen†",
+            "Chuanfu Zhang",
+            "Zibin Zheng"
+          ]
+        },
+        "year": {
+          "before": null,
+          "after": 2022
+        }
+      }
+    },
+    {
+      "path": "_publications/2022/ICWS-TSInvarNet.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2022
+        }
+      }
+    },
+    {
+      "path": "_publications/2022/ISSRE-Incident.md",
+      "changes": {
+        "title": {
+          "before": "Going through the Life Cycle of Faults in Clouds:Guidelines on Fault Handling",
+          "after": "Going through the Life Cycle of Faults in Clouds: Guidelines on Fault Handling"
+        },
+        "year": {
+          "before": null,
+          "after": 2022
+        }
+      }
+    },
+    {
+      "path": "_publications/2022/ASE-GIED.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2022
+        }
+      }
+    },
+    {
+      "path": "_publications/2021/CCGrid-Trank.md",
+      "changes": {
+        "title": {
+          "before": "T-Rank:A Lightweight Spectrum based Fault Localization Approach for Microservice Systems",
+          "after": "T-Rank: A Lightweight Spectrum based Fault Localization Approach for Microservice Systems"
+        },
+        "year": {
+          "before": null,
+          "after": 2021
+        }
+      }
+    },
+    {
+      "path": "_publications/2021/ICWS-Sieve.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2021
+        }
+      }
+    },
+    {
+      "path": "_publications/2021/WWW-Microrank.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2021
+        }
+      }
+    },
+    {
+      "path": "_publications/2020/Access-VWR.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2020
+        }
+      }
+    },
+    {
+      "path": "_publications/2020/IPDPS-Load.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2020
+        }
+      }
+    },
+    {
+      "path": "_publications/2020/ISSRE-Swisslog.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2020
+        }
+      }
+    },
+    {
+      "path": "_publications/2019/ICWS-Microscaler.md",
+      "changes": {
+        "year": {
+          "before": null,
+          "after": 2019
+        }
+      }
+    }
+  ],
+  "retained_outside_resume": [
+    "_publications/2021/ICSE-Kmon.md"
+  ],
+  "publication_mapping": [
+    {
+      "path": "_publications/2026/emse-kpiroot-plus.md",
+      "title": "KPIRoot+: An efficient integrated framework for anomaly detection and root cause analysis in large-scale cloud systems",
+      "year": 2026,
+      "authors": [
+        "Wenwei Gu",
+        "Renyi Zhong",
+        "Guangba Yu",
+        "Xinying Sun",
+        "Jinyang Liu",
+        "Yintong Huo",
+        "Zhuangbin Chen",
+        "Jianping Zhang",
+        "Jiazhen Gu",
+        "Yongqiang Yang",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": true,
+      "venue": "EMSE",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2026/jss-logfun.md",
+      "title": "Logfun: An efficient function-Level log management framework for systems implemented with python",
+      "year": 2026,
+      "authors": [
+        "Min Li",
+        "Gou Tan",
+        "Mingdong He",
+        "Guangba Yu",
+        "Pengfei Chen",
+        "Chuanfu Zhang"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "JSS",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2026/taas-serverless-tracing.md",
+      "title": "Fine-grained Tracing for Performance Anomaly Diagnosis of Serverless Functions",
+      "year": 2026,
+      "authors": [
+        "Runan Wang",
+        "Guangba Yu",
+        "Giuliano Casale",
+        "Pengfei Chen",
+        "Antonio Filieri"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ACM TAAS",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2024/Survey-ChaosAI.md",
+      "title": "A Survey on Failure Analysis and Fault Injection in AI Systems",
+      "year": 2026,
+      "authors": [
+        "Guangba Yu",
+        "Gou Tan",
+        "Haojia Huang",
+        "Zhenyu Zhang",
+        "Pengfei Chen",
+        "Roberto Natella",
+        "Zibin Zheng",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "TOSEM",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2026/arxiv-llm-failures.md",
+      "title": "Why Does the LLM Stop Computing: An Empirical Study of User-Reported Failures in Open-Source LLMs",
+      "year": 2026,
+      "authors": [
+        "Guangba Yu",
+        "Zirui Wang",
+        "Yujie Huang",
+        "Renyi Zhong",
+        "Yuedong Zhong",
+        "Yilun Wang",
+        "Michael R. Lyu"
+      ],
+      "preprint": true,
+      "positive_corresponding": false,
+      "venue": "arXiv",
+      "ccf": null
+    },
+    {
+      "path": "_publications/2026/arxiv-cloud-opsbench.md",
+      "title": "Cloud-OpsBench: A Reproducible Benchmark for Agentic Root Cause Analysis in Cloud Systems",
+      "year": 2026,
+      "authors": [
+        "Yilun Wang",
+        "Guangba Yu",
+        "Haiyu Huang",
+        "Zirui Wang",
+        "Yujie Huang",
+        "Pengfei Chen",
+        "Michael R. Lyu"
+      ],
+      "preprint": true,
+      "positive_corresponding": false,
+      "venue": "arXiv",
+      "ccf": null
+    },
+    {
+      "path": "_publications/2026/dsn-llmguard.md",
+      "title": "LLMGuard: Multi-Agent Fault Diagnosis for Reliable Language-Model-as-a-Service",
+      "year": 2026,
+      "authors": [
+        "Yuedong Zhong",
+        "Guangba Yu",
+        "Yujie Huang",
+        "QunChao Fu",
+        "Rui Ren",
+        "Cong Feng",
+        "Yongqiang Yang",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "DSN",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2026/fse-ivr-state-snapshot.md",
+      "title": "Freezing the Crime Scene: A State Snapshot Paradigm for Reproducible Agentic SRE Evaluation",
+      "year": 2026,
+      "authors": [
+        "Guangba Yu",
+        "Yilun Wang",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "FSE Companion (IVR)",
+      "ccf": null
+    },
+    {
+      "path": "_publications/2026/jsoftware-root-cause-change.md",
+      "title": "面向大规模在线系统的故障根因变更识别 (Root Cause Change Identification for Failures in Large-scale Online System; in Chinese)",
+      "year": 2026,
+      "authors": [
+        "Guangba Yu",
+        "Pengfei Chen",
+        "Xitao Tang",
+        "Zibin Zheng"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "J. Software (CN)",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2026/tosem-logging-generation.md",
+      "title": "Larger Is Not Always Better: Exploring Small Open-source Language Models in Logging Statement Generation",
+      "year": 2026,
+      "authors": [
+        "Renyi Zhong",
+        "Yichen Li",
+        "Guangba Yu",
+        "Wenwei Gu",
+        "Jinxi Kuang",
+        "Yintong Huo",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": true,
+      "venue": "TOSEM",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2026/tse-ccisolver.md",
+      "title": "CCISolver: End-to-End Detection and Repair of Method-Level Code-Comment Inconsistency",
+      "year": 2026,
+      "authors": [
+        "Renyi Zhong",
+        "Yintong Huo",
+        "Wenwei Gu",
+        "Jinxi Kuang",
+        "Zhihan Jiang",
+        "Guangba Yu",
+        "Yichen Li",
+        "David Lo",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "TSE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2026/tos-efrc.md",
+      "title": "EFRC is Adapted to Access-rate Imbalance: A Class of Efficient and Fair Replacement Algorithms for Cache Sharing",
+      "year": 2026,
+      "authors": [
+        "Liang Ai",
+        "Pengfei Chen",
+        "Guangba Yu",
+        "Yuhui Deng",
+        "Xiao Qin"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ACM TOS",
+      "ccf": null
+    },
+    {
+      "path": "_publications/2026/tosem-ai-nativebench.md",
+      "title": "AI-NativeBench: An Open-Source White-Box Agentic Benchmark Suite for AI-Native Systems",
+      "year": 2026,
+      "authors": [
+        "Zirui Wang",
+        "Guangba Yu",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": true,
+      "venue": "TOSEM",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2026/icse-preserve.md",
+      "title": "PreServe: Intelligent Management for LMaaS Systems via Hierarchical Prediction",
+      "year": 2026,
+      "authors": [
+        "Zhihan Jiang",
+        "Yujie Huang",
+        "Guangba Yu",
+        "Junjie Huang",
+        "Jiazhen Gu",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ICSE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2026/tosem-autoscope.md",
+      "title": "AutoScope: Code Knowledge Enhanced Span-level Sampling for Distributed Tracing",
+      "year": 2026,
+      "authors": [
+        "Yulun Wu",
+        "Guangba Yu",
+        "Zhihan Jiang",
+        "Yichen Li",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": true,
+      "venue": "TOSEM",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2026/kdd-star.md",
+      "title": "StaR: Stateful Dynamic-Graph Root Cause Analysis through Memory-Enhanced Causality Discovery",
+      "year": 2026,
+      "authors": [
+        "Haiyu Huang",
+        "Man Tik Ng",
+        "Jiewei Lyu",
+        "Yujie Huang",
+        "Guangba Yu",
+        "Yilun Wang",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": true,
+      "venue": "KDD",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2026/ase-opslens.md",
+      "title": "OpsLens: Runbook-Free Root Cause Analysis via Multi-agent Collaboration and Tool Management",
+      "year": 2026,
+      "authors": [
+        "Haiyu Huang",
+        "Jiewei Lyu",
+        "Gou Tan",
+        "Pengfei Chen",
+        "Zhihan Jiang",
+        "Guangba Yu",
+        "Penghui Mi",
+        "Fuqiang Wang",
+        "Jian Han",
+        "Chongkang Tan",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ASE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2025/ToN-Network.md",
+      "title": "NetScope: Fault Localization in Programmable Networking Systems With Low-Cost In-Band Network Telemetry and In-Network Detection",
+      "year": 2025,
+      "authors": [
+        "Hongyang Chen",
+        "Benran Wang",
+        "Guangba Yu",
+        "Zilong He",
+        "Pengfei Chen",
+        "Chen Sun",
+        "Zibin Zheng"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "IEEE/ACM ToN",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2025/TSE-Incident.md",
+      "title": "Subgraphs as First-Class Citizens in Incident Management for Large-Scale Online Systems: An Evolution-Aware Framework",
+      "year": 2025,
+      "authors": [
+        "Zilong He",
+        "Pengfei Chen",
+        "Yu Luo",
+        "Qiuyu Yan",
+        "Hongyang Chen",
+        "Guangba Yu",
+        "Fangyuan Li",
+        "Xiaoyun Li",
+        "Zibin Zheng"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "TSE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2025/ASPLOS-Mint.md",
+      "title": "Mint: Cost-Efficient Tracing with All Requests Collection via Commonality and Variability Analysis",
+      "year": 2025,
+      "authors": [
+        "Haiyu Huang",
+        "Cheng Chen",
+        "Kunyi Chen",
+        "Pengfei Chen",
+        "Guangba Yu",
+        "Zilong He",
+        "Yilun Wang",
+        "Huxing Zhang",
+        "Qi Zhou"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ASPLOS",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2025/DSN-LLMPrism.md",
+      "title": "LLMPrism: Black-box Performance Diagnosis for Production LLM Training Platforms",
+      "year": 2025,
+      "authors": [
+        "Zhihan Jiang",
+        "Rui Ren",
+        "Guangba Yu",
+        "Yulun Wu",
+        "Wenwei Gu",
+        "Yichen Li",
+        "Yujie Huang",
+        "Cong Feng",
+        "Zengyin Yang",
+        "Yongqiang Yang",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "DSN",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2025/ICSE-COCA.md",
+      "title": "COCA: Generative Root Cause Analysis for Distributed Systems with Code Knowledge",
+      "year": 2025,
+      "authors": [
+        "Yichen Li",
+        "Yulun Wu",
+        "Jinyang Liu",
+        "Zhihan Jiang",
+        "Zhuangbin Chen",
+        "Guangba Yu",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": true,
+      "venue": "ICSE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2025/Internetware-eRAR.md",
+      "title": "Take Kernel Stack Overhead Out: eBPF-Enhanced Network Acceleration for Distributed Training within Ethernet",
+      "year": 2025,
+      "authors": [
+        "Zhenyu Zhang",
+        "Pengfei Chen",
+        "Guangba Yu",
+        "Zilong He",
+        "Xiaoyun Li"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "Internetware",
+      "ccf": "C"
+    },
+    {
+      "path": "_publications/2025/IWQoS-CauseLens.md",
+      "title": "Causelens: Causality-Based Interpretable Root Cause Analysis for Microservice Systems",
+      "year": 2025,
+      "authors": [
+        "Qihan Liu",
+        "Pengfei Chen",
+        "Guangba Yu",
+        "Yuanhao Lai",
+        "Xiaoyun Li"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "IWQoS",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2025/ASE-Alert.md",
+      "title": "AlertGuardian: Intelligent Alert Life-Cycle Management for Large-scale Cloud Systems",
+      "year": 2025,
+      "authors": [
+        "Guangba Yu",
+        "Genting Mai",
+        "Rui Wang",
+        "Ruipeng Li",
+        "Pengfei Chen",
+        "Long Pan",
+        "Ruijie Xu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ASE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2025/ASE-iKnow.md",
+      "title": "iKnow: an Intent-Guided Chatbot for Cloud Operations with Retrieval-Augmented Generation",
+      "year": 2025,
+      "authors": [
+        "Junjie Huang",
+        "Yuedong Zhong",
+        "Guangba Yu",
+        "Zhihan Jiang",
+        "Minzhi Yan",
+        "Wenfei Luan",
+        "Tianyu Yang",
+        "Rui Ren",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ASE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2025/SANER-Conan.md",
+      "title": "Conan: Uncover Consensus Issues in Distributed Databases Using Fuzzing-Driven Fault Injection",
+      "year": 2025,
+      "authors": [
+        "Haojia Huang",
+        "Pengfei Chen",
+        "Guangba Yu",
+        "Haiyu Huang",
+        "Jia Chang",
+        "Jun Li",
+        "Jian Han"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "SANER",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2025/FSE-L4.md",
+      "title": "L4: Diagnosing Large-scale LLM Training Failures via Automated Log Analysis",
+      "year": 2025,
+      "authors": [
+        "Zhihan Jiang",
+        "Junjie Huang",
+        "Guangba Yu",
+        "Zhuangbin Chen",
+        "Yichen Li",
+        "Renyi Zhong",
+        "Cong Feng",
+        "Yongqiang Yang",
+        "Zengyin Yang",
+        "Michael R. Lyu"
+      ],
+      "preprint": false,
+      "positive_corresponding": true,
+      "venue": "FSE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2025/arxiv-daifu.md",
+      "title": "DaiFu: In-Situ Crash Recovery for Deep Learning Systems",
+      "year": 2025,
+      "authors": [
+        "Zilong He",
+        "Pengfei Chen",
+        "Hongyu Zhang",
+        "Xiaoyun Li",
+        "Guangba Yu",
+        "Hongyang Chen",
+        "Zibin Zheng"
+      ],
+      "preprint": true,
+      "positive_corresponding": false,
+      "venue": "arXiv",
+      "ccf": null
+    },
+    {
+      "path": "_publications/2023/JNCA-ServiceMesh.md",
+      "title": "Network shortcut in data plane of service mesh with eBPF",
+      "year": 2024,
+      "authors": [
+        "Wanqi Yang",
+        "Pengfei Chen",
+        "Guangba Yu",
+        "Haibin Zhang",
+        "Huxing Zhang"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "JNCA",
+      "ccf": "C"
+    },
+    {
+      "path": "_publications/2024/FSE-ChangeRCA.md",
+      "title": "ChangeRCA: Finding Root Causes from Software Changes in Large Online Systems",
+      "year": 2024,
+      "authors": [
+        "Guangba Yu",
+        "Pengfei Chen",
+        "Zilong He",
+        "Qiuyu Yan",
+        "Yu Luo",
+        "Fangyuan Li",
+        "Zibin Zheng"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "FSE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2024/FSE-TraStrainer.md",
+      "title": "TraStrainer: Adaptive Sampling for Distributed Traces with System Runtime State",
+      "year": 2024,
+      "authors": [
+        "Haiyu Huang",
+        "Xiaoyu Zhang",
+        "Pengfei Chen",
+        "Zilong He",
+        "Zhiming Chen",
+        "Guangba Yu",
+        "Hongyang Chen",
+        "Chen Sun"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "FSE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2024/TDSC-MicroFI.md",
+      "title": "MicroFI: Non-Intrusive and Prioritized Request-Level Fault Injection for Microservice Applications",
+      "year": 2024,
+      "authors": [
+        "Hongyang Chen",
+        "Pengfei Chen",
+        "Guangba Yu",
+        "Xiaoyun Li",
+        "Zilong He"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "TDSC",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2024/Internetware-CTune.md",
+      "title": "CTuner: Automatic NoSQL Database Tuning with Causal Reinforcement Learning",
+      "year": 2024,
+      "authors": [
+        "Genting Mai",
+        "Zilong He",
+        "Guangba Yu",
+        "Zhiming Chen",
+        "Pengfei Chen"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "Internetware",
+      "ccf": "C"
+    },
+    {
+      "path": "_publications/2024/ISSRE-FaaSRCA.md",
+      "title": "FaaSRCA: Full Lifecycle Root Cause Analysis for Serverless Applications",
+      "year": 2024,
+      "authors": [
+        "Jin Huang",
+        "Pengfei Chen",
+        "Guangba Yu",
+        "Yilun Wang",
+        "Haiyu Huang",
+        "Zilong He"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ISSRE",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2024/ASE-FaaSConf.md",
+      "title": "FaaSConf: QoS-aware Hybrid Resources Configuration for Serverless Workflows",
+      "year": 2024,
+      "authors": [
+        "Yilun Wang",
+        "Pengfei Chen",
+        "Hui Dou",
+        "Yiwen Zhang",
+        "Guangba Yu",
+        "Zilong He",
+        "Haiyu Huang"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ASE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2021/JSEP-Tracerank.md",
+      "title": "TraceRank: Abnormal service localization with dis-aggregated end-to-end tracing data in cloud native systems",
+      "year": 2023,
+      "authors": [
+        "Guangba Yu",
+        "Zicheng Huang",
+        "Pengfei Chen"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "JSEP",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2022/TDSC-Swisslog.md",
+      "title": "SwissLog: Robust Anomaly Detection and Localization for Interleaved Unstructured Logs",
+      "year": 2023,
+      "authors": [
+        "Xiaoyun Li",
+        "Pengfei Chen",
+        "Linxiao Jing",
+        "Zilong He",
+        "Guangba Yu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "TDSC",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2020/TNNLS-Topomad.md",
+      "title": "A Spatiotemporal Deep Learning Approach for Unsupervised Anomaly Detection in Cloud Systems",
+      "year": 2023,
+      "authors": [
+        "Zilong He",
+        "Pengfei Chen",
+        "Xiaoyun Li",
+        "Yongfeng Wang",
+        "Guangba Yu",
+        "Cailin Chen",
+        "Xinrui Li",
+        "Zibin Zheng"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "IEEE TNNLS",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2023/TSC-FaaSDeliver.md",
+      "title": "FaaSDeliver: Cost-Efficient and QoS-Aware Function Delivery in Computing Continuum",
+      "year": 2023,
+      "authors": [
+        "Guangba Yu",
+        "Pengfei Chen",
+        "Zibin Zheng",
+        "Jingrun Zhang",
+        "Xiaoyun Li",
+        "Zilong He"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "TSC",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2023/ICPP-Deeppower.md",
+      "title": "DeepPower: Deep Reinforcement Learning based Power Management for Latency Critical Applications in Multi-core Systems",
+      "year": 2023,
+      "authors": [
+        "Jingrun Zhang",
+        "Guangba Yu",
+        "Zilong He",
+        "Liang Ai",
+        "Pengfei Chen"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ICPP",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2023/ICPP-MARS.md",
+      "title": "MARS: Fault Localization in Programmable Networking Systems with Low-cost In-Band Network Telemetry",
+      "year": 2023,
+      "authors": [
+        "Benran Wang",
+        "Hongyang Chen",
+        "Pengfei Chen",
+        "Zilong He",
+        "Guangba Yu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ICPP",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2023/ICSE-Logreducer.md",
+      "title": "LogReducer: Identify and Reduce Log Hotspots in Kernel on the Fly",
+      "year": 2023,
+      "authors": [
+        "Guangba Yu",
+        "Pengfei Chen",
+        "Pairui Li",
+        "Tianjun Weng",
+        "Haibing Zheng",
+        "Yuetang Deng",
+        "Zibin Zheng"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ICSE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2023/FSE-Nezha.md",
+      "title": "Nezha: Interpretable Fine-Grained Root Causes Analysis for Microservices on Multi-modal Observability Data",
+      "year": 2023,
+      "authors": [
+        "Guangba Yu",
+        "Pengfei Chen",
+        "Yufeng Li",
+        "Hongyang Chen",
+        "Xiaoyun Li",
+        "Zibin Zheng"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "FSE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2023/FSE-Diagconfig.md",
+      "title": "DiagConfig: Configuration Diagnosis of Performance Violations in Configurable Software Systems",
+      "year": 2023,
+      "authors": [
+        "Zhiming Chen",
+        "Pengfei Chen",
+        "Peipei Wang",
+        "Guangba Yu",
+        "Zilong He",
+        "Genting Mai"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "FSE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2023/jsoftware-java-tracing.md",
+      "title": "面向Java微服务系统的透明请求追踪及采样方法 (Transparent Request Tracing and Sampling for Java Microservice Systems; in Chinese)",
+      "year": 2023,
+      "authors": [
+        "Zicheng Huang",
+        "Pengfei Chen",
+        "Guangba Yu",
+        "Hongyang Chen"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "J. Software (CN)",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2020/TCC-Microscaler.md",
+      "title": "Microscaler: Cost-Effective Scaling for Microservice Applications in the Cloud With an Online Learning Approach",
+      "year": 2022,
+      "authors": [
+        "Guangba Yu",
+        "Pengfei Chen",
+        "Zibin Zheng"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "IEEE TCC",
+      "ccf": null
+    },
+    {
+      "path": "_publications/2022/ICSOC-Microsketch.md",
+      "title": "MicroSketch: Lightweight and Adaptive Sketch Based Performance Issue Detection and Localization in Microservice Systems",
+      "year": 2022,
+      "authors": [
+        "Yufeng Li",
+        "Guangba Yu",
+        "Pengfei Chen",
+        "Chuanfu Zhang",
+        "Zibin Zheng"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ICSOC",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2022/ICWS-TSInvarNet.md",
+      "title": "TS-InvarNet: Anomaly Detection and Localization based on Tempo-spatial KPI Invariants in Distributed Services",
+      "year": 2022,
+      "authors": [
+        "Zijun Hu",
+        "Pengfei Chen",
+        "Guangba Yu",
+        "Zilong He",
+        "Xiaoyun Li"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ICWS",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2022/ISSRE-Incident.md",
+      "title": "Going through the Life Cycle of Faults in Clouds: Guidelines on Fault Handling",
+      "year": 2022,
+      "authors": [
+        "Xiaoyun Li",
+        "Guangba Yu",
+        "Pengfei Chen",
+        "Hongyang Chen",
+        "Zhekang Chen"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ISSRE",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2022/ASE-GIED.md",
+      "title": "Graph based Incident Extraction and Diagnosis in Large-Scale Online Systems",
+      "year": 2022,
+      "authors": [
+        "Zilong He",
+        "Pengfei Chen",
+        "Yu Luo",
+        "Qiuyu Yan",
+        "Hongyang Chen",
+        "Guangba Yu",
+        "Fangyuan Li"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ASE",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2021/CCGrid-Trank.md",
+      "title": "T-Rank: A Lightweight Spectrum based Fault Localization Approach for Microservice Systems",
+      "year": 2021,
+      "authors": [
+        "Zihao Ye",
+        "Pengfei Chen",
+        "Guangba Yu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "CCGrid",
+      "ccf": "C"
+    },
+    {
+      "path": "_publications/2021/ICWS-Sieve.md",
+      "title": "Sieve: Attention-based Sampling of End-to-End Trace Data in Distributed Microservice Systems",
+      "year": 2021,
+      "authors": [
+        "Zicheng Huang",
+        "Pengfei Chen",
+        "Guangba Yu",
+        "Hongyang Chen",
+        "Zibin Zheng"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ICWS",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2021/WWW-Microrank.md",
+      "title": "MicroRank: End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments",
+      "year": 2021,
+      "authors": [
+        "Guangba Yu",
+        "Pengfei Chen",
+        "Hongyang Chen",
+        "Zijie Guan",
+        "Zicheng Huang",
+        "Linxiao Jing",
+        "Tianjun Weng",
+        "Xinmeng Sun",
+        "Xiaoyun Li"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "WWW",
+      "ccf": "A"
+    },
+    {
+      "path": "_publications/2020/Access-VWR.md",
+      "title": "A Framework of Virtual War Room and Matrix Sketch-Based Streaming Anomaly Detection for Microservice Systems",
+      "year": 2020,
+      "authors": [
+        "Hongyang Chen",
+        "Pengfei Chen",
+        "Guangba Yu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "IEEE Access",
+      "ccf": null
+    },
+    {
+      "path": "_publications/2020/IPDPS-Load.md",
+      "title": "A Learning-based Dynamic Load Balancing Approach for Microservice Systems in Multi-cloud Environment",
+      "year": 2020,
+      "authors": [
+        "Jieqi Cui",
+        "Pengfei Chen",
+        "Guangba Yu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ICPADS",
+      "ccf": "C"
+    },
+    {
+      "path": "_publications/2020/ISSRE-Swisslog.md",
+      "title": "SwissLog: Robust and Unified Deep Learning Based Log Anomaly Detection for Diverse Faults",
+      "year": 2020,
+      "authors": [
+        "Xiaoyun Li",
+        "Pengfei Chen",
+        "Linxiao Jing",
+        "Zilong He",
+        "Guangba Yu"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ISSRE",
+      "ccf": "B"
+    },
+    {
+      "path": "_publications/2019/ICWS-Microscaler.md",
+      "title": "Microscaler: Automatic Scaling for Microservices with an Online Learning Approach",
+      "year": 2019,
+      "authors": [
+        "Guangba Yu",
+        "Pengfei Chen",
+        "Zibin Zheng"
+      ],
+      "preprint": false,
+      "positive_corresponding": false,
+      "venue": "ICWS",
+      "ccf": "B"
+    }
+  ],
+  "counts": {
+    "baseline": 41,
+    "added": 18,
+    "total": 59,
+    "preprints": 3
+  },
+  "english_award_supplement": {
+    "source": "cv-en.html",
+    "awards": [
+      {
+        "date": "2025",
+        "name": "First Prize, Science & Technology Innovation Award, Guangdong Association for Promotion of S&T Achievement Transformation (ranked 5th)"
+      },
+      {
+        "date": "2025",
+        "name": "Third Prize, Science & Technology Progress Award, Chinese Institute of Electronics (ranked 5th)"
+      }
+    ]
+  },
+  "venue_format": "Explicit venue + year for all 59 records; CCF from GB-Resume mapping shown on its own unbroken line, omitted when unspecified. Kmon label/year extracted from its original pub_pre/date.",
+  "full_venue_expansion": {
+    "mapping": {
+      "EMSE": "Empirical Software Engineering",
+      "JSS": "Journal of Systems and Software",
+      "ACM TAAS": "ACM Transactions on Autonomous and Adaptive Systems",
+      "arXiv": "arXiv",
+      "DSN": "IEEE/IFIP International Conference on Dependable Systems and Networks",
+      "FSE Companion (IVR)": "ACM International Conference on the Foundations of Software Engineering, Companion Proceedings (Ideas, Visions and Reflections)",
+      "J. Software (CN)": "Journal of Software (Chinese)",
+      "TOSEM": "ACM Transactions on Software Engineering and Methodology",
+      "TSE": "IEEE Transactions on Software Engineering",
+      "ACM TOS": "ACM Transactions on Storage",
+      "ICSE": "IEEE/ACM International Conference on Software Engineering",
+      "KDD": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
+      "ASE": "IEEE/ACM International Conference on Automated Software Engineering"
+    },
+    "reference_urls": [
+      "https://link.springer.com/journal/10664",
+      "https://www.sciencedirect.com/journal/journal-of-systems-and-software",
+      "https://doi.org/10.1145/2620001"
+    ],
+    "notes": "New records now carry pub for the same author-below venue line as existing papers. Original records and their venue prose retained."
+  }
+}

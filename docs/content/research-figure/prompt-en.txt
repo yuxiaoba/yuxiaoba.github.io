@@ -1,0 +1,11 @@
+Tool: built-in imagegen
+Output: assets/images/research/research-map-en-v2.png
+
+Use case: text-localization. This is an approved simplified academic research overview diagram. Create its ENGLISH counterpart, preserving the same white background, purple/gold palette, exact diagrams, illustration meaning, layout, two upper columns and shared bottom chaos-engineering method. Preserve labels AIOps & LLM4Ops, Ops4LLM, AgentOps and numbers 01 02 03 exactly. Replace ALL Chinese text with the following English equivalents, with beautifully readable consistent typography and balanced spacing. It is acceptable to wrap descriptions onto two short lines to fit cleanly, never overflow or use tiny illegible text. No new big global title, no extra visual elements or topics.
+Top left: '01 | Cloud Systems'. Top right: '02 | AI Systems'.
+Left topic 1 heading: 'AIOps & LLM4Ops'. Description: 'Anomaly detection · Root cause analysis · Fault diagnosis'.
+Left topic 2 heading: 'Systems Optimization'. Description: 'Configuration tuning · Resource scheduling · Performance optimization'.
+Right topic 1 heading: 'Ops4LLM'. Description: 'Failure analysis · Reliability assurance · Performance optimization'.
+Right topic 2 heading: 'AgentOps'. Description: 'Behavior observability · Failure analysis · Operational optimization'.
+Bottom shared heading: '03 | Chaos Engineering'. Description: 'Fault injection · Resilience assessment · Reliability validation'. Bottom small caption: 'A shared method for reliability validation'.
+Keep arrows pointing upward from chaos engineering to both upper research groups, no arrows crossing text. All Chinese characters must be replaced, not retained as secondary labels. Render one clean high-resolution landscape 3:2 diagram matching the supplied image's scholarly, restrained style, not a website mockup.

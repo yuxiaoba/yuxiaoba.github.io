@@ -1,0 +1,11 @@
+{% assign news = site.news | sort: 'date' | reverse %}{% assign news_count = 0 %}{% assign missing_news_count = 0 %}
+<section class="quiet-news"><h2>{{ t.news }}</h2><div>
+{% for item in news %}{% unless item.published == false %}
+{% assign headline = item.title %}{% if lang == 'zh' %}{% assign news_key = item.path | split: '/' | last | remove: '.md' %}{% assign headline = item.title_zh | default: site.data.news_zh[news_key] %}{% endif %}
+{% if headline and headline != '' %}{% assign news_count = news_count | plus: 1 %}
+{% if news_count == 4 %}<details><summary>{{ t.more_news }}</summary>{% endif %}
+<p><time datetime="{{ item.date | date: '%Y-%m-%d' }}">{% include local-date.html date=item.date %}</time><span>{{ headline }}</span></p>
+{% else %}{% assign missing_news_count = missing_news_count | plus: 1 %}{% endif %}{% endunless %}{% endfor %}
+{% if news_count > 3 %}</details>{% endif %}{% if news_count == 0 %}<p>{{ t.empty_news }}</p>{% endif %}
+{% if lang == 'zh' and missing_news_count > 0 %}<p class="door-detail">{{ t.news_translation }}</p>{% endif %}
+</div></section>

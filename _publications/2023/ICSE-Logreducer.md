@@ -26,4 +26,7 @@ links:
   DOI: https://doi.org/10.1109/ICSE48619.2023.00151
   BibTex: https://yuxiaoba.github.io/files/ICSE23/logreducer-bibtex.txt
   # Arxiv:
+year: 2023
+venue: ICSE
+ccf: A
 ---

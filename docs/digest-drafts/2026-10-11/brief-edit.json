@@ -1,0 +1,52 @@
+{
+  "purpose": "field developments",
+  "format": "2 featured explanations + 4 brief updates",
+  "sha256": "0148ec27f5f5dfd9f977876ef684f53a4d52ab855682902edc631a9445822b68",
+  "characters": 6734,
+  "new_source_checks": [
+    "https://github.com/LogAnalysisTech/Cadence",
+    "https://github.com/SonGoKu21/mas_communication"
+  ],
+  "repositories_executed": false,
+  "featured_evidence": {
+    "messages": {
+      "pdf": "2610.15459v1",
+      "pages": [
+        6,
+        8,
+        9,
+        10,
+        11,
+        14,
+        16,
+        17,
+        18
+      ]
+    },
+    "cadence": {
+      "pdf": "2610.12269v1",
+      "pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    }
+  },
+  "architecture_diagrams": 6,
+  "title": "2026年10月11日｜Agent 可靠性：证据追踪与动态干预",
+  "refinement": "Named closest-work positioning, specific editorial judgments, Chinese diagram reading guides, explicit original-image links",
+  "comparison_evidence": {
+    "messages": "2610.15459v1 PDF page 5, author positioning of AgentChaos/MAS-FIRE",
+    "cadence": "2610.12269v1 PDF pages 8–9, periodic baseline and LivePlan"
+  }
+}

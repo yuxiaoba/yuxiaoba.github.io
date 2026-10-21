@@ -1,0 +1,152 @@
+{
+  "reviewed_on": "2026-10-18",
+  "preview_only": true,
+  "approved_hashes_added": false,
+  "source_images_unchanged": true,
+  "findings": [
+    {
+      "file": "MORA-fig1-motivation.png",
+      "sha256": "c8a694ecba875a1e00792fa629e1ee91acc2b8686144118b177061dfb1609cc5",
+      "status": "needs_source_recrop",
+      "finding": "Wrong/incomplete crop: title and author area instead of a complete motivation figure."
+    },
+    {
+      "file": "MORA-fig2-overview.png",
+      "sha256": "0563b05952255fd9aba5798be3b3956958c5f77bde13f007ae538f3a4f24bfe4",
+      "status": "needs_source_recrop",
+      "finding": "Bottom of overview diagram clipped."
+    },
+    {
+      "file": "NosRacer-fig1-config-task.png",
+      "sha256": "80f4cd3ea5b6e7bc829576de9c35045870abc2b64e02f16c99e6a44d914c6a63",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "NosRacer-fig2-exemplar.png",
+      "sha256": "165af700bb9ce51e0d125949b099a2eeca7dc3533879c5bb3d348d982a1c0c6e",
+      "status": "needs_source_recrop",
+      "finding": "Execution timeline cut off at lower edge."
+    },
+    {
+      "file": "NosRacer-fig3-overview.png",
+      "sha256": "1d86f43ac74b94512a7abf5098ae8c779fe01cd5a3f0452bd64ce43af2e69b1f",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "NosRacer-fig4-perturbation.png",
+      "sha256": "79bed58b873eb1b38bf70b79e70bd7f9c3fd7769615d4eaaef5d86bd9a1c852a",
+      "status": "needs_source_recrop",
+      "finding": "Third access/result row cut off at lower edge."
+    },
+    {
+      "file": "Resilience-fig1-taxonomy.png",
+      "sha256": "812e31dd204a7c41eb0d60e37dbb1a4aaa294ef136c015d2584648b2ccf32cd5",
+      "status": "needs_source_recrop",
+      "finding": "Top row of taxonomy figure clipped."
+    },
+    {
+      "file": "Resilience-fig2-pipeline.png",
+      "sha256": "b4bfd95f6f4e5fd9dbce5f5f1e72c54138a86f04920dc5ff30dbcc0404b8c59b",
+      "status": "needs_source_recrop",
+      "finding": "Lower feedback paths and FAIL label clipped."
+    },
+    {
+      "file": "Resilience-fig3-cost.png",
+      "sha256": "08711b64380b306209d44cd1fb8c09b8ad6ad12dd12865e1c4792e3e60c5a748",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "Resilience-fig4-efficiency.png",
+      "sha256": "54f53af17325a2343f29885b42ae5ef1ed45883a2a31317426e97e1ab2000938",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "MsgFault-fig2-overview.png",
+      "sha256": "22eadad01714a6861816dc92831a52b351f0f10f676f3ec1add14b385cafd934",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "MsgFault-fig3-workflows.png",
+      "sha256": "2a96272df4ba3ed7b34c180ca5bbe4cb47407c08a6cb6de2e3e154094470b9cc",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "MsgFault-fig4-manifestation-silent.png",
+      "sha256": "2f949f569486dd100e6f9007b9c98b28dbf861b4f81f263ebaf38580d5250cb9",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "MsgFault-fig8-topology-model.png",
+      "sha256": "4c158ffe781fc72d82be3a1977dff7d169ca2020e63ad8fc90d054c2ec4c8507",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "Cadence-fig3-overview.png",
+      "sha256": "da16f77e30f5ae17ffdc2cfe0e8b1cca0d87df845f144462caf83493234f8f11",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "Cadence-fig5-two-tier.png",
+      "sha256": "a8ec6399102cf7c8b5cf411e21e4178ffd773c10280df976457ea90204d93a54",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "Cadence-fig1-interval-study.png",
+      "sha256": "a8cb26ac0c8d6c1389efa1108fd90e3e95baa6f6ad25746b1225db8ef69c4013",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "Cadence-table1-main.png",
+      "sha256": "9a1b66a4adce85c8cbbd671131c540abf059d1f91cdecd4da35157ebbd7f5a92",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "Cadence-table4-ablation.png",
+      "sha256": "3ba2c9ad821d83e3795f0e4dff7c6d226f444fb969a15fd0bdc1dabf8011ba69",
+      "status": "main_figure_visible",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "MASS-fig1-overview.png",
+      "sha256": "86d8cfb1bb4a4c8dec27910db2f1fd9330ecfcac6bcd9b4cbbf04edc5597d38d",
+      "status": "previously_reviewed",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "MASS-fig2-score-tokens.png",
+      "sha256": "482e4920ee219af615bc95434dac1e37906cd01d3afaa3793fa86faa514bd6cb",
+      "status": "previously_reviewed",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "MASS-fig3-rsi-eval.png",
+      "sha256": "0077d508e2f22f196f08358aeaea34d69b527b5b03fc764d81b13dc8d384e9af",
+      "status": "previously_reviewed",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "MASS-fig6-sft-efficiency.png",
+      "sha256": "5fd9749302cebeef1f9e6e72dac60aa760dc96a8f39bcefd342d03b4f50cf0d4",
+      "status": "previously_reviewed",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    },
+    {
+      "file": "MASS-fig7-ablation.png",
+      "sha256": "bcaf680d4175af9da53de950510edd1603c799a9ffb6f031c6ff88843a5c5b78",
+      "status": "previously_reviewed",
+      "finding": "Main figure visible; no scientific facts independently checked."
+    }
+  ]
+}

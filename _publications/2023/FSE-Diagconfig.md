@@ -25,4 +25,7 @@ links:
   DOI: https://doi.org/10.1145/3611643.3616300
   BibTex: https://yuxiaoba.github.io/files/FSE23/diagconfig-bibtex.txt
   # Arxiv:
+year: 2023
+venue: FSE
+ccf: A
 ---

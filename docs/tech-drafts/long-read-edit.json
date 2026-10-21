@@ -1,0 +1,22 @@
+{
+  "updated_on": "2026-10-19",
+  "articles": {
+    "anyscale-coding-agent-serving": {
+      "chinese_characters": 2154,
+      "sha256": "0839db7ed70e76573c576ee6486bc891a2494e695e0489f34121b159cb113a66",
+      "sections": 8
+    },
+    "aqua-production-quality": {
+      "chinese_characters": 2253,
+      "sha256": "26457ff56c3f9f0a82a4a4374512b2353ddfeee615fc0409619d76a2cf683700",
+      "sections": 9
+    },
+    "pai-agent-observability": {
+      "chinese_characters": 2183,
+      "sha256": "d66241b1d1e245208cbb19e614e479acb1c3390cac7fd318e04135af679dd749",
+      "sections": 8
+    }
+  },
+  "content_source": "Previously retrieved official source snapshots in sources.json; no new performance measurements",
+  "ui": "Opt-in long_read: contents, scrollable tables, accessible zoomable image dialog"
+}

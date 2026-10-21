@@ -22,6 +22,10 @@ links:
   Paper: https://yuxiaoba.github.io/files/JNCA/servicemesh.pdf
   Project: https://github.com/IntelligentDDS/ServiceMeshRedirect
   DOI: https://doi.org/10.1016/j.jnca.2023.103805
-  BibTex: https://yuxiaoba.github.io/files/TSC/faasdeliver-bibtex.txt
+  # The former BibTex link was for FaaSDeliver, a different paper.
+  BibTex: ""
   # Arxiv:
+year: 2024
+venue: JNCA
+ccf: C
 ---

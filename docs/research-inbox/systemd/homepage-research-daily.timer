@@ -1,0 +1,12 @@
+[Unit]
+Description=Research inbox at 08:30 Shanghai time, with a noon catch-up
+
+[Timer]
+OnCalendar=*-*-* 08:30:00 Asia/Shanghai
+OnCalendar=*-*-* 12:00:00 Asia/Shanghai
+Persistent=true
+AccuracySec=1min
+Unit=homepage-research-daily.service
+
+[Install]
+WantedBy=timers.target

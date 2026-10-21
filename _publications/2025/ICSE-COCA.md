@@ -26,4 +26,7 @@ links:
   Project: 
   DOI: https://doi.ieeecomputersociety.org/10.1109/ICSE55347.2025.00234
   BibTex: https://yuxiaoba.github.io/files/ICSE25/coca-bibtex.txt
+year: 2025
+venue: ICSE
+ccf: A
 ---

@@ -28,4 +28,7 @@ links:
   DOI: https://doi.org/10.1145/3442381.3449905
   BibTex: https://yuxiaoba.github.io/files/WWW21/microrank-bibtex.txt
   # Arxiv:
+year: 2021
+venue: WWW
+ccf: A
 ---

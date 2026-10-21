@@ -1,5 +1,5 @@
 ---
-title:          "Conan: Uncover Consensus Issues in Distributed Databases Using Fuzzing-driven Fault Injection"
+title: 'Conan: Uncover Consensus Issues in Distributed Databases Using Fuzzing-Driven Fault Injection'
 date:           2025-01-10 00:00:00 +0800
 selected:       false
 pub:            >-
@@ -26,4 +26,7 @@ links:
   Project: https://github.com/huanghj78/conan
   DOI: https://doi.org/10.1109/SANER64311.2025.00073
   BibTex: https://yuxiaoba.github.io/files/Saner25/conan-bibtex.txt
+year: 2025
+venue: SANER
+ccf: B
 ---

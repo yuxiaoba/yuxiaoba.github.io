@@ -1,5 +1,5 @@
 ---
-title:          "Mint: Cost-Efficient Tracing with All Requests Collection via Commonality and Variability Analysiss"
+title: 'Mint: Cost-Efficient Tracing with All Requests Collection via Commonality and Variability Analysis'
 date:           2025-01-02 00:00:00 +0800
 selected:       true
 pub:            >-
@@ -28,4 +28,7 @@ links:
   DOI: https://doi.org/10.1145/3669940.3707287
   BibTex: https://yuxiaoba.github.io/files/ASPLOS25/mint-bibtex.txt
   Arxiv: https://arxiv.org/pdf/2411.04605
+year: 2025
+venue: ASPLOS
+ccf: A
 ---

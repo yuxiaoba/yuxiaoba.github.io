@@ -1,0 +1,11 @@
+<section class="subpage"><div class="eyebrow">{{ t.work }}</div><h1>{{ t.publications }}{% if lang == 'en' %}.{% endif %}</h1><p class="subpage-lead">{{ t.publication_intro }}</p><p class="door-detail">{{ t.author_marks }}</p>
+{% capture year_string %}{% for paper in site.publications %}{% unless paper.published == false %}{% if paper.year %}{{ paper.year }}{% else %}{{ paper.date | date: '%Y' }}{% endif %}|{% endunless %}{% endfor %}{% endcapture %}
+{% assign years = year_string | split: '|' | uniq | sort | reverse %}
+<div class="publication-archive">
+<aside class="publication-sidebar"><h2 class="year-nav-title">{{ t.years }}</h2><nav class="year-navigation" aria-label="{% if lang == 'zh' %}按年份浏览{% else %}Browse by year{% endif %}">{% for year in years %}<a href="#year-{{ year }}"{% if forloop.first %} aria-current="location"{% endif %}>{{ year }}</a>{% endfor %}</nav></aside>
+<div class="publication-list">
+{% assign papers = site.publications | sort: 'date' | reverse %}
+{% for year in years %}<section class="publication-year" data-year="{{ year }}"><h2 class="year-label" id="year-{{ year }}">{{ year }}</h2>
+{% for paper in papers %}{% unless paper.published == false %}{% assign paper_year = paper.year | append: '' %}{% unless paper.year %}{% assign paper_year = paper.date | date: '%Y' %}{% endunless %}{% if paper_year == year %}{% include publication.html paper=paper %}{% endif %}{% endunless %}{% endfor %}</section>{% endfor %}
+</div></div>
+</section>

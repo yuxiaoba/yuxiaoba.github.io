@@ -1,0 +1,32 @@
+{
+  "86d8cfb1bb4a4c8dec27910db2f1fd9330ecfcac6bcd9b4cbbf04edc5597d38d": {
+    "reviewed_on": "2026-10-16",
+    "file": "MASS-fig1-overview.png",
+    "source": "https://arxiv.org/pdf/2610.12176v1",
+    "review": "Visually inspected figure boundary, legends, axes and subfigure labels; no scientific values redrawn. Dense figures retain original-size viewing."
+  },
+  "482e4920ee219af615bc95434dac1e37906cd01d3afaa3793fa86faa514bd6cb": {
+    "reviewed_on": "2026-10-16",
+    "file": "MASS-fig2-score-tokens.png",
+    "source": "https://arxiv.org/pdf/2610.12176v1",
+    "review": "Visually inspected figure boundary, legends, axes and subfigure labels; no scientific values redrawn. Dense figures retain original-size viewing."
+  },
+  "0077d508e2f22f196f08358aeaea34d69b527b5b03fc764d81b13dc8d384e9af": {
+    "reviewed_on": "2026-10-16",
+    "file": "MASS-fig3-rsi-eval.png",
+    "source": "https://arxiv.org/pdf/2610.12176v1",
+    "review": "Visually inspected figure boundary, legends, axes and subfigure labels; no scientific values redrawn. Dense figures retain original-size viewing."
+  },
+  "5fd9749302cebeef1f9e6e72dac60aa760dc96a8f39bcefd342d03b4f50cf0d4": {
+    "reviewed_on": "2026-10-16",
+    "file": "MASS-fig6-sft-efficiency.png",
+    "source": "https://arxiv.org/pdf/2610.12176v1",
+    "review": "Visually inspected figure boundary, legends, axes and subfigure labels; no scientific values redrawn. Dense figures retain original-size viewing."
+  },
+  "bcaf680d4175af9da53de950510edd1603c799a9ffb6f031c6ff88843a5c5b78": {
+    "reviewed_on": "2026-10-16",
+    "file": "MASS-fig7-ablation.png",
+    "source": "https://arxiv.org/pdf/2610.12176v1",
+    "review": "Visually inspected figure boundary, legends, axes and subfigure labels; no scientific values redrawn. Dense figures retain original-size viewing."
+  }
+}

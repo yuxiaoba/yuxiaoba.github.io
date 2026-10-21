@@ -1,0 +1,21 @@
+{
+  "approved_on": "2026-10-19",
+  "scope": "Local server only; no GitHub push or Pages deployment",
+  "articles": [
+    {
+      "id": "anyscale-coding-agent-serving",
+      "source": "_tech/zh/anyscale-coding-agent-serving.md",
+      "url": "/tech/zh/anyscale-coding-agent-serving/"
+    },
+    {
+      "id": "aqua-production-quality",
+      "source": "_tech/zh/aqua-production-quality.md",
+      "url": "/tech/zh/aqua-production-quality/"
+    },
+    {
+      "id": "pai-agent-observability",
+      "source": "_tech/zh/pai-agent-observability.md",
+      "url": "/tech/zh/pai-agent-observability/"
+    }
+  ]
+}

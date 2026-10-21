@@ -1,0 +1,32 @@
+- id: agent-reliability
+  zh: 智能体可靠性
+  en: Agent Reliability
+  aliases: [AgentOps, communication-fault, silent-failure, intervention, runtime-monitoring]
+- id: coding-agents
+  zh: 编码智能体
+  en: Coding Agents
+  aliases: [coding-agent, SWE-bench]
+- id: multi-agent
+  zh: 多智能体协作
+  en: Multi-Agent Systems
+  aliases: [topology, AutoGen]
+- id: self-improvement
+  zh: 自改进与学习
+  en: Self-Improvement
+  aliases: [Evolve, RSI, self-supervision, workflow-optimization, SFT]
+- id: observability
+  zh: 可观测性与诊断
+  en: Observability & Diagnosis
+  aliases: [diagnosis, telemetry, monitoring]
+- id: anomaly-detection
+  zh: 异常检测
+  en: Anomaly Detection
+  aliases: [AIOps, TSAD, drift-robust, non-stationary, temporal-disambiguation]
+- id: inference-serving
+  zh: 推理服务
+  en: Inference Serving
+  aliases: [LLMOps, inference, vLLM, caching]
+- id: systems-reliability
+  zh: 系统可靠性
+  en: Systems Reliability
+  aliases: [Systems, HPC, MPI, checkpoint-restart, fault-tolerance, NOS, race-condition, dynamic-analysis, happen-before, network-OS, testing]

@@ -1,0 +1,235 @@
+{
+  "summary": "完成2026-10-16批次：1期五篇论文日报（含2则社区动态）及4篇独立Tech Notes，共10个中英文Markdown、8张目视核对原图。11个输入全部覆盖，无延期项。已核验来源、真实哈希、双语配对、锚点、标签、内链和图片；构建、浏览器检查及预览更新留给外层程序。写作与翻译均标记为assistant。",
+  "articles": [
+    {
+      "kind": "paper",
+      "source_ids": [
+        "arxiv-2610.22863",
+        "arxiv-2610.23064",
+        "arxiv-2610.23252",
+        "arxiv-2610.23342",
+        "arxiv-2610.23506",
+        "x-cloudnativefdn-59958620",
+        "x-navaneethvb-54515119"
+      ],
+      "zh_path": "_digest/zh/daily-2026-10-16.md",
+      "en_path": "_digest/en/daily-2026-10-16.md"
+    },
+    {
+      "kind": "tech",
+      "source_ids": [
+        "blog-blog-2026-10-16-kimi-k3-megakernel"
+      ],
+      "zh_path": "_tech/zh/kimi-k3-decode.md",
+      "en_path": "_tech/en/kimi-k3-decode.md"
+    },
+    {
+      "kind": "tech",
+      "source_ids": [
+        "blog-blog-2026-10-16-kimi-k3-mi355x"
+      ],
+      "zh_path": "_tech/zh/kimi-k3-mi355x.md",
+      "en_path": "_tech/en/kimi-k3-mi355x.md"
+    },
+    {
+      "kind": "tech",
+      "source_ids": [
+        "blog-16-finding-reusable-kv-caches-across-a-f"
+      ],
+      "zh_path": "_tech/zh/lmcache-mp-coordinator.md",
+      "en_path": "_tech/en/lmcache-mp-coordinator.md"
+    },
+    {
+      "kind": "tech",
+      "source_ids": [
+        "pytorch-blog-bringing-elastically-deterministic"
+      ],
+      "zh_path": "_tech/zh/zephon-torchtitan.md",
+      "en_path": "_tech/en/zephon-torchtitan.md"
+    }
+  ],
+  "deferred": [],
+  "evidence": [
+    {
+      "source_id": "arxiv-2610.22863",
+      "url": "https://arxiv.org/abs/2610.22863",
+      "local_file": "sources/arxiv-2610.22863.html",
+      "sha256": "308d24641c23f3350ea7f25b505c19fa44b8cc1ae735158d33cb5ee1450c6806",
+      "review_notes": "核对原题与Mayank Arya等7名作者；v1首发2026-10-16 03:09:13 UTC。元数据页用于身份与日期核验，方法和结果依据完整PDF。"
+    },
+    {
+      "source_id": "arxiv-2610.22863",
+      "url": "https://arxiv.org/pdf/2610.22863",
+      "local_file": "sources/arxiv-2610.22863.pdf",
+      "sha256": "d2f3465498ab4d12f5b6a657246259a9b145804a1ec528563623302a4b16992a",
+      "review_notes": "完整30页。已读§2计量口径、§3–4生产特征、§5 pp.15–20重放与局限、§6计划发布物。容量用Llama-2-70B FP16 GQA布局换算，非实测分配；一小时idle cap令501.8→140.8 TB、全轨迹重算4.07→4.53%。最忙小时176007调用、4.7 TB池化预算下LRU/FNU/int4 MRR重算62.9/31.1/13.6%。未计传输、反量化或质量代价；计量化元数据后MRR为14.99–19.25%。FNU非可变对象最优界。部署连续性88.9→29.0%为关联，部署本地对象令首次访问下限5.4→20.2%。未复现，生成器仍计划发布。"
+    },
+    {
+      "source_id": "arxiv-2610.23064",
+      "url": "https://arxiv.org/abs/2610.23064",
+      "local_file": "sources/arxiv-2610.23064.html",
+      "sha256": "85f837fef4765798cb93d5c98741d13abb1ce6f25c5d6b7dca2f999774963e41",
+      "review_notes": "核对原题与Mingshu Zhai等10名作者；v1首发2026-10-16 07:40:24 UTC。实验依据完整PDF。"
+    },
+    {
+      "source_id": "arxiv-2610.23064",
+      "url": "https://arxiv.org/pdf/2610.23064",
+      "local_file": "sources/arxiv-2610.23064.pdf",
+      "sha256": "e86ba510d67e2069c29cb62c6524ed96dc2114b04691c478e133ecaf89933ad7",
+      "review_notes": "完整14页。已读§III–V pp.4–9激活模型、按算子缓解及双批交叠，§VI pp.9–11实验。每GPU 64 GB HBM、480 BF16 TFLOPS，12288卡2.012 EFLOPs；平均比Megatron-Kuai/AdaPipe快1.14×/1.13×。基线经过MoE适配或组件裁剪；重启计机器预热、不计人工。交叠要求PP>2，评测PP≥4。摘要35% MFU与图8最大规模34%不一致，成稿未采用该百分比。未复现。"
+    },
+    {
+      "source_id": "arxiv-2610.23252",
+      "url": "https://arxiv.org/abs/2610.23252",
+      "local_file": "sources/arxiv-2610.23252.html",
+      "sha256": "b3ef34a73428b116162bf3ef792b77069df559fee937de447a06ddbc9ec1b2bf",
+      "review_notes": "核对原题、Jeremias Dötterl与Martin Kuipers；v1首发2026-10-16 10:25:35 UTC。"
+    },
+    {
+      "source_id": "arxiv-2610.23252",
+      "url": "https://arxiv.org/pdf/2610.23252",
+      "local_file": "sources/arxiv-2610.23252.pdf",
+      "sha256": "9a841e522dab391f237544d27fe227a5cad14ad5373dcf7b12b62a9be65e302d",
+      "review_notes": "完整4页，已读pp.1–2数据引用与工具契约、p.3证据查询和演示实现。deepagents原型连接Adtran实验室商业OLT/ONU，描述断纤和断电场景；无样本量、根因准确率或对照改善数字。引用回填约束展示数据，不能保证因果诊断正确或遥测未被投毒。ECOC Demo Zone为稿件自身定位，未声称核实录用。"
+    },
+    {
+      "source_id": "arxiv-2610.23342",
+      "url": "https://arxiv.org/abs/2610.23342",
+      "local_file": "sources/arxiv-2610.23342.html",
+      "sha256": "1490afd25b216263ffdc37c57647dca24358163fc44fc9b50eb78c66e99b04dc",
+      "review_notes": "核对原题及Aniruddha Chattopadhyay、Kanishka Halder、Partha Sarathi Roy；v1首发2026-10-16 11:49:37 UTC。"
+    },
+    {
+      "source_id": "arxiv-2610.23342",
+      "url": "https://arxiv.org/pdf/2610.23342",
+      "local_file": "sources/arxiv-2610.23342.pdf",
+      "sha256": "bc42f1c9312a8cebcdca82571d02fbefcaf410503049a5cfc75a49dc87a8eaa3",
+      "review_notes": "完整16页。已读§3–5 pp.3–7扰动和修复协议、§6 pp.7–13结果与成本、§8局限。Qwen3.5-9B温度0，DICE300轻度1干扰工具、BFCL200中度3干扰工具；non-oracle准确率0.717→0.813、0.580→0.805，恢复19/22和33/45，触发16/32%，额外token32.6/47.1%。普通重试和0.795修复值来自另一组运行；时延重跑27%触发、约3.5秒额外时延，未混入主表。部分消融为oracle；Llama-4-Scout仅0.635→0.665。零观察伤害不构成保证，扰动非真实变更分布。"
+    },
+    {
+      "source_id": "arxiv-2610.23506",
+      "url": "https://arxiv.org/abs/2610.23506",
+      "local_file": "sources/arxiv-2610.23506.html",
+      "sha256": "a167159f37d319ad7de9e078c09addd8df8f60ad391ba4369ee976d1a0f98cd8",
+      "review_notes": "核对原题与Quoc Co Tran等6名作者；v1首发2026-10-16 14:15:59 UTC。"
+    },
+    {
+      "source_id": "arxiv-2610.23506",
+      "url": "https://arxiv.org/pdf/2610.23506",
+      "local_file": "sources/arxiv-2610.23506.pdf",
+      "sha256": "23b2e1d0fb200e9eb9c9bc512467fd19221a1f5f536ef722970e52d756471354",
+      "review_notes": "完整16页。已读§3 pp.4–7仓库冻结、任务/补丁/测试生成及人工抽查，§4结果和§6局限。总集31仓库212题，其中25题用于开发；正式评测为29仓库187题。表6最佳Codex/GPT-5.5完成率31.2%、测试通过率68.7%。任务经模型辅助合成，不能当作真实生产事故；有限测试不能覆盖所有工业风险，agent比较也包含harness差异。"
+    },
+    {
+      "source_id": "blog-blog-2026-10-16-kimi-k3-megakernel",
+      "url": "https://blog.vllm.ai/blog/2026-10-16-kimi-k3-megakernel",
+      "local_file": "sources/blog-blog-2026-10-16-kimi-k3-megakernel.html",
+      "sha256": "b4ce28f26c8972fb64bedf4da391716052ae214b770adfd0419028f69e468b22",
+      "review_notes": "完整官方HTML，核对原题、Benjamin Chislett (NVIDIA)、2026-10-16。已读Part1优化、Part2隔离与验证、Part3性能。842对488 token/s条件为GB300 TP16、batch1、DSpark DL7、synthetic AL6、ISL1/OSL1k，排除prefill。无推测吞吐是整个TP组总量。AgentX403.2对223.7比较16对8卡，非纯软件收益。已核对编译器提前加载及MRCR/AIME25数值问题；RFC仍为提案，未推断正式版本默认启用。"
+    },
+    {
+      "source_id": "blog-blog-2026-10-16-kimi-k3-mi355x",
+      "url": "https://blog.vllm.ai/blog/2026-10-16-kimi-k3-mi355x",
+      "local_file": "sources/blog-blog-2026-10-16-kimi-k3-mi355x.html",
+      "sha256": "c7d97c9ec7094680d4b66a6ceeb4051c86974ee9121bde2b985544bb9a7cbd20",
+      "review_notes": "完整官方HTML，原题、AMD and Embedded LLM、2026-10-16已核对。已读§1–6、Benchmark notes和KDA数值/LDS说明。10月9日快照采用9月30日AMD与8月16日NVIDIA提交；八卡TP8 FP4权重FP8KV，50 P90 interactivity下7567/6083总tokens/s/GPU，包含复用输入、不含TTFT。$1.50/$2.26每卡小时TCO得18.16M/9.69M tokens/$，非实际报价。PR59591晚于快照，并发70提升28.9%为独立实验。MLA 43.8→23.6ms条件为TP8无DCP并发1、32K/1K；KDA16.20→5.61微秒是单卡内核测试。数据集修订未记录，局部收益未叠加。"
+    },
+    {
+      "source_id": "blog-16-finding-reusable-kv-caches-across-a-f",
+      "url": "https://blog.lmcache.ai/en/2026/10/16/finding-reusable-kv-caches-across-a-fleet-of-servers-lmcaches-mp-multiprocess-coordinator/",
+      "local_file": "sources/blog-16-finding-reusable-kv-caches-across-a-f.html",
+      "sha256": "f6b0a22860042732a344e7004cdd4f750e34fa36cbaa32fdc9fe9f3986341bd9",
+      "review_notes": "完整官方HTML，h1原题与作者Siddhant Ray已核对，未混用SEO标题。首发2026-10-16T23:14:25Z，即上海10月17日07:14:25，成稿标注批次补读。已读四步目录构造、Blend、soft state、P2P与性能小节。注册不等于事件报告，当前P2P使用成员发现后服务器直接查询/传输。13.7×来自既有MP实验：Qwen3-235B-A22B-Instruct-2507-FP8、八H100、同400GB主机缓存，TTFT3.98→0.29秒；非协调器基准。旧P2P为单机两GPU完全复用的构造负载。目录提示不保证对象仍存在或任意KV可兼容复用。"
+    },
+    {
+      "source_id": "pytorch-blog-bringing-elastically-deterministic",
+      "url": "https://pytorch.org/blog/bringing-elastically-deterministic-data-loading-to-torchtitan-with-zephon/",
+      "local_file": "sources/pytorch-blog-bringing-elastically-deterministic.html",
+      "sha256": "b53f3383370259ea6ec7505169f9fdd401dbeac6ed9848dccc037b013ae135bb",
+      "review_notes": "完整官方HTML，核对原题与可见署名Josh Wills、Maximilian Böther、Ties Robroek and the Zephon team。首发2026-10-16T16:30:46Z，即上海10月17日00:30:46。已读Pipeline、确定性机制、TorchTitan集成、限制与后续方向。1B模型16GPU step150恢复8/32/64，batch哈希相同不等于训练逐位一致；20B token实验DCLM分数跨度0.82→0.05、FineWeb0.64→0.011。需固定配方、全局batch和lane整除条件。3.7×仅线程runner取样表现。图表为交互iframe，已保存并检查官方嵌入页，未取得适合发布的已核验静态原图，正文明确说明。"
+    },
+    {
+      "source_id": "x-cloudnativefdn-59958620",
+      "url": "https://x.com/CloudNativeFdn/status/2111170417259958620",
+      "local_file": "sources/x-cloudnativefdn-59958620.html",
+      "sha256": "5f897b7a39ae2388af736d9d6640228f90089b0cc9ad98059af9754ac5e162ba",
+      "review_notes": "实际下载HTTP200原帖，核对CNCF/@CloudNativeFdn、遥测投毒议题正文及Oct16 2026显示日期。页面7:00 PM无明确时区，未宣称上海或UTC分钟。结合官方议程确认议题和讲者；仅作为会议预告，不写成攻击实验报告。"
+    },
+    {
+      "source_id": "x-navaneethvb-54515119",
+      "url": "https://x.com/navaneethvb/status/2111092741954515119",
+      "local_file": "sources/x-navaneethvb-54515119.html",
+      "sha256": "e43ce5a2982d8634e2fc4b391ce8e5df58c477390cbda2bcaf3ade3a3bade276",
+      "review_notes": "实际下载原帖，核对Navaneeth Krishnan/@navaneethvb、Pull/Push正文及Oct16 2026日期。1:51 PM无明确时区。已追溯所引10月14日vLLM文章，3×结果绑定模型、硬件、请求率、长度和缓存关闭条件；作为日报补充，未扩展独立tech选题。"
+    },
+    {
+      "source_id": "x-cloudnativefdn-59958620",
+      "url": "https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1230227",
+      "local_file": "sources/social-cncf-session.html",
+      "sha256": "8daf78e57bfa53fd5039f77331abf0340a2dab9669efc62c658bb44ecb98700d",
+      "review_notes": "官方议程补证。已读Zero-Trust Telemetry完整说明，核对Chad M. Crowell、Diana Todea及30分钟时段；包括mTLS、查询权限与防篡改主题，无攻击成功率或实验样本数据。"
+    },
+    {
+      "source_id": "x-navaneethvb-54515119",
+      "url": "https://vllm.ai/blog/2026-10-14-nixl-push-connector",
+      "local_file": "sources/social-push-official.html",
+      "sha256": "79082c48d525d696b4bce3c94350ba5238ac858f39d8d60e49a95c6a64e68cb4",
+      "review_notes": "核对原题、2026-10-14及Sunita Nadampalli (AWS)、Nicolò Lucchesi (Mistral)。已读架构、实现、线程、时序、性能及复现附录。Qwen3-32B、P5en/EFA、1P1D、decode前缀缓存关闭、输出128 token，16K输入8QPS时TTFT约1744→540ms。低负载差异很小；Push需提前选择decode节点，Pull保留后置路由或双向传输价值。未运行基准。"
+    }
+  ],
+  "images": [
+    {
+      "path": "assets/images/digest/2026-10-16/kv-residency.png",
+      "source_id": "arxiv-2610.22863",
+      "source_url": "https://arxiv.org/pdf/2610.22863",
+      "review_notes": "PDF第4页Figure 1，3×提取为699×552 PNG。已查看整页及最终裁图；上下控制流、全部箭头与2.49/9.38均值完整。图示用户轮次，不是会话深度或MRR架构。中英共享图片，分别提供alt与图注。"
+    },
+    {
+      "path": "assets/images/digest/2026-10-16/schema-shield.png",
+      "source_id": "arxiv-2610.23342",
+      "source_url": "https://arxiv.org/pdf/2610.23342",
+      "review_notes": "PDF第4页Figure 1，1065×210 PNG。已目视确认通过/失败两支及修复链完整，无节点截断；图中未展开的缺名候选重试在双语图注说明。"
+    },
+    {
+      "path": "assets/images/digest/2026-10-16/bagualu-2.png",
+      "source_id": "arxiv-2610.23064",
+      "source_url": "https://arxiv.org/pdf/2610.23064",
+      "review_notes": "PDF第4页Figure 4，774×609 PNG。已目视核对模型/硬件输入、当前与下一状态、三个模块和底部图例完整；未混入左栏Figure 3。"
+    },
+    {
+      "path": "assets/images/digest/2026-10-16/optical-evidence.png",
+      "source_id": "arxiv-2610.23252",
+      "source_url": "https://arxiv.org/pdf/2610.23252",
+      "review_notes": "PDF第2页Figure 1，1374×759 PNG。已目视确认完整双栏架构，网络、外部LLM、操作者、URI示例及底部证据回填路径均保留，与正文机制一致。"
+    },
+    {
+      "path": "assets/images/digest/2026-10-16/mlops-bench.png",
+      "source_id": "arxiv-2610.23506",
+      "source_url": "https://arxiv.org/pdf/2610.23506",
+      "review_notes": "PDF第2页Figure 1，1365×762 PNG。已目视核对左侧流程图标和三列构造/评测内容完整，下方比较表未混入；图注区分生成过程与被测Agent输入。"
+    },
+    {
+      "path": "assets/images/tech/kimi-k3-decode/kernel-timeline.png",
+      "source_id": "blog-blog-2026-10-16-kimi-k3-megakernel",
+      "source_url": "https://vllm.ai/blog-assets/figures/2026-10-16-kimi-k3-megakernel/kimi-k3-kernel-timeline.png?v=250506bea01d",
+      "review_notes": "官方Part1时间线，2404×1176原图。已目视确认上下路径、坐标、图例和脚注完整；条件为GB300 TP16 batch8 rank0，一个KDA层加MoE块，130微秒/23内核对69微秒/13内核。未将单层倍率表述为端到端收益。"
+    },
+    {
+      "path": "assets/images/tech/kimi-k3-mi355x/agentx-curves.png",
+      "source_id": "blog-blog-2026-10-16-kimi-k3-mi355x",
+      "source_url": "https://vllm.ai/blog-assets/figures/2026-10-16-kimi-k3-mi355x/inferencex-public-curves.png",
+      "review_notes": "官方文章采用的InferenceX曲线，1507×1130原图。已目视核对红MI355X、绿B300、轴、成本和87.4%标注，水印完整。图内Updated2026-10-02与文章retrieved2026-10-09分别记录；纵轴是总tokens/$ TCO，非功耗或纯输出吞吐。"
+    },
+    {
+      "path": "assets/images/tech/lmcache-mp-coordinator/directory.png",
+      "source_id": "blog-16-finding-reusable-kv-caches-across-a-f",
+      "source_url": "https://blog.lmcache.ai/wp-content/uploads/2026/10/lmcache-mp-coordinator-sheet-4-directory%402x.png",
+      "review_notes": "官方directory小节Sheet 4，2000×1280完整原图。已目视核对注册表、event gate、key directory、可选blend index、事件箭头及绕过协调器的KV数据路径。所有图片均本地共享，中英文alt与图注分别编写。"
+    }
+  ],
+  "local_job": ".preview/research-jobs/runs/20261019-202110-f787315dc6-058951",
+  "input_sha256": "f787315dc6c47bdc760a082630567606c65b42035ecf686e013ba6c4522af261",
+  "preview_release": "/home/GB-Project/yuxiaoba.github.io/.preview/releases/research-20261019-204059-8a1ba06c",
+  "applied": true,
+  "authorship": "Assistant-authored bilingual notes based on original sources; no experiments reproduced."
+}

@@ -25,4 +25,7 @@ links:
   DOI: https://doi.org/10.1145/3551349.3556904
   BibTex: https://yuxiaoba.github.io/files/ASE22/gied-bibtex.txt
   # Arxiv:
+year: 2022
+venue: ASE
+ccf: A
 ---

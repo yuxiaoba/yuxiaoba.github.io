@@ -1,0 +1,9 @@
+{% assign note = include.entry %}
+{% if lang == 'zh' %}{% capture title_date %}{{ note.date | date: '%Y年%-m月%-d日' }}｜{% endcapture %}{% else %}{% capture title_date %}{{ note.date | date: '%Y-%m-%d' }} | {% endcapture %}{% endif %}
+{% assign title_prefix = note.title | slice: 0, title_date.size %}{% assign display_title = note.title %}{% if title_prefix == title_date %}{% assign display_title = note.title | remove_first: title_date %}{% endif %}
+<article class="recent-note" data-note-url="{{ note.url | relative_url }}">
+<div class="recent-note-meta"><time datetime="{{ note.date | date: '%Y-%m-%d' }}">{% include local-date.html date=note.date %}</time>{% if note.daily_digest and note.paper_count %}<span>{{ note.paper_count }} {{ t.papers_unit }}</span>{% endif %}</div>
+<h3><a href="{{ note.url | relative_url }}">{{ display_title | escape }}</a></h3>
+{% if note.summary and note.summary != '' %}<p>{{ note.summary | escape }}</p>{% endif %}
+{% if note.daily_digest %}<a class="recent-read" href="{{ note.url | relative_url }}">{{ t.read | remove: "↗" | strip }} <span aria-hidden="true">↗</span></a>{% endif %}
+</article>

@@ -6,7 +6,7 @@ pub:            >-
                 In 32nd ACM International Conference on the Foundations of Software Engineering.
 pub_pre:        >-
                 <span class="badge badge-pill badge-custom badge-success">FSE'24 (CCF A)</span>
-pub_last:       '🏆 <span style="color:red"><b>Distinguish Paper Award</b></span>'
+pub_last: ''
 # pub_post:       'Under review.'
 # pub_last:       '<span class="badge badge-pill badge-custom badge-secondary">Conference</span><span class="badge badge-pill badge-custom badge-warning">Poster</span>'
 abstract: >-
@@ -27,4 +27,8 @@ links:
   DOI: https://doi.org/10.1145/3643748
   BibTex: https://yuxiaoba.github.io/files/FSE24/trastrainer-bibtex.txt
   # Arxiv:
+year: 2024
+award: distinguished_paper
+venue: FSE
+ccf: A
 ---

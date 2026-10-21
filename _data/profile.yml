@@ -16,7 +16,7 @@ linkedin: guangba-yu-07b216192
 orcid: 0000-0001-6195-9088
 
 short_bio: >-
-  I am a postdoctoral researcher at <a href="http://ariselab.cse.cuhk.edu.hk/">ARISE</a>, The Chinese University of Hong Kong, mentored by <a href="https://www.cse.cuhk.edu.hk/lyu/">Prof. Michael R. Lyu</a>. My journey in tech was forged at Sun Yat-sen University, where I earned my Ph.D. and M.Eng under the guidance of <a href="http://www.dds-sysu.tech/Teachers">Prof. Pengfei Chen</a>. I've also had the privilege of working in industry as a Ph.D. researcher at WeChat.
+  Since July 2024, I have been a postdoctoral researcher at <a href="http://ariselab.cse.cuhk.edu.hk/">ARISE</a>, The Chinese University of Hong Kong, mentored by <a href="https://www.cse.cuhk.edu.hk/lyu/">Prof. Michael R. Lyu</a>. My journey in tech was forged at Sun Yat-sen University, where I earned my Ph.D. and M.Eng under the guidance of <a href="http://www.dds-sysu.tech/Teachers">Prof. Pengfei Chen</a>. From 2022 to 2023, I was a research intern at Tencent’s WeChat Group through the CCF–Tencent Rhino-Bird Elite Program, working on LogReducer and ChangeRCA, which were deployed on WeChat production clusters.
   <br>
   <br>
   My path began not with code, but with traditional Chinese medicine. I started my academic career at Guangzhou University of Chinese Medicine, often called the "MIT of Traditional Chinese Medicine", with the dream of becoming a physician who diagnosed the "bugs" of human body. Today, I've channeled that diagnostic spirit from human systems to software systems, dedicating myself to identifying and healing the faults that affect software reliability and keeping our digital world healthy.
@@ -41,31 +41,47 @@ short_bio: >-
 #  😃 <em>I always welcome the opportunity to collaborate research topics about system reliability. Feel free to drop me an email if you're interested in connecting with me.</em>
 
 show_portrait: true
-portrait_url: assets/images/photos/guangba.jpg
+portrait_url: assets/images/photos/guangba-portrait-v10.png
 portrait_caption: >-
   Welcome to Guangba's website!
 
 education:
-  - name: Sun Yat-sen University
-    logo: assets/images/badges/SYSU.jpeg
-    position: Ph.D. in Computer Science and Technology
-    date: 2020 - 2024
-  - name: Sun Yat-sen University
-    logo: assets/images/badges/SYSU.jpeg
-    position: M.Eng in Computer Technology
-    date: 2018 - 2020
+- name: Sun Yat-sen University
+  position: Ph.D. in Computer Science and Technology
+  date: 2020.09–2024.07
+  advisor: 'Advisor: Prof. Pengfei Chen'
+- name: Sun Yat-sen University
+  position: M.Eng. in Computer Technology
+  date: 2018.09–2020.07
+  advisor: 'Advisor: Prof. Pengfei Chen'
+- name: Guangzhou University of Chinese Medicine
+  position: B.Eng. in Medical Information Engineering
+  date: 2014.09–2018.07
+  advisor: 'Advisor: Prof. Xiufeng Liu'
 
 awards:
-  - name: ACM China(Zhuhai) Doctoroal Dissertation Award
-    date: 2024
-  - name: Distinguish Paper Award for FSE'24
-    date: 2024
-  - name: Outstanding PhD Graduate, SYSU
-    date: 2024
-  - name: National Scholarship, SYSU
-    date: 2022-2023
-  - name: Tencent Rhino-Bird Research Elite Program & Special Scholarship, Tencent
-    date: 2022-2023
+- date: '2026'
+  name: ACM SIGSOFT Distinguished Paper Award, ICSE 2026 (PreServe)
+- date: '2025'
+  name: First Prize, Science & Technology Innovation Award, Guangdong Association for Promotion of S&T Achievement Transformation
+- date: '2025'
+  name: Third Prize, Science & Technology Progress Award, Chinese Institute of Electronics
+- date: '2025'
+  name: ACM SIGSOFT Distinguished Paper Award, ASE 2025 (iKnow)
+- date: '2025'
+  name: APSEC 2025 Distinguished Reviewer Award
+- date: '2024'
+  name: ACM China (Zhuhai) Doctoral Dissertation Award
+- date: '2024'
+  name: ACM SIGSOFT Distinguished Paper Award, FSE 2024 (TraStrainer)
+- date: '2024'
+  name: Best Cloud Computing Application Award, IEEE–CCF (LogReducer)
+- date: '2024'
+  name: Outstanding Graduate, Sun Yat-sen University
+- date: '2023'
+  name: National Scholarship, Ministry of Education of China
+- date: 2022–2023
+  name: CCF–Tencent Rhino-Bird Elite Talent Program & Special Scholarship
 
 interest:
   - name: Reliability in Cloud and AI System
@@ -76,9 +92,11 @@ interest:
       - Observability
 
 service:
-  - name: "PC: APSEC'25, Eurosys'25(Shadow), OSDI'22(Artifact), ATC'22(Artifact)"
-  - name: "Reviewer: WWW'24, TPDS, TC, TSE, TOSEM, TMC, TSC, TCC, J Supercomput"
-  - name: "Sub-reviewer: TOSEM, ICSOC'22, ISSTA'25"
+- name: 'Program Committee: FSE 2027; FSE 2026 (IVR); ICSME 2026 (TDDS & VER); APSEC 2025; EuroSys 2025 (Shadow)'
+- name: 'Artifact Evaluation: OSDI 2022; USENIX ATC 2022'
+- name: 'Reviewer: TSE, TOSEM, TSC, TPDS, TC, TMC, KDD 2026, WWW 2024, PR, EAAI, TCC, JSEP, JSS, EMSE, Computer Networks, J Supercomput'
+- name: 'Sub-reviewer: TOSEM; ICSOC 2022; ISSTA 2025'
+  hidden: true
 
 # Feel free to replace the footer text if you would like to, but I will greatly appreciate it
 # if you keep the link to the template so that more people can benefit from it. Thanks!

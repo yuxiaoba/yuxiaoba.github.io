@@ -21,4 +21,7 @@ links:
   DOI: https://doi.org/10.1109/ACCESS.2020.2977464
   BibTex: https://yuxiaoba.github.io/files/Access/vwr-bibtex.txt
   # Arxiv:
+year: 2020
+venue: IEEE Access
+ccf: null
 ---

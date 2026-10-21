@@ -1,0 +1,9 @@
+{
+  "timezone": "Asia/Shanghai",
+  "start_date": "2026-10-19",
+  "max_model_runs_per_day": 2,
+  "max_attempts_per_input": 2,
+  "max_run_seconds": 3600,
+  "max_items": {"paper": 12, "tech": 4, "social": 8},
+  "codex_bin": "/root/.nvm/versions/node/v24.12.0/bin/codex"
+}

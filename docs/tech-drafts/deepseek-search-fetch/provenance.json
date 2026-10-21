@@ -1,0 +1,53 @@
+{
+  "summary": "One original official October 17 release/interface note, prepared in Chinese and English; secondary roundup and social items remain deferred. No suitable official architecture illustration was present, so no diagram is fabricated.",
+  "articles": [
+    {
+      "kind": "tech",
+      "source_ids": [
+        "api-docs-updates"
+      ],
+      "zh_path": "_tech/zh/deepseek-search-fetch.md",
+      "en_path": "_tech/en/deepseek-search-fetch.md"
+    }
+  ],
+  "deferred": [
+    {
+      "id": "nlp-p-ai-agents-weekly-muse-spark-open",
+      "reason": "Secondary weekly roundup, not an original technical report; primary-source follow-up retained as a separate reading task."
+    },
+    {
+      "id": "x-cloudnativefdn-59958620",
+      "reason": "Same source already present in the October 16 input; no standalone social article generated."
+    },
+    {
+      "id": "x-weichuang145683-04854762",
+      "reason": "Social commentary not independently verified here; retained for a suitable digest rather than mixed into the API note."
+    },
+    {
+      "id": "x-vicky-grok-49844471",
+      "reason": "Social explainer not independently verified here; not used as evidence for the official API note."
+    }
+  ],
+  "evidence": [
+    {
+      "source_id": "api-docs-updates",
+      "url": "https://api-docs.deepseek.com/updates/",
+      "local_file": "sources/updates.html",
+      "sha256": "9abda5ba89b86be5d82ad045864dbe5047e0908b45c161d8a4631d4d5fcb6f18",
+      "review_notes": "Checked official 2026-10-17 release entry and documented Search/Fetch request, response and error semantics; no API calls or benchmark reproduction."
+    },
+    {
+      "source_id": "api-docs-updates",
+      "url": "https://api-docs.deepseek.com/guides/search/",
+      "local_file": "sources/search-guide.html",
+      "sha256": "93595abed4ca25a8ee51a99bfb1462422015fe567e4e1de6d04910096eca8e97",
+      "review_notes": "Checked official 2026-10-17 release entry and documented Search/Fetch request, response and error semantics; no API calls or benchmark reproduction."
+    }
+  ],
+  "images": [],
+  "local_job": ".preview/research-jobs/manual-2026-10-17",
+  "input_sha256": "43322361077b4993917aefcc469f3f0175d56d48103bd705e8d2ac3a8f0f8c5b",
+  "preview_release": "/home/GB-Project/yuxiaoba.github.io/.preview/releases/research-20261019-204114-815e2058",
+  "applied": true,
+  "authorship": "Assistant-authored bilingual notes based on original sources; no experiments reproduced."
+}

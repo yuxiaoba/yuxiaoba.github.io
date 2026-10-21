@@ -20,4 +20,7 @@ links:
   DOI: https://doi.org/10.1109/ICPADS51040.2020.00052
   BibTex: https://yuxiaoba.github.io/files/ICPADS20/load-bibtex.txt
   # Arxiv:
+year: 2020
+venue: ICPADS
+ccf: C
 ---

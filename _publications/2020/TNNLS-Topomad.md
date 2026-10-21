@@ -22,9 +22,13 @@ authors:
   - Zibin Zheng
   
 links:
-  Paper: https://yuxiaoba.github.io/files/TNNLS/topomd.pdf
+  Paper: https://yuxiaoba.github.io/files/TNNLS/topomad.pdf
   DOI: https://doi.org/10.1109/TNNLS.2020.3027736
-  BibTex: https://yuxiaoba.github.io/files/TNNLS/topomd-bibtex.txt
+  BibTex: https://yuxiaoba.github.io/files/TNNLS/topomad-bibtex.txt
   Project: https://github.com/IntelligentDDS/TopoMAD
   # Arxiv:
+year: 2023
+award: esi_highly_cited
+venue: IEEE TNNLS
+ccf: B
 ---

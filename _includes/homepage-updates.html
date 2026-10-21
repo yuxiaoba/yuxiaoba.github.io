@@ -1,0 +1,15 @@
+{% assign recent_digests = site.digest | where: 'lang', lang | where: 'published', true | sort: 'date' | reverse %}
+{% assign recent_tech = site.tech | where: 'lang', lang | where: 'published', true | sort: 'date' | reverse %}
+<section class="home-updates" aria-labelledby="recent-updates-heading">
+<h2 id="recent-updates-heading">{{ t.recent_updates }}</h2>
+<div class="update-columns">
+<div class="update-column update-digest">
+<div class="update-column-heading"><span>{{ t.digest }}</span><a href="{{ prefix | append: '/digest/' | relative_url }}">{{ t.all_digests_short }} <span aria-hidden="true">↗</span></a></div>
+{% if recent_digests.size > 0 %}{% include recent-note.html entry=recent_digests.first %}{% else %}<p class="update-empty">{{ t.empty_digest }}</p>{% endif %}
+</div>
+<div class="update-column update-tech">
+<div class="update-column-heading"><span>{{ t.tech }}</span><a href="{{ prefix | append: '/tech/' | relative_url }}">{{ t.all_tech_short }} <span aria-hidden="true">↗</span></a></div>
+{% if recent_tech.size > 0 %}{% for entry in recent_tech limit:2 %}{% include recent-note.html entry=entry %}{% endfor %}{% else %}<p class="update-empty">{{ t.empty_tech }}</p>{% endif %}
+</div>
+</div>
+</section>

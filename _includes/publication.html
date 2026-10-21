@@ -1,0 +1,17 @@
+{% assign paper = include.paper %}
+<article class="publication-entry" data-publication="{{ paper.path | escape }}">
+{% assign publication_year = paper.year %}{% unless publication_year %}{% assign publication_year = paper.date | date: '%Y' %}{% endunless %}
+<div class="venue"><span class="venue-line"><span class="venue-name">{% if paper.venue %}{{ paper.venue | escape }}{% else %}{{ paper.pub_pre | strip_html }}{% endif %}</span> <span class="venue-year">{{ publication_year }}</span></span>{% if paper.ccf %}<span class="venue-rank">CCF-{{ paper.ccf | escape }}</span>{% endif %}</div>
+<div><h2>{{ paper.title | escape }}</h2><p class="authors">{% assign authors = paper.authors | compact %}{% for author in authors %}{% assign key = author | remove: '†' | remove: '*' | remove: '#' | remove: '✉️' | remove: '✉' | strip %}{% assign author_name = author | remove: '†' | remove: '#' | remove: '✉️' | remove: '✉' | strip %}{% assign info = site.data.authors[key] %}<span class="author">{% if info.url %}<a href="{{ info.url }}">{% endif %}{% if info.bold %}<strong>{% endif %}{{ author_name | escape }}{% if info.bold %}</strong>{% endif %}{% if info.url %}</a>{% endif %}{% if key == site.data.profile.primary_name %}{% if author contains '†' or author contains '#' or author contains '✉' %}<sup class="corresponding-author" role="img" aria-label="{{ t.corresponding }}" title="{{ t.corresponding }}">✉️</sup>{% endif %}{% endif %}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+{% if paper.pub %}<p class="publication-source">{{ paper.pub }} {{ paper.pub_post }} {{ paper.pub_last }}</p>{% endif %}
+{% assign confirmed_topics = site.data.publication_topics[paper.path] %}
+{% if paper.domains.size > 0 or paper.topics.size > 0 or confirmed_topics %}
+<ul class="paper-topics" aria-label="{{ t.paper_topics }}">
+{% for domain in paper.domains %}<li>{{ t[domain] | default: domain }}</li>{% endfor %}
+{% for topic in paper.topics %}<li>{{ t[topic] | default: topic }}</li>{% endfor %}
+{% if paper.topics.size > 0 %}{% else %}{% for topic in confirmed_topics[lang] %}<li>{{ topic | escape }}</li>{% endfor %}{% endif %}
+</ul>
+{% endif %}
+{% if paper.award %}<p class="publication-award">{{ t[paper.award] | escape }}</p>{% endif %}
+{% include publication-links.html %}
+</div></article>

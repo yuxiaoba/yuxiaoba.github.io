@@ -1,0 +1,246 @@
+en:
+  name: Guangba Yu
+  home: Home
+  publications: Publications
+  digest: Paper Digest
+  kitchen: Life
+  intro: I’m Guangba Yu. My research focuses on the reliability and optimization of cloud and AI systems.
+  position: Postdoctoral Researcher
+  affiliation: The Chinese University of Hong Kong
+  about: About me
+  education: Education
+  awards: Honors & awards
+  service: Academic service
+  news: News
+  areas: Research areas
+  work: What I work on
+  cloud: Cloud Systems Reliability & Optimization
+  ai: AI Systems Reliability & Optimization
+  cloud_note: Building reliable and efficient cloud systems.
+  ai_note: Building reliable and efficient AI systems.
+  aiops: AIOps
+  research_aiops: Intelligent Operations · AIOps & LLM4Ops
+  llm4ops: LLM4Ops
+  ops4llm: Ops4LLM
+  agentops: AgentOps
+  research_ops4llm: LLM Systems · Ops4LLM
+  research_agentops: Agent Systems · AgentOps
+  aiops_note: Anomaly detection, root cause analysis, and fault diagnosis
+  llm4ops_note: LLM-powered operations and optimization
+  ops4llm_note: Failure analysis, reliability assurance, and performance optimization
+  agentops_note: Behavior observability, failure analysis, and operational optimization
+  system_optimization: Systems Optimization
+  system_optimization_note: Configuration tuning, resource scheduling, and performance optimization
+  shared_research_method: A shared validation method
+  research_map_description: Two research areas, cloud systems and AI systems, share chaos engineering for fault injection, resilience assessment, and reliability validation.
+  research_image_caption: Two research areas, supported by chaos engineering.
+  research_image_open: View full-size diagram
+  research_text_outline: Read the research overview
+  chaos_engineering: Chaos Engineering
+  chaos_engineering_note: Fault injection, resilience assessment, and reliability validation
+  scholar: Scholar
+  github: GitHub
+  portrait: Guangba Yu standing in front of mountains
+  reading: From my reading
+  reading_note: Papers I read, thoughts I keep.
+  away: Away from the desk
+  kitchen_note: Travel, photographs, and everyday moments beyond research.
+  browse: Browse the journal ↗
+  visit: Explore life notes ↗
+  empty_digest: Reading notes will appear here when they are ready.
+  empty_kitchen: Life notes and photographs will appear here when they are ready.
+  latest_reading: Latest reading
+  back_top: Back to top
+  refine_search: Filters
+  active_filters: active
+  recent_updates: Recent updates
+  all_digests_short: All digests
+  all_tech_short: All tech notes
+  latest: Latest note
+  archive: The archive
+  read: Read note ↗
+  read_note: Read the note ↗
+  all_issues: ← All reading notes
+  all_notes: ← All life notes
+  missing: This article is not yet available in English. Browse the available articles below.
+  publication_intro: Research on reliability and optimization in cloud and AI systems.
+  author_marks: '* Equal contribution · ✉️ Corresponding author'
+  abstract: Abstract
+  pdf: Paper PDF
+  slides: Slides
+  code: Code
+  bib: BibTeX
+  project: Project
+  skip: Skip to content
+  navigation: Main navigation
+  language: Language
+  more_news: Earlier news
+  empty_news: No news available in this language yet.
+  news_translation: Only news with an English version is shown.
+  pc: Program committee
+  reviewer: Reviewer
+  subreviewer: Sub-reviewer
+  corresponding: Corresponding author
+  years: By year
+  paper_topics: Topics
+  distinguished_paper: ACM SIGSOFT Distinguished Paper Award
+  esi_highly_cited: ESI Highly Cited Paper
+  preprint: Preprint
+  tech: Tech Notes
+  search: Search
+  search_notes: Search notes
+  query: Search titles, tags and text
+  type_filter: Type
+  tag_filter: Tag
+  all_types: All notes
+  all_tags: All tags
+  year_filter: Year
+  month_filter: Month
+  all_years: All years
+  all_months: All months
+  clear: Clear filters
+  no_results: No matching notes.
+  search_empty: No published notes in this language yet.
+  search_loading: Searching…
+  search_error: Search is temporarily unavailable. Please try again.
+  result_count: results
+  paper_type: Paper Digest
+  tech_type: Tech Notes
+  tech_note: Technical ideas, implementations, and lessons learned.
+  empty_tech: Technical notes will appear here when they are ready.
+  all_tech: ← All technical notes
+  notes_unit: NOTES
+  source: Original source
+  tags: Tags
+  notes_kicker: Reading & practice
+  tech_kicker: Ideas in practice
+  search_intro: Find ideas across paper digests and technical notes.
+  notes_empty_title: Notes are on the way
+  latest_note: Latest note
+  daily_contents: In this digest
+  papers_unit: papers
+  digest_days: editions
+  daily_reading: Daily reading
+zh:
+  name: 余广坝
+  home: 首页
+  publications: 论文成果
+  digest: 论文阅读
+  kitchen: 生活
+  intro: 我是余广坝，研究聚焦云系统与人工智能系统的可靠性与优化。
+  position: 博士后研究员
+  affiliation: 香港中文大学
+  about: 关于我
+  education: 教育经历
+  awards: 荣誉与奖励
+  service: 学术服务
+  news: 近况
+  areas: 研究领域
+  work: 我的研究
+  cloud: 云系统可靠性与优化
+  ai: AI 系统可靠性与优化
+  cloud_note: 让云系统运行更可靠、更高效。
+  ai_note: 让 AI 系统运行更可靠、更高效。
+  aiops: 智能运维
+  research_aiops: 智能运维 · AIOps & LLM4Ops
+  llm4ops: 大模型赋能运维
+  ops4llm: 大模型运维
+  agentops: 智能体运维
+  research_ops4llm: 大模型系统 · Ops4LLM
+  research_agentops: 智能体系统 · AgentOps
+  aiops_note: 异常检测、根因分析与故障诊断
+  llm4ops_note: 以大模型辅助运维与优化
+  ops4llm_note: 故障分析、可靠性保障与性能优化
+  agentops_note: 行为观测、故障分析与运行优化
+  system_optimization: 系统优化
+  system_optimization_note: 配置调优、资源调度与性能优化
+  shared_research_method: 共同的可靠性验证方法
+  research_map_description: 云系统与 AI 系统是两条研究主线，混沌工程通过故障注入、韧性评估与可靠性验证支撑两者。
+  research_image_caption: 两条研究主线，以混沌工程验证可靠性。
+  research_image_open: 查看大图
+  research_text_outline: 展开文字概览
+  chaos_engineering: 混沌工程
+  chaos_engineering_note: 故障注入、韧性评估与可靠性验证
+  scholar: 学术主页
+  github: 代码
+  portrait: 余广坝在山前的照片
+  reading: 阅读与思考
+  reading_note: 读过的论文，留下的想法。
+  away: 书桌之外
+  kitchen_note: 旅行、照片，以及研究之外的日常。
+  browse: 翻阅论文集 ↗
+  visit: 看看生活记录 ↗
+  empty_digest: 论文阅读笔记准备好后，会在这里与你见面。
+  empty_kitchen: 生活记录与照片准备好后，会在这里与你见面。
+  latest_reading: 最近阅读
+  back_top: 回到顶部
+  refine_search: 筛选
+  active_filters: 项已选
+  recent_updates: 最近更新
+  all_digests_short: 全部日报
+  all_tech_short: 全部技术笔记
+  latest: 最新文章
+  archive: 往期归档
+  read: 阅读全文 ↗
+  read_note: 阅读手记 ↗
+  all_issues: ← 全部论文阅读
+  all_notes: ← 全部生活记录
+  missing: 这篇文章暂无中文译文，你可以浏览下方已有的中文内容。
+  publication_intro: 关于云系统与人工智能系统可靠性和优化的研究。
+  author_marks: '* 共同第一作者 · ✉️ 通讯作者'
+  abstract: 摘要（原文）
+  pdf: 论文 PDF
+  slides: 幻灯片
+  code: 代码仓库
+  bib: BibTeX
+  project: 项目
+  skip: 跳到正文
+  navigation: 主导航
+  language: 语言
+  more_news: 更早近况
+  empty_news: 暂无中文近况。
+  news_translation: 这里只显示已有中文译文的近况。
+  pc: 程序委员会
+  reviewer: 审稿
+  subreviewer: 协助审稿
+  corresponding: 通讯作者
+  years: 按年份浏览
+  paper_topics: 话题
+  distinguished_paper: ACM SIGSOFT 杰出论文奖
+  esi_highly_cited: ESI 高被引论文
+  preprint: 预印本
+  tech: 技术笔记
+  search: 搜索
+  search_notes: 搜索笔记
+  query: 搜索标题、标签和正文
+  type_filter: 类型
+  tag_filter: 标签
+  all_types: 全部笔记
+  all_tags: 全部标签
+  year_filter: 年份
+  month_filter: 月份
+  all_years: 全部年份
+  all_months: 全部月份
+  clear: 清空筛选
+  no_results: 没有找到匹配的笔记。
+  search_empty: 当前语言暂时没有已发布的笔记。
+  search_loading: 正在搜索…
+  search_error: 搜索暂时不可用，请稍后重试。
+  result_count: 条结果
+  paper_type: 论文阅读
+  tech_type: 技术笔记
+  tech_note: 记录技术方案、实现过程与实践经验。
+  empty_tech: 技术笔记准备好后，会在这里与你见面。
+  all_tech: ← 全部技术笔记
+  notes_unit: 篇
+  source: 原文链接
+  tags: 标签
+  notes_kicker: 阅读与实践
+  tech_kicker: 实践与记录
+  search_intro: 从论文阅读与技术笔记中，找到你关心的内容。
+  notes_empty_title: 笔记准备中
+  latest_note: 最近一篇
+  daily_contents: 本日目录
+  papers_unit: 篇论文
+  digest_days: 期日报
+  daily_reading: 当日论文

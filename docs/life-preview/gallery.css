@@ -1,0 +1,48 @@
+#warm-directions .life-demo{max-width:1100px;margin:0 auto;padding-top:48px}
+#warm-directions .life-demo h1{font-size:clamp(30px,4vw,46px);margin:12px 0 18px;line-height:1.35}
+#warm-directions .demo-notice{display:inline-block;font-size:12px;color:var(--accent);padding:5px 10px;border:1px solid var(--rule);border-radius:20px}
+#warm-directions .demo-lead{max-width:720px;color:var(--quiet);margin-bottom:28px;line-height:1.9}
+#warm-directions .demo-section-heading{font:500 22px/1.5 var(--heading);margin:34px 0 16px}
+#warm-directions .album-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+#warm-directions .album-link{display:block;padding:5px;border:1px solid transparent;border-radius:12px;text-decoration:none}
+#warm-directions .album-link[aria-current=true]{border-color:var(--accent);background:var(--wash)}
+#warm-directions .album-cover{aspect-ratio:4/3;overflow:hidden;border-radius:8px;background:#f3eff2}
+#warm-directions .album-cover img{display:block;width:100%;height:100%;object-fit:cover}
+#warm-directions .album-link h3{font:500 17px/1.5 var(--sans);margin:12px 9px 3px}
+#warm-directions .album-link p{font-size:12px;color:var(--quiet);margin:0 9px 9px}
+#warm-directions .demo-detail{margin-top:44px;padding-top:28px;border-top:1px solid var(--rule);scroll-margin-top:20px}
+#warm-directions .demo-detail h2{font:500 26px/1.5 var(--heading);margin-bottom:8px}
+#warm-directions .demo-detail>p{font-size:14px;color:var(--quiet);line-height:1.8;max-width:760px}
+#warm-directions .layout-controls{display:flex;gap:6px;flex-wrap:wrap;margin:20px 0 10px}
+#warm-directions .life-demo .layout-controls button{min-height:44px;padding:9px 16px;border:1px solid var(--rule);border-radius:8px;font-size:14px}
+#warm-directions .life-demo .layout-controls button[aria-pressed=true]{color:var(--accent);background:var(--wash);border-color:var(--accent)}
+#warm-directions .layout-description{min-height:48px;margin:0 0 20px;font-size:13px;color:var(--quiet);line-height:1.8}
+#warm-directions .photo-wall{column-count:3;column-gap:18px}
+#warm-directions .photo-wall .photo-tile{display:inline-block;width:100%;break-inside:avoid;margin:0 0 18px;vertical-align:top}
+#warm-directions .photo-tile a{display:block;border-radius:8px;overflow:hidden;background:#f3eff2;cursor:zoom-in}
+#warm-directions .photo-frame img{display:block;width:100%;height:auto}
+#warm-directions .photo-tile figcaption{font-size:12px;color:var(--quiet);padding:8px 2px 0;line-height:1.6}
+#warm-directions .photo-wall[data-layout=grid]{columns:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+#warm-directions .photo-wall[data-layout=grid] .photo-tile{margin:0}
+#warm-directions .photo-wall[data-layout=grid] .photo-frame{aspect-ratio:4/3}
+#warm-directions .photo-wall[data-layout=grid] img{width:100%;height:100%;object-fit:cover}
+#warm-directions .demo-advice{margin:36px 0;padding:22px 24px;border-left:2px solid var(--gold);background:#fcfbfd}
+#warm-directions .demo-advice h2{font:500 20px/1.5 var(--heading);margin-bottom:12px}
+#warm-directions .demo-advice p{font-size:14px;line-height:1.9;margin:9px 0}
+#warm-directions .demo-file-note{font-size:13px;color:var(--quiet);margin-top:18px}
+@media(max-width:900px){
+ #warm-directions .album-grid{gap:14px}
+ #warm-directions .photo-wall{column-count:2}
+ #warm-directions .photo-wall[data-layout=grid]{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+ #warm-directions .life-demo{padding-top:30px}
+ #warm-directions .life-demo h1{font-size:29px}
+ #warm-directions .album-grid{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:82%;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:12px}
+ #warm-directions .album-link{scroll-snap-align:start}
+ #warm-directions .demo-detail{margin-top:24px;padding-top:24px}
+ #warm-directions .photo-wall{column-gap:12px}
+ #warm-directions .photo-wall[data-layout=grid]{gap:12px}
+ #warm-directions .photo-wall .photo-tile{margin-bottom:14px}
+ #warm-directions .demo-advice{padding:18px 16px}
+}

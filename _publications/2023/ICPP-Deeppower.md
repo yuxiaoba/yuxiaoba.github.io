@@ -23,4 +23,7 @@ links:
   DOI: https://doi.org/10.1145/3605573.3605612
   BibTex: https://yuxiaoba.github.io/files/ICPP23/deeppower-bibtex.txt
   # Arxiv:
+year: 2023
+venue: ICPP
+ccf: B
 ---

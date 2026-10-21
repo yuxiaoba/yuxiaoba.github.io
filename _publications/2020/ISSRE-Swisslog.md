@@ -25,4 +25,7 @@ links:
   Project: https://github.com/IntelligentDDS/SwissLog
   Slides: https://yuxiaoba.github.io/files/ISSRE20/swissLog_slides.pdf
   # Arxiv:
+year: 2020
+venue: ISSRE
+ccf: B
 ---

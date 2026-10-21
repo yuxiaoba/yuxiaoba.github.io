@@ -24,4 +24,7 @@ links:
   DOI: https://doi.org/10.1109/TDSC.2022.3162857
   BibTex: https://yuxiaoba.github.io/files/TDSC/swisslog-bibtex.txt
   # Arxiv:
+year: 2023
+venue: TDSC
+ccf: A
 ---
