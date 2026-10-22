@@ -39,7 +39,7 @@ Do not push, merge, deploy, schedule jobs, or send messages to other tasks witho
 - Before switching the preview, check both language versions, reciprocal language links (including per-paper anchors for daily digests), language-specific lists and search, and responsive behavior.
 - Record assistant-created translations as such in internal provenance; do not present them as translations supplied by the user.
 - Keep draft exclusion and missing-translation fallback tests, but do not use fallback as a substitute for completing both languages for an actual content update.
-- This requirement does not authorize GitHub pushes, remote deployment, or scheduled publication; the current scope remains local-server preview only.
+- Publishing permission is separate from translation requirements; use the explicit daily-publishing authorization below for verified daily batches.
 
 ## Note topics and date filters (user-confirmed 2026-10-19)
 
@@ -57,13 +57,20 @@ Do not push, merge, deploy, schedule jobs, or send messages to other tasks witho
 ## Daily research task (user-authorized 2026-10-19)
 
 - Grok normally finishes uploads at 08:00 Asia/Shanghai. The authorized server workflow runs at 08:30 with a 12:00 catch-up, consuming new ready YAML batches from `.incoming/research/`.
-- On 2026-10-22 the user confirmed standing authorization: daily uploads do not need another confirmation. Automatically validate, repair unambiguous formatting, verify sources, prepare both languages, build, and update the local preview after checks pass. Preserve original input bytes and record every normalization. Ask only about genuinely unresolved ambiguity or conflicting requirements; this does not authorize Git pushes or external deployment.
+- On 2026-10-22 the user confirmed standing authorization: daily uploads do not need another confirmation. Automatically validate, repair unambiguous formatting, verify sources, prepare both languages, build, and update the local preview after checks pass. Preserve original input bytes and record every normalization. Ask only about genuinely unresolved ambiguity or conflicting requirements; the subsequent daily-publishing authorization below extends this to verified daily commits and production publication.
 - Prefer the current day's newest valid revision before older pending daily batches. A malformed newest revision must not silently fall back to an older one. Normalize ASCII item-ID case and surrounding whitespace only; reject collisions and unsafe IDs, and retain the last good preview on failure.
-- Generate in an isolated job directory, verify sources and paired Chinese/English output, then build and check the candidate before updating the local preview. This does not authorize website Git pushes or public deployment.
+- Generate in an isolated job directory, verify sources and paired Chinese/English output, then build and check the candidate before updating the local preview. Only the outer publisher may commit and publish verified daily batches under the authorization below; the isolated writing task cannot push.
 - Initial timer setup deferred historical files. The user subsequently explicitly authorized the full 2026-10-01–2026-10-18 backfill. Consume only the approved hash-pinned backfill queue after new daily inputs, within the unchanged shared daily/attempt/time limits.
 - On 2026-10-20 the user superseded that shared-budget ordering for the remaining October 3–15 batches: prioritize these 13 exact approved input hashes and account for their calls separately from the normal daily quota. Keep attempt/time limits and the single consumer; let an already-running daily task finish. This exemption does not alter account/platform usage limits or authorize other historical inputs.
 - Existing manual articles remain protected. The approved October 11 merge may only append new readings to both language versions, preserving original body bytes, anchors and metadata identity under an expected-hash check; no arbitrary rewrites or deletions.
 - Enforce a single consumer, bounded run time and retry count, preserve the last good preview on failure, and record results under `.preview/research-jobs/`.
+
+## Daily production publishing (user-authorized 2026-10-22)
+
+- The user explicitly authorized daily commit, push and production publication after validation, without per-day confirmation. The existing 08:30/12:00 timer and writing quotas remain unchanged.
+- The outer publisher may commit only the successful daily report's hash-verified bilingual Markdown and images, then atomically fast-forward the development branch and master. GitHub Actions must pass before deploying; do not include unrelated edits or unpushed local code, force-push, reset, stash or auto-merge conflicts.
+- A failed push is retried using the same recorded commit on the next timer invocation, before generating more content. Confirm deployment using the production build-info, rather than treating a push as proof of publication. Preserve the previous live site on build failure and record blocked work locally.
+- Existing historical reports are not retroactively enrolled. Explicit manual/one-off backfills keep their existing publication scope. Raw inboxes and private evidence stay excluded; the isolated writer still has no Git or deployment authority.
 
 ## Visual direction (user-authorized 2026-10-19)
 

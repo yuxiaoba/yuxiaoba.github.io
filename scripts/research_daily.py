@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Scheduled inbox consumer. Generates in isolation; only adds verified paired content.
-No Git operations, source-vault writes, external deployment, or scheduling side effects.
+An explicitly enabled publisher commits only verified daily output. No source-vault writes.
 """
 import argparse, collections, contextlib, datetime as dt, fcntl, functools
 import hashlib, json, os, re, shutil, signal, subprocess, sys, threading, time, uuid
@@ -451,6 +451,14 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
     with queue_lock(folder):
         require(state_path.exists(), 'Initialize the historical baseline before enabling the consumer')
         state = json.loads(state_path.read_text()); day = today()
+        from research_publish import retry_pending, publish
+        publication_config = config.get('publication', {})
+        publication_retries = [] if dry_run else retry_pending(root, publication_config)
+        if publication_retries and publication_retries[-1]['status'] != 'published':
+            report = {'status': 'publication_pending', 'applied': False, 'input_errors': [],
+                      'publication_retries': publication_retries, 'finished_at': now()}
+            atomic_json(folder / 'latest-run.json', report)
+            return report
         from research_backfill import select_approved, merge_digest, write_progress
         require(not (batch and one_off), 'Choose --batch or --one-off, not both')
         origin = 'manual' if batch else 'daily'
@@ -465,6 +473,7 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
             errors.extend(backfill_errors)
             if selected is not None: origin = 'approved_backfill'
         report = {'started_at': now(), 'input_errors': errors, 'applied': False, 'manual_batch': batch, 'origin': origin, 'daily_quota_exempt': exempt}
+        if publication_retries: report['publication_retries'] = publication_retries
         reviews = [{k: e[k] for k in ['file', 'date', 'review_reason', 'counts', 'limits', 'job'] if k in e}
                    for e in state['inputs'].values() if e.get('status') == 'needs_review']
         if reviews: report['pending_reviews'] = reviews
@@ -524,6 +533,10 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
                     if report['status'] == 'needs_review':
                         entry['review_reason'] = report.get('error') or report.get('reason') or report.get('summary', 'No publishable output; inspect the task report')
                     atomic_json(job / 'report.json', report)
+                    if publication_config.get('enabled') and origin == 'daily' and report.get('applied') and report['status'] in {'completed', 'completed_with_deferred'}:
+                        report['publication'] = {'requested': True, 'status': 'pending'}
+                        atomic_json(job / 'report.json', report)
+                        report['publication'] = publish(root, job / 'report.json', publication_config)
                 atomic_json(state_path, state)
         report['finished_at'] = now()
         if not dry_run:
