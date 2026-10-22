@@ -3,20 +3,20 @@
   'use strict';
   const zh = document.documentElement.lang === 'zh';
   const t = zh ? {
-    save: '收藏', saved: '已收藏', article: '收藏本文', paper: '收藏这篇论文', excerpt: '保存摘录',
+    save: '收藏', saved: '已收藏', article: '收藏本文', paper: '收藏这篇论文', section: '收藏这节', reading: '收藏这条阅读', excerpt: '保存摘录',
     title: '我的收藏', empty: '还没有收藏。阅读时点击书签，或选中文字保存摘录。',
     open: '回到原文', remove: '取消收藏', error: '无法保存收藏，请检查浏览器的存储设置或先导出备份。',
     added: '已保存到我的收藏', removed: '已取消收藏', tooLong: '请选取不超过 6,000 字符的摘录。',
     invalid: '备份格式无效，原有收藏未改动。', imported: '已合并导入收藏', full: '收藏容量已满，请先导出并整理。',
-    kinds: {article: '整篇笔记', paper: '论文', excerpt: '摘录'}, selection: '选中文字后可保存摘录',
+    kinds: {article: '整篇笔记', paper: '论文', section: '延伸阅读', excerpt: '摘录'}, selection: '选中文字后可保存摘录',
     exportEmpty: '目前没有可导出的收藏。', count: n => `${n} 条收藏`
   } : {
-    save: 'Save', saved: 'Saved', article: 'Save article', paper: 'Save this paper', excerpt: 'Save excerpt',
+    save: 'Save', saved: 'Saved', article: 'Save article', paper: 'Save this paper', section: 'Save section', reading: 'Save reading', excerpt: 'Save excerpt',
     title: 'Saved notes', empty: 'No bookmarks yet. Use the bookmark button or select text while reading.',
     open: 'Back to source', remove: 'Remove', error: 'Unable to save. Check browser storage settings or export a backup first.',
     added: 'Added to saved notes', removed: 'Bookmark removed', tooLong: 'Select an excerpt of up to 6,000 characters.',
     invalid: 'Invalid backup. Existing bookmarks were not changed.', imported: 'Bookmarks merged', full: 'Bookmark storage is full. Export and organize your collection first.',
-    kinds: {article: 'Article', paper: 'Paper', excerpt: 'Excerpt'}, selection: 'Select text to save an excerpt',
+    kinds: {article: 'Article', paper: 'Paper', section: 'Further reading', excerpt: 'Excerpt'}, selection: 'Select text to save an excerpt',
     exportEmpty: 'There are no bookmarks to export.', count: n => `${n} saved items`
   };
   const key = 'gy-reading-bookmarks-v1';
@@ -31,7 +31,7 @@
   const validate = items => {
     if (!Array.isArray(items) || items.length > 1000) throw new Error(t.invalid);
     return items.map(item => {
-      if (!item || !['article','paper','excerpt'].includes(item.kind) || !['zh','en'].includes(item.lang) ||
+      if (!item || !['article','paper','section','excerpt'].includes(item.kind) || !['zh','en'].includes(item.lang) ||
           !validUrl(item.url) || typeof item.title !== 'string' || !item.title.trim() || item.title.length > 600 ||
           typeof item.excerpt !== 'string' || item.excerpt.length > 6000 ||
           typeof item.section !== 'string' || item.section.length > 600 ||
@@ -86,6 +86,16 @@
     body.querySelectorAll('.daily-paper-title[id]').forEach(heading => {
       const wrapper = document.createElement('div'); wrapper.className = 'bookmark-paper-action'; wrapper.setAttribute('data-pagefind-ignore','');
       wrapper.append(toggle({...base,kind:'paper',url:location.pathname+'#'+encodeURIComponent(heading.id),section:heading.textContent.trim()},t.paper,true));
+      heading.after(wrapper);
+    });
+    // Further-reading sections use ordinary Markdown headings, not paper titles.
+    let furtherReading = false;
+    body.querySelectorAll('h2,h3').forEach((heading, index) => {
+      if (heading.tagName === 'H2') furtherReading = /^(further reading\b|延伸阅读)/i.test(heading.textContent.trim());
+      if (!furtherReading || heading.classList.contains('daily-paper-title')) return;
+      if (!heading.id) heading.id = 'reading-section-' + (index + 1);
+      const wrapper = document.createElement('div'); wrapper.className = 'bookmark-paper-action'; wrapper.setAttribute('data-pagefind-ignore','');
+      wrapper.append(toggle({...base,kind:'section',url:location.pathname+'#'+encodeURIComponent(heading.id),section:heading.textContent.trim()},heading.tagName==='H2'?t.section:t.reading,true));
       heading.after(wrapper);
     });
     selectionPanel = document.createElement('div'); selectionPanel.className = 'bookmark-selection'; selectionPanel.hidden = true;
