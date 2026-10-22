@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Complete Jekyll → math → Pagefind build. No serving or deployment side effects."""
-import argparse,json,os,subprocess
+import argparse,json,os,subprocess,shutil
 from pathlib import Path
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[1]
@@ -10,7 +10,9 @@ def build(source:Path,destination:Path):
  load_taxonomy(source/'_data/note_tags.yml')
  if destination==source or destination in source.parents:raise ValueError('Unsafe build destination')
  # Each release is clean; callers use new destinations rather than mutating served output.
- subprocess.run(['bundle3.2','exec','jekyll','build','--strict_front_matter','--source',str(source),'--destination',str(destination)],cwd=source,env={**os.environ,'BUNDLE_GEMFILE':str(ROOT/'Gemfile')},check=True)
+ bundler=shutil.which('bundle3.2') or shutil.which('bundle')
+ if not bundler:raise RuntimeError('Bundler is required to build the site')
+ subprocess.run([bundler,'exec','jekyll','build','--strict_front_matter','--source',str(source),'--destination',str(destination)],cwd=source,env={**os.environ,'BUNDLE_GEMFILE':str(ROOT/'Gemfile')},check=True)
  subprocess.run(['node',str(ROOT/'scripts/render_math.mjs'),str(destination)],cwd=ROOT,check=True)
  indexed=[];languages={}
  for p in destination.rglob('*.html'):

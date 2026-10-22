@@ -1,0 +1,75 @@
+name: Build and publish homepage
+
+on:
+  push:
+    branches: [master, codex/warm-bilingual-homepage]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      JEKYLL_ENV: production
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements-sync.txt
+      - name: Install build dependencies
+        run: |
+          npm ci
+          python -m pip install -r requirements-sync.txt
+      - name: Test import and daily publishing rules
+        run: |
+          python -m unittest discover -s tests/obsidian
+          python -m unittest discover -s tests/research
+      - name: Build and verify pages, resources, drafts and translations
+        run: python scripts/verify_site.py
+      - name: Record published source revision
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          Path('.preview/content-test-site/build-info.json').write_text(
+              json.dumps({'commit': os.environ['GITHUB_SHA']}) + '\n')
+          PY
+      - name: Upload verified site only
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .preview/content-test-site
+
+  deploy:
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish verified artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
