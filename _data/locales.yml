@@ -1,4 +1,10 @@
 en:
+  bookmarks: Saved notes
+  bookmarks_intro: Keep useful papers, technical notes, and excerpts together.
+  bookmarks_local: Saved only in this browser, without signing in. Devices and preview/production sites do not sync automatically. Export a backup before clearing browser data.
+  bookmarks_export: Export backup
+  bookmarks_import: Import backup
+  bookmarks_nojs: Enable JavaScript to save and view bookmarks. Reading the original articles does not require it.
   name: Guangba Yu
   home: Home
   publications: Publications
@@ -127,6 +133,12 @@ en:
   digest_days: editions
   daily_reading: Daily reading
 zh:
+  bookmarks: 我的收藏
+  bookmarks_intro: 留下值得回看的论文、技术笔记和重要摘录。
+  bookmarks_local: 收藏仅保存在当前浏览器，无需登录。不同设备及预览站与正式站之间不会自动同步；清除浏览器数据前请先导出备份。
+  bookmarks_export: 导出备份
+  bookmarks_import: 导入备份
+  bookmarks_nojs: 请启用 JavaScript 以保存和查看收藏，原文阅读不受影响。
   name: 余广坝
   home: 首页
   publications: 论文成果

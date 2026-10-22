@@ -25,12 +25,15 @@ def audit(site):
     published=[metadata(p) for p in (ROOT/'_publications').rglob('*.md') if metadata(p).get('published') is not False]
     years={str(p.get('year') or str(p['date'])[:4]) for p in published}
     for lang, prefix in [('en',''),('zh','zh/')]:
-        for section in ['','publications/','digest/','tech/','life/','search/']:
+        for section in ['','publications/','digest/','tech/','life/','search/','bookmarks/']:
             page=site/prefix/section/'index.html'
             check(page.exists(),f'route {prefix}{section}')
             doc=soup(page)
             check(doc.html['lang']==lang,f'language {prefix}{section}')
             check(len(doc.select('.navigation a'))==5,f'navigation {prefix}{section}')
+            check(doc.select_one('.bookmark-entry')['href']=='/'+prefix+'bookmarks/',f'bookmark entrance {prefix}{section}')
+        saved=soup(site/prefix/'bookmarks/index.html')
+        check(saved.select_one('[data-bookmark-shelf]') is not None and not saved.select('[data-pagefind-body],.saved-note'),f'private bookmarks start empty and unindexed {lang}')
         home=soup(site/prefix/'index.html')
         for collection in ['digest','tech']:
             archive=soup(site/prefix/collection/'index.html')
@@ -41,6 +44,7 @@ def audit(site):
                 article=soup(page_path)
                 if article.select_one('meta[http-equiv="refresh"]'):
                     continue  # Historical per-paper URLs redirect into a daily digest.
+                check(article.select_one('[data-bookmark-article]') is not None,f'bookmark controls enabled for {page_path.relative_to(site)}')
                 byline=article.select_one('.article-header .door-detail')
                 check(byline is not None and byline.select_one('time') is not None and byline.get_text(strip=True)==byline.time.get_text(strip=True),f'reading header shows date without personal byline {page_path.relative_to(site)}')
         check([x.get('class')[0] for x in home.select('.identity-intro,.home-updates,.quiet-news,.profile-biography')]==['identity-intro','profile-biography','quiet-news','home-updates'],f'homepage section order {lang}')

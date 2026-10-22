@@ -3,7 +3,7 @@ layout: warm
 ---
 {% include site-context.html %}
 {% assign searchable = false %}{% if page.collection == 'digest' or page.collection == 'tech' %}{% if page.published == true %}{% assign searchable = true %}{% endif %}{% endif %}
-<article class="subpage digest-reader" {% if page.long_read %}data-tech-reader{% endif %} {% if searchable %}data-pagefind-body data-pagefind-filter="type:{% if page.collection == 'digest' %}paper{% else %}tech{% endif %}"{% endif %}>
+<article class="subpage digest-reader" {% if page.long_read %}data-tech-reader{% endif %} {% if searchable %}data-bookmark-article data-pagefind-body data-pagefind-filter="type:{% if page.collection == 'digest' %}paper{% else %}tech{% endif %}"{% endif %}>
 {% assign section_route = page.section %}{% if page.section == 'kitchen' %}{% assign section_route = 'life' %}{% endif %}
 <a data-pagefind-ignore class="digest-back" href="{{ prefix | append: '/' | append: section_route | append: '/' | relative_url }}">{% if page.section == 'digest' %}{{ t.all_issues }}{% elsif page.section == 'tech' %}{{ t.all_tech }}{% else %}{{ t.all_notes }}{% endif %}</a>
 <header class="article-header"><div class="eyebrow">{{ t[page.section] }}</div><h1 data-pagefind-meta="title" data-pagefind-weight="5">{{ page.title | escape }}</h1><p class="door-detail"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{% include local-date.html date=page.date %}</time>{% unless page.collection == 'digest' or page.collection == 'tech' %} · {{ t.name }}{% endunless %}</p>
