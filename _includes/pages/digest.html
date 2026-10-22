@@ -1,5 +1,6 @@
 {% include ordered-notes.html collection=site.digest %}{% assign entries = ordered_notes %}
 <section class="subpage notes-page"><div class="eyebrow">{{ t.notes_kicker }}</div><h1>{{ t.digest }}{% if lang == 'en' %}.{% endif %}</h1><p class="subpage-lead">{{ t.reading_note }}</p>
+<p class="door-detail note-attribution">{{ t.note_attribution }}</p>
 <p class="translation-notice" data-translation-notice role="status" hidden>{{ t.missing }}</p>
 {% include note-search.html type='paper' %}
 {% if entries.size == 0 %}<div class="notes-empty"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 7h21a3 3 0 0 1 3 3v31H14a5 5 0 0 1-5-5V12a5 5 0 0 1 5-5Z"/><path d="M9 35a5 5 0 0 1 5-5h22M19 15h10M19 21h7M29 7v11l-3-2-3 2V7"/></svg><h2>{{ t.notes_empty_title }}</h2><p>{{ t.empty_digest }}</p></div>{% else %}

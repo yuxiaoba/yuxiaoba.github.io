@@ -139,6 +139,10 @@ PLAYWRIGHT_BROWSERS_PATH="$PWD/.preview/browsers" python3 -m playwright install 
 
 持续预览：`python3 scripts/start_preview.py`。它创建独立的 tmux 会话及 `jekyll` 窗口，从 4000 开始选空闲端口，不停止已有服务；会话名和端口记录在 `.preview/preview.json`，日志在 `.preview/jekyll.log`。在服务器上用 `tmux attach -t 会话名` 查看，按 `Ctrl-b` 再按 `d` 脱离而保持运行。若已在 tmux 内，可用 `tmux switch-client -t 会话名`。
 
+## 阅读笔记的署名
+
+Paper Digest 和 Tech Notes 的文章标题下只显示日期，不自动署站主姓名。两个栏目的说明统一注明内容由 AI 辅助整理；正文仍保留原论文／技术文章的真实作者与来源链接。内部作者及翻译来源字段照常保留，不用于冒充原文作者。
+
 ## 论文页年份、作者与话题
 
 - 年份导航在桌面右侧随滚动停留；平板和手机使用顶部换行导航。年份由已展示论文自动生成。

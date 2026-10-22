@@ -32,6 +32,17 @@ def audit(site):
             check(doc.html['lang']==lang,f'language {prefix}{section}')
             check(len(doc.select('.navigation a'))==5,f'navigation {prefix}{section}')
         home=soup(site/prefix/'index.html')
+        for collection in ['digest','tech']:
+            archive=soup(site/prefix/collection/'index.html')
+            attribution=archive.select_one('.note-attribution')
+            expected=yaml.safe_load((ROOT/'_data/locales.yml').read_text())[lang]['note_attribution']
+            check(attribution is not None and attribution.get_text(strip=True)==expected,f'AI assistance attribution {collection} {lang}')
+            for page_path in (site/collection/lang).rglob('index.html'):
+                article=soup(page_path)
+                if article.select_one('meta[http-equiv="refresh"]'):
+                    continue  # Historical per-paper URLs redirect into a daily digest.
+                byline=article.select_one('.article-header .door-detail')
+                check(byline is not None and byline.select_one('time') is not None and byline.get_text(strip=True)==byline.time.get_text(strip=True),f'reading header shows date without personal byline {page_path.relative_to(site)}')
         check([x.get('class')[0] for x in home.select('.identity-intro,.home-updates,.quiet-news,.profile-biography')]==['identity-intro','profile-biography','quiet-news','home-updates'],f'homepage section order {lang}')
         check(not home.select('main .cooking-door,main a[href$="/life/"]'),f'Life only in top navigation {lang}')
         updates=home.select_one('.home-updates')
