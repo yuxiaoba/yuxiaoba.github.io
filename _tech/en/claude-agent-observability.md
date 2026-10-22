@@ -1,21 +1,26 @@
 ---
-id: "claude-agent-observability"
-title: "2026-10-14 | Claude Agent Observability: Bring Execution Into Existing OTel Systems"
-date: "2026-10-14"
-lang: "en"
+id: claude-agent-observability
+title: '2026-10-14 | Claude Agent Observability: Bring Execution Into Existing OTel
+  Systems'
+date: '2026-10-14'
+lang: en
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["observability", "agent-reliability"]
-summary: "Native OTel export connects SDK and API spans; content modes, cross-request identity, token deduplication and best-effort delivery shape what traces can establish."
-translation_source: "assistant"
-authorship: "assistant"
-source_url: "https://claude.com/resources/articles/agent-observability-on-the-claude-platform"
-permalink: "/tech/en/claude-agent-observability/"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- observability
+- agent-reliability
+summary: Native OTel export connects SDK and API spans; content modes, cross-request
+  identity, token deduplication and best-effort delivery shape what traces can establish.
+translation_source: assistant
+authorship: assistant
+source_url: https://claude.com/resources/articles/agent-observability-on-the-claude-platform
+permalink: /tech/en/claude-agent-observability/
 long_read: true
+published_at: "2026-10-20T10:46:23.513966+08:00"
+updated_at: "2026-10-20T10:46:23.513966+08:00"
 ---
-
 An agent task can cross model calls, server tools, client tools, and several conversation turns. A final answer or aggregate API latency does not explain where time went or which failures should become repeatable evaluation cases. This Claude Platform update exports execution traces from Managed Agents, the Messages API, and SDKs through OpenTelemetry (OTel), reducing custom integration work across these views.
 
 Official announcement: [Agent observability on the Claude Platform](https://claude.com/resources/articles/agent-observability-on-the-claude-platform)  

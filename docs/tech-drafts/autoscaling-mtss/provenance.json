@@ -1,0 +1,34 @@
+{
+  "title": "Key Autoscaling Metric #2 - Mean Time to Stop Sucking",
+  "author": "David Morrison (drmorr)",
+  "source_url": "https://blog.appliedcomputing.io/p/key-autoscaling-metric-2-mean-time",
+  "source_published": "2026-10-05",
+  "reading_date": "2026-10-21",
+  "prepared_at": "2026-10-21T20:01:12.710220+08:00",
+  "languages": [
+    "zh",
+    "en"
+  ],
+  "source_html_sha256": "cab7d78648e619b5b66c5f78e4d991b61d2dbe0fe0a836f1df1d2a7b9ab04aa2",
+  "images": [
+    {
+      "source_url": "https://blog.appliedcomputing.io/p/key-autoscaling-metric-2-mean-time",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!rGvi!,w_2400,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe18a0208-e629-4dfe-9aea-d4221476c335_1183x201.png",
+      "alt": "A bar chart showing the breakdown of steps in scaling up your application; the labels are \"pending pods created\", \"node provisioning\", \"node configuration management\", \"kubernetes scheduling loop\", \"pod startup\", and \"application readiness\"]",
+      "sha256": "4c0708c18010e8048c8aeda47ec4b82cae448793be94cf79449aebf3e2f4d6c0"
+    }
+  ],
+  "additional_sources": [
+    "https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/",
+    "https://kubernetes.io/docs/concepts/workloads/pods/probes/",
+    "https://karpenter.sh/docs/reference/metrics/",
+    "https://keda.sh/docs/2.21/reference/scaledobject-spec/",
+    "https://opentelemetry.io/docs/concepts/signals/traces/"
+  ],
+  "editorial_notes": [
+    "Brief summary of the linked article; no full translation. Main measurement contract, queue derivation, event-correlation plan and experiment design are explicitly editorial analysis.",
+    "Source figure is qualitative, not measured durations. Original bytes preserved.",
+    "Current KEDA and HPA control-loop boundaries verified against official documentation.",
+    "Manual user-requested note; no daily quota consumption, timer changes or vault modification. published_sources discovers this source URL automatically."
+  ]
+}

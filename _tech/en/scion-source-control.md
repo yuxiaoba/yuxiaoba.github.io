@@ -10,15 +10,16 @@ source_type: tech
 tags:
 - coding-agents
 - systems-reliability
-summary: Scion’s incremental changesets, server-side queries, and tiered object caches, with implications for CI,
-  review, and failure isolation.
+summary: Scion’s incremental changesets, server-side queries, and tiered object caches,
+  with implications for CI, review, and failure isolation.
 long_read: true
 source_url: https://www.anthropic.com/engineering/redesigning-source-control
 permalink: /tech/en/scion-source-control/
 writing_source: assistant
 translation_source: assistant-authored paired Chinese/English analysis
+published_at: "2026-10-20T10:29:21.485154+08:00"
+updated_at: "2026-10-20T10:29:21.485154+08:00"
 ---
-
 ## When code production outgrows development infrastructure
 
 Anthropic's Scion case is useful because it shows how coding agents can move the bottleneck from writing code to storing, distributing, and validating it. The team reports growth from about 2,500 daily merges in May 2026 to more than 30,000 in September, with a five-month migration of its monorepo to an in-house version-control system. Understanding the change requires examining data structures, fetching, and development workflows together; adding more mirrors no longer explains the solution.

@@ -1,21 +1,23 @@
 ---
-id: "adaptive-verification"
-title: "2026年10月14日｜没有置信度头，也能在线分配验证预算"
-date: "2026-10-14"
-lang: "zh"
+id: adaptive-verification
+title: 2026年10月14日｜没有置信度头，也能在线分配验证预算
+date: '2026-10-14'
+lang: zh
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving"]
-summary: "用在线接受率估计把自适应验证扩展到更多草稿模型，区分概率校准、采样无偏与吞吐收益。"
-translation_source: "assistant"
-authorship: "assistant"
-source_url: "https://blog.vllm.ai/blog/2026-10-14-adaptive-verification-online-estimator"
-permalink: "/tech/zh/adaptive-verification/"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+summary: 用在线接受率估计把自适应验证扩展到更多草稿模型，区分概率校准、采样无偏与吞吐收益。
+translation_source: assistant
+authorship: assistant
+source_url: https://blog.vllm.ai/blog/2026-10-14-adaptive-verification-online-estimator
+permalink: /tech/zh/adaptive-verification/
 long_read: true
+published_at: "2026-10-20T10:46:23.513966+08:00"
+updated_at: "2026-10-20T10:46:23.513966+08:00"
 ---
-
 投机解码先让便宜的草稿模型提出多个 token，再由目标模型验证。草稿越长，一次可能前进越多，但被拒绝位置后面的验证也可能白做。vLLM 的 Adaptive Verification（AV）据接受概率裁掉不值得验证的尾部；本次变化是，让没有专用置信度头的现有草稿模型也能获得这种预算控制。
 
 原文：[Adaptive Verification Without a Confidence Head](https://vllm.ai/blog/2026-10-14-adaptive-verification-online-estimator)  

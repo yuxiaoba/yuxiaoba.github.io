@@ -41,6 +41,9 @@ def source_key(url):
     u = urlsplit(url)
     require(u.scheme == 'https' and u.hostname and not u.username and not u.password and not any(c.isspace() for c in url), 'Expected an HTTPS source URL without credentials')
     host = u.hostname.lower()
+    # Verified publisher aliases; compare identities without rewriting source URLs.
+    if host == 'blog.vllm.ai' and u.path.startswith('/blog/'): host = 'vllm.ai'
+    if host == 'techstrong.tv' and u.path.startswith('/videos/'): host = 'www.techstrong.tv'
     if host in {'arxiv.org', 'www.arxiv.org'}:
         match = re.fullmatch(r'/(?:abs|pdf|html)/(\d{4}\.\d{4,5})(?:v\d+)?(?:\.pdf)?/?', u.path)
         if match: return 'arxiv:' + match[1]
@@ -52,6 +55,7 @@ def read_batch(path):
     require(len(raw) <= 1024 * 1024, 'Input exceeds 1 MiB')
     data = yaml.load(raw.decode('utf-8'), Loader=UniqueLoader)
     require(isinstance(data, dict), 'Batch must be a mapping')
+    require('_intake_corrections' not in data, 'Reserved intake metadata field')
     require(type(data.get('schema_version')) is int and data['schema_version'] == 1, 'schema_version must be integer 1')
     date = data.get('date')
     require(isinstance(date, str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}', date), 'date must be a YYYY-MM-DD string')
@@ -63,10 +67,18 @@ def read_batch(path):
     require(path.name == expected, 'Filename/date/revision mismatch')
     require(data.get('status') == 'ready', 'Batch is not ready')
     require(isinstance(data.get('items'), list), 'items must be a list')
-    ids, urls = set(), set()
-    for item in data['items']:
+    ids, urls, corrections = set(), set(), []
+    for position, item in enumerate(data['items']):
         require(isinstance(item, dict), 'Item must be a mapping')
         ident = item.get('id')
+        # IDs are internal labels, not URLs or author names. Preserve the raw file
+        # and its hash; only repair unambiguous ASCII case/outer whitespace here.
+        if isinstance(ident, str) and re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9.-]*', ident.strip()):
+            normalized = ident.strip().lower()
+            if normalized != ident:
+                corrections.append({'item': position, 'field': 'id', 'before': ident, 'after': normalized,
+                                    'reason': 'ASCII lowercase and surrounding whitespace'})
+                item['id'] = ident = normalized
         require(isinstance(ident, str) and re.fullmatch(r'[a-z0-9][a-z0-9.-]*', ident) and '..' not in ident, 'Invalid item id')
         require(ident not in ids, 'Duplicate item id'); ids.add(ident)
         require(item.get('type') in {'paper', 'tech', 'social'}, 'Invalid item type')
@@ -84,6 +96,7 @@ def read_batch(path):
         related = item.get('related_urls', [])
         require(isinstance(related, list), 'related_urls must be list')
         for url in related: source_key(url)
+    if corrections: data['_intake_corrections'] = corrections
     return data, sha(raw), raw
 
 def safe_path(base, relative):
@@ -117,8 +130,27 @@ def published_sources(root):
                 except ValueError: pass
     return keys
 
+def stamp_note_activity(root, files, timestamp):
+    """Record the server publication attempt, consistently across a bilingual batch."""
+    require(dt.datetime.fromisoformat(timestamp).tzinfo is not None, 'Activity timestamp needs timezone')
+    stamped = dict(files)
+    for relative, raw in files.items():
+        if not relative.startswith(('_digest/', '_tech/')) or not relative.endswith('.md'): continue
+        pieces = re.split(r'^---\s*$', raw.decode(), maxsplit=2, flags=re.M)
+        require(len(pieces) == 3, 'Missing front matter for activity timestamp')
+        meta = yaml.load(pieces[1], Loader=UniqueLoader)
+        target = safe_path(root, relative)
+        if target.exists():
+            previous, _ = frontmatter(target)
+            if previous.get('published_at'): meta['published_at'] = previous['published_at']
+            else: meta.pop('published_at', None)  # Unknown historic publication time stays unknown.
+        else: meta['published_at'] = timestamp
+        meta['updated_at'] = timestamp
+        stamped[relative] = ('---\n' + yaml.safe_dump(meta, allow_unicode=True, sort_keys=False) + '---' + pieces[2]).encode()
+    return stamped
+
 def select_batch(root, state, config, day):
-    latest, errors = {}, []
+    latest, errors, invalid_revisions = {}, [], {}
     for path in sorted((root / '.incoming/research').glob('*.yaml')):
         try:
             data, digest, raw = read_batch(path)
@@ -126,16 +158,22 @@ def select_batch(root, state, config, day):
             candidate = (data['date'], data['revision'], path, data, digest, raw)
             key = data['date']
             if key not in latest or data['revision'] > latest[key][1]: latest[key] = candidate
-        except Exception as error: errors.append({'file': path.name, 'error': str(error)})
+        except Exception as error:
+            errors.append({'file': path.name, 'error': str(error)})
+            match = re.fullmatch(r'(\d{4}-\d{2}-\d{2})(?:\.r(\d{3,}))?\.yaml', path.name)
+            if match:
+                invalid_revisions[match[1]] = max(invalid_revisions.get(match[1], 0), int(match[2] or 1))
     candidates = []
     for candidate in latest.values():
+        # A broken newest upload must not silently publish an older revision.
+        if invalid_revisions.get(candidate[0], 0) >= candidate[1]: continue
         previous = state['inputs'].get(candidate[4], {})
         if previous.get('status') in TERMINAL: continue
         if previous.get('attempts', 0) >= config['max_attempts_per_input']:
             errors.append({'file': candidate[2].name, 'error': 'Attempt limit reached; manual review required'})
             continue
         candidates.append(candidate)
-    return (sorted(candidates, key=lambda c: c[:2])[0] if candidates else None), errors
+    return (sorted(candidates, key=lambda c: (c[0] != day, c[0], c[1]))[0] if candidates else None), errors
 
 def select_manual_batch(root, state, config, day, filename):
     path = safe_path(root / '.incoming/research', filename)
@@ -427,11 +465,15 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
             errors.extend(backfill_errors)
             if selected is not None: origin = 'approved_backfill'
         report = {'started_at': now(), 'input_errors': errors, 'applied': False, 'manual_batch': batch, 'origin': origin, 'daily_quota_exempt': exempt}
+        reviews = [{k: e[k] for k in ['file', 'date', 'review_reason', 'counts', 'limits', 'job'] if k in e}
+                   for e in state['inputs'].values() if e.get('status') == 'needs_review']
+        if reviews: report['pending_reviews'] = reviews
         if selected is None:
-            report['status'] = 'no_new_batch' if not errors else 'input_errors'
+            report['status'] = 'input_errors' if errors else ('awaiting_review' if reviews else 'no_new_batch')
         else:
             _, _, path, data, digest, raw = selected
             report.update(input=path.name, input_sha256=digest, date=data['date'])
+            if data.get('_intake_corrections'): report['intake_corrections'] = data['_intake_corrections']
             if dry_run: report['status'] = 'pending'; report['counts'] = dict(collections.Counter(i['type'] for i in data['items']))
             elif not exempt and state['daily_runs'].get(day, 0) >= config['max_model_runs_per_day']: report['status'] = 'daily_budget_reached'
             else:
@@ -439,9 +481,12 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
                 selected_items = [i for i in data['items'] if source_key(i['url']) not in existing]
                 report['already_covered'] = [i['id'] for i in data['items'] if i not in selected_items]
                 entry = state['inputs'].setdefault(digest, {'file': path.name, 'date': data['date'], 'attempts': 0})
+                if data.get('_intake_corrections'): entry['intake_corrections'] = data['_intake_corrections']
                 if not selected_items: report['status'] = entry['status'] = 'already_covered'
                 elif any(collections.Counter(i['type'] for i in selected_items)[kind] > limit for kind, limit in config['max_items'].items()):
                     report['status'] = entry['status'] = 'needs_review'; report['reason'] = 'Batch exceeds configured item limits; no model call made'
+                    report.update(counts=dict(collections.Counter(i['type'] for i in selected_items)), limits=config['max_items'])
+                    entry.update(review_reason=report['reason'], counts=report['counts'], limits=dict(config['max_items']), reviewed_at=now())
                 else:
                     job = folder / 'runs' / (dt.datetime.now().strftime('%Y%m%d-%H%M%S') + '-' + digest[:10] + '-' + uuid.uuid4().hex[:6]); job.mkdir(parents=True)
                     (job / path.name).write_bytes(raw); report['job'] = str(job.relative_to(root))
@@ -460,6 +505,7 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
                             except json.JSONDecodeError: pass
                         files, pairs = validate_outputs(root, work, {**data, 'items': selected_items}, result)
                         files, pairs, replacements = merge_digest(root, {**data, 'items': selected_items}, digest, files, pairs)
+                        files = stamp_note_activity(root, files, now())
                         report.update(summary=result['summary'], deferred=result['deferred'], appended_originals=list(replacements))
                         if not pairs: report['status'] = 'needs_review'
                         else:
@@ -475,6 +521,8 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
                     except Exception as error:
                         report.update(status='failed', error=str(error))
                     entry.update(status=report['status'], finished_at=now())
+                    if report['status'] == 'needs_review':
+                        entry['review_reason'] = report.get('error') or report.get('reason') or report.get('summary', 'No publishable output; inspect the task report')
                     atomic_json(job / 'report.json', report)
                 atomic_json(state_path, state)
         report['finished_at'] = now()

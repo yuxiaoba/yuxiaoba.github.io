@@ -15,7 +15,7 @@ def main():
             time.sleep(30)
             continue
         print(json.dumps(report, ensure_ascii=False), flush=True)
-        if report['status'] in {'no_new_batch', 'input_errors'}:
+        if report['status'] in {'no_new_batch', 'input_errors', 'awaiting_review'}:
             return 1 if report['input_errors'] else 0
 
 if __name__ == '__main__':

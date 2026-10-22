@@ -19,8 +19,9 @@ source_url: https://x.com/sermakarevich/status/2112198653469241856
 permalink: /tech/en/agent-skills-evaluation/
 authoring_source: assistant
 translation_source: assistant-authored paired Chinese/English interpretation
+published_at: "2026-10-20T16:16:45.884695+08:00"
+updated_at: "2026-10-20T16:16:45.884695+08:00"
 ---
-
 **Sergii Makarevych · Agent evaluation methodology · 2026-10-19**  
 Original: [How to write and test agent skills with evals](https://x.com/i/article/2112186374052802560)
 

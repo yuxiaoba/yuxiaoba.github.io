@@ -23,10 +23,10 @@ authors:
 - Rui Ren
 - Michael R. Lyu
 links:
-  Paper: 
-  Project: 
-  DOI: 
-  BibTex: 
+  Paper: https://jun-jie-huang.github.io/assets/papers/ase25_iknow.pdf
+  Project: https://github.com/Jun-jie-Huang/iKnow
+  DOI: https://doi.org/10.1109/ASE63991.2025.00084
+  BibTex: null
 year: 2025
 award: distinguished_paper
 venue: ASE

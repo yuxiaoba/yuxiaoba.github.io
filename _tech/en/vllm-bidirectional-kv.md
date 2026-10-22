@@ -1,20 +1,25 @@
 ---
-id: "vllm-bidirectional-kv"
-title: "2026-10-12 | Bidirectional KV Transfer in vLLM: Returning Multi-Turn Context to Prefill"
-date: "2026-10-12"
-lang: "en"
+id: vllm-bidirectional-kv
+title: '2026-10-12 | Bidirectional KV Transfer in vLLM: Returning Multi-Turn Context
+  to Prefill'
+date: '2026-10-12'
+lang: en
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving"]
-summary: "How decode-to-prefill reuse, router metadata, retention, and recomputation thresholds reduce TTFT when the local prefill cache misses."
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+summary: How decode-to-prefill reuse, router metadata, retention, and recomputation
+  thresholds reduce TTFT when the local prefill cache misses.
 long_read: true
-source_url: "https://blog.vllm.ai/blog/2026-10-12-bidirectional-kvxfer-multiturn-agentic-workload"
-permalink: "/tech/en/vllm-bidirectional-kv/"
-translation_source: "assistant-authored paired Chinese/English synthesis; English translation by assistant"
+source_url: https://blog.vllm.ai/blog/2026-10-12-bidirectional-kvxfer-multiturn-agentic-workload
+permalink: /tech/en/vllm-bidirectional-kv/
+translation_source: assistant-authored paired Chinese/English synthesis; English translation
+  by assistant
+published_at: "2026-10-20T10:16:04.808002+08:00"
+updated_at: "2026-10-20T10:16:04.808002+08:00"
 ---
-
 Multi-turn agents send growing histories with each model request. Separating prefill from decode allows independent compute configurations but also separates cached state: decode may already hold KV for the previous response while the next prefill recomputes it. This vLLM article introduces a reverse path from decode to prefill, alongside the cross-turn lookup, retention, and recomputation decisions needed to use that path.
 
 Original: [Improve TTFT for Multi-Turn Agentic Workloads with Bi-Directional KV Transfer in vLLM](https://blog.vllm.ai/blog/2026-10-12-bidirectional-kvxfer-multiturn-agentic-workload)  

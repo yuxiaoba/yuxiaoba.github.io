@@ -16,8 +16,9 @@ translation_source: assistant
 permalink: /tech/zh/dynamo-session-aware/
 long_read: true
 source_url: https://pytorch.org/blog/session-aware-agentic-inference-with-nvidia-dynamo/
+published_at: "2026-10-20T09:38:54.997728+08:00"
+updated_at: "2026-10-20T09:38:54.997728+08:00"
 ---
-
 Agent 推理服务的压力，往往来自两次模型调用之间。一个编码任务携带很长的初始上下文，调用工具后追加结果，再次发送历史；子 Agent 又可能共享前缀并行工作。GPU 暂时没有生成 token，不代表会话不再占用 KV cache。Dynamo 这次进展值得关注之处，是让会话身份贯穿路由、准入、观测与缓存策略，把优化单位扩展到完整执行链。
 
 原文：[Session-Aware Agentic Inference with NVIDIA Dynamo](https://pytorch.org/blog/session-aware-agentic-inference-with-nvidia-dynamo/)  

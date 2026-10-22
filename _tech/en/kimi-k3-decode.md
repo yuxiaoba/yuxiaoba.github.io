@@ -1,21 +1,25 @@
 ---
-id: "kimi-k3-decode"
-title: "2026-10-16 | Specialized Kimi K3 Decode: Speed and Validation Boundaries"
-date: "2026-10-16"
-lang: "en"
+id: kimi-k3-decode
+title: '2026-10-16 | Specialized Kimi K3 Decode: Speed and Validation Boundaries'
+date: '2026-10-16'
+lang: en
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving", "systems-reliability"]
-summary: "How fusion, communication overlap, and prefetching accelerate decode, and how synthetic acceptance, decode-only tests, and AgentX comparisons differ."
-authoring_source: "assistant"
-translation_source: "assistant-authored paired Chinese/English editorial notes"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+- systems-reliability
+summary: How fusion, communication overlap, and prefetching accelerate decode, and
+  how synthetic acceptance, decode-only tests, and AgentX comparisons differ.
+authoring_source: assistant
+translation_source: assistant-authored paired Chinese/English editorial notes
 long_read: true
-source_url: "https://blog.vllm.ai/blog/2026-10-16-kimi-k3-megakernel"
-permalink: "/tech/en/kimi-k3-decode/"
+source_url: https://blog.vllm.ai/blog/2026-10-16-kimi-k3-megakernel
+permalink: /tech/en/kimi-k3-decode/
+published_at: "2026-10-19T20:41:00.047475+08:00"
+updated_at: "2026-10-19T20:41:00.047475+08:00"
 ---
-
 **Benjamin Chislett (NVIDIA) · Official vLLM engineering report**  
 Original: [Hyper Optimizing Kimi K3 in vLLM: Moving Fast and Responsibly](https://vllm.ai/blog/2026-10-16-kimi-k3-megakernel)
 

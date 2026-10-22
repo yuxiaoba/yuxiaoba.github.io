@@ -1,21 +1,23 @@
 ---
-id: "zephon-torchtitan"
-title: "2026年10月16日｜Zephon：换 GPU 数量后仍保持相同训练批次"
-date: "2026-10-16"
-lang: "zh"
+id: zephon-torchtitan
+title: 2026年10月16日｜Zephon：换 GPU 数量后仍保持相同训练批次
+date: '2026-10-16'
+lang: zh
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["systems-reliability"]
-summary: "解释 accumulator、逻辑 lanes 与 flush/replay 如何支持在线数据处理的弹性确定性，并区分数据相同与数值逐位相同。"
-authoring_source: "assistant"
-translation_source: "assistant-authored paired Chinese/English editorial notes"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- systems-reliability
+summary: 解释 accumulator、逻辑 lanes 与 flush/replay 如何支持在线数据处理的弹性确定性，并区分数据相同与数值逐位相同。
+authoring_source: assistant
+translation_source: assistant-authored paired Chinese/English editorial notes
 long_read: true
-source_url: "https://pytorch.org/blog/bringing-elastically-deterministic-data-loading-to-torchtitan-with-zephon/"
-permalink: "/tech/zh/zephon-torchtitan/"
+source_url: https://pytorch.org/blog/bringing-elastically-deterministic-data-loading-to-torchtitan-with-zephon/
+permalink: /tech/zh/zephon-torchtitan/
+published_at: "2026-10-19T20:41:00.047475+08:00"
+updated_at: "2026-10-19T20:41:00.047475+08:00"
 ---
-
 **Josh Wills, Maximilian Böther, Ties Robroek and the Zephon team · PyTorch 官方技术文章**  
 原文：[Bringing Elastically Deterministic Data Loading to TorchTitan with Zephon](https://pytorch.org/blog/bringing-elastically-deterministic-data-loading-to-torchtitan-with-zephon/)
 

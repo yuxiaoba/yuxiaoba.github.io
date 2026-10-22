@@ -21,6 +21,8 @@ preprint: false
 links:
   DOI: https://doi.org/10.1007/s10664-025-10769-0
   bib: https://dblp.org/rec/journals/ese/GuZYSLHCZGYL26.bib
+  pdf: https://wenweigu.github.io/publications/emse26/emse26.pdf
+  Arxiv: https://arxiv.org/abs/2506.04569
 ccf: B
 pub: In Empirical Software Engineering.
 ---

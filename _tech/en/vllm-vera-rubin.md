@@ -1,22 +1,24 @@
 ---
-id: "vllm-vera-rubin"
-title: "2026-10-09 | vLLM and Vera Rubin: Turning Memory Locality into Serving Throughput"
-date: "2026-10-09"
-lang: "en"
+id: vllm-vera-rubin
+title: '2026-10-09 | vLLM and Vera Rubin: Turning Memory Locality into Serving Throughput'
+date: '2026-10-09'
+lang: en
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
+layout: article
+maintenance: daily-research
+source_type: tech
 tags:
-- "inference-serving"
-summary: "Rubin enablement in vLLM, MoE locality domains, and the conditions behind layer-level and AgentX serving gains."
-authorship: "assistant"
-translation_source: "assistant-authored paired Chinese/English research notes"
+- inference-serving
+summary: Rubin enablement in vLLM, MoE locality domains, and the conditions behind
+  layer-level and AgentX serving gains.
+authorship: assistant
+translation_source: assistant-authored paired Chinese/English research notes
 long_read: true
-source_url: "https://vllm.ai/blog/2026-10-09-vera-rubin-preview"
-permalink: "/tech/en/vllm-vera-rubin/"
+source_url: https://vllm.ai/blog/2026-10-09-vera-rubin-preview
+permalink: /tech/en/vllm-vera-rubin/
+published_at: "2026-10-20T09:50:34.569269+08:00"
+updated_at: "2026-10-20T09:50:34.569269+08:00"
 ---
-
 **vLLM Team, Inferact, Red Hat, NVIDIA · Official technical preview · 2026-10-09**  
 Original: [vLLM Support for NVIDIA Vera Rubin NVL72: 7.8x Throughput over GB200 NVL72](https://vllm.ai/blog/2026-10-09-vera-rubin-preview)
 

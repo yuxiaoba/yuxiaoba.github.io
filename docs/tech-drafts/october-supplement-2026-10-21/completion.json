@@ -1,0 +1,38 @@
+{
+  "completed_at": "2026-10-22T09:01:09.445077+08:00",
+  "new_pairs": 6,
+  "reused_pairs": {
+    "jev-sre-diagnosis": "jev-sre-diagnosis",
+    "elastic-ep-online-scaling": "elastic-ep-downtime"
+  },
+  "files": {
+    "_tech/en/scout-sre.md": "40f677cef9fc5c5a057f4b9f45461993c21f5c073419ba57d51d09a1cdd5a3c9",
+    "_tech/en/gpu-cluster-readiness.md": "ad9787fa376356b357a98d1a10da837cb842d4413566884a217b1db752c0999d",
+    "_tech/en/building-ai-sre.md": "f578264d91837b6ebe9e3013a8587b8a04acfd95929980e89aa31398ddc08c47",
+    "_tech/en/incident-replay-evaluation.md": "0087907d0cb117210b707f72329a78f64994a563b5dc8bf24252dcc809e5dd26",
+    "_tech/en/lmcache-056-security.md": "f4f9d692cbf92f9bcb9ff15fb0d31d802a7155b5d3370667b1c253520800d92d",
+    "_tech/en/humming-quantized-kernels.md": "8ee2a2c9a409220c6103c735d2b469ead3001a24630e98918a94420aa90421a1",
+    "_tech/zh/scout-sre.md": "cb5a1c9a8daed91dd69bbf9003f1f1f81d3503a5f2182f97a787af7100a73569",
+    "_tech/zh/gpu-cluster-readiness.md": "0c4269f4ce6925309260362733b9bdeef7e78766823251376df3cb96935fe21e",
+    "_tech/zh/building-ai-sre.md": "abcba9c16b49779dff71dfa0e169935d1936690985f6e74e452184848f13385f",
+    "_tech/zh/incident-replay-evaluation.md": "d10c4a88286f7c1d07ee64bbe1e423eb5d9c200d38ba6b1c1ac6d924fcb89e51",
+    "_tech/zh/lmcache-056-security.md": "a644b992b3014123dd15f7b560ccd3a4733beb15d62aff71f3333c71df90fbf0",
+    "_tech/zh/humming-quantized-kernels.md": "0284d8f0847b8425597588db18ec3c24745b8462538b5faa75602ffa79bf41ca",
+    "assets/images/tech/building-ai-sre/evaluation.svg": "c458e82c12ee39980b7b8815748f8d034328f0a33dc4214d45a4a8ca7b685764",
+    "assets/images/tech/incident-replay-evaluation/replay-zh.svg": "ba72e92a7d7f28ad0abcfb233cbf2578adbb030e4a8edca4fafef6e14577f73b",
+    "assets/images/tech/incident-replay-evaluation/replay-en.svg": "c37259403163498435e61b73cdbc301fa2184a5325176d2053ead69d0af3c36b",
+    "assets/images/tech/gpu-cluster-readiness/validation.webp": "4568b91679fcc944dfec7c75e01ea01d7b14116619d134243e908e0e9f347953",
+    "assets/images/tech/scout-sre/cost-quality.png": "08bacd1b283d7804a54e8291decf4c909dafcbcad922fa71c6722d22ee3afea5",
+    "assets/images/tech/lmcache-056-security/boundaries-zh.svg": "09537925ac47f4e352d9672ce0c25aa49ca5bb7bcb287061e8201652dcc90cea",
+    "assets/images/tech/lmcache-056-security/boundaries-en.svg": "32a03141c145dff0d7b5b538a1e1fbb282c758b59a89656a063db16fff1423aa",
+    "assets/images/tech/humming-quantized-kernels/jit-flow.svg": "aed6ae34cdd93a2f0049468f353a8ce213985e873e248aa56b99183f2330c0c7",
+    "assets/images/tech/humming-quantized-kernels/kernel-components.svg": "159a95c6be8ebb21e24174f10dd29808e64a9948960bc7c0e3cb084f4f7049c8"
+  },
+  "release": "/home/GB-Project/yuxiaoba.github.io/.preview/releases/tech-supplement-20261022-090109-991ae6",
+  "indexed_pages": 120,
+  "candidate_assertions": 4704,
+  "browser_checks": 66,
+  "old_files_preserved": 135,
+  "daily_state_modified": false,
+  "input_files_modified": false
+}

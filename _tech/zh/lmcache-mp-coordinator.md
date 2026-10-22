@@ -1,21 +1,24 @@
 ---
-id: "lmcache-mp-coordinator"
-title: "2026年10月16日｜LMCache MP Coordinator：找到其他服务器上的缓存"
-date: "2026-10-16"
-lang: "zh"
+id: lmcache-mp-coordinator
+title: 2026年10月16日｜LMCache MP Coordinator：找到其他服务器上的缓存
+date: '2026-10-16'
+lang: zh
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving", "systems-reliability"]
-summary: "解释注册、事件门与最终一致目录如何扩大 KV 发现范围，以及它与实际 P2P 传输和已有性能数据的边界。"
-authoring_source: "assistant"
-translation_source: "assistant-authored paired Chinese/English editorial notes"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+- systems-reliability
+summary: 解释注册、事件门与最终一致目录如何扩大 KV 发现范围，以及它与实际 P2P 传输和已有性能数据的边界。
+authoring_source: assistant
+translation_source: assistant-authored paired Chinese/English editorial notes
 long_read: true
-source_url: "https://blog.lmcache.ai/en/2026/10/16/finding-reusable-kv-caches-across-a-fleet-of-servers-lmcaches-mp-multiprocess-coordinator/"
-permalink: "/tech/zh/lmcache-mp-coordinator/"
+source_url: https://blog.lmcache.ai/en/2026/10/16/finding-reusable-kv-caches-across-a-fleet-of-servers-lmcaches-mp-multiprocess-coordinator/
+permalink: /tech/zh/lmcache-mp-coordinator/
+published_at: "2026-10-19T20:41:00.047475+08:00"
+updated_at: "2026-10-19T20:41:00.047475+08:00"
 ---
-
 **Siddhant Ray · LMCache 官方技术文章**  
 原文：[Finding Reusable KV Caches Across a Fleet of Servers: LMCache’s MP (MultiProcess) Coordinator](https://blog.lmcache.ai/en/2026/10/16/finding-reusable-kv-caches-across-a-fleet-of-servers-lmcaches-mp-multiprocess-coordinator/)
 

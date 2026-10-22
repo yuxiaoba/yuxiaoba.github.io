@@ -1,27 +1,27 @@
 ---
-{
-  "id": "minimax-m31-flash",
-  "title": "2026-10-20 | MiniMax M3.1 Flash: Evaluating Low Prices Across Complete Agent Tasks",
-  "date": "2026-10-20",
-  "lang": "en",
-  "published": true,
-  "layout": "article",
-  "maintenance": "daily-research",
-  "source_type": "tech",
-  "tags": [
-    "coding-agents",
-    "agent-reliability",
-    "inference-serving"
-  ],
-  "summary": "Checking M3.1 Flash evaluation conditions, sparsity claims, and token pricing while separating model speed from whole-task gains.",
-  "long_read": true,
-  "source_url": "https://www.minimax.io/blog/minimax-m31f",
-  "permalink": "/tech/en/minimax-m31-flash/",
-  "authoring_source": "assistant",
-  "translation_source": "assistant-authored paired Chinese/English technical notes"
-}
+id: minimax-m31-flash
+title: '2026-10-20 | MiniMax M3.1 Flash: Evaluating Low Prices Across Complete Agent
+  Tasks'
+date: '2026-10-20'
+lang: en
+published: true
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- coding-agents
+- agent-reliability
+- inference-serving
+summary: Checking M3.1 Flash evaluation conditions, sparsity claims, and token pricing
+  while separating model speed from whole-task gains.
+long_read: true
+source_url: https://www.minimax.io/blog/minimax-m31f
+permalink: /tech/en/minimax-m31-flash/
+authoring_source: assistant
+translation_source: assistant-authored paired Chinese/English technical notes
+published_at: "2026-10-20T08:44:36.800552+08:00"
+updated_at: "2026-10-20T08:44:36.800552+08:00"
 ---
-
 Original: [MiniMax M3.1 Flash: Redefining Agent Performance and Cost](https://www.minimax.io/blog/minimax-m31f) · MiniMax · 2026-10-19  
 
 ## Long workflows and usage cost are the focus

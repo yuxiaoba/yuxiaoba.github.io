@@ -20,8 +20,9 @@ source_url: https://x.com/themahis/status/2112235354585497922
 permalink: /tech/en/unattended-agent-failure-tests/
 authoring_source: assistant
 translation_source: assistant-authored paired Chinese/English interpretation
+published_at: "2026-10-20T16:16:45.884695+08:00"
+updated_at: "2026-10-20T16:16:45.884695+08:00"
 ---
-
 **MASA · AgentOps practice guide · 2026-10-19**  
 Original: [Before You Let Your AI Agent Run Unattended, Make It Pass These 7 Tests](https://x.com/i/article/2112230476458930176)
 

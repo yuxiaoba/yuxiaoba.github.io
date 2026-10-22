@@ -1,9 +1,15 @@
 {% assign latest = entries.first %}
 <section class="digest-feature">
 <div class="feature-topline"><span class="eyebrow">{{ t.latest_note }}</span><span class="collection-total">{{ entries.size }} {% if latest.daily_digest %}{{ t.digest_days }}{% else %}{{ t.notes_unit }}{% endif %}</span></div>
-<div class="feature-copy">{% unless latest.daily_digest %}<time>{% include local-date.html date=latest.date %}</time>{% endunless %}<h2><a href="{{ latest.url | relative_url }}">{{ latest.title | escape }}</a></h2>{% if latest.summary %}<p>{{ latest.summary | escape }}</p>{% endif %}<a class="small-action" href="{{ latest.url | relative_url }}">{{ t.read }}</a></div>
+<div class="feature-copy">{% unless latest.daily_digest %}<time>{% include local-date.html date=latest.date %}</time>{% endunless %}<h2><a href="{{ latest.url | relative_url }}">{{ latest.title | escape }}</a></h2>{% include note-labels.html note=latest %}{% if latest.summary %}<p>{{ latest.summary | escape }}</p>{% endif %}<a class="small-action" href="{{ latest.url | relative_url }}">{{ t.read }}</a></div>
 </section>
 {% if entries.size > 1 %}
-<section class="digest-archive"><h2>{{ t.archive }}</h2>{% assign previous_month = '' %}{% for entry in entries %}{% assign month = entry.date | date: '%Y-%m' %}{% if month != previous_month %}<h3 class="year-label">{% if lang == 'zh' %}{{ entry.date | date: '%Y年%-m月' }}{% else %}{{ entry.date | date: '%B %Y' }}{% endif %}</h3>{% assign previous_month = month %}{% endif %}<div class="digest-archive-row"><span>{% include local-date.html date=entry.date %}</span><a href="{{ entry.url | relative_url }}">{% if entry.daily_digest %}{{ t.daily_reading }} · {{ entry.paper_count }} {{ t.papers_unit }}{% else %}{{ entry.title | escape }}{% endif %}</a><span aria-hidden="true">↗</span></div>{% endfor %}</section>
+<section class="digest-archive"><h2>{{ t.archive }}</h2>
+{% assign months = entries | group_by_exp: 'entry', "entry.date | date: '%Y-%m'" %}
+{% for month in months %}{% assign month_date = month.items.first.date %}
+<details class="archive-month" id="month-{{ month.name }}"{% if forloop.first %} open{% endif %}>
+<summary><span class="archive-month-title">{% if lang == 'zh' %}{{ month_date | date: '%Y年%-m月' }}{% else %}{{ month_date | date: '%B %Y' }}{% endif %}</span><span class="archive-month-count">{{ month.items.size }} {% if page.section == 'digest' %}{{ t.digest_days }}{% else %}{{ t.notes_unit }}{% endif %}</span><span class="archive-month-chevron" aria-hidden="true"></span></summary>
+<div class="archive-month-entries">{% for entry in month.items %}<div class="digest-archive-row"><span>{% include local-date.html date=entry.date %}</span><a href="{{ entry.url | relative_url }}">{% if entry.daily_digest %}{{ t.daily_reading }} · {{ entry.paper_count }} {{ t.papers_unit }}{% else %}{{ entry.title | escape }}{% endif %}</a><span aria-hidden="true">↗</span>{% include note-labels.html note=entry archive=true %}</div>{% endfor %}</div>
+</details>{% endfor %}</section>
 
 {% endif %}

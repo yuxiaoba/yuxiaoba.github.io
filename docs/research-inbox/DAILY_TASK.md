@@ -6,7 +6,7 @@
 
 `homepage-research-daily.timer` → `homepage-research-daily.service` → `scripts/research_daily.py run`
 
-1. 校验 `.incoming/research/*.yaml`，忽略 `.part`；选择开始日期之后、尚未处理的最早批次，仅使用该日期的最高 revision。
+1. 校验 `.incoming/research/*.yaml`，忽略 `.part`；优先当天最高 revision，之后按日期补其他待处理批次。最高 revision 校验失败时不回退旧版。
 2. 根据原始 URL／arXiv ID 去重，跳过网站已经引用的来源。初始化时保留历史批次；用户随后批准的 10 月 1—18 日队列在没有新日更可处理时补写。
 3. 在 `.preview/research-jobs/runs/<run>/work/` 启动独立 Codex 任务，使用现有登录和模型配置。允许工作目录写入与读取网络原文，不给原网站额外写权限，不使用 bypass／danger-full-access。
 4. 输出双语 Markdown、原图、原文证据与结构化结果。外层校验路径、图片来源、真实文件哈希、条目去向、分类、日期和语言配对。
@@ -23,12 +23,18 @@
 - 从 2026-10-19 起接收正常日更；之前日期仅通过用户明确批准的历史队列或显式 --batch 处理。
 - 每次定时触发最多处理一批；每日最多启动 2 次写作任务，每个输入哈希最多尝试 2 次。
 - 单次写作最长 60 分钟；整个服务最长 75 分钟。失败后等下一次定时触发再试，不在一轮内无限重跑。
-- 每批最多 12 篇论文、4 条技术资讯、8 条社交消息；超过限额整批转待审，不静默截断。
+- 每批最多 24 篇论文、8 条技术资讯、8 条社交消息（2026-10-21 按实际日更量从 12／4／8 调整）；超过容量仍转待审，不静默截断。每日最多两次、每输入两次尝试和单次60分钟不变。
 - 这是任务次数和时间上限，不是精确的 token／费用硬上限。模型使用量受当前账号额度约束；登录失效、限额或网络问题会记录失败，不自动切换账号。
 - 无邮件／Slack／Grok 主动通知；结果写本地日志和回执。Grok 可只读查看，但不能把输入文件还在视为失败。
 - 不执行 Git commit/push、GitHub Pages 部署、原笔记 pull 或更新，也不安装论文中的系统。
 
 ## 观察与手动操作
+
+用户于2026-10-22确认：每日上传无需逐次确认，消费者自行校验、核对来源、生成双语并在构建／页面检查通过后更新本机预览。原有08:30／12:00时间、调用预算和既有文章保护保持。
+
+条目ID中的ASCII大小写和首尾空白可在内存中自动规范化。原始YAML字节与SHA-256保持，隔离任务保留原件，worker读取规范化后的input.json；dry-run、运行报告及处理状态记录intake_corrections。大小写规范化后重名、危险路径字符、来源缺失等仍会拦截，不猜测内容。不修改网址路径或作者名称的大小写。
+
+来源去重识别已核实的vLLM博客域名变体和Techstrong视频的www／非www地址；文章中仍保留原始来源链接。历史未核验材料、冲突或失败有明确回执，保留上次正常预览；只有无法自行解决的内容歧义／需求冲突才需要用户介入，不将普通格式问题变成发布确认。
 
 ```bash
 systemctl status homepage-research-daily.timer homepage-research-daily.service
@@ -39,6 +45,8 @@ python3 scripts/research_daily.py status
 ```
 
 程序日志：`.preview/research-jobs/latest-run.json`；状态／历史基线：`state.json`；每次任务有输入快照、work/events.jsonl、work/stderr.log、work/result.json、原文和候选构建。`consumer.lock` 防止并发消费，已有 `build.lock` 防止与预览监听器同时提交构建。
+
+容量超限会在 state 与报告中保留 counts、limits 和 review_reason。若没有可运行输入但仍有待审条目，返回 awaiting_review 并附 pending_reviews，不再用 no_new_batch 掩盖待审积压。修正容量或来源后，只能在核对具体输入哈希与原尝试记录后恢复该项，不清空历史状态或重置调用额度。
 
 初始化命令 `python3 scripts/research_daily.py initialize` 只能执行一次，已有状态时拒绝覆盖。dry-run 不调用模型、不写处理状态。不要删除 state.json 来“重试”，那会丢失去重和重试信息；需要人工检查具体失败或准备更高 revision。
 

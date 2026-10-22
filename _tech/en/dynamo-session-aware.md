@@ -17,8 +17,9 @@ translation_source: assistant
 permalink: /tech/en/dynamo-session-aware/
 long_read: true
 source_url: https://pytorch.org/blog/session-aware-agentic-inference-with-nvidia-dynamo/
+published_at: "2026-10-20T09:38:54.997728+08:00"
+updated_at: "2026-10-20T09:38:54.997728+08:00"
 ---
-
 The pressure in agent inference often arises between model calls. A coding task starts with a long context, appends tool results, and sends its history again; subagents may share prefixes while running concurrently. A GPU that has stopped generating tokens can still hold a session's KV cache. The interesting development in Dynamo is a session identity that connects routing, admission, observability, and cache policy, extending the optimization unit to an entire execution chain.
 
 Original: [Session-Aware Agentic Inference with NVIDIA Dynamo](https://pytorch.org/blog/session-aware-agentic-inference-with-nvidia-dynamo/)  

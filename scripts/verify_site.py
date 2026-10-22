@@ -32,7 +32,7 @@ def audit(site):
             check(doc.html['lang']==lang,f'language {prefix}{section}')
             check(len(doc.select('.navigation a'))==5,f'navigation {prefix}{section}')
         home=soup(site/prefix/'index.html')
-        check([x.get('class')[0] for x in home.select('.identity-intro,.home-updates,.quiet-news,.profile-biography')]==['identity-intro','home-updates','quiet-news','profile-biography'],f'homepage section order {lang}')
+        check([x.get('class')[0] for x in home.select('.identity-intro,.home-updates,.quiet-news,.profile-biography')]==['identity-intro','profile-biography','quiet-news','home-updates'],f'homepage section order {lang}')
         check(not home.select('main .cooking-door,main a[href$="/life/"]'),f'Life only in top navigation {lang}')
         updates=home.select_one('.home-updates')
         check(updates is not None,f'recent updates section {lang}')
@@ -43,6 +43,16 @@ def audit(site):
             check([c.select_one('time')['datetime'] for c in cards]==dates,f'latest {collection} dates {lang}')
             check(all(c.select_one('h3 a')['href'].startswith('/'+collection+'/'+lang+'/') for c in cards),f'recent {collection} language isolation {lang}')
             check(all(not re.match(r'^\d{4}[-年]',c.select_one('h3').text.strip()) for c in cards),f'date separated from title {collection} {lang}')
+            archive=soup(site/prefix/collection/'index.html')
+            groups=archive.select('.archive-month')
+            expected_months=sorted({str(m['date'])[:7] for m in entries},reverse=True)
+            if len(entries)>1:
+                check([g['id'] for g in groups]==['month-'+m for m in expected_months],f'{collection} month groups ordered {lang}')
+                check([g.has_attr('open') for g in groups]==[True]+[False]*(len(groups)-1),f'{collection} latest month open only {lang}')
+                for group,month in zip(groups,expected_months):
+                    count=sum(str(m['date']).startswith(month) for m in entries)
+                    check(len(group.select('.digest-archive-row'))==count,f'{collection} month entries preserved {month} {lang}')
+                    check(group.select_one('.archive-month-count').text.strip().split()[0]==str(count),f'{collection} month count {month} {lang}')
         profile=yaml.safe_load((ROOT/('_data/profile_zh.yml' if lang=='zh' else '_data/profile.yml')).read_text())
         check(len(home.select('.education-entry'))==len(profile['education']),f'education {lang}')
         check(len(home.select('.awards-list li'))==len(profile['awards']),f'all awards {lang}')
@@ -97,9 +107,13 @@ def fixtures():
     with tempfile.TemporaryDirectory(prefix='homepage-content-') as work:
         source=Path(work)/'source'
         shutil.copytree(ROOT,source,ignore=shutil.ignore_patterns('.git','.handoff','.preview','vendor','node_modules','_site','.bundle','.sass-cache','__pycache__'))
-        def article(collection,lang,name,title,published=True,extra='',when='2026-10-10'):
+        private_life=source/'.incoming/life/private-fixture';private_life.mkdir(parents=True,exist_ok=True)
+        (private_life/'note.txt').write_text('LIFE_PRIVATE_FIXTURE_NEVER_OUTPUT')
+        def article(collection,lang,name,title,published=True,extra='',when='2026-10-10',updated=None):
             p=source/f'_{collection}'/lang/(name+'.md');p.parent.mkdir(parents=True,exist_ok=True)
-            p.write_text('---\n'+yaml.safe_dump({'title':title,'date':when,'published':published,'summary':'测试导读' if lang=='zh' else 'A test summary'},allow_unicode=True)+'---\n\n'+extra)
+            meta={'title':title,'date':when,'published':published,'summary':'测试导读' if lang=='zh' else 'A test summary'}
+            if updated:meta['updated_at']=updated
+            p.write_text('---\n'+yaml.safe_dump(meta,allow_unicode=True)+'---\n\n'+extra)
         for col in ['digest','kitchen']:
             for lang in ['zh','en']:
                 article(col,lang,'2026-10-10-paired','测试双语文章' if lang=='zh' else 'Paired article fixture',extra='[Original source](https://example.org/paper)\n\n## Original Paper Title\n\n'+('长标题与阅读内容。'*60 if lang=='zh' else 'Long reading content. '*60)+'\n\n![Image](/assets/images/photos/guangba.jpg)\n\n| Column A | Column B |\n| --- | --- |\n| '+('very-long-token-'*25)+' | value |\n\nhttps://example.org/'+('long-segment-'*30))
@@ -108,6 +122,9 @@ def fixtures():
             article(col,'zh','2026-10-10-only','仅中文测试文章')
             article(col,'zh','2026-10-10-unpublished-translation','译文草稿测试')
             article(col,'en','2026-10-10-unpublished-translation','DRAFT_TRANSLATION_NEVER_OUTPUT',False)
+        for lang in ['zh','en']:
+            photo_meta={'title':'PHOTO_FEED_FIXTURE','date':'2026-01-01','published':True,'layout':'life-album','photo_album':True,'location':'Fixture location','photos':[{'src':'/assets/images/photos/guangba.jpg','width':400,'height':500,'alt':'Fixture photo','caption':'Fixture caption'}]*3}
+            (source/f'_kitchen/{lang}/feed-photos.md').write_text('---\n'+yaml.safe_dump(photo_meta)+'---\n')
         # Fixtures must remain newer than real daily content as the site grows.
         published_dates=[dt.date.fromisoformat(str(metadata(p)['date'])[:10]) for col in ['_digest','_tech'] for p in (ROOT/col).rglob('*.md') if metadata(p).get('published') is True]
         latest=max(published_dates,default=dt.date(2026,10,10))+dt.timedelta(days=3)
@@ -116,19 +133,52 @@ def fixtures():
         for lang in ['zh','en']:
             title=(f'{latest.year}年{latest.month}月{latest.day}日｜' if lang=='zh' else latest.isoformat()+' | ')+'RECENT_DIGEST_FIXTURE'
             article('digest',lang,'home-recent',title,when=latest.isoformat())
-            article('tech',lang,'home-recent','RECENT_TECH_FIXTURE',when=(latest-dt.timedelta(days=1)).isoformat())
-            article('tech',lang,'home-older','OLDER_TECH_FIXTURE',when=(latest-dt.timedelta(days=2)).isoformat())
+            same_day=(latest-dt.timedelta(days=1)).isoformat()
+            article('tech',lang,'home-recent','RECENT_TECH_FIXTURE',when=same_day,updated=same_day+'T09:00:00+08:00')
+            article('tech',lang,'aaa-same-day-newest','SAME_DAY_NEWEST_FIXTURE',when=same_day,updated=same_day+'T10:00:00+08:00')
+            article('tech',lang,'home-older','OLDER_TECH_FIXTURE',when=(latest-dt.timedelta(days=2)).isoformat(),updated=latest.isoformat()+'T23:00:00+08:00')
             article('tech',lang,'home-draft','RECENT_TECH_DRAFT_NEVER_OUTPUT',False,when=latest.isoformat())
         article('tech','zh','home-untranslated','ZH_ONLY_RECENT_TECH',when=latest.isoformat())
+        previous_month=(latest.replace(day=1)-dt.timedelta(days=1)).isoformat()
+        previous_year=f'{latest.year-1}-01-03'
+        for col in ['digest','tech']:
+            for lang in ['zh','en']:
+                article(col,lang,'archive-previous-month','ARCHIVE_PREVIOUS_MONTH',when=previous_month,extra='ARCHIVE_MONTH_SEARCHABLE')
+                article(col,lang,'archive-previous-year','ARCHIVE_PREVIOUS_YEAR',when=previous_year)
+                article(col,lang,'archive-private-month','ARCHIVE_DRAFT_NEVER_OUTPUT',False,when='1900-01-01')
         p=source/'_publications/2027/fixture.md';p.parent.mkdir(exist_ok=True)
         p.write_text('---\n'+yaml.safe_dump({'title':'FIXTURE: '+('A very long original paper title '*12),'authors':['Guangba Yu*#','Test Author✉️'],'venue':'Test Conference','year':2027,'domains':['cloud','ai'],'topics':['agentops'],'published':True,'links':{'pdf':'','slides':'#','code':'https://example.org/code','bib':None}},sort_keys=False)+'---\n')
         p=source/'_publications/2027/draft.md';p.write_text('---\ntitle: DRAFT_PAPER_NEVER_OUTPUT\nyear: 2027\npublished: false\n---\n')
         build(source,dest)
+        check(not (dest/'.incoming').exists(),'private Life inbox excluded from site and search inputs')
+        for lang,prefix in [('en',''),('zh','zh/')]:
+            listing=soup(dest/prefix/'life/index.html')
+            moment=listing.select_one(f'h2 a[href="/kitchen/{lang}/feed-photos/"]').find_parent('article')
+            check(len(moment.select('[data-photo-open]'))==3,f'Life photo list drives three-image feed {lang}')
+            check('Fixture location' in moment.text,f'Life location automatically rendered {lang}')
+            album=soup(dest/f'kitchen/{lang}/feed-photos/index.html')
+            check(len(album.select('.life-album [data-photo-open]'))==3,f'Life shared photo list drives detail {lang}')
+            check(not listing.select('.small-action'),f'Life feed has no read-more step {lang}')
+        search_manifest=json.loads((dest/'pagefind/status.json').read_text())
+        for col in ['digest','tech']:
+            for lang,prefix in [('en',''),('zh','zh/')]:
+                archive=soup(dest/prefix/col/'index.html')
+                groups=archive.select('.archive-month')
+                check([g['id'] for g in groups]==sorted([g['id'] for g in groups],reverse=True),f'{col} fixture cross-year month order {lang}')
+                check([g.has_attr('open') for g in groups]==[True]+[False]*(len(groups)-1),f'{col} fixture older months closed {lang}')
+                for name,when in [('archive-previous-month',previous_month),('archive-previous-year',previous_year)]:
+                    group=archive.find(id='month-'+when[:7])
+                    check(group is not None and not group.has_attr('open') and group.select(f'a[href="/{col}/{lang}/{name}/"]'),f'{col} older note in closed month {lang} {name}')
+                    check(f'{col}/{lang}/{name}/index.html' in search_manifest['pages'],f'{col} closed month remains searchable {lang} {name}')
+                check(archive.find(id='month-1900-01') is None,f'{col} draft-only month excluded {lang}')
         for lang,prefix in [('en',''),('zh','zh/')]:
             updates=soup(dest/prefix/'index.html').select_one('.home-updates')
             check(updates.select_one('.update-digest h3').text.strip()=='RECENT_DIGEST_FIXTURE',f'new digest automatically promoted and title date removed {lang}')
             check(len(updates.select('.update-tech .recent-note'))==2,f'home limits technical notes {lang}')
-            check('RECENT_TECH_FIXTURE' in updates.text,f'new tech automatically promoted {lang}')
+            check('SAME_DAY_NEWEST_FIXTURE' in updates.text,f'later update on same day is promoted {lang}')
+            tech_titles=[h.text.strip() for h in updates.select('.update-tech h3')]
+            check(tech_titles==(['ZH_ONLY_RECENT_TECH','SAME_DAY_NEWEST_FIXTURE'] if lang=='zh' else ['SAME_DAY_NEWEST_FIXTURE','RECENT_TECH_FIXTURE']),f'reading day then activity order, independent of filename {lang}')
+            check('OLDER_TECH_FIXTURE' not in updates.text,f'old reading date does not jump ahead after update {lang}')
             check(('ZH_ONLY_RECENT_TECH' in updates.text)==(lang=='zh'),f'home untranslated tech stays in source language {lang}')
             check(not updates.select('[href*="home-draft"]'),f'home draft excluded {lang}')
         for col in ['digest','kitchen']:

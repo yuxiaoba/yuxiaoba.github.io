@@ -4,6 +4,10 @@ en:
   publications: Publications
   digest: Paper Digest
   kitchen: Life
+  photo_viewer: Photo viewer
+  photo_close: Close photos
+  photo_previous: Previous photo
+  photo_next: Next photo
   intro: I’m Guangba Yu. My research focuses on the reliability and optimization of cloud and AI systems.
   position: Postdoctoral Researcher
   affiliation: The Chinese University of Hong Kong
@@ -127,6 +131,10 @@ zh:
   publications: 论文成果
   digest: 论文阅读
   kitchen: 生活
+  photo_viewer: 查看照片
+  photo_close: 关闭照片
+  photo_previous: 上一张照片
+  photo_next: 下一张照片
   intro: 我是余广坝，研究聚焦云系统与人工智能系统的可靠性与优化。
   position: 博士后研究员
   affiliation: 香港中文大学

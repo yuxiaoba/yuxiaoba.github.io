@@ -1,27 +1,27 @@
 ---
-{
-  "id": "torchneuron",
-  "title": "2026-10-20 | TorchNeuron: Native PyTorch Integration and Its Compatibility Boundaries",
-  "date": "2026-10-20",
-  "lang": "en",
-  "published": true,
-  "layout": "article",
-  "maintenance": "daily-research",
-  "source_type": "tech",
-  "tags": [
-    "inference-serving",
-    "observability",
-    "systems-reliability"
-  ],
-  "summary": "Reading the Trainium backend announcement through execution paths, communication semantics, profiling, and test coverage.",
-  "long_read": true,
-  "source_url": "https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/",
-  "permalink": "/tech/en/torchneuron/",
-  "authoring_source": "assistant",
-  "translation_source": "assistant-authored paired Chinese/English technical notes"
-}
+id: torchneuron
+title: '2026-10-20 | TorchNeuron: Native PyTorch Integration and Its Compatibility
+  Boundaries'
+date: '2026-10-20'
+lang: en
+published: true
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+- observability
+- systems-reliability
+summary: Reading the Trainium backend announcement through execution paths, communication
+  semantics, profiling, and test coverage.
+long_read: true
+source_url: https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/
+permalink: /tech/en/torchneuron/
+authoring_source: assistant
+translation_source: assistant-authored paired Chinese/English technical notes
+published_at: "2026-10-20T08:44:36.800552+08:00"
+updated_at: "2026-10-20T08:44:36.800552+08:00"
 ---
-
 Original: [Introducing TorchNeuron: Native PyTorch backend for AWS Trainium](https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/) · 2026-10-19  
 Authors: Nafea Bshara, Robert Hundt, Ron Diamant, Colin Brace, Rahul Solanki, Maen Suleiman, Khaled ElGalaind, Temesghen Kahsai, Cyril Bortolato, Indu Thangakrishnan, Shauheen Zahirazami, Sarang Ozarde, Adarsh Singh, Hanbo Wang, Esha Lakhotia, Jianying Lang.
 

@@ -16,6 +16,7 @@ preprint: false
 links:
   DOI: https://doi.org/10.1016/j.jss.2026.112854
   bib: https://dblp.org/rec/journals/jss/LiTHYCZ26.bib
+  code: https://github.com/limin5120/LogFun
 ccf: B
 pub: In Journal of Systems and Software.
 ---

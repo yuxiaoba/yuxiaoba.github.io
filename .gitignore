@@ -10,6 +10,7 @@ _site/
 .sass-cache/
 .preview/
 .incoming/
+.handoff/
 node_modules/
 
 .sync-state/

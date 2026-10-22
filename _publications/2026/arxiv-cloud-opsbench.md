@@ -17,6 +17,8 @@ preprint: true
 links:
   Arxiv: https://doi.org/10.48550/arXiv.2603.00468
   bib: https://dblp.org/rec/journals/corr/abs-2603-00468.bib
+  pdf: https://arxiv.org/pdf/2603.00468
+  code: https://github.com/LLM4Ops/Cloud-OpsBench
 ccf: null
 pub: arXiv.
 ---

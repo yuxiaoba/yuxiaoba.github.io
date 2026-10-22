@@ -15,8 +15,9 @@ source_url: https://pytorch.org/blog/building-a-high-performance-and-portable-vl
 permalink: /tech/zh/helion-linear/
 authoring_source: assistant
 translation_source: assistant
+published_at: "2026-10-20T08:02:52.445322+08:00"
+updated_at: "2026-10-20T08:02:52.445322+08:00"
 ---
-
 原文：[Building a High-Performance and Portable vLLM Linear Backend with Helion](https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/)  
 Sean Chen (Red Hat), Shangdi Yu (PyTorch, Meta Platforms) · 首发 2026-10-02
 

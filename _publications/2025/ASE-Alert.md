@@ -23,9 +23,10 @@ authors:
 
 links:
   Paper: https://yuxiaoba.github.io/files/ASE25/AlertGuardian.pdf
-  Project: 
-  DOI: 
-  BibTex: 
+  Project: null
+  DOI: https://doi.org/10.1109/ase63991.2025.00009
+  BibTex: null
+  Arxiv: https://arxiv.org/abs/2601.14912
 year: 2025
 venue: ASE
 ccf: A

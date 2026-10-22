@@ -1,21 +1,24 @@
 ---
-id: "zephon-torchtitan"
-title: "2026-10-16 | Zephon: Preserving Training Batches When GPU Counts Change"
-date: "2026-10-16"
-lang: "en"
+id: zephon-torchtitan
+title: '2026-10-16 | Zephon: Preserving Training Batches When GPU Counts Change'
+date: '2026-10-16'
+lang: en
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["systems-reliability"]
-summary: "How accumulators, logical lanes, and flush/replay make online data loading elastically deterministic, without promising bitwise identical training arithmetic."
-authoring_source: "assistant"
-translation_source: "assistant-authored paired Chinese/English editorial notes"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- systems-reliability
+summary: How accumulators, logical lanes, and flush/replay make online data loading
+  elastically deterministic, without promising bitwise identical training arithmetic.
+authoring_source: assistant
+translation_source: assistant-authored paired Chinese/English editorial notes
 long_read: true
-source_url: "https://pytorch.org/blog/bringing-elastically-deterministic-data-loading-to-torchtitan-with-zephon/"
-permalink: "/tech/en/zephon-torchtitan/"
+source_url: https://pytorch.org/blog/bringing-elastically-deterministic-data-loading-to-torchtitan-with-zephon/
+permalink: /tech/en/zephon-torchtitan/
+published_at: "2026-10-19T20:41:00.047475+08:00"
+updated_at: "2026-10-19T20:41:00.047475+08:00"
 ---
-
 **Josh Wills, Maximilian Böther, Ties Robroek and the Zephon team · Official PyTorch technical article**  
 Original: [Bringing Elastically Deterministic Data Loading to TorchTitan with Zephon](https://pytorch.org/blog/bringing-elastically-deterministic-data-loading-to-torchtitan-with-zephon/)
 

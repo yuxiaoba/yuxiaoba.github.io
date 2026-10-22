@@ -11,7 +11,8 @@ domains: []
 topics: []
 published: true
 preprint: false
-links: {}
+links:
+  DOI: https://doi.org/10.13328/j.cnki.jos.006523
 ccf: A
 pub: In Journal of Software (Chinese).
 ---

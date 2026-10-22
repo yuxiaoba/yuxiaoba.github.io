@@ -1,0 +1,13 @@
+---
+layout: warm
+---
+<article class="life-album" data-photo-group>
+<p class="album-kicker">{{ page.location | escape }} · {{ page.date | date: '%Y.%m.%d' }}</p>
+<h1>{{ page.title | escape }}</h1>
+{{ content }}
+{% for photo in page.photos %}
+{% if forloop.index == 2 %}<div class="album-details">{% endif %}
+<figure{% if forloop.first %} class="album-hero"{% endif %}><a href="{{ photo.src | relative_url }}" data-photo-open data-photo-caption="{{ photo.caption | escape }}"><picture>{% if photo.webp %}<source type="image/webp" srcset="{{ photo.webp | relative_url }}">{% endif %}<img src="{{ photo.src | relative_url }}" width="{{ photo.width }}" height="{{ photo.height }}" alt="{{ photo.alt | escape }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"></picture></a>{% if photo.caption %}<figcaption>{{ photo.caption | escape }}</figcaption>{% endif %}</figure>
+{% if forloop.last and page.photos.size > 1 %}</div>{% endif %}
+{% endfor %}
+</article>

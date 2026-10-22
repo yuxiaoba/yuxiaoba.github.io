@@ -9,15 +9,16 @@ maintenance: daily-research
 source_type: tech
 tags:
 - inference-serving
-summary: 'From unified GEMM variants to CUDA Graph hybrid dispatch: H100 evidence and the costs of tuning, startup,
-  and configuration maintenance.'
+summary: 'From unified GEMM variants to CUDA Graph hybrid dispatch: H100 evidence
+  and the costs of tuning, startup, and configuration maintenance.'
 long_read: true
 source_url: https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/
 permalink: /tech/en/helion-linear/
 authoring_source: assistant
 translation_source: assistant
+published_at: "2026-10-20T08:02:52.445322+08:00"
+updated_at: "2026-10-20T08:02:52.445322+08:00"
 ---
-
 Original: [Building a High-Performance and Portable vLLM Linear Backend with Helion](https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/)  
 Sean Chen (Red Hat), Shangdi Yu (PyTorch, Meta Platforms) · First published 2026-10-02
 

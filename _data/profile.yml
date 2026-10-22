@@ -42,6 +42,7 @@ short_bio: >-
 
 show_portrait: true
 portrait_url: assets/images/photos/guangba-portrait-v10.png
+portrait_webp_url: assets/images/photos/guangba-portrait-v10.webp
 portrait_caption: >-
   Welcome to Guangba's website!
 

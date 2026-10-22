@@ -1,0 +1,28 @@
+#warm-directions .life-page{max-width:820px}
+#warm-directions .kitchen-list.life-feed{display:block;margin-top:38px}
+#warm-directions .life-feed .life-moment{display:grid;grid-template-columns:76px minmax(0,1fr);gap:26px;padding:30px 0 38px;border-radius:0;border-bottom:1px solid var(--rule);overflow:visible}
+#warm-directions .life-moment-date{font-size:12px;line-height:1.6;color:var(--quiet);font-variant-numeric:tabular-nums}
+#warm-directions .life-moment-date>span{display:block;font:500 32px/1.2 var(--sans);color:var(--ink);margin-bottom:5px}
+#warm-directions .life-moment-content h2{font:500 19px/1.5 var(--sans);margin:0 0 8px}
+#warm-directions .life-moment-content h2 a{color:var(--ink);text-decoration:none}
+#warm-directions .life-moment-content h2 a:hover{color:var(--accent)}
+#warm-directions .life-moment-content .life-moment-text{font-size:14px;line-height:1.8;margin:0 0 18px;color:var(--ink)}
+#warm-directions .life-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;max-width:600px}
+#warm-directions .life-photo-grid>a{display:block;overflow:hidden;border-radius:4px}
+#warm-directions .life-photo-grid>a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+#warm-directions .life-photo-grid img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;margin:0}
+#warm-directions .life-photo-single{grid-template-columns:1fr;max-width:440px}
+#warm-directions .life-photo-single img{aspect-ratio:auto}
+#warm-directions .life-photo-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+#warm-directions .life-moment-content .life-moment-location{font-size:12px;line-height:1.7;color:var(--quiet);margin:12px 0 0}
+#warm-directions .life-viewer{position:fixed;width:min(1100px,calc(100% - 24px));max-width:none;max-height:calc(100dvh - 24px);padding:12px 16px;margin:auto;border:0;border-radius:8px;background:#16181b;color:#fff;box-sizing:border-box}
+#warm-directions .life-viewer::backdrop{background:rgba(0,0,0,.82)}
+#warm-directions .life-viewer-toolbar,#warm-directions .life-viewer-controls{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:44px}
+#warm-directions .life-viewer-toolbar{font-size:13px;color:#cbd0d6}
+#warm-directions .life-viewer button{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border:0;border-radius:4px;background:transparent;color:#fff;font-size:24px;cursor:pointer}
+#warm-directions .life-viewer button[hidden]{display:none}
+#warm-directions .life-viewer button:hover{background:#30343a}
+#warm-directions .life-viewer button:focus-visible{outline:2px solid #fff;outline-offset:-3px}
+#warm-directions .life-viewer>img{display:block;width:100%;height:min(72dvh,800px);object-fit:contain}
+#warm-directions .life-viewer-controls p{font-size:14px;text-align:center;line-height:1.6;margin:0}
+@media(max-width:600px){#warm-directions .life-feed .life-moment{grid-template-columns:1fr;gap:12px;padding:22px 0 30px}#warm-directions .life-moment-date{display:flex;align-items:baseline;gap:8px}#warm-directions .life-moment-date>span{font-size:24px;margin:0}#warm-directions .life-moment-content h2{font-size:18px}#warm-directions .kitchen-list.life-feed{margin-top:20px}#warm-directions .life-viewer{padding:8px}#warm-directions .life-viewer>img{height:65dvh}}

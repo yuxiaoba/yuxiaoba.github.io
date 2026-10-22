@@ -17,6 +17,8 @@ summary: 'Separating search from retrieval: evidence tracking, empty results, re
 permalink: /tech/en/deepseek-search-fetch/
 translation_source: Assistant-authored paired Chinese/English reading notes; checked
   against official documentation.
+published_at: "2026-10-19T20:41:14.997748+08:00"
+updated_at: "2026-10-19T20:41:14.997748+08:00"
 ---
 **DeepSeek · Official update and interface analysis · 2026-10-17**  
 Original: [October 17 update](https://api-docs.deepseek.com/updates/) · [Search & Fetch guide](https://api-docs.deepseek.com/guides/search/)

@@ -32,9 +32,7 @@ links:
   Arxiv: https://arxiv.org/pdf/2407.00125
   Project: https://github.com/IntelligentDDS/awesome-papers/tree/main/Fault_tolerance#ai-system
   BibTex: https://yuxiaoba.github.io/files/survey/chaosai-bibtex.txt
-  # Slides: 
-  # DOI: 
-  # 
+  DOI: https://doi.org/10.1145/3732777
 year: 2026
 venue: TOSEM
 ccf: A

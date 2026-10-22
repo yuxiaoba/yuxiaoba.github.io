@@ -1,4 +1,4 @@
-{% assign entries = site.digest | where: 'lang', lang | where: 'published', true | sort: 'date' | reverse %}
+{% include ordered-notes.html collection=site.digest %}{% assign entries = ordered_notes %}
 <section class="subpage notes-page"><div class="eyebrow">{{ t.notes_kicker }}</div><h1>{{ t.digest }}{% if lang == 'en' %}.{% endif %}</h1><p class="subpage-lead">{{ t.reading_note }}</p>
 <p class="translation-notice" data-translation-notice role="status" hidden>{{ t.missing }}</p>
 {% include note-search.html type='paper' %}

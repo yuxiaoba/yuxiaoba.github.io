@@ -1,6 +1,7 @@
 ---
 id: fbtriton-tbe
-title: '2026-10-06 | FBTriton: Organizing Embedding Training Around Sparse Access Patterns'
+title: '2026-10-06 | FBTriton: Organizing Embedding Training Around Sparse Access
+  Patterns'
 date: '2026-10-06'
 lang: en
 published: true
@@ -11,11 +12,13 @@ long_read: true
 source_url: https://pytorch.org/blog/modernizing-table-batched-embeddings-with-fbtriton/
 tags:
 - systems-reliability
-summary: How forward/backward TBE paths, run-length dispatch, and synchronization ordering shape the benefits and limits of a Triton rewrite.
+summary: How forward/backward TBE paths, run-length dispatch, and synchronization
+  ordering shape the benefits and limits of a Triton rewrite.
 translation_source: assistant-authored paired Chinese/English technical reading notes
 permalink: /tech/en/fbtriton-tbe/
+published_at: "2026-10-20T09:18:12.324996+08:00"
+updated_at: "2026-10-20T09:18:12.324996+08:00"
 ---
-
 **Meta Team: Daohang Shi, Oleksandr Stashuk, Rupert Wu, Liangbei Xu, Rich Zhu**  
 Original: [Modernizing Table Batched Embeddings with FBTriton](https://pytorch.org/blog/modernizing-table-batched-embeddings-with-fbtriton/) · [Code](https://github.com/meta-pytorch/torchrec/tree/main/torchrec/distributed/triton_tbe)
 

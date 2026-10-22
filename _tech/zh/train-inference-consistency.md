@@ -1,21 +1,24 @@
 ---
-id: "train-inference-consistency"
-title: "2026年10月14日｜训练与推理逐位一致：保留低精度，也要固定计算路径"
-date: "2026-10-14"
-lang: "zh"
+id: train-inference-consistency
+title: 2026年10月14日｜训练与推理逐位一致：保留低精度，也要固定计算路径
+date: '2026-10-14'
+lang: zh
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving", "self-improvement"]
-summary: "共享推理算子、统一量化与归约顺序，在两类模型上取得零差异；收益仍需结合训练成本和基线条件理解。"
-translation_source: "assistant"
-authorship: "assistant"
-source_url: "https://blog.vllm.ai/blog/2026-10-14-train-inference-consistency"
-permalink: "/tech/zh/train-inference-consistency/"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+- self-improvement
+summary: 共享推理算子、统一量化与归约顺序，在两类模型上取得零差异；收益仍需结合训练成本和基线条件理解。
+translation_source: assistant
+authorship: assistant
+source_url: https://blog.vllm.ai/blog/2026-10-14-train-inference-consistency
+permalink: /tech/zh/train-inference-consistency/
 long_read: true
+published_at: "2026-10-20T10:46:23.513966+08:00"
+updated_at: "2026-10-20T10:46:23.513966+08:00"
 ---
-
 强化学习中，推理引擎采样轨迹，训练引擎重新计算这些 token 的概率并更新参数。如果相同权重、相同前缀在两边算出不同概率，训练优化的策略就与采样策略产生数值偏差。低精度、动态 batch 和不同并行布局都会放大这一问题。本次 vLLM 工程报告尝试在高性能部署路径上做到逐位一致，同时保留大部分 rollout 吞吐。
 
 原文：[Finish RL Training Faster: Bitwise-Consistent, High-Performance, Agent-Driven](https://vllm.ai/blog/2026-10-14-train-inference-consistency)  

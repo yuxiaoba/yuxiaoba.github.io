@@ -1,21 +1,24 @@
 ---
-id: "nixl-push"
-title: "2026-10-14 | NIXL Push: Move KV-Transfer Setup Off the First-Token Path"
-date: "2026-10-14"
-lang: "en"
+id: nixl-push
+title: '2026-10-14 | NIXL Push: Move KV-Transfer Setup Off the First-Token Path'
+date: '2026-10-14'
+lang: en
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving"]
-summary: "Early decode allocation and registration enable background KV pushes from prefill, trading routing flexibility for less exposed setup latency."
-translation_source: "assistant"
-authorship: "assistant"
-source_url: "https://blog.vllm.ai/blog/2026-10-14-nixl-push-connector"
-permalink: "/tech/en/nixl-push/"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+summary: Early decode allocation and registration enable background KV pushes from
+  prefill, trading routing flexibility for less exposed setup latency.
+translation_source: assistant
+authorship: assistant
+source_url: https://blog.vllm.ai/blog/2026-10-14-nixl-push-connector
+permalink: /tech/en/nixl-push/
 long_read: true
+published_at: "2026-10-20T10:46:23.513966+08:00"
+updated_at: "2026-10-20T10:46:23.513966+08:00"
 ---
-
 Disaggregating prefill and decode lets each phase scale independently, but a request must move its context state between them before generation can continue. vLLM's NIXL Push connector changes the timing of that handoff: the destination prepares early, and the producer writes once data is ready, overlapping work that previously happened in sequence.
 
 Original: [Push-Based KV Transfer to Improve TTFT and TPOT for Disaggregated Inference in vLLM](https://vllm.ai/blog/2026-10-14-nixl-push-connector)  

@@ -1,27 +1,25 @@
 ---
-{
-  "id": "minimax-m31-flash",
-  "title": "2026年10月20日｜MiniMax M3.1 Flash：把低单价放回完整 Agent 任务中衡量",
-  "date": "2026-10-20",
-  "lang": "zh",
-  "published": true,
-  "layout": "article",
-  "maintenance": "daily-research",
-  "source_type": "tech",
-  "tags": [
-    "coding-agents",
-    "agent-reliability",
-    "inference-serving"
-  ],
-  "summary": "核对 M3.1 Flash 的官方评测条件、稀疏性说明与 token 定价，区分模型速度和完整任务收益。",
-  "long_read": true,
-  "source_url": "https://www.minimax.io/blog/minimax-m31f",
-  "permalink": "/tech/zh/minimax-m31-flash/",
-  "authoring_source": "assistant",
-  "translation_source": "assistant-authored paired Chinese/English technical notes"
-}
+id: minimax-m31-flash
+title: 2026年10月20日｜MiniMax M3.1 Flash：把低单价放回完整 Agent 任务中衡量
+date: '2026-10-20'
+lang: zh
+published: true
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- coding-agents
+- agent-reliability
+- inference-serving
+summary: 核对 M3.1 Flash 的官方评测条件、稀疏性说明与 token 定价，区分模型速度和完整任务收益。
+long_read: true
+source_url: https://www.minimax.io/blog/minimax-m31f
+permalink: /tech/zh/minimax-m31-flash/
+authoring_source: assistant
+translation_source: assistant-authored paired Chinese/English technical notes
+published_at: "2026-10-20T08:44:36.800552+08:00"
+updated_at: "2026-10-20T08:44:36.800552+08:00"
 ---
-
 原文：[MiniMax M3.1 Flash: Redefining Agent Performance and Cost](https://www.minimax.io/blog/minimax-m31f) · MiniMax · 2026-10-19  
 
 ## 发布重点是长流程能力与使用成本

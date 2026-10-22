@@ -15,8 +15,9 @@ source_url: https://blog.vllm.ai/blog/2026-10-07-deepseek-v41-flash
 permalink: /tech/zh/deepseek-v41-flash/
 authorship: assistant
 translation_source: assistant
+published_at: "2026-10-20T09:29:16.460712+08:00"
+updated_at: "2026-10-20T09:29:16.460712+08:00"
 ---
-
 DeepSeek-V4.1-Flash 在 vLLM 上的进展，值得关注的是模型结构与服务实现一起优化。官方文章报告，相比发布首日，低并发交互速度提升约 1.9 倍，高吞吐配置约 5.3 倍。背后既有少算一部分 prefill，也有缓存表示、CUDA graphs、内核融合和并行策略的调整。要理解倍率，必须沿着请求的执行路径拆开看。
 
 原文：[DeepSeek-V4.1-Flash on vLLM: 5x Agentic Throughput Since Day 0](https://blog.vllm.ai/blog/2026-10-07-deepseek-v41-flash)  

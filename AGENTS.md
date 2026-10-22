@@ -51,12 +51,14 @@ Do not push, merge, deploy, schedule jobs, or send messages to other tasks witho
 
 - The former Kitchen section is now named Life / 生活, covering genuine travel, photographs, food and everyday notes.
 - Navigation and collection entrances use /life/ and /zh/life/. Keep /kitchen/ and /zh/kitchen/ as compatibility redirects.
-- Life is accessed through the top navigation only; do not restore a Life block on the homepage. Homepage order starts with the identity card, recent reading updates, and academic News before the full biography.
+- Life is accessed through the top navigation only; do not restore a Life block on the homepage. Homepage order starts with the identity card, full About Me biography, academic News, then Recent Updates (user-confirmed 2026-10-21).
 - Keep the existing _kitchen collection and article URLs for compatibility; do not invent personal stories or photographs to fill the empty section.
 
 ## Daily research task (user-authorized 2026-10-19)
 
 - Grok normally finishes uploads at 08:00 Asia/Shanghai. The authorized server workflow runs at 08:30 with a 12:00 catch-up, consuming new ready YAML batches from `.incoming/research/`.
+- On 2026-10-22 the user confirmed standing authorization: daily uploads do not need another confirmation. Automatically validate, repair unambiguous formatting, verify sources, prepare both languages, build, and update the local preview after checks pass. Preserve original input bytes and record every normalization. Ask only about genuinely unresolved ambiguity or conflicting requirements; this does not authorize Git pushes or external deployment.
+- Prefer the current day's newest valid revision before older pending daily batches. A malformed newest revision must not silently fall back to an older one. Normalize ASCII item-ID case and surrounding whitespace only; reject collisions and unsafe IDs, and retain the last good preview on failure.
 - Generate in an isolated job directory, verify sources and paired Chinese/English output, then build and check the candidate before updating the local preview. This does not authorize website Git pushes or public deployment.
 - Initial timer setup deferred historical files. The user subsequently explicitly authorized the full 2026-10-01–2026-10-18 backfill. Consume only the approved hash-pinned backfill queue after new daily inputs, within the unchanged shared daily/attempt/time limits.
 - On 2026-10-20 the user superseded that shared-budget ordering for the remaining October 3–15 batches: prioritize these 13 exact approved input hashes and account for their calls separately from the normal daily quota. Keep attempt/time limits and the single consumer; let an already-running daily task finish. This exemption does not alter account/platform usage limits or authorize other historical inputs.
@@ -65,8 +67,8 @@ Do not push, merge, deploy, schedule jobs, or send messages to other tasks witho
 
 ## Visual direction (user-authorized 2026-10-19)
 
-- Keep the white canvas and CUHK purple/gold palette. `assets/css/editorial.css` is the final visual layer after the base and long-reading styles.
-- Preserve the homepage sequence and all genuine profile content. Use the compact mobile identity/portrait layout, highlighted latest digest, adjacent Tech Notes, and front-positioned News; Life remains navigation-only.
+- The user superseded the purple/gold UI on 2026-10-21: use the original site's Lato typography, Chinese sans-serif, neutral dark text, light-gray outer background, white content and blue links. `assets/css/editorial.css` remains the final visual layer. The bilingual research illustrations also use the blue-gray palette (v3-blue), as confirmed on 2026-10-21.
+- Preserve the homepage sequence and all genuine profile content. Use the compact mobile identity/portrait layout, highlighted latest digest and adjacent Tech Notes. After the identity card, use About Me → News → Recent Updates; Life remains navigation-only.
 - Publication years are on the left on desktop and above the list on mobile. Keep CCF on its own line, original author/venue records and the owner's correspondence marks.
 - Search refinements use native details/summary with an active-filter count. Keep keyword search directly visible, paired language indexing, and the existing eight-topic vocabulary.
 

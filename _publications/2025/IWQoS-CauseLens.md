@@ -20,11 +20,11 @@ authors:
   - Xiaoyun Li
 
 links:
-  Paper: 
-  Project: 
-  DOI: 
-  BibTex: 
-  Arxiv: 
+  Paper: null
+  Project: null
+  DOI: https://doi.org/10.1109/iwqos65803.2025.11143407
+  BibTex: null
+  Arxiv: null
 year: 2025
 venue: IWQoS
 ccf: B

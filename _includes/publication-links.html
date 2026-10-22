@@ -7,6 +7,7 @@
  {% if first == '/' %}{% assign exists = false %}{% for file in site.static_files %}{% if file.path == local %}{% assign exists = true %}{% break %}{% endif %}{% endfor %}{% unless exists %}{% assign valid = false %}{% endunless %}{% endif %}
  {% if valid %}
  {% assign resource_key = resource[0] | downcase %}{% case resource_key %}{% when 'paper' %}{% assign label = t.pdf %}{% when 'pdf' %}{% assign label = t.pdf %}{% when 'slides' %}{% assign label = t.slides %}{% when 'code' %}{% assign label = t.code %}{% when 'project' %}{% assign label = t.project %}{% when 'bibtex' %}{% assign label = t.bib %}{% when 'bib' %}{% assign label = t.bib %}{% else %}{% assign label = resource[0] %}{% endcase %}
+ {% if resource_key == 'doi' %}{% if value contains '10.1145/' %}{% assign label = 'ACM DOI' %}{% elsif value contains '10.1109/' %}{% assign label = 'IEEE DOI' %}{% endif %}{% endif %}
  <a href="{% if first == '/' %}{{ local | relative_url }}{% else %}{{ value | escape }}{% endif %}">{{ label }} ↗</a>
  {% endif %}
 {% endfor %}

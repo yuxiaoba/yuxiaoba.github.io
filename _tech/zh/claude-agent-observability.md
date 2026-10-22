@@ -1,21 +1,24 @@
 ---
-id: "claude-agent-observability"
-title: "2026年10月14日｜Claude Agent 可观测性：把执行过程接进现有 OTel 系统"
-date: "2026-10-14"
-lang: "zh"
+id: claude-agent-observability
+title: 2026年10月14日｜Claude Agent 可观测性：把执行过程接进现有 OTel 系统
+date: '2026-10-14'
+lang: zh
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["observability", "agent-reliability"]
-summary: "从 SDK 与 API span 分工解释原生 OTel 导出，关注内容模式、跨请求关联、token 去重和尽力投递的边界。"
-translation_source: "assistant"
-authorship: "assistant"
-source_url: "https://claude.com/resources/articles/agent-observability-on-the-claude-platform"
-permalink: "/tech/zh/claude-agent-observability/"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- observability
+- agent-reliability
+summary: 从 SDK 与 API span 分工解释原生 OTel 导出，关注内容模式、跨请求关联、token 去重和尽力投递的边界。
+translation_source: assistant
+authorship: assistant
+source_url: https://claude.com/resources/articles/agent-observability-on-the-claude-platform
+permalink: /tech/zh/claude-agent-observability/
 long_read: true
+published_at: "2026-10-20T10:46:23.513966+08:00"
+updated_at: "2026-10-20T10:46:23.513966+08:00"
 ---
-
 Agent 的一次任务可能跨过模型、服务端工具、客户端工具和多个会话轮次。只看到最终回答或一次 API 的总延迟，很难判断时间花在哪里，也难以从失败中挑出可重复评测的案例。Claude Platform 的这次更新让 Managed Agents、Messages API 与 SDK 的执行轨迹以 OpenTelemetry（OTel）形式进入已有观测工具，减少连接这些视角所需的专用接线。
 
 官方公告：[Agent observability on the Claude Platform](https://claude.com/resources/articles/agent-observability-on-the-claude-platform)  

@@ -1,21 +1,25 @@
 ---
-id: "kimi-k3-mi355x"
-title: "2026-10-16 | Kimi K3 on MI355X: From State Reuse to Kernel Scheduling"
-date: "2026-10-16"
-lang: "en"
+id: kimi-k3-mi355x
+title: '2026-10-16 | Kimi K3 on MI355X: From State Reuse to Kernel Scheduling'
+date: '2026-10-16'
+lang: en
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving", "systems-reliability"]
-summary: "Trace cache recovery, redundant cross-GPU work, and parallel granularity while preserving the limits of AgentX and modeled TCO comparisons."
-authoring_source: "assistant"
-translation_source: "assistant-authored paired Chinese/English editorial notes"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+- systems-reliability
+summary: Trace cache recovery, redundant cross-GPU work, and parallel granularity
+  while preserving the limits of AgentX and modeled TCO comparisons.
+authoring_source: assistant
+translation_source: assistant-authored paired Chinese/English editorial notes
 long_read: true
-source_url: "https://blog.vllm.ai/blog/2026-10-16-kimi-k3-mi355x"
-permalink: "/tech/en/kimi-k3-mi355x/"
+source_url: https://blog.vllm.ai/blog/2026-10-16-kimi-k3-mi355x
+permalink: /tech/en/kimi-k3-mi355x/
+published_at: "2026-10-19T20:41:00.047475+08:00"
+updated_at: "2026-10-19T20:41:00.047475+08:00"
 ---
-
 **AMD and Embedded LLM · Official vLLM engineering report**  
 Original: [Scaling Kimi K3 on AMD Instinct MI355X: Matching NVIDIA HGX B300 Throughput per GPU on AgentX](https://vllm.ai/blog/2026-10-16-kimi-k3-mi355x)
 

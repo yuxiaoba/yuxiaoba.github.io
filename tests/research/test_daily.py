@@ -32,6 +32,25 @@ class DailyTests(unittest.TestCase):
  def test_duplicate_item(self):
   p,data=self.batch();data['items']*=2;p.write_text(yaml.safe_dump(data))
   with self.assertRaises(d.IntakeError):d.read_batch(p)
+ def test_id_case_and_outer_whitespace_are_repaired_without_editing_input(self):
+  p,data=self.batch();data['items']=[{'id':'  x-ReignSwords-123  ','type':'social','title':'Original title','url':'https://x.com/ReignSwords/status/123'}];p.write_text(yaml.safe_dump(data));original=p.read_bytes()
+  got,h,raw=d.read_batch(p)
+  self.assertEqual(got['items'][0]['id'],'x-reignswords-123');self.assertEqual(got['items'][0]['url'],data['items'][0]['url'])
+  self.assertEqual(got['_intake_corrections'][0]['before'],'  x-ReignSwords-123  ')
+  self.assertEqual(raw,original);self.assertEqual(p.read_bytes(),original);self.assertEqual(h,d.sha(original))
+ def test_normalized_id_collision_is_rejected(self):
+  p,data=self.batch();data['items']=[{'id':ident,'type':'tech','title':'Title','url':f'https://example.org/{n}'} for n,ident in enumerate(['Foo','foo'])];p.write_text(yaml.safe_dump(data))
+  with self.assertRaises(d.IntakeError):d.read_batch(p)
+ def test_unsafe_ids_are_not_guessed(self):
+  for ident in ['../foo','foo/bar','two words','foo_bar','ｆｏｏ']:
+   with self.subTest(ident=ident):
+    p,data=self.batch();data['items'][0]['id']=ident;p.write_text(yaml.safe_dump(data))
+    with self.assertRaises(d.IntakeError):d.read_batch(p)
+ def test_intake_correction_report_is_auditable_in_dry_run(self):
+  d.initialize(self.root,self.config);p,data=self.batch();data['items'][0]['id']='ARXIV-2610.22863';p.write_text(yaml.safe_dump(data));state_path=self.root/'.preview/research-jobs/state.json';before=state_path.read_bytes()
+  with patch.object(d,'today',return_value='2026-10-19'):
+   result=d.run(self.root,self.config,dry_run=True)
+  self.assertEqual(result['status'],'pending');self.assertEqual(result['intake_corrections'][0]['after'],'arxiv-2610.22863');self.assertEqual(state_path.read_bytes(),before)
  def test_explicit_history_selection_does_not_change_schedule(self):
   p,_=self.batch('2026-10-18');_,h,_=d.read_batch(p);state={'inputs':{h:{'status':'deferred_history','attempts':0}}}
   chosen,_=d.select_manual_batch(self.root,state,self.config,'2026-10-19',p.name)
@@ -46,10 +65,26 @@ class DailyTests(unittest.TestCase):
   with self.assertRaises(d.IntakeError):d.select_manual_batch(self.root,{'inputs':{}},self.config,'2026-10-19','../../elsewhere.yaml')
  def test_partial_ignored(self):
   (self.root/'.incoming/research/partial.part').write_text('broken YAML [');self.assertEqual(self.select(),(None,[]))
+ def test_limit_review_is_persistent_and_not_reported_as_no_new_input(self):
+  p,data=self.batch();d.initialize(self.root,self.config)
+  for i in range(12):data['items'].append({'id':f'extra-{i}','type':'paper','title':'Paper','url':f'https://example.org/{i}'})
+  p.write_text(yaml.safe_dump(data))
+  with patch.object(d,'today',return_value='2026-10-19'),patch.object(d,'invoke_worker',side_effect=AssertionError('over-limit batch must not call model')):
+   first=d.run(self.root,self.config);second=d.run(self.root,self.config)
+  self.assertEqual(first['status'],'needs_review');self.assertEqual(first['counts']['paper'],13)
+  self.assertEqual(second['status'],'awaiting_review');self.assertEqual(second['pending_reviews'][0]['limits']['paper'],12)
+  state=json.loads((self.root/'.preview/research-jobs/state.json').read_text());self.assertEqual(state['daily_runs'],{})
  def test_history_and_future_not_selected(self):
   self.batch('2026-10-18');self.batch('2026-10-20');self.assertIsNone(self.select()[0])
  def test_latest_revision_selected(self):
   self.batch();p,_=self.batch(revision=2);self.assertEqual(self.select()[0][2],p)
+ def test_today_precedes_old_pending_batches_then_catches_up(self):
+  old,_=self.batch('2026-10-19');current,_=self.batch('2026-10-22')
+  state={'inputs':{}};selected,_=d.select_batch(self.root,state,self.config,'2026-10-22');self.assertEqual(selected[2],current)
+  state['inputs'][selected[4]]={'status':'completed'};selected,_=d.select_batch(self.root,state,self.config,'2026-10-22');self.assertEqual(selected[2],old)
+ def test_invalid_newest_revision_never_falls_back(self):
+  self.batch();p,data=self.batch(revision=2);data['items'][0]['title']='';p.write_text(yaml.safe_dump(data))
+  selected,errors=self.select();self.assertIsNone(selected);self.assertEqual(errors[0]['file'],p.name)
  def test_completed_new_revision_never_falls_back(self):
   self.batch();p,_=self.batch(revision=2);_,h,_=d.read_batch(p)
   self.assertIsNone(self.select({'inputs':{h:{'status':'completed'}}})[0])
@@ -64,6 +99,11 @@ class DailyTests(unittest.TestCase):
   (self.root/'link').symlink_to('/tmp')
   with self.assertRaises(d.IntakeError):d.safe_path(self.root,'link/a')
  def test_canonical_arxiv_versions(self):self.assertEqual(d.source_key('https://arxiv.org/abs/2610.22863v2'),d.source_key('https://arxiv.org/pdf/2610.22863v1'))
+ def test_verified_aliases_deduplicate_without_merging_unrelated_paths(self):
+  self.assertEqual(d.source_key('https://blog.vllm.ai/blog/a'),d.source_key('https://vllm.ai/blog/a'))
+  self.assertEqual(d.source_key('https://techstrong.tv/videos/a'),d.source_key('https://www.techstrong.tv/videos/a'))
+  self.assertNotEqual(d.source_key('https://blog.vllm.ai/other/a'),d.source_key('https://vllm.ai/other/a'))
+  self.assertNotEqual(d.source_key('https://vllm.ai/blog/a?v=1'),d.source_key('https://vllm.ai/blog/a?v=2'))
  def test_authenticated_url_rejected(self):
   with self.assertRaises(d.IntakeError):d.source_key('https://user:pass@example.org/paper')
  def fixture_output(self):
@@ -77,6 +117,19 @@ class DailyTests(unittest.TestCase):
   return work,data,result
  def test_valid_pair(self):
   work,data,result=self.fixture_output();files,pairs=d.validate_outputs(self.root,work,data,result);self.assertEqual(len(files),2);self.assertEqual(len(pairs),1)
+ def test_bilingual_activity_stamps_preserve_reading_date_and_body(self):
+  work,data,result=self.fixture_output();files,_=d.validate_outputs(self.root,work,data,result)
+  at='2026-10-21T13:08:08+08:00';stamped=d.stamp_note_activity(self.root,files,at)
+  for rel,raw in stamped.items():
+   parts=raw.decode().split('---',2);meta=yaml.safe_load(parts[1]);self.assertEqual(meta['date'],'2026-10-19');self.assertEqual(meta['published_at'],at);self.assertEqual(meta['updated_at'],at);self.assertEqual(parts[2],files[rel].decode().split('---',2)[2])
+ def test_update_keeps_original_publication_time(self):
+  work,data,result=self.fixture_output();files,_=d.validate_outputs(self.root,work,data,result)
+  old='2026-10-20T08:00:00+08:00';new='2026-10-20T16:00:00+08:00'
+  first=d.stamp_note_activity(self.root,files,old)
+  for rel,raw in first.items():p=self.root/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(raw)
+  second=d.stamp_note_activity(self.root,files,new)
+  for raw in second.values():
+   meta=yaml.safe_load(raw.decode().split('---',2)[1]);self.assertEqual(meta['published_at'],old);self.assertEqual(meta['updated_at'],new)
  def test_social_longform_requires_explicit_source_format(self):
   work,data,result=self.fixture_output();data['items'][0]['type']='social'
   with self.assertRaises(d.IntakeError):d.validate_outputs(self.root,work,data,result)

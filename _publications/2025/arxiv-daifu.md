@@ -17,6 +17,7 @@ preprint: true
 links:
   Arxiv: https://doi.org/10.48550/arXiv.2507.01628
   bib: https://dblp.org/rec/journals/corr/abs-2507-01628.bib
+  pdf: https://arxiv.org/pdf/2507.01628
 ccf: null
 pub: arXiv.
 ---

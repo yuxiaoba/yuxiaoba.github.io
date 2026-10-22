@@ -1,27 +1,25 @@
 ---
-{
-  "id": "torchneuron",
-  "title": "2026年10月20日｜TorchNeuron：原生 PyTorch 后端带来的迁移机会与兼容边界",
-  "date": "2026-10-20",
-  "lang": "zh",
-  "published": true,
-  "layout": "article",
-  "maintenance": "daily-research",
-  "source_type": "tech",
-  "tags": [
-    "inference-serving",
-    "observability",
-    "systems-reliability"
-  ],
-  "summary": "从执行路径、通信语义、性能观测与测试分母理解 TorchNeuron 的 Trainium 原生后端公告。",
-  "long_read": true,
-  "source_url": "https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/",
-  "permalink": "/tech/zh/torchneuron/",
-  "authoring_source": "assistant",
-  "translation_source": "assistant-authored paired Chinese/English technical notes"
-}
+id: torchneuron
+title: 2026年10月20日｜TorchNeuron：原生 PyTorch 后端带来的迁移机会与兼容边界
+date: '2026-10-20'
+lang: zh
+published: true
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+- observability
+- systems-reliability
+summary: 从执行路径、通信语义、性能观测与测试分母理解 TorchNeuron 的 Trainium 原生后端公告。
+long_read: true
+source_url: https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/
+permalink: /tech/zh/torchneuron/
+authoring_source: assistant
+translation_source: assistant-authored paired Chinese/English technical notes
+published_at: "2026-10-20T08:44:36.800552+08:00"
+updated_at: "2026-10-20T08:44:36.800552+08:00"
 ---
-
 原文：[Introducing TorchNeuron: Native PyTorch backend for AWS Trainium](https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/) · 2026-10-19  
 作者：Nafea Bshara、Robert Hundt、Ron Diamant、Colin Brace、Rahul Solanki、Maen Suleiman、Khaled ElGalaind、Temesghen Kahsai、Cyril Bortolato、Indu Thangakrishnan、Shauheen Zahirazami、Sarang Ozarde、Adarsh Singh、Hanbo Wang、Esha Lakhotia、Jianying Lang。
 

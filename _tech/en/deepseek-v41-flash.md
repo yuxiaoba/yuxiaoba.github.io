@@ -17,8 +17,9 @@ source_url: https://blog.vllm.ai/blog/2026-10-07-deepseek-v41-flash
 permalink: /tech/en/deepseek-v41-flash/
 authorship: assistant
 translation_source: assistant
+published_at: "2026-10-20T09:29:16.460712+08:00"
+updated_at: "2026-10-20T09:29:16.460712+08:00"
 ---
-
 The interesting development in vLLM’s DeepSeek-V4.1-Flash support is the joint optimization of model structure and serving implementation. The official article reports roughly 1.9× better low-concurrency interactivity and 5.3× higher throughput than the day-zero implementation. The changes span reduced prefill work, cache representation, CUDA graphs, kernel fusion, and parallelism. Understanding the multipliers requires following the execution path.
 
 Original: [DeepSeek-V4.1-Flash on vLLM: 5x Agentic Throughput Since Day 0](https://blog.vllm.ai/blog/2026-10-07-deepseek-v41-flash)  

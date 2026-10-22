@@ -14,7 +14,9 @@ domains: []
 topics: []
 published: true
 preprint: false
-links: {}
+links:
+  DOI: https://doi.org/10.1145/3770855.3817863
+  code: https://github.com/huanghy95/StaR
 ccf: A
 pub: In ACM SIGKDD Conference on Knowledge Discovery and Data Mining.
 ---

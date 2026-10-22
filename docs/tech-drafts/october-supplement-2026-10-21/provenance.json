@@ -1,0 +1,170 @@
+{
+  "authorization": "User approved the eight recommended additions, exempt from project quantity limits for this supplement; no timer or normal quota change.",
+  "new_pairs": 6,
+  "reused": {
+    "jev-sre-diagnosis": "jev-sre-diagnosis",
+    "elastic-ep-online-scaling": "elastic-ep-downtime"
+  },
+  "reused_daily_job": ".preview/research-jobs/runs/20261022-083001-37782e1a6c-f4de8b",
+  "sources": [
+    {
+      "title": "Datadog Scout 1.0",
+      "url": "https://www.datadoghq.com/blog/ai/introducing-scout-sre-specialized-model-bits-ai/",
+      "reason": "SRE专用模型的训练模拟、证据奖励与成本—效果评估；有22页官方报告。",
+      "batch_date": "2026-10-15",
+      "verified_source_date": "2026-10-15",
+      "id": "scout-sre",
+      "final_url": "https://www.datadoghq.com/blog/ai/introducing-scout-sre-specialized-model-bits-ai/",
+      "html_sha256": "f066bad400e65f9e4b2f6ca61d7c76f2fcad0c28128069595adb9bdc543b599b",
+      "disposition": "new_bilingual_note"
+    },
+    {
+      "title": "Jev-Driven SRE Diagnosis",
+      "url": "https://www.sregym.com/blog/jev-driven-sre-diagnosis",
+      "reason": "确定性采集、候选选择和证据约束，且有失败分析与公开实现。",
+      "batch_date": "2026-10-19",
+      "verified_source_date": "2026-10-06",
+      "id": "jev-sre-diagnosis",
+      "final_url": "https://www.sregym.com/blog/jev-driven-sre-diagnosis",
+      "html_sha256": "bb806124fa5e4a57ee67ac3c7e314cdc978097e72272b761610ddc70e68ec8e8",
+      "disposition": "reuse_existing_daily"
+    },
+    {
+      "title": "Gen-AX：历史故障回放评测 Incident Agent",
+      "url": "https://zenn.dev/genax_corp/articles/5214d9e0228928",
+      "reason": "冻结生产遥测，在相同SQL环境评估诊断；区分实际根因与数据能证明的范围。",
+      "batch_date": "2026-10-01",
+      "verified_source_date": "2026-09-29",
+      "id": "incident-replay-evaluation",
+      "final_url": "https://zenn.dev/genax_corp/articles/5214d9e0228928",
+      "html_sha256": "3d3eab148ca772ad0dc49bb478201fd62399ed74ea2da687808a9a438f0566eb",
+      "disposition": "new_bilingual_note"
+    },
+    {
+      "title": "incident.io：Building Investigations",
+      "url": "https://incident.io/blog/building-investigations-what-it-takes-to-build-an-ai-sre",
+      "reason": "从原型到可用AI SRE的评估、工具与上下文工程。",
+      "batch_date": "2026-10-12",
+      "verified_source_date": "2026-10-01",
+      "id": "building-ai-sre",
+      "final_url": "https://incident.io/blog/building-investigations-what-it-takes-to-build-an-ai-sre",
+      "html_sha256": "10a4c784a1b6fbfee004346aee3f8f0b8d6de63f4fee0159b00f3cd4d7a0b94d",
+      "disposition": "new_bilingual_note"
+    },
+    {
+      "title": "NVIDIA Cluster Readiness Engine",
+      "url": "https://developer.nvidia.com/blog/validate-gpu-cluster-readiness-before-ai-workloads-land/",
+      "reason": "用真实分布式负载验证GPU集群，分层分组缩小疑似故障节点范围。",
+      "batch_date": "2026-10-03",
+      "verified_source_date": "2026-09-23",
+      "id": "gpu-cluster-readiness",
+      "final_url": "https://developer.nvidia.com/blog/validate-gpu-cluster-readiness-before-ai-workloads-land/",
+      "html_sha256": "c058c6bc0f39800789fdc5a986cc4f3c834a3c37f061c1319847ac13927b158b",
+      "disposition": "new_bilingual_note"
+    },
+    {
+      "title": "vLLM Elastic EP 近零停顿扩缩容",
+      "url": "https://vllm.ai/blog/2026-10-19-elastic-ep-near-zero-downtime",
+      "reason": "后台准备与短提交阶段，讨论MoE在线扩缩容及SLO边界。",
+      "batch_date": "2026-10-19",
+      "verified_source_date": "2026-10-19",
+      "id": "elastic-ep-online-scaling",
+      "final_url": "https://vllm.ai/blog/2026-10-19-elastic-ep-near-zero-downtime",
+      "html_sha256": "3293a1531bff6c9bc1d84af933d6b619ccedc00b7b227c2f187c920b3bd1708c",
+      "disposition": "reuse_existing_daily"
+    },
+    {
+      "title": "Humming 量化推理内核",
+      "url": "https://vllm.ai/blog/2026-10-21-humming",
+      "reason": "统一量化表示、内核组件与工作负载适配，有开源仓库和端到端实验。",
+      "batch_date": "2026-10-21",
+      "verified_source_date": "2026-10-21",
+      "id": "humming-quantized-kernels",
+      "final_url": "https://vllm.ai/blog/2026-10-21-humming",
+      "html_sha256": "ee92e6ce237e31f4d500e48800d461da091b3b0dff20038f4183a034544c0614",
+      "disposition": "new_bilingual_note"
+    },
+    {
+      "title": "LMCache v0.5.6",
+      "url": "https://github.com/LMCache/LMCache/releases/tag/v0.5.6",
+      "reason": "官方发布记录核实MP边界反序列化和管理接口默认值修复，适合缓存服务可靠性/安全阅读。",
+      "batch_date": "2026-10-20",
+      "verified_source_date": "Release timestamp needs explicit timezone conversion; distinguish release from blog date",
+      "id": "lmcache-056-security",
+      "final_url": "https://github.com/LMCache/LMCache/releases/tag/v0.5.6",
+      "html_sha256": "af1881ac54f574e56b0d612d48dfc61511f22dc1fbeda43bf68bc53d54de47ed",
+      "disposition": "new_bilingual_note"
+    }
+  ],
+  "images": [
+    {
+      "id": "scout-sre",
+      "path": "assets/images/tech/scout-sre/cost-quality.png",
+      "source_url": "https://www.datadoghq.com/blog/ai/introducing-scout-sre-specialized-model-bits-ai/",
+      "image_url": "https://web-assets.dd-static.net/42588/1791993571-scout-alerteval-cost-performance-chart.png?format=auto&fit=bounds&quality=75&disable=upscale&width=1400&dpr=1",
+      "sha256": "08bacd1b283d7804a54e8291decf4c909dafcbcad922fa71c6722d22ee3afea5",
+      "source_alt": "Pareto graph showing Scout 1.0 model quality vs. estimated inference costs against general-purpose frontier models"
+    },
+    {
+      "id": "building-ai-sre",
+      "path": "assets/images/tech/building-ai-sre/evaluation.svg",
+      "source_url": "https://incident.io/blog/building-investigations-what-it-takes-to-build-an-ai-sre",
+      "image_url": "https://cdn.sanity.io/images/oqy5aexb/production/0ae659e18504b86e0ed6617eb8338bc85299df1b-960x540.svg?w=2000&q=80&fit=max&auto=format",
+      "sha256": "c458e82c12ee39980b7b8815748f8d034328f0a33dc4214d45a4a8ca7b685764",
+      "source_alt": ""
+    },
+    {
+      "id": "gpu-cluster-readiness",
+      "path": "assets/images/tech/gpu-cluster-readiness/validation.webp",
+      "source_url": "https://developer.nvidia.com/blog/validate-gpu-cluster-readiness-before-ai-workloads-land/",
+      "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/09/image-1.webp",
+      "sha256": "4568b91679fcc944dfec7c75e01ea01d7b14116619d134243e908e0e9f347953",
+      "source_alt": "Diagram comparing passive NVSentinel monitoring with active NVCRE validation for a six-GPU cluster. NVSentinel ingests DCGM metrics, Xid errors, system logs, and cloud events to detect faults and drive cordon, drain, and remediation. NVCRE runs its test catalog through certification, workflow, and job stages, generating load and measuring results to identify gpu-02 running 8% slow despite emitting no telemetry. The tools operate in sequence: NVCRE identifies failing nodes, and NVSentinel remediates them."
+    },
+    {
+      "id": "humming-quantized-kernels",
+      "path": "assets/images/tech/humming-quantized-kernels/jit-flow.svg",
+      "source_url": "https://vllm.ai/blog/2026-10-21-humming",
+      "image_url": "https://vllm.ai/blog-assets/figures/humming/humming-jit-inference-en.svg",
+      "sha256": "aed6ae34cdd93a2f0049468f353a8ce213985e873e248aa56b99183f2330c0c7",
+      "source_alt": ""
+    },
+    {
+      "id": "humming-quantized-kernels",
+      "path": "assets/images/tech/humming-quantized-kernels/kernel-components.svg",
+      "source_url": "https://vllm.ai/blog/2026-10-21-humming",
+      "image_url": "https://vllm.ai/blog-assets/figures/humming/humming-cuda-architecture-en.svg",
+      "sha256": "159a95c6be8ebb21e24174f10dd29808e64a9948960bc7c0e3cb084f4f7049c8",
+      "source_alt": ""
+    },
+    {
+      "id": "incident-replay-evaluation",
+      "lang": "zh",
+      "path": "assets/images/tech/incident-replay-evaluation/replay-zh.svg",
+      "kind": "editorial-conceptual-diagram",
+      "sha256": "ba72e92a7d7f28ad0abcfb233cbf2578adbb030e4a8edca4fafef6e14577f73b"
+    },
+    {
+      "id": "lmcache-056-security",
+      "lang": "zh",
+      "path": "assets/images/tech/lmcache-056-security/boundaries-zh.svg",
+      "kind": "editorial-conceptual-diagram",
+      "sha256": "09537925ac47f4e352d9672ce0c25aa49ca5bb7bcb287061e8201652dcc90cea"
+    },
+    {
+      "id": "incident-replay-evaluation",
+      "lang": "en",
+      "path": "assets/images/tech/incident-replay-evaluation/replay-en.svg",
+      "kind": "editorial-conceptual-diagram",
+      "sha256": "c37259403163498435e61b73cdbc301fa2184a5325176d2053ead69d0af3c36b"
+    },
+    {
+      "id": "lmcache-056-security",
+      "lang": "en",
+      "path": "assets/images/tech/lmcache-056-security/boundaries-en.svg",
+      "kind": "editorial-conceptual-diagram",
+      "sha256": "32a03141c145dff0d7b5b538a1e1fbb282c758b59a89656a063db16fff1423aa"
+    }
+  ],
+  "editorial_policy": "Brief source findings plus explicitly separated engineering analysis, not full source translations. No systems installed or benchmark results reproduced."
+}

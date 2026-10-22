@@ -1,21 +1,24 @@
 ---
-id: "adaptive-verification"
-title: "2026-10-14 | Online Verification Budgets Without a Confidence Head"
-date: "2026-10-14"
-lang: "en"
+id: adaptive-verification
+title: 2026-10-14 | Online Verification Budgets Without a Confidence Head
+date: '2026-10-14'
+lang: en
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving"]
-summary: "An online acceptance estimator extends adaptive verification to more draft models; calibration, sampling correctness and throughput remain distinct."
-translation_source: "assistant"
-authorship: "assistant"
-source_url: "https://blog.vllm.ai/blog/2026-10-14-adaptive-verification-online-estimator"
-permalink: "/tech/en/adaptive-verification/"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+summary: An online acceptance estimator extends adaptive verification to more draft
+  models; calibration, sampling correctness and throughput remain distinct.
+translation_source: assistant
+authorship: assistant
+source_url: https://blog.vllm.ai/blog/2026-10-14-adaptive-verification-online-estimator
+permalink: /tech/en/adaptive-verification/
 long_read: true
+published_at: "2026-10-20T10:46:23.513966+08:00"
+updated_at: "2026-10-20T10:46:23.513966+08:00"
 ---
-
 Speculative decoding lets a cheaper draft model propose several tokens before the target verifies them. A longer draft can advance further in one step, but verification after a rejection can be wasted. vLLM's Adaptive Verification (AV) trims less promising draft tails using acceptance estimates. This update extends that budget control to existing draft checkpoints without a dedicated confidence head.
 
 Original: [Adaptive Verification Without a Confidence Head](https://vllm.ai/blog/2026-10-14-adaptive-verification-online-estimator)  

@@ -1,21 +1,26 @@
 ---
-id: "train-inference-consistency"
-title: "2026-10-14 | Bitwise Training–Inference Consistency: Keep Low Precision, Fix the Computation Path"
-date: "2026-10-14"
-lang: "en"
+id: train-inference-consistency
+title: '2026-10-14 | Bitwise Training–Inference Consistency: Keep Low Precision, Fix
+  the Computation Path'
+date: '2026-10-14'
+lang: en
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving", "self-improvement"]
-summary: "Shared inference kernels and aligned quantization and reduction yield zero mismatch on two architectures, with explicit training costs and baseline limits."
-translation_source: "assistant"
-authorship: "assistant"
-source_url: "https://blog.vllm.ai/blog/2026-10-14-train-inference-consistency"
-permalink: "/tech/en/train-inference-consistency/"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+- self-improvement
+summary: Shared inference kernels and aligned quantization and reduction yield zero
+  mismatch on two architectures, with explicit training costs and baseline limits.
+translation_source: assistant
+authorship: assistant
+source_url: https://blog.vllm.ai/blog/2026-10-14-train-inference-consistency
+permalink: /tech/en/train-inference-consistency/
 long_read: true
+published_at: "2026-10-20T10:46:23.513966+08:00"
+updated_at: "2026-10-20T10:46:23.513966+08:00"
 ---
-
 In reinforcement learning, an inference engine samples trajectories while a training engine recomputes token probabilities and updates parameters. If identical weights and prefixes produce different probabilities, the optimized policy numerically differs from the sampling policy. Low precision, dynamic batching, and different parallel layouts can compound this mismatch. This vLLM engineering report pursues bitwise agreement on the high-performance deployment path while retaining most rollout throughput.
 
 Original: [Finish RL Training Faster: Bitwise-Consistent, High-Performance, Agent-Driven](https://vllm.ai/blog/2026-10-14-train-inference-consistency)  

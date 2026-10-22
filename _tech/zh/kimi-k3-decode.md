@@ -1,21 +1,24 @@
 ---
-id: "kimi-k3-decode"
-title: "2026年10月16日｜Kimi K3 专用解码：速度收益与验证边界"
-date: "2026-10-16"
-lang: "zh"
+id: kimi-k3-decode
+title: 2026年10月16日｜Kimi K3 专用解码：速度收益与验证边界
+date: '2026-10-16'
+lang: zh
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving", "systems-reliability"]
-summary: "解析 CuTe DSL 解码中的融合、通信交叠与权重预取，并区分合成接受长度、纯解码和 AgentX 的比较条件。"
-authoring_source: "assistant"
-translation_source: "assistant-authored paired Chinese/English editorial notes"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+- systems-reliability
+summary: 解析 CuTe DSL 解码中的融合、通信交叠与权重预取，并区分合成接受长度、纯解码和 AgentX 的比较条件。
+authoring_source: assistant
+translation_source: assistant-authored paired Chinese/English editorial notes
 long_read: true
-source_url: "https://blog.vllm.ai/blog/2026-10-16-kimi-k3-megakernel"
-permalink: "/tech/zh/kimi-k3-decode/"
+source_url: https://blog.vllm.ai/blog/2026-10-16-kimi-k3-megakernel
+permalink: /tech/zh/kimi-k3-decode/
+published_at: "2026-10-19T20:41:00.047475+08:00"
+updated_at: "2026-10-19T20:41:00.047475+08:00"
 ---
-
 **Benjamin Chislett (NVIDIA) · vLLM 官方工程报告**  
 原文：[Hyper Optimizing Kimi K3 in vLLM: Moving Fast and Responsibly](https://vllm.ai/blog/2026-10-16-kimi-k3-megakernel)
 

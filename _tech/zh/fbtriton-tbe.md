@@ -14,8 +14,9 @@ tags:
 summary: 从 TBE 前后向、长短 run 分工和同步顺序，理解 Triton 重写的收益及硬件与形状边界。
 translation_source: assistant-authored paired Chinese/English technical reading notes
 permalink: /tech/zh/fbtriton-tbe/
+published_at: "2026-10-20T09:18:12.324996+08:00"
+updated_at: "2026-10-20T09:18:12.324996+08:00"
 ---
-
 **Meta Team: Daohang Shi, Oleksandr Stashuk, Rupert Wu, Liangbei Xu, Rich Zhu**  
 原文：[Modernizing Table Batched Embeddings with FBTriton](https://pytorch.org/blog/modernizing-table-batched-embeddings-with-fbtriton/) · [代码](https://github.com/meta-pytorch/torchrec/tree/main/torchrec/distributed/triton_tbe)
 

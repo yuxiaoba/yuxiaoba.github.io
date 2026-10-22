@@ -1,21 +1,25 @@
 ---
-id: "lmcache-mp-coordinator"
-title: "2026-10-16 | LMCache MP Coordinator: Finding Caches Across Servers"
-date: "2026-10-16"
-lang: "en"
+id: lmcache-mp-coordinator
+title: '2026-10-16 | LMCache MP Coordinator: Finding Caches Across Servers'
+date: '2026-10-16'
+lang: en
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving", "systems-reliability"]
-summary: "How registration, event gating, and an eventually consistent directory expand KV discovery, with clear boundaries around P2P transfer and prior performance results."
-authoring_source: "assistant"
-translation_source: "assistant-authored paired Chinese/English editorial notes"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+- systems-reliability
+summary: How registration, event gating, and an eventually consistent directory expand
+  KV discovery, with clear boundaries around P2P transfer and prior performance results.
+authoring_source: assistant
+translation_source: assistant-authored paired Chinese/English editorial notes
 long_read: true
-source_url: "https://blog.lmcache.ai/en/2026/10/16/finding-reusable-kv-caches-across-a-fleet-of-servers-lmcaches-mp-multiprocess-coordinator/"
-permalink: "/tech/en/lmcache-mp-coordinator/"
+source_url: https://blog.lmcache.ai/en/2026/10/16/finding-reusable-kv-caches-across-a-fleet-of-servers-lmcaches-mp-multiprocess-coordinator/
+permalink: /tech/en/lmcache-mp-coordinator/
+published_at: "2026-10-19T20:41:00.047475+08:00"
+updated_at: "2026-10-19T20:41:00.047475+08:00"
 ---
-
 **Siddhant Ray · Official LMCache technical article**  
 Original: [Finding Reusable KV Caches Across a Fleet of Servers: LMCache’s MP (MultiProcess) Coordinator](https://blog.lmcache.ai/en/2026/10/16/finding-reusable-kv-caches-across-a-fleet-of-servers-lmcaches-mp-multiprocess-coordinator/)
 

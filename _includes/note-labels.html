@@ -1,0 +1,1 @@
+{% if include.note.tags.size > 0 %}<ul class="note-labels{% if include.archive %} archive-entry-labels{% endif %}" aria-label="{{ t.tags }}">{% for topic in site.data.note_tags %}{% if include.note.tags contains topic.id %}<li data-topic="{{ topic.id }}">{{ topic[lang] | escape }}</li>{% endif %}{% endfor %}</ul>{% endif %}

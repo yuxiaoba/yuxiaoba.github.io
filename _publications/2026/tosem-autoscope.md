@@ -14,6 +14,8 @@ published: true
 preprint: false
 links:
   Arxiv: https://doi.org/10.48550/arXiv.2509.13852
+  DOI: https://doi.org/10.1145/3830907
+  pdf: https://arxiv.org/pdf/2509.13852
 ccf: A
 pub: In ACM Transactions on Software Engineering and Methodology.
 ---

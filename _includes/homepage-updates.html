@@ -1,5 +1,5 @@
-{% assign recent_digests = site.digest | where: 'lang', lang | where: 'published', true | sort: 'date' | reverse %}
-{% assign recent_tech = site.tech | where: 'lang', lang | where: 'published', true | sort: 'date' | reverse %}
+{% include ordered-notes.html collection=site.digest %}{% assign recent_digests = ordered_notes %}
+{% include ordered-notes.html collection=site.tech %}{% assign recent_tech = ordered_notes %}
 <section class="home-updates" aria-labelledby="recent-updates-heading">
 <h2 id="recent-updates-heading">{{ t.recent_updates }}</h2>
 <div class="update-columns">

@@ -1,0 +1,14 @@
+{%- assign ordered_notes = '' | split: ',' -%}
+{%- assign note_sort_keys = '' | split: ',' -%}
+{%- assign note_candidates = include.collection | where: 'lang', lang | where: 'published', true -%}
+{%- for candidate in note_candidates -%}
+  {%- assign activity_time = candidate.updated_at | default: candidate.published_at | default: candidate.date -%}
+  {%- capture note_sort_key -%}{{ candidate.date | date: '%Y-%m-%d' }}|{{ activity_time | date: '%s' }}|{{ candidate.path }}{%- endcapture -%}
+  {%- assign note_sort_keys = note_sort_keys | push: note_sort_key -%}
+{%- endfor -%}
+{%- assign note_sort_keys = note_sort_keys | sort | reverse -%}
+{%- for sort_key in note_sort_keys -%}
+  {%- assign note_path = sort_key | split: '|' | last -%}
+  {%- assign candidate = note_candidates | where: 'path', note_path | first -%}
+  {%- assign ordered_notes = ordered_notes | push: candidate -%}
+{%- endfor -%}

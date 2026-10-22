@@ -16,8 +16,9 @@ source_url: https://www.anthropic.com/engineering/redesigning-source-control
 permalink: /tech/zh/scion-source-control/
 writing_source: assistant
 translation_source: assistant-authored paired Chinese/English analysis
+published_at: "2026-10-20T10:29:21.485154+08:00"
+updated_at: "2026-10-20T10:29:21.485154+08:00"
 ---
-
 ## 当代码产出超过开发基础设施的承载力
 
 Anthropic 的 Scion 案例值得关注，因为它展示了编码 Agent 普及后，瓶颈如何从写代码转移到保存、分发和验证代码。团队报告，日合并量从 2026 年 5 月约 2,500 次增长到 9 月超过 30,000 次，五个月内完成了 monorepo 到自研版本控制系统的迁移。理解这次变化，要同时看数据结构、取回协议和开发流程，单纯增加镜像已经无法解释其解决路径。

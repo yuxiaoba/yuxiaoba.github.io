@@ -20,10 +20,10 @@ authors:
   - Xiaoyun Li
 
 links:
-  Paper: 
-  DOI: 
-  BibTex: 
-  Arxiv: 
+  Paper: null
+  DOI: https://doi.org/10.1145/3755881.3755887
+  BibTex: null
+  Arxiv: null
 year: 2025
 venue: Internetware
 ccf: C

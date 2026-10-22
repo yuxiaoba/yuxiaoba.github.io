@@ -1,20 +1,23 @@
 ---
-id: "vllm-bidirectional-kv"
-title: "2026年10月12日｜vLLM 双向 KV 传输：让多轮上下文回到预填充节点"
-date: "2026-10-12"
-lang: "zh"
+id: vllm-bidirectional-kv
+title: 2026年10月12日｜vLLM 双向 KV 传输：让多轮上下文回到预填充节点
+date: '2026-10-12'
+lang: zh
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving"]
-summary: "解释 decode→prefill 的缓存回传、路由元数据、保留时间与重算阈值，以及本地缓存未命中条件下的 TTFT 收益。"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+summary: 解释 decode→prefill 的缓存回传、路由元数据、保留时间与重算阈值，以及本地缓存未命中条件下的 TTFT 收益。
 long_read: true
-source_url: "https://blog.vllm.ai/blog/2026-10-12-bidirectional-kvxfer-multiturn-agentic-workload"
-permalink: "/tech/zh/vllm-bidirectional-kv/"
-translation_source: "assistant-authored paired Chinese/English synthesis; English translation by assistant"
+source_url: https://blog.vllm.ai/blog/2026-10-12-bidirectional-kvxfer-multiturn-agentic-workload
+permalink: /tech/zh/vllm-bidirectional-kv/
+translation_source: assistant-authored paired Chinese/English synthesis; English translation
+  by assistant
+published_at: "2026-10-20T10:16:04.808002+08:00"
+updated_at: "2026-10-20T10:16:04.808002+08:00"
 ---
-
 多轮 Agent 每次调用模型都会携带越来越长的历史。预填充与解码分离后，两类计算可以独立配置，但缓存也随之分散：decode 手里已有上轮生成内容的 KV，下一轮 prefill 却可能重新计算。vLLM 这篇文章的关键变化，是让已有 KV 能从 decode 回到 prefill，并把跨轮定位、保留时间和重算选择一起纳入执行路径。
 
 原文：[Improve TTFT for Multi-Turn Agentic Workloads with Bi-Directional KV Transfer in vLLM](https://blog.vllm.ai/blog/2026-10-12-bidirectional-kvxfer-multiturn-agentic-workload)  

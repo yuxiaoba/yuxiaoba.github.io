@@ -16,6 +16,8 @@ summary: 区分搜索与正文获取，理解来源追踪、空结果、失败�
 permalink: /tech/zh/deepseek-search-fetch/
 translation_source: Assistant-authored paired Chinese/English reading notes; checked
   against official documentation.
+published_at: "2026-10-19T20:41:14.997748+08:00"
+updated_at: "2026-10-19T20:41:14.997748+08:00"
 ---
 **DeepSeek · 官方更新与接口解读 · 2026-10-17**  
 原文：[10 月 17 日更新](https://api-docs.deepseek.com/updates/) · [Search & Fetch 指南](https://api-docs.deepseek.com/guides/search/)

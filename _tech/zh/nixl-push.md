@@ -1,21 +1,23 @@
 ---
-id: "nixl-push"
-title: "2026年10月14日｜NIXL Push：把 KV 传输准备移出首 token 关键路径"
-date: "2026-10-14"
-lang: "zh"
+id: nixl-push
+title: 2026年10月14日｜NIXL Push：把 KV 传输准备移出首 token 关键路径
+date: '2026-10-14'
+lang: zh
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
-tags: ["inference-serving"]
-summary: "提前分配和登记 decode 缓存，在 prefill 端后台推送 KV；解释延迟收益与提前选定目的节点的取舍。"
-translation_source: "assistant"
-authorship: "assistant"
-source_url: "https://blog.vllm.ai/blog/2026-10-14-nixl-push-connector"
-permalink: "/tech/zh/nixl-push/"
+layout: article
+maintenance: daily-research
+source_type: tech
+tags:
+- inference-serving
+summary: 提前分配和登记 decode 缓存，在 prefill 端后台推送 KV；解释延迟收益与提前选定目的节点的取舍。
+translation_source: assistant
+authorship: assistant
+source_url: https://blog.vllm.ai/blog/2026-10-14-nixl-push-connector
+permalink: /tech/zh/nixl-push/
 long_read: true
+published_at: "2026-10-20T10:46:23.513966+08:00"
+updated_at: "2026-10-20T10:46:23.513966+08:00"
 ---
-
 Prefill 与 decode 分开部署以后，两个阶段可以各自扩容，但请求必须把上下文状态从前者送到后者，才能继续生成。vLLM 的 NIXL Push connector 改变的是这次交接的时序：目的端提前准备，生产端在数据就绪后主动写入，将串行等待改为能重叠的工作。
 
 原文：[Push-Based KV Transfer to Improve TTFT and TPOT for Disaggregated Inference in vLLM](https://vllm.ai/blog/2026-10-14-nixl-push-connector)  

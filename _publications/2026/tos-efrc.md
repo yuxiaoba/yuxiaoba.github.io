@@ -12,7 +12,8 @@ domains: []
 topics: []
 published: true
 preprint: false
-links: {}
+links:
+  DOI: https://doi.org/10.1145/3799981
 ccf: null
 pub: In ACM Transactions on Storage.
 ---

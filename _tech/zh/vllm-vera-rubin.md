@@ -1,22 +1,23 @@
 ---
-id: "vllm-vera-rubin"
-title: "2026年10月9日｜vLLM 与 Vera Rubin：局部内存访问怎样转化为推理吞吐"
-date: "2026-10-09"
-lang: "zh"
+id: vllm-vera-rubin
+title: 2026年10月9日｜vLLM 与 Vera Rubin：局部内存访问怎样转化为推理吞吐
+date: '2026-10-09'
+lang: zh
 published: true
-layout: "article"
-maintenance: "daily-research"
-source_type: "tech"
+layout: article
+maintenance: daily-research
+source_type: tech
 tags:
-- "inference-serving"
-summary: "解读 vLLM 的 Rubin 适配、MoE locality domain 与 AgentX 结果，区分层级加速和服务吞吐的条件。"
-authorship: "assistant"
-translation_source: "assistant-authored paired Chinese/English research notes"
+- inference-serving
+summary: 解读 vLLM 的 Rubin 适配、MoE locality domain 与 AgentX 结果，区分层级加速和服务吞吐的条件。
+authorship: assistant
+translation_source: assistant-authored paired Chinese/English research notes
 long_read: true
-source_url: "https://vllm.ai/blog/2026-10-09-vera-rubin-preview"
-permalink: "/tech/zh/vllm-vera-rubin/"
+source_url: https://vllm.ai/blog/2026-10-09-vera-rubin-preview
+permalink: /tech/zh/vllm-vera-rubin/
+published_at: "2026-10-20T09:50:34.569269+08:00"
+updated_at: "2026-10-20T09:50:34.569269+08:00"
 ---
-
 **vLLM Team、Inferact、Red Hat、NVIDIA · 官方技术预览 · 2026-10-09**  
 原文：[vLLM Support for NVIDIA Vera Rubin NVL72: 7.8x Throughput over GB200 NVL72](https://vllm.ai/blog/2026-10-09-vera-rubin-preview)
 

@@ -1,2 +1,17 @@
-{% assign previous_month = '' %}{% for entry in entries %}{% assign month = entry.date | date: '%Y-%m' %}{% if month != previous_month %}{% unless forloop.first %}</div>{% endunless %}<h2 class="year-label">{% if lang == 'zh' %}{{ entry.date | date: '%Y年%-m月' }}{% else %}{{ entry.date | date: '%B %Y' }}{% endif %}</h2><div class="kitchen-list">{% assign previous_month = month %}{% endif %}
-<article>{% assign rendered_body = entry.content | markdownify %}{% if rendered_body contains '<img ' %}{% assign image_parts = rendered_body | split: '<img ' %}{% assign image = image_parts[1] | split: 'src="' | last | split: '"' | first %}{% if image %}<a href="{{ entry.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{% if image contains "://" %}{{ image | escape }}{% else %}{{ image | relative_url }}{% endif %}" alt="" loading="lazy"></a>{% endif %}{% endif %}<time>{% include local-date.html date=entry.date %}</time><h2><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h2>{% if entry.summary %}<p>{{ entry.summary | escape }}</p>{% endif %}<a class="small-action" href="{{ entry.url | relative_url }}">{{ t.read_note }}</a></article>{% if forloop.last %}</div>{% endif %}{% endfor %}
+<div class="kitchen-list life-feed">
+{% for entry in entries %}
+<article class="life-moment">
+<time class="life-moment-date" datetime="{{ entry.date | date: '%Y-%m-%d' }}"><span>{{ entry.date | date: '%-d' }}</span>{{ entry.date | date: '%Y.%m' }}</time>
+<div class="life-moment-content">
+<h2><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h2>
+{% if entry.summary %}<p class="life-moment-text">{{ entry.summary | escape }}</p>{% endif %}
+{% if entry.photos.size > 0 %}
+<div class="life-photo-grid{% if entry.photos.size == 1 %} life-photo-single{% elsif entry.photos.size == 3 %} life-photo-three{% endif %}" data-photo-group>
+{% for photo in entry.photos %}<a href="{{ photo.src | relative_url }}" data-photo-open data-photo-caption="{{ photo.caption | default: photo.alt | escape }}"><picture>{% if photo.webp %}<source srcset="{{ photo.webp | relative_url }}" type="image/webp">{% endif %}<img src="{{ photo.src | relative_url }}" alt="{{ photo.alt | escape }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy"></picture></a>{% endfor %}
+</div>
+{% else %}
+{% assign rendered_body = entry.content | markdownify %}{% if rendered_body contains '<img ' %}{% assign image_parts = rendered_body | split: '<img ' %}{% assign image = image_parts[1] | split: 'src="' | last | split: '"' | first %}{% if image %}<div class="life-photo-grid life-photo-single" data-photo-group><a href="{{ image | relative_url }}" data-photo-open data-photo-caption="{{ entry.title | escape }}"><img src="{{ image | relative_url }}" alt="{{ entry.title | escape }}" loading="lazy"></a></div>{% endif %}{% endif %}
+{% endif %}
+{% if entry.location %}<p class="life-moment-location">{{ entry.location | escape }}</p>{% endif %}
+</div></article>
+{% endfor %}</div>
