@@ -10,9 +10,7 @@
 {% include homepage-news.html %}
 {% include homepage-updates.html %}
 <section class="areas-section"><div class="section-head"><div><div class="eyebrow">{{ t.work }}</div><h2>{{ t.areas }}</h2></div><a class="small-action" href="{{ prefix | append: '/publications/' | relative_url }}">{{ t.publications }} ↗</a></div>
-{% assign research_image = '/assets/images/research/research-map-' | append: lang | append: '-v3-blue.png' %}
-{% assign research_webp = research_image | replace: '.png', '.webp' %}
-<figure class="research-figure"><a class="research-image-link" href="{{ research_image | relative_url }}" target="_blank" rel="noopener" aria-label="{{ t.research_image_open }}"><picture><source srcset="{{ research_webp | relative_url }}" type="image/webp"><img src="{{ research_image | relative_url }}" alt="{{ t.research_map_description }}" width="1536" height="1024" loading="lazy" decoding="async"></picture></a><figcaption><span>{{ t.research_image_caption }}</span><a href="{{ research_image | relative_url }}" target="_blank" rel="noopener">{{ t.research_image_open }} ↗</a></figcaption></figure>
+{% include research-diagram.html %}
 
 </section>
 <section class="profile-credentials"><section><h2>{{ t.education }}</h2>{% for item in localized.education %}<div class="education-entry"><time>{{ item.date }}</time><h3>{{ item.name }}</h3><p>{{ item.position }}</p>{% if item.advisor %}<p class="education-advisor">{{ item.advisor }}</p>{% endif %}</div>{% endfor %}</section><section><h2>{{ t.awards }}</h2><ul class="awards-list">{% for item in localized.awards %}<li><time>{{ item.date }}</time><span>{{ item.name }}</span></li>{% endfor %}</ul></section></section>

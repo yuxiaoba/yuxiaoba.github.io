@@ -12,6 +12,7 @@
 {% if page.section == 'digest' or page.section == 'tech' or page.section == 'search' %}<script type="module" src="{{ '/assets/js/search.js' | relative_url }}"></script>{% endif %}
 <link rel="stylesheet" href="{{ "/assets/css/editorial.css" | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/bookmarks.css' | relative_url }}">
+{% if page.section == 'home' %}<link rel="stylesheet" href="{{ '/assets/css/research-diagram.css' | relative_url }}"><script src="{{ '/assets/js/research-diagram.js' | relative_url }}" defer></script>{% endif %}
 {% if page.collection == 'digest' or page.collection == 'tech' or page.section == 'bookmarks' %}<script src="{{ '/assets/js/bookmarks.js' | relative_url }}" defer></script>{% endif %}
 {% if page.photo_album %}<link rel="stylesheet" href="{{ '/assets/css/life-album.css' | relative_url }}">{% endif %}
 {% if page.section == 'kitchen' %}<link rel="stylesheet" href="{{ '/assets/css/life-feed.css' | relative_url }}"><script src="{{ '/assets/js/life-photos.js' | relative_url }}" defer></script>{% endif %}

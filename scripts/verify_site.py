@@ -35,6 +35,9 @@ def audit(site):
         saved=soup(site/prefix/'bookmarks/index.html')
         check(saved.select_one('[data-bookmark-shelf]') is not None and not saved.select('[data-pagefind-body],.saved-note'),f'private bookmarks start empty and unindexed {lang}')
         home=soup(site/prefix/'index.html')
+        diagram=home.select_one('[data-research-diagram]')
+        check(diagram is not None and [n.get('data-direction') for n in diagram.select('button[disabled]')]==['cloud','ai','chaos'],f'research diagram has a static no-JS fallback {lang}')
+        check(len(diagram.select('.rd-topics strong'))==4 and diagram.select_one('.rd-method-note').get_text(strip=True),f'research directions remain readable without JavaScript {lang}')
         for collection in ['digest','tech']:
             archive=soup(site/prefix/collection/'index.html')
             attribution=archive.select_one('.note-attribution')
@@ -111,7 +114,10 @@ def audit(site):
             check(target.exists(),f'local resource {path.relative_to(site)} → {raw}')
             if url.fragment and target.suffix=='.html':
                 check(soup(target).find(id=unquote(url.fragment)) is not None,f'anchor {raw}')
-        check(not doc.select('a[href="#"],button[disabled]'),f'no fake links {path.relative_to(site)}')
+        # Diagram controls start disabled until their JS handlers are ready;
+        # their content remains readable. Resource links still cannot be fake.
+        disabled=[b for b in doc.select('button[disabled]') if b not in doc.select('[data-research-diagram] .rd-node[data-direction]')]
+        check(not doc.select('a[href="#"]') and not disabled,f'no fake links {path.relative_to(site)}')
     for excluded in ['.handoff','docs','scripts','AGENTS.md','vendor','.preview']:
         check(not (site/excluded).exists(),f'excluded output {excluded}')
     check(hashlib.sha256((ROOT/'files/ASPLOS25/Mint.pdf').read_bytes()).hexdigest()=='689902a7753a9fa3c9ba031e3be338c6d7e120a1399c4f600c67caf6427f4c03','Mint unchanged from user baseline')
