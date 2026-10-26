@@ -55,7 +55,7 @@ def read_batch(path):
     require(len(raw) <= 1024 * 1024, 'Input exceeds 1 MiB')
     data = yaml.load(raw.decode('utf-8'), Loader=UniqueLoader)
     require(isinstance(data, dict), 'Batch must be a mapping')
-    require('_intake_corrections' not in data, 'Reserved intake metadata field')
+    require(not ({'_intake_corrections', '_tech_article_limit'} & set(data)), 'Reserved intake metadata field')
     require(type(data.get('schema_version')) is int and data['schema_version'] == 1, 'schema_version must be integer 1')
     date = data.get('date')
     require(isinstance(date, str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}', date), 'date must be a YYYY-MM-DD string')
@@ -91,7 +91,12 @@ def read_batch(path):
         require(item.get('priority', 'normal') in {'normal', 'high'}, 'Invalid priority')
         if 'published_at' in item:
             value = item['published_at']; require(isinstance(value, str), 'published_at must be string')
-            if len(value) == 10: dt.date.fromisoformat(value)
+            # Source dates can be month-precise. Validate the calendar month
+            # without inventing a day or changing the input value/raw bytes.
+            if re.fullmatch(r'\d{4}-\d{2}', value):
+                try: dt.date.fromisoformat(value + '-01')
+                except ValueError: raise IntakeError(f'Invalid publication month for {ident}: {value}')
+            elif len(value) == 10: dt.date.fromisoformat(value)
             else: require(dt.datetime.fromisoformat(value.replace('Z', '+00:00')).tzinfo is not None, 'Timestamp needs timezone')
         related = item.get('related_urls', [])
         require(isinstance(related, list), 'related_urls must be list')
@@ -242,13 +247,15 @@ def invoke_worker(root, work, config, extra=''):
     require(code == 0, f'Codex exited {code}; see {work / "stderr.log"}')
     return json.loads((work / 'result.json').read_text())
 
-def validate_outputs(root, work, data, result):
+def validate_outputs(root, work, data, result, tech_limit=None):
     from PIL import Image
     output = work / 'output'; allowed = {}; routes = []; covered = set(); pairs = []
     items = {item['id']: item for item in data['items']}
     known_tags = {x['id'] for x in yaml.safe_load((root / '_data/note_tags.yml').read_text())}
     require(isinstance(result, dict), 'Result must be object')
     for name in ['articles', 'deferred', 'evidence', 'images']: require(isinstance(result.get(name), list), f'Missing result {name}')
+    if tech_limit is not None:
+        require(sum(a.get('kind') == 'tech' for a in result['articles']) <= tech_limit, 'Tech selection exceeds article limit')
     evidence_ids = set()
     for ev in result['evidence']:
         require(ev['source_id'] in items and ev.get('review_notes', '').strip(), 'Evidence must identify an input and review notes')
@@ -492,7 +499,9 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
                 entry = state['inputs'].setdefault(digest, {'file': path.name, 'date': data['date'], 'attempts': 0})
                 if data.get('_intake_corrections'): entry['intake_corrections'] = data['_intake_corrections']
                 if not selected_items: report['status'] = entry['status'] = 'already_covered'
-                elif any(collections.Counter(i['type'] for i in selected_items)[kind] > limit for kind, limit in config['max_items'].items()):
+                elif any(collections.Counter(i['type'] for i in selected_items)[kind] > limit
+                         for kind, limit in config['max_items'].items()
+                         if not (kind == 'tech' and config.get('select_important_tech'))):
                     report['status'] = entry['status'] = 'needs_review'; report['reason'] = 'Batch exceeds configured item limits; no model call made'
                     report.update(counts=dict(collections.Counter(i['type'] for i in selected_items)), limits=config['max_items'])
                     entry.update(review_reason=report['reason'], counts=report['counts'], limits=dict(config['max_items']), reviewed_at=now())
@@ -504,7 +513,12 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
                     ledger[day] = ledger.get(day, 0) + 1
                     atomic_json(state_path, state)
                     try:
-                        work = prepare_work(root, job, {**data, 'items': selected_items})
+                        worker_data = {**data, 'items': selected_items}
+                        tech_limit = config['max_items']['tech'] if config.get('select_important_tech') else None
+                        if tech_limit is not None:
+                            worker_data['_tech_article_limit'] = tech_limit
+                            report['tech_selection'] = {'article_limit': tech_limit, 'input_count': sum(i['type'] == 'tech' for i in selected_items)}
+                        work = prepare_work(root, job, worker_data)
                         report['x_exports'] = json.loads((work / 'sources/x_exports/manifest.json').read_text())
                         result = invoke_worker(root, work, config)
                         for line in (work / 'events.jsonl').read_text().splitlines():
@@ -512,7 +526,7 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
                                 event = json.loads(line)
                                 if event.get('type') == 'turn.completed': report['model_usage'] = event.get('usage', {})
                             except json.JSONDecodeError: pass
-                        files, pairs = validate_outputs(root, work, {**data, 'items': selected_items}, result)
+                        files, pairs = validate_outputs(root, work, worker_data, result, tech_limit=tech_limit)
                         files, pairs, replacements = merge_digest(root, {**data, 'items': selected_items}, digest, files, pairs)
                         files = stamp_note_activity(root, files, now())
                         report.update(summary=result['summary'], deferred=result['deferred'], appended_originals=list(replacements))

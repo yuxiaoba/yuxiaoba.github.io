@@ -17,9 +17,42 @@ class DailyTests(unittest.TestCase):
  def select(self,state=None):return d.select_batch(self.root,state or {'inputs':{}},self.config,'2026-10-19')
  def test_valid_batch_and_hash(self):
   p,data=self.batch();got,h,raw=d.read_batch(p);self.assertEqual(got,data);self.assertEqual(h,d.sha(raw))
+ def test_month_precision_preserves_source_value_and_raw_input(self):
+  p,data=self.batch();data['items'][0]['published_at']='2026-08';p.write_text(yaml.safe_dump(data));original=p.read_bytes()
+  got,h,raw=d.read_batch(p)
+  self.assertEqual(got,data);self.assertEqual(got['items'][0]['published_at'],'2026-08')
+  self.assertEqual(raw,original);self.assertEqual(p.read_bytes(),original);self.assertEqual(h,d.sha(original))
+  selected,errors=self.select();self.assertEqual(selected[2],p);self.assertEqual(errors,[])
+ def test_bad_source_months_and_unzoned_timestamps_still_rejected(self):
+  for value in ['2026-00','2026-13','0000-08','2026-8','2026','2026-08-32','2026-08-01T12:00:00']:
+   with self.subTest(value=value):
+    p,data=self.batch();data['items'][0]['published_at']=value;p.write_text(yaml.safe_dump(data))
+    with self.assertRaises(ValueError):d.read_batch(p)
+ def test_full_source_dates_and_zoned_timestamps_preserved(self):
+  for value in ['2026-08-01','2026-08-01T12:00:00Z','2026-08-01T12:00:00+08:00']:
+   with self.subTest(value=value):
+    p,data=self.batch();data['items'][0]['published_at']=value;p.write_text(yaml.safe_dump(data))
+    self.assertEqual(d.read_batch(p)[0],data)
+ def test_month_precision_only_applies_to_source_not_batch_date(self):
+  p,data=self.batch();data['date']='2026-08';p.write_text(yaml.safe_dump(data))
+  with self.assertRaises(d.IntakeError):d.read_batch(p)
  def test_duplicate_yaml_key(self):
   p,_=self.batch();p.write_text(p.read_text()+'revision: 1\n')
   with self.assertRaises(d.IntakeError):d.read_batch(p)
+ def test_input_cannot_override_server_tech_limit(self):
+  p,data=self.batch();data['_tech_article_limit']=999;p.write_text(yaml.safe_dump(data))
+  with self.assertRaises(d.IntakeError):d.read_batch(p)
+ def test_excess_tech_is_reviewed_without_silently_dropping_inputs(self):
+  p,data=self.batch();data['items']=[{'id':f'tech-{i}','type':'tech','title':'Tech','url':f'https://example.org/{i}'} for i in range(11)];p.write_text(yaml.safe_dump(data))
+  d.initialize(self.root,self.config);self.config['select_important_tech']=True;self.config['max_items']['tech']=10
+  def prepare(root,job,worker_data):
+   self.assertEqual(len(worker_data['items']),11);self.assertEqual(worker_data['_tech_article_limit'],10)
+   work=job/'work';(work/'sources/x_exports').mkdir(parents=True);(work/'output').mkdir();(work/'sources/x_exports/manifest.json').write_text('{}');(work/'events.jsonl').write_text('');return work
+  result={'summary':'Insufficient primary evidence','articles':[],'deferred':[{'id':i['id'],'reason':'Insufficient primary evidence'} for i in data['items']],'images':[],'evidence':[]}
+  with patch.object(d,'today',return_value='2026-10-19'),patch.object(d,'prepare_work',side_effect=prepare),patch.object(d,'invoke_worker',return_value=result) as worker:
+   report=d.run(self.root,self.config)
+  worker.assert_called_once();self.assertEqual(len(report['deferred']),11);self.assertEqual(report['tech_selection'],{'article_limit':10,'input_count':11})
+  self.assertNotEqual(report.get('reason'),'Batch exceeds configured item limits; no model call made')
  def test_not_ready(self):
   p,_=self.batch();p.write_text(p.read_text().replace('ready','draft'))
   with self.assertRaises(d.IntakeError):d.read_batch(p)
@@ -115,6 +148,12 @@ class DailyTests(unittest.TestCase):
    meta={'id':'test-tech','title':('2026年10月19日｜测试' if lang=='zh' else '2026-10-19 | Test'),'date':'2026-10-19','lang':lang,'published':True,'layout':'article','source_type':'tech','maintenance':'daily-research','tags':['inference-serving'],'summary':'Summary','long_read':True,'source_url':data['items'][0]['url'],'permalink':f'/tech/{lang}/test-tech/'}
    path.write_text('---\n'+yaml.safe_dump(meta,allow_unicode=True)+'---\n'+'Fixture text only. '*60)
   return work,data,result
+ def test_output_tech_limit_is_enforced(self):
+  work,data,result=self.fixture_output()
+  with self.assertRaisesRegex(d.IntakeError,'Tech selection exceeds article limit'):
+   d.validate_outputs(self.root,work,data,result,tech_limit=0)
+  files,pairs=d.validate_outputs(self.root,work,data,result,tech_limit=1)
+  self.assertEqual(len(pairs),1)
  def test_valid_pair(self):
   work,data,result=self.fixture_output();files,pairs=d.validate_outputs(self.root,work,data,result);self.assertEqual(len(files),2);self.assertEqual(len(pairs),1)
  def test_bilingual_activity_stamps_preserve_reading_date_and_body(self):

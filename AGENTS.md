@@ -64,6 +64,7 @@ Do not push, merge, deploy, schedule jobs, or send messages to other tasks witho
 - On 2026-10-20 the user superseded that shared-budget ordering for the remaining October 3–15 batches: prioritize these 13 exact approved input hashes and account for their calls separately from the normal daily quota. Keep attempt/time limits and the single consumer; let an already-running daily task finish. This exemption does not alter account/platform usage limits or authorize other historical inputs.
 - Existing manual articles remain protected. The approved October 11 merge may only append new readings to both language versions, preserving original body bytes, anchors and metadata identity under an expected-hash check; no arbitrary rewrites or deletions.
 - Enforce a single consumer, bounded run time and retry count, preserve the last good preview on failure, and record results under `.preview/research-jobs/`.
+- On 2026-10-26 the user changed Tech Notes selection: publish at most 10 per batch; when more technical items arrive, select the most important by research relevance, substantive contribution and primary evidence, and record each omitted item's reason. Do not silently truncate, alter paper coverage, or change daily/attempt/time quotas. Source publication dates may retain YYYY-MM precision; never invent a day.
 
 ## Daily production publishing (user-authorized 2026-10-22)
 

@@ -4,7 +4,8 @@
   "max_model_runs_per_day": 2,
   "max_attempts_per_input": 2,
   "max_run_seconds": 3600,
-  "max_items": {"paper": 24, "tech": 8, "social": 8},
+  "max_items": {"paper": 24, "tech": 10, "social": 8},
+  "select_important_tech": true,
   "codex_bin": "/root/.nvm/versions/node/v24.12.0/bin/codex",
   "publication": {
     "enabled": true,
