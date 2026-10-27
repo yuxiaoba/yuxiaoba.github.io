@@ -55,7 +55,7 @@ def read_batch(path):
     require(len(raw) <= 1024 * 1024, 'Input exceeds 1 MiB')
     data = yaml.load(raw.decode('utf-8'), Loader=UniqueLoader)
     require(isinstance(data, dict), 'Batch must be a mapping')
-    require(not ({'_intake_corrections', '_tech_article_limit'} & set(data)), 'Reserved intake metadata field')
+    require(not ({'_intake_corrections', '_tech_article_limit', '_curation_policy'} & set(data)), 'Reserved intake metadata field')
     require(type(data.get('schema_version')) is int and data['schema_version'] == 1, 'schema_version must be integer 1')
     date = data.get('date')
     require(isinstance(date, str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}', date), 'date must be a YYYY-MM-DD string')
@@ -247,6 +247,32 @@ def invoke_worker(root, work, config, extra=''):
     require(code == 0, f'Codex exited {code}; see {work / "stderr.log"}')
     return json.loads((work / 'result.json').read_text())
 
+def validate_selection(data, result):
+    """Check complete, consistent editorial decisions, never a numerical ranking."""
+    decisions = result.get('selection')
+    require(isinstance(decisions, list), 'Missing daily selection audit')
+    items = {item['id'] for item in data['items']}
+    included = {ident for article in result['articles'] for ident in article['source_ids']}
+    deferred = {entry['id'] for entry in result['deferred']}
+    seen = set()
+    for entry in decisions:
+        require(isinstance(entry, dict), 'Invalid selection decision')
+        ident = entry.get('id'); decision = entry.get('decision')
+        require(ident in items and ident not in seen, 'Unknown or duplicate selection ID')
+        seen.add(ident)
+        require(decision in {'deep_read', 'brief', 'exclude', 'needs_evidence', 'pending_capacity'}, 'Invalid selection disposition')
+        for field in ['relevance', 'contribution', 'reason']:
+            require(isinstance(entry.get(field), str) and entry[field].strip(), 'Missing selection rationale: ' + field)
+        evidence = entry.get('evidence_status')
+        require(evidence in {'verified', 'partial', 'unavailable'}, 'Invalid selection evidence status')
+        if decision in {'deep_read', 'brief'}:
+            require(ident in included and ident not in deferred and evidence == 'verified', 'Selected item needs a verified published disposition')
+        else:
+            require(ident in deferred and ident not in included, 'Unselected item must have a deferred disposition')
+        if decision == 'exclude':
+            require(evidence != 'unavailable', 'Unavailable evidence cannot justify a value rejection')
+    require(seen == items, 'Every input needs a selection decision')
+
 def validate_outputs(root, work, data, result, tech_limit=None):
     from PIL import Image
     output = work / 'output'; allowed = {}; routes = []; covered = set(); pairs = []
@@ -254,6 +280,7 @@ def validate_outputs(root, work, data, result, tech_limit=None):
     known_tags = {x['id'] for x in yaml.safe_load((root / '_data/note_tags.yml').read_text())}
     require(isinstance(result, dict), 'Result must be object')
     for name in ['articles', 'deferred', 'evidence', 'images']: require(isinstance(result.get(name), list), f'Missing result {name}')
+    if data.get('_curation_policy') == 'evidence-and-value-v1': validate_selection(data, result)
     if tech_limit is not None:
         require(sum(a.get('kind') == 'tech' for a in result['articles']) <= tech_limit, 'Tech selection exceeds article limit')
     evidence_ids = set()
@@ -501,7 +528,7 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
                 if not selected_items: report['status'] = entry['status'] = 'already_covered'
                 elif any(collections.Counter(i['type'] for i in selected_items)[kind] > limit
                          for kind, limit in config['max_items'].items()
-                         if not (kind == 'tech' and config.get('select_important_tech'))):
+                         if limit is not None and not (kind == 'tech' and config.get('select_important_tech'))):
                     report['status'] = entry['status'] = 'needs_review'; report['reason'] = 'Batch exceeds configured item limits; no model call made'
                     report.update(counts=dict(collections.Counter(i['type'] for i in selected_items)), limits=config['max_items'])
                     entry.update(review_reason=report['reason'], counts=report['counts'], limits=dict(config['max_items']), reviewed_at=now())
@@ -514,6 +541,8 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
                     atomic_json(state_path, state)
                     try:
                         worker_data = {**data, 'items': selected_items}
+                        if config.get('curate_by_value'):
+                            worker_data['_curation_policy'] = 'evidence-and-value-v1'
                         tech_limit = config['max_items']['tech'] if config.get('select_important_tech') else None
                         if tech_limit is not None:
                             worker_data['_tech_article_limit'] = tech_limit
@@ -530,6 +559,9 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
                         files, pairs, replacements = merge_digest(root, {**data, 'items': selected_items}, digest, files, pairs)
                         files = stamp_note_activity(root, files, now())
                         report.update(summary=result['summary'], deferred=result['deferred'], appended_originals=list(replacements))
+                        if config.get('curate_by_value'):
+                            report['selection'] = result['selection']
+                            report['selection_counts'] = dict(collections.Counter(e['decision'] for e in result['selection']))
                         if not pairs: report['status'] = 'needs_review'
                         else:
                             with locked(root):

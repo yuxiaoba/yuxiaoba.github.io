@@ -42,6 +42,54 @@ class DailyTests(unittest.TestCase):
  def test_input_cannot_override_server_tech_limit(self):
   p,data=self.batch();data['_tech_article_limit']=999;p.write_text(yaml.safe_dump(data))
   with self.assertRaises(d.IntakeError):d.read_batch(p)
+ def test_input_cannot_override_curation_policy(self):
+  p,data=self.batch();data['_curation_policy']='disabled';p.write_text(yaml.safe_dump(data))
+  with self.assertRaises(d.IntakeError):d.read_batch(p)
+ def decision(self,ident,decision='deep_read',evidence='verified'):
+  return {'id':ident,'decision':decision,'evidence_status':evidence,'relevance':'Explains a failure mode in agent systems','contribution':'Controlled evidence of the failure mechanism','reason':'Actionable mechanism and supported observations'}
+ def test_value_selection_is_complete_and_consistent(self):
+  work,data,result=self.fixture_output();data['_curation_policy']='evidence-and-value-v1'
+  data['items'].append({'id':'unverified','type':'paper'})
+  result['deferred']=[{'id':'unverified','reason':'Full text not available yet'}]
+  result['selection']=[self.decision('test-tech'),self.decision('unverified','needs_evidence','unavailable')]
+  files,pairs=d.validate_outputs(self.root,work,data,result);self.assertEqual(len(files),2);self.assertEqual(len(pairs),1)
+  for mode in ['missing','duplicate','unknown','wrong_disposition','unverified_published','unavailable_rejected','blank_reason']:
+   with self.subTest(mode=mode):
+    bad=copy.deepcopy(result)
+    if mode=='missing':bad.pop('selection')
+    elif mode=='duplicate':bad['selection'].append(bad['selection'][0])
+    elif mode=='unknown':bad['selection'][0]['id']='unknown'
+    elif mode=='wrong_disposition':bad['selection'][0]['decision']='exclude'
+    elif mode=='unverified_published':bad['selection'][0]['evidence_status']='partial'
+    elif mode=='unavailable_rejected':bad['selection'][1]['decision']='exclude'
+    elif mode=='blank_reason':bad['selection'][0]['reason']=' '
+    with self.assertRaises(d.IntakeError):d.validate_outputs(self.root,work,data,bad)
+ def test_no_count_limit_can_reject_eleven_valid_tech_articles(self):
+  work,data,result=self.fixture_output();template=result['articles'][0];evidence=result['evidence'][0]
+  originals={lang:d.frontmatter(work/'output'/template[lang+'_path']) for lang in ['zh','en']}
+  # Replace the single fixture with eleven independently identified bilingual notes.
+  for lang in ['zh','en']:(work/'output'/template[lang+'_path']).unlink()
+  data['items']=[];data['_curation_policy']='evidence-and-value-v1';result['articles']=[];result['evidence']=[];result['selection']=[]
+  for i in range(11):
+   ident=f'tech-{i}';url=f'https://example.org/{ident}';data['items'].append({'id':ident,'type':'tech','title':ident,'url':url})
+   article={'kind':'tech','source_ids':[ident]}
+   for lang in ['zh','en']:
+    meta,body=copy.deepcopy(originals[lang]);rel=f'_tech/{lang}/{ident}.md';meta.update(id=ident,source_url=url,permalink=f'/tech/{lang}/{ident}/');article[lang+'_path']=rel
+    (work/'output'/rel).write_text('---\n'+yaml.safe_dump(meta,allow_unicode=True)+'---'+body)
+   result['articles'].append(article);result['evidence'].append({**evidence,'source_id':ident,'url':url});result['selection'].append(self.decision(ident))
+  files,pairs=d.validate_outputs(self.root,work,data,result)
+  self.assertEqual(len(pairs),11);self.assertEqual(len(files),22)
+ def test_null_input_limits_allow_value_review_above_old_caps(self):
+  p,data=self.batch();data['items']=[{'id':f'{kind}-{i}','type':kind,'title':'Source','url':f'https://example.org/{kind}/{i}'} for kind,n in [('paper',25),('tech',11),('social',9)] for i in range(n)]
+  p.write_text(yaml.safe_dump(data));d.initialize(self.root,self.config);self.config.update(curate_by_value=True,select_important_tech=False,max_items={'paper':None,'tech':None,'social':None})
+  def prepare(root,job,worker_data):
+   self.assertEqual(len(worker_data['items']),45);self.assertEqual(worker_data['_curation_policy'],'evidence-and-value-v1');self.assertNotIn('_tech_article_limit',worker_data)
+   work=job/'work';(work/'sources/x_exports').mkdir(parents=True);(work/'output').mkdir();(work/'sources/x_exports/manifest.json').write_text('{}');(work/'events.jsonl').write_text('');return work
+  result={'summary':'Sources await verification','articles':[],'deferred':[{'id':i['id'],'reason':'Full source unavailable'} for i in data['items']],'images':[],'evidence':[],'selection':[self.decision(i['id'],'needs_evidence','unavailable') for i in data['items']]}
+  with patch.object(d,'today',return_value='2026-10-19'),patch.object(d,'prepare_work',side_effect=prepare),patch.object(d,'invoke_worker',return_value=result) as worker:
+   report=d.run(self.root,self.config)
+  worker.assert_called_once();self.assertEqual(report['selection_counts'],{'needs_evidence':45});self.assertEqual(report['selection'],result['selection']);self.assertFalse(report['applied'])
+  state=json.loads((self.root/'.preview/research-jobs/state.json').read_text());self.assertEqual(state['daily_runs']['2026-10-19'],1)
  def test_excess_tech_is_reviewed_without_silently_dropping_inputs(self):
   p,data=self.batch();data['items']=[{'id':f'tech-{i}','type':'tech','title':'Tech','url':f'https://example.org/{i}'} for i in range(11)];p.write_text(yaml.safe_dump(data))
   d.initialize(self.root,self.config);self.config['select_important_tech']=True;self.config['max_items']['tech']=10

@@ -1,7 +1,7 @@
 {
   "type": "object",
   "additionalProperties": false,
-  "required": ["summary", "articles", "deferred", "evidence", "images"],
+  "required": ["summary", "articles", "deferred", "evidence", "images", "selection"],
   "properties": {
     "summary": {"type": "string"},
     "articles": {"type": "array", "items": {
@@ -29,6 +29,53 @@
       "type": "object", "additionalProperties": false,
       "required": ["path", "source_id", "source_url", "review_notes"],
       "properties": {"path": {"type": "string"}, "source_id": {"type": "string"}, "source_url": {"type": "string"}, "review_notes": {"type": "string"}}
-    }}
+    }},
+    "selection": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "decision",
+          "relevance",
+          "contribution",
+          "evidence_status",
+          "reason"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "deep_read",
+              "brief",
+              "exclude",
+              "needs_evidence",
+              "pending_capacity"
+            ]
+          },
+          "relevance": {
+            "type": "string"
+          },
+          "contribution": {
+            "type": "string"
+          },
+          "evidence_status": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "partial",
+              "unavailable"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    }
   }
 }
