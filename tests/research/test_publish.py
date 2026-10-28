@@ -34,6 +34,17 @@ class PublicationTests(unittest.TestCase):
   self.assertEqual(self.remote_head(),commit);self.assertEqual(self.g('status','--porcelain'),'')
   self.assertEqual(set(self.g('diff','--name-only',self.base,commit).splitlines()),set(self.report['files']))
   self.assertEqual(self.publish()['commit'],commit);self.assertEqual(self.g('rev-list','--count','HEAD'),'2')
+ def history_approval(self):
+  import research_history as h
+  source=self.root/'.incoming/research/2026-08-01.yaml';source.parent.mkdir(parents=True,exist_ok=True)
+  source.write_text('schema_version: 1\ndate: "2026-08-01"\nrevision: 1\ntimezone: Asia/Shanghai\nstatus: ready\nitems: []\n')
+  digest=hashlib.sha256(source.read_bytes()).hexdigest();queue=self.root/h.QUEUE
+  queue.write_text(json.dumps({'version':1,'enabled':True,'range':h.BOUNDS,'quota_exempt':True,'publication_authorized':True,'entries':[{'file':source.name,'sha256':digest}]}))
+  self.report.update(origin='approved_history',input=source.name,input_sha256=digest,date='2026-08-01');self.save();return source
+ def test_history_publishes_only_hash_approved_input(self):
+  self.history_approval();result=self.publish();self.assertEqual(result['status'],'published');self.assertEqual(self.remote_head(),result['commit'])
+ def test_changed_history_input_blocks_publication(self):
+  source=self.history_approval();source.write_text(source.read_text()+'# changed\n');result=self.publish();self.assertEqual(result['status'],'blocked');self.assertEqual(self.remote_head(),self.base)
  def test_unrelated_local_change_blocks_and_preserves_it(self):
   (self.root/'keep.txt').write_text('user edit');self.assertEqual(self.publish()['status'],'blocked')
   self.assertEqual(self.remote_head(),self.base);self.assertEqual((self.root/'keep.txt').read_text(),'user edit')

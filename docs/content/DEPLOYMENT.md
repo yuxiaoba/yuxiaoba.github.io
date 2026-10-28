@@ -45,3 +45,9 @@ Only newly completed normal daily jobs are enrolled. Previous reports and explic
 manual/one-off backfills are not retroactively pushed. Disable future automatic
 publication with `publication.enabled: false` in daily-config.json; this leaves
 pending reports and commits intact and does not disable local generation.
+
+On 2026-10-28 the owner separately authorized the hash-pinned August/September queue
+to publish verified bilingual output. Its reports use `origin=approved_history`;
+the publisher rechecks that exact input against the separate approval file before
+staging. All existing file/branch/hash/CI gates still apply. This does not enroll
+arbitrary historical reports or the older October/manual queues retroactively.

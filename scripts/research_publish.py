@@ -34,6 +34,9 @@ def names(raw):
 
 
 def validate_batch(root, report):
+    if report.get('origin') == 'approved_history':
+        from research_history import require_approval
+        require_approval(root, report.get('input'), report.get('input_sha256'))
     require(report.get('applied') is True and report.get('status') in
             {'completed', 'completed_with_deferred'}, 'Batch has not passed local validation')
     require(report.get('checks', {}).get('build') and report.get('checks', {}).get('browser'),

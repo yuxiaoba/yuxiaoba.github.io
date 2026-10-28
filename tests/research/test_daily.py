@@ -127,6 +127,13 @@ class DailyTests(unittest.TestCase):
    with self.subTest(ident=ident):
     p,data=self.batch();data['items'][0]['id']=ident;p.write_text(yaml.safe_dump(data))
     with self.assertRaises(d.IntakeError):d.read_batch(p)
+ def test_verified_social_handle_underscore_keeps_raw_input(self):
+  p,data=self.batch();data['items']=[{'id':'x-Nebius_Academy-11410745','type':'social','title':'Post','url':'https://x.com/Nebius_Academy/status/2090417264411410745'}];p.write_text(yaml.safe_dump(data));raw=p.read_bytes()
+  value,h,original=d.read_batch(p);self.assertEqual(value['items'][0]['id'],'x-nebius-academy-11410745');self.assertEqual(value['_intake_corrections'][0]['before'],'x-Nebius_Academy-11410745');self.assertEqual(p.read_bytes(),raw);self.assertEqual(original,raw);self.assertEqual(h,d.sha(raw))
+ def test_social_underscore_requires_matching_handle_and_status(self):
+  for url in ['https://x.com/another_handle/status/12345678','https://x.com/right_handle/status/12340000']:
+   p,data=self.batch();data['items']=[{'id':'x-right_handle-12345678','type':'social','title':'Post','url':url}];p.write_text(yaml.safe_dump(data))
+   with self.assertRaises(d.IntakeError):d.read_batch(p)
  def test_intake_correction_report_is_auditable_in_dry_run(self):
   d.initialize(self.root,self.config);p,data=self.batch();data['items'][0]['id']='ARXIV-2610.22863';p.write_text(yaml.safe_dump(data));state_path=self.root/'.preview/research-jobs/state.json';before=state_path.read_bytes()
   with patch.object(d,'today',return_value='2026-10-19'):

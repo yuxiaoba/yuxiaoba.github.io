@@ -71,6 +71,17 @@ def read_batch(path):
     for position, item in enumerate(data['items']):
         require(isinstance(item, dict), 'Item must be a mapping')
         ident = item.get('id')
+        # X handles legitimately contain underscores. Only repair internal labels
+        # when their handle and status suffix agree with the actual source URL.
+        if item.get('type') == 'social' and isinstance(ident, str) and '_' in ident:
+            label = re.fullmatch(r'x-([A-Za-z0-9_]+)-(\d+)', ident.strip(), re.I)
+            source = urlsplit(item.get('url', ''))
+            post = re.fullmatch(r'/([A-Za-z0-9_]+)/status/(\d+)/?', source.path)
+            if label and post and source.scheme == 'https' and source.hostname in {'x.com', 'www.x.com', 'twitter.com', 'www.twitter.com'} and label[1].lower() == post[1].lower() and post[2].endswith(label[2]):
+                normalized = ident.strip().lower().replace('_', '-')
+                corrections.append({'item': position, 'field': 'id', 'before': ident, 'after': normalized,
+                                    'reason': 'Verified X handle/status label: lowercase and underscore-to-hyphen'})
+                item['id'] = ident = normalized
         # IDs are internal labels, not URLs or author names. Preserve the raw file
         # and its hash; only repair unambiguous ASCII case/outer whitespace here.
         if isinstance(ident, str) and re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9.-]*', ident.strip()):
@@ -497,7 +508,7 @@ def apply_candidate(root, site, files, before, report, replacements=None):
         raise
     return str(release)
 
-def run(root, config, dry_run=False, batch=None, one_off=False):
+def run(root, config, dry_run=False, batch=None, one_off=False, history=False):
     folder = root / '.preview/research-jobs'; state_path = folder / 'state.json'
     with queue_lock(folder):
         require(state_path.exists(), 'Initialize the historical baseline before enabling the consumer')
@@ -511,15 +522,19 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
             atomic_json(folder / 'latest-run.json', report)
             return report
         from research_backfill import select_approved, merge_digest, write_progress
-        require(not (batch and one_off), 'Choose --batch or --one-off, not both')
+        require(sum(bool(x) for x in [batch, one_off, history]) <= 1, 'Choose only one explicit queue mode')
         origin = 'manual' if batch else 'daily'
-        selected, errors = (None, []) if batch else select_approved(root, state, config, day, one_off=True)
+        selected, errors = (None, []) if batch or history else select_approved(root, state, config, day, one_off=True)
         exempt = selected is not None
-        if exempt: origin = 'one_off_backfill'
+        if history:
+            from research_history import select_next
+            selected, errors, origin = select_next(root, state, config, day)
+            exempt = selected is not None and origin == 'approved_history'
+        elif exempt: origin = 'one_off_backfill'
         elif not one_off:
             selected, daily_errors = select_manual_batch(root, state, config, day, batch) if batch else select_batch(root, state, config, day)
             errors.extend(daily_errors)
-        if selected is None and not batch and not one_off:
+        if selected is None and not batch and not one_off and not history:
             selected, backfill_errors = select_approved(root, state, config, day)
             errors.extend(backfill_errors)
             if selected is not None: origin = 'approved_backfill'
@@ -556,7 +571,7 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
                     job = folder / 'runs' / (dt.datetime.now().strftime('%Y%m%d-%H%M%S') + '-' + digest[:10] + '-' + uuid.uuid4().hex[:6]); job.mkdir(parents=True)
                     (job / path.name).write_bytes(raw); report['job'] = str(job.relative_to(root))
                     entry.update(status='running', attempts=entry['attempts'] + 1, job=report['job'])
-                    ledger = state.setdefault('one_off_runs', {}) if exempt else state['daily_runs']
+                    ledger = state.setdefault('history_runs', {}) if origin == 'approved_history' else state.setdefault('one_off_runs', {}) if exempt else state['daily_runs']
                     ledger[day] = ledger.get(day, 0) + 1
                     atomic_json(state_path, state)
                     try:
@@ -599,7 +614,7 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
                     if report['status'] == 'needs_review':
                         entry['review_reason'] = report.get('error') or report.get('reason') or report.get('summary', 'No publishable output; inspect the task report')
                     atomic_json(job / 'report.json', report)
-                    if publication_config.get('enabled') and origin == 'daily' and report.get('applied') and report['status'] in {'completed', 'completed_with_deferred'}:
+                    if publication_config.get('enabled') and origin in {'daily', 'approved_history'} and report.get('applied') and report['status'] in {'completed', 'completed_with_deferred'}:
                         report['publication'] = {'requested': True, 'status': 'pending'}
                         atomic_json(job / 'report.json', report)
                         report['publication'] = publish(root, job / 'report.json', publication_config)
@@ -608,6 +623,9 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
         if not dry_run:
             atomic_json(folder / 'latest-run.json', report)
             write_progress(root, state)
+            if history:
+                from research_history import write_progress as write_history_progress
+                write_history_progress(root, state, config)
         return report
 
 def main():
