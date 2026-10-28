@@ -5,7 +5,7 @@
   const body = reader.querySelector('.article-body');
   const zh = document.documentElement.lang.startsWith('zh');
   const mobile = () => window.matchMedia('(max-width:600px)').matches;
-  const headings = [...body.querySelectorAll('h2')];
+  const headings = [...body.querySelectorAll('h2, h3')];
   if (headings.length) {
     const toc = document.createElement('details');
     toc.className = 'tech-toc';

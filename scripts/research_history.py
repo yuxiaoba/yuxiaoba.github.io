@@ -65,7 +65,8 @@ def select_next(root,state,config,day):
     from research_daily import select_batch
     daily,errors=select_batch(root,state,config,day)
     today_errors=[error for error in errors if error.get('file','').startswith(day)]
-    if today_errors and daily_due():return None,today_errors,'daily'
+    if today_errors and daily_due() and state['daily_runs'].get(day,0)<config['max_model_runs_per_day']:
+        return None,today_errors,'daily'
     if daily and daily_due() and state['daily_runs'].get(day,0)<config['max_model_runs_per_day']:
         return daily,errors,'daily'
     selected,history_errors=select_history(root,state,config,day)

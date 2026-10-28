@@ -414,7 +414,8 @@ def check_rendered(root, site, pairs):
                         require(page.locator(f'.language-switch a[lang={opposite}]').get_attribute('href') == other, 'Wrong translation link')
                         page.locator('.article-body img').evaluate_all("async es=>{for(const e of es)e.loading='eager';await Promise.all(es.map(e=>e.decode()))}")
                         if route.startswith('/tech/'):
-                            require(page.locator('.tech-toc').count() == 1, 'Missing long-read contents')
+                            if page.locator('.article-body h2, .article-body h3').count():
+                                require(page.locator('.tech-toc').count() == 1, 'Missing long-read contents')
                             if page.locator('.note-image-link').count():
                                 page.locator('.note-image-link').first.click()
                                 page.locator('.tech-image-dialog').wait_for(state='visible')
