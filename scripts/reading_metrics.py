@@ -53,6 +53,7 @@ class Metrics:
         if len(self.secret) < 32: raise ValueError('Metrics key must contain at least 32 random bytes')
         self.catalog_path = Path(catalog); self.catalog = {}; self.catalog_time = None
         self.lock = threading.RLock()
+        self.total_files = {}; self.total_cache = {}; self.total_updated = 0
 
     def digest(self, value):
         return hmac.new(self.secret, value.encode(), hashlib.sha256).hexdigest()
@@ -84,7 +85,25 @@ class Metrics:
             if visitor not in row['visitors']: row['visitors'].append(visitor)
             value['events'][event_key] = True
             atomic_json(file, value)
+            self.total_updated = 0
             return True
+
+    def total_views(self, path):
+        """Expose one scalar; cache per-file totals, never expose visitor digests."""
+        with self.lock:
+            if time.monotonic() - self.total_updated < 2: return self.total_cache.get(path, 0)
+            names = set()
+            for file in self.directory.glob('????-??-??.json'):
+                names.add(file.name); stat = file.stat(); stamp = (stat.st_mtime_ns, stat.st_size)
+                if self.total_files.get(file.name, (None,))[0] != stamp:
+                    value = json.loads(file.read_text())
+                    self.total_files[file.name] = (stamp, {key: row['views'] for key, row in value['pages'].items()})
+            self.total_files = {name: value for name, value in self.total_files.items() if name in names}
+            totals = {}
+            for _, values in self.total_files.values():
+                for key, views in values.items(): totals[key] = totals.get(key, 0) + views
+            self.total_cache = totals; self.total_updated = time.monotonic()
+            return totals.get(path, 0)
 
     def report(self, day):
         dt.date.fromisoformat(day)
@@ -123,13 +142,24 @@ def create_app(settings=None):
         response.headers['Referrer-Policy'] = 'no-referrer'
         response.headers['X-Frame-Options'] = 'DENY'
         response.headers['Content-Security-Policy'] = "default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'"
-        if request.path == '/api/count' and request.headers.get('Origin') == ORIGIN:
+        if request.path in {'/api/count', '/api/views'} and request.headers.get('Origin') == ORIGIN:
             response.headers['Access-Control-Allow-Origin'] = ORIGIN
             response.headers['Vary'] = 'Origin'
         return response
 
     @app.get('/health')
     def health(): return jsonify(ok=True)
+
+    @app.get('/api/views')
+    def views():
+        if request.headers.get('Origin') not in {None, ORIGIN}: return jsonify(error='origin'), 403
+        key = metrics.digest('views\0' + address())
+        if not limiter.allow('views:' + key, 120): return jsonify(error='rate'), 429
+        path = request.args.get('path', '')
+        try:
+            if path not in metrics.pages(): return jsonify(error='path'), 400
+            return jsonify(views=metrics.total_views(path))
+        except (OSError, ValueError, KeyError): return jsonify(error='unavailable'), 503
 
     @app.route('/api/count', methods=['POST', 'OPTIONS'])
     def count():

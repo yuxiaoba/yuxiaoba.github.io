@@ -38,6 +38,28 @@ class MetricsTests(unittest.TestCase):
     def test_request_id_deduplicates_retries(self):
         self.send(1); self.send(1); self.assertEqual(self.report()['views'], 1)
 
+    def test_public_counter_returns_only_cumulative_views_without_counting(self):
+        metrics=self.app.extensions['metrics']
+        metrics.record(self.path,'1'*32,'203.0.113.1','Browser',day='2026-10-27')
+        metrics.record(self.path,'2'*32,'203.0.113.2','Browser',day='2026-10-28')
+        before={p.name:p.read_bytes() for p in (self.root/'data').glob('*.json')}
+        response=self.client.get('/api/views',query_string={'path':self.path},headers=self.headers)
+        self.assertEqual(response.status_code,200);self.assertEqual(response.json,{'views':2})
+        self.assertEqual(response.headers['Access-Control-Allow-Origin'],ORIGIN)
+        self.assertEqual(before,{p.name:p.read_bytes() for p in (self.root/'data').glob('*.json')})
+        metrics.record(self.path,'3'*32,'203.0.113.2','Browser',day='2026-10-28')
+        self.assertEqual(self.client.get('/api/views',query_string={'path':self.path}).json,{'views':3})
+
+    def test_public_counter_rejects_unknown_paths_and_cross_origin(self):
+        self.assertEqual(self.client.get('/api/views').status_code,400)
+        self.assertEqual(self.client.get('/api/views',query_string={'path':'/.metrics/settings.json'}).status_code,400)
+        self.assertEqual(self.client.get('/api/views',query_string={'path':self.path},headers={'Origin':'https://other.test'}).status_code,403)
+
+    def test_public_counter_corruption_is_not_reported_as_zero(self):
+        metrics=self.app.extensions['metrics'];metrics.record(self.path,'1'*32,'203.0.113.1','Browser',day='2026-10-27')
+        (self.root/'data/2026-10-27.json').write_text('broken')
+        self.assertEqual(self.client.get('/api/views',query_string={'path':self.path}).status_code,503)
+
     def test_no_raw_ip_user_agent_or_event_id_in_storage(self):
         self.send(7)
         saved = next((self.root/'data').glob('*.json')).read_text()

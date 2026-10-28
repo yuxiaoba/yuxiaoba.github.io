@@ -11,7 +11,7 @@ retrying the same event ID does not. Metrics failure does not block article rend
 requires the exact production HTTPS origin and skips automation, embedded pages,
 DNT/GPC and the local `gy-reading-metrics-disabled` preference. The bilingual
 `/privacy/` and `/zh/privacy/` pages let any reader opt out; the owner can use the same
-switch to exclude their own browser. No public visitor counter is displayed.
+switch to exclude their own browser. Article headers display cumulative pageviews. The public `/api/views?path=...` endpoint returns only the total for one allowlisted article; no visitor identifiers or private report data are exposed. Read-only queries never increment counts, including when a reader has opted out. On failure the UI keeps an em dash instead of inventing a zero.
 
 ## Metric definitions and limits
 
@@ -42,8 +42,7 @@ traffic volumes this file-based storage should be reassessed before raising guar
 
 The dashboard is `https://111.119.236.134/admin`; `/api/stats?date=YYYY-MM-DD` returns
 only aggregate counts. Both require the owner credentials, use HTTPS, disable caching
-and have no cross-origin read permission. No public report API or write-admin API is
-provided. Credentials are generated once by `scripts/setup_reading_metrics.py`, and
+and have no cross-origin read permission. The public endpoint is limited to one cumulative pageview scalar; there is no public visitor report or write-admin API. Credentials are generated once by `scripts/setup_reading_metrics.py`, and
 the login information is kept in `.metrics/admin-access.json` (mode 0600). Do not put
 that file or its contents in Git, page templates, URLs or public logs. The settings
 file contains a hash of the random password and a separate visitor-HMAC key.

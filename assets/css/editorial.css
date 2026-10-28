@@ -319,3 +319,6 @@
 }
 
 #warm-directions .update-digest .recent-note h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:5px}
+
+/* Public article counter; detailed reader statistics remain private. */
+#warm-directions .article-views{display:inline-flex;align-items:center;gap:5px;margin-left:6px;white-space:nowrap;color:var(--quiet);font-size:12px}
