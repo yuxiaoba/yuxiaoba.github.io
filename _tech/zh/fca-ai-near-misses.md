@@ -3,7 +3,9 @@ id: fca-ai-near-misses
 title: 2026年10月21日｜AI 近失事件：把拦住的错误变成可靠性证据
 date: '2026-10-21'
 lang: zh
-published: true
+published: false
+editorial_status: withdrawn
+editorial_review_date: "2026-10-27"
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,7 +20,7 @@ authoring_source: assistant
 translation_source: assistant
 permalink: /tech/zh/fca-ai-near-misses/
 published_at: '2026-10-24T08:39:06.506729+08:00'
-updated_at: '2026-10-24T08:39:06.506729+08:00'
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 如果一个 AI 发起了错误操作，却被权限检查或人工审批拦住，最终“没有损失”是否就意味着系统没有值得学习的故障？对能执行工具、改变业务状态的 Agent，这类事件可能同时说明两件事：上游决策存在缺陷，下游防线这次发挥了作用。只统计最终损失，会把两者一起藏起来。
 

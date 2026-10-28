@@ -3,7 +3,9 @@ id: modal-observability
 title: '2026-10-22 | Modal observability: connect multi-cloud incidents into one investigation'
 date: '2026-10-22'
 lang: en
-published: true
+published: false
+editorial_status: withdrawn
+editorial_review_date: "2026-10-27"
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,7 +20,7 @@ permalink: /tech/en/modal-observability/
 authoring_source: assistant
 translation_source: assistant-authored bilingual editorial and translation
 published_at: '2026-10-22T09:38:48.907626+08:00'
-updated_at: '2026-10-22T09:38:48.907626+08:00'
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 AI infrastructure involves more than supplying GPUs. A user sees a function call, while the platform coordinates scheduling, containers, networks and several providers' hardware. Similar failures can originate in customer code or underlying infrastructure. Modal's case is useful because it places observability across these responsibility boundaries: establish cross-layer context, then let engineers and investigation agents use the same production evidence. Reliability percentages are customer-reported outcomes; the operational mechanism is more transferable than a universal performance claim.
 

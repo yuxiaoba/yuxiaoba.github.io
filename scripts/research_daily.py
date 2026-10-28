@@ -16,7 +16,7 @@ from obsidian.transaction import locked, fingerprint, activate, atomic_json
 
 ROOT = Path(__file__).resolve().parents[1]
 TZ = ZoneInfo('Asia/Shanghai')
-TERMINAL = {'completed', 'completed_with_deferred', 'needs_review', 'already_covered', 'deferred_history'}
+TERMINAL = {'completed', 'completed_with_deferred', 'needs_review', 'already_covered', 'editorially_excluded', 'deferred_history'}
 
 class IntakeError(ValueError): pass
 class ReviewRequired(IntakeError): pass
@@ -134,6 +134,23 @@ def published_sources(root):
                 try: keys.add(source_key(url))
                 except ValueError: pass
     return keys
+
+def editorial_exclusions(root, items):
+    """Exact-source owner decisions; never a topic, author or domain blacklist."""
+    path = root / 'docs/research-inbox/curation-exclusions.json'
+    if not path.exists(): return {}
+    rules = json.loads(path.read_text())
+    require(rules.get('version') == 1 and isinstance(rules.get('entries'), list), 'Invalid editorial exclusions')
+    blocked = {}
+    for rule in rules['entries']:
+        require(isinstance(rule, dict) and isinstance(rule.get('url'), str), 'Invalid excluded source URL')
+        require(isinstance(rule.get('reason'), str) and rule['reason'].strip(), 'Excluded source needs a reason')
+        key = source_key(rule['url']); title = rule.get('title')
+        require(title is None or isinstance(title, str) and title.strip(), 'Invalid excluded source title')
+        for item in items:
+            if source_key(item['url']) == key and (title is None or ' '.join(item['title'].casefold().split()) == ' '.join(title.casefold().split())):
+                blocked[item['id']] = rule['reason']
+    return blocked
 
 def stamp_note_activity(root, files, timestamp):
     """Record the server publication attempt, consistently across a bilingual batch."""
@@ -521,11 +538,14 @@ def run(root, config, dry_run=False, batch=None, one_off=False):
             elif not exempt and state['daily_runs'].get(day, 0) >= config['max_model_runs_per_day']: report['status'] = 'daily_budget_reached'
             else:
                 existing = published_sources(root)
-                selected_items = [i for i in data['items'] if source_key(i['url']) not in existing]
-                report['already_covered'] = [i['id'] for i in data['items'] if i not in selected_items]
+                excluded = editorial_exclusions(root, data['items'])
+                selected_items = [i for i in data['items'] if i['id'] not in excluded and source_key(i['url']) not in existing]
+                report['already_covered'] = [i['id'] for i in data['items'] if i['id'] not in excluded and source_key(i['url']) in existing]
+                if excluded:
+                    report['editorially_excluded'] = [{'id':i['id'], 'url':i['url'], 'reason':excluded[i['id']]} for i in data['items'] if i['id'] in excluded]
                 entry = state['inputs'].setdefault(digest, {'file': path.name, 'date': data['date'], 'attempts': 0})
                 if data.get('_intake_corrections'): entry['intake_corrections'] = data['_intake_corrections']
-                if not selected_items: report['status'] = entry['status'] = 'already_covered'
+                if not selected_items: report['status'] = entry['status'] = 'editorially_excluded' if excluded else 'already_covered'
                 elif any(collections.Counter(i['type'] for i in selected_items)[kind] > limit
                          for kind, limit in config['max_items'].items()
                          if limit is not None and not (kind == 'tech' and config.get('select_important_tech'))):

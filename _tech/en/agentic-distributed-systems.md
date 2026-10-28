@@ -4,7 +4,9 @@ title: '2026-10-19 | From Microservices to Agents: Making Decision Quality a Rel
   Concern'
 date: '2026-10-19'
 lang: en
-published: true
+published: false
+editorial_status: withdrawn
+editorial_review_date: "2026-10-27"
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -21,7 +23,7 @@ writing_source: assistant
 translation_source: assistant
 permalink: /tech/en/agentic-distributed-systems/
 published_at: '2026-10-22T08:44:53.471250+08:00'
-updated_at: '2026-10-22T08:44:53.471250+08:00'
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 Every service can return successfully while the user's result deteriorates. Mallika Rao's architectural article places that problem in distributed-systems terms: once a system chooses tools, evidence, and subsequent steps at runtime, reliability must observe whether decisions are appropriate as well as whether requests complete. This is design analysis and a discussion of patterns, without performance experiments for a new algorithm.
 

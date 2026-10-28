@@ -187,6 +187,26 @@ class DailyTests(unittest.TestCase):
   self.assertNotEqual(d.source_key('https://vllm.ai/blog/a?v=1'),d.source_key('https://vllm.ai/blog/a?v=2'))
  def test_authenticated_url_rejected(self):
   with self.assertRaises(d.IntakeError):d.source_key('https://user:pass@example.org/paper')
+ def exclusion_rules(self,entries):
+  path=self.root/'docs/research-inbox/curation-exclusions.json';path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps({'version':1,'entries':entries}))
+ def test_editorial_exclusion_is_source_specific_and_preserves_other_topics(self):
+  self.exclusion_rules([{'url':'https://arxiv.org/abs/2610.22863','reason':'Owner-approved editorial withdrawal'}])
+  items=[{'id':'old','url':'https://arxiv.org/pdf/2610.22863v2','title':'Paper'}, {'id':'new','url':'https://arxiv.org/abs/2610.22864','title':'Paper on the same topic'}]
+  self.assertEqual(d.editorial_exclusions(self.root,items),{'old':'Owner-approved editorial withdrawal'})
+ def test_shared_updates_page_matches_title_not_future_releases(self):
+  self.exclusion_rules([{'url':'https://example.org/updates/','title':'Old release','reason':'Thin announcement'}])
+  items=[{'id':'old','url':'https://example.org/updates','title':' old   RELEASE '},{'id':'new','url':'https://example.org/updates/','title':'New release'}]
+  self.assertEqual(d.editorial_exclusions(self.root,items),{'old':'Thin announcement'})
+ def test_excluded_batch_uses_no_writing_quota_and_records_reason(self):
+  p,data=self.batch();self.exclusion_rules([{'url':data['items'][0]['url'],'reason':'Approved removal'}]);d.initialize(self.root,self.config);raw=p.read_bytes()
+  with patch.object(d,'today',return_value='2026-10-19'),patch.object(d,'invoke_worker',side_effect=AssertionError('Excluded source must not reach writer')):
+   report=d.run(self.root,self.config)
+  self.assertEqual(report['status'],'editorially_excluded');self.assertEqual(report['editorially_excluded'][0]['reason'],'Approved removal');self.assertEqual(report['already_covered'],[])
+  state=json.loads((self.root/'.preview/research-jobs/state.json').read_text());self.assertEqual(state['daily_runs'],{});self.assertEqual(p.read_bytes(),raw)
+  self.assertIsNone(d.select_batch(self.root,state,self.config,'2026-10-19')[0])
+ def test_invalid_editorial_rules_do_not_silently_disappear(self):
+  self.exclusion_rules([{'url':'https://example.org/source','reason':''}])
+  with self.assertRaises(d.IntakeError):d.editorial_exclusions(self.root,[])
  def fixture_output(self):
   _,data=self.batch();data['items'][0]['type']='tech';data['items'][0]['id']='test-tech'
   work=self.root/'work';(work/'output').mkdir(parents=True);(work/'sources').mkdir();(work/'sources/article.txt').write_text('Verified source evidence')

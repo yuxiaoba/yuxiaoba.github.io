@@ -4,7 +4,9 @@ title: '2026-10-20 | MiniMax M3.1 Flash: Evaluating Low Prices Across Complete A
   Tasks'
 date: '2026-10-20'
 lang: en
-published: true
+published: false
+editorial_status: merged
+editorial_review_date: "2026-10-27"
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -20,7 +22,7 @@ permalink: /tech/en/minimax-m31-flash/
 authoring_source: assistant
 translation_source: assistant-authored paired Chinese/English technical notes
 published_at: "2026-10-20T08:44:36.800552+08:00"
-updated_at: "2026-10-20T08:44:36.800552+08:00"
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 Original: [MiniMax M3.1 Flash: Redefining Agent Performance and Cost](https://www.minimax.io/blog/minimax-m31f) · MiniMax · 2026-10-19  
 

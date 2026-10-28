@@ -3,7 +3,9 @@ id: aws-well-architected-agent
 title: 2026年10月20日｜AWS Well-Architected Agent：从优化发现到可审阅的变更建议
 date: '2026-10-20'
 lang: zh
-published: true
+published: false
+editorial_status: withdrawn
+editorial_review_date: "2026-10-27"
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,7 +19,7 @@ permalink: /tech/zh/aws-well-architected-agent/
 authorship: assistant
 translation_source: assistant-authored bilingual analysis and translation
 published_at: '2026-10-23T12:22:02.560508+08:00'
-updated_at: '2026-10-23T12:22:02.560508+08:00'
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 云优化常常停在发现列表：有的资源规格偏大，有的数据库缺少故障切换，有的配置偏离最佳实践。真正消耗团队时间的，是判断先改什么、改动会影响谁，以及怎样把建议转成可审阅的代码。AWS Well-Architected Agent 的预览把业务目标、资源与应用上下文、基础设施即代码（IaC）评审接到同一条建议链上。值得关注的是这条链如何形成，而不是把“Agent”理解为系统已能独立接管生产变更。
 

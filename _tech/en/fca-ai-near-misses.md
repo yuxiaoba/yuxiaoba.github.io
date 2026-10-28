@@ -3,7 +3,9 @@ id: fca-ai-near-misses
 title: '2026-10-21 | AI Near Misses: Turning Blocked Errors into Reliability Evidence'
 date: '2026-10-21'
 lang: en
-published: true
+published: false
+editorial_status: withdrawn
+editorial_review_date: "2026-10-27"
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -19,7 +21,7 @@ authoring_source: assistant
 translation_source: assistant
 permalink: /tech/en/fca-ai-near-misses/
 published_at: '2026-10-24T08:39:06.506729+08:00'
-updated_at: '2026-10-24T08:39:06.506729+08:00'
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 If an AI proposes an incorrect operation but a permission check or human approval blocks it, does the absence of a loss mean there is no failure worth learning from? For agents that invoke tools and change business state, such an event can reveal two things together: an upstream decision defect and a downstream safeguard that worked this time. Counting only realized losses hides both.
 

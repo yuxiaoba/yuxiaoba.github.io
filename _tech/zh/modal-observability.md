@@ -3,7 +3,9 @@ id: modal-observability
 title: 2026年10月22日｜Modal 的可观测性：把多云故障放回同一条调查链
 date: '2026-10-22'
 lang: zh
-published: true
+published: false
+editorial_status: withdrawn
+editorial_review_date: "2026-10-27"
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,7 +19,7 @@ permalink: /tech/zh/modal-observability/
 authoring_source: assistant
 translation_source: assistant-authored bilingual editorial and translation
 published_at: '2026-10-22T09:38:48.907626+08:00'
-updated_at: '2026-10-22T09:38:48.907626+08:00'
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 AI 基础设施平台的难题不止是提供 GPU。用户看到的是一次函数执行，平台内部却要协调调度、容器、网络与多家云的硬件；同一种失败表象可能来自客户代码，也可能来自底层供应商。Modal 的案例值得读，是因为它把可观测性放在这些责任边界之间：先建立跨层上下文，再让工程师和调查 Agent 使用同一套生产证据。文中的可靠性数字是客户案例的自报结果，机制细节比把百分比当成通用收益更有参考价值。
 

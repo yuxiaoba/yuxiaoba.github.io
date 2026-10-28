@@ -3,7 +3,9 @@ id: grafana-workflows
 title: '2026-10-23 | Grafana Workflows: Incident Coordination as Inspectable Steps'
 date: '2026-10-23'
 lang: en
-published: true
+published: false
+editorial_status: withdrawn
+editorial_review_date: "2026-10-27"
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -19,7 +21,7 @@ permalink: /tech/en/grafana-workflows/
 translation_source: assistant
 authorship: assistant
 published_at: '2026-10-23T08:58:47.180720+08:00'
-updated_at: '2026-10-23T08:58:47.180720+08:00'
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 Incident response consumes attention beyond diagnosis: creating a channel, finding the commander, notifying support, sharing a runbook, and briefing newcomers all interrupt investigation. Grafana Workflows turns recurring coordination into explicit steps and calls Assistant where changing evidence needs interpretation, reducing manual context transfer between tools.
 

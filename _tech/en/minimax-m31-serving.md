@@ -18,9 +18,11 @@ permalink: /tech/en/minimax-m31-serving/
 authoring_source: assistant
 translation_source: assistant
 published_at: '2026-10-26T11:44:51.392682+08:00'
-updated_at: '2026-10-26T11:44:51.392682+08:00'
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 Adding a model to a support list can require coordinated changes to cache formats, dequantization, expert execution, speculative decoding, and communication layouts. vLLM’s MiniMax-M3.1-Flash article illustrates this integration. Native NVFP4 KV training establishes low-precision usability; turning saved bytes into concurrency and speed still requires changes throughout the serving path. [Original: vLLM Delivers Day-0 Support for MiniMax-M3.1-Flash](https://blog.vllm.ai/blog/2026-10-23-minimax-m31-flash).
+
+[MiniMax’s October 19 release announcement](https://www.minimax.io/blog/minimax-m31f) emphasizes long-running agent performance and cost, and describes more aggressive sparsity. It does not disclose the full serving configuration or architecture; the vLLM mechanisms and test conditions below provide the more concrete systems context.
 
 **Inferact and the vLLM Team · 2026-10-23**
 

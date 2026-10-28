@@ -3,7 +3,9 @@ id: grafana-workflows
 title: 2026年10月23日｜Grafana Workflows：把事故协作变成可检查的执行步骤
 date: '2026-10-23'
 lang: zh
-published: true
+published: false
+editorial_status: withdrawn
+editorial_review_date: "2026-10-27"
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,7 +20,7 @@ permalink: /tech/zh/grafana-workflows/
 translation_source: assistant
 authorship: assistant
 published_at: '2026-10-23T08:58:47.180720+08:00'
-updated_at: '2026-10-23T08:58:47.180720+08:00'
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 事故处理中，真正占用注意力的不只是诊断。建沟通频道、查值班负责人、通知支持团队、贴运行手册、给新加入的人解释进展，都可能把工程师从关键线索旁拉开。Grafana Workflows 把这些重复协作动作编排成步骤，再在需要理解变化信息的位置调用 Assistant，尝试减少跨工具搬运上下文的工作。
 

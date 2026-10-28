@@ -17,9 +17,11 @@ permalink: /tech/zh/minimax-m31-serving/
 authoring_source: assistant
 translation_source: assistant
 published_at: '2026-10-26T11:44:51.392682+08:00'
-updated_at: '2026-10-26T11:44:51.392682+08:00'
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 模型支持列表上新增一行，背后可能是缓存格式、反量化、专家执行、投机解码和通信布局一起变化。vLLM 对 MiniMax-M3.1-Flash 的首日支持文章，值得读的正是这种跨层组合：模型原生为 NVFP4 KV 训练，只解决了低精度可用性；要把省下的字节变成并发和速度，还需重新安排数据如何进入算子、如何跨 GPU 与跨节点移动。[原文：vLLM Delivers Day-0 Support for MiniMax-M3.1-Flash](https://blog.vllm.ai/blog/2026-10-23-minimax-m31-flash)。
+
+[MiniMax 10 月 19 日发布公告](https://www.minimax.io/blog/minimax-m31f)强调长流程 Agent 的性能与成本，并报告更激进的稀疏性。公告没有公开完整服务配置和架构；理解这些收益，需要结合下面的 vLLM 实现机制及对应测试条件。
 
 **Inferact and the vLLM Team · 2026-10-23**
 

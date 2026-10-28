@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "url": "https://api-docs.deepseek.com/updates/",
+      "reason": "正文核心是Search/Fetch端点、参数和错误处理；原文没有公开内部搜索架构或效果对照。大量可追溯性/缓存建议为笔记延伸，难以支撑独立研究进展长文。保留接口开放的一句短讯即可。",
+      "approved_on": "2026-10-27",
+      "title": "DeepSeek-V4.1-Flash-1017 Update / Opening up the in-house search API"
+    },
+    {
+      "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-well-architected-agent/",
+      "reason": "主体是预览功能、账号角色、区域、配额和IaC使用流程；正文明确没有新推理算法及修复成功率基准。与研究相关，但可迁移的新机制不够具体。可保留产品动态，移出独立精读。",
+      "approved_on": "2026-10-27"
+    },
+    {
+      "url": "https://grafana.com/blog/spend-less-time-on-operational-busywork-and-resolve-incidents-faster-with-grafana-workflows/",
+      "reason": "新增信息主要是事故启动、值班交接和周报蓝图；幂等、重试等关键机制未公开，正文后半大量通用工程推导。独立长文的信息增量较薄，可压成产品短讯。",
+      "approved_on": "2026-10-27"
+    },
+    {
+      "url": "https://www.infoq.com/articles/distributed-systems-microservices-agentic-ai/",
+      "reason": "属于架构观点与提问框架，没有可核对的新实现或实验；状态、动作与结果的边界可由本站更具体的研究承载。建议从每日技术进展移出，若需要可作为入门背景链接。",
+      "approved_on": "2026-10-27"
+    },
+    {
+      "url": "https://www.datadoghq.com/case-studies/modal/",
+      "reason": "属于供应商客户案例。未给出关联算法或标签规范，99%/96%缺少观察窗口与分母，长期篇幅主要由通用可观测性建议支撑。保留采用动态比独立机制精读更合适。",
+      "approved_on": "2026-10-27"
+    },
+    {
+      "url": "https://www.fca.org.uk/news/speeches/building-future-finance-age-ai",
+      "reason": "有价值的新信息是关注AI近失事件；其后大部分为假设退款案例和通用控制建议，原始材料没有相应实现或验证。保留治理动态，不扩成技术机制长文。",
+      "approved_on": "2026-10-27"
+    },
+    {
+      "url": "https://www.theregister.com/ai-and-ml/2026/10/20/uk-finance-watchdog-wants-firms-to-report-ai-failures-and-close-calls/5304078",
+      "reason": "有价值的新信息是关注AI近失事件；其后大部分为假设退款案例和通用控制建议，原始材料没有相应实现或验证。保留治理动态，不扩成技术机制长文。",
+      "approved_on": "2026-10-27"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.10256",
+      "reason": "用户确认将OOM-RL II移出本网站主线；保留原稿，不因新版本URL自动再收录。",
+      "approved_on": "2026-10-27"
+    },
+    {
+      "url": "https://x.com/AiCamila_/status/2106054821065425221",
+      "reason": "通用指标罗列，缺乏实质新信息。",
+      "approved_on": "2026-10-27"
+    },
+    {
+      "url": "https://x.com/MaryamMiradi/status/2108630569026294124",
+      "reason": "工具分类清单缺具体比较且有重复项目。",
+      "approved_on": "2026-10-27"
+    },
+    {
+      "url": "https://x.com/CloudNativeFdn/status/2111170417259958620",
+      "reason": "仅会议议题预告，未提供完整技术内容。",
+      "approved_on": "2026-10-27"
+    }
+  ]
+}

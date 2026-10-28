@@ -3,7 +3,9 @@ id: agentic-distributed-systems
 title: 2026年10月19日｜从微服务到 Agent：把决策质量纳入可靠性
 date: '2026-10-19'
 lang: zh
-published: true
+published: false
+editorial_status: withdrawn
+editorial_review_date: "2026-10-27"
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -19,7 +21,7 @@ writing_source: assistant
 translation_source: assistant
 permalink: /tech/zh/agentic-distributed-systems/
 published_at: '2026-10-22T08:44:53.471250+08:00'
-updated_at: '2026-10-22T08:44:53.471250+08:00'
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 服务全部返回成功，用户得到的结果仍可能越来越差。Mallika Rao 的架构文章把这一现象放到分布式系统的语境中：当系统在运行时选择工具、证据和后续步骤，可靠性就需要观察决策是否合适，而不仅是请求是否完成。它提供的是设计分析与模式讨论，没有给出新算法的性能实验。
 

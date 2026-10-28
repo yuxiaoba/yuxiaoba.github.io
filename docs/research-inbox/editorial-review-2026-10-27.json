@@ -1,0 +1,139 @@
+{
+  "approved_on": "2026-10-27",
+  "base_commit": "56f5a1131c545f017a96cfb96c459187890e7205",
+  "withdrawn_tech": [
+    "deepseek-search-fetch",
+    "aws-well-architected-agent",
+    "grafana-workflows",
+    "agentic-distributed-systems",
+    "modal-observability",
+    "fca-ai-near-misses"
+  ],
+  "merged_tech": {
+    "minimax-m31-flash": "minimax-m31-serving"
+  },
+  "removed_paper": "arxiv-2610.10256",
+  "merged_sections": [
+    "2026-10-27 AKV -> 2026-10-22",
+    "2026-10-15 Scout -> tech/scout-sre"
+  ],
+  "removed_community_posts": [
+    "2106054821065425221",
+    "2108630569026294124",
+    "2111170417259958620"
+  ],
+  "files": {
+    "_tech/zh/deepseek-search-fetch.md": {
+      "before_sha256": "fe2c6d65905cb64cf62653632323bef0ba9b89f3489738f18a58aab9e55223f3",
+      "after_sha256": "cca0ae997ef3d6a89f314c528e3e37749285e6d6f0680d3067e8c2d9572fcb38"
+    },
+    "_tech/en/deepseek-search-fetch.md": {
+      "before_sha256": "e4671d1944a47c52de8bcb4b250f34465538ee913a8145abcda15387986b3b8c",
+      "after_sha256": "bdb7fae5dfa578147d7a5592d842349f58f04c5f886830f9dab9164054c8c245"
+    },
+    "_tech/zh/aws-well-architected-agent.md": {
+      "before_sha256": "2fe4009d5f3967e8b3e852146ffdb24f2168d196ffe72939b52e0d55804a980f",
+      "after_sha256": "097d4257232d0898f78a5ca9fa3708afc6fe49467f6ff670447191f248a46862"
+    },
+    "_tech/en/aws-well-architected-agent.md": {
+      "before_sha256": "b6bde486e81357602c5f3d9e407ad57dc51e5c4d8b11c79cf4dc6b335a6dd715",
+      "after_sha256": "126bb954156544b534a38059e4c9ee37bde99cbec44cb7f948d3ba802285c1c9"
+    },
+    "_tech/zh/grafana-workflows.md": {
+      "before_sha256": "8c45c45ffb35e20b48a83c65be33c0702b509846a90a7288c21189878e2dd3b6",
+      "after_sha256": "9db615b617826c747b2398630d621d1b6904ab7c22983db53fbcb0673515a559"
+    },
+    "_tech/en/grafana-workflows.md": {
+      "before_sha256": "b54ed19cf01663c4922d58dec2b797a972b6a0530e480736d3d0e7774437e893",
+      "after_sha256": "318167ef8891f5fec8f662811aa15016f1c03dc7ced2aa1a9ac16ea7b8ef9775"
+    },
+    "_tech/zh/agentic-distributed-systems.md": {
+      "before_sha256": "7c1d76296c26938cb0227005e435a0815a8e4aaf5f6952370794068255e54fc3",
+      "after_sha256": "fd861a00174fbd613cedc1ab1f49fa51545a627d63e6e9afb55aaa719a8487e5"
+    },
+    "_tech/en/agentic-distributed-systems.md": {
+      "before_sha256": "9ad7df78ccd8cd88de8ca70d169545f0c81864e26374b0ad3d064ad4fd958b9f",
+      "after_sha256": "3cd27f816c95f7ef84ad51c71ef7b124f9726491a83fe228f847c5b71e32347d"
+    },
+    "_tech/zh/modal-observability.md": {
+      "before_sha256": "a0d5746b667da53c61e7a5a9fb28d54445962efdd539d819295dd59bb5c27903",
+      "after_sha256": "1611b5fa4550b5f0569c9eec4489150aecb3bd5157eb096f50a36735a3c6a946"
+    },
+    "_tech/en/modal-observability.md": {
+      "before_sha256": "ae7b4a0a3ca16ab9a521261cde884ec0a3c314c96dde73ec069470dc731edc6a",
+      "after_sha256": "05fa97a0a02edc73194a5e4c031afb71dc3bf0d8131db8fa8e6db158061c4662"
+    },
+    "_tech/zh/fca-ai-near-misses.md": {
+      "before_sha256": "9f4bacf315dccdfb424d9bfeb6e37c6a02159cf191642e014d980ead84ee3375",
+      "after_sha256": "cbfacde75c610d86bf77b23599a9149c14eed6f32b5372990e0587f010aa949e"
+    },
+    "_tech/en/fca-ai-near-misses.md": {
+      "before_sha256": "c422a894ef78bdb12852a2a65df3b5828bcd15f3e6af5d0e010a3e2435c57d1e",
+      "after_sha256": "79d588052c696b2b27d8212f4ef3d0ff79511ffdb599c79ef80db8d47e763db4"
+    },
+    "_tech/zh/minimax-m31-flash.md": {
+      "before_sha256": "625f0bdc6b5ea59aad7da17bb31c231403fcdd3f96d9fb94c9ac59e1c4d22910",
+      "after_sha256": "a03fb82755d8580626a64d6d8b081045dc178df17a90b8a65047faafeadc5e87"
+    },
+    "_tech/en/minimax-m31-flash.md": {
+      "before_sha256": "c406acc34cd7ef162ecb8f317fc0022f2adf3098a695bc953fc2078b8a158c00",
+      "after_sha256": "98975e6efc8f0e20b8b0e95e30bff26345d70db6057a134a60ecab82b939a9ab"
+    },
+    "_digest/zh/daily-2026-10-07.md": {
+      "before_sha256": "e1ce4a20c98ae2b35b564d559ddcdbaaf0ab2043bee6d537b624e5c6a7c8be73",
+      "after_sha256": "f71a3c05f91c6ec21172881c3404a3d0d6922787313ba6353e6582d532c0ae0f"
+    },
+    "_digest/zh/daily-2026-10-03.md": {
+      "before_sha256": "24d71d3ede957c6fd9c52a428e064db70b7a8d129f26e22bdcb26493b9b8ef9b",
+      "after_sha256": "9ccc3daec6d03d1c13bdacd8801331ef85175157f6aae3ad7a055c1e2ea1e102"
+    },
+    "_digest/zh/daily-2026-10-09.md": {
+      "before_sha256": "03c182563db0783cd1d35ddf12687a3257ccd3482e07a607f6caf0299f369bad",
+      "after_sha256": "96f5fc575b311721312febae4cb74c1336e3f118005a98fc4b00ca72826c7daa"
+    },
+    "_digest/zh/daily-2026-10-16.md": {
+      "before_sha256": "7c9d847f419d1735e0112647ec7e98ec9e16aadc44a0a4b68da585faf1596160",
+      "after_sha256": "bcf2315cdfd3b18d949bb650aa2abd12b06ba78fe5aae3792c68ac9b6568556f"
+    },
+    "_digest/zh/daily-2026-10-27.md": {
+      "before_sha256": "ff1286bf3fdc7d92d39ad8c8fd276cffa3735fd9d60025a08c8e80f55ffa6f4b",
+      "after_sha256": "5aeebf406c1decac9d9ce93c8fbf9619965840ec4ac46ab261460abcb0c09ffc"
+    },
+    "_digest/zh/daily-2026-10-15.md": {
+      "before_sha256": "0dae7a545f37afcbb351f930767f7c560bb328edcc4fbc97d26c89879f5c96ce",
+      "after_sha256": "606228f8d23d0f82acca800f68385b3c2f3a352ada30603d624419166668f22d"
+    },
+    "_tech/zh/minimax-m31-serving.md": {
+      "before_sha256": "8b6448d9a89202c50ce67dab5aa71035e63e6823faa9c83d3022080a825e594d",
+      "after_sha256": "6227c462040130ae49ac3447c6354c4e9cad6345e2cbebd055419d2c5fa3509a"
+    },
+    "_digest/en/daily-2026-10-07.md": {
+      "before_sha256": "1adef903900c18d1ba410ae480a499685de35b9bc7891b664661f6abb0733c28",
+      "after_sha256": "0e62d19090b7a145a6bfce4209dc8b97107bae3f06fe48e11483e3efc273fd2b"
+    },
+    "_digest/en/daily-2026-10-03.md": {
+      "before_sha256": "ab57531fc3507f6aa22bb343692547b68cd30d970e049656baf0a68521bbeab0",
+      "after_sha256": "7ef9da86645606b5975ee5802b59f06f77385e4b4c51a34f79b86417b6b4ffb6"
+    },
+    "_digest/en/daily-2026-10-09.md": {
+      "before_sha256": "36f37a5ce011bfa40c5d3d03e913e7fe59e8f738638aa7c4381e1f32057d586a",
+      "after_sha256": "6364478da07286a0228991152d377204e591681677998f92bd705ddff1561741"
+    },
+    "_digest/en/daily-2026-10-16.md": {
+      "before_sha256": "f28c83d02ee00f0312fc0f59389c2adafeffc4cc8bd28808081c755d415c6087",
+      "after_sha256": "afddaf26739116df7b5f675e01ecac7f0a56f707888722eec262a6d65a30729c"
+    },
+    "_digest/en/daily-2026-10-27.md": {
+      "before_sha256": "30794949f4c0185a4f24cd04c1c1fcfe7e33116d7736dd18827158a20b33e3b1",
+      "after_sha256": "e9de7380f5b0280696258215f417563753435edde726f10654cfc5ab25e76e61"
+    },
+    "_digest/en/daily-2026-10-15.md": {
+      "before_sha256": "797b423300e242222e50a13e410c3f9375c60abfd288964514dab9527de6ee05",
+      "after_sha256": "eb7462a540c7c79c2786122ed6a5a29fa9a9db3d6aad9c6b2acb6543e4a00c6f"
+    },
+    "_tech/en/minimax-m31-serving.md": {
+      "before_sha256": "964fb1382f3fbe9b0acd1d4b5a454ec61bfc9c682484899e1e4cd72520d11d4b",
+      "after_sha256": "2f9ab2ec31ef80fa4975e4cd3def29d3c40fd88e8cac0a4087935f8f72a88fc9"
+    }
+  }
+}

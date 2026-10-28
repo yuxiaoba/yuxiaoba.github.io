@@ -3,7 +3,9 @@ id: aws-well-architected-agent
 title: '2026-10-20 | AWS Well-Architected Agent: from findings to reviewable changes'
 date: '2026-10-20'
 lang: en
-published: true
+published: false
+editorial_status: withdrawn
+editorial_review_date: "2026-10-27"
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -19,7 +21,7 @@ permalink: /tech/en/aws-well-architected-agent/
 authorship: assistant
 translation_source: assistant-authored bilingual analysis and translation
 published_at: '2026-10-23T12:22:02.560508+08:00'
-updated_at: '2026-10-23T12:22:02.560508+08:00'
+updated_at: "2026-10-27T13:54:34.510124+08:00"
 ---
 Cloud optimization often stops at a list of findings: oversized resources, a database without failover, or configurations that diverge from best practices. Teams then spend time deciding what to change first, what else a change affects, and how to turn advice into reviewable code. The AWS Well-Architected Agent preview connects business goals, resource and application context, and infrastructure-as-code (IaC) reviews into a recommendation workflow. The interesting question is how that workflow is constructed, rather than whether the word “agent” implies independent control of production changes.
 
