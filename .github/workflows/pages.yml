@@ -39,10 +39,12 @@ jobs:
         run: |
           npm ci
           python -m pip install -r requirements-sync.txt
+          python -m pip install -r docs/metrics/requirements-server.txt
       - name: Test import and daily publishing rules
         run: |
           python -m unittest discover -s tests/obsidian
           python -m unittest discover -s tests/research
+          python -m unittest discover -s tests/metrics
       - name: Build and verify pages, resources, drafts and translations
         run: python scripts/verify_site.py
       - name: Record published source revision

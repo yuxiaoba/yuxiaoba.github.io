@@ -1,0 +1,14 @@
+[Unit]
+Description=Renew the short-lived IP certificate for readership metrics
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/GB-Project/yuxiaoba.github.io
+UMask=0077
+ExecStart=/home/GB-Project/yuxiaoba.github.io/.preview/metrics-venv/bin/certbot renew --config-dir /home/GB-Project/yuxiaoba.github.io/.metrics/acme --work-dir /home/GB-Project/yuxiaoba.github.io/.metrics/acme-production-work --logs-dir /home/GB-Project/yuxiaoba.github.io/.metrics/acme-production-logs --non-interactive --deploy-hook "/usr/bin/systemctl restart homepage-reading-metrics.service"
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/home/GB-Project/yuxiaoba.github.io/.metrics
+ProtectHome=read-only
+NoNewPrivileges=true

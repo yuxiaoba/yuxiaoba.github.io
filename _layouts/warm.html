@@ -12,6 +12,7 @@
 {% if page.section == 'digest' or page.section == 'tech' or page.section == 'search' %}<script type="module" src="{{ '/assets/js/search.js' | relative_url }}"></script>{% endif %}
 <link rel="stylesheet" href="{{ "/assets/css/editorial.css" | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/bookmarks.css' | relative_url }}">
+{% include reading-metrics.html %}
 {% if page.section == 'home' %}<link rel="stylesheet" href="{{ '/assets/css/research-diagram.css' | relative_url }}"><script src="{{ '/assets/js/research-diagram.js' | relative_url }}" defer></script>{% endif %}
 {% if page.collection == 'digest' or page.collection == 'tech' or page.section == 'bookmarks' %}<script src="{{ '/assets/js/bookmarks.js' | relative_url }}" defer></script>{% endif %}
 {% if page.photo_album %}<link rel="stylesheet" href="{{ '/assets/css/life-album.css' | relative_url }}">{% endif %}
@@ -34,5 +35,5 @@
 </header>
 <main id="main">{{ content }}</main>
 {% if page.section == 'kitchen' %}{% include life-viewer.html %}{% endif %}
-<footer class="footnote"><span>© {{ site.time | date: '%Y' }} {{ t.name }}</span><div class="footer-links"><a href="#warm-directions">{{ t.back_top }} ↑</a><a href="https://github.com/yuxiaoba/yuxiaoba.github.io">GitHub ↗</a></div></footer>
+<footer class="footnote"><span>© {{ site.time | date: '%Y' }} {{ t.name }}</span><div class="footer-links"><a href="{{ prefix | append: '/privacy/' | relative_url }}">{% if lang == 'zh' %}统计与隐私{% else %}Analytics & privacy{% endif %}</a><a href="#warm-directions">{{ t.back_top }} ↑</a><a href="https://github.com/yuxiaoba/yuxiaoba.github.io">GitHub ↗</a></div></footer>
 </div></body></html>

@@ -85,3 +85,9 @@ Do not push, merge, deploy, schedule jobs, or send messages to other tasks witho
 
 - Keep academic News aligned across Chinese and English: translate every published English record using `title_zh` or `_data/news_zh.yml`, preserving dates, venue links and claims. New or revised News needs both languages.
 - Use a single portrait frame aligned with the introduction's top edge; do not restore the offset decorative outline.
+
+## Private readership metrics (user-authorized 2026-10-28)
+
+- The user authorized a small self-hosted HTTPS counting service on the existing server, compatible with GitHub Pages and without a database. This is an exception to the earlier no-extra-services rule only for article metrics; the owner-feedback/removal interface remains deferred.
+- Count published Digest issues and Tech Notes only. Keep the dashboard owner-authenticated. Never put credentials, certificate keys, visitor digests or raw metrics into Git or static output. `.metrics/` is private; persistent runtime data uses the dedicated systemd state directory.
+- Use project-local dependencies, a non-root runtime, automatic IP-certificate renewal and isolated validation storage. Keep the research timer and existing preview services intact. Exclude previews, automation, search, bookmarks and reader opt-outs; do not infer completed reading or use popularity to withdraw research.

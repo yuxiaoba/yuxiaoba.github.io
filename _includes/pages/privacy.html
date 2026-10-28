@@ -1,0 +1,20 @@
+<section class="subpage"><div class="eyebrow">{{ t.name }}</div>
+{% if lang == 'zh' %}
+<h1>统计与隐私</h1>
+<p>网站仅对公开的每期 Paper Digest 和每篇 Tech Notes 记录页面访问，不将打开页面等同于读完文章。</p>
+<p>启用统计后，浏览器向站主的 HTTPS 服务发送文章路径和一次性的随机请求编号。服务用上海日期、网络地址与浏览器信息生成带密钥的摘要，估算当日独立访客；不将原始 IP、浏览器信息、搜索词、收藏或摘录写入统计文件。后台仅供站主查看。</p>
+<p>重复刷新会增加访问次数，同一天同一网络地址与浏览器通常只计一位访客。共享网络可能合并不同读者，更换网络或设备可能重复计数。统计不用于识别个人，不跨日期关联访客；不同日期的独立访客不能直接相加当作总人数。</p>
+<p>浏览器的 Do Not Track 或 Global Privacy Control 信号会阻止发送。预览站、自动化测试、搜索页和私人收藏页不计数。你也可以关闭此浏览器的统计；关闭标记仅保存在本地，清理浏览器数据后需重新设置。</p>
+{% else %}
+<h1>Analytics & privacy</h1>
+<p>Analytics covers only published Paper Digest issues and Tech Notes. Opening a page is not evidence that someone finished reading it.</p>
+<p>When enabled, your browser sends the article path and a one-time random request ID to the site owner's HTTPS service. The service combines the Shanghai calendar date, network address and browser information into a keyed digest to estimate daily unique visitors. Raw IP addresses, browser information, search terms, bookmarks and excerpts are not written to analytics files. Reports are private to the owner.</p>
+<p>Reloads increase pageviews. The same network address and browser usually count as one visitor per day. Shared networks can merge readers; changing networks or devices can count someone again. No identity is inferred or linked across dates. Daily visitor counts must not be added and presented as unique people across days.</p>
+<p>Do Not Track and Global Privacy Control signals suppress collection. Previews, automated tests, search pages and private bookmarks are excluded. You can also disable analytics in this browser. This preference is stored locally and must be set again if browser data is cleared.</p>
+{% endif %}
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin:24px 0" data-metrics-preference data-lang="{{ lang }}">
+<button class="bookmark-button" type="button" data-metrics-off>{% if lang == 'zh' %}关闭此浏览器的统计{% else %}Disable analytics in this browser{% endif %}</button>
+<button class="bookmark-button" type="button" data-metrics-on>{% if lang == 'zh' %}允许此浏览器的统计{% else %}Allow analytics in this browser{% endif %}</button>
+</div><p data-metrics-status role="status"></p>
+<noscript>{% if lang == 'zh' %}JavaScript 已关闭，不会发送访问统计。{% else %}JavaScript is disabled; no analytics events will be sent.{% endif %}</noscript>
+</section><script src="{{ '/assets/js/metrics-preference.js' | relative_url }}" defer></script>

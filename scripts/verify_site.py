@@ -22,6 +22,10 @@ def build(source, dest):
     from build_site import build as complete_build
     complete_build(source,dest)
 def audit(site):
+    analytics_enabled=yaml.safe_load((ROOT/'_config.yml').read_text()).get('reading_metrics',{}).get('enabled') is True
+    catalog=json.loads((site/'reading-metrics.json').read_text())
+    catalog_paths={p['path'] for p in catalog['pages']}
+    check(catalog['version']==1 and len(catalog_paths)==len(catalog['pages']),'analytics catalog has unique routes')
     published=[metadata(p) for p in (ROOT/'_publications').rglob('*.md') if metadata(p).get('published') is not False]
     years={str(p.get('year') or str(p['date'])[:4]) for p in published}
     for lang, prefix in [('en',''),('zh','zh/')]:
@@ -33,6 +37,9 @@ def audit(site):
             check(len(doc.select('.navigation a'))==5,f'navigation {prefix}{section}')
             check(doc.select_one('.bookmark-entry')['href']=='/'+prefix+'bookmarks/',f'bookmark entrance {prefix}{section}')
         saved=soup(site/prefix/'bookmarks/index.html')
+        privacy=soup(site/prefix/'privacy/index.html')
+        check(privacy.html['lang']==lang and privacy.select_one('[data-metrics-off]') is not None,f'bilingual analytics preference {lang}')
+        check(not saved.select('script[data-reading-metrics]') and not privacy.select('script[data-reading-metrics]'),f'private/preference pages do not count {lang}')
         check(saved.select_one('[data-bookmark-shelf]') is not None and not saved.select('[data-pagefind-body],.saved-note'),f'private bookmarks start empty and unindexed {lang}')
         home=soup(site/prefix/'index.html')
         diagram=home.select_one('[data-research-diagram]')
@@ -48,6 +55,11 @@ def audit(site):
                 if article.select_one('meta[http-equiv="refresh"]'):
                     continue  # Historical per-paper URLs redirect into a daily digest.
                 check(article.select_one('[data-bookmark-article]') is not None,f'bookmark controls enabled for {page_path.relative_to(site)}')
+                route='/'+str(page_path.relative_to(site)).removesuffix('index.html')
+                check(route in catalog_paths,f'published article in metrics allowlist {route}')
+                counter=article.select_one('script[data-reading-metrics]')
+                check(bool(counter)==analytics_enabled,f'analytics follows enabled configuration {route}')
+                if counter:check(counter['data-path']==route,f'analytics sends canonical article path {route}')
                 byline=article.select_one('.article-header .door-detail')
                 check(byline is not None and byline.select_one('time') is not None and byline.get_text(strip=True)==byline.time.get_text(strip=True),f'reading header shows date without personal byline {page_path.relative_to(site)}')
         check([x.get('class')[0] for x in home.select('.identity-intro,.home-updates,.quiet-news,.profile-biography')]==['identity-intro','profile-biography','quiet-news','home-updates'],f'homepage section order {lang}')
@@ -118,7 +130,7 @@ def audit(site):
         # their content remains readable. Resource links still cannot be fake.
         disabled=[b for b in doc.select('button[disabled]') if b not in doc.select('[data-research-diagram] .rd-node[data-direction]')]
         check(not doc.select('a[href="#"]') and not disabled,f'no fake links {path.relative_to(site)}')
-    for excluded in ['.handoff','docs','scripts','AGENTS.md','vendor','.preview']:
+    for excluded in ['.handoff','docs','scripts','AGENTS.md','vendor','.preview','.metrics']:
         check(not (site/excluded).exists(),f'excluded output {excluded}')
     check(hashlib.sha256((ROOT/'files/ASPLOS25/Mint.pdf').read_bytes()).hexdigest()=='689902a7753a9fa3c9ba031e3be338c6d7e120a1399c4f600c67caf6427f4c03','Mint unchanged from user baseline')
     check(not (ROOT/'files/FSE24/changerca.pdf').exists(),'ChangeRCA deletion preserved')
@@ -127,7 +139,8 @@ def fixtures():
     dest=REPORT/'fixture-site'
     with tempfile.TemporaryDirectory(prefix='homepage-content-') as work:
         source=Path(work)/'source'
-        shutil.copytree(ROOT,source,ignore=shutil.ignore_patterns('.git','.handoff','.preview','vendor','node_modules','_site','.bundle','.sass-cache','__pycache__'))
+        shutil.copytree(ROOT,source,ignore=shutil.ignore_patterns('.git','.handoff','.preview','.metrics','vendor','node_modules','_site','.bundle','.sass-cache','__pycache__'))
+        private_metrics=source/'.metrics';private_metrics.mkdir();(private_metrics/'secret.json').write_text('METRICS_SECRET_FIXTURE_NEVER_OUTPUT')
         private_life=source/'.incoming/life/private-fixture';private_life.mkdir(parents=True,exist_ok=True)
         (private_life/'note.txt').write_text('LIFE_PRIVATE_FIXTURE_NEVER_OUTPUT')
         def article(collection,lang,name,title,published=True,extra='',when='2026-10-10',updated=None):

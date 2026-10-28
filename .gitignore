@@ -14,5 +14,6 @@ _site/
 node_modules/
 
 .sync-state/
+.metrics/
 __pycache__/
 *.pyc

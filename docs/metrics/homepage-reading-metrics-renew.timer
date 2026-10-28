@@ -1,0 +1,11 @@
+[Unit]
+Description=Check IP certificate renewal twice daily
+
+[Timer]
+OnCalendar=*-*-* 03,15:17:00
+RandomizedDelaySec=120
+Persistent=true
+Unit=homepage-reading-metrics-renew.service
+
+[Install]
+WantedBy=timers.target
