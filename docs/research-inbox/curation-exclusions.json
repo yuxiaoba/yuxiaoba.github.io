@@ -2,6 +2,11 @@
   "version": 1,
   "entries": [
     {
+      "url": "https://www.anthropic.com/research/agents-judgment-calls",
+      "reason": "用户要求撤下《专家签字，是否仍代表独立判断？》及其对应英文文章，避免该来源自动重新收录。",
+      "approved_on": "2026-10-28"
+    },
+    {
       "url": "https://api-docs.deepseek.com/updates/",
       "reason": "正文核心是Search/Fetch端点、参数和错误处理；原文没有公开内部搜索架构或效果对照。大量可追溯性/缓存建议为笔记延伸，难以支撑独立研究进展长文。保留接口开放的一句短讯即可。",
       "approved_on": "2026-10-27",
