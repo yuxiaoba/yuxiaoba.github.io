@@ -165,6 +165,10 @@ def fixtures():
         # Fixtures must remain newer than real daily content as the site grows.
         published_dates=[dt.date.fromisoformat(str(metadata(p)['date'])[:10]) for col in ['_digest','_tech'] for p in (ROOT/col).rglob('*.md') if metadata(p).get('published') is True]
         latest=max(published_dates,default=dt.date(2026,10,10))+dt.timedelta(days=3)
+        # Both the latest digest and the newest tech fixtures must fall in
+        # the same month, including when the three-day offset crosses month-end.
+        if latest.day < 3:
+            latest=latest.replace(day=3)
         fixture_config=yaml.safe_load((source/'_config.yml').read_text());fixture_config['future']=True
         (source/'_config.yml').write_text(yaml.safe_dump(fixture_config,allow_unicode=True,sort_keys=False))
         for lang in ['zh','en']:
