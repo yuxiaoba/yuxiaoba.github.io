@@ -1,5 +1,9 @@
 # Private readership metrics
 
+The production readership service has been retired. The site no longer emits
+the tracking script or its article catalog. The setup and validation notes below
+are retained for reference; the service and its renewal timer should stay disabled.
+
 The public site remains on GitHub Pages. Only published Digest issues and Tech Notes
 load `assets/js/reading-metrics.js`. The script sends one asynchronous JSON request to
 `https://111.119.236.134/api/count` when a page becomes visible. It sends the canonical

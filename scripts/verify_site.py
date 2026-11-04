@@ -22,10 +22,7 @@ def build(source, dest):
     from build_site import build as complete_build
     complete_build(source,dest)
 def audit(site):
-    analytics_enabled=yaml.safe_load((ROOT/'_config.yml').read_text()).get('reading_metrics',{}).get('enabled') is True
-    catalog=json.loads((site/'reading-metrics.json').read_text())
-    catalog_paths={p['path'] for p in catalog['pages']}
-    check(catalog['version']==1 and len(catalog_paths)==len(catalog['pages']),'analytics catalog has unique routes')
+    check(not (site/'reading-metrics.json').exists(),'retired metrics catalog is absent')
     published=[metadata(p) for p in (ROOT/'_publications').rglob('*.md') if metadata(p).get('published') is not False]
     years={str(p.get('year') or str(p['date'])[:4]) for p in published}
     for lang, prefix in [('en',''),('zh','zh/')]:
@@ -38,7 +35,7 @@ def audit(site):
             check(doc.select_one('.bookmark-entry')['href']=='/'+prefix+'bookmarks/',f'bookmark entrance {prefix}{section}')
         saved=soup(site/prefix/'bookmarks/index.html')
         privacy=soup(site/prefix/'privacy/index.html')
-        check(privacy.html['lang']==lang and privacy.select_one('[data-metrics-off]') is not None,f'bilingual analytics preference {lang}')
+        check(privacy.html['lang']==lang and not privacy.select('[data-metrics-preference], script[src*=metrics]'),f'retirement notice without analytics controls {lang}')
         check(not saved.select('script[data-reading-metrics]') and not privacy.select('script[data-reading-metrics]'),f'private/preference pages do not count {lang}')
         check(saved.select_one('[data-bookmark-shelf]') is not None and not saved.select('[data-pagefind-body],.saved-note'),f'private bookmarks start empty and unindexed {lang}')
         home=soup(site/prefix/'index.html')
@@ -55,16 +52,10 @@ def audit(site):
                 if article.select_one('meta[http-equiv="refresh"]'):
                     continue  # Historical per-paper URLs redirect into a daily digest.
                 check(article.select_one('[data-bookmark-article]') is not None,f'bookmark controls enabled for {page_path.relative_to(site)}')
-                route='/'+str(page_path.relative_to(site)).removesuffix('index.html')
-                check(route in catalog_paths,f'published article in metrics allowlist {route}')
-                counter=article.select_one('script[data-reading-metrics]')
-                check(bool(counter)==analytics_enabled,f'analytics follows enabled configuration {route}')
-                if counter:check(counter['data-path']==route,f'analytics sends canonical article path {route}')
+                check(not article.select('[data-reading-metrics], [data-article-views], .article-views'), f'no reading analytics {page_path.relative_to(site)}')
                 byline=article.select_one('.article-header .door-detail')
                 plain_byline=BeautifulSoup(str(byline),'html.parser')
-                for counter in plain_byline.select('.article-views'):counter.decompose()
                 check(byline is not None and byline.select_one('time') is not None and plain_byline.get_text(strip=True)==byline.time.get_text(strip=True),f'reading header shows date without personal byline {page_path.relative_to(site)}')
-                check(bool(article.select_one('[data-article-views]'))==analytics_enabled,f'public counter follows analytics setting {page_path.relative_to(site)}')
         check([x.get('class')[0] for x in home.select('.identity-intro,.home-updates,.quiet-news,.profile-biography')]==['identity-intro','profile-biography','quiet-news','home-updates'],f'homepage section order {lang}')
         check(not home.select('main .cooking-door,main a[href$="/life/"]'),f'Life only in top navigation {lang}')
         updates=home.select_one('.home-updates')

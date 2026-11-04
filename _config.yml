@@ -1,8 +1,5 @@
 baseurl: ''
 url: ''
-reading_metrics:
-  enabled: true
-  endpoint: 'https://111.119.236.134/api/count'
 markdown: kramdown
 plugins:
 - jekyll-email-protect
