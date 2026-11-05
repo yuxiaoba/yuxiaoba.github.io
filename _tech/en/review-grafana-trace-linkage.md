@@ -4,7 +4,7 @@ title: '2026-11-04 | Trace linkage: connect the dots between your app traces and
   queries'
 date: '2026-11-04'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,6 +18,7 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/en/review-grafana-trace-linkage/
 ---
+
 
 Grafana trace linkage matches SQL samples through sqlcommenter trace/span IDs, falling back to normalized query text and database context. The fallback supplies query history, not a definitive record of that execution.
 

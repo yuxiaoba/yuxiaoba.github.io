@@ -20,6 +20,7 @@ translation_source: assistant-authored paired Chinese/English reading notes
 published_at: '2026-10-30T10:31:20.339125+08:00'
 updated_at: '2026-10-30T10:31:20.339125+08:00'
 ---
+
 Meta has deployed Catching JiTTests to generate executable tests for risky code changes and filter failures before they reach engineers. The tests expose behavioral differences; whether a difference is a bug still depends on the intended change.
 
 **Source:** Sreeja Thummala, Sophie Zeng, Mark Harman, Weini Liu and Eric Liu, [Catching Bugs Before They Land: JiTTesting’s Human-on-the-Loop Approach at Full Scale](https://engineering.fb.com/2026/10/29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/), October 29, 2026.

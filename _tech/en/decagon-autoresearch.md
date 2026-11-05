@@ -3,7 +3,7 @@ id: decagon-autoresearch
 title: 2026-10-30 | Testing inference optimization agents against production traffic
 date: '2026-10-30'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -22,6 +22,7 @@ translation_source: assistant-authored paired Chinese/English reading notes
 published_at: '2026-10-30T10:31:20.339125+08:00'
 updated_at: '2026-10-30T10:31:20.339125+08:00'
 ---
+
 Decagon's AutoResearch turns inference optimization into a repeatable cycle of diagnosis, experimentation and validation. Its central idea is to test proposals against the same workload, latency constraints and noise threshold before searching for the next bottleneck.
 
 **Source:** Pavi Dhiman and Cyrus Asgari, [Building an inference stack that improves itself](https://x.com/DecagonAI/status/2115511110120120437), October 28, 2026 (UTC).

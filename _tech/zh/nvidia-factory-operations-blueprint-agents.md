@@ -3,7 +3,7 @@ id: nvidia-factory-operations-blueprint-agents
 title: 2026年11月5日｜FOX：用同一块电路板的证据串起检测、返工与根因调查
 date: '2026-11-05'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -20,7 +20,8 @@ authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
 updated_at: '2026-11-05T08:55:14.344660+08:00'
 ---
-原文: [How NVIDIA Factory Operations Blueprint Coordinates AI Agents to Investigate Production Issues](https://developer.nvidia.com/blog/how-nvidia-factory-operations-blueprint-coordinates-ai-agents-to-investigate-production-issues/)  
+
+原文: [How NVIDIA Factory Operations Blueprint Coordinates AI Agents to Investigate Production Issues](https://developer.nvidia.com/blog/how-nvidia-factory-operations-blueprint-coordinates-ai-agents-to-investigate-production-issues/)<br>
 Samuel Ochoa, Carlos Garcia-Sierra · 2026-11-04
 
 ## 生产缺陷往往跨越多个工位

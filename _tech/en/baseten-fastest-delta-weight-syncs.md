@@ -19,7 +19,8 @@ translation_source: assistant-authored bilingual research notes
 published_at: '2026-10-31T08:34:05.438760+08:00'
 updated_at: '2026-10-31T08:34:05.438760+08:00'
 ---
-**Baseten · 2026-10-30**  
+
+**Baseten · 2026-10-30**<br>
 Original: [The fastest delta weight syncs in the world](https://www.baseten.co/blog/the-fastest-delta-weight-syncs-in-the-world/)
 
 In reinforcement learning, a trainer continually produces policies while inference replicas generate rollouts. When they do not share infrastructure, weights must cross environments; a long update pause can disrupt the training and serving loop. Baseten describes rebuilding delta synchronization around the weights already serving on the GPU, removing a complete CPU parent checkpoint.

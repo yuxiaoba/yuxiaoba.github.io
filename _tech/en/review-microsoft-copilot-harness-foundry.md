@@ -3,7 +3,7 @@ id: review-microsoft-copilot-harness-foundry
 title: 2026-10-29 | Introducing the Microsoft Copilot harness in Foundry Agent Service
 date: '2026-10-29'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -15,6 +15,7 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/en/review-microsoft-copilot-harness-foundry/
 ---
+
 
 Foundry distinguishes its preview managed Copilot harness from hosted-agent long-running recovery. The platform restarts interrupted work with original input; applications persist checkpoints and prevent duplicate external actions. Conversation history alone cannot restore work in progress.
 

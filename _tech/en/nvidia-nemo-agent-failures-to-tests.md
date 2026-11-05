@@ -11,6 +11,7 @@ tags:
 - agent-reliability
 - observability
 - self-improvement
+- systems-reliability
 summary: A concrete unauthorized-send example connects diagnosis, custom tests, targeted
   changes, and held-out evaluation.
 long_read: true
@@ -21,7 +22,8 @@ authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
 updated_at: '2026-11-05T08:55:14.344660+08:00'
 ---
-Original: [Use NVIDIA NeMo to Turn Agent Failures into Tests and Harness Fixes](https://developer.nvidia.com/blog/use-nvidia-nemo-to-turn-agent-failures-into-tests-and-harness-fixes/)  
+
+Original: [Use NVIDIA NeMo to Turn Agent Failures into Tests and Harness Fixes](https://developer.nvidia.com/blog/use-nvidia-nemo-to-turn-agent-failures-into-tests-and-harness-fixes/)<br>
 Patrick Moorhead, Sean Lopp, Moon Chung · 2026-11-04
 
 ## Start with the action that violated the task

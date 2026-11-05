@@ -20,6 +20,7 @@ authoring_source: assistant
 published_at: '2026-11-04T12:15:45.761142+08:00'
 updated_at: '2026-11-04T12:15:45.761142+08:00'
 ---
+
 A GPU or interconnect fault can make several ranks report NCCL failures. The final exception identifies where execution stopped, which may differ from where the failure began. Treating those errors independently can turn one cause into several incidents or blame a downstream symptom.
 
 NVIDIA Attribution analyzes one workload attempt at a time. It scopes execution by time and nodes, then correlates application logs, system logs, metrics, and scheduler state through deterministic rules. The [Diagnose Distributed AI Workload Failures with NVIDIA Attribution](https://developer.nvidia.com/blog/diagnose-distributed-ai-workload-failures-with-nvidia-attribution/), published on 2026-11-02, is by Gargi Prasad, Jason Sewall, Aaron Blakeman, Ajay Hotchandani, and Ashwin Poojary.

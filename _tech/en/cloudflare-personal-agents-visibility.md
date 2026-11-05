@@ -3,7 +3,7 @@ id: cloudflare-personal-agents-visibility
 title: '2026-11-05 | Personal-agent traffic: identity is not user authorization'
 date: '2026-11-05'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -20,7 +20,8 @@ authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
 updated_at: '2026-11-05T08:55:14.344660+08:00'
 ---
-Original: [See the agents, set the terms: new visibility and control for personal agents](https://blog.cloudflare.com/personal-agents-visibility-control/)  
+
+Original: [See the agents, set the terms: new visibility and control for personal agents](https://blog.cloudflare.com/personal-agents-visibility-control/)<br>
 Marina Elmore, Nicole Justus · Cloudflare · 2026-11-04
 
 Cloudflare adds Personal Assistants to Security Analytics’ Bot Analysis categories, with agent-specific request volumes, paths, status codes, and network details. This turns generic automated traffic into observable agent behavior, including where agents encounter access failures.

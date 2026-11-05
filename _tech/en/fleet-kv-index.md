@@ -14,12 +14,14 @@ source_url: https://sference.com/blog/kv-cache-index
 tags:
 - inference-serving
 - observability
+- systems-reliability
 summary: An event-driven cache view across replicas, tiers, and attention ranks, with
   explicit limits from staleness and hybrid models.
 permalink: /tech/en/fleet-kv-index/
 published_at: '2026-10-28T15:24:19.938525+08:00'
 updated_at: '2026-10-28T15:24:19.938525+08:00'
 ---
+
 A prefix in GPU memory is not equivalent to one on host memory, disk, or shared storage. sference describes how its scheduler turns those different reuse costs into routing inputs across a heterogeneous serving fleet.
 
 Original: [Tracking the KV Cache Across a Heterogeneous GPU Fleet](https://sference.com/blog/kv-cache-index) · Peter Us / sference · 2026-10-27.

@@ -3,7 +3,7 @@ id: cloudflare-personal-agents-visibility
 title: 2026年11月5日｜个人代理流量：识别代理身份，还不能推断用户授权
 date: '2026-11-05'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -19,7 +19,8 @@ authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
 updated_at: '2026-11-05T08:55:14.344660+08:00'
 ---
-原文: [See the agents, set the terms: new visibility and control for personal agents](https://blog.cloudflare.com/personal-agents-visibility-control/)  
+
+原文: [See the agents, set the terms: new visibility and control for personal agents](https://blog.cloudflare.com/personal-agents-visibility-control/)<br>
 Marina Elmore, Nicole Justus · Cloudflare · 2026-11-04
 
 Cloudflare 把 Personal Assistants 加入 Security Analytics 的 Bot Analysis 分类，并提供按代理名称筛选的请求量、路径、状态码和网络信息。对站点来说，这让“有自动化访问”细化为“哪个代理访问了哪些业务路径、在哪里遇到错误”，可用于观察代理访问兼容性。

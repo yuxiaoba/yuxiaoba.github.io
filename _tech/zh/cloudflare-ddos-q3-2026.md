@@ -3,7 +3,7 @@ id: cloudflare-ddos-q3-2026
 title: 2026年10月30日｜短促高频攻击增加：Cloudflare 的季度 DDoS 观察
 date: '2026-10-30'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,6 +17,7 @@ translation_source: assistant-authored paired Chinese/English reading notes
 published_at: '2026-10-30T10:31:20.339125+08:00'
 updated_at: '2026-10-30T10:31:20.339125+08:00'
 ---
+
 Cloudflare 的第三季度数据提醒运维团队，攻击风险不只来自极端峰值：大量短促攻击可能在人工响应之前结束，也可能反复影响服务。
 
 **来源：** Cloudforce One，[Cloudflare DDoS Threat Report 2026 Q3: More swarms, fewer giants](https://blog.cloudflare.com/ddos-threat-report-2026-q3/)，2026 年 10 月 29 日。

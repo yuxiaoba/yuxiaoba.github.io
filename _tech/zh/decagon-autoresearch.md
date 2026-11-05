@@ -3,7 +3,7 @@ id: decagon-autoresearch
 title: 2026年10月30日｜让推理优化智能体接受生产流量检验
 date: '2026-10-30'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -19,6 +19,7 @@ translation_source: assistant-authored paired Chinese/English reading notes
 published_at: '2026-10-30T10:31:20.339125+08:00'
 updated_at: '2026-10-30T10:31:20.339125+08:00'
 ---
+
 Decagon 的 AutoResearch 把推理服务优化变成可重复的诊断、实验和验证循环。关键不只是让智能体提出配置，而是让每次改动面对相同负载、延迟约束和噪声门槛，确认收益后才继续寻找新的瓶颈。
 
 **来源：** Pavi Dhiman 和 Cyrus Asgari，[Building an inference stack that improves itself](https://x.com/DecagonAI/status/2115511110120120437)，2026 年 10 月 28 日（UTC）。

@@ -12,6 +12,7 @@ tags:
 - agent-reliability
 - coding-agents
 - observability
+- systems-reliability
 translation_source: assistant-created bilingual notes
 permalink: /tech/en/review-google-gke-networking-dataplane-agentic-ai/
 ---

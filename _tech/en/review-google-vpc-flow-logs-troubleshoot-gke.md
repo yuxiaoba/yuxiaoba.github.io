@@ -3,7 +3,7 @@ id: review-google-vpc-flow-logs-troubleshoot-gke
 title: 2026-10-29 | Using VPC Flow Logs to troubleshoot GKE workloads
 date: '2026-10-29'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -15,6 +15,7 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/en/review-google-vpc-flow-logs-troubleshoot-gke/
 ---
+
 
 VPC Flow Logs attach workload, namespace and service context when traffic is sampled, retaining attribution after ephemeral pods disappear. An Online Boutique walkthrough illustrates dependency mapping and service traffic investigation at L3/L4.
 

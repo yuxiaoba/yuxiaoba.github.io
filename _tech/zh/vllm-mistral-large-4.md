@@ -9,6 +9,7 @@ maintenance: daily-research
 source_type: tech
 tags:
 - inference-serving
+- systems-reliability
 summary: Mistral Large 4 的 vLLM 支持展示了模型结构与服务系统如何共同决定长上下文性能：稀疏索引减少注意力读取，跨层共享减少缓存写入，服务端还要处理并行、图执行和分离式传输。
 long_read: true
 source_url: https://vllm.ai/blog/2026-10-29-mistral-large-4
@@ -17,6 +18,7 @@ translation_source: assistant-authored paired Chinese/English reading notes
 published_at: '2026-10-30T10:31:20.339125+08:00'
 updated_at: '2026-10-30T10:31:20.339125+08:00'
 ---
+
 Mistral Large 4 的 vLLM 支持展示了模型结构与服务系统如何共同决定长上下文性能：稀疏索引减少注意力读取，跨层共享减少缓存写入，服务端还要处理并行、图执行和分离式传输。
 
 **来源：** vLLM，[Day 0 support for Mistral Large 4 on vLLM](https://vllm.ai/blog/2026-10-29-mistral-large-4)，2026 年 10 月 29 日。

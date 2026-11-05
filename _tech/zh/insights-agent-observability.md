@@ -11,6 +11,7 @@ tags:
 - observability
 - agent-reliability
 - coding-agents
+- systems-reliability
 summary: Datadog 将过量上下文、缓存失效与无效重试连接到代码修改，同时区分预测收益与已测结果。
 translation_source: assistant
 authorship: assistant
@@ -20,6 +21,7 @@ permalink: /tech/zh/insights-agent-observability/
 published_at: '2026-11-01T08:44:13.804154+08:00'
 updated_at: '2026-11-01T08:44:13.804154+08:00'
 ---
+
 Agent 可观测性的下一步，是把轨迹中的问题转成可验证的修改。Datadog 用 Insights 分析 Insights 背后的 Agent，提供了几个具体例子：搜索返回太多内容、动态上下文破坏缓存前缀、缺参数的调用反复重试，以及模型猜错技能资源名。它们的共同点是，单次报错或总 token 数都不足以说明应该改哪里。
 
 原文：[How we use Insights to improve the agent behind Insights](https://www.datadoghq.com/blog/improving-insights-agent-observability/) · Alex Barksdale, Miguel Tulla Lizardi, Zhengda Lu · Datadog · 2026-10-30。

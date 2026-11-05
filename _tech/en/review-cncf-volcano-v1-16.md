@@ -4,7 +4,7 @@ title: '2026-10-29 | Volcano v1.16 Released: NamespaceQueue, fairshare, and a br
   HyperNode ecosystem'
 date: '2026-10-29'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -16,6 +16,7 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/en/review-cncf-volcano-v1-16/
 ---
+
 
 Volcano 1.16 introduces NamespaceQueue, usage-based fairshare and HyperNode anti-affinity. Its unschedulable-job cache waits for relevant events before retrying rejected work, reducing backlog checks while retaining watchdog retries.
 

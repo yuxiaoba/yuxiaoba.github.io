@@ -3,18 +3,20 @@ id: revolut-self-hosted-coding
 title: 2026-11-04 | How Revolut Tuned Coding-Model Serving on a Fixed GPU Fleet
 date: '2026-11-04'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
 tags:
 - inference-serving
 - coding-agents
-summary: Revolut describes tuning, costs and operational controls for self-hosted coding models, with context, cache and parallelism sized to its workload.
+summary: Revolut describes tuning, costs and operational controls for self-hosted
+  coding models, with context, cache and parallelism sized to its workload.
 source_url: https://ai.engineer/nyc/2026/talks/revolut
 permalink: /tech/en/revolut-self-hosted-coding/
 translation_source: assistant-authored paired Chinese and English
 ---
+
 Coding-agent cost and user experience depend on more than model capability: request context, cache reuse and serving parallelism all matter. At [AI Engineer NYC 2026](https://ai.engineer/nyc/2026/talks/revolut), Revolut's David Abitbol described its self-hosted coding-model deployment. This note draws on the conference page and its talk transcript.
 
 ## Tune the workload on a fixed fleet

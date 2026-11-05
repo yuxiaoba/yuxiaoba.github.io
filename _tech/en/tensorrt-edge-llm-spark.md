@@ -3,7 +3,7 @@ id: tensorrt-edge-llm-spark
 title: 2026-11-01 | Faster Edge Generation Does Not Necessarily Reduce TTFT
 date: '2026-11-01'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -19,6 +19,7 @@ permalink: /tech/en/tensorrt-edge-llm-spark/
 published_at: '2026-11-01T08:44:13.804154+08:00'
 updated_at: '2026-11-01T08:44:13.804154+08:00'
 ---
+
 [Run AI Models for Edge Application Development with Just a Few Commands](https://developer.nvidia.com/blog/run-ai-models-for-edge-application-development-with-just-a-few-commands/) · Joe Halabi, Lin Chai, Maximilien Breughe, Michael Ferry, Charlotte Mallo · NVIDIA · 2026-10-30.
 
 TensorRT Edge-LLM uses a lightweight C++ runtime across development on DGX Spark and deployment on Thor platforms. Its CLI downloads models, builds or reuses matching engines, and offers a local compatible API. The most useful evidence is the conditional DSpark benchmark: a draft model proposes three tokens for the main model to verify.

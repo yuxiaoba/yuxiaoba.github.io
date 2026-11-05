@@ -14,11 +14,13 @@ source_url: https://sference.com/blog/kv-cache-index
 tags:
 - inference-serving
 - observability
+- systems-reliability
 summary: 用引擎事件维护跨副本、存储层和 attention rank 的缓存视图，并解释过时状态与混合模型的局限。
 permalink: /tech/zh/fleet-kv-index/
 published_at: '2026-10-28T15:24:19.938525+08:00'
 updated_at: '2026-10-28T15:24:19.938525+08:00'
 ---
+
 同一前缀可能留在某张 GPU，也可能已经下沉到主机内存、磁盘或共享池。把这些状态都叫“命中”，无法判断哪个副本能更快服务请求。sference 的文章解释了一个生产调度问题：如何让异构引擎的缓存状态成为可以比较的路由输入。
 
 原文：[Tracking the KV Cache Across a Heterogeneous GPU Fleet](https://sference.com/blog/kv-cache-index) · Peter Us / sference · 2026-10-27。

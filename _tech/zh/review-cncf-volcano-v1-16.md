@@ -3,7 +3,7 @@ id: review-cncf-volcano-v1-16
 title: 2026-10-29｜Volcano 1.16：事件驱动重试与资源公平
 date: '2026-10-29'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -15,6 +15,7 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/zh/review-cncf-volcano-v1-16/
 ---
+
 
 Volcano 1.16 引入 NamespaceQueue、历史用量 fairshare 和 HyperNode 反亲和。不可调度 Job 缓存按拒绝原因等待相关事件再重试，减少积压反复检查，并保留 watchdog 定期重试。
 

@@ -63,11 +63,6 @@
       "approved_on": "2026-10-27"
     },
     {
-      "url": "https://arxiv.org/abs/2610.37609",
-      "reason": "EnvSched primarily advances RL curriculum/task sampling. Its reward-variance and coverage objective does not diagnose agent failures, govern deployed agents, or optimize inference execution; a standalone entry stretches the stated field-progress scope.",
-      "approved_on": "2026-11-05"
-    },
-    {
       "url": "https://arxiv.org/abs/2610.36822",
       "reason": "The contribution is CPU SpGEMM load balancing and accumulation for graphs/relational workloads. No demonstrated inference-serving or reliability consequence justifies a standalone entry for this reading purpose.",
       "approved_on": "2026-11-05"
@@ -80,31 +75,6 @@
     {
       "url": "https://blog.cloudflare.com/q3-2026-internet-disruption-summary/",
       "reason": "Quarterly outage inventory describes external disasters and shutdowns but does not analyze a cloud/AI fault mechanism or test a mitigation; observed traffic drops alone add little to this research stream.",
-      "approved_on": "2026-11-05"
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.38800",
-      "reason": "Pilot reference labels follow the evaluator's own rules, so perfect selection is expected; there is no independent evidence of improved agent decisions or patches. The context-validity proposal alone is insufficient standalone progress.",
-      "approved_on": "2026-11-05"
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.41209",
-      "reason": "Scientific-array compression and HPC I/O gains lack a demonstrated cloud/AI reliability or inference-serving connection in this article.",
-      "approved_on": "2026-11-05"
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.41457",
-      "reason": "RecIS combines established fusion, sharding and multistage overlap for recommender training; the supplied results do not identify a distinctive reliability or inference insight for this focused digest.",
-      "approved_on": "2026-11-05"
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.41432",
-      "reason": "HCU principally improves general desktop task capability by adding AX and programmatic channels; the source does not isolate a cloud/AI operational failure or inference mechanism.",
-      "approved_on": "2026-11-05"
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.40747",
-      "reason": "Primarily a computer-use model/training curriculum and task-generation result, without a distinct operational reliability, diagnosis or inference contribution.",
       "approved_on": "2026-11-05"
     },
     {
@@ -123,18 +93,8 @@
       "approved_on": "2026-11-05"
     },
     {
-      "url": "https://arxiv.org/abs/2611.02102",
-      "reason": "NorthCUA is a broad computer-use model family/experience pipeline report; state-of-the-art task scores do not by themselves add fault-analysis or systems-operational insight.",
-      "approved_on": "2026-11-05"
-    },
-    {
       "url": "https://arxiv.org/abs/2611.00191",
       "reason": "Vague mobile requests and app-centric history retrieval study user-memory task capability, not an operational failure-analysis or inference systems mechanism.",
-      "approved_on": "2026-11-05"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.03434",
-      "reason": "Minimal-harness near-parity and smaller code surface do not establish reliability/auditability gains when the accuracy judge was only spot-checked and component effects are not isolated.",
       "approved_on": "2026-11-05"
     },
     {
@@ -151,6 +111,1086 @@
       "url": "https://www.datadoghq.com/blog/runtime-security-for-ai-agents/",
       "reason": "Runtime AI Guard post asserts context-aware inline blocking and self-hardening without detection accuracy, false-positive, latency or bypass measurements.",
       "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.34073",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Memory Tax: Dissecting the Net Value of Agent Memory"
+    },
+    {
+      "url": "https://x.com/XuanHe21/status/2114919933297795345",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Memory Tax: Dissecting the Net Value of Agent Memory"
+    },
+    {
+      "url": "https://x.com/XuanHe21/status/2114917854877307162",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Memory Tax: Dissecting the Net Value of Agent Memory"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.33509",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Can Agentic Code Review Catch Vulnerabilities Before They Are Merged?"
+    },
+    {
+      "url": "https://x.com/ComputerPapers/status/2115129873194705344",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Can Agentic Code Review Catch Vulnerabilities Before They Are Merged?"
+    },
+    {
+      "url": "https://github.com/secprbench/secprbench",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Can Agentic Code Review Catch Vulnerabilities Before They Are Merged?"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.33129",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Speculative Forking: Turning Idle Wait into Parallel Exploration for Repository Environment Setup"
+    },
+    {
+      "url": "https://x.com/ComputerPapers/status/2115002813923127363",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Speculative Forking: Turning Idle Wait into Parallel Exploration for Repository Environment Setup"
+    },
+    {
+      "url": "https://arxiv.org/abs/2603.12440",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "KernelFoundry: Hardware-aware evolutionary GPU kernel optimization"
+    },
+    {
+      "url": "https://x.com/anshulcreates/status/2114847821891359217",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "KernelFoundry: Hardware-aware evolutionary GPU kernel optimization"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.33647",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Speeding up Log-Sum-Exp: Kernel Fusion at the Memory Wall, Integer Arithmetic at the Compute Wall"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.33588",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Developers as Managers of AI Agents: A Workplace Shadowing Study"
+    },
+    {
+      "url": "https://x.com/ComputerPapers/status/2115139944213540984",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Developers as Managers of AI Agents: A Workplace Shadowing Study"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.33853",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "ArchGuard-APR: Architecture-Constraint-Aware Multi-Agent Program Repair Using Repository Graphs and Execution Feedback"
+    },
+    {
+      "url": "https://x.com/ComputerPapers/status/2115177040609497367",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "ArchGuard-APR: Architecture-Constraint-Aware Multi-Agent Program Repair Using Repository Graphs and Execution Feedback"
+    },
+    {
+      "url": "https://github.com/majidfeiz/archguard-apr",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "ArchGuard-APR: Architecture-Constraint-Aware Multi-Agent Program Repair Using Repository Graphs and Execution Feedback"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.33108",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "ToolContractGate: Versioned Trusted Contracts for Drift-Safe Agent Tool Invocation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.33949",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Why Does Structured Output Fail? An Empirical Study of Prompt-Enforced Pydantic Schemas Across Nine LLMs and Five Agent Frameworks"
+    },
+    {
+      "url": "https://grafana.com/blog/agent-observability-faq-understand-the-value-of-monitoring-evaluating-and-improving-your-ai-agents/",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Agent Observability FAQ: Understand the value of monitoring, evaluating, and improving your AI agents"
+    },
+    {
+      "url": "https://www.rystic.ai/",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Rystic — Realistic API simulators for training and testing"
+    },
+    {
+      "url": "https://x.com/ZKiihne/status/2114856061241045120",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Rystic — Realistic API simulators for training and testing"
+    },
+    {
+      "url": "https://www.ycombinator.com/companies/rystic",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Rystic — Realistic API simulators for training and testing"
+    },
+    {
+      "url": "https://x.com/Azure/status/2115141477676286028",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Run the open inference stack on AKS (vLLM / KServe / llm-d / Ray + KAITO)"
+    },
+    {
+      "url": "https://docs.flashduty.com/en/changelog/changelog",
+      "reason": "Owner reselected 2026-10-28 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Query and analyze in the RUM Explorer with AI SRE, a custom dashboard belongs to one application, errors split into Issues and Exceptions"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37307",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "EdgePace: Deadline- and Freshness-Aware LLM Scheduling on Unified-Memory Platforms"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37442",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "CRISP: Co-designing Pruning and Scheduling for Efficient MoE Inference on Edge Servers"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36564",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "DeepInfer-Mac: Running a 750B-Class MoE on a 24 GB Laptop"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36520",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Folding Attention Biases into Keys Makes Compacted KV Caches Run on Standard Kernels"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36950",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "DCKV: Learned Transform Coding of the Prompt KV Cache in Hybrid Language Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36347",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Callosal: Rethinking the Kernel Page Cache for Disaggregated Storage and Memory"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36370",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "IOSage: Detecting HPC I/O Bottleneck Patterns to Guide LLM Recommendations"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36544",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Monitor Accuracy Isn't the Answer: A Decision-Value Framework for Evaluating AI Agent Restart Monitors"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35971",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Continue or Restart? The Limits of Early Failure Prediction in Coding Agents"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35950",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "PASS Is a Claim, Not an Observation: Mechanical Re-verification of 10 Self-Asserted Fix Claims in a Live Multi-Agent Audit Layer"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35930",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Who Convinced Whom? Tracing How LLMs Change Their Minds in Multi-Agent Systems"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36010",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "CIVER: Causal Intervention Verification for Reliable Code Review"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36015",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Do Coding Agents Still Need a Debugger? Frontier-Model-Based Fault Localization at the Accuracy Ceiling"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35869",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "KORA: Deterministic-First Execution Control for AI Workloads"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36289",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Compatibility and future-proof testing for multi-agent systems"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37276",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Where Should the Evaluation Budget Go in LLM-Driven Agent Scaffold Evolution?"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36826",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "When the Critic Falls Behind: Co-Evolving Rubrics and Harnesses for Continual Agent Self-Improvement"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/3-ways-to-boost-moe-inference-on-nvidia-dgx-spark/",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "3 Ways to Boost MoE Inference on NVIDIA DGX Spark"
+    },
+    {
+      "url": "https://grafana.com/blog/evaluate-ai-models-for-observability-o11y-bench-joins-fireworks-specialized-intelligence-index-and-reaches-v1-1/",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Evaluate AI models for observability: o11y-bench joins Fireworks' Specialized Intelligence Index and reaches v1.1"
+    },
+    {
+      "url": "https://www.cncf.io/blog/2026/10/28/volcano-v1-16-released-namespacequeue-fairshare-and-a-broader-hypernode-ecosystem/",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Volcano v1.16 Released: NamespaceQueue, fairshare, and a broader HyperNode ecosystem"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry/",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Introducing the Microsoft Copilot harness in Foundry Agent Service"
+    },
+    {
+      "url": "https://cloud.google.com/blog/products/containers-kubernetes/using-vpc-flow-logs-to-troubleshoot-gke-workloads",
+      "reason": "Owner reselected 2026-10-29 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Using VPC Flow Logs to troubleshoot GKE workloads"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/unlocking-tensor-core-performance-for-machine-learning-interatomic-potentials/",
+      "reason": "Owner reselected 2026-10-30 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Unlocking Tensor Core Performance for Machine Learning Interatomic Potentials"
+    },
+    {
+      "url": "https://blog.cloudflare.com/ddos-threat-report-2026-q3/",
+      "reason": "Owner reselected 2026-10-30 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Cloudflare DDoS Threat Report 2026 Q3: More swarms, fewer giants"
+    },
+    {
+      "url": "https://openai.com/index/updated-model-spec/",
+      "reason": "Owner reselected 2026-10-30 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "An updated Model Spec for more capable and beneficial AI"
+    },
+    {
+      "url": "https://x.com/sgl_project/status/2115609283702477108",
+      "reason": "Owner reselected 2026-10-30 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "SGLang Dev Meeting：Baseten 讲基于主机内存 RDMA/EFA 环形缓冲的分离式 serving"
+    },
+    {
+      "url": "https://luma.com/sglang-8wn8",
+      "reason": "Owner reselected 2026-10-30 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "SGLang Dev Meeting：Baseten 讲基于主机内存 RDMA/EFA 环形缓冲的分离式 serving"
+    },
+    {
+      "url": "https://x.com/RohanArun/status/2115778602281074964",
+      "reason": "Owner reselected 2026-10-30 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "@RohanArun：开源 Auto-research harness 进入 Open Kernel Challenge prefill kernel 前十"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.38210",
+      "reason": "Owner reselected 2026-10-31 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "GAAC: Lossless KV Compression for Bandwidth-Efficient LLM Inference on Personal Devices"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.38311",
+      "reason": "Owner reselected 2026-10-31 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Detecting Incorrect LLM Explanations for Automated Program Repair"
+    },
+    {
+      "url": "https://x.com/ComputerPapers/status/2116214827676835941",
+      "reason": "Owner reselected 2026-10-31 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Detecting Incorrect LLM Explanations for Automated Program Repair"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.38617",
+      "reason": "Owner reselected 2026-10-31 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "How Deterministic SAST and AI Security Agents Divide the Work: Coverage, Harness Policy and Cost in Snyk VulnBench 2.0"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.38778",
+      "reason": "Owner reselected 2026-10-31 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Slant: Shaping Traffic for Resource-Efficient Microservices"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.38793",
+      "reason": "Owner reselected 2026-10-31 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Trustworthy Distributed Machine Learning in Cloud-Edge-IoT Systems: A Heterogeneity-Aware Survey of Security, Privacy, and Robustness"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.38822",
+      "reason": "Owner reselected 2026-10-31 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "CopyLoop: Fast Looped Transformer Decoding via Context Copying and Shallow Screening"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.39807",
+      "reason": "Owner reselected 2026-10-31 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "InferD: A Honeypot Framework for AI Inference Infrastructure"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.39853",
+      "reason": "Owner reselected 2026-10-31 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "KV Cache Quantization for Diffusion Language Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.40477",
+      "reason": "Owner reselected 2026-10-31 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Can We Rely on Language Models to Orchestrate Services across the Edge-Cloud Continuum?"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.39017",
+      "reason": "Owner reselected 2026-10-31 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "DistOptimize: Automatic Optimization of Distributed Protocols"
+    },
+    {
+      "url": "https://pytorch.org/blog/optimizing-streaming-speech-recognition-on-arm-edge-devices-with-executorch/",
+      "reason": "Owner reselected 2026-10-31 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Optimizing Streaming Speech Recognition on Arm Edge Devices with ExecuTorch"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.38796",
+      "reason": "Owner reselected 2026-11-01 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Routed Continual Learning"
+    },
+    {
+      "url": "https://x.com/dair_ai/status/2116548002617917603",
+      "reason": "Owner reselected 2026-11-01 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Routed Continual Learning"
+    },
+    {
+      "url": "https://academy.dair.ai/papers/routed-continual-learning-2610.38796",
+      "reason": "Owner reselected 2026-11-01 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Routed Continual Learning"
+    },
+    {
+      "url": "https://thenewstack.io/ai-sre-agent-autonomy-phases/",
+      "reason": "Owner reselected 2026-11-01 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "AI SRE Agent Autonomy: Three Phases of Incident Response"
+    },
+    {
+      "url": "https://x.com/thenewstack/status/2116629030141141249",
+      "reason": "Owner reselected 2026-11-01 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "AI SRE Agent Autonomy: Three Phases of Incident Response"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/run-ai-models-for-edge-application-development-with-just-a-few-commands/",
+      "reason": "Owner reselected 2026-11-01 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Run AI Models for Edge Application Development with Just a Few Commands"
+    },
+    {
+      "url": "https://cloud.google.com/blog/topics/ai-infrastructure/whats-new-in-ai-infrastructure-this-month/",
+      "reason": "Owner reselected 2026-11-01 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "What’s new in AI infrastructure and orchestration in October"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/support-new-ai-frameworks-faster-using-nvidia-workload-map/",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Support New AI Frameworks Faster Using NVIDIA Workload Map"
+    },
+    {
+      "url": "https://sreweekly.com/sre-weekly-issue-541/",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "SRE Weekly Issue #541"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.42148",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Flide: Accelerating Decision Inference with Exact State Forking"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41672",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Understanding the Energy Cost of Quantized Agents on Shared GPUs"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.40983",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "LLM Fine-Tuning Workloads: Characterization, Challenges, and Opportunities for Serverless AI"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41707",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Ordered Chaos: Towards Adaptive Multipath Load Balancing with Precise Fast Loss Detection"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41837",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "A Deterministic Commitment Rule over Unstructured DAGs for Optimistic Replication"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41825",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Where KV-Cache Error Lives in Looped Language Models: A Diagnostic Study of Ouro and Huginn"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.40847",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "The Generative Gap Between Speculative Drafter and Continuous Diffusion Language Model"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41097",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "RepGen: Reproducing Deep Learning Bugs through Context-Aware Code Generation and Verification"
+    },
+    {
+      "url": "https://x.com/ComputerPapers/status/2117168885010997692",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "RepGen: Reproducing Deep Learning Bugs through Context-Aware Code Generation and Verification"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41863",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Stuck on Red? Understanding GitHub Actions Failing Streaks"
+    },
+    {
+      "url": "https://x.com/ComputerPapers/status/2117302587833696565",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Stuck on Red? Understanding GitHub Actions Failing Streaks"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41433",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "What Does a Repair Agent Gain from Remembering Its Failure? An Exploratory Study on Real Python Bugs"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41313",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Migrating a Legacy Scientific Application with an AI Coding Agent: NICAM from Fortran to Kokkos"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41397",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Cross-Interface Authorization for AI Computer-Use Agents"
+    },
+    {
+      "url": "https://x.com/grafana/status/2117361171854410021",
+      "reason": "Owner reselected 2026-11-03 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Instrumentation Hub in Grafana Cloud: start easier, stay in control"
+    },
+    {
+      "url": "https://x.com/honeycombio/status/2117621582830969280",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Honeycomb Introduces AI SRE Agents That Go Beyond Incidents"
+    },
+    {
+      "url": "https://pytorch.org/blog/kvcache-meetup-korea-2026-event-recap/",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "KVCache Meetup Korea 2026: Event Recap"
+    },
+    {
+      "url": "https://x.com/PyTorch/status/2117557454737170726",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "KVCache Meetup Korea 2026: Event Recap"
+    },
+    {
+      "url": "https://x.com/MIT_CSAIL/status/2117695502821269899",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights"
+    },
+    {
+      "url": "https://grafana.com/blog/trace-linkage-connect-the-dots-between-your-app-traces-and-database-queries/",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Trace linkage: connect the dots between your app traces and database queries"
+    },
+    {
+      "url": "https://workers.io/",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Workers IO: Simulation Environments for Verifying Mission Critical Software"
+    },
+    {
+      "url": "https://x.com/chaaai/status/2117331381206516115",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Workers IO: Simulation Environments for Verifying Mission Critical Software"
+    },
+    {
+      "url": "https://ai.engineer/nyc/2026/talks/revolut",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Shipping like a startup, regulated like a bank | AI Engineer NYC 2026"
+    },
+    {
+      "url": "https://x.com/prasad_pilla/status/2117537152674468260",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Shipping like a startup, regulated like a bank | AI Engineer NYC 2026"
+    },
+    {
+      "url": "https://www.theregister.com/ai-and-ml/2026/11/03/british-fintech-revolut-slashes-ai-coding-costs-10x-by-cutting-out-claude-and-going-self-hosted/5307345",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Shipping like a startup, regulated like a bank | AI Engineer NYC 2026"
+    },
+    {
+      "url": "https://x.com/onesourcelda/status/2117629756761903301",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "论文《Adversarial Robustness of Autoencoder-Based Anomaly Detection in Cloud-Native Microservices》在 CNSM 2026 AnServApp workshop 报告"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02846",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "SpecOPD: Branch-Parallel On-Policy Distillation for Speculative Decoding"
+    },
+    {
+      "url": "https://x.com/xuyang_liu16/status/2117613939978879442",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "SpecOPD: Branch-Parallel On-Policy Distillation for Speculative Decoding"
+    },
+    {
+      "url": "https://qwenapp.github.io/SpecOPD/",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "SpecOPD: Branch-Parallel On-Policy Distillation for Speculative Decoding"
+    },
+    {
+      "url": "https://github.com/QwenApp/SpecOPD",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "SpecOPD: Branch-Parallel On-Policy Distillation for Speculative Decoding"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.00944",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "SNAPPerf: Software-Aware Tabular Foundation Model for Retraining-Free Performance Prediction of Configurable Systems"
+    },
+    {
+      "url": "https://x.com/ComputerPapers/status/2117707207558991874",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "SNAPPerf: Software-Aware Tabular Foundation Model for Retraining-Free Performance Prediction of Configurable Systems"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.00667",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Characterizing and Predicting the Longest CI Builds in Machine Learning Projects"
+    },
+    {
+      "url": "https://x.com/ComputerPapers/status/2117664430095757743",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Characterizing and Predicting the Longest CI Builds in Machine Learning Projects"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.00506",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Weights That Stay: On-Chip Megakernels for Serial Heads in Speculative Decoding"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.00881",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "LADS: Lease-Aware Delivery Scheduling of Tool Results for Language Model Agents"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02975",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Introducing Cluster Efficiency to LLM Serving: Pooling Economical Accelerators over Fast Interconnects"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01256",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "LoRAForge: Co-Designing Post-Hoc Compression and Execution for Efficient Multi-LoRA Serving"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01089",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Scute: Exact Batched Serving for PEFT Adapters Beyond LoRA"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.00652",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Inference First, Training Underneath: Layer-Granular LoRA Co-Serving with LayerLoom"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01022",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Jet-QSparse: Accelerating Agentic LLM Inference with 4-Bit Sparse Attention"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03173",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "PagedMoE: Cross-Precision Expert Caching for Token-Level Dynamic Precision in SSD-Resident MoE Inference"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01859",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Apto: Self-Adaptive CPU-GPU Hybrid MoE Inference on Shared PCs"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01393",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Layer-wise CPU-GPU Scheduling for LLM Inference on Memory-Limited Consumer GPUs"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02401",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Accelerating LLM Decoding with In-DRAM Parallelism"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.00421",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "RankLane: Efficient MoE Prefill on Accelerators with Ranked Expert Capacities"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03577",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Sonar-MoE: In-Backward Expert Updates for Memory-Efficient Mixture-of-Experts Training"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02688",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Accelerating LLM Pretraining with Zeroth-Order Curvature on Idle Serving Compute"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01077",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Multi-Turn Semantic Caching for Low-Cost LLM Serving"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01617",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Seeing What Matters, Verifying What Pays: Load-Adaptive Speculative Decoding for Vision-Language Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02297",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "FactorSpec: Serving Exact Relational Constraints as Speculative Drafts"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.00779",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Who Schedules Agent Memory? A Sidecar Approach to Long-Horizon Tasks"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01152",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Capacity Planning for Resource-Constrained Clinical LLM Serving"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01865",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "A Compute Center Anyone Can Join: A Peer-to-Peer System for AI Inference"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01174",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "TRIAGE: Reliability- and Load-Conditioned Escalation for Two-Tier LLM Serving with a Semantic Evidence Judge"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01233",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "STLT: A Novel System for Energy-Aware Distributed Inference in the Edge-Cloud-Space Continuum"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02601",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Parallelism-Aligned Pruning and Round-Aware Context Reuse for On-Device Multimodal Agents"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01377",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "A Self-Exploring and Self-Evolving Paradigm for Adaptive Edge AI Development"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.00884",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "When 200 OK Is Not an Answer: Silent Fetch Failures in Agentic Web Content Acquisition"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.00291",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "When AI Agents Act on Our Behalf: A Taxonomy of Human-Agent Interaction Failure"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02644",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Coati: Host-Grounded Execution for Installable Mobile GUI Agents"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01415",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Latent Harness: Compiling Agent Behaviors into Post-Block Activation Shifts"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01292",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Causality-Based Fault Localization"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.01255",
+      "reason": "Owner reselected 2026-11-04 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "AdapBench: Adaptive Early-Stopping and Prioritization for Efficient Microbenchmarking in Cloud-based CI/CD"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04055",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "HybridSpec: Throughput-Aware Speculative Decoding for Hybrid GDN-MoE Models"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04137",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "LoopKV: Loop-Aware KV Cache Compression for Serving Looped Transformers"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05150",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "What Sets the Serving Speed of Looped Language Models? Measurements and Optimizations Graded by Exactness"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04794",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Accelerating Offloading-Based MoE Inference by Interleaving Concurrent Requests"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03899",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "EpiLoRA: Fusing Many LoRA Adapters into Low-Precision GEMMs for Serving and RL"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03992",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "FlagRot: Selective Rotation for Low-Bit KV Caches"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04380",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Twice as Fast, Until It Isn't: Quantized Serving of Mid-Size Open LLMs"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04807",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Asymptotic Optimality of $cμ$-Rule for LLM Inference Scheduling under Memory Constraint"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05104",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Workload-Static Optical Circuit Switching For Scalable LLM Inference Decode"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04248",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Navigating Runtime Dynamism in Semantic Query Serving"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05269",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "ToolSched: Resource-Efficient Tool Scheduling for Shared-Host LLM Agents"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04144",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "HyPAIC: Personal AI Computer with High Bandwidth Flash for High Performance Trillion-Parameter LLM Inference"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04253",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "UMLoad: Fast On-Demand Model Loading on Unified Memory Architecture"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04323",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "FP4Quant: Efficient 4-Bit Communication Compression for Model-Parallel LLM Training"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04273",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Deep Learning Compilers: Architecture, Optimization, and Empirical Characterization"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04638",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "EvoCache: Accelerating Browser Large Language Model Delivery with Public Cache Anchors"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05081",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Characterizing Serverless Workloads: A Large-Scale Analysis of Function-as-a-Service Platforms"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04408",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Halley: A Predictive Control Plane for Optical AI Data Center Networks"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05148",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Creating Power Flexibility in Datacenters via Query Routing"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03868",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "EvoGroup: A Self-Evolving Harness for Group Agents in Shared Contexts"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04952",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Artifact-to-Capability: Diagnosing Breaks in Capability Formation of Self-Evolving Agents in a Controlled Environment"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04579",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "FreeForm Harness: A Mobile-Native Agent Harness for Open and Composable Extensions"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04073",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Computer-Use Agents Gain Little Benefit from a World Model When Conditioned on Tutorials"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05263",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "JHiMA-WebRL: A Joint Hierarchical Multi-Agent Reinforcement Learning Framework for Long-Horizon Web Tasks"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04879",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "ScamWorld: An Interactive Environment for Evaluating Web Agents Against Online Fraud"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03723",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "EMBERS: Empirically Motivated Robustness Testing of Deep Research Systems via Defect-Guided Fuzzing"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03662",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "MCPGuard: Finding Conformance Gaps in MCP SDKs via Dual-Track Analysis and Dynamic Adjudication"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04182",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "When the Consumer Is an Agent: Execution-Grounded Service-Level Agreements"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04100",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "The Agent Board: Kanban for Machines; Durable Coordination for Agents That Outlive the Conversation"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04769",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "RESTberus: Trace-Aware Benchmarking of Automated REST API Testing Tools Across Microservice Dependencies"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05314",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Noisy Issues, Noisy Results: Mislabeling in Information Retrieval-based Bug Localization"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04466",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "From Watching to Steering: Enabling Human-Coding Agent Collaboration through Execution Traces"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04367",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Do Coding Agents Follow AGENTS.md? The Effect of Policy Wording on Instruction Compliance"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04456",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "How Agent Skills Evolve: A Large-Scale Empirical Study of Skills on GitHub"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05094",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "A Gated Spec-Driven Workflow: An Audit-Trail Study of Coding-Agent Work"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04779",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Replica-Aware Split Inference for Edge IoT Systems"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04425",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Minimizing Bottleneck Overload Risk in Online Edge Task Placement under Workload Uncertainty"
+    },
+    {
+      "url": "https://www.infoworld.com/article/4240704/six-elements-of-resilient-ai-orchestration-platforms.html",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Six elements of resilient AI orchestration platforms"
+    },
+    {
+      "url": "https://x.com/grafana/status/2118003340688699682",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Six elements of resilient AI orchestration platforms"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/how-nvidia-factory-operations-blueprint-coordinates-ai-agents-to-investigate-production-issues/",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "How NVIDIA Factory Operations Blueprint Coordinates AI Agents to Investigate Production Issues"
+    },
+    {
+      "url": "https://www.datadoghq.com/blog/online-experiments-agent-observability/",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "Compare AI agent changes with Online Experiments in Agent Observability"
+    },
+    {
+      "url": "https://blog.cloudflare.com/personal-agents-visibility-control/",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "See the agents, set the terms: new visibility and control for personal agents"
+    },
+    {
+      "url": "https://x.com/resolveai/status/2118050913508041132",
+      "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
+      "approved_on": "2026-11-05",
+      "title": "SAP 选用 ResolveAI 调查和解决生产问题"
     }
   ]
 }

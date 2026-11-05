@@ -10,6 +10,7 @@ source_type: tech
 tags:
 - inference-serving
 - coding-agents
+- systems-reliability
 summary: 50 道短任务的实验显示，输出上限不是思考预算，路由还会与上下文缓存发生冲突。
 long_read: true
 source_url: https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/
@@ -19,7 +20,8 @@ authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
 updated_at: '2026-11-05T08:55:14.344660+08:00'
 ---
-原文: [Cost per task: Using cheap classifiers to route across Gemini models and thinking levels](https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/)  
+
+原文: [Cost per task: Using cheap classifiers to route across Gemini models and thinking levels](https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/)<br>
 Sergio Villani · 2026-11-03
 
 Google Developers 的实验用廉价分类器决定短任务是否需要多步推理，再选择 Gemini 模型与 thinking 档位。它最值得读的并非某个分类器胜出，而是两个容易漏掉的基线：便宜路径到底便宜多少，以及不加路由、只降低思考档位是否已经足够。

@@ -1,6 +1,6 @@
 ---
 date: '2026-10-28'
-published: true
+published: false
 layout: article
 maintenance: daily-research
 authoring_source: assistant
@@ -19,6 +19,7 @@ permalink: /tech/zh/rystic-api-simulators/
 published_at: '2026-10-28T15:24:19.938525+08:00'
 updated_at: '2026-10-28T15:24:19.938525+08:00'
 ---
+
 Agent 的工具测试需要连续行为：创建客户后能查到，删除后再查询则消失。Rystic 的一手产品页展示这种有状态的本地 API 模拟，并允许加载和修改测试记录；其意义是让工具交互不只依赖孤立的返回值 mock。
 
 原文：[Rystic — Realistic API simulators for training and testing](https://www.rystic.ai/) · Rystic；创始人于 2026-10-26 [发布上线公告](https://x.com/ZKiihne/status/2114856061241045120)。

@@ -10,6 +10,7 @@ source_type: tech
 tags:
 - agent-reliability
 - observability
+- systems-reliability
 summary: Accessibility trees, snapshot references, delivery states and postcondition
   checks make desktop-action uncertainty explicit.
 translation_source: assistant-authored Chinese and English paired content
@@ -19,6 +20,7 @@ permalink: /tech/en/agent-desktop-reliability/
 published_at: '2026-11-02T08:39:51.033336+08:00'
 updated_at: '2026-11-02T08:39:51.033336+08:00'
 ---
+
 A desktop agent can fail by acting on a target that changed after observation, or by retrying an input that already reached the application. Vercel Labs' agent-desktop makes these concerns part of the tool interface: observe through OS accessibility trees, act through identity-bearing references, and report delivery, verification and retry safety separately.
 
 Original project: [agent-desktop](https://github.com/vercel-labs/agent-desktop) · Vercel Labs; introduced by Chris Tate on [2026-10-31](https://x.com/ctatedev/status/2116323148706771302). The mechanisms below follow the project's 2026-11-01 documentation snapshot and JSON output contract 2.5.

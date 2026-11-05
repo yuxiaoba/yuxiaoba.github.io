@@ -1,6 +1,6 @@
 ---
 date: '2026-10-28'
-published: true
+published: false
 layout: article
 maintenance: daily-research
 authoring_source: assistant
@@ -20,6 +20,7 @@ permalink: /tech/en/flashduty-rum-ai-sre/
 published_at: '2026-10-28T15:24:19.938525+08:00'
 updated_at: '2026-10-28T15:24:19.938525+08:00'
 ---
+
 Flashduty’s October 25 update gives natural-language observability queries concrete interaction semantics. Authorized AI SRE users can let the agent fill conditions, event type, time range, and analytics charts, then execute the query. A status bar reports progress and outcomes. Undo remains available only while the query box still contains the AI-written value, protecting later user edits.
 
 Original: [Query and analyze in the RUM Explorer with AI SRE, a custom dashboard belongs to one application, errors split into Issues by where they were raised](https://docs.flashduty.com/en/changelog/changelog#rum-explorer-query-and-analyze-with-ai-sre) · Flashduty · 2026-10-25.

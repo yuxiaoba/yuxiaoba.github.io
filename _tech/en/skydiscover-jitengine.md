@@ -22,7 +22,8 @@ authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
 updated_at: '2026-11-05T08:55:14.344660+08:00'
 ---
-Original: [Your Mac Deserves Its Own LLM Engine](https://skydiscover-ai.github.io/blog-jitengine.html)  
+
+Original: [Your Mac Deserves Its Own LLM Engine](https://skydiscover-ai.github.io/blog-jitengine.html)<br>
 Mert Cemri, Shubham Agarwal, Shu Liu, Alexander Krentsel, Sidharth Sankhe, Alexandros G. Dimakis, Ion Stoica · 2026-11-04
 
 ## Specialization starts with the bottleneck

@@ -3,7 +3,7 @@ id: review-nvidia-workload-map
 title: 2026-11-03｜Workload Map：共享 Kubernetes 工作负载描述
 date: '2026-11-03'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -15,6 +15,7 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/zh/review-nvidia-workload-map/
 ---
+
 
 Workload Map 用公共声明描述分布式工作负载的角色、pod 模板、副本和状态，让检查工具、gang scheduler 与管理平台复用同一 CRD 解释，减少每种框架分别写 adapter。
 

@@ -3,7 +3,7 @@ id: cloudflare-ddos-q3-2026
 title: 2026-10-30 | Short, frequent attacks rise in Cloudflare’s DDoS observations
 date: '2026-10-30'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -19,6 +19,7 @@ translation_source: assistant-authored paired Chinese/English reading notes
 published_at: '2026-10-30T10:31:20.339125+08:00'
 updated_at: '2026-10-30T10:31:20.339125+08:00'
 ---
+
 Cloudflare's third-quarter data highlights a reliability risk beyond extreme peaks: many short attacks can end before a human responds and can repeatedly affect a service.
 
 **Source:** Cloudforce One, [Cloudflare DDoS Threat Report 2026 Q3: More swarms, fewer giants](https://blog.cloudflare.com/ddos-threat-report-2026-q3/), October 29, 2026.

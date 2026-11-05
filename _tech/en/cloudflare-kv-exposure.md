@@ -22,6 +22,7 @@ permalink: /tech/en/cloudflare-kv-exposure/
 published_at: '2026-10-28T15:24:19.938525+08:00'
 updated_at: '2026-10-28T15:24:19.938525+08:00'
 ---
+
 Cloudflare’s postmortem describes a testing gap: status codes and throughput looked healthy while responses could attend to another request’s KV pages. The failure concerned state ownership and request isolation, which a normal streaming response could not establish.
 
 Original: [Cross-request KV cache exposure in the GLM-5.3 Workers AI model, and our remediation with SGLang](https://blog.cloudflare.com/kv-cache-exposure-remediation/) · Cloudflare · 2026-10-26.

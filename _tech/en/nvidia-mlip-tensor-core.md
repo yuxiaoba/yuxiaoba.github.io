@@ -4,7 +4,7 @@ title: 2026-10-30 | Tensor Core acceleration for interatomic potentials with sta
   checks
 date: '2026-10-30'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -19,6 +19,7 @@ translation_source: assistant-authored paired Chinese/English reading notes
 published_at: '2026-10-30T10:31:20.339125+08:00'
 updated_at: '2026-10-30T10:31:20.339125+08:00'
 ---
+
 NVIDIA explores Tensor Core acceleration for the Point Edge Transformer interatomic potential, measuring not only matrix multiplication speed but also force error, energy conservation and structural relaxation.
 
 **Source:** Anoushka Bhutani, Atul Thakur, Erica Tsai, Kristopher Keipert and Michele Ceriotti, [Unlocking Tensor Core Performance for Machine Learning Interatomic Potentials](https://developer.nvidia.com/blog/unlocking-tensor-core-performance-for-machine-learning-interatomic-potentials/), October 29, 2026.

@@ -11,6 +11,7 @@ tags:
 - agent-reliability
 - observability
 - self-improvement
+- systems-reliability
 summary: 从未经确认就发送消息的例子，看诊断、定制测试、局部修改与保留集如何连接。
 long_read: true
 source_url: https://developer.nvidia.com/blog/use-nvidia-nemo-to-turn-agent-failures-into-tests-and-harness-fixes/
@@ -20,7 +21,8 @@ authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
 updated_at: '2026-11-05T08:55:14.344660+08:00'
 ---
-原文: [Use NVIDIA NeMo to Turn Agent Failures into Tests and Harness Fixes](https://developer.nvidia.com/blog/use-nvidia-nemo-to-turn-agent-failures-into-tests-and-harness-fixes/)  
+
+原文: [Use NVIDIA NeMo to Turn Agent Failures into Tests and Harness Fixes](https://developer.nvidia.com/blog/use-nvidia-nemo-to-turn-agent-failures-into-tests-and-harness-fixes/)<br>
 Patrick Moorhead, Sean Lopp, Moon Chung · 2026-11-04
 
 ## 从错误动作定义修复目标

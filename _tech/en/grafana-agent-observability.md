@@ -1,6 +1,6 @@
 ---
 date: '2026-10-28'
-published: true
+published: false
 layout: article
 maintenance: daily-research
 authoring_source: assistant
@@ -20,6 +20,7 @@ permalink: /tech/en/grafana-agent-observability/
 published_at: '2026-10-28T15:24:19.938525+08:00'
 updated_at: '2026-10-28T15:24:19.938525+08:00'
 ---
+
 API success rates do not establish agent answer quality. Grafana’s FAQ connects traces, cost, evaluations, and offline experiments, and accepts spans following OpenTelemetry GenAI conventions without requiring its own SDK.
 
 Original: [Agent Observability FAQ: Understand the value of monitoring, evaluating, and improving your AI agents](https://grafana.com/blog/agent-observability-faq-understand-the-value-of-monitoring-evaluating-and-improving-your-ai-agents/) · Aishlee Kailey / Grafana · 2026-10-27.

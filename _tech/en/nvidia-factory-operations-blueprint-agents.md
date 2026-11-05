@@ -4,7 +4,7 @@ title: '2026-11-05 | FOX: connecting inspection, rework, and RCA through board-l
   evidence'
 date: '2026-11-05'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -22,7 +22,8 @@ authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
 updated_at: '2026-11-05T08:55:14.344660+08:00'
 ---
-Original: [How NVIDIA Factory Operations Blueprint Coordinates AI Agents to Investigate Production Issues](https://developer.nvidia.com/blog/how-nvidia-factory-operations-blueprint-coordinates-ai-agents-to-investigate-production-issues/)  
+
+Original: [How NVIDIA Factory Operations Blueprint Coordinates AI Agents to Investigate Production Issues](https://developer.nvidia.com/blog/how-nvidia-factory-operations-blueprint-coordinates-ai-agents-to-investigate-production-issues/)<br>
 Samuel Ochoa, Carlos Garcia-Sierra · 2026-11-04
 
 ## Defects cross station boundaries

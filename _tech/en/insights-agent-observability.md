@@ -11,6 +11,7 @@ tags:
 - observability
 - agent-reliability
 - coding-agents
+- systems-reliability
 summary: Datadog connects excess context, cache misses, and invalid retries to code
   changes while separating projected savings from measured outcomes.
 translation_source: assistant
@@ -21,6 +22,7 @@ permalink: /tech/en/insights-agent-observability/
 published_at: '2026-11-01T08:44:13.804154+08:00'
 updated_at: '2026-11-01T08:44:13.804154+08:00'
 ---
+
 The next step in agent observability is turning trace evidence into verifiable changes. Datadog uses Insights to analyze the agent behind Insights, with concrete examples of oversized search results, broken cache prefixes, repeated invalid calls, and guessed skill-resource names. A single error message or aggregate token count would not identify all of these mechanisms.
 
 Original: [How we use Insights to improve the agent behind Insights](https://www.datadoghq.com/blog/improving-insights-agent-observability/) · Alex Barksdale, Miguel Tulla Lizardi, Zhengda Lu · Datadog · 2026-10-30.

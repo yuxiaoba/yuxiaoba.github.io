@@ -10,11 +10,14 @@ source_type: tech
 tags:
 - inference-serving
 - systems-reliability
-summary: A llama.cpp issue reports that some quantized KV Cache and FlashAttention combinations silently fall back to CPU, making displayed configuration differ from actual execution.
+summary: A llama.cpp issue reports that some quantized KV Cache and FlashAttention
+  combinations silently fall back to CPU, making displayed configuration differ from
+  actual execution.
 source_url: https://github.com/ggml-org/llama.cpp/issues/28455
 permalink: /tech/en/llamacpp-kv-fallback/
 translation_source: assistant-authored paired Chinese and English
 ---
+
 An inference server may appear to use GPU FlashAttention while a particular KV Cache type combination causes its attention operator to run on the CPU. A [llama.cpp issue report](https://github.com/ggml-org/llama.cpp/issues/28455) describes a performance regression that is difficult to identify from the displayed configuration alone.
 
 ## What triggers the fallback?

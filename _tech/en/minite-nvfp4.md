@@ -20,6 +20,7 @@ permalink: /tech/en/minite-nvfp4/
 published_at: '2026-10-28T15:24:19.938525+08:00'
 updated_at: '2026-10-28T15:24:19.938525+08:00'
 ---
+
 miniTE’s useful result is broader than faster NVFP4 learner updates: it also documents a case where conversion and synchronization erase system gains. RL connects sampling, probability recomputation, backpropagation, and weight transfer. Giving both sides the same precision label does not guarantee matching token probabilities.
 
 Original: [miniTE Technical Report: Stable and Efficient Reinforcement Learning with Native NVFP4](https://www.lmsys.org/blog/2026-10-25-minite/) · LMSYS / InfiX.ai · 2026-10-25.

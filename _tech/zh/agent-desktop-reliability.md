@@ -10,6 +10,7 @@ source_type: tech
 tags:
 - agent-reliability
 - observability
+- systems-reliability
 summary: 通过无障碍树、快照引用、送达状态与后置验证，理解桌面 Agent 工具如何处理状态变化和重复动作。
 translation_source: assistant-authored Chinese and English paired content
 long_read: true
@@ -18,6 +19,7 @@ permalink: /tech/zh/agent-desktop-reliability/
 published_at: '2026-11-02T08:39:51.033336+08:00'
 updated_at: '2026-11-02T08:39:51.033336+08:00'
 ---
+
 桌面 Agent 最危险的失败，有时不是点不到按钮，而是窗口已经变了，却仍对旧目标执行；或者输入其实已经送达，超时重试又执行了一遍。Vercel Labs 的 agent-desktop 将这些问题放进工具接口：通过操作系统无障碍树观察控件，再用带身份信息的引用操作，并把动作送达、结果验证和重试安全性分别返回。
 
 原始项目：[agent-desktop](https://github.com/vercel-labs/agent-desktop) · Vercel Labs；Chris Tate 于 [2026-10-31 发布介绍](https://x.com/ctatedev/status/2116323148706771302)。以下机制依据项目 2026-11-01 的文档快照，JSON 输出契约为 2.5。

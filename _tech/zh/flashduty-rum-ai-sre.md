@@ -1,6 +1,6 @@
 ---
 date: '2026-10-28'
-published: true
+published: false
 layout: article
 maintenance: daily-research
 authoring_source: assistant
@@ -19,6 +19,7 @@ permalink: /tech/zh/flashduty-rum-ai-sre/
 published_at: '2026-10-28T15:24:19.938525+08:00'
 updated_at: '2026-10-28T15:24:19.938525+08:00'
 ---
+
 Flashduty 的 10 月 25 日更新给自然语言观测查询增加了具体的交互边界：有权限且启用 AI SRE 的用户，可以让它填写查询条件、事件类型、时间范围和分析图表，并直接执行。状态条反馈填写、查询、完成、无数据或失败；Undo 只在查询框仍保留 AI 写入内容时有效，避免覆盖用户后续修改。
 
 原文：[Query and analyze in the RUM Explorer with AI SRE, a custom dashboard belongs to one application, errors split into Issues by where they were raised](https://docs.flashduty.com/en/changelog/changelog#rum-explorer-query-and-analyze-with-ai-sre) · Flashduty · 2026-10-25。

@@ -20,6 +20,7 @@ permalink: /tech/en/lean-tokenizers/
 published_at: '2026-10-28T15:24:19.938525+08:00'
 updated_at: '2026-10-28T15:24:19.938525+08:00'
 ---
+
 When an agent feeds tool results back into a conversation and later trains on that trajectory, decoding and re-encoding can preserve text while changing token IDs. Sasha Rush’s prototype verifies tokenization together with message rendering, making consistency more precise than textual similarity.
 
 Original: [Lean Verified Tokenizers](https://srush.github.io/verified-tokenizer/) · Sasha Rush; [publicly introduced by the author](https://x.com/srush_nlp/status/2115197402525434242) on 2026-10-27.

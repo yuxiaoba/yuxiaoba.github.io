@@ -3,7 +3,7 @@ id: google-ai-infra-october
 title: 2026年11月1日｜十月云端 Agent 基础设施的四个变化
 date: '2026-11-01'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -20,6 +20,7 @@ permalink: /tech/zh/google-ai-infra-october/
 published_at: '2026-11-01T08:44:13.804154+08:00'
 updated_at: '2026-11-01T08:44:13.804154+08:00'
 ---
+
 [What’s new in AI infrastructure and orchestration in October](https://cloud.google.com/blog/topics/ai-infrastructure/whats-new-in-ai-infrastructure-this-month/) · Alex Barrett, Dave Bartoletti · Google Cloud · 十月更新 · 2026-10-30。
 
 这份官方产品汇总里，四项变化与 Agent 运行直接相关。Agent Compute Engine 宣布以硬件隔离的 microVM 和写时复制内存共享兼顾隔离与密度；处于预览阶段的 GKE CPU startup boost 利用原地 Pod 资源调整，在初始化时提高 CPU、稳定后回落，无需重启容器。

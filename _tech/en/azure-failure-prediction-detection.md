@@ -20,7 +20,8 @@ authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
 updated_at: '2026-11-05T08:55:14.344660+08:00'
 ---
-Original: [Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads](https://azure.microsoft.com/en-us/blog/predicting-and-detecting-failures-how-azure-strengthens-reliability-for-mission-critical-workloads/)  
+
+Original: [Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads](https://azure.microsoft.com/en-us/blog/predicting-and-detecting-failures-how-azure-strengthens-reliability-for-mission-critical-workloads/)<br>
 Mark Russinovich · 2026-11-04
 
 Azure AFPD connects prediction/detection, mitigation, and repair. Fully operational since 2024, it is presented here through SAP workloads and customer notifications, not as a new SAP-only predictor. Coverage also includes general and specialized compute, HPC/AI, and selected storage scenarios.

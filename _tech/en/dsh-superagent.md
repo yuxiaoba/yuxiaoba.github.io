@@ -23,6 +23,7 @@ permalink: /tech/en/dsh-superagent/
 published_at: '2026-11-01T08:44:13.804154+08:00'
 updated_at: '2026-11-01T08:44:13.804154+08:00'
 ---
+
 For an ongoing coding agent, difficult failures often happen between model replies: a CI result arrives late, several people follow up on one issue, or a process restarts before work is delivered. DeepSeek’s dsh-superagent prototype represents these situations through work items and execution state. Its AgentOps value lies in separating authority, current execution, and unfinished external effects.
 
 Original project: [dsh-superagent](https://github.com/deepseek-ai/dsh-superagent-prototype) · deepseek-ai / DeepSeek Harness team · repository created 2026-10-31. The README describes research reference code adapted for publication. It differs from *Exploring Super-agent Design: Towards a More Autonomous Agent System*, and some design directions are not implemented.

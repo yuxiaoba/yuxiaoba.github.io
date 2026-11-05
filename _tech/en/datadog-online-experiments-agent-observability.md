@@ -4,7 +4,7 @@ title: '2026-11-05 | Online experiments: a 44.3% cost reduction still warrants t
   analysis'
 date: '2026-11-05'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -21,7 +21,8 @@ authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
 updated_at: '2026-11-05T08:55:14.344660+08:00'
 ---
-Original: [Compare AI agent changes with Online Experiments in Agent Observability](https://www.datadoghq.com/blog/online-experiments-agent-observability/)  
+
+Original: [Compare AI agent changes with Online Experiments in Agent Observability](https://www.datadoghq.com/blog/online-experiments-agent-observability/)<br>
 Alex Barksdale, Yakov Shapiro, Demetri Pananos, Miguel Tulla Lizardi · 2026-11-04
 
 ## Measure the whole investigation

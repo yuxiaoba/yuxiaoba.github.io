@@ -3,7 +3,7 @@ id: tensorrt-edge-llm-spark
 title: 2026年11月1日｜端侧推理的生成加速，不等于首 token 更快
 date: '2026-11-01'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,6 +18,7 @@ permalink: /tech/zh/tensorrt-edge-llm-spark/
 published_at: '2026-11-01T08:44:13.804154+08:00'
 updated_at: '2026-11-01T08:44:13.804154+08:00'
 ---
+
 [Run AI Models for Edge Application Development with Just a Few Commands](https://developer.nvidia.com/blog/run-ai-models-for-edge-application-development-with-just-a-few-commands/) · Joe Halabi, Lin Chai, Maximilien Breughe, Michael Ferry, Charlotte Mallo · NVIDIA · 2026-10-30。
 
 TensorRT Edge-LLM 用轻量 C++ 运行时连接 DGX Spark 开发与 Thor 系列部署，CLI 负责下载模型、构建或复用匹配引擎，并提供本地兼容 API。本文最有信息量的是 DSpark 推测解码的条件实测：草稿模型先提出三个 token，由主模型验证。

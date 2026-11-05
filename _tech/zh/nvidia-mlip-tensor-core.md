@@ -3,7 +3,7 @@ id: nvidia-mlip-tensor-core
 title: 2026年10月30日｜用 Tensor Core 加速原子势计算，同时检查物理稳定性
 date: '2026-10-30'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,6 +17,7 @@ translation_source: assistant-authored paired Chinese/English reading notes
 published_at: '2026-10-30T10:31:20.339125+08:00'
 updated_at: '2026-10-30T10:31:20.339125+08:00'
 ---
+
 NVIDIA 针对 Point Edge Transformer 原子间势模型探索 Tensor Core 加速，重点不仅是矩阵乘法速度，还包括力误差、能量守恒和结构优化是否仍可信。
 
 **来源：** Anoushka Bhutani、Atul Thakur、Erica Tsai、Kristopher Keipert、Michele Ceriotti，[Unlocking Tensor Core Performance for Machine Learning Interatomic Potentials](https://developer.nvidia.com/blog/unlocking-tensor-core-performance-for-machine-learning-interatomic-potentials/)，2026 年 10 月 29 日。

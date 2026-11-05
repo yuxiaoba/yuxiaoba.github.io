@@ -3,7 +3,7 @@ id: review-microsoft-copilot-harness-foundry
 title: 2026-10-29｜Foundry 长任务恢复：检查点与幂等边界
 date: '2026-10-29'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -15,6 +15,7 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/zh/review-microsoft-copilot-harness-foundry/
 ---
+
 
 Foundry 区分托管 Copilot harness 预览与 hosted agent 长任务恢复：平台检测中断并以原始输入重启，应用负责保存检查点和中间结果，并避免重复外部操作。仅有对话历史不足以恢复进行中的工作。
 

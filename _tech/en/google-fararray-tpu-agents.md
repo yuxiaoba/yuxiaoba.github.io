@@ -21,6 +21,7 @@ translation_source: assistant-authored paired Chinese/English reading notes
 published_at: '2026-10-30T10:31:20.339125+08:00'
 updated_at: '2026-10-30T10:31:20.339125+08:00'
 ---
+
 Google describes two systems projects where people set architecture and acceptance criteria while agents implement and verify: FarArray for distributed graph computation and a TPU sparse graph kernel that avoids edge-sized intermediates.
 
 **Source:** The Antigravity & Google Research Team, [How Gemini 4 Argon Upleveled Agents on Antigravity: Trillion-Edge Graphs and Custom TPU Kernels](https://antigravity.google/blog/gemini-4-argon-trillion-edge-graphs-and-tpu-kernels), October 26, 2026.

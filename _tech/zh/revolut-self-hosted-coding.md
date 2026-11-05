@@ -3,7 +3,7 @@ id: revolut-self-hosted-coding
 title: 2026年11月4日｜Revolut 如何在固定 GPU 规模下调优编码模型服务
 date: '2026-11-04'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -15,6 +15,7 @@ source_url: https://ai.engineer/nyc/2026/talks/revolut
 permalink: /tech/zh/revolut-self-hosted-coding/
 translation_source: assistant-authored paired Chinese and English
 ---
+
 编码 Agent 的成本与体验，不只取决于模型能力，也取决于真实请求的上下文长度、缓存命中率以及服务并行方式。在 [AI Engineer NYC 2026 的演讲](https://ai.engineer/nyc/2026/talks/revolut)中，Revolut 的 David Abitbol 分享了该公司自托管编码模型的部署经验；以下依据会议页面和演讲文字记录。
 
 ## 固定硬件，围绕工作负载调优

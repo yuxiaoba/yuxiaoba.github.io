@@ -10,6 +10,7 @@ source_type: tech
 tags:
 - inference-serving
 - coding-agents
+- systems-reliability
 summary: A 50-task experiment separates output caps from thinking configuration and
   highlights routing’s conflict with context caching.
 long_read: true
@@ -20,7 +21,8 @@ authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
 updated_at: '2026-11-05T08:55:14.344660+08:00'
 ---
-Original: [Cost per task: Using cheap classifiers to route across Gemini models and thinking levels](https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/)  
+
+Original: [Cost per task: Using cheap classifiers to route across Gemini models and thinking levels](https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/)<br>
 Sergio Villani · 2026-11-03
 
 Google Developers tests a cheap classifier that identifies short tasks requiring multiple reasoning steps and routes across Gemini models and thinking levels. The useful lesson is to establish two baselines: whether the supposed cheap path actually costs less, and whether a lighter fixed thinking configuration already solves the workload.

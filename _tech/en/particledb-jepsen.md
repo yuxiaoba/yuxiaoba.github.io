@@ -18,6 +18,7 @@ permalink: /tech/en/particledb-jepsen/
 published_at: '2026-11-02T08:39:51.033336+08:00'
 updated_at: '2026-11-02T08:39:51.033336+08:00'
 ---
+
 A database's advertised isolation, the execution path used by a client and the state recovered from disk can disagree. Jepsen's ParticleDB analysis matters because many severe failures occurred with one node, one client and no injected faults. Distributed failure scenarios are not the starting point for establishing correctness.
 
 Original: [Jepsen: ParticleDB 1.1.4](https://jepsen.io/analyses/particledb-1.1.4) · Kyle Kingsbury · 2026-10-31. Orkes funded the research under Jepsen's ethics policy.

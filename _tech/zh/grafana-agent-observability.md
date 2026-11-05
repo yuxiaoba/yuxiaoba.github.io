@@ -1,6 +1,6 @@
 ---
 date: '2026-10-28'
-published: true
+published: false
 layout: article
 maintenance: daily-research
 authoring_source: assistant
@@ -19,6 +19,7 @@ permalink: /tech/zh/grafana-agent-observability/
 published_at: '2026-10-28T15:24:19.938525+08:00'
 updated_at: '2026-10-28T15:24:19.938525+08:00'
 ---
+
 Agent 的接口成功率不足以说明回答质量。Grafana 的 FAQ 将 traces、成本、质量评估和离线实验放入同一工作流，并说明可以接受遵循 OpenTelemetry GenAI 语义约定的 spans，不必换成专用 SDK。
 
 原文：[Agent Observability FAQ: Understand the value of monitoring, evaluating, and improving your AI agents](https://grafana.com/blog/agent-observability-faq-understand-the-value-of-monitoring-evaluating-and-improving-your-ai-agents/) · Aishlee Kailey / Grafana · 2026-10-27。

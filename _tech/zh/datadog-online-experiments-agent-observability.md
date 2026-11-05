@@ -3,7 +3,7 @@ id: datadog-online-experiments-agent-observability
 title: 2026年11月5日｜在线实验：成本降低 44.3%，仍要追查工具错误
 date: '2026-11-05'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -19,7 +19,8 @@ authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
 updated_at: '2026-11-05T08:55:14.344660+08:00'
 ---
-原文: [Compare AI agent changes with Online Experiments in Agent Observability](https://www.datadoghq.com/blog/online-experiments-agent-observability/)  
+
+原文: [Compare AI agent changes with Online Experiments in Agent Observability](https://www.datadoghq.com/blog/online-experiments-agent-observability/)<br>
 Alex Barksdale, Yakov Shapiro, Demetri Pananos, Miguel Tulla Lizardi · 2026-11-04
 
 ## 换模型要比较整次工作

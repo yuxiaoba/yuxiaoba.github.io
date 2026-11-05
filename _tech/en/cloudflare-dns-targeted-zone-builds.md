@@ -19,7 +19,8 @@ translation_source: assistant-authored paired Chinese and English
 published_at: '2026-11-03T08:33:39.690995+08:00'
 updated_at: '2026-11-03T08:33:39.690995+08:00'
 ---
-**Cloudflare · Engineering practice · 2026-11-02**  
+
+**Cloudflare · Engineering practice · 2026-11-02**<br>
 Original: [How we halved DNS build delay and cut memory use by 85%](https://blog.cloudflare.com/dns-targeted-zone-builds/) · Alex Fattouche
 
 After a DNS record or setting changes, Cloudflare's Zone Builder reads database state, generates data for authoritative DNS, and writes changes to Quicksilver. Some zones now exceed 20 million records. An old full build read, encoded and compared the entire zone even when the final write was small. The new design separates two decisions: a planner determines what must be rebuilt, while a unified scheduler combines queued work without losing message acknowledgment semantics.

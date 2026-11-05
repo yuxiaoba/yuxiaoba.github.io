@@ -20,6 +20,7 @@ permalink: /tech/en/gke-network-mystery/
 published_at: '2026-11-01T08:44:13.804154+08:00'
 updated_at: '2026-11-01T08:44:13.804154+08:00'
 ---
+
 The same `i/o timeout` can originate at different layers. This Google Cloud incident account shows something more subtle: interacting behaviors preserved stale connection state, then blocked the protocol path that could clear it. Its strongest contribution is the evidence chain from an unavailable Kubernetes API to TCP state transitions.
 
 Original: [When the Kubernetes API went silent: A three-layer networking mystery](https://cloud.google.com/blog/products/networking/the-three-layer-gke-network-mystery/) · Akash Thakur · Google Cloud · 2026-10-30. The article describes an anonymized customer incident in early 2026 affecting multiple europe-west clusters and blocking roughly 800 developers from normal production deployment for weeks. That scope refers to this customer’s environment.

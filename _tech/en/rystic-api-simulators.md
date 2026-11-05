@@ -1,6 +1,6 @@
 ---
 date: '2026-10-28'
-published: true
+published: false
 layout: article
 maintenance: daily-research
 authoring_source: assistant
@@ -20,6 +20,7 @@ permalink: /tech/en/rystic-api-simulators/
 published_at: '2026-10-28T15:24:19.938525+08:00'
 updated_at: '2026-10-28T15:24:19.938525+08:00'
 ---
+
 Agent tool tests need sequences: creating a customer should affect subsequent listing, and deletion should remove it. Rystic’s product page demonstrates stateful local API simulation and lets users load and modify records, extending beyond isolated mock responses.
 
 Original: [Rystic — Realistic API simulators for training and testing](https://www.rystic.ai/) · Rystic; its founder [announced the launch](https://x.com/ZKiihne/status/2114856061241045120) on 2026-10-26.
