@@ -51,6 +51,7 @@ def audit(site):
                 article=soup(page_path)
                 if article.select_one('meta[http-equiv="refresh"]'):
                     continue  # Historical per-paper URLs redirect into a daily digest.
+                check(not re.search(r'\]\(/(?:tech|digest)/',article.get_text()),f'no unrendered internal reading links {page_path.relative_to(site)}')
                 check(article.select_one('[data-bookmark-article]') is not None,f'bookmark controls enabled for {page_path.relative_to(site)}')
                 check(not article.select('[data-reading-metrics], [data-article-views], .article-views'), f'no reading analytics {page_path.relative_to(site)}')
                 byline=article.select_one('.article-header .door-detail')
