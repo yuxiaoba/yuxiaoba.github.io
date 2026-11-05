@@ -7,6 +7,7 @@
   "max_items": {"paper": null, "tech": null, "social": null},
   "select_important_tech": false,
   "curate_by_value": true,
+  "require_reading_depth": true,
   "codex_bin": "/root/.nvm/versions/node/v24.12.0/bin/codex",
   "publication": {
     "enabled": true,

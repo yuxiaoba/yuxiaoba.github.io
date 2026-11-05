@@ -301,6 +301,20 @@ def validate_selection(data, result):
             require(evidence != 'unavailable', 'Unavailable evidence cannot justify a value rejection')
     require(seen == items, 'Every input needs a selection decision')
 
+def validate_reading_quality(body, kind):
+    """Reject known thin-page failures; semantic/source review is still required."""
+    require(not re.search(r'本简述依据原始摘要|based (?:only |solely )?on (?:the )?(?:original )?abstract', body, re.I),
+            'Abstract-only writing needs further source review')
+    if kind != 'tech': return
+    text = re.sub(r'```.*?```', '', body, flags=re.S)
+    sections = re.split(r'^#{2,3}\s+.+$', text, flags=re.M)[1:]
+    substantial = []
+    for section in sections:
+        prose = re.sub(r'<[^>]+>|!?\[[^\]]*\]\([^)]*\)|https?://\S+', '', section)
+        prose = re.sub(r'\s+', '', prose)
+        substantial.append(len(prose) >= 50)
+    require(sum(substantial) >= 3, 'Standalone Tech needs at least three substantive sections, not a one-paragraph brief')
+
 def validate_outputs(root, work, data, result, tech_limit=None):
     from PIL import Image
     output = work / 'output'; allowed = {}; routes = []; covered = set(); pairs = []
@@ -344,6 +358,8 @@ def validate_outputs(root, work, data, result, tech_limit=None):
             date = dt.date.fromisoformat(meta['date']); prefix = f'{date.year}年{date.month}月{date.day}日｜' if lang == 'zh' else meta['date'] + ' | '
             require(isinstance(meta.get('title'), str) and meta['title'].startswith(prefix), 'Date-led title required')
             require(len(body.strip()) >= 400, 'Article body is incomplete')
+            if data.get('_quality_policy') == 'reading-depth-v1':
+                validate_reading_quality(body, kind)
             require(not re.search(r'<\s*(script|iframe|object|embed)\b|\bon\w+\s*=|javascript:', body, re.I), 'Executable markup is not content')
             require('{{' not in body and '{%' not in body and '![[' not in body, 'Unprocessed template syntax')
             expected = f'/digest/{lang}/daily/{data["date"]}/' if kind == 'paper' else f'/tech/{lang}/{meta["id"]}/'
@@ -577,6 +593,8 @@ def run(root, config, dry_run=False, batch=None, one_off=False, history=False):
                     atomic_json(state_path, state)
                     try:
                         worker_data = {**data, 'items': selected_items}
+                        if config.get('require_reading_depth'):
+                            worker_data['_quality_policy'] = 'reading-depth-v1'
                         if config.get('curate_by_value'):
                             worker_data['_curation_policy'] = 'evidence-and-value-v1'
                         tech_limit = config['max_items']['tech'] if config.get('select_important_tech') else None
