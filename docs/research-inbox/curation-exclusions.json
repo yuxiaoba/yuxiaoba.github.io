@@ -61,6 +61,96 @@
       "url": "https://x.com/CloudNativeFdn/status/2111170417259958620",
       "reason": "仅会议议题预告，未提供完整技术内容。",
       "approved_on": "2026-10-27"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37609",
+      "reason": "EnvSched primarily advances RL curriculum/task sampling. Its reward-variance and coverage objective does not diagnose agent failures, govern deployed agents, or optimize inference execution; a standalone entry stretches the stated field-progress scope.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36822",
+      "reason": "The contribution is CPU SpGEMM load balancing and accumulation for graphs/relational workloads. No demonstrated inference-serving or reliability consequence justifies a standalone entry for this reading purpose.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36405",
+      "reason": "Six single-run harness comparisons on a VAT reconstruction family cannot establish a transferable reliability or systems result; most contribution is domain task construction and accounting workflow demonstration.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://blog.cloudflare.com/q3-2026-internet-disruption-summary/",
+      "reason": "Quarterly outage inventory describes external disasters and shutdowns but does not analyze a cloud/AI fault mechanism or test a mitigation; observed traffic drops alone add little to this research stream.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.38800",
+      "reason": "Pilot reference labels follow the evaluator's own rules, so perfect selection is expected; there is no independent evidence of improved agent decisions or patches. The context-validity proposal alone is insufficient standalone progress.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41209",
+      "reason": "Scientific-array compression and HPC I/O gains lack a demonstrated cloud/AI reliability or inference-serving connection in this article.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41457",
+      "reason": "RecIS combines established fusion, sharding and multistage overlap for recommender training; the supplied results do not identify a distinctive reliability or inference insight for this focused digest.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41432",
+      "reason": "HCU principally improves general desktop task capability by adding AX and programmatic channels; the source does not isolate a cloud/AI operational failure or inference mechanism.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.40747",
+      "reason": "Primarily a computer-use model/training curriculum and task-generation result, without a distinct operational reliability, diagnosis or inference contribution.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://grafana.com/blog/instrumentation-hub-start-your-observability-journey-easier-and-still-stay-in-control/",
+      "reason": "GA announcement supplies discovery, selective OTel injection and pipeline configuration workflow, but no new diagnostic mechanism or quantified coverage/overhead outcome.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.13022",
+      "reason": "Repository requirement clarification with simulated user personas is primarily requirements-engineering capability, without a specific operations/fault-analysis result.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03126",
+      "reason": "CUA-Master primarily contributes data synthesis and recursive policy training for desktop capability; no isolated operational reliability result supports standalone AgentOps coverage.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02102",
+      "reason": "NorthCUA is a broad computer-use model family/experience pipeline report; state-of-the-art task scores do not by themselves add fault-analysis or systems-operational insight.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.00191",
+      "reason": "Vague mobile requests and app-centric history retrieval study user-memory task capability, not an operational failure-analysis or inference systems mechanism.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03434",
+      "reason": "Minimal-harness near-parity and smaller code surface do not establish reliability/auditability gains when the accuracy judge was only spot-checked and component effects are not isolated.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://honeycomb.io/blog/honeycomb-introduces-ai-sre-agents",
+      "reason": "Early-access SRE-agent announcement lists goals, shared memory and permission controls without measured diagnostic/repair effectiveness or inspectable new mechanism.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+      "reason": "Weight-reading/writing demonstrations investigate model capability and editing, without an established cloud/AI operations or inference execution contribution for this focused digest.",
+      "approved_on": "2026-11-05"
+    },
+    {
+      "url": "https://www.datadoghq.com/blog/runtime-security-for-ai-agents/",
+      "reason": "Runtime AI Guard post asserts context-aware inline blocking and self-hardening without detection accuracy, false-positive, latency or bypass measurements.",
+      "approved_on": "2026-11-05"
     }
   ]
 }

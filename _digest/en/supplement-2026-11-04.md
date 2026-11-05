@@ -3,7 +3,7 @@ id: supplement-2026-11-04
 title: 2026-11-04 | Supplementary Research Readings
 date: '2026-11-04'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 translation_source: assistant-authored paired Chinese/English reading notes
@@ -17,6 +17,7 @@ tags:
 - inference-serving
 - systems-reliability
 ---
+
 
 [Return to the original digest](/digest/en/daily/2026-11-04/)
 

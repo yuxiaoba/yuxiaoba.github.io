@@ -3,7 +3,7 @@ id: supplement-2026-11-03
 title: 2026-11-03 | Supplementary Research Readings
 date: '2026-11-03'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 translation_source: assistant-authored paired Chinese/English reading notes
@@ -15,6 +15,7 @@ tags:
 - observability
 - systems-reliability
 ---
+
 
 [Return to the original digest](/digest/en/daily/2026-11-03/)
 

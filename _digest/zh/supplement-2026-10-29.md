@@ -3,7 +3,7 @@ id: supplement-2026-10-29
 title: 2026-10-29｜补读：论文与技术进展
 date: '2026-10-29'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 translation_source: assistant-authored paired Chinese/English reading notes
@@ -15,6 +15,7 @@ tags:
 - coding-agents
 - observability
 ---
+
 
 [返回当日论文集](/digest/zh/daily/2026-10-29/)
 

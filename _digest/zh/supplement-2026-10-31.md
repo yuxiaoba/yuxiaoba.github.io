@@ -3,7 +3,7 @@ id: supplement-2026-10-31
 title: 2026-10-31｜补读：论文与技术进展
 date: '2026-10-31'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 translation_source: assistant-authored paired Chinese/English reading notes
@@ -14,6 +14,7 @@ tags:
 - agent-reliability
 - systems-reliability
 ---
+
 
 [返回当日论文集](/digest/zh/daily/2026-10-31/)
 
