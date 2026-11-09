@@ -26,6 +26,11 @@ recipe 还记录 Ubuntu 26.04、arm64 64K-page kernel 和 RKE2 的版本条件�
 
 ## 三层验证分别证明什么
 
+<a class="note-image-link" href="/assets/images/tech/2026-11-03-nvidia-kubernetes-ai-ready-vera-rubin/official-figure.webp" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/2026-11-03-nvidia-kubernetes-ai-ready-vera-rubin/official-figure.webp" alt="同一 Rubin 训练配方分别记录部署、性能与一致性检查；绿勾对应具体测试，并非对所有负载的认证。" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*同一 Rubin 训练配方分别记录部署、性能与一致性检查；绿勾对应具体测试，并非对所有负载的认证。*
+
+
 deployment 检查组件、资源与 nvidia-smi；conformance 覆盖设备访问、调度和指标等运行契约；训练 performance gate 则启动跨节点 NCCL all-reduce，通过 IMEX ComputeDomain 检查 NVLink bus bandwidth。文章给出的 16 GiB 消息下 744.71 GB/s 是这一特定测试，不是任意模型的训练速度。
 
 推理 recipe 通过部署与一致性，但推理性能仍延后。正文解释：源代码包含 Rubin 分派不等于发布镜像已用所需 CUDA 编译 kernel。它还明确排除 MIG 与 ConnectX-9 RDMA 数据路径性能。signed evidence 对应捕获时的 recipe 坐标；Preview recipe 继续变化时，旧签名不能自动认证今天的内容。

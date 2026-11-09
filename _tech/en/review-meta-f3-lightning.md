@@ -29,6 +29,11 @@ F3 Lightning compiles each feature into a self-contained configuration containin
 
 ## Recovering shared computation and memory
 
+<a class="note-image-link" href="/assets/images/tech/review-meta-f3-lightning/official-figure.png" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/review-meta-f3-lightning/official-figure.png" alt="Features release independently; runtime ordering and deduplication recover shared computation." loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*Features release independently; runtime ordering and deduplication recover shared computation.*
+
+
 Independently compiled configurations need to recognize equivalent work. The compiler derives stable computation IDs from the operation, parameters and input IDs, recursively incorporating upstream semantics. Commutative inputs are normalized; aggregation IDs include windows and grouping keys. Local node numbering can therefore change without preventing sharing.
 
 At startup, the runtime deduplicates active configurations, orders nodes by dependency and flattens them into one execution sequence. Requests walk that sequence. If an input or computation fails, dependent nodes become not ready and are skipped; independent branches continue. Independent release does not eliminate runtime dependencies.

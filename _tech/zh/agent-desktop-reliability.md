@@ -26,6 +26,11 @@ updated_at: '2026-11-02T08:39:51.033336+08:00'
 
 ## 无障碍树提供了什么
 
+<a class="note-image-link" href="/assets/images/tech/agent-desktop-reliability/official-figure.png" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/agent-desktop-reliability/official-figure.png" alt="CLI 和 C 接口共用核心逻辑，经平台适配层读取目标应用的无障碍树。" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*CLI 和 C 接口共用核心逻辑，经平台适配层读取目标应用的无障碍树。*
+
+
 项目提供 Rust 实现的 CLI 和 C 库，覆盖 macOS、Windows 与 Linux。它读取应用暴露给操作系统的结构：窗口、控件角色、可访问名称、状态及可用动作，再返回 JSON 快照。Agent 选一个引用执行动作，随后重新观察；规划循环仍由上层 Agent 控制。
 
 这条路径可以减少从像素推断按钮位置的需要，但它依赖应用实际暴露的无障碍信息。没有语义动作、读操作不完整或平台不支持的能力，都要作为接口边界处理。项目同时支持截图与显式物理输入，因此不应理解成所有软件都能完全摆脱坐标操作。

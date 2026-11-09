@@ -27,6 +27,11 @@ Original project: [agent-desktop](https://github.com/vercel-labs/agent-desktop) 
 
 ## What the accessibility tree supplies
 
+<a class="note-image-link" href="/assets/images/tech/agent-desktop-reliability/official-figure.png" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/agent-desktop-reliability/official-figure.png" alt="The CLI and C interface share a core that reaches the target app’s accessibility tree through platform adapters." loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*The CLI and C interface share a core that reaches the target app’s accessibility tree through platform adapters.*
+
+
 The Rust CLI and C library support macOS, Windows and Linux. They read the structure applications expose to the OS: windows, roles, accessible names, states and available actions. An agent receives a JSON snapshot, selects a reference, acts and observes again. The planning loop remains in the calling agent.
 
 This reduces the need to infer button positions from pixels, but depends on the application's actual accessibility evidence. Missing semantic actions, incomplete reads and platform limitations remain interface boundaries. Screenshots and explicitly authorized physical input are also supported; the project does not establish that every application can dispense with coordinates.

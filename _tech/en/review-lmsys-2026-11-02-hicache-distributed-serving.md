@@ -26,6 +26,11 @@ The article illustrates requests sharing A/B and branching to C or E. Restored p
 
 ## Why pipeline stages cannot consume completions independently
 
+<a class="note-image-link" href="/assets/images/tech/review-lmsys-2026-11-02-hicache-distributed-serving/official-figure.png" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/review-lmsys-2026-11-02-hicache-distributed-serving/official-figure.png" alt="Independent polling can produce divergent cache state. PP0 passes the ready prefix length so every stage consumes the same queue prefix." loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*Independent polling can produce divergent cache state. PP0 passes the ready prefix length so every stage consumes the same queue prefix.*
+
+
 PP stages hold different layers and finish asynchronous copies at different times. If PP0 observes only A complete while PP1 observes both A and B, independently releasing locks changes eviction eligibility and eventually prefix decisions. With pp_sync, PP0 chooses an ACK count and passes it down the pipeline. Faster stages retain extra ACKs; slower stages wait for selected local transfers before changing bookkeeping.
 
 External storage additionally takes cross-rank minima of hit and completed lengths and publishes agreed progress through ordered ACKs. If PP0 selects four pages, later stages use four even when six are locally available. The protocol aligns logical operations without a simultaneous pipeline-wide barrier. The article's rank_consensus_checker compares corresponding calls and returns to locate divergence before a later shape mismatch or collective hang.

@@ -27,6 +27,11 @@ The recipe also records Ubuntu 26.04, an arm64 64K-page kernel and RKE2 requirem
 
 ## Three validation phases establish different facts
 
+<a class="note-image-link" href="/assets/images/tech/2026-11-03-nvidia-kubernetes-ai-ready-vera-rubin/official-figure.webp" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/2026-11-03-nvidia-kubernetes-ai-ready-vera-rubin/official-figure.webp" alt="The Rubin training recipe records deployment, performance and conformance checks separately; passing checks apply to the displayed tests." loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*The Rubin training recipe records deployment, performance and conformance checks separately; passing checks apply to the displayed tests.*
+
+
 Deployment checks components, resources and nvidia-smi. Conformance checks access, scheduling and metrics contracts. The training performance gate runs cross-node NCCL all-reduce through an IMEX ComputeDomain over NVLink. Its 744.71 GB/s bus bandwidth at 16 GiB is a specific test result, not model training speed.
 
 Inference deployment and conformance pass while inference performance remains deferred: Rubin dispatch code does not establish that a released image contains kernels built with the required CUDA. MIG and ConnectX-9 RDMA datapath performance are outside scope. Signed evidence belongs to its captured recipe coordinate; it does not automatically attest to later changes in a Preview recipe.

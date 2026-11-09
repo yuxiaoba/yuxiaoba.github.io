@@ -28,6 +28,11 @@ FastVideo replaces cuDNN SDPA with FlashAttention-4 and fuses glue operations, Q
 
 ## Quantization must account for both modalities
 
+<a class="note-image-link" href="/assets/images/tech/review-haoailab-pika-h3-flex/official-figure.png" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/review-haoailab-pika-h3-flex/official-figure.png" alt="Sixteen values in one NVFP4 key block share a scale; one small value rounds to zero in this example." loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*Sixteen values in one NVFP4 key block share a scale; one small value rounds to zero in this example.*
+
+
 The NVFP4 path merges LoRA in fp32 before rounding once. Activation calibration uses Flex's own six-step trajectories and balances video and audio errors, preventing the more numerous video tokens from dominating clipping choices.
 
 QAD trains a four-bit student under deployment numerics from the first step, matching frozen BF16 final predictions and block outputs, sometimes starting from its own states to learn drift correction. FP4 attention subtracts the mean key and applies the same orthonormal Hadamard transform to Q and K to spread outliers. Those transforms preserve pre-quantization attention semantics; quantization still introduces error. Sensitive blocks 45 and 49 retain BF16. Full-clip checks cover keyframe fidelity, motion and audio rather than accepting a better distillation score alone.

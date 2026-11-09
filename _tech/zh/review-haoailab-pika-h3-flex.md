@@ -28,6 +28,11 @@ Pika H3 Flex 基于 MiniMax H3 后训练，支持文本、首尾帧和多模态�
 
 ## 量化需要与音频和视频共同校准
 
+<a class="note-image-link" href="/assets/images/tech/review-haoailab-pika-h3-flex/official-figure.png" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/review-haoailab-pika-h3-flex/official-figure.png" alt="一个 NVFP4 key 块的 16 个值共用一个缩放值；图中有一个小值量化为零。" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*一个 NVFP4 key 块的 16 个值共用一个缩放值；图中有一个小值量化为零。*
+
+
 NVFP4 路径先在 fp32 合并 LoRA，再做一次舍入，避免合并误差混入量化。静态激活尺度按 Flex 自身六步轨迹校准；若只优化总体误差，大量视频 tokens 会淹没音频。因此每层裁剪要平衡两个模态。
 
 QAD 让四位学生从第一步就使用部署数值，对齐冻结 BF16 教师的最终预测与逐块输出，并部分从学生自己的状态开始学习纠偏。FP4 attention 则先对 key 减均值，再对 Q/K 做相同正交 Hadamard 变换，减少异常通道影响；这些变换在量化前保持 attention 语义，但量化本身仍有误差。误差敏感的第 45、49 块保留 BF16。完整视频还检查首尾帧、运动和声音，避免仅优化蒸馏分数。

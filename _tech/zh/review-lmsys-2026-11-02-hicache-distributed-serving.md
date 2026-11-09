@@ -26,6 +26,11 @@ HiCache 将 SGLang 的 GPU 前缀缓存扩展到主机与外部存储。长程 a
 
 ## 为什么流水线阶段不能各自处理完成事件
 
+<a class="note-image-link" href="/assets/images/tech/review-lmsys-2026-11-02-hicache-distributed-serving/official-figure.png" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/review-lmsys-2026-11-02-hicache-distributed-serving/official-figure.png" alt="各阶段独立轮询会得到不同的缓存完成状态；PP0 传递可消费的前缀长度，各阶段按同一顺序推进。" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*各阶段独立轮询会得到不同的缓存完成状态；PP0 传递可消费的前缀长度，各阶段按同一顺序推进。*
+
+
 PP 各阶段存不同层，异步复制完成时间自然不同。假设 PP0 只看到 A 完成，PP1 已看到 A、B 都完成；若各自释放已完成传输的锁，后续淘汰资格和命中长度就会分歧。pp_sync 由 PP0 决定本次消费多少个 ACK，将数量逐级传递。较快阶段留住额外 ACK，较慢阶段等选中传输本地完成后才更新账本。
 
 外部存储还先对命中与完成长度取跨 rank 最小值，把共同进度排成有序 ACK。PP0 本轮选了四页，后级即使已有六页也使用同样四页。这里同步的是逻辑操作顺序，不要求所有阶段同时停在一道屏障。文末 rank_consensus_checker 对照对应调用及返回值，帮助定位早于 shape mismatch 或 collective hang 的首次分歧。

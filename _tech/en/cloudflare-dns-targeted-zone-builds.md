@@ -41,6 +41,11 @@ An event describes the past; the database may change while a build waits. A fres
 
 ## Merge work without losing acknowledgments
 
+<a class="note-image-link" href="/assets/images/tech/cloudflare-dns-targeted-zone-builds/official-figure.png" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/cloudflare-dns-targeted-zone-builds/official-figure.png" alt="The planner derives work for record and wildcard changes separately, then the scheduler combines it into one build." loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*The planner derives work for record and wildcard changes separately, then the scheduler combines it into one build.*
+
+
 The unified scheduler combines queued name and metadata requirements for a zone. Merging only adds work: if any event requires a full build, so does the combined plan; purge overrides rebuilds. It tracks DNS work separately from Kafka messages awaiting acknowledgment. Even when individual names are no longer needed in the merged plan, their messages remain until the result is safely written.
 
 A Kafka partition's committed offset cannot pass an unfinished earlier message. Later builds can finish and be marked in memory, but a restart replays them if the offset remains blocked. Cloudflare chooses repeated work over lost changes. Fewer large builds shorten the time the oldest unfinished event blocks a partition. A per-zone rebuild interval prevents a busy zone from consuming every worker, with an exception for work that has waited too long.

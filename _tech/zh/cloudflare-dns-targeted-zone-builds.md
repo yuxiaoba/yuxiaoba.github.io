@@ -39,6 +39,11 @@ DNS 记录或设置变更后，Cloudflare 的 Zone Builder 读取数据库状态
 
 ## 合并工作，但不丢确认
 
+<a class="note-image-link" href="/assets/images/tech/cloudflare-dns-targeted-zone-builds/official-figure.png" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/cloudflare-dns-targeted-zone-builds/official-figure.png" alt="构建规划器分别计算 A 记录和通配符变更所需工作，统一调度器合并为一次构建。" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*构建规划器分别计算 A 记录和通配符变更所需工作，统一调度器合并为一次构建。*
+
+
 统一调度器把同一 zone 排队中的名称与元数据需求合并；合并只增加工作，若任一事件需要全量，合并结果也需要全量，清除则覆盖重建。它分别保存待做的 DNS 工作和等待确认的 Kafka 消息：即使合并后不再需要逐条名称，消息也要保留到结果安全写入。
 
 Kafka 的分区提交位点不能越过未完成的较早消息。后面的构建可以先完成并在内存标记，但重启后若位点仍被早期工作挡住，这些消息会重放。Cloudflare 在这里选择重复工作，避免丢失变更。减少大构建缩短了分区被最早未完成事件阻塞的时间；每 zone 重建间隔则防止繁忙 zone 占满 worker，等待过久的工作可以提前运行。

@@ -28,6 +28,11 @@ Meta 的 F3 Lightning 将每个特征编译成自足配置，包含它需要的�
 
 ## 如何重新共享计算与内存
 
+<a class="note-image-link" href="/assets/images/tech/review-meta-f3-lightning/official-figure.png" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/review-meta-f3-lightning/official-figure.png" alt="每个特征可以独立发布，运行时仍对计算节点排序和去重，复用公共计算。" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*每个特征可以独立发布，运行时仍对计算节点排序和去重，复用公共计算。*
+
+
 关键是让独立编译的配置认出同一项工作。编译器用操作、参数和输入的标识生成稳定计算 ID，输入 ID 递归包含上游语义；可交换输入先规范排序，聚合还包含窗口和分组键。因此节点在局部图中的编号改变，不会导致相同计算失去共享。
 
 服务启动时，把活跃配置按依赖排序并去重，再展平成单个执行序列。请求只顺序执行这份计划。失败节点会让依赖它的下游标记为未就绪，独立分支继续运行，因而独立发布不等于消除了运行时依赖。
