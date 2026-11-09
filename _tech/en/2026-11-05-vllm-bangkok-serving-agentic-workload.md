@@ -29,6 +29,10 @@ Long histories can occupy gigabytes, suffer eviction and miss when load balancin
 
 The linked official vLLM Mooncake article supplies the mechanism. Schedulers hash token blocks and query a master that manages metadata and node health. Worker clients register GPU KV as RDMA buffers; background I/O threads prepare and issue transfers. GPUDirect avoids SM use and extra staging, while background descriptor work avoids blocking the main CPU launch path.
 
+<a class="note-image-link" href="/assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/mooncake-kv-pool.png" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/mooncake-kv-pool.png" alt="vLLM schedulers look up KV block locations in the Mooncake master, and multiple instances share a distributed KV pool" loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*The vLLM Bangkok slide shows the split between scheduler lookups and worker access to a shared KV pool via GPUDirect. The storage tiers are architectural options; the speedups come from a specific test.*
+
 MultiConnector combines P/D transfer with shared storage. In that article's version, prefill restores prefixes and forwards them to decode; decode writes the pool but does not read it directly. Multipath reads are future work. A later diagram including NVMe does not turn an earlier DRAM experiment into verified SSD results.
 
 ## Results belong to a specific baseline

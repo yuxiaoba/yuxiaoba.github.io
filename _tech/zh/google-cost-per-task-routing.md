@@ -30,6 +30,10 @@ Google Developers 的实验用廉价分类器决定短任务是否需要多步�
 
 第一轮把 maxOutputTokens 从 4096 降到 300，并未减少简单题的思考用量，却让 25 道难题中的七道失败。因此，即使路由判断正确，把简单题送给这样的“低上限”配置也不一定省钱。更强的无路由基线是 Flash 的 low thinking，已经答对全部 50 题。Flash-Lite 与该配置结合的 Jev 路由也全对，并在作者测量中降低成本和响应时间；应比较这两个方案，而不是只对比昂贵默认档位。
 
+<a class="note-image-link" href="/assets/images/tech/google-cost-per-task-routing/routing-strategy-comparison.jpg" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/google-cost-per-task-routing/routing-strategy-comparison.jpg" alt="Google Developers 比较不同 Gemini 配置和路由策略的正确率、每次成功成本和平均延迟" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*看表中两条蓝色记录：Flash 低思考档位直跑与 Jev 路由都答对 50 题，后者的每次成功成本和平均延迟更低。*
+
 实验仅每种配置运行一次，题目短、难度人工标注，代码尚待开源审查，不能外推到长程 coding agent。文章也指出模型缓存相互独立：长上下文每轮切换模型，可能需要两份缓存或失去复用折扣。适合短日志解析的路由策略，未必适合带大型仓库上下文的连续工作。
 
 可迁移的衡量单位是“成功完成任务的总成本”，包括分类、模型、重试与思考开销。先测试一个足够强的低成本固定配置，再评估路由是否真正增加收益，会比只比较每百万 token 单价更接近服务优化目标。

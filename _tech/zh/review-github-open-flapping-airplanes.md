@@ -32,6 +32,10 @@ open-flapping-airplanes 根据公开视频独立重建一个演示：一次持�
 
 服务基线也受 CPU 资源影响：vLLM 在预留 16 核时达到 1,537 tokens/s，未预留时仅 684。作者采用更快对照，避免把容器 CPU 瓶颈误作 GPU 调度收益。顺序执行、并发独立进程和单 kernel 的总时长比较还含一个由独立运行推算的并发值，不能全部当成实测。
 
+<a class="note-image-link" href="/assets/images/tech/review-github-open-flapping-airplanes/serving-on-24-sms.png" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/review-github-open-flapping-airplanes/serving-on-24-sms.png" alt="B200 上用 24 个 SM 对比单条提示的解码吞吐，包含两种持久 kernel 与 vLLM CUDA Graph 基线" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*项目的 24 SM 解码实验：这是同一条提示下的 tokens/s 对比；图中来自原演示视频的两项读数与本项目实测有区别。*
+
 ## 共享与通用调度之间的距离
 
 Doom 被移植为 GPU 代码，逻辑线程将绘制工作交给其他线程；声音关闭，玩家脚本控制游戏。这是异构任务共驻的具体展示，但静态 SM 划分意味着资源份额并不免费，不能据此推出负载任意变化时仍能自动平衡。

@@ -27,6 +27,10 @@ updated_at: '2026-11-09T11:35:29.888596+08:00'
 
 早期系统先收集相关上下文，再用目标遥测查询展开调查；Agent 生成与检验根因假设，并把有前景的分支进一步细化。这样的结构能形成证据链，但上下文检索、假设生成和测试各有专用阶段与工具，编排层较复杂。
 
+<a class="note-image-link" href="/assets/images/tech/bits-investigation-efficiency/hypothesis-tree.png" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/bits-investigation-efficiency/hypothesis-tree.png" alt="Bits 追查 API 延迟时的根因假设树，分支按证据状态区分" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*Datadog 的调查示例：从一次 API 延迟告警出发，分别验证 CPU 耗尽、查询变慢和依赖超时等假设。*
+
 后来采用的 ReAct 路径让每个 Agent 先根据已有证据判断，再选工具，根据返回结果决定下一步调查。新的信息可以直接改变行动，不必全部塞进预设阶段。官方报告这一代结合新模型与工具，把平均单次调查成本从初始约 25 美元降到约 6.50 美元；文章没有给出架构变化单独贡献多少的消融，因此不能说仅靠减少 Agent 就实现全部节省。
 
 ## 让代码处理数据，再把证据交给模型

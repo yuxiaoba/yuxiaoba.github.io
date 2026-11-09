@@ -29,6 +29,10 @@ vLLM Bangkok 这篇是 Simon Mo 在 Runtime 2026 演讲的社区总结，不能�
 
 演讲总结所链接的 vLLM 官方 Mooncake 工程文章给出具体流程。scheduler 按 token block 哈希查询 master，master 管理块元数据与节点健康；worker 内嵌 client，将 GPU KV 注册为 RDMA buffer，通过后台 I/O 线程准备并发起搬运。GPUDirect 路径避免占用 SM 或额外暂存，后台线程则避免描述符准备阻塞主 CPU 启动路径。
 
+<a class="note-image-link" href="/assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/mooncake-kv-pool.png" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/mooncake-kv-pool.png" alt="vLLM 调度器向 Mooncake Master 查询 KV 块位置，多个 vLLM 实例共享分布式 KV 池" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*vLLM Bangkok 演讲中的 Mooncake 架构：调度器查询块位置，执行端通过 GPUDirect 访问共享 KV 池。图中的介质是架构选项，性能数字来自特定实验。*
+
 MultiConnector 将 P/D 传输与共享 store 连接起来。该文章版本中，prefill 可以从池恢复前缀并转交 decode，decode 会写池但不直接读池；多路径读取仍是后续工作。不能因为较新的演讲架构图包含 DRAM 和 NVMe，就把旧 DRAM 实验写成 SSD 已验证收益。
 
 ## 数字对应特定基线与流量

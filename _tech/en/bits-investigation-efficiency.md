@@ -28,6 +28,10 @@ Automated incident investigation spends resources on orchestration, repeated que
 
 The initial system gathers context, runs targeted telemetry queries, generates and tests root-cause hypotheses, then expands promising branches. This supports evidence-based investigation but requires dedicated retrieval, hypothesis and testing phases with specialized tools.
 
+<a class="note-image-link" href="/assets/images/tech/bits-investigation-efficiency/hypothesis-tree.png" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/bits-investigation-efficiency/hypothesis-tree.png" alt="Bits hypothesis tree for an API latency incident, with branches labeled by evidence status" loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*Datadog’s investigation example starts from an API latency alert and tests hypotheses including CPU exhaustion, slow queries, and dependency timeouts.*
+
 The later ReAct design lets each agent reason from evidence, select a tool and decide what to examine next from its result. Newly discovered information can change the next action directly. The company reports that this generation, together with newer models and tools, lowers average investigation cost from roughly $25 to $6.50. Without an ablation, the savings cannot be attributed solely to fewer agents or simpler orchestration.
 
 ## Process data in tools before returning evidence

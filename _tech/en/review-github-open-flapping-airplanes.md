@@ -32,6 +32,10 @@ The 162.4M GPT experiment runs 4,000 steps of 4,096 tokens. The three-stage tcge
 
 Serving is also sensitive to CPU allocation. vLLM reaches 1,537 tokens/s with 16 reserved cores versus 684 without them; the authors use the stronger baseline. The comparison of sequential, separate concurrent and single-kernel execution includes a concurrent value estimated from separate runs, so not every total is measured directly.
 
+<a class="note-image-link" href="/assets/images/tech/review-github-open-flapping-airplanes/serving-on-24-sms.png" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/review-github-open-flapping-airplanes/serving-on-24-sms.png" alt="Single-prompt decode throughput on 24 B200 SMs, comparing persistent kernels and the vLLM CUDA Graph baseline" loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*The project compares decode throughput for one prompt on 24 SMs. The two bars from the original demonstration video are distinct from the project’s own measurements.*
+
 ## Sharing is not a general scheduler
 
 Doom is compiled for GPU execution, with a logic thread distributing drawing work to other threads. Sound is disabled and a scripted player controls the game. This demonstrates heterogeneous co-residency, but static partitions consume real capacity and do not automatically balance changing workloads.

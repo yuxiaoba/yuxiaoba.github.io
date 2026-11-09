@@ -31,6 +31,10 @@ The experiment uses 16 development questions and 34 unseen questions, totaling 5
 
 Reducing maxOutputTokens from 4096 to 300 does not reduce thinking on easy questions and breaks seven of 25 hard questions. Routing easy tasks to that capped configuration therefore need not save money. The stronger non-router baseline is Flash with low thinking, which solves all 50. The Jev combination of Flash-Lite and low-thinking Flash also solves all 50 and reduces measured cost and response time. That is the meaningful comparison, rather than only an expensive default setting.
 
+<a class="note-image-link" href="/assets/images/tech/google-cost-per-task-routing/routing-strategy-comparison.jpg" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/google-cost-per-task-routing/routing-strategy-comparison.jpg" alt="Google Developers compares accuracy, cost per success, and latency across Gemini configurations and routing strategies" loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*The two blue rows show that both fixed low-thinking Flash and Jev routing solve all 50 tasks. The router has a lower cost per success and lower average latency in this test.*
+
 Each configuration runs once on short prompts; difficulty is manually labeled and benchmark code awaits open-source review. Long-running coding agents may behave differently. Model-specific caches also create a trade-off: switching models can require duplicate caches or lose reuse discounts. Routing short log-parsing tasks need not help repository-heavy conversations.
 
 The transferable objective is total cost per successful task, including classification, calls, retries, and thinking. Establish a capable low-cost fixed configuration before deciding whether a router adds value.
