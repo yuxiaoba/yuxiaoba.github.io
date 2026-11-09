@@ -30,6 +30,11 @@ As a systems interpretation, an optimization needs a specified workload. Two tes
 
 ## What changes in Together Compiler?
 
+<a class="note-image-link" href="/assets/images/tech/2026-11-05-together-polymorphic-inference/official-figure.png" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/2026-11-05-together-polymorphic-inference/official-figure.png" alt="Traffic drift triggers a new search. A persistent engine screens candidates quickly before full-model validation." loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*Traffic drift triggers a new search. A persistent engine screens candidates quickly before full-model validation.*
+
+
 The official [Together Compiler implementation article](https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference) describes a candidate-search loop with three central choices:
 
 - Keep engines persistent and hot-load candidate forward passes.

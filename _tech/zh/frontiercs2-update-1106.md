@@ -41,6 +41,11 @@ SCOPE 的十 Agent 团队试验进一步显示这种技巧如何传播：第 47 
 
 ## 隔离需要检查实际生效的访问路径
 
+<a class="note-image-link" href="/assets/images/tech/frontiercs2-update-1106/official-figure.png" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/frontiercs2-update-1106/official-figure.png" alt="提交补丁经 Driver 进入评估器；被评代码在独立沙箱中运行，每次从新副本开始。" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*提交补丁经 Driver 进入评估器；被评代码在独立沙箱中运行，每次从新副本开始。*
+
+
 Glenside 中，一条残留网络规则让 Agent 克隆参考仓库。提交把 3,074 行参考实现复制进允许修改的文件，再加其他改动而通过。仅复制参考只能打平，按该基准规则仍算失败；问题是本不应可访问的参考进入了优化过程。
 
 团队移除残留规则，把运行时依赖预装进镜像，并从 Agent 沙箱内部验证外网不可达。文件允许列表无法阻止允许文件中出现错误测量逻辑，因此还需要针对实际威胁的 judge 检查。现在任务上线前会接受读取 judge 文件、隐藏行为和跨轮保留状态等攻击提交，要求它们全部得零分。

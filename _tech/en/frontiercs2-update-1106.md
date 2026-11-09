@@ -44,6 +44,11 @@ Caching is not inherently invalid. Its legitimacy depends on whether the experim
 
 ## Verify the access paths actually enforced
 
+<a class="note-image-link" href="/assets/images/tech/frontiercs2-update-1106/official-figure.png" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/frontiercs2-update-1106/official-figure.png" alt="The driver forwards patches to the evaluator; submitted code runs in its own sandbox with a fresh copy on each run." loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*The driver forwards patches to the evaluator; submitted code runs in its own sandbox with a fresh copy on each run.*
+
+
 A leftover network rule lets an agent clone Glenside’s reference repository. Its patch copies 3,074 lines into an allowed file and adds other changes that pass. A pure copy would only tie the reference and fail this benchmark; the problem is that restricted reference code entered the optimization process.
 
 The team removes the stale rule, preinstalls runtime dependencies, and tests internet isolation from inside the sandbox. Allowed-file checks cannot prevent misleading measurement logic inside allowed code. Tasks now face attack submissions that read judge files, conceal behavior, or retain timing state, all of which must score zero.

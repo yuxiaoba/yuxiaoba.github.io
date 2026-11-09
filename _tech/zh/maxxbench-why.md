@@ -27,6 +27,11 @@ Gavin Lo, Justin Lo / unLAP · 2026-10-20
 
 ## 小变更如何形成成对检验
 
+<a class="note-image-link" href="/assets/images/tech/maxxbench-why/official-figure.png" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/maxxbench-why/official-figure.png" alt="同一浏览器名在两个任务中生成不同文件名：MaxxBench 新增小写要求。" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*同一浏览器名在两个任务中生成不同文件名：MaxxBench 新增小写要求。*
+
+
 例如，浏览器测试报告仍需按浏览器分文件，但文件名必须改成小写；FastAPI 路由退休时间则统一输出带 Z 的 UTC 时间，而不是保留输入时区偏移。作者同步修订参考实现和检查，保留仍适用的回归测试。参考补丁的中位增量为 17 行、约 3.5%，目标是检验日常需求适应，而非单纯把任务做大。
 
 页面比较的 15 种配置中，最高与最低分差从原基准的 20.9 个百分点扩大到 48.3。原先约 74%、彼此相差不超过 1.5 点的一组六种配置，在修改后拉开 23 点。这个结果说明原分数聚集掩盖了差异，但不是每个模型都下降：页面中的 Opus 5.5 从 74.2% 到 76.4%。

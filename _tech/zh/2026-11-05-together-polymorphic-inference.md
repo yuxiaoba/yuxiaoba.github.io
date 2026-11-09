@@ -29,6 +29,11 @@ Together 将模型、流量和硬件的变化作为持续优化的动机，并�
 
 ## Together Compiler 改变了哪一部分
 
+<a class="note-image-link" href="/assets/images/tech/2026-11-05-together-polymorphic-inference/official-figure.png" target="_blank" rel="noopener" aria-label="查看原图"><img src="/assets/images/tech/2026-11-05-together-polymorphic-inference/official-figure.png" alt="流量变化触发重新搜索；候选先进入常驻引擎快速筛选，再用完整模型验证。" loading="lazy"><span class="note-image-action">查看原图 ↗</span></a>
+
+*流量变化触发重新搜索；候选先进入常驻引擎快速筛选，再用完整模型验证。*
+
+
 官方 [Together Compiler 实现介绍](https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference)将优化描述为搜索候选实现的循环。三个关键设计是：
 
 - 保持引擎常驻，热加载候选 forward pass，减少每次实验重新启动的成本。

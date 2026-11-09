@@ -30,6 +30,11 @@ Similar coding-benchmark scores need not imply similar reliability after require
 
 ## Paired changes to familiar tasks
 
+<a class="note-image-link" href="/assets/images/tech/maxxbench-why/official-figure.png" target="_blank" rel="noopener" aria-label="View figure"><img src="/assets/images/tech/maxxbench-why/official-figure.png" alt="The same browser name yields different filenames: MaxxBench adds a lowercase requirement." loading="lazy"><span class="note-image-action">View figure ↗</span></a>
+
+*The same browser name yields different filenames: MaxxBench adds a lowercase requirement.*
+
+
 One task still produces per-browser test reports but now requires lowercase filenames. Another converts FastAPI route-retirement timestamps to UTC with a trailing Z instead of preserving the supplied offset. Reference implementations and tests change together, while applicable regression checks remain. Reference patches grow by a median of 17 lines, or 3.5%, targeting everyday adaptation rather than simply larger tasks.
 
 Across the page’s 15 configurations, the top-to-bottom spread expands from 20.9 percentage points to 48.3. Six configurations clustered within 1.5 points near 74% on the original benchmark spread across 23 points after mutation. Not every model declines: Opus 5.5 moves from 74.2% to 76.4% in the reported comparison.
