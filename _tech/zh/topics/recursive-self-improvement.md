@@ -2,7 +2,7 @@
 id: topic-recursive-self-improvement
 title: RSI 专题：从自改代码到可验证的 AI 研发闭环
 date: '2026-11-11'
-updated_at: '2026-11-11T10:40:42+08:00'
+updated_at: '2026-11-11T14:13:41+08:00'
 lang: zh
 published: true
 layout: article
@@ -63,6 +63,10 @@ summary: 按自改 Agent、基础设施、权重、评估与安全分类，核�
 
 **闭环对象：** 研究 Agent 自己的搜索、记忆和上下文代码。内层在固定预算下做 AI R&D 任务；外层提议 Agent 改写，用选择任务的私有评分决定接纳，接受的新实现成为下一轮编辑对象。主长程实验使用固定外层 Agent 改写内层实现，外层采用规则也固定；将演化后的 Agent 换作外层 improver 是另一组实验。
 
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/aide2-loop.png" target="_blank" rel="noopener" aria-label="AIDE² 外层 Agent 版本树、内层任务搜索树与任务代码的三级结构 · 查看原图"><img src="/assets/images/tech/recursive-self-improvement/aide2-loop.png" width="1892" height="1012" alt="AIDE² 外层 Agent 版本树、内层任务搜索树与任务代码的三级结构" loading="lazy" decoding="async"><span class="note-image-action">查看原图 ↗</span></a>
+
+*读图：外层改研究 Agent，内层用它做任务；公开任务反馈与用于选择 Agent 的私有评分分开。两棵树的改进对象不同。*
+
 **证据：** 一次八天自主运行得到七次连续接纳的改进；最终版本在四个保留基准上匹配或超过人工开发的生产 Agent，包含选择任务域之外的天气预测。
 
 **边界：** 当演化出的 Agent 被用于外层 improver 时，叠加噪声和额外随机种子的成本使它与强基线无法被明确区分。更好的研究 Agent 已有证据，更快产生改进的 improver 仍需单独证明。
@@ -75,6 +79,10 @@ summary: 按自改 Agent、基础设施、权重、评估与安全分类，核�
 首发（中国标准时间） 2026-09-22 · 2609.24972v3 · Peng Xia, Rujun Han, Zifeng Wang 等 · Google Cloud AI Research / UNC-Chapel Hill / Stanford
 
 **闭环对象：** 冻结模型外围的 harness。逐渐收紧编辑预算并保存演化证据，选择侧检查泄漏、噪声和成本，再引导删除持续无用的组件；噪声带内候选仍有单独的成本与新颖性规则。
+
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/rrsi-regularization.png" target="_blank" rel="noopener" aria-label="RRSI 左侧提议约束、中央采用规则与右侧筛选和剪枝约束 · 查看原图"><img src="/assets/images/tech/recursive-self-improvement/rrsi-regularization.png" width="1772" height="920" alt="RRSI 左侧提议约束、中央采用规则与右侧筛选和剪枝约束" loading="lazy" decoding="async"><span class="note-image-action">查看原图 ↗</span></a>
+
+*读图：左侧控制搜索容量如何使用，右侧决定哪些变化可进入持久状态；泄漏、噪声和复杂度都参与筛选，不只看最高分。*
 
 **证据：** agentic workspace 的对照中，RRSI 的 OOD 均分为 43.6，初始为 39.7，未正则演化为 40.3；policy tokens/trial 分别为 2.42M、1.56M、3.80M。更高 evolve 分并没有自动转成更强迁移。
 
@@ -98,6 +106,10 @@ summary: 按自改 Agent、基础设施、权重、评估与安全分类，核�
 
 **闭环对象：** 探索编排策略，底层 coding agent 不变。将已完成的 discovery tree 当作回放模拟器，低成本试验分支、并行和停止策略，再把选中策略部署回在线发现，继续积累历史树。
 
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/dream-rsi-loop.png" target="_blank" rel="noopener" aria-label="Dream-RSI 在线探索、历史树回放模拟器与策略更新闭环 · 查看原图"><img src="/assets/images/tech/recursive-self-improvement/dream-rsi-loop.png" width="1892" height="828" alt="Dream-RSI 在线探索、历史树回放模拟器与策略更新闭环" loading="lazy" decoding="async"><span class="note-image-action">查看原图 ↗</span></a>
+
+*读图：已完成的发现树进入模拟器池，候选探索策略先在历史中回放，再部署回在线探索。模拟器覆盖的是已实现的搜索空间。*
+
 **证据：** 四个领域、九项任务上比较发现质量与成本；链条包含在线探索、历史回放和再部署，而非只在固定轨迹上离线挑一个策略。
 
 **边界：** 回放覆盖的是已经实现的搜索空间，不能预测任意未探索分支。效率改善发生在特定设置，不应压成统一加速倍数，也不能说底层模型变强了。
@@ -108,6 +120,10 @@ summary: 按自改 Agent、基础设施、权重、评估与安全分类，核�
 首发（中国标准时间） 2026-10-16 · 2610.22791v1 · Zhepei Wei, Wenlin Yao, Baolin Peng 等 · Microsoft Research / University of Virginia / CMU
 
 **闭环对象：** harness 与任务策略交替更新。H-step 让当前模型分析失败、提出并选择 harness；P-step 在选中 harness 下做 RL，新的困难任务再进入下一轮搜索。
+
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/self-hpo-loop.png" target="_blank" rel="noopener" aria-label="Self-HPO 的 H-step harness 搜索与 P-step 策略强化学习交替流程 · 查看原图"><img src="/assets/images/tech/recursive-self-improvement/self-hpo-loop.png" width="1672" height="636" alt="Self-HPO 的 H-step harness 搜索与 P-step 策略强化学习交替流程" loading="lazy" decoding="async"><span class="note-image-action">查看原图 ↗</span></a>
+
+*读图：上半部选 harness，下半部训练策略；未解决任务和更新后的策略返回下一次搜索，形成组件相互适配的循环。*
 
 **证据：** 两轮交替，每个 H-step 六个候选、P-step 50 次 RL 更新。Qwen3.5-35B-A3B 在三个 coding 基准的平均解决率从 57.8% 到 64.8%，并比较单独改 harness、单独训 policy 和交叉配对。
 
@@ -131,6 +147,10 @@ summary: 按自改 Agent、基础设施、权重、评估与安全分类，核�
 
 **闭环对象：** 正在执行的 harness 及进一步改进的策略。最小受保护机制层保存规范执行历史与快照，独立 guardian 控制策略激活，让一次坏编辑不至于同时失去执行记录和恢复入口。
 
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/exo-policy-mechanism.png" target="_blank" rel="noopener" aria-label="Exo 将可编辑策略与受保护机制分开，并由 guardian 控制执行器替换 · 查看原图"><img src="/assets/images/tech/recursive-self-improvement/exo-policy-mechanism.png" width="2016" height="540" alt="Exo 将可编辑策略与受保护机制分开，并由 guardian 控制执行器替换" loading="lazy" decoding="async"><span class="note-image-action">查看原图 ↗</span></a>
+
+*读图：策略可以替换，规范执行历史与机制层继续保留；右侧 guardian 决定新策略何时激活。保留同一环境并不等于撤销已经发生的外部动作。*
+
 **证据：** 对照同一个不可编辑的初始策略，AppWorld/SREGym 保留任务的模型成本下降 35%–61%，正确性相当；20 个保留 SREGym 事件的中位诊断时间下降 35%。CLB 包含学习成本后下降 14%。
 
 **边界：** 隔离与恢复架构不是任意自改代码的形式化安全保证。回滚 policy、持久状态和外部副作用是三件事；小规模受测环境也不能代表生产系统可无人值守。
@@ -146,6 +166,10 @@ summary: 按自改 Agent、基础设施、权重、评估与安全分类，核�
 
 **闭环对象：** 训练启动配置、算子补丁、通信与已验证经验。init–doctor–run–report–apply 先固定工作量、loss 和计时规则，再校准噪声；搜索模型同时利用正常运行和 OOM 试验。
 
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/infrarsi-loop.png" target="_blank" rel="noopener" aria-label="InfraRSI 五阶段生命周期、训练优化搜索、独立复测与经验库 · 查看原图"><img src="/assets/images/tech/recursive-self-improvement/infrarsi-loop.png" width="1816" height="1000" alt="InfraRSI 五阶段生命周期、训练优化搜索、独立复测与经验库" loading="lazy" decoding="async"><span class="note-image-action">查看原图 ↗</span></a>
+
+*读图：先定义任务规则，再提出、运行和记录候选；最优设置还要对照原基线复测，通过检查的结果才沉淀为下一轮经验。*
+
 **证据：** 四个单/多节点 dense/MoE 负载上，几何平均提速 1.83×、最高 2.75×，平均 MFU 从 17.4% 到 30.0%；候选需和重新测量的基线背靠背比较。
 
 **边界：** 短期数值与 loss 检查不等于完整收敛等价。主要证据是训练基础设施与搜索经验的改进，不是前沿模型自主研发后继模型；跨硬件最优参数也不能直接照搬。
@@ -156,6 +180,10 @@ summary: 按自改 Agent、基础设施、权重、评估与安全分类，核�
 首发（中国标准时间） 2026-11-03 · 2611.04998v1 · Yaojian Chen, Dazhi Peng, Yiyun Zheng 等 · Tsinghua / ModelBest / Harbin Institute of Technology
 
 **闭环对象：** kernel 架构及可复用硬件知识。以高性能 reference 为起点提炼架构里程碑，把通过正确性与性能验证的实现提升为下一轮 reference，允许跨轮重新选择架构。
+
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/forgekernel-architecture.png" target="_blank" rel="noopener" aria-label="ForgeKernel 架构分析、实现里程碑、验证门槛、硬件知识库与 reference 更新 · 查看原图"><img src="/assets/images/tech/recursive-self-improvement/forgekernel-architecture.png" width="2016" height="840" alt="ForgeKernel 架构分析、实现里程碑、验证门槛、硬件知识库与 reference 更新" loading="lazy" decoding="async"><span class="note-image-action">查看原图 ↗</span></a>
+
+*读图：架构分析提出里程碑，coding agent 实现并过门槛；交付的 kernel 成为下一轮 reference，硬件知识则跨轮保留。*
 
 **证据：** Hopper/Blackwell 的 27 个算子、29 个输入配置中，25 个匹配或超过专家 reference，几何平均增益 10%；另有 Ascend 910C 的八个 level-4 算子公开 case set 结果。
 
@@ -205,7 +233,15 @@ summary: 按自改 Agent、基础设施、权重、评估与安全分类，核�
 
 **闭环对象：** 多智能体工作流与共享模型。固定权重搜索角色、信息流与协作方式，再对自评选中的团队轨迹 SFT，更新模型后重新承担执行、优化与循环内评估三种角色。
 
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/mass-loop.png" target="_blank" rel="noopener" aria-label="MASS 用共享模型执行、评估和优化多智能体工作流，再蒸馏到下一代模型 · 查看原图"><img src="/assets/images/tech/recursive-self-improvement/mass-loop.png" width="1484" height="532" alt="MASS 用共享模型执行、评估和优化多智能体工作流，再蒸馏到下一代模型" loading="lazy" decoding="async"><span class="note-image-action">查看原图 ↗</span></a>
+
+*读图：上半部是固定模型下的团队工作流搜索，下半部把选中的执行经验用于模型更新；更新模型再回到执行、优化与评估角色。*
+
 **证据：** Qwen3.6-27B 上两轮 MASS；四个研究基准的得分/输出 token 为初始的 1.2–1.6×。同一论文中，Terminal-Bench 2.0 通过率从 37.5% 到 35.2%，SWE-bench Verified 从 62.6% 到 61.1%。
+
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/mass-transfer.png" target="_blank" rel="noopener" aria-label="MASS 六个基准的任务得分与输出 token 散点图，展示研究与编码任务的不同迁移结果 · 查看原图"><img src="/assets/images/tech/recursive-self-improvement/mass-transfer.png" width="1592" height="644" alt="MASS 六个基准的任务得分与输出 token 散点图，展示研究与编码任务的不同迁移结果" loading="lazy" decoding="async"><span class="note-image-action">查看原图 ↗</span></a>
+
+*读图：研究任务的效率改善与编码任务回退同时出现。箭头旁比值是得分／输出 token，不是整个研究流程的成本加速比。*
 
 **边界：** 效率指标不是总美元成本；迁移并不一致。外部模型裁判也不能证明发现真实有效，只有两轮更不能推出共享盲点消失或无限放大。
 
@@ -266,6 +302,10 @@ summary: 按自改 Agent、基础设施、权重、评估与安全分类，核�
 
 **证据：** AECI 相对 2025 年十月前的增长斜率估计为 1.9×，95% CI 为 1.5–2.8×；更换 link function 的敏感性范围为 1.1–2.9×。团队认为 AI 有重要贡献，且主要是辅助研发。
 
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/metr-aeci.png" target="_blank" rel="noopener" aria-label="METR 按模型可供内部员工使用的日期绘制 AECI，并比较 2025 年十月前后的增长斜率 · 查看原图"><img src="/assets/images/tech/recursive-self-improvement/metr-aeci.png" width="1880" height="1561" alt="METR 按模型可供内部员工使用的日期绘制 AECI，并比较 2025 年十月前后的增长斜率" loading="lazy" decoding="async"><span class="note-image-action">查看原图 ↗</span></a>
+
+*读图：绿色为公开模型，橙色为内部模型；两段拟合线比较能力指标增长斜率。1.9× 不等于已识别的 AI 因果生产率倍数，内部证据还存在删节。*
+
 **边界：** 1.9× 不是识别出的纯 AI 因果生产率倍数。关键证据多数被删节，公开读者不能独立重算整体归因；该结果也不是已发生智能爆炸的证明。
 
 ## 安全：监督会被优化，污染可能被继承
@@ -287,6 +327,10 @@ summary: 按自改 Agent、基础设施、权重、评估与安全分类，核�
 首发（中国标准时间） 2026-09-16 · 2609.17817v1 · Franziska Roesner, Tadayoshi Kohno · University of Washington / Georgetown University
 
 **闭环对象：** 攻击者污染自评/演化基准，使 Agent 把危险规则固化进后代，再在干净任务上复现。实验覆盖修改版 DGM、SICA 与 Hyperagents。
+
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/benchmark-poisoning.png" target="_blank" rel="noopener" aria-label="三类自改 Agent 中，污染的评测反馈如何进入改写并影响后代程序 · 查看原图"><img src="/assets/images/tech/recursive-self-improvement/benchmark-poisoning.png" width="2020" height="596" alt="三类自改 Agent 中，污染的评测反馈如何进入改写并影响后代程序" loading="lazy" decoding="async"><span class="note-image-action">查看原图 ↗</span></a>
+
+*读图：攻击入口在评测与自我诊断链路，危险行为可能随改写进入后代；需要检查继承状态，而不只是换回干净的输入。*
 
 **证据：** 端到端概念验证中，Hyperagents 演化出在普通 URL 获取任务关闭 HTTPS 证书验证的指令；随后改用干净基准继续演化，污染仍常残留。
 

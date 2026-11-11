@@ -2,7 +2,7 @@
 id: topic-recursive-self-improvement
 title: 'RSI: from self-editing code to verifiable AI R&D loops'
 date: '2026-11-11'
-updated_at: '2026-11-11T10:40:42+08:00'
+updated_at: '2026-11-11T14:13:41+08:00'
 lang: en
 published: true
 layout: article
@@ -64,6 +64,10 @@ First submitted (China Standard Time) 2026-09-22 · 2609.26457v1 · Dhruv Srikan
 
 **Loop:** the research agent's search, memory, and context code. An inner agent performs R&D tasks under fixed budgets; an outer loop proposes implementations and accepts versions using private scores on selection tasks. The accepted implementation becomes the code edited next. The main run keeps the outer agent and acceptance rule fixed; replacing the outer improver with an evolved agent is a separate experiment.
 
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/aide2-loop.png" target="_blank" rel="noopener" aria-label="AIDE² outer agent tree, inner task-search trees, and executable task code · View figure"><img src="/assets/images/tech/recursive-self-improvement/aide2-loop.png" width="1892" height="1012" alt="AIDE² outer agent tree, inner task-search trees, and executable task code" loading="lazy" decoding="async"><span class="note-image-action">View figure ↗</span></a>
+
+*The outer tree changes the research agent; the inner trees use it on tasks. Public task feedback is distinct from the private grade used to select agent versions.*
+
 **Evidence:** one eight-day run produced seven successive improvements. The final agent matched or exceeded a human-engineered production agent on four held-out benchmarks, including weather forecasting outside the selection domains.
 
 **Boundary:** when a discovered agent was used as the outer improver, compounded noise and the cost of further seeds prevented a decisive distinction from the strong baseline. A better research agent does not yet establish an accelerating improver.
@@ -76,6 +80,10 @@ First submitted (China Standard Time) 2026-09-22 · 2609.26457v1 · Dhruv Srikan
 First submitted (China Standard Time) 2026-09-22 · 2609.24972v3 · Peng Xia, Rujun Han, Zifeng Wang et al. · Google Cloud AI Research / UNC-Chapel Hill / Stanford
 
 **Loop:** harness evolution around frozen weights. An annealed edit budget and evolution history constrain proposals; leakage checks, noise, cost, and pruning constrain retention. Candidates inside the noise band have separate cost and novelty rules.
+
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/rrsi-regularization.png" target="_blank" rel="noopener" aria-label="RRSI proposal controls, transition rule, and selection-side screening and pruning · View figure"><img src="/assets/images/tech/recursive-self-improvement/rrsi-regularization.png" width="1772" height="920" alt="RRSI proposal controls, transition rule, and selection-side screening and pruning" loading="lazy" decoding="async"><span class="note-image-action">View figure ↗</span></a>
+
+*Proposal controls allocate search capacity; selection controls determine what becomes persistent state. Leakage, noise, and complexity constrain acceptance alongside score.*
 
 **Evidence:** workspace OOD means are 43.6 for RRSI, 39.7 initially, and 40.3 for unregularized evolution. Policy tokens/trial are 2.42M, 1.56M, and 3.80M respectively. The highest evolve-set score does not imply the best transfer.
 
@@ -99,6 +107,10 @@ First submitted (China Standard Time) 2026-09-14 · 2609.14858v2 · Tong Zheng, 
 
 **Loop:** exploration orchestration changes while the coding agent stays fixed. Completed discovery trees become replay simulators for testing branching, parallelism, and stopping strategies; selected policies return online and expand the history pool.
 
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/dream-rsi-loop.png" target="_blank" rel="noopener" aria-label="Dream-RSI online exploration, discovery-tree replay simulators, and policy updates · View figure"><img src="/assets/images/tech/recursive-self-improvement/dream-rsi-loop.png" width="1892" height="828" alt="Dream-RSI online exploration, discovery-tree replay simulators, and policy updates" loading="lazy" decoding="async"><span class="note-image-action">View figure ↗</span></a>
+
+*Completed discovery trees enter a simulator pool. Candidate exploration policies replay that history before returning online; replay covers realized search space.*
+
 **Evidence:** nine tasks in four domains test discovery quality and cost across online exploration, offline replay, and redeployment, rather than just selecting a strategy from a static log.
 
 **Boundary:** replay covers realized search space, not arbitrary unseen branches. Efficiency gains are setting-specific, not one universal speedup, and do not establish stronger underlying model weights.
@@ -109,6 +121,10 @@ First submitted (China Standard Time) 2026-09-14 · 2609.14858v2 · Tong Zheng, 
 First submitted (China Standard Time) 2026-10-16 · 2610.22791v1 · Zhepei Wei, Wenlin Yao, Baolin Peng et al. · Microsoft Research / University of Virginia / CMU
 
 **Loop:** alternate harness and task-policy optimization. The current policy diagnoses failures and proposes harnesses in H-steps, then receives RL updates under the selected harness in P-steps; newly difficult tasks inform later search.
+
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/self-hpo-loop.png" target="_blank" rel="noopener" aria-label="Self-HPO alternates H-step harness search and P-step policy reinforcement learning · View figure"><img src="/assets/images/tech/recursive-self-improvement/self-hpo-loop.png" width="1672" height="636" alt="Self-HPO alternates H-step harness search and P-step policy reinforcement learning" loading="lazy" decoding="async"><span class="note-image-action">View figure ↗</span></a>
+
+*The upper loop selects a harness; the lower loop updates the policy. Remaining hard tasks and the updated policy feed the next search.*
 
 **Evidence:** two rounds, six harness candidates per H-step, and 50 RL updates per P-step. Qwen3.5-35B-A3B averages 57.8% to 64.8% resolve rate across three coding benchmarks, with single-component and crossed-pair controls.
 
@@ -132,6 +148,10 @@ First submitted (China Standard Time) 2026-10-31 · 2611.00463v1 · Alexander Kr
 
 **Loop:** the running harness and strategies for further improvement. A minimal protected layer preserves canonical history and snapshots; an independent guardian controls activation so one bad revision need not destroy recovery and diagnosis.
 
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/exo-policy-mechanism.png" target="_blank" rel="noopener" aria-label="Exo separates editable policy from protected mechanisms and gates executor replacement with a guardian · View figure"><img src="/assets/images/tech/recursive-self-improvement/exo-policy-mechanism.png" width="2016" height="540" alt="Exo separates editable policy from protected mechanisms and gates executor replacement with a guardian" loading="lazy" decoding="async"><span class="note-image-action">View figure ↗</span></a>
+
+*Policy can change while canonical history and mechanisms persist. The guardian gates activation; retaining an environment does not undo external actions.*
+
 **Evidence:** against the same non-editable starting policy, held-out AppWorld/SREGym model cost falls 35–61% at comparable correctness. Median diagnosis time falls 35% on 20 held-out SREGym incidents; CLB cost including learning falls 14%.
 
 **Boundary:** architectural protection is not a formal guarantee for arbitrary edits. Rolling back policy, durable state, and external side effects are distinct. Small tested environments do not establish unattended production safety.
@@ -147,6 +167,10 @@ First submitted (China Standard Time) 2026-11-09 · 2611.11558v1 · InfraRSI Tea
 
 **Loop:** training launch settings, kernels, communication, and verified experience. The five-stage workflow fixes workload, loss, and timing contracts before noise calibration; search learns from successful and OOM trials.
 
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/infrarsi-loop.png" target="_blank" rel="noopener" aria-label="InfraRSI lifecycle, training search, baseline retesting, and experience library · View figure"><img src="/assets/images/tech/recursive-self-improvement/infrarsi-loop.png" width="1816" height="1000" alt="InfraRSI lifecycle, training search, baseline retesting, and experience library" loading="lazy" decoding="async"><span class="note-image-action">View figure ↗</span></a>
+
+*Task rules precede proposals, runs, and measurement. The best setup is retested against the baseline before checked experience enters later searches.*
+
 **Evidence:** four single-/multi-node dense/MoE workloads yield 1.83× geometric-mean and 2.75× maximum speedup; mean MFU rises from 17.4% to 30.0%. Promoted candidates face fresh back-to-back baselines.
 
 **Boundary:** short-window numerical/loss checks are not full convergence equivalence. The evidence concerns infrastructure and search experience, not frontier models autonomously developing successors. Hardware-specific settings need revalidation.
@@ -157,6 +181,10 @@ First submitted (China Standard Time) 2026-11-09 · 2611.11558v1 · InfraRSI Tea
 First submitted (China Standard Time) 2026-11-03 · 2611.04998v1 · Yaojian Chen, Dazhi Peng, Yiyun Zheng et al. · Tsinghua / ModelBest / Harbin Institute of Technology
 
 **Loop:** kernel architecture and reusable hardware knowledge. Architectural milestones come from a strong reference; validated implementations become the next reference, allowing architecture changes across rounds.
+
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/forgekernel-architecture.png" target="_blank" rel="noopener" aria-label="ForgeKernel reference analysis, milestones, validation gates, hardware knowledge, and reference promotion · View figure"><img src="/assets/images/tech/recursive-self-improvement/forgekernel-architecture.png" width="2016" height="840" alt="ForgeKernel reference analysis, milestones, validation gates, hardware knowledge, and reference promotion" loading="lazy" decoding="async"><span class="note-image-action">View figure ↗</span></a>
+
+*Architecture analysis supplies milestones; implementation passes a gate. Shipped kernels become the next reference while validated hardware knowledge persists.*
 
 **Evidence:** 27 operators and 29 input configurations on Hopper/Blackwell; 25 match or beat expert references, with 10% geometric-mean gain. A separate Ascend 910C result uses eight level-4 operators' public cases.
 
@@ -206,7 +234,15 @@ First submitted (China Standard Time) 2026-10-08 · 2610.12176v1 · Hyunin Lee, 
 
 **Loop:** multi-agent workflows and shared weights. Search with frozen weights organizes roles and information flow; SFT on self-selected team traces updates the model, which then resumes executor, optimizer, and evaluator roles.
 
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/mass-loop.png" target="_blank" rel="noopener" aria-label="MASS workflow search with shared-model execution, evaluation, optimization, and subsequent distillation · View figure"><img src="/assets/images/tech/recursive-self-improvement/mass-loop.png" width="1484" height="532" alt="MASS workflow search with shared-model execution, evaluation, optimization, and subsequent distillation" loading="lazy" decoding="async"><span class="note-image-action">View figure ↗</span></a>
+
+*The upper loop searches team workflows with fixed weights. Selected experience then updates the model, which returns to all three roles in the next cycle.*
+
 **Evidence:** two Qwen3.6-27B cycles yield 1.2–1.6× score per output token on four research benchmarks. In the same paper, Terminal-Bench 2.0 drops 37.5% to 35.2% and SWE-bench Verified 62.6% to 61.1%.
+
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/mass-transfer.png" target="_blank" rel="noopener" aria-label="MASS task score versus output tokens on six benchmarks, with uneven research and coding transfer · View figure"><img src="/assets/images/tech/recursive-self-improvement/mass-transfer.png" width="1592" height="644" alt="MASS task score versus output tokens on six benchmarks, with uneven research and coding transfer" loading="lazy" decoding="async"><span class="note-image-action">View figure ↗</span></a>
+
+*Research-task efficiency gains coexist with coding regressions. Arrow ratios measure score per output token, not whole-pipeline cost speedup.*
 
 **Boundary:** score per token is not total cost, and transfer is uneven. Outside model judges do not establish scientific truth; two cycles cannot show elimination of shared blind spots or indefinite amplification.
 
@@ -267,6 +303,10 @@ Official date 2026-11-05 · METR · Tom Cunningham, Nate Rush, Parker Whitfill, 
 
 **Evidence:** the estimated AECI slope is 1.9× its pre-October-2025 rate, with 95% CI 1.5–2.8×; changing the link function yields 1.1–2.9×. The team attributes a substantial role to AI, predominantly assistance.
 
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/metr-aeci.png" target="_blank" rel="noopener" aria-label="METR AECI by internal availability date, comparing trends before and after October 2025 · View figure"><img src="/assets/images/tech/recursive-self-improvement/metr-aeci.png" width="1880" height="1561" alt="METR AECI by internal availability date, comparing trends before and after October 2025" loading="lazy" decoding="async"><span class="note-image-action">View figure ↗</span></a>
+
+*Green denotes public models and orange internal ones. Fitted slopes describe capability-index growth; 1.9× is not an identified causal productivity effect, and key internal evidence is redacted.*
+
 **Boundary:** 1.9× is not an identified causal AI-productivity multiplier. Much of the key evidence is redacted, preventing independent reconstruction of the attribution. It does not establish an intelligence explosion.
 
 ## Safety: optimized supervision and inherited contamination
@@ -288,6 +328,10 @@ Official date 2026-10 · Anthropic Alignment Science · Oscar Balcells Obeso, Ri
 First submitted (China Standard Time) 2026-09-16 · 2609.17817v1 · Franziska Roesner, Tadayoshi Kohno · University of Washington / Georgetown University
 
 **Loop:** poisoned self-evaluation benchmarks cause agents to retain dangerous rules in descendants that later act on clean tasks. The study uses modified DGM, SICA, and Hyperagents.
+
+<a class="note-image-link" href="/assets/images/tech/recursive-self-improvement/benchmark-poisoning.png" target="_blank" rel="noopener" aria-label="Poisoned evaluation feedback entering diagnosis, self-modification, and descendant programs in three agents · View figure"><img src="/assets/images/tech/recursive-self-improvement/benchmark-poisoning.png" width="2020" height="596" alt="Poisoned evaluation feedback entering diagnosis, self-modification, and descendant programs in three agents" loading="lazy" decoding="async"><span class="note-image-action">View figure ↗</span></a>
+
+*The entry point is evaluation and self-diagnosis. Contamination can be retained by descendants, so recovery must inspect inherited state as well as replace poisoned inputs.*
 
 **Evidence:** end-to-end proofs of concept include Hyperagents evolving instructions to disable HTTPS certificate validation in neutral URL-fetching tasks; contamination often survives further evolution on clean benchmarks.
 
