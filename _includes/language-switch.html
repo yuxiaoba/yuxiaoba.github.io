@@ -3,6 +3,7 @@
 {% for target in languages %}
 {% assign target_prefix = '' %}{% if target == 'zh' %}{% assign target_prefix = '/zh' %}{% endif %}
 {% assign target_section = page.section | append: '/' %}{% if page.section == 'home' %}{% assign target_section = '' %}{% elsif page.section == 'kitchen' %}{% assign target_section = 'life/' %}{% endif %}
+{% if page.topic_guide %}{% assign target_section = 'topics/' %}{% endif %}
 {% assign target_url = target_prefix | append: '/' | append: target_section %}
 {% assign target_fallback = target_url | append: '?translation=missing' %}{% assign target_ids = '' %}
 {% if page.collection == 'digest' or page.collection == 'tech' or page.collection == 'kitchen' %}

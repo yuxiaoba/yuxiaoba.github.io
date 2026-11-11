@@ -1,0 +1,7 @@
+<section class="subpage topics-page">
+<a class="digest-back" href="{{ prefix | append: '/tech/' | relative_url }}">{{ t.topics_back }}</a>
+<div class="eyebrow">{{ t.topics_intro }}</div><h1>{{ t.topics }}</h1>
+<p class="subpage-lead">{{ t.topics_note }}</p>
+<p class="translation-notice" data-translation-notice role="status" hidden>{{ t.missing }}</p>
+{% include topic-guides.html %}
+</section>

@@ -24,7 +24,7 @@
 <nav class="navigation" aria-label="{{ t.navigation }}">
 {% assign sections = 'home,publications,digest,tech,kitchen' | split: ',' %}
 {% for section in sections %}{% assign route = section | append: '/' %}{% if section == 'home' %}{% assign route = '' %}{% elsif section == 'kitchen' %}{% assign route = 'life/' %}{% endif %}
-<a href="{{ prefix | append: '/' | append: route | relative_url }}" {% if page.section == section %}aria-current="page"{% endif %}>{{ t[section] }}</a>{% endfor %}
+<a href="{{ prefix | append: '/' | append: route | relative_url }}" {% if page.section == section or page.section == "topics" and section == "tech" %}aria-current="page"{% endif %}>{{ t[section] }}</a>{% endfor %}
 </nav>
 <div class="masthead-actions">
 <a class="bookmark-entry" href="{{ prefix | append: '/bookmarks/' | relative_url }}" aria-label="{{ t.bookmarks }}" title="{{ t.bookmarks }}" {% if page.section == 'bookmarks' %}aria-current="page"{% endif %}><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4Z"/></svg></a>

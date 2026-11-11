@@ -56,13 +56,15 @@ def audit(site):
                 check(not article.select('[data-reading-metrics], [data-article-views], .article-views'), f'no reading analytics {page_path.relative_to(site)}')
                 byline=article.select_one('.article-header .door-detail')
                 plain_byline=BeautifulSoup(str(byline),'html.parser')
+                for label in plain_byline.select('.topic-date-label'):
+                    label.decompose()
                 check(byline is not None and byline.select_one('time') is not None and plain_byline.get_text(strip=True)==byline.time.get_text(strip=True),f'reading header shows date without personal byline {page_path.relative_to(site)}')
         check([x.get('class')[0] for x in home.select('.identity-intro,.home-updates,.quiet-news,.profile-biography')]==['identity-intro','profile-biography','quiet-news','home-updates'],f'homepage section order {lang}')
         check(not home.select('main .cooking-door,main a[href$="/life/"]'),f'Life only in top navigation {lang}')
         updates=home.select_one('.home-updates')
         check(updates is not None,f'recent updates section {lang}')
         for collection,selector,limit in [('digest','.update-digest',1),('tech','.update-tech',2)]:
-            entries=[metadata(p) for p in (ROOT/('_'+collection)/lang).rglob('*.md') if metadata(p).get('published') is True]
+            entries=[metadata(p) for p in (ROOT/('_'+collection)/lang).rglob('*.md') if metadata(p).get('published') is True and not metadata(p).get('topic_guide')]
             dates=sorted([str(m['date'])[:10] for m in entries],reverse=True)[:limit]
             cards=updates.select(selector+' .recent-note')
             check([c.select_one('time')['datetime'] for c in cards]==dates,f'latest {collection} dates {lang}')
@@ -172,6 +174,19 @@ def fixtures():
             article('tech',lang,'home-older','OLDER_TECH_FIXTURE',when=(latest-dt.timedelta(days=2)).isoformat(),updated=latest.isoformat()+'T23:00:00+08:00')
             article('tech',lang,'home-draft','RECENT_TECH_DRAFT_NEVER_OUTPUT',False,when=latest.isoformat())
         article('tech','zh','home-untranslated','ZH_ONLY_RECENT_TECH',when=latest.isoformat())
+        def topic(lang, name, published=True):
+            path=source/f'_tech/{lang}/topics/{name}.md'
+            path.parent.mkdir(exist_ok=True)
+            meta={'title':'TOPIC_FIXTURE' if published else 'TOPIC_DRAFT_NEVER_OUTPUT',
+                  'date':latest.isoformat(),'updated_at':latest.isoformat(),'lang':lang,
+                  'published':published,'topic_guide':True,'summary':'Topic fixture summary'}
+            path.write_text('---\n'+yaml.safe_dump(meta)+'---\n\nTOPIC_SEARCH_FIXTURE\n\n## Fixture heading\n\n| A | B |\n| --- | --- |\n| One | Two |\n')
+        for lang in ['zh','en']:
+            topic(lang,'paired')
+            topic(lang,'draft',False)
+        topic('zh','only')
+        topic('zh','unpublished-translation')
+        topic('en','unpublished-translation',False)
         previous_month=(latest.replace(day=1)-dt.timedelta(days=1)).isoformat()
         previous_year=f'{latest.year-1}-01-03'
         for col in ['digest','tech']:
@@ -193,6 +208,25 @@ def fixtures():
             check(len(album.select('.life-album [data-photo-open]'))==3,f'Life shared photo list drives detail {lang}')
             check(not listing.select('.small-action'),f'Life feed has no read-more step {lang}')
         search_manifest=json.loads((dest/'pagefind/status.json').read_text())
+        for lang,prefix in [('en',''),('zh','zh/')]:
+            other='zh' if lang=='en' else 'en'
+            index=soup(dest/prefix/'topics/index.html')
+            archive=soup(dest/prefix/'tech/index.html')
+            route=f'/tech/{lang}/topics/paired/'
+            check(index.select_one(f'.topic-guide[href="{route}"]') is not None,f'topic fixture automatically listed {lang}')
+            check(archive.select_one(f'.topic-guide[href="{route}"]') is not None,f'topic fixture visible at tech entrance {lang}')
+            check(not archive.select('.archive-month [href*="/topics/"]'),f'topics excluded from monthly archive {lang}')
+            check(not soup(dest/prefix/'index.html').select('.home-updates [href*="/topics/"]'),f'topics do not replace latest Tech Notes {lang}')
+            check(f'tech/{lang}/topics/paired/index.html' in search_manifest['pages'],f'topic fixture indexed {lang}')
+            check(f'tech/{lang}/topics/draft/index.html' not in search_manifest['pages'],f'topic draft excluded from search {lang}')
+            check(not (dest/f'tech/{lang}/topics/draft/index.html').exists(),f'topic draft has no page {lang}')
+            check(not index.select(f'.topic-guide[href^="/tech/{other}/"]'),f'topic index language isolation {lang}')
+            detail=soup(dest/f'tech/{lang}/topics/paired/index.html')
+            check(detail.select_one(f'.language-switch a[lang="{other}"]')['href']==f'/tech/{other}/topics/paired/',f'topic translation pairing {lang}')
+        for name in ['only','unpublished-translation']:
+            page=soup(dest/f'tech/zh/topics/{name}/index.html')
+            check(page.select_one('.language-switch a[lang="en"]')['href']=='/topics/?translation=missing',f'topic missing translation fallback {name}')
+            check(f'tech/en/topics/{name}/index.html' not in search_manifest['pages'],f'topic untranslated content not indexed in English {name}')
         for col in ['digest','tech']:
             for lang,prefix in [('en',''),('zh','zh/')]:
                 archive=soup(dest/prefix/col/'index.html')

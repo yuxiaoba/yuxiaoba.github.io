@@ -1,0 +1,9 @@
+{% include ordered-notes.html collection=site.tech guides=true %}{% assign guides = ordered_notes | sort: 'updated_at' | reverse %}
+{% if guides.size > 0 %}
+<section class="topic-guides{% if include.compact %} topic-guides-compact{% endif %}" aria-label="{{ t.topics }}">
+{% if include.compact %}<div class="topic-guides-heading"><div><span class="eyebrow">{{ t.topics_intro }}</span><h2>{{ t.topics }}</h2></div><a href="{{ prefix | append: '/topics/' | relative_url }}">{{ t.topics_open }} <span aria-hidden="true">↗</span></a></div>{% endif %}
+<div class="topic-guide-list">{% for guide in guides %}
+<a class="topic-guide" href="{{ guide.url | relative_url }}"><div class="topic-guide-heading"><span class="topic-guide-mark" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><h{% if include.compact %}3{% else %}2{% endif %}>{{ guide.title | escape }}</h{% if include.compact %}3{% else %}2{% endif %}><span class="topic-guide-arrow" aria-hidden="true">↗</span></div><p>{{ guide.summary | escape }}</p><span class="topic-guide-date">{{ t.topics_updated }} {% include local-date.html date=guide.updated_at %}</span></a>
+{% endfor %}</div>
+</section>
+{% elsif include.compact != true %}<p class="notes-empty">{{ t.topics_empty }}</p>{% endif %}

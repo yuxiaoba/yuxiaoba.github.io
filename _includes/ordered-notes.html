@@ -1,6 +1,11 @@
 {%- assign ordered_notes = '' | split: ',' -%}
 {%- assign note_sort_keys = '' | split: ',' -%}
 {%- assign note_candidates = include.collection | where: 'lang', lang | where: 'published', true -%}
+{%- if include.guides -%}
+  {%- assign note_candidates = note_candidates | where: 'topic_guide', true -%}
+{%- else -%}
+  {%- assign note_candidates = note_candidates | where_exp: 'note', 'note.topic_guide != true' -%}
+{%- endif -%}
 {%- for candidate in note_candidates -%}
   {%- assign activity_time = candidate.updated_at | default: candidate.published_at | default: candidate.date -%}
   {%- capture note_sort_key -%}{{ candidate.date | date: '%Y-%m-%d' }}|{{ activity_time | date: '%s' }}|{{ candidate.path }}{%- endcapture -%}

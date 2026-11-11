@@ -125,6 +125,14 @@ en:
   tags: Tags
   notes_kicker: Reading & practice
   tech_kicker: Ideas in practice
+  topics: Technical Topics
+  all_topics: '← All topics'
+  topics_note: Follow a research direction across papers and engineering reports.
+  topics_intro: Read across works
+  topics_updated: Updated
+  topics_open: Explore topics
+  topics_empty: New topics will appear here when they are ready.
+  topics_back: '← Tech Notes'
   search_intro: Find ideas across paper digests and technical notes.
   notes_empty_title: Notes are on the way
   latest_note: Latest note
@@ -259,6 +267,14 @@ zh:
   tags: 标签
   notes_kicker: 阅读与实践
   tech_kicker: 实践与记录
+  topics: 技术专题
+  all_topics: '← 全部专题'
+  topics_note: 串起论文与工程实践，持续追踪一个方向的路线、证据与分歧。
+  topics_intro: 沿着问题读下去
+  topics_updated: 最后更新
+  topics_open: 浏览专题
+  topics_empty: 专题准备好后会出现在这里。
+  topics_back: '← 技术笔记'
   search_intro: 从论文阅读与技术笔记中，找到你关心的内容。
   notes_empty_title: 笔记准备中
   latest_note: 最近一篇
