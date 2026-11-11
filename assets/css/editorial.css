@@ -370,3 +370,8 @@
 @media (max-width:1099px) {
  #warm-directions .topic-reading-layout .tech-toc {position:sticky;top:8px;z-index:20;box-shadow:0 3px 12px rgba(33,37,41,.06)}
 }
+
+#warm-directions [data-topic-reader] .article-body h3,
+#warm-directions [data-topic-reader] .topic-anchor {scroll-margin-top:84px}
+
+@media (min-width:1100px) { #warm-directions [data-topic-reader] > .article-body {max-width:760px} }

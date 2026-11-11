@@ -7,7 +7,7 @@
   const topic = reader.hasAttribute('data-topic-reader');
   const tocMedia = window.matchMedia(topic ? '(max-width:1099px)' : '(max-width:600px)');
   const mobile = () => tocMedia.matches;
-  const headings = [...body.querySelectorAll('h2, h3')];
+  const headings = [...body.querySelectorAll(topic ? 'h2' : 'h2, h3')];
   if (headings.length) {
     const toc = document.createElement('details');
     toc.className = 'tech-toc';
