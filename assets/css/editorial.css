@@ -354,3 +354,19 @@
  .editorial .topic-guides-heading { align-items: flex-start; }
  .editorial .topic-guide-heading h2, .editorial .topic-guide-heading h3 { font-size: 1rem; }
 }
+
+
+/* Topic guides keep a persistent contents panel beside the long-form text. */
+#warm-directions [data-topic-reader] .topic-reading-layout .article-body {min-width:0}
+@media (min-width:1100px) {
+ #warm-directions [data-topic-reader] {max-width:1140px}
+ #warm-directions [data-topic-reader] .article-header {max-width:760px}
+ #warm-directions .topic-reading-layout {display:grid;grid-template-columns:minmax(0,760px) minmax(220px,1fr);gap:32px;align-items:start;margin-top:26px}
+ #warm-directions .topic-reading-layout .article-body {grid-area:1/1}
+ #warm-directions .topic-reading-layout .tech-toc {grid-area:1/2;position:sticky;top:24px;max-height:calc(100dvh - 48px);margin:0;min-width:0}
+ #warm-directions .topic-reading-layout .tech-toc nav {max-height:calc(100dvh - 108px)}
+ #warm-directions .topic-reading-layout .tech-toc a {font-size:13px}
+}
+@media (max-width:1099px) {
+ #warm-directions .topic-reading-layout .tech-toc {position:sticky;top:8px;z-index:20;box-shadow:0 3px 12px rgba(33,37,41,.06)}
+}

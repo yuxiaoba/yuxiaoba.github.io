@@ -4,7 +4,9 @@
   if (!reader) return;
   const body = reader.querySelector('.article-body');
   const zh = document.documentElement.lang.startsWith('zh');
-  const mobile = () => window.matchMedia('(max-width:600px)').matches;
+  const topic = reader.hasAttribute('data-topic-reader');
+  const tocMedia = window.matchMedia(topic ? '(max-width:1099px)' : '(max-width:600px)');
+  const mobile = () => tocMedia.matches;
   const headings = [...body.querySelectorAll('h2, h3')];
   if (headings.length) {
     const toc = document.createElement('details');
@@ -30,7 +32,15 @@
       });
       item.append(link); list.append(item);
     });
-    nav.append(list); toc.append(summary, nav); body.before(toc);
+    nav.append(list); toc.append(summary, nav);
+    if (topic) {
+      const layout = document.createElement('div');
+      layout.className = 'topic-reading-layout';
+      body.before(layout); layout.append(toc, body);
+      tocMedia.addEventListener('change', () => { toc.open = !mobile(); });
+    } else {
+      body.before(toc);
+    }
   }
 
   const tables = [...body.querySelectorAll('table')].map(table => {

@@ -26,7 +26,7 @@ Harness 是模型外部组织执行的那层系统：工具接口、上下文管
 | 工作 | 主要改进对象 | 改进发生在哪里 | 反馈与验证 |
 | --- | --- | --- | --- |
 | [InfraRSI](https://arxiv.org/pdf/2611.11558) | 分布式训练的启动配置和代码补丁 | 训练优化试验之间；经验跨环境积累 | 固定训练契约，测量时间与内存，复测候选 |
-| [BOXBOX](https://arxiv.org/pdf/2611.09218) | Agent 当前使用的可执行 harness | 同一个长任务的运行过程中 | 性能任务反馈；独立 kernel 检查并激活新版本 |
+| [BOXBOX — 已撤回](https://arxiv.org/abs/2611.09218v2) | Agent 当前使用的可执行 harness | 同一个长任务的运行过程中 | 性能任务反馈；独立 kernel 检查并激活新版本 |
 | [JoMoHa](https://arxiv.org/pdf/2611.11499) | 生成 harness 的 Engineer 策略和执行任务的 Solver 策略 | 联合强化学习训练过程中 | 用实际执行轨迹协调两个策略的更新 |
 | [RRSI](https://arxiv.org/pdf/2609.24972v3) | 冻结模型外围的 harness | 多轮离线提议与筛选 | 泄漏筛查、噪声与成本约束、组件剪枝 |
 | [AIDE²](https://arxiv.org/pdf/2609.26457) | 研究 Agent 自己的搜索与记忆等代码 | 外层选择更好的 Agent 实现，供后续轮次继承 | 固定内层预算、私有选择评分与保留集迁移评估 |
@@ -43,6 +43,8 @@ InfraRSI 先锁定训练负载、loss 与计时不变量，再结合 profiling�
 → [当日解读：InfraRSI 的任务契约与验证流程](/digest/zh/daily/2026-11-11/#paper-arxiv-2611.11558)
 
 ## BOXBOX：长任务暴露了问题，能否不中断地改 harness？
+
+**状态更新：已撤回。** [arXiv 当前记录](https://arxiv.org/abs/2611.09218v2)显示，作者于 2026 年 11 月 9 日暂时撤回该稿，以补充 Claude Code 使用的合规澄清。以下仅保留旧版机制的历史解读，不作为当前有效研究结果或核心对照；此状态不等于对实验真实性作出判定。
 
 BOXBOX 让 Agent 在任务中调用审阅入口；独立 kernel 暂停执行、保存上下文、检查新 harness 并热加载，激活失败时回退。改进对象是当前任务的执行系统，并不是在线更新基础模型权重。[原论文](https://arxiv.org/pdf/2611.09218)
 

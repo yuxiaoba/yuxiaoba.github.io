@@ -26,7 +26,7 @@ A harness is the system around the model that organizes execution: tools, contex
 | Work | Main object of improvement | Where the loop runs | Feedback and checks |
 | --- | --- | --- | --- |
 | [InfraRSI](https://arxiv.org/pdf/2611.11558) | Training launch configurations and code patches | Between training-optimization trials, with experience carried across environments | A fixed training contract, time and memory measurements, and candidate retesting |
-| [BOXBOX](https://arxiv.org/pdf/2611.09218) | The executable harness used by the agent | Within one ongoing long task | Performance-task feedback; a separate kernel checks and activates revisions |
+| [BOXBOX — withdrawn](https://arxiv.org/abs/2611.09218v2) | The executable harness used by the agent | Within one ongoing long task | Performance-task feedback; a separate kernel checks and activates revisions |
 | [JoMoHa](https://arxiv.org/pdf/2611.11499) | The Engineer policy that generates harnesses and the Solver policy that executes tasks | Joint reinforcement learning | Shared task executions coordinate the two policies |
 | [RRSI](https://arxiv.org/pdf/2609.24972v3) | Harness around a frozen model | Repeated offline proposals and selection | Leakage screening, noise and cost constraints, and pruning |
 | [AIDE²](https://arxiv.org/pdf/2609.26457) | The research agent's own search and memory code | An outer loop selects implementations inherited by later rounds | Fixed inner budgets, private selection scores, and held-out transfer tests |
@@ -43,6 +43,8 @@ Read it with one verification question in mind: **after a change to batch size, 
 → [Daily reading: InfraRSI’s task contract and validation loop](/digest/en/daily/2026-11-11/#paper-arxiv-2611.11558)
 
 ## BOXBOX: revise a harness without restarting the task
+
+**Status update: withdrawn.** The [current arXiv record](https://arxiv.org/abs/2611.09218v2) says the authors temporarily withdrew the submission on November 9, 2026 to clarify Claude Code usage for compliance. The description below is retained as a historical reading of the earlier version, not as a current result or core comparator. Withdrawal alone does not establish that the experiments were invalid.
 
 BOXBOX gives the agent a review entry point. A separate kernel pauses execution, preserves context, checks the revised harness, and activates it, with rollback if activation fails. It changes the execution system for the current task rather than updating the base model’s weights online. [Paper](https://arxiv.org/pdf/2611.09218)
 
