@@ -141,6 +141,8 @@ def published_sources(root):
         for path in (root / collection).rglob('*.md'):
             meta, _ = frontmatter(path)
             if meta.get('published') is not True: continue
+            # A guide's background citations are not completed daily readings.
+            if meta.get('topic_guide') is True: continue
             for url in re.findall(r'https://[^\s<>"\)]+', path.read_text()):
                 try: keys.add(source_key(url))
                 except ValueError: pass

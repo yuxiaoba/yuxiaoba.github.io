@@ -17,6 +17,17 @@ class DailyTests(unittest.TestCase):
  def select(self,state=None):return d.select_batch(self.root,state or {'inputs':{}},self.config,'2026-10-19')
  def test_valid_batch_and_hash(self):
   p,data=self.batch();got,h,raw=d.read_batch(p);self.assertEqual(got,data);self.assertEqual(h,d.sha(raw))
+ def test_topic_citations_do_not_hide_unread_daily_sources(self):
+  guide=self.root/'_tech/zh/topics/guide.md';guide.parent.mkdir(parents=True)
+  guide.write_text('---\npublished: true\ntopic_guide: true\n---\n[Background](https://arxiv.org/abs/2611.11499)\n')
+  draft=self.root/'_tech/zh/draft.md'
+  draft.write_text('---\npublished: false\n---\nhttps://example.org/unpublished\n')
+  note=self.root/'_digest/zh/daily.md';note.parent.mkdir(parents=True)
+  note.write_text('---\npublished: true\n---\nhttps://arxiv.org/pdf/2611.09218\n')
+  keys=d.published_sources(self.root)
+  self.assertEqual(keys,{'arxiv:2611.09218'})
+  note.write_text(note.read_text()+'\nhttps://arxiv.org/abs/2611.11499\n')
+  self.assertEqual(d.published_sources(self.root),{'arxiv:2611.09218','arxiv:2611.11499'})
  def test_month_precision_preserves_source_value_and_raw_input(self):
   p,data=self.batch();data['items'][0]['published_at']='2026-08';p.write_text(yaml.safe_dump(data));original=p.read_bytes()
   got,h,raw=d.read_batch(p)
