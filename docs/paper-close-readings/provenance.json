@@ -1,0 +1,118 @@
+[
+  {
+    "paper": "sentry",
+    "arxiv_version": "2610.02994v1",
+    "code_commit": "1d91bca14fa6a4e17908856cc787eb8e8354395f",
+    "authoring_source": "assistant",
+    "english_translation": "assistant-created; not supplied by user",
+    "benchmark_reproduced": false,
+    "figures": [
+      {
+        "language": "zh",
+        "path": "assets/images/digest/paper-close-readings/sentry/zh-01.png",
+        "sha256": "093602ecf2a41385397c6ad202ad0d0c9d8ef38f70fd9dddd3c57c3b310e7a4e",
+        "diagram_type": "flow",
+        "specification": "任务Agent产生执行轨迹 -> Sentry观察窗口\nSentry观察窗口 -> {动作合法性检查?}\n{动作合法性检查?} -> hard-repair提示: 格式或schema不合法\nhard-repair提示 -> 任务模型重新生成动作\n任务模型重新生成动作 -> 宿主校验并执行\n{动作合法性检查?} -> LLM行为诊断: 合法\nLLM行为诊断 -> 原循环继续: 无需干预\nLLM行为诊断 -> 按失败标签检索经验: 停滞或推理依据不足\n按失败标签检索经验 -> soft-repair提示\nsoft-repair提示 -> 原循环后续行动\n原循环后续行动 -> 延迟恢复验证\n延迟恢复验证 -> 外部经验库: 判为已恢复才入库\n外部经验库 -> 按失败标签检索经验: 后续失败使用",
+        "origin": "assistant explanatory diagram based on paper and inspected code"
+      },
+      {
+        "language": "zh",
+        "path": "assets/images/digest/paper-close-readings/sentry/zh-02.png",
+        "sha256": "cca6f3c680d9d8478cdc428c2fa9ab4293da3ac19800f519a488f306391cea79",
+        "diagram_type": "sequence num",
+        "specification": "participants: 宿主Harness, 任务LLM, 工具环境, Sentry\n宿主Harness -> 任务LLM: 当前输入与工具说明\n任务LLM --> 宿主Harness: 推理与动作请求\n宿主Harness -> 工具环境: 校验并执行合法动作\n工具环境 --> 宿主Harness: 观察结果\n宿主Harness -> Sentry: 上报本次执行周期\nSentry --> 宿主Harness: 无干预，或恢复提示\n宿主Harness -> 任务LLM: 需要时加入恢复指导\nnote Sentry: 继续观察，满足条件后验证和更新经验",
+        "origin": "assistant explanatory diagram based on paper and inspected code"
+      },
+      {
+        "language": "en",
+        "path": "assets/images/digest/paper-close-readings/sentry/en-01.png",
+        "sha256": "e8cc34f3319b204bda4038b5e41e6c81b00803c17abbbb88e9eb97048f3db852",
+        "diagram_type": "flow",
+        "specification": "Task-agent execution trace -> Sentry observation window\nSentry observation window -> {Action validity?}\n{Action validity?} -> Hard-repair prompt: invalid format or schema\nHard-repair prompt -> Task model regenerates an action\nTask model regenerates an action -> Host validates and executes\n{Action validity?} -> LLM behavior diagnosis: valid action\nLLM behavior diagnosis -> Continue original loop: no intervention needed\nLLM behavior diagnosis -> Retrieve matching lessons: stalled or poorly grounded\nRetrieve matching lessons -> Soft-repair prompt\nSoft-repair prompt -> Subsequent agent actions\nSubsequent agent actions -> Delayed recovery verification\nDelayed recovery verification -> External playbook: admit only verified recovery\nExternal playbook -> Retrieve matching lessons: reuse for later failures",
+        "origin": "assistant explanatory diagram based on paper and inspected code"
+      },
+      {
+        "language": "en",
+        "path": "assets/images/digest/paper-close-readings/sentry/en-02.png",
+        "sha256": "bfe4a5ec548368f41c47f57dd70fcefe26f39aff6dc7cfb166507e8338247e17",
+        "diagram_type": "sequence num",
+        "specification": "participants: Host Harness, Task LLM, Tools, Sentry\nHost Harness -> Task LLM: Current input and tool definitions\nTask LLM --> Host Harness: Reasoning and action request\nHost Harness -> Tools: Validate and execute a legal action\nTools --> Host Harness: Observation\nHost Harness -> Sentry: Report the completed cycle\nSentry --> Host Harness: No intervention or recovery prompt\nHost Harness -> Task LLM: Add guidance when needed\nnote Sentry: Observe subsequent cycles, verify, and update memory",
+        "origin": "assistant explanatory diagram based on paper and inspected code"
+      }
+    ]
+  },
+  {
+    "paper": "harnessfix",
+    "arxiv_version": "2606.06324v2",
+    "code_commit": "9167a0b9a58748c73b56c3ee04fdc3437ba0c56e",
+    "authoring_source": "assistant",
+    "english_translation": "assistant-created; not supplied by user",
+    "benchmark_reproduced": false,
+    "figures": [
+      {
+        "language": "zh",
+        "path": "assets/images/digest/paper-close-readings/harnessfix/zh-01.png",
+        "sha256": "80127cf4363e6f5dc75e588e574aedb8a388a122634dc9c18159452caeb9c3fd",
+        "diagram_type": "flow",
+        "specification": "用户任务 -> 被测试的任务Agent\n被测试的任务Agent -> 模型与工具执行\n模型与工具执行 -> 失败轨迹与评测结果\n失败轨迹与评测结果 -> HarnessFix修复系统\n原Harness实现 -> HarnessFix修复系统\nHarnessFix修复系统 -> 候选Harness补丁\n候选Harness补丁 -> 验证后采用的新版本\n验证后采用的新版本 -> 被测试的任务Agent: 后续执行",
+        "origin": "assistant explanatory diagram based on paper and inspected code"
+      },
+      {
+        "language": "zh",
+        "path": "assets/images/digest/paper-close-readings/harnessfix/zh-02.png",
+        "sha256": "793a4c304a0a822649378f647aef643f96805f47e025fa51fc44f83c6249e662",
+        "diagram_type": "flow",
+        "specification": "原始轨迹与Harness文件 -> 轨迹结构化Agent\n轨迹结构化Agent -> HTIR执行表示\nHTIR执行表示 -> 诊断Agent\n诊断Agent -> 合并重复问题\n合并重复问题 -> 修复Agent\n修复Agent -> 允许范围与行为要求\n允许范围与行为要求 -> 候选补丁\n候选补丁 -> 验证Agent与任务评估\n验证Agent与任务评估 -> {改善且回归可接受?}\n{改善且回归可接受?} -> 接纳并记录经验: 是\n{改善且回归可接受?} -> 拒绝并记录原因: 否",
+        "origin": "assistant explanatory diagram based on paper and inspected code"
+      },
+      {
+        "language": "zh",
+        "path": "assets/images/digest/paper-close-readings/harnessfix/zh-03.png",
+        "sha256": "8ed48c961a8153d84b052a7089acceabf6209db7640ca027d0d8da3ba987ba4e",
+        "diagram_type": "sequence num",
+        "specification": "participants: 任务Agent, API执行, 完成判定\n任务Agent -> API执行: 请求创建支付记录\nnote API执行: 请求缺字段，错误没有充分暴露\nAPI执行 --> 任务Agent: 表面执行状态成功\nnote 任务Agent: 预期应用状态未产生\n任务Agent -> 完成判定: 请求结束任务\n完成判定 --> 任务Agent: 缺少效果检查，允许结束",
+        "origin": "assistant explanatory diagram based on paper and inspected code"
+      },
+      {
+        "language": "zh",
+        "path": "assets/images/digest/paper-close-readings/harnessfix/zh-04.png",
+        "sha256": "a09bd27b6f2552927601b8141117550e3973e037d9d2dc21fa34367eea55846a",
+        "diagram_type": "flow",
+        "specification": "模型提出命令 -> 命令规则检查\n命令规则检查 -> 执行命令: 未被拒绝\n执行命令 -> {是不是提交?}\n{是不是提交?} -> 检查补丁格式和路径: 是\n检查补丁格式和路径 -> 拒绝并继续修改: 不合规则\n检查补丁格式和路径 -> 接纳提交: 合规则\n{是不是提交?} -> 处理长输出: 否\n处理长输出 -> 返回Agent",
+        "origin": "assistant explanatory diagram based on paper and inspected code"
+      },
+      {
+        "language": "en",
+        "path": "assets/images/digest/paper-close-readings/harnessfix/en-01.png",
+        "sha256": "b30711b7b905c31ec0570fbd81090e03df84b7fe46c92ef8599883fd92158adc",
+        "diagram_type": "flow",
+        "specification": "User tasks -> Evaluated task agent\nEvaluated task agent -> Model and tool execution\nModel and tool execution -> Failed traces and evaluation feedback\nFailed traces and evaluation feedback -> HarnessFix repair system\nOriginal harness implementation -> HarnessFix repair system\nHarnessFix repair system -> Candidate harness patch\nCandidate harness patch -> Validated new version\nValidated new version -> Evaluated task agent: subsequent execution",
+        "origin": "assistant explanatory diagram based on paper and inspected code"
+      },
+      {
+        "language": "en",
+        "path": "assets/images/digest/paper-close-readings/harnessfix/en-02.png",
+        "sha256": "8e0c31e22be1b996117b0a13f6fd82ae61012fb9ebae960158c8c6ab14e20b3b",
+        "diagram_type": "flow",
+        "specification": "Raw traces and harness files -> Trace abstraction agent\nTrace abstraction agent -> HTIR representation\nHTIR representation -> Diagnosis agent\nDiagnosis agent -> Consolidate recurring flaws\nConsolidate recurring flaws -> Repair agent\nRepair agent -> Edit scope and behavioral requirements\nEdit scope and behavioral requirements -> Candidate patch\nCandidate patch -> Validation agent and task evaluation\nValidation agent and task evaluation -> {Improvement with acceptable regressions?}\n{Improvement with acceptable regressions?} -> Accept and record experience: yes\n{Improvement with acceptable regressions?} -> Reject and record the reason: no",
+        "origin": "assistant explanatory diagram based on paper and inspected code"
+      },
+      {
+        "language": "en",
+        "path": "assets/images/digest/paper-close-readings/harnessfix/en-03.png",
+        "sha256": "332fb8f69c5d09e02281039ec0522f39392bfad381306e2ef9fe75f6ec1ccc9c",
+        "diagram_type": "sequence num",
+        "specification": "participants: Task agent, API execution, Completion guard\nTask agent -> API execution: Request a payment record\nnote API execution: A required field is missing; the error is not adequately exposed\nAPI execution --> Task agent: Apparently successful execution status\nnote Task agent: The expected application-state change is absent\nTask agent -> Completion guard: Request task completion\nCompletion guard --> Task agent: Allow completion without effect evidence",
+        "origin": "assistant explanatory diagram based on paper and inspected code"
+      },
+      {
+        "language": "en",
+        "path": "assets/images/digest/paper-close-readings/harnessfix/en-04.png",
+        "sha256": "e5f0b3ebfeaa2355f9a4f244b2eff1eaf9b89646324c45f675f5a4d9229cd6ac",
+        "diagram_type": "flow",
+        "specification": "Model proposes a command -> Check command rules\nCheck command rules -> Execute command: not rejected\nExecute command -> {Is this a submission?}\n{Is this a submission?} -> Validate patch format and paths: yes\nValidate patch format and paths -> Reject and continue editing: invalid\nValidate patch format and paths -> Accept submission: valid\n{Is this a submission?} -> Handle long output: no\nHandle long output -> Return to the agent",
+        "origin": "assistant explanatory diagram based on paper and inspected code"
+      }
+    ]
+  }
+]

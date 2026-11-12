@@ -80,6 +80,15 @@ def audit(site):
                     count=sum(str(m['date']).startswith(month) for m in entries)
                     check(len(group.select('.digest-archive-row'))==count,f'{collection} month entries preserved {month} {lang}')
                     check(group.select_one('.archive-month-count').text.strip().split()[0]==str(count),f'{collection} month count {month} {lang}')
+        for source in (ROOT/'_digest'/lang).rglob('*.md'):
+            meta=metadata(source)
+            if meta.get('published') is not True or not meta.get('paper_deep_read'):
+                continue
+            route=meta['permalink'].lstrip('/')
+            article=soup(site/route/'index.html')
+            expected_tables=len(re.findall(r'^\|(?:[ :\-]+\|)+\s*$',source.read_text(),re.M))
+            check(len(article.select('.article-body table'))==expected_tables,f'all close-reading tables rendered {lang} {source.name}')
+            check(not any(re.search(r'(?m)^\|.*\|',p.get_text()) for p in article.select('.article-body p')),f'no raw table paragraphs {lang} {source.name}')
         profile=yaml.safe_load((ROOT/('_data/profile_zh.yml' if lang=='zh' else '_data/profile.yml')).read_text())
         check(len(home.select('.education-entry'))==len(profile['education']),f'education {lang}')
         check(len(home.select('.awards-list li'))==len(profile['awards']),f'all awards {lang}')
@@ -143,6 +152,7 @@ def fixtures():
         def article(collection,lang,name,title,published=True,extra='',when='2026-10-10',updated=None):
             p=source/f'_{collection}'/lang/(name+'.md');p.parent.mkdir(parents=True,exist_ok=True)
             meta={'title':title,'date':when,'published':published,'summary':'测试导读' if lang=='zh' else 'A test summary'}
+            if collection=='digest':meta.update({'paper_deep_read':True,'long_read':True})
             if updated:meta['updated_at']=updated
             p.write_text('---\n'+yaml.safe_dump(meta,allow_unicode=True)+'---\n\n'+extra)
         for col in ['digest','kitchen']:
@@ -248,6 +258,19 @@ def fixtures():
             check('OLDER_TECH_FIXTURE' not in updates.text,f'old reading date does not jump ahead after update {lang}')
             check(('ZH_ONLY_RECENT_TECH' in updates.text)==(lang=='zh'),f'home untranslated tech stays in source language {lang}')
             check(not updates.select('[href*="home-draft"]'),f'home draft excluded {lang}')
+        for lang in ['en','zh']:
+            deep=soup(dest/f'digest/{lang}/2026-10-10-paired/index.html')
+            label=yaml.safe_load((ROOT/'_data/locales.yml').read_text())[lang]['paper_deep_read']
+            check(deep.select_one('.article-header .eyebrow').get_text(strip=True)==label,f'close reading label from Markdown {lang}')
+            check(deep.select_one('[data-pagefind-filter="type:paper"]') is not None,f'close reading is classified as paper {lang}')
+            check(deep.select_one('[data-tech-reader][data-topic-reader]') is not None,f'close reading uses sidebar reader {lang}')
+            other='zh' if lang=='en' else 'en'
+            check(deep.select_one(f'.language-switch a[lang="{other}"]')['href']==f'/digest/{other}/2026-10-10-paired/',f'close reading paired language {lang}')
+            check(f'digest/{lang}/2026-10-10-paired/index.html' in search_manifest['pages'],f'close reading indexed {lang}')
+            check(f'digest/{lang}/2026-10-10-draft/index.html' not in search_manifest['pages'] and not (dest/f'digest/{lang}/2026-10-10-draft/index.html').exists(),f'close reading draft excluded {lang}')
+        missing=soup(dest/'digest/zh/2026-10-10-only/index.html')
+        check(missing.select_one('.language-switch a[lang="en"]')['href']=='/digest/?translation=missing','close reading missing translation fallback')
+        check('digest/en/2026-10-10-only/index.html' not in search_manifest['pages'],'untranslated close reading absent from English index')
         for col in ['digest','kitchen']:
             for lang in ['en','zh']:
                 article_page=dest/col/lang/'2026-10-10-paired/index.html'

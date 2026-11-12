@@ -92,3 +92,13 @@ Do not push, merge, deploy, schedule jobs, or send messages to other tasks witho
 - The user authorized a small self-hosted HTTPS counting service on the existing server, compatible with GitHub Pages and without a database. This is an exception to the earlier no-extra-services rule only for article metrics; the owner-feedback/removal interface remains deferred.
 - Count published Digest issues and Tech Notes only. Keep the dashboard owner-authenticated. Never put credentials, certificate keys, visitor digests or raw metrics into Git or static output. `.metrics/` is private; persistent runtime data uses the dedicated systemd state directory.
 - Use project-local dependencies, a non-root runtime, automatic IP-certificate renewal and isolated validation storage. Keep the research timer and existing preview services intact. Exclude previews, automation, search, bookmarks and reader opt-outs; do not infer completed reading or use popularity to withdraw research.
+
+## Efficient research and verification (user-confirmed 2026-11-12)
+
+- Reuse previously verified paper versions, code snapshots, source manifests and reading notes. Read only relevant sections or changed files; recheck sources when their version, status or a factual claim requires it.
+- Paper close readings belong in `_digest/zh/` and `_digest/en/`, with `paper_deep_read: true`; they are independent articles, not Tech Notes or dated daily digests. See `docs/paper-close-readings/README.md` before creating one.
+- Edit the requested section and its paired translation. Preserve unaffected prose, diagrams and layouts instead of regenerating the whole deliverable.
+- Batch related edits before building and checking. For a small formatting correction, check the affected source and rendered pages in both languages, including the actual failed element. Do not repeat the full repository audit unless shared behavior, new failures or unresolved risks justify it.
+- For new publishing paths or changes to templates, classification, language pairing, indexing or draft filtering, retain the required build, publishing-fixture and browser checks. Reuse passing results for unchanged behavior; confirm the served artifact matches the checked build.
+- Keep normal build safeguards and existing daily quotas. This efficiency policy does not authorize new jobs, skipped bilingual publication, pushes or deployments.
+- Label token figures as either measured usage or planning estimates. State the scope and exclusions of an estimate; never present it as this session's bill, or claim exact usage without metering. Reuse existing research before estimating a task as a fresh paper review.
