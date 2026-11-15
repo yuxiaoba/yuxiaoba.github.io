@@ -102,3 +102,8 @@ Do not push, merge, deploy, schedule jobs, or send messages to other tasks witho
 - For new publishing paths or changes to templates, classification, language pairing, indexing or draft filtering, retain the required build, publishing-fixture and browser checks. Reuse passing results for unchanged behavior; confirm the served artifact matches the checked build.
 - Keep normal build safeguards and existing daily quotas. This efficiency policy does not authorize new jobs, skipped bilingual publication, pushes or deployments.
 - Label token figures as either measured usage or planning estimates. State the scope and exclusions of an estimate; never present it as this session's bill, or claim exact usage without metering. Reuse existing research before estimating a task as a fresh paper review.
+
+## Manual preview and daily publishing coordination (user-confirmed 2026-11-15)
+
+- Daily publishing refuses unrelated pending files. Keep unapproved manual drafts in isolated preview sources, or complete their authorized commit/publication before resuming the daily queue. Do not leave manual content blocking the shared publisher without reporting it. Never weaken manifest checks to bypass this protection.
+- Paper Digest has separate daily-reading and close-reading entrances; preserve paired languages, article URLs and the existing paper search type.

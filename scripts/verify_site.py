@@ -65,6 +65,7 @@ def audit(site):
         check(updates is not None,f'recent updates section {lang}')
         for collection,selector,limit in [('digest','.update-digest',1),('tech','.update-tech',2)]:
             entries=[metadata(p) for p in (ROOT/('_'+collection)/lang).rglob('*.md') if metadata(p).get('published') is True and not metadata(p).get('topic_guide')]
+            if collection=='digest':entries=[m for m in entries if not m.get('paper_deep_read')]
             dates=sorted([str(m['date'])[:10] for m in entries],reverse=True)[:limit]
             cards=updates.select(selector+' .recent-note')
             check([c.select_one('time')['datetime'] for c in cards]==dates,f'latest {collection} dates {lang}')
@@ -80,6 +81,13 @@ def audit(site):
                     count=sum(str(m['date']).startswith(month) for m in entries)
                     check(len(group.select('.digest-archive-row'))==count,f'{collection} month entries preserved {month} {lang}')
                     check(group.select_one('.archive-month-count').text.strip().split()[0]==str(count),f'{collection} month count {month} {lang}')
+        close=soup(site/prefix/'digest/close-readings/index.html')
+        check(close.select_one('.paper-subnav a[aria-current="page"]')['href']=='/'+prefix+'digest/close-readings/',f'close reading subnavigation {lang}')
+        close_paths=[metadata(p)['permalink'] for p in (ROOT/'_digest'/lang).rglob('*.md') if metadata(p).get('published') is True and metadata(p).get('paper_deep_read')]
+        daily=soup(site/prefix/'digest/index.html')
+        for path in close_paths:
+            check(close.select_one(f'.digest-archive-row a[href="{path}"],.digest-feature a[href="{path}"]') is not None,f'close reading listed separately {lang} {path}')
+            check(daily.select_one(f'.digest-archive-row a[href="{path}"],.digest-feature a[href="{path}"]') is None,f'close reading absent from daily list {lang} {path}')
         for source in (ROOT/'_digest'/lang).rglob('*.md'):
             meta=metadata(source)
             if meta.get('published') is not True or not meta.get('paper_deep_read'):
@@ -152,7 +160,7 @@ def fixtures():
         def article(collection,lang,name,title,published=True,extra='',when='2026-10-10',updated=None):
             p=source/f'_{collection}'/lang/(name+'.md');p.parent.mkdir(parents=True,exist_ok=True)
             meta={'title':title,'date':when,'published':published,'summary':'测试导读' if lang=='zh' else 'A test summary'}
-            if collection=='digest':meta.update({'paper_deep_read':True,'long_read':True})
+            if collection=='digest' and name in {'2026-10-10-paired','2026-10-10-draft','2026-10-10-only','2026-10-10-unpublished-translation'}:meta.update({'paper_deep_read':True,'long_read':True})
             if updated:meta['updated_at']=updated
             p.write_text('---\n'+yaml.safe_dump(meta,allow_unicode=True)+'---\n\n'+extra)
         for col in ['digest','kitchen']:
@@ -282,7 +290,7 @@ def fixtures():
                 nested=soup(dest/col/lang/'nested/2026-10-10-paired/index.html')
                 check(nested.select_one(f'.language-switch a[lang="{other}"]')['href']==f'/{col}/{other}/nested/2026-10-10-paired/',f'{col} {lang} nested translation pairing')
                 prefix='zh/' if lang=='zh' else ''
-                listing=soup(dest/prefix/('life' if col=='kitchen' else col)/'index.html')
+                listing=soup(dest/prefix/('life' if col=='kitchen' else 'digest/close-readings')/'index.html')
                 check(bool(listing.select(f'a[href="/{col}/{lang}/2026-10-10-paired/"]')),f'{col} {lang} automatic listing')
                 check(not listing.select(f'a[href^="/{col}/{other}/"]'),f'{col} {lang} no mixed-language articles')
                 if col=='kitchen':

@@ -1,0 +1,62 @@
+{
+  "code_commit": "3c9a86bb08398a425f95a81ba4339aa76151f5a1",
+  "source_hashes": {
+    "commit": "3c9a86bb08398a425f95a81ba4339aa76151f5a1",
+    "readme_sha256": "d59a56458ae13292f2f0f06e100e0af0a8038621fb802de95485cee1ad5cf7dc",
+    "files": {
+      "packages/durable/docs/spec.md": "449a2fda6267b89a5d21826519c02443ba890b63148348cd9e7f86f51473e622",
+      "packages/durable/src/harness/tool.ts": "394fa454bc3d36c3f37bbd5bdada43decd43e2ffb5ce2cb5efec31bf96b9e28a",
+      "packages/durable/src/harness/generation.ts": "47adcdcff6b46a62a248f35395e8f6b272041b4e345d99b7c7fe1eb33241dae6",
+      "packages/durable/test/harness-tools-recovery.test.ts": "73a8fc473b398463c50dbba0a9efc0cf1f251a37a0a0b7c6f40dc7978e48d230",
+      "packages/durable/test/harness-generation-recovery.test.ts": "3af8f443ad4e08b3907e5150fe1f21333142653825464eed8f285a73366cba46",
+      "packages/coding-agent/package.json": "4d1b946e675a6e0bed29170a3b947f0e4f1c45adfeec143674083de91762dc1c"
+    }
+  },
+  "authoring_source": "assistant",
+  "english_translation": "assistant-created",
+  "recovery_tests_executed": false,
+  "figures": [
+    {
+      "language": "zh",
+      "path": "/assets/images/tech/pi-durable-runtime/zh-01.png",
+      "sha256": "1f7f4a6d82770c17eb9133a8cd470723b4fef8726e02120be6ee5553b98664af",
+      "specification": "```flow\n用户输入 -> 持久化Submission\n持久化Submission -> Generation任务\n会话历史与配置 -> Generation任务: 准备模型输入\nGeneration任务 -> pi-ai与外部LLM\npi-ai与外部LLM -> 模型响应\n模型响应 -> {还有工具调用?}\n{还有工具调用?} -> Tool子任务: 有\nTool子任务 -> 执行环境\n执行环境 -> 提交工具结果\n提交工具结果 -> 下一Generation任务\n下一Generation任务 -> pi-ai与外部LLM: 新的模型输入\n{还有工具调用?} -> 提交答案并结算输入: 无且允许结束\n存储与任务调度器 --> Generation任务: 检查点和恢复\n存储与任务调度器 --> Tool子任务: 检查点和恢复\n```",
+      "origin": "assistant explanatory diagram based on pinned documentation/code"
+    },
+    {
+      "language": "zh",
+      "path": "/assets/images/tech/pi-durable-runtime/zh-02.png",
+      "sha256": "0cca79ced6bba590038970a94904695bd474b4fe63f7ce197a4f50b062675a93",
+      "specification": "```sequence num\nparticipants: 任务阶段, Session, 存储, 观察者\n任务阶段 -> Session: 请求提交条目与下一阶段状态\nSession -> 存储: 原子保存提交\n存储 --> Session: 持久化回执\nSession --> 观察者: 发布常规提交的变化\nnote 任务阶段, 存储: 进程随后中断\n任务阶段 -> 存储: 重开后读取已提交状态\n存储 --> 任务阶段: 从保存的阶段和检查点恢复\n```",
+      "origin": "assistant explanatory diagram based on pinned documentation/code"
+    },
+    {
+      "language": "zh",
+      "path": "/assets/images/tech/pi-durable-runtime/zh-03.png",
+      "sha256": "ad3326d61419eee628c75bf1d3d8a38b133807bcfd7bdfa1e5487810200cf3bf",
+      "specification": "```flow\n工具执行中进程中断 -> 重开存储与任务恢复\n重开存储与任务恢复 -> 检查工具与保存的意图\n检查工具与保存的意图 -> {保存与当前策略均为safe?}\n{保存与当前策略均为safe?} -> 按策略重新执行: 是且其他限制允许\n{保存与当前策略均为safe?} -> 写入interrupted错误结果: 否\n按策略重新执行 -> 结算结果\n写入interrupted错误结果 -> 后续模型获知可能部分执行\n结算结果 -> 后续模型继续\n```",
+      "origin": "assistant explanatory diagram based on pinned documentation/code"
+    },
+    {
+      "language": "en",
+      "path": "/assets/images/tech/pi-durable-runtime/en-01.png",
+      "sha256": "6e5386316d179a620bd2b8d69505116d3f8e749b1ff8f811fdd5ad776db23fbf",
+      "specification": "```flow\nUser input -> Durable submission\nDurable submission -> Generation task\nConversation history and configuration -> Generation task: prepare model input\nGeneration task -> pi-ai and external LLM\npi-ai and external LLM -> Model response\nModel response -> {Tool calls remain?}\n{Tool calls remain?} -> Child tool tasks: yes\nChild tool tasks -> Execution environment\nExecution environment -> Commit tool results\nCommit tool results -> Next generation task\nNext generation task -> pi-ai and external LLM: new model input\n{Tool calls remain?} -> Commit answer and settle input: no and allowed to end\nStorage and task scheduler --> Generation task: checkpoints and recovery\nStorage and task scheduler --> Child tool tasks: checkpoints and recovery\n```",
+      "origin": "assistant explanatory diagram based on pinned documentation/code"
+    },
+    {
+      "language": "en",
+      "path": "/assets/images/tech/pi-durable-runtime/en-02.png",
+      "sha256": "e8cd08c788b7b8bda1af6879e52b6c1a6f7a2e82f6cebe5e6da4efca4f99e4db",
+      "specification": "```sequence num\nparticipants: Task phase, Session, Storage, Observer\nTask phase -> Session: Commit entries and the next phase state\nSession -> Storage: Persist an atomic commit\nStorage --> Session: Durability receipt\nSession --> Observer: Publish the ordinary commit\nnote Task phase, Storage: The process subsequently stops\nTask phase -> Storage: Reopen and read committed state\nStorage --> Task phase: Resume from the saved phase and checkpoint\n```",
+      "origin": "assistant explanatory diagram based on pinned documentation/code"
+    },
+    {
+      "language": "en",
+      "path": "/assets/images/tech/pi-durable-runtime/en-03.png",
+      "sha256": "be7b4a0ed78a5f04e251eaf443085d33dac4a237bbb763f0b02c0e13bdb9ee76",
+      "specification": "```flow\nProcess stops during a tool call -> Reopen storage and recover tasks\nReopen storage and recover tasks -> Inspect the tool and saved intent\nInspect the tool and saved intent -> {Stored and current policies both safe?}\n{Stored and current policies both safe?} -> Re-execute under policy: yes and other limits permit\n{Stored and current policies both safe?} -> Record an interrupted error result: no\nRe-execute under policy -> Settle result\nRecord an interrupted error result -> Model learns that partial execution is possible\nSettle result -> Subsequent model work\n```",
+      "origin": "assistant explanatory diagram based on pinned documentation/code"
+    }
+  ]
+}

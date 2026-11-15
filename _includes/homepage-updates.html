@@ -1,4 +1,4 @@
-{% include ordered-notes.html collection=site.digest %}{% assign recent_digests = ordered_notes %}
+{% include ordered-notes.html collection=site.digest %}{% assign recent_digests = ordered_notes | where_exp: 'note', 'note.paper_deep_read != true' %}{% assign recent_close_readings = ordered_notes | where: 'paper_deep_read', true %}
 {% include ordered-notes.html collection=site.tech %}{% assign recent_tech = ordered_notes %}
 <section class="home-updates" aria-labelledby="recent-updates-heading">
 <h2 id="recent-updates-heading">{{ t.recent_updates }}</h2>
@@ -6,6 +6,7 @@
 <div class="update-column update-digest">
 <div class="update-column-heading"><span>{{ t.digest }}</span><a href="{{ prefix | append: '/digest/' | relative_url }}">{{ t.all_digests_short }} <span aria-hidden="true">↗</span></a></div>
 {% if recent_digests.size > 0 %}{% include recent-note.html entry=recent_digests.first %}{% else %}<p class="update-empty">{{ t.empty_digest }}</p>{% endif %}
+{% if recent_close_readings.size > 0 %}<a class="recent-read" href="{{ prefix | append: '/digest/close-readings/' | relative_url }}">{{ t.paper_deep_read }} <span aria-hidden="true">↗</span></a>{% endif %}
 </div>
 <div class="update-column update-tech">
 <div class="update-column-heading"><span>{{ t.tech }}</span><a href="{{ prefix | append: '/tech/' | relative_url }}">{{ t.all_tech_short }} <span aria-hidden="true">↗</span></a></div>
