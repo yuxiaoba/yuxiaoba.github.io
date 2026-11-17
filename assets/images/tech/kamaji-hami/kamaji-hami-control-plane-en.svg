@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" style="background:#ffffff;">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="35" font-size="17.5" font-weight="700" fill="#0f172a" text-anchor="start">Kamaji + HAMi Cross-Boundary Control Path: Hosted Control Planes &amp; Konnectivity</text>
+  <text x="24" y="54" font-size="11" font-weight="400" fill="#475569" text-anchor="start">Based on CNCF blog (2026-10-23): shared management cluster hosts tenant-a / b control planes; GPU pods route back via reverse tunnel</text>
+  <line x1="24" y1="64" x2="936" y2="64" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Band 1: Management Cluster -->
+  <rect x="24" y="73" width="912" height="143" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="73" width="912" height="26" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="89" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="90" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">Management Cluster (Single kind host: cert-manager v1.21.2 · MetalLB v0.16.1 · Kamaji Controller)</text>
+
+  <!-- tenant-a Control Plane -->
+  <rect x="36" y="107" width="328" height="99" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="46" y="114" width="166" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="129" y="128" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">tenant-a Control Plane (4/4)</text>
+  <text x="220" y="128" font-size="9.5" font-weight="600" fill="#1e40af" text-anchor="start">MetalLB VIP :6443</text>
+
+  <rect x="46" y="140" width="148" height="26" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="120" y="157" font-size="10" font-weight="600" fill="#0f172a" text-anchor="middle">kube-apiserver</text>
+  <rect x="204" y="140" width="150" height="26" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="279" y="157" font-size="10" font-weight="600" fill="#0f172a" text-anchor="middle">kube-scheduler</text>
+  <rect x="46" y="172" width="148" height="26" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="120" y="189" font-size="9.6" font-weight="600" fill="#0f172a" text-anchor="middle">controller-manager</text>
+  <rect x="204" y="172" width="150" height="26" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.1"/>
+  <text x="279" y="189" font-size="9.4" font-weight="700" fill="#1e3a8a" text-anchor="middle">konnectivity-server :8132</text>
+
+  <!-- Shared Management Components -->
+  <rect x="376" y="107" width="208" height="99" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="386" y="114" width="188" height="20" rx="5" fill="#475569"/>
+  <text x="480" y="128" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Shared Infra (Blast Radius)</text>
+  <text x="388" y="152" font-size="9.4" font-weight="400" fill="#334155" text-anchor="start">• Kamaji: tenant CPs as pods</text>
+  <text x="388" y="170" font-size="9.4" font-weight="400" fill="#334155" text-anchor="start">• kamaji-etcd: split keys, 1 store</text>
+  <text x="388" y="188" font-size="9.2" font-weight="400" fill="#475569" text-anchor="start">• MetalLB: 172.18.255.200-250</text>
+
+  <!-- tenant-b Control Plane -->
+  <rect x="596" y="107" width="328" height="99" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="606" y="114" width="166" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="689" y="128" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">tenant-b Control Plane (4/4)</text>
+  <text x="780" y="128" font-size="9.5" font-weight="600" fill="#1e40af" text-anchor="start">MetalLB VIP :6443</text>
+
+  <rect x="606" y="140" width="148" height="26" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="680" y="157" font-size="10" font-weight="600" fill="#0f172a" text-anchor="middle">kube-apiserver</text>
+  <rect x="764" y="140" width="150" height="26" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="839" y="157" font-size="10" font-weight="600" fill="#0f172a" text-anchor="middle">kube-scheduler</text>
+  <rect x="606" y="172" width="148" height="26" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="680" y="189" font-size="9.6" font-weight="600" fill="#0f172a" text-anchor="middle">controller-manager</text>
+  <rect x="764" y="172" width="150" height="26" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.1"/>
+  <text x="839" y="189" font-size="9.4" font-weight="700" fill="#1e3a8a" text-anchor="middle">konnectivity-server :8132</text>
+
+  <!-- Band 2: Cross-boundary Tunnels & Round-Trip Callout -->
+  <!-- Left Tunnels (tenant-a) -->
+  <line x1="56" y1="310" x2="56" y2="220" stroke="#475569" stroke-width="1.8" marker-end="url(#arrow-slate)"/>
+  <text x="66" y="256" font-size="9.4" font-weight="600" fill="#334155" text-anchor="start">kubeadm join</text>
+  <text x="66" y="271" font-size="9.1" font-weight="400" fill="#64748b" text-anchor="start">kubelet up</text>
+
+  <line x1="170" y1="218" x2="170" y2="308" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arrow-blue)"/>
+  <text x="180" y="254" font-size="9.4" font-weight="700" fill="#1d4ed8" text-anchor="start">Konnectivity</text>
+  <text x="180" y="269" font-size="9.1" font-weight="600" fill="#1e40af" text-anchor="start">Webhook tunnel</text>
+
+  <!-- Center Sequence Card -->
+  <rect x="286" y="224" width="388" height="80" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="300" y="242" font-size="10.6" font-weight="700" fill="#1e3a8a" text-anchor="start">GPU Pod Cross-Boundary Round Trip (Core Lab Risk)</text>
+  <text x="300" y="260" font-size="9.3" font-weight="400" fill="#0f172a" text-anchor="start">1) Pod hits API → 2) API calls worker HAMi webhook via Konnectivity</text>
+  <text x="300" y="277" font-size="9.3" font-weight="400" fill="#0f172a" text-anchor="start">3) Sets schedulerName: Hami-scheduler → 4) Binds slice &amp; locks node</text>
+  <text x="300" y="294" font-size="9.1" font-weight="600" fill="#b45309" text-anchor="start">If tunnel fails: webhook unreachable → silent fallback to kube-scheduler</text>
+
+  <!-- Right Tunnels (tenant-b) -->
+  <line x1="708" y1="218" x2="708" y2="308" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arrow-blue)"/>
+  <text x="718" y="254" font-size="9.4" font-weight="700" fill="#1d4ed8" text-anchor="start">Konnectivity</text>
+  <text x="718" y="269" font-size="9.1" font-weight="600" fill="#1e40af" text-anchor="start">Webhook tunnel</text>
+
+  <line x1="828" y1="310" x2="828" y2="220" stroke="#475569" stroke-width="1.8" marker-end="url(#arrow-slate)"/>
+  <text x="838" y="256" font-size="9.4" font-weight="600" fill="#334155" text-anchor="start">kubeadm join</text>
+  <text x="838" y="271" font-size="9.1" font-weight="400" fill="#64748b" text-anchor="start">kubelet up</text>
+
+  <!-- Band 3: Separate Tenant Workers -->
+  <!-- tenant-a-worker -->
+  <rect x="24" y="312" width="448" height="152" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="312" width="448" height="26" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="328" width="448" height="10" fill="#dbeafe"/>
+  <text x="36" y="329" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="start">tenant-a-worker (kindest/node v1.36.4 · Calico · No gpu=on label)</text>
+
+  <rect x="34" y="346" width="208" height="48" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="365" font-size="9.8" font-weight="700" fill="#1d4ed8" text-anchor="start">HAMi Stack (kube-system)</text>
+  <text x="44" y="383" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">webhook · hami-scheduler · mock plugin</text>
+
+  <rect x="250" y="346" width="212" height="48" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="260" y="365" font-size="9.8" font-weight="700" fill="#92400e" text-anchor="start">Mock Lock Gap (Gotcha 2)</text>
+  <text x="260" y="383" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">No Allocate hook: clear mutex.lock</text>
+
+  <rect x="34" y="402" width="428" height="54" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="42" y="409" width="168" height="18" rx="4" fill="#1d4ed8"/>
+  <text x="126" y="422" font-size="9.2" font-weight="700" fill="#ffffff" text-anchor="middle">Mock A100 80 GB (GPU-MOCK-0)</text>
+  <text x="218" y="422" font-size="9.2" font-weight="600" fill="#334155" text-anchor="start">81,920 MB · 100 cores · 10 slots</text>
+
+  <rect x="42" y="432" width="96" height="18" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="0.9"/>
+  <text x="90" y="444" font-size="8.7" font-weight="600" fill="#166534" text-anchor="middle">pod-1: 20G+30%</text>
+  <rect x="145" y="432" width="96" height="18" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="0.9"/>
+  <text x="193" y="444" font-size="8.7" font-weight="600" fill="#166534" text-anchor="middle">pod-2: 20G+30%</text>
+  <rect x="248" y="432" width="96" height="18" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="0.9"/>
+  <text x="296" y="444" font-size="8.7" font-weight="600" fill="#166534" text-anchor="middle">pod-3: 20G+30%</text>
+  <rect x="351" y="432" width="103" height="18" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="0.9"/>
+  <text x="402" y="444" font-size="8.6" font-weight="700" fill="#991b1b" text-anchor="middle">pod-4: Pending</text>
+
+  <!-- tenant-b-worker -->
+  <rect x="488" y="312" width="448" height="152" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="488" y="312" width="448" height="26" rx="8" fill="#dbeafe"/>
+  <rect x="488" y="328" width="448" height="10" fill="#dbeafe"/>
+  <text x="500" y="329" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="start">tenant-b-worker (Separate Container · API · Pod Network)</text>
+
+  <rect x="498" y="346" width="208" height="48" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="508" y="365" font-size="9.8" font-weight="700" fill="#1d4ed8" text-anchor="start">HAMi + konnectivity-agent</text>
+  <text x="508" y="383" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Bound only to tenant-b control plane</text>
+
+  <rect x="714" y="346" width="212" height="48" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="724" y="365" font-size="9.8" font-weight="700" fill="#166534" text-anchor="start">TC-08 Visibility Check</text>
+  <text x="724" y="383" font-size="9.1" font-weight="400" fill="#14532d" text-anchor="start">Sees own node &amp; 49,152 MB / 200c</text>
+
+  <rect x="498" y="402" width="428" height="54" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="506" y="409" width="202" height="40" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="607" y="425" font-size="9.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">GPU-MOCK-B0 · Mock L4 24 GB</text>
+  <text x="607" y="441" font-size="9.0" font-weight="400" fill="#334155" text-anchor="middle">24,576 MB · 100 cores · 10 slots</text>
+  <rect x="716" y="409" width="202" height="40" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="817" y="425" font-size="9.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">GPU-MOCK-B1 · Mock L4 24 GB</text>
+  <text x="817" y="441" font-size="9.0" font-weight="400" fill="#334155" text-anchor="middle">24,576 MB · 100 cores · 10 slots</text>
+
+  <!-- Bottom Banner -->
+  <rect x="24" y="474" width="912" height="30" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="493" font-size="10.0" font-weight="600" fill="#1e3a8a" text-anchor="start">Boundary: Kamaji isolates tenant CPs &amp; workers; tenants do not contend on one physical GPU, while mgmt cluster &amp; kamaji-etcd stay shared</text>
+
+  <text x="24" y="521" font-size="9.8" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram (not an original figure) · Synthesized from CNCF blog (2026-10-23) build commands, logs &amp; Kamaji/HAMi mechanics</text>
+</svg>

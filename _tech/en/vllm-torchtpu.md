@@ -3,22 +3,23 @@ id: vllm-torchtpu
 title: '2026-10-21 | vLLM TorchTPU: Reusing the Serving Control Plane'
 date: '2026-10-21'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
 tags:
 - inference-serving
 - systems-reliability
-summary: The plugin reuses vLLM models, scheduling, and KV management, with TPU compilation,
-  Pallas kernels, and state transfer below them.
+summary: The plugin reuses vLLM models, scheduling, and KV management, with TPU compilation, Pallas kernels, and state transfer below them.
 long_read: true
 source_url: https://blog.vllm.ai/blog/2026-10-20-vllm-torchtpu
 permalink: /tech/en/vllm-torchtpu/
 authorship: assistant
 translation_source: assistant
-published_at: "2026-10-21T13:08:08.256303+08:00"
-updated_at: "2026-10-21T13:08:08.256303+08:00"
+published_at: '2026-10-21T13:08:08.256303+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 Inferact and Google Teams · vLLM · 2026-10-20  
 Original: [Introducing vLLM TorchTPU](https://blog.vllm.ai/blog/2026-10-20-vllm-torchtpu)

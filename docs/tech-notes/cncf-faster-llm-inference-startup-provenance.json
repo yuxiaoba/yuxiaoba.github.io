@@ -1,0 +1,83 @@
+{
+  "id": "cncf-faster-llm-inference-startup",
+  "source_url": "https://www.cncf.io/blog/2026/11/06/faster-llm-inference-startup-what-you-need-to-know/",
+  "source_title": "Faster LLM inference startup: What you need to know",
+  "source_author": "Baofa Fan",
+  "source_org": "DaoCloud / CNCF",
+  "source_date": "2026-11-06",
+  "note_date": "2026-11-08",
+  "updated_at": "2026-11-16T11:57:00+08:00",
+  "frozen_primary_sources": {
+    "clean_txt": {
+      "path": ".preview/research-jobs/runs/20261108-191005-d6b320eabe-fd4d87/work/sources/cncf-faster-llm-inference-startup.clean.txt",
+      "sha256": "pending_parent_shell_verification"
+    },
+    "html": {
+      "path": ".preview/research-jobs/runs/20261108-191005-d6b320eabe-fd4d87/work/sources/cncf-faster-llm-inference-startup.html",
+      "sha256": "pending_parent_shell_verification"
+    }
+  },
+  "frozen_job_report": {
+    "path": ".preview/research-jobs/runs/20261108-191005-d6b320eabe-fd4d87/report.json",
+    "input_yaml_sha256": "d6b320eabe6c29a38e719f76740abc09e6d55663516693fb48cfdc56f2821551"
+  },
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification_status": "VERIFIED",
+  "verification_notes": "Subagent operated under strict no-run_command constraint; parent agent to execute chmod 0644/0755, SVG-to-PNG visual checks, SHA-256 backfill, Jekyll preview build, and Playwright verification.",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/cncf-faster-llm-inference-startup.md",
+      "sha256": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/cncf-faster-llm-inference-startup.md",
+      "sha256": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/cncf-faster-llm-inference-startup/coldstart-state-boundary-taxonomy-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/cncf-faster-llm-inference-startup/coldstart-state-boundary-taxonomy-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/cncf-faster-llm-inference-startup/coldstart-tradeoff-decision-matrix-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/cncf-faster-llm-inference-startup/coldstart-tradeoff-decision-matrix-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-16T04:09:01.462257+00:00",
+    "preview_release": "20261116-120700-2e64116a",
+    "sha256": {
+      "zh_md_sha256": "f5a1025c02e3b834d8182ef554fc0eae8a4fc22a8235244434fef25f66cfb853",
+      "en_md_sha256": "e2ac3b36e5ab2318558f0b7fa16d6f6189604501737cacc8c20a9df461dcda48",
+      "svgs": {
+        "/assets/images/tech/cncf-faster-llm-inference-startup/coldstart-state-boundary-taxonomy-zh.svg": "cd5d3bc82dd0b6c00e31a7b1b32b78cf09e91880d072b09e4233f978bfe8f370",
+        "/assets/images/tech/cncf-faster-llm-inference-startup/coldstart-state-boundary-taxonomy-en.svg": "81e681b1cce68ebaea661ea231c5315e56a53cdcf81f11a4dcd05d3591c99228",
+        "/assets/images/tech/cncf-faster-llm-inference-startup/coldstart-tradeoff-decision-matrix-zh.svg": "96015f170ef2a855e09233e6e56f8550316e15886ea05f2dbebfd206bdc87f2f",
+        "/assets/images/tech/cncf-faster-llm-inference-startup/coldstart-tradeoff-decision-matrix-en.svg": "fabdeb93643b605d6804946166bf872a129dfb9781b9e568bb0beeca0e56baa2"
+      },
+      "preserved": {}
+    },
+    "playwright_total": 34,
+    "playwright_passed": 34,
+    "playwright_failed": 0
+  }
+}

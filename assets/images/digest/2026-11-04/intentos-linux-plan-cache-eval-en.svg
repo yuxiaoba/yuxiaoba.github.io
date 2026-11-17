@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="IntentOS 4-panel empirical evaluation chart covering planner accuracy, app speedups, kernel portability, and JIT plan cache ablation" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="33" font-size="16.0" font-weight="700" fill="#0f172a">IntentOS Evaluation: Planner Accuracy, App Speedups, Portability &amp; Cache Ablation</text>
+  <text x="24" y="51" font-size="9.7" fill="#475569">From arXiv:2611.00002v1 (§6, Figs. 9–14, Table 4) · Intel Xeon Platinum 8468V (192 cores, 1024 GB DDR5) · Linux 6.18.6</text>
+  <line x1="24" y1="60" x2="936" y2="60" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Panel A: Top-Left -->
+  <rect x="20" y="70" width="452" height="204" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="70" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="88" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="96" x2="472" y2="96" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="31" y="87.5" font-size="10.2" font-weight="700" fill="#1e3a8a">A. Planning Accuracy (31 Intents × 4 LLMs) &amp; Portability (§6.3, §6.6)</text>
+
+  <text x="31" y="114" font-size="8.6" font-weight="700" fill="#0f172a">IntentOS (micro-syscall plans)</text>
+  <rect x="196" y="104" width="216.4" height="14" rx="3" fill="#1d4ed8"/>
+  <text x="418" y="114.5" font-size="9.1" font-weight="700" fill="#1d4ed8">98.38%</text>
+
+  <text x="31" y="138" font-size="8.6" font-weight="600" fill="#475569">Oracle (raw source → new syscall)</text>
+  <rect x="196" y="128" width="146.8" height="14" rx="3" fill="#94a3b8"/>
+  <text x="349" y="138.5" font-size="9.1" font-weight="700" fill="#475569">66.74%</text>
+
+  <text x="31" y="159" font-size="8.1" fill="#334155">FS / MEM / COMM × 4 LLMs (Qwen3.6-Plus, DeepSeek-V4-Pro, Gemini-3.1-Pro, GPT-5.4)</text>
+  <text x="31" y="174" font-size="8.1" font-weight="600" fill="#1d4ed8">+31.64 pp mean gain over Oracle with zero kernel recompilation (Fig. 9)</text>
+
+  <rect x="31" y="184" width="430" height="80" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="41" y="200" font-size="8.8" font-weight="700" fill="#1e3a8a">4-Version Linux Portability (QEMU-10.2.0-KVM · Identical Prompts · Fig. 13)</text>
+
+  <rect x="41" y="210" width="96" height="22" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="89" y="224.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1e3a8a">Linux 3.18</text>
+  <rect x="145" y="210" width="96" height="22" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="193" y="224.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1e3a8a">Linux 4.19</text>
+  <rect x="249" y="210" width="96" height="22" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="297" y="224.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1e3a8a">Linux 5.15</text>
+  <rect x="353" y="210" width="96" height="22" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="401" y="224.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1e3a8a">Linux 6.18</text>
+
+  <text x="41" y="251" font-size="8.1" fill="#334155">fork+exec &amp; batchunlink plans compose cleanly &amp; beat baselines across kernel API changes</text>
+
+  <!-- Panel B: Top-Right -->
+  <rect x="488" y="70" width="452" height="204" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="70" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="88" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="96" x2="940" y2="96" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="499" y="87.5" font-size="10.2" font-weight="700" fill="#1e3a8a">B. Micro-Benchmarks vs. Real-App End-to-End Gains (§6.4–§6.5)</text>
+
+  <!-- Case 1 -->
+  <rect x="499" y="104" width="430" height="50" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="509" y="120" font-size="9.0" font-weight="700" fill="#0f172a">1. fork + exec (skips 78.89% copy_mm &amp; 70.281% vfork wait)</text>
+  <rect x="509" y="127" width="200" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="609" y="139.5" text-anchor="middle" font-size="8.0" font-weight="600" fill="#1e3a8a">Micro-bench: up to -69.83% lat (Fig. 10a)</text>
+  <line x1="714" y1="136.5" x2="728" y2="136.5" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="732" y="127" width="187" height="19" rx="4" fill="#1d4ed8"/>
+  <text x="825.5" y="139.5" text-anchor="middle" font-size="8.1" font-weight="700" fill="#ffffff">Busybox-ash: -17.55% E2E lat</text>
+
+  <!-- Case 2 -->
+  <rect x="499" y="160" width="430" height="50" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="509" y="176" font-size="9.0" font-weight="700" fill="#0f172a">2. batchunlink (single parent inode lock + batched metadata)</text>
+  <rect x="509" y="183" width="200" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="609" y="195.5" text-anchor="middle" font-size="8.0" font-weight="600" fill="#1e3a8a">Micro-bench (50 files): -20.69% (Fig. 11a)</text>
+  <line x1="714" y1="192.5" x2="728" y2="192.5" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="732" y="183" width="187" height="19" rx="4" fill="#1d4ed8"/>
+  <text x="825.5" y="195.5" text-anchor="middle" font-size="8.1" font-weight="700" fill="#ffffff">Unix rm (src/): +6.97% speedup</text>
+
+  <!-- Case 3 -->
+  <rect x="499" y="216" width="430" height="50" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="509" y="232" font-size="9.0" font-weight="700" fill="#0f172a">3. slidingmmap (16 MB window + Direct I/O under 5 GB RAM cap)</text>
+  <rect x="509" y="239" width="200" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="609" y="251.5" text-anchor="middle" font-size="7.9" font-weight="600" fill="#1e3a8a">Page cache -94.49% (lat cost ≤10.89%)</text>
+  <line x1="714" y1="248.5" x2="728" y2="248.5" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="732" y="239" width="187" height="19" rx="4" fill="#1d4ed8"/>
+  <text x="825.5" y="251.5" text-anchor="middle" font-size="8.1" font-weight="700" fill="#ffffff">Nginx impact: -75.52% vs grep</text>
+
+  <!-- Panel C: Bottom-Left -->
+  <rect x="20" y="286" width="452" height="202" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="286" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="304" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="312" x2="472" y2="312" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="31" y="303.5" font-size="10.2" font-weight="700" fill="#1e3a8a">C. JIT Plan-Cache Ablation &amp; Framework Overhead (§6.7, Table 4, Fig. 14)</text>
+
+  <!-- Ablation mini-table -->
+  <rect x="31" y="320" width="430" height="22" rx="3" fill="#eff6ff"/>
+  <text x="41" y="334" font-size="8.5" font-weight="700" fill="#1e3a8a">Workload</text>
+  <text x="165" y="334" font-size="8.5" font-weight="700" fill="#475569">w/o plan (LLM miss)</text>
+  <text x="292" y="334" font-size="8.5" font-weight="700" fill="#1d4ed8">with plan (hit)</text>
+  <text x="404" y="334" font-size="8.5" font-weight="700" fill="#0f172a">Speedup</text>
+
+  <line x1="31" y1="364" x2="461" y2="364" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="41" y="357" font-size="8.7" font-weight="600" fill="#0f172a">fork + exec</text>
+  <text x="165" y="357" font-size="8.7" fill="#475569">56,340 ms</text>
+  <text x="292" y="357" font-size="8.7" font-weight="700" fill="#1d4ed8">4.56 ms</text>
+  <text x="404" y="357" font-size="8.7" font-weight="700" fill="#0f172a">12,378×</text>
+
+  <line x1="31" y1="386" x2="461" y2="386" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="41" y="379" font-size="8.7" font-weight="600" fill="#0f172a">batch unlink</text>
+  <text x="165" y="379" font-size="8.7" fill="#475569">26,477 ms</text>
+  <text x="292" y="379" font-size="8.7" font-weight="700" fill="#1d4ed8">4.40 ms</text>
+  <text x="404" y="379" font-size="8.7" font-weight="700" fill="#0f172a">6,020×</text>
+
+  <line x1="31" y1="408" x2="461" y2="408" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="41" y="401" font-size="8.7" font-weight="600" fill="#0f172a">sliding mmap</text>
+  <text x="165" y="401" font-size="8.7" fill="#475569">28,816 ms</text>
+  <text x="292" y="401" font-size="8.7" font-weight="700" fill="#1d4ed8">8,742 ms*</text>
+  <text x="404" y="401" font-size="8.7" font-weight="700" fill="#0f172a">3.30×</text>
+
+  <text x="31" y="422" font-size="7.8" fill="#64748b">* sliding mmap base time reflects page-fault setup over large memory; cache still saves ~20 s.</text>
+
+  <rect x="31" y="430" width="430" height="48" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="41" y="445" font-size="8.4" font-weight="700" fill="#1e3a8a">Fig. 14 Hit-Path Latency Split (plan lookup, index parsing, pointer access):</text>
+  <rect x="41" y="452" width="356" height="11" rx="2" fill="#1d4ed8"/>
+  <rect x="398" y="452" width="28" height="11" rx="2" fill="#93c5fd"/>
+  <rect x="427" y="452" width="24" height="11" rx="2" fill="#94a3b8"/>
+  <text x="41" y="473" font-size="7.9" fill="#334155">Dark blue: Tools execution · Light blue: Framework ≤ 6.714% · Gray: Context/Others</text>
+
+  <!-- Panel D: Bottom-Right -->
+  <rect x="488" y="286" width="452" height="202" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="286" width="452" height="26" rx="8" fill="#0f172a"/>
+  <rect x="488" y="304" width="452" height="8" fill="#0f172a"/>
+  <text x="499" y="303.5" font-size="10.2" font-weight="700" fill="#ffffff">D. Scope Boundaries, Caveats &amp; Record Verification Notes</text>
+
+  <rect x="499" y="321" width="66" height="17" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="0.8"/>
+  <text x="532" y="332.5" text-anchor="middle" font-size="7.9" font-weight="700" fill="#92400e">Intent Scale</text>
+  <text x="572" y="333" font-size="8.2" fill="#0f172a">Tested on 31 intents across 3 domains &amp; 4 kernels; does not</text>
+  <text x="572" y="346" font-size="8.2" fill="#334155">formally verify arbitrary multi-step handle composition safety.</text>
+
+  <rect x="499" y="357" width="66" height="17" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="0.8"/>
+  <text x="532" y="368.5" text-anchor="middle" font-size="7.9" font-weight="700" fill="#991b1b">Cold Miss</text>
+  <text x="572" y="369" font-size="8.2" fill="#0f172a">Uncached intents pay 26.5–56.3 s; 98.38% mean still allows</text>
+  <text x="572" y="382" font-size="8.2" fill="#334155">unseen-intent errors, needing dry_run review &amp; Layer-1 fallback.</text>
+
+  <rect x="499" y="393" width="66" height="17" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="532" y="404.5" text-anchor="middle" font-size="7.9" font-weight="700" fill="#1d4ed8">Artifacts</text>
+  <text x="572" y="405" font-size="8.2" fill="#0f172a">Figs. 9–13 omit raw unnormalized tables; repo is promised as</text>
+  <text x="572" y="418" font-size="8.2" fill="#334155">future open-source with no public URL yet at verification time.</text>
+
+  <rect x="499" y="429" width="66" height="17" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="0.8"/>
+  <text x="532" y="440.5" text-anchor="middle" font-size="7.9" font-weight="700" fill="#334155">Date Note</text>
+  <text x="572" y="441" font-size="8.2" fill="#0f172a">Both abs.html &amp; PDF stamp read 2026-08-02, conflicting with</text>
+  <text x="572" y="454" font-size="8.2" fill="#334155">arXiv:2611.00002 (2026-11); v1 only, no first-pub inferred.</text>
+
+  <!-- Footnote -->
+  <text x="20" y="505" font-size="8.5" fill="#334155"><tspan font-weight="700" fill="#1e3a8a">Metric Discipline:</tspan> Micro-benchmark peaks (69.83% proc create, 94.49% cache drop) must not be conflated with real-app gains (17.55%, 6.97%, 75.52%);</text>
+  <text x="20" y="520" font-size="8.3" fill="#64748b">Section 7 notes IntentOS complements rather than replaces posix_spawn, vfork, io_uring, madvise, or eBPF for recurring multi-syscall workloads.</text>
+</svg>

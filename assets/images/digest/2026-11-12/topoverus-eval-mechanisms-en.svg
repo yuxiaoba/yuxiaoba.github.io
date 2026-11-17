@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="TopoVerus quantitative evaluation and caveats: 7-suite micro/macro averages, 118-state transfer, 63-task test-time scaling, and 24-task topology metrics">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="14" y="14" width="932" height="512" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" rx="10"/>
+  <text x="30" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="700" fill="#0f172a">TopoVerus: 7-Suite Benchmarks, Transfer, Mechanisms &amp; Caveats</text>
+  <text x="30" y="59" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#475569">471 test tasks (10 steps × 3 chains) · 118 frozen-state transfer · 63-task scaling · 24-task DAG ordering</text>
+  <line x1="30" y1="68" x2="930" y2="68" stroke="#bfdbfe" stroke-width="1"/>
+<rect x="28" y="76" width="442" height="212" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+<text x="40" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">A. 471-Task Safe-Pass (%) &amp; Suite Divergence</text>
+<rect x="38" y="104" width="422" height="174" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+<rect x="262" y="111" width="10" height="8" rx="2" fill="#1d4ed8"/>
+<text x="276" y="119" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.2" fill="#334155">Safe-Pass@1</text>
+<rect x="352" y="111" width="10" height="8" rx="2" fill="#93c5fd"/>
+<text x="366" y="119" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.2" fill="#334155">Safe-Pass@3</text>
+<text x="108" y="138" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">CTX-Dep</text>
+<rect x="114" y="128" width="160.2" height="6.5" rx="2" fill="#1d4ed8"/>
+<rect x="114" y="135.5" width="187.7" height="6.5" rx="2" fill="#93c5fd"/>
+<text x="306.7" y="139.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.2" font-weight="700" fill="#1d4ed8">61.6% / 72.2%</text>
+<text x="108" y="158" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.6" font-weight="500" fill="#334155">Sonnet-4.5</text>
+<rect x="114" y="148" width="145.3" height="6.5" rx="2" fill="#3b82f6"/>
+<rect x="114" y="155.5" width="171.3" height="6.5" rx="2" fill="#bfdbfe"/>
+<text x="290.3" y="159.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.2" font-weight="400" fill="#475569">55.9% / 65.9%</text>
+<text x="108" y="178" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.6" font-weight="500" fill="#334155">CTX-Binary</text>
+<rect x="114" y="168" width="139.6" height="6.5" rx="2" fill="#3b82f6"/>
+<rect x="114" y="175.5" width="176.5" height="6.5" rx="2" fill="#bfdbfe"/>
+<text x="295.5" y="179.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.2" font-weight="400" fill="#475569">53.7% / 67.9%</text>
+<text x="108" y="198" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.6" font-weight="500" fill="#334155">CTX-Init</text>
+<rect x="114" y="188" width="131.3" height="6.5" rx="2" fill="#3b82f6"/>
+<rect x="114" y="195.5" width="170.6" height="6.5" rx="2" fill="#bfdbfe"/>
+<text x="289.6" y="199.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.2" font-weight="400" fill="#475569">50.5% / 65.6%</text>
+<text x="108" y="218" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.6" font-weight="500" fill="#334155">CoT-Init</text>
+<rect x="114" y="208" width="102.2" height="6.5" rx="2" fill="#3b82f6"/>
+<rect x="114" y="215.5" width="139.1" height="6.5" rx="2" fill="#bfdbfe"/>
+<text x="258.1" y="219.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.2" font-weight="400" fill="#475569">39.3% / 53.5%</text>
+<rect x="46" y="232" width="406" height="39" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+<text x="54" y="247" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.1" fill="#0f172a">Macro-avg (7 suites, Table 4): CTX-Dep 54.0% / 61.5% vs. Sonnet-4.5 51.6% / 57.8%</text>
+<text x="54" y="263" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.1" fill="#1d4ed8">Suite split: ObfsBench (266) leads 69.9%/80.1%, yet VeruSAGE (53) lags 30.2% vs. 75.5%</text>
+<rect x="482" y="76" width="450" height="212" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+<text x="494" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">B. 118-State Transfer (Table 2) &amp; 63-Task Scaling</text>
+<rect x="492" y="104" width="430" height="174" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+<text x="502" y="121" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.9" font-weight="700" fill="#0f172a">Frozen-State Transfer (n=118): Repair Rate by CEX Source</text>
+<rect x="502" y="127" width="410" height="19" rx="3" fill="#eff6ff"/>
+<text x="508" y="140" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">CEX Source</text>
+<text x="594" y="140" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">DeepSeek-V4</text>
+<text x="704" y="140" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">Sonnet-4.5</text>
+<text x="814" y="140" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">Qwen3-Coder</text>
+<text x="508" y="158.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.0" font-weight="500" fill="#334155">CoT-Init</text>
+<text x="594" y="158.0" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="500" fill="#334155">11.9%</text>
+<text x="704" y="158.0" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="500" fill="#334155">31.4%</text>
+<text x="814" y="158.0" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="500" fill="#334155">13.6%</text>
+<text x="508" y="175.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.0" font-weight="500" fill="#334155">CTX-Init</text>
+<text x="594" y="175.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="500" fill="#334155">15.3% (+28.6%)</text>
+<text x="704" y="175.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="500" fill="#334155">32.2% (+2.7%)</text>
+<text x="814" y="175.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="500" fill="#334155">12.7% (-6.2%)</text>
+<text x="508" y="193.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.0" font-weight="500" fill="#334155">CTX-Binary</text>
+<text x="594" y="193.0" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="500" fill="#334155">19.5% (+64.3%)</text>
+<text x="704" y="193.0" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="500" fill="#334155">33.1% (+5.4%)</text>
+<text x="814" y="193.0" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="500" fill="#334155">15.3% (+12.5%)</text>
+<rect x="502" y="199.5" width="410" height="16.5" rx="3" fill="#dbeafe"/>
+<text x="508" y="210.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.0" font-weight="700" fill="#1d4ed8">CTX-Dep</text>
+<text x="594" y="210.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="700" fill="#1d4ed8">19.5% (+64.3%)</text>
+<text x="704" y="210.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="700" fill="#1d4ed8">39.0% (+24.3%)</text>
+<text x="814" y="210.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="700" fill="#1d4ed8">15.3% (+12.5%)</text>
+<rect x="502" y="223" width="410" height="48" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+<text x="510" y="238" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.4" font-weight="700" fill="#0f172a">63-Task Test-Time Scaling (Table 5 · Fig. 3):</text>
+<text x="510" y="252" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.2" fill="#334155">• Iteration scaling (1→2→4→8→16→32): CTX-Dep 47.6→55.6→60.3→63.5→69.8% (vs. 68.3%)</text>
+<text x="510" y="265" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.2" fill="#334155">• Peak delta at iter 2 (+6.4 pp: 55.6% vs. 49.2%); 32-chain sampling hits 79.4% Safe-Pass@32</text>
+<rect x="28" y="296" width="442" height="200" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+<text x="40" y="316" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">C. Mechanism Audit: Coverage vs Order (Table 7)</text>
+<rect x="38" y="324" width="422" height="162" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+<rect x="252" y="331" width="10" height="8" rx="2" fill="#93c5fd"/>
+<text x="266" y="339" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.0" fill="#334155">CTX-Binary</text>
+<rect x="338" y="331" width="10" height="8" rx="2" fill="#1d4ed8"/>
+<text x="352" y="339" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.0" font-weight="700" fill="#1d4ed8">CTX-Dep</text>
+<text x="122" y="361" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.5" fill="#334155">Coverage α</text>
+<rect x="128" y="350" width="177.5" height="7.5" rx="2" fill="#93c5fd"/>
+<rect x="128" y="359" width="177.3" height="7.5" rx="2" fill="#1d4ed8"/>
+<text x="311.5" y="362" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" font-weight="700" fill="#475569">98.6% → 98.5% (-0.1 pp)</text>
+<text x="122" y="386" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.5" fill="#334155">Edge Sat. β</text>
+<rect x="128" y="375" width="78.8" height="7.5" rx="2" fill="#93c5fd"/>
+<rect x="128" y="384" width="172.4" height="7.5" rx="2" fill="#1d4ed8"/>
+<text x="306.4" y="387" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" font-weight="700" fill="#1d4ed8">43.8% → 95.8% (+52.1 pp)</text>
+<text x="122" y="411" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.5" fill="#334155">Full Order β=1</text>
+<rect x="128" y="400" width="75.1" height="7.5" rx="2" fill="#93c5fd"/>
+<rect x="128" y="409" width="172.4" height="7.5" rx="2" fill="#1d4ed8"/>
+<text x="306.4" y="412" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" font-weight="700" fill="#1d4ed8">41.7% → 95.8% (+54.2 pp)</text>
+<text x="122" y="436" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.5" fill="#334155">Score αβ×100</text>
+<rect x="128" y="425" width="76.3" height="7.5" rx="2" fill="#93c5fd"/>
+<rect x="128" y="434" width="169.7" height="7.5" rx="2" fill="#1d4ed8"/>
+<text x="303.7" y="437" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" font-weight="700" fill="#1d4ed8">0.424 → 0.943 (+0.519)</text>
+<rect x="46" y="451" width="406" height="27" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+<text x="54" y="468" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.2" fill="#334155">Proof diversity (Table 6 · 249 tasks): Ghost rate 66.7%–93.9%, avoiding template collapse.</text>
+<rect x="482" y="296" width="450" height="200" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+<text x="494" y="316" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">D. Verification Boundaries &amp; Failure Caveats</text>
+<rect x="492" y="324" width="430" height="162" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+<rect x="500" y="331" width="414" height="33" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="506" y="338" width="124" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/><text x="568.0" y="351.2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="700" fill="#1d4ed8">No Formal Reach.</text>
+<text x="638" y="344.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="8.9" fill="#334155">Counterexamples lack SMT reachability proofs;</text>
+<text x="638" y="356.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="8.9" fill="#475569">hallucinated execution traces can still occur (§6).</text>
+<rect x="500" y="369" width="414" height="33" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="506" y="376" width="124" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/><text x="568.0" y="389.2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="700" fill="#1d4ed8">Micro-Avg Skew</text>
+<text x="638" y="382.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="8.9" fill="#334155">ObfsBench is 56.5% (266/471) of micro-avg;</text>
+<text x="638" y="394.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="8.9" fill="#475569">VeruSAGE trails Sonnet-4.5 (30.2% vs. 75.5%).</text>
+<rect x="500" y="407" width="414" height="33" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="506" y="414" width="124" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/><text x="568.0" y="427.2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="700" fill="#1d4ed8">Multi-Turn Budget</text>
+<text x="638" y="420.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="8.9" fill="#334155">Standard eval allows 10 steps × 3 chains;</text>
+<text x="638" y="432.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="8.9" fill="#475569">iter-1 Safe-Pass@1 on 63 tasks is 47.6%.</text>
+<rect x="500" y="445" width="414" height="33" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="506" y="452" width="124" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/><text x="568.0" y="465.2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="700" fill="#1d4ed8">Scope &amp; Disclosures</text>
+<text x="638" y="458.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="8.9" fill="#334155">DAG covers loop invariants only; single RL seed;</text>
+<text x="638" y="470.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="8.9" fill="#475569">λ_dep, λ_format &amp; G_format scalars unprinted.</text>
+<text x="30" y="513" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.9" fill="#475569">Source: arXiv:2611.13627v1 Tables 1–7, Fig. 3, and §§4–6; micro-avg weights 471 tasks equally, macro-avg weights 7 suites equally.</text>
+</svg>

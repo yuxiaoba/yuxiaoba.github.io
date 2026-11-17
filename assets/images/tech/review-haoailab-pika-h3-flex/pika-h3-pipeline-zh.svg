@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect x="0" y="0" width="960" height="540" fill="#ffffff"/>
+<text x="36" y="37" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="19.5" font-weight="700" fill="#212529">Pika H3 Flex 在 FastVideo 的两段式加速：从 VAE 瓶颈到 FP4 注意力</text>
+<text x="36" y="59" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" fill="#526779">依据片段时长识别主导瓶颈：5 秒受制于 fp32 VAE 解码（38s），15 秒受制于平方稠密注意力（~75%）</text>
+<line x1="36" y1="71" x2="924" y2="71" stroke="#d8e4f0" stroke-width="1"/>
+<rect x="36" y="84" width="888" height="172" rx="8" fill="#f8fbfe" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="46" y="92" width="142" height="22" rx="4" fill="#3676b8"/>
+<text x="117" y="107" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">短片段 · 5s 768p</text>
+<text x="198" y="107" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="600" fill="#212529">1× GB200 · 124 帧（37,718 tokens）· 同权重无损内核替换 + NVFP4 VAE 解码器</text>
+<rect x="46" y="124" width="280" height="120" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1.2"/>
+<text x="58" y="146" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">官方基线 (BF16 + fp32 VAE)</text>
+<text x="58" y="170" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">6 步 DiT 去噪仅耗时约 20s</text>
+<text x="58" y="191" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">原始 fp32 VAE 解码耗时达 38s</text>
+<rect x="56" y="206" width="260" height="28" rx="5" fill="#ffffff" stroke="#c8daec" stroke-width="1"/>
+<text x="186" y="224" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#245c96">端到端 59.7s（1.00x 基线）</text>
+<line x1="327" y1="184" x2="333" y2="184" stroke="#3676b8" stroke-width="2"/>
+<polygon points="332,179 332,189 339,184" fill="#3676b8"/>
+<rect x="340" y="124" width="280" height="120" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1.2"/>
+<text x="352" y="146" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">FastVideo BF16（权重一致）</text>
+<text x="352" y="170" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">FA4 替换 cuDNN SDPA；融合 cat/mul（~19%）</text>
+<text x="352" y="191" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">QKV / Norm / SwiGLU 算子融合 + bf16 VAE</text>
+<rect x="350" y="206" width="260" height="28" rx="5" fill="#ffffff" stroke="#c8daec" stroke-width="1"/>
+<text x="480" y="224" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#245c96">端到端 25.1s（2.38x · 纯 BF16）</text>
+<line x1="621" y1="184" x2="627" y2="184" stroke="#3676b8" stroke-width="2"/>
+<polygon points="626,179 626,189 633,184" fill="#3676b8"/>
+<rect x="634" y="124" width="280" height="120" rx="6" fill="#e3effb" stroke="#3676b8" stroke-width="1.2"/>
+<text x="646" y="146" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">+ NVFP4 VAE 解码器路径</text>
+<text x="646" y="170" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">VAE 解码从 38s 压缩至 1.5s</text>
+<text x="646" y="191" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">480p 5s NVFP4（GB200）：5.8s</text>
+<rect x="644" y="206" width="260" height="28" rx="5" fill="#eef7f1" stroke="#9bc6ab" stroke-width="1"/>
+<text x="774" y="224" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#1f5f3b">768p 5s 17.6s（3.38x）· Spark 59.5s</text>
+<rect x="36" y="270" width="888" height="224" rx="8" fill="#f8fbfe" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="46" y="278" width="142" height="22" rx="4" fill="#245c96"/>
+<text x="117" y="293" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">长片段 · 15s 768p</text>
+<text x="198" y="293" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="600" fill="#212529">362 帧（109,070 tokens）· 稠密注意力占 forward 约 75% → NVFP4 蒸馏 + FP4 注意力 + 多卡并行</text>
+<rect x="46" y="310" width="280" height="172" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="58" y="332" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#212529">NVFP4 QAD 量化感知蒸馏</text>
+<text x="58" y="356" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">1. fp32 先合并 LoRA 再单次舍入至 BF16</text>
+<text x="58" y="377" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">2. 按 6 步轨迹校准，平衡视频/音频截断</text>
+<text x="58" y="398" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">3. 25% 从学生自身状态出发抑制漂移</text>
+<text x="58" y="419" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">4. 全片检查首尾帧与音画防指标作弊</text>
+<rect x="56" y="444" width="260" height="28" rx="5" fill="#eef7f1" stroke="#9bc6ab" stroke-width="1"/>
+<text x="186" y="462" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#1f5f3b">Ref2VA 误差 −17% · FL2VA −14%</text>
+<rect x="340" y="310" width="280" height="172" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="352" y="332" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#212529">FP4 Attention (&lt;1ms 融合核)</text>
+<text x="352" y="356" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">1. Smooth-K：减去每头 Key 均值</text>
+<text x="352" y="377" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">2. Q/K 同乘正交 Hadamard 矩阵平摊异常值</text>
+<text x="352" y="398" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">3. 敏感的第 45、49 层保留 BF16 精度</text>
+<text x="352" y="419" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">4. 蒸馏后几乎追平 BF16 注意力精度</text>
+<rect x="350" y="444" width="260" height="28" rx="5" fill="#eef7f1" stroke="#9bc6ab" stroke-width="1"/>
+<text x="480" y="462" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#1f5f3b">1× GB200 15s：101.8s → 85.3s (−16%)</text>
+<rect x="634" y="310" width="280" height="172" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="646" y="332" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#212529">4× GB200 序列并行与 2K 升采样</text>
+<text x="646" y="356" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">1. 4 卡对比基线：146s (Ulysses) vs 225s (1 卡)</text>
+<text x="646" y="377" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">2. FastVideo BF16 4 卡：53.3s (同卡 2.73x)</text>
+<text x="646" y="398" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">3. + NVFP4 解码：31.8s (4.58x vs 4 卡)</text>
+<text x="646" y="419" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">4. 7.07x 口径注记：对照单卡官方 225s</text>
+<rect x="644" y="444" width="260" height="28" rx="5" fill="#eef7f1" stroke="#9bc6ab" stroke-width="1"/>
+<text x="774" y="462" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#1f5f3b">2K 生成（Open-H3）：412s → 106s</text>
+<text x="36" y="520" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#596775">阅读整理配图 · 基于 Hao AI Lab 原文实测口径与模块机制绘制（非原文配图）</text>
+</svg>

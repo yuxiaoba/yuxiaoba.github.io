@@ -1,0 +1,77 @@
+{
+  "id": "anthropic-claude-opus-5-5",
+  "review_code": "T1-23",
+  "source_url": "https://www.anthropic.com/news/claude-opus-5-5",
+  "canonical_source_url": "https://www.anthropic.com/claude-opus-5-5",
+  "source_title": "Introducing Claude Opus 5.5",
+  "source_author": "Anthropic",
+  "source_org": "Anthropic",
+  "source_date": "2026-09-22",
+  "note_date": "2026-11-08",
+  "updated_at": "2026-11-15T19:55:00+08:00",
+  "frozen_primary_html": {
+    "path": ".preview/research-jobs/runs/20261108-191005-d6b320eabe-fd4d87/work/sources/anthropic-claude-opus-5-5.html",
+    "sha256": "e6f3c643572b45883c235393e373469b59f3b5fd721e02811f88af08afcf8a03"
+  },
+  "frozen_primary_clean_txt": {
+    "path": ".preview/research-jobs/runs/20261108-191005-d6b320eabe-fd4d87/work/sources/anthropic-claude-opus-5-5.clean.txt",
+    "sha256": "2dced5dc2b62345a452db262f4ddae045435f54fc474a0153a13cb1f95abb6df"
+  },
+  "frozen_primary_txt": {
+    "path": ".preview/research-jobs/runs/20261108-191005-d6b320eabe-fd4d87/work/sources/anthropic-claude-opus-5-5.txt",
+    "sha256": "a748a56226d830b67a1ff67d8e105dbf271f8fd8c0b0d64b4e904d67c51907ae"
+  },
+  "frozen_intake_yaml": {
+    "path": ".incoming/research/2026-11-08.yaml",
+    "sha256": "d6b320eabe6c29a38e719f76740abc09e6d55663516693fb48cfdc56f2821551"
+  },
+  "frozen_run_report": {
+    "path": ".preview/research-jobs/runs/20261108-191005-d6b320eabe-fd4d87/report.json",
+    "sha256": "7a11847c930562c7b8b221d601d5006bf008a8265d43d3c8fe5d74066b68fe1b"
+  },
+  "frozen_run_result": {
+    "path": ".preview/research-jobs/runs/20261108-191005-d6b320eabe-fd4d87/work/result.json",
+    "sha256": "5610878eb4e06e480bad8116ae685c262c890b64fd14cd6083c0bef8c604f485"
+  },
+  "unfetched_referenced_links": [
+    "https://anthropic.com/claude-opus-5-5-system-card"
+  ],
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/anthropic-claude-opus-5-5.md",
+      "sha256": "220fb52356aa18e4699f2d58dd6b35a740eb8a26fee2803ca2544ca4b24d3c0e"
+    },
+    "en_markdown": {
+      "path": "_tech/en/anthropic-claude-opus-5-5.md",
+      "sha256": "c57f5d424a340e903615f9e4287509e3bc88d0afbbdfbb5e4fba7bfe70707a7d"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/anthropic-claude-opus-5-5/opus55-effort-cost-curves-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose-and-embedded-csv",
+        "sha256": "92acc891f094d83779205629db83dd7dbe1b4db03ff5cca7e7f1aba3017f4146"
+      },
+      {
+        "path": "assets/images/tech/anthropic-claude-opus-5-5/opus55-effort-cost-curves-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose-and-embedded-csv",
+        "sha256": "ed31eaec330990022199d8b6404a5b3b87ef50c444d85c62203833fe13f54867"
+      },
+      {
+        "path": "assets/images/tech/anthropic-claude-opus-5-5/opus55-safeguard-routing-contracts-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose-and-embedded-csv",
+        "sha256": "50f74a26f33e223b00c1ca65abe12ad2ebeea042022d54a0e53a8943c49668a9"
+      },
+      {
+        "path": "assets/images/tech/anthropic-claude-opus-5-5/opus55-safeguard-routing-contracts-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose-and-embedded-csv",
+        "sha256": "a11446eed87b32d0c3949170a762e26fe587193fbd4d78a0fbdab5d36af172c4"
+      }
+    ]
+  }
+}

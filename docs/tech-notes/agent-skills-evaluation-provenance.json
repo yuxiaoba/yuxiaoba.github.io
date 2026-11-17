@@ -1,0 +1,49 @@
+{
+  "id": "agent-skills-evaluation",
+  "review_code": "T1-09",
+  "source_url": "https://x.com/i/article/2112186374052802560",
+  "source_title": "How to write and test agent skills with evals",
+  "source_author": "Sergii Makarevych",
+  "source_org": "X Article (https://x.com/sermakarevich/status/2112198653469241856)",
+  "source_date": "2026-10-19",
+  "note_date": "2026-10-20",
+  "updated_at": "2026-11-15T17:20:00+08:00",
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/agent-skills-evaluation.md",
+      "sha256": "8703a10a99f85137a993538f8a00eee882274427e5cfce544c9211fdf76183ca"
+    },
+    "en_markdown": {
+      "path": "_tech/en/agent-skills-evaluation.md",
+      "sha256": "d86c48c157c081b96f574c59e6504cf757e8766829dc8c1f876090fcf4dc668f"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/agent-skills-evaluation/skill-eval-loop-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "8024343453c0d4deb69aa3e6e266bf169f118ceb1de7e630ed0d214202ff298a"
+      },
+      {
+        "path": "assets/images/tech/agent-skills-evaluation/skill-eval-loop-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "842c229fa8c20f68c1697cbcbcf598236ad356dac3345b70f4cfe4ceeca49d6a"
+      },
+      {
+        "path": "assets/images/tech/agent-skills-evaluation/eight-arm-design-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "4bcf662f1878ca0952bfdf433d52ae17f55ea8f724b08300398581ab0841ec15"
+      },
+      {
+        "path": "assets/images/tech/agent-skills-evaluation/eight-arm-design-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "6d0b30cfddcae81fbc7a7cd492fb6ae9ecb7a4b9f4fc7d3902d6033aca6eee91"
+      }
+    ]
+  }
+}

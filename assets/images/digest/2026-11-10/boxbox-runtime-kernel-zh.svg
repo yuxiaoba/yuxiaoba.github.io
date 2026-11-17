@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24.0" y="34.0" font-size="17.5" font-weight="700" fill="#0f172a" text-anchor="start">BOXBOX 运行时内核、状态迁移与回滚边界</text>
+  <text x="24.0" y="53.0" font-size="10.6" font-weight="400" fill="#475569" text-anchor="start">整理自 arXiv:2611.09218v1（§4 与 Appendix C / Table 12）：按需进站审阅、只读项目代码边界与四类激活后继路径</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24.0" y="73.0" width="252.0" height="427.0" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24.0" y="73.0" width="252.0" height="28.0" rx="8" fill="#1e3a8a"/>
+  <rect x="24.0" y="93.0" width="252.0" height="8" fill="#1e3a8a"/>
+  <text x="36.0" y="91.5" font-size="11.0" font-weight="700" fill="#ffffff" text-anchor="start">1. 任务循环与按需进站 (H_k, R_k)</text>
+  <rect x="34.0" y="111.0" width="232.0" height="82.0" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="44.0" y="131.0" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="start">常规交互与评测循环</text>
+  <text x="44.0" y="150.0" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">a_k ~ p_{M,H_k}(· | τ_k)，动作 ∈ A(H_k)</text>
+  <text x="44.0" y="167.0" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">Execute_{H_k}(e_k, a_k) -&gt; (e_{k+1}, o_{k+1})</text>
+  <text x="44.0" y="184.0" font-size="9.6" font-weight="400" fill="#475569" text-anchor="start">累计轨迹 τ_{k+1} = τ_k ⊕ (a_k, o_{k+1})</text>
+  <line x1="150" y1="193" x2="150" y2="213" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <rect x="34.0" y="215.0" width="232.0" height="108.0" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="44.0" y="235.0" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="start">触发工具：boxbox() ∈ A(H_k)</text>
+  <text x="44.0" y="254.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">• 需先有任务活动 + 30 分钟冷却门限</text>
+  <text x="44.0" y="272.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">• 由任务 Agent 自主权衡剩余 B=4h 预算</text>
+  <text x="44.0" y="290.0" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">• 无需预先拟定补丁，只需请求进站审阅</text>
+  <text x="44.0" y="308.0" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">• 亦可在运行时故障后由内核自动触发</text>
+  <line x1="150" y1="323" x2="150" y2="343" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <rect x="34.0" y="345.0" width="232.0" height="144.0" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.0"/>
+  <text x="44.0" y="365.0" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="start">暂停范围与现场保留（§C.3）</text>
+  <text x="44.0" y="384.0" font-size="9.5" font-weight="600" fill="#0f172a" text-anchor="start">✓ 仅暂停任务交互决策循环（p_{M,H}）</text>
+  <text x="44.0" y="402.0" font-size="9.4" font-weight="400" fill="#b45309" text-anchor="start">✗ 不冻结 Docker 容器或后台 OS 进程</text>
+  <text x="44.0" y="421.0" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">• 导出运行时快照：对话 τ、审阅历史、已审标记</text>
+  <text x="44.0" y="439.0" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">• 原终端连接与工作区文件保持就位不动</text>
+  <text x="44.0" y="457.0" font-size="9.3" font-weight="400" fill="#475569" text-anchor="start">• 原快照在导入新运行时前保持只读备份</text>
+  <text x="44.0" y="475.0" font-size="9.1" font-weight="400" fill="#475569" text-anchor="start">  （避免更新失败损坏既有执行现场）</text>
+  <rect x="304.0" y="73.0" width="330.0" height="208.0" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="304.0" y="73.0" width="330.0" height="28.0" rx="8" fill="#1d4ed8"/>
+  <rect x="304.0" y="93.0" width="330.0" height="8" fill="#1d4ed8"/>
+  <text x="316.0" y="91.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">2. 独立审阅会话 (e_r, τ_r · 运行于当前 H_k)</text>
+  <rect x="314.0" y="110.0" width="310.0" height="48.0" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="324.0" y="128.0" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">输入证据与隔离权限（§C.2）</text>
+  <text x="324.0" y="146.0" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">读取任务轨迹 τ 与 Git 历史；待优化项目代码严格只读</text>
+  <rect x="314.0" y="165.0" width="310.0" height="56.0" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="324.0" y="183.0" font-size="10.0" font-weight="700" fill="#0f172a" text-anchor="start">默认自审阅技能（Appendix D.3）</text>
+  <text x="324.0" y="200.0" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">把 Agent 结论当作待检验假设，依轨迹推断阶段</text>
+  <text x="324.0" y="214.0" font-size="9.1" font-weight="400" fill="#475569" text-anchor="start">（Early / Developing / Saturated）→ 留用 / 反馈 / 工具</text>
+  <rect x="314.0" y="228.0" width="310.0" height="44.0" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.0"/>
+  <text x="324.0" y="246.0" font-size="10.0" font-weight="700" fill="#1d4ed8" text-anchor="start">全量可编辑范围 H′ ∈ H → Git commit(H′)</text>
+  <text x="324.0" y="263.0" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">可改规则/技能/工具/上下文压缩/异常恢复，并影响下轮审阅</text>
+  <line x1="469" y1="281" x2="469" y2="303" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <text x="477.0" y="296.0" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="start">commit(H′) 提交候选</text>
+  <rect x="304.0" y="305.0" width="330.0" height="195.0" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="304.0" y="305.0" width="330.0" height="28.0" rx="8" fill="#1e3a8a"/>
+  <rect x="304.0" y="325.0" width="330.0" height="8" fill="#1e3a8a"/>
+  <text x="316.0" y="323.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">3. 外层内核 (K) 校验、状态复制与热切换</text>
+  <rect x="314.0" y="342.0" width="310.0" height="44.0" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="324.0" y="360.0" font-size="9.9" font-weight="700" fill="#1e3a8a" text-anchor="start">① 校验提交并试加载新运行时 R′</text>
+  <text x="324.0" y="377.0" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">验证 R′ 满足任务执行接口与上下文导入契约（§C.4）</text>
+  <rect x="314.0" y="394.0" width="310.0" height="44.0" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="324.0" y="412.0" font-size="9.9" font-weight="700" fill="#1e3a8a" text-anchor="start">② 拷贝状态快照导入 R′（原快照不动）</text>
+  <text x="324.0" y="429.0" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">原 R_k 一直保持终端连接，直至 R′ 成功导入副本</text>
+  <rect x="314.0" y="446.0" width="310.0" height="44.0" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="324.0" y="464.0" font-size="9.9" font-weight="700" fill="#0f172a" text-anchor="start">③ 转移终端句柄与续跑提示（§C.4）</text>
+  <text x="324.0" y="481.0" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">新工具使用说明随状态迁入，提示恢复后的 Agent 读取</text>
+  <path d="M 276 260 L 290 260 L 290 155 L 302 155" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <path d="M 276 420 L 302 420" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <rect x="664.0" y="73.0" width="272.0" height="86.0" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="676.0" y="94.0" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="start">结果 A · 无需修改 (Retain)</text>
+  <text x="676.0" y="114.0" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">保留原 (H_k, R_k)，恢复既有上下文</text>
+  <text x="676.0" y="132.0" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">与终端继续优化；仅计入审阅耗时费用</text>
+  <text x="676.0" y="148.0" font-size="9.2" font-weight="400" fill="#475569" text-anchor="start">（可留 focused feedback 指导后续）</text>
+  <rect x="664.0" y="170.0" width="272.0" height="108.0" rx="8" fill="#ecfdf5" stroke="#0f766e" stroke-width="1.2"/>
+  <text x="676.0" y="191.0" font-size="10.5" font-weight="700" fill="#0f766e" text-anchor="start">结果 B · 校验激活成功（暂定态）</text>
+  <text x="676.0" y="211.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">切换 (H, R) ← (H′, R′)，沿用原终端与工作区</text>
+  <text x="676.0" y="229.0" font-size="9.4" font-weight="600" fill="#0f766e" text-anchor="start">• 暂定态 (provisional) 需无故障运行至</text>
+  <text x="676.0" y="246.0" font-size="9.4" font-weight="600" fill="#0f766e" text-anchor="start">  下次由 Agent 发起的 boxbox() 才转正</text>
+  <text x="676.0" y="265.0" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• 确认点保留于内核，供跨轮回退使用</text>
+  <rect x="664.0" y="289.0" width="272.0" height="90.0" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.1"/>
+  <text x="676.0" y="310.0" font-size="10.5" font-weight="700" fill="#b45309" text-anchor="start">结果 C · 校验或导入失败</text>
+  <text x="676.0" y="330.0" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">拒绝 H′，保留或从原快照恢复 (H_k, R_k)</text>
+  <text x="676.0" y="348.0" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">原终端连接与项目代码无中断延续</text>
+  <text x="676.0" y="366.0" font-size="9.2" font-weight="400" fill="#475569" text-anchor="start">Git 保留失败提交供后续审阅诊断</text>
+  <rect x="664.0" y="390.0" width="272.0" height="110.0" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+  <text x="676.0" y="411.0" font-size="10.5" font-weight="700" fill="#b91c1c" text-anchor="start">结果 D · 运行时异常故障（§C.5）</text>
+  <text x="676.0" y="431.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">若处在暂定态，回退至上一个已确认版</text>
+  <text x="676.0" y="449.0" font-size="9.4" font-weight="600" fill="#b91c1c" text-anchor="start">⚠ 必须重启全新终端（shell 局部状态丢失）</text>
+  <text x="676.0" y="467.0" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">保留项目文件、Git 记录与故障日志，</text>
+  <text x="676.0" y="485.0" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">并自动触发一次故障恢复审阅</text>
+  <path d="M 634 150 L 648 150 L 648 116 L 662 116" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <path d="M 634 388 L 650 388 L 650 224 L 662 224" fill="none" stroke="#0f766e" stroke-width="1.8" marker-end="url(#arr-teal)"/>
+  <path d="M 634 416 L 654 416 L 654 334 L 662 334" fill="none" stroke="#b45309" stroke-width="1.6" marker-end="url(#arr-amber)"/>
+  <path d="M 634 456 L 662 456" fill="none" stroke="#b91c1c" stroke-width="1.8" marker-end="url(#arr-red)"/>
+  <text x="24.0" y="521.0" font-size="9.6" font-weight="400" fill="#64748b" text-anchor="start">阅读配图（arXiv:2611.09218v1）· 注：内核校验与回退是实验机制，作者在 §6 明确其不能替代不可信仓库的完整安全沙箱与权限审计</text>
+</svg>

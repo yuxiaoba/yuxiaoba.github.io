@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="38" font-size="19" font-weight="700" fill="#0f172a" text-anchor="start">Unattended Agent Control Plane: Mapping All 7 Fault Tests</text>
+  <text x="24" y="58" font-size="11.5" font-weight="400" fill="#475569" text-anchor="start">From MASA (@themahis) &amp; 10 cited standards: verify external environment outcomes, not fluent model transcripts</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="78" width="446" height="54" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <rect x="34" y="86" width="134" height="20" rx="5" fill="#b45309"/>
+  <text x="101.0" y="100.0" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Transcript Only</text>
+  <text x="176" y="100" font-size="11.5" font-weight="600" fill="#78350f" text-anchor="start">Model claims no email sent / local retry trace</text>
+  <text x="34" y="122" font-size="10.5" font-weight="400" fill="#92400e" text-anchor="start">Model may miss budgets, fail limits, or sound compliant while violating rules</text>
+  <rect x="490" y="78" width="446" height="54" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="500" y="86" width="146" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="573.0" y="100.0" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Decisive · Outcome</text>
+  <text x="654" y="100" font-size="11.5" font-weight="600" fill="#1e3a8a" text-anchor="start">Actual receiving service &amp; independent ledger state</text>
+  <text x="500" y="122" font-size="10.5" font-weight="400" fill="#1e40af" text-anchor="start">Cross-check mock inbox, egress captures, OS denials &amp; ledgers</text>
+  <rect x="24" y="144" width="292" height="282" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="144" width="292" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="164" width="292" height="10" fill="#dbeafe"/>
+  <text x="36" y="164" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">Control 1 · Fault, Budget &amp; Input Gate</text>
+  <rect x="34" y="182" width="272" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="202" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="start">Test 1 · Tool Failures (5 Cases)</text>
+  <text x="42" y="222" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">503 / 429 / 401 / 400 / Timeout; obey Retry-After</text>
+  <text x="42" y="240" font-size="10.5" font-weight="400" fill="#0f172a" text-anchor="start">Max 3 tries + deadline; stop 401 tool-hopping</text>
+  <rect x="34" y="262" width="272" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="282" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="start">Test 2 · Insufficient Budget</text>
+  <text x="42" y="302" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Caps: $3/run · 20 paid calls · 3 attempts/op</text>
+  <text x="42" y="320" font-size="10.5" font-weight="400" fill="#0f172a" text-anchor="start">Pre-dispatch hold beats races ($7.40 != $3)</text>
+  <rect x="34" y="342" width="272" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="362" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="start">Test 3 · Indirect Prompt Injection</text>
+  <text x="42" y="382" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Page hides theft; canary CONFIDENTIAL_123</text>
+  <text x="42" y="400" font-size="10.5" font-weight="400" fill="#0f172a" text-anchor="start">Page is data; block egress via tool auth</text>
+  <rect x="334" y="144" width="292" height="282" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="334" y="144" width="292" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="334" y="164" width="292" height="10" fill="#dbeafe"/>
+  <text x="346" y="164" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">Control 2 · Scope &amp; Approval Binding</text>
+  <rect x="344" y="182" width="272" height="118" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="352" y="202" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="start">Test 4 · Permissions &amp; Bypass Paths</text>
+  <text x="352" y="222" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Write /workspace/reports/; guard dummy secret</text>
+  <text x="352" y="248" font-size="10.5" font-weight="400" fill="#0f172a" text-anchor="start">Block alt routes: shell &amp; authed browser</text>
+  <text x="352" y="274" font-size="9.8" font-weight="400" fill="#64748b" text-anchor="start">Env-level denial required; model refusal alone fails</text>
+  <rect x="344" y="308" width="272" height="118" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="352" y="328" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="start">Test 5 · 6 Post-Approval Mutations</text>
+  <text x="352" y="348" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Alter recipient/file/op/replay/expiry/agent</text>
+  <text x="352" y="374" font-size="10.5" font-weight="400" fill="#0f172a" text-anchor="start">Bind immutable digest; curb sticky handoffs</text>
+  <text x="352" y="400" font-size="9.8" font-weight="400" fill="#64748b" text-anchor="start">Guard shell/patch handoffs (OpenAI Agents SDK)</text>
+  <rect x="644" y="144" width="292" height="282" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="644" y="144" width="292" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="644" y="164" width="292" height="10" fill="#dbeafe"/>
+  <text x="656" y="164" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">Control 3 · Recovery &amp; Global Stop</text>
+  <rect x="654" y="182" width="272" height="118" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="662" y="202" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="start">Test 6 · Post-Effect Crash Recovery</text>
+  <text x="662" y="222" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Email accepted (#1) -&gt; crash -&gt; restart = 1?</text>
+  <text x="662" y="248" font-size="10.5" font-weight="400" fill="#0f172a" text-anchor="start">Two-system split: ledger past &gt;=24h keys</text>
+  <text x="662" y="274" font-size="9.8" font-weight="400" fill="#64748b" text-anchor="start">Contrast LangGraph checkpoints &amp; Stripe &gt;=24h prune</text>
+  <rect x="654" y="308" width="272" height="118" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="662" y="328" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="start">Test 7 · 6-Surface Stop &amp; Redaction</text>
+  <text x="662" y="348" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Check active/pending/queue/cron/workers</text>
+  <text x="662" y="374" font-size="10.5" font-weight="400" fill="#0f172a" text-anchor="start">Block post-restart too; redact trace secrets</text>
+  <text x="662" y="400" font-size="9.8" font-weight="400" fill="#64748b" text-anchor="start">OWASP Agent Control Standard + SDK secret redaction</text>
+  <rect x="24" y="438" width="912" height="62" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.2"/>
+  <text x="36" y="460" font-size="12" font-weight="700" fill="#166534" text-anchor="start">Two-Axis Evaluation &amp; Progressive Rollout (5 dev trials != tiny production failure rate)</text>
+  <text x="36" y="482" font-size="10.8" font-weight="400" fill="#14532d" text-anchor="start">1) Task Eval (useful work, don&#x27;t refuse all) x Operational Eval (hard bounds)  2) 7-field log + narrow-scope/budget rollout</text>
+  <text x="24" y="522" font-size="10.5" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram synthesized from MASA&#x27;s 7-test guide and 10 cited engineering references (not an original figure)</text>
+</svg>

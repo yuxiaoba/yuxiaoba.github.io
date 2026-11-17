@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect x="0" y="0" width="960" height="540" fill="#ffffff"/>
+<text x="36" y="37" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#212529">Harness 状态记忆演进：Findings 数据模型的五代迭代</text>
+<text x="36" y="59" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" fill="#526779">从自由段落生成转向可溯源、可推翻、按检索波次增量写入的结构化发现记录</text>
+<line x1="36" y1="71" x2="924" y2="71" stroke="#d8e4f0" stroke-width="1"/>
+<text x="44" y="87" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#526779">演进阶段</text>
+<text x="242" y="87" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#526779">结构设计与约束</text>
+<text x="556" y="87" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#526779">暴露瓶颈与下一代改进动因</text>
+<rect x="36" y="96" width="888" height="66" rx="8" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="44" y="105" width="30" height="21" rx="5" fill="#3676b8"/>
+<text x="59" y="120" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">v1</text>
+<text x="81" y="120" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">长段落综述</text>
+<text x="44" y="145" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">An essay</text>
+<line x1="230" y1="105" x2="230" y2="153" stroke="#c8daec" stroke-width="1"/>
+<text x="242" y="122" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#212529">直接让模型撰写事故判断段落</text>
+<text x="242" y="143" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">以自由自然语言传递上下文</text>
+<rect x="546" y="102" width="370" height="54" rx="6" fill="#f8fbfe" stroke="#c8daec" stroke-width="1"/>
+<text x="558" y="121" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">高频幻觉，常在缺乏证据时“自圆其说”</text>
+<text x="558" y="141" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#295a8f">→ 改为按数据源抽取的结构化条目</text>
+<line x1="133" y1="162" x2="133" y2="170" stroke="#3676b8" stroke-width="2"/>
+<polygon points="128,169 138,169 133,175" fill="#3676b8"/>
+<rect x="36" y="176" width="888" height="66" rx="8" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="44" y="185" width="30" height="21" rx="5" fill="#3676b8"/>
+<text x="59" y="200" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">v2</text>
+<text x="81" y="200" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">结构化发现</text>
+<text x="44" y="225" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Structured findings</text>
+<line x1="230" y1="185" x2="230" y2="233" stroke="#c8daec" stroke-width="1"/>
+<text x="242" y="202" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#212529">按每个数据源抽取具体结构条目</text>
+<text x="242" y="223" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">替代大段散文，降低单轮发散</text>
+<rect x="546" y="182" width="370" height="54" rx="6" fill="#f8fbfe" stroke="#c8daec" stroke-width="1"/>
+<text x="558" y="201" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">难分辨“真实局势变化”与“第 3 次改写措辞”</text>
+<text x="558" y="221" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#295a8f">→ 转为持续更新、带一手引用的单一记录</text>
+<line x1="133" y1="242" x2="133" y2="250" stroke="#3676b8" stroke-width="2"/>
+<polygon points="128,249 138,249 133,255" fill="#3676b8"/>
+<rect x="36" y="256" width="888" height="66" rx="8" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="44" y="265" width="30" height="21" rx="5" fill="#3676b8"/>
+<text x="59" y="280" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">v3</text>
+<text x="81" y="280" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">带证据单一记录</text>
+<text x="44" y="305" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Evidence-backed records</text>
+<line x1="230" y1="265" x2="230" y2="313" stroke="#c8daec" stroke-width="1"/>
+<text x="242" y="282" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#212529">每条发现维护唯一记录以看清 delta</text>
+<text x="242" y="303" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">强制挂接具体日志行、文档或指标序列</text>
+<rect x="546" y="262" width="370" height="54" rx="6" fill="#f8fbfe" stroke="#c8daec" stroke-width="1"/>
+<text x="558" y="281" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">既成记录易产生“锚定效应”，局势反转不退场</text>
+<text x="558" y="301" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#295a8f">→ 允许新反证对旧发现做折抵或直接取消</text>
+<line x1="133" y1="322" x2="133" y2="330" stroke="#3676b8" stroke-width="2"/>
+<polygon points="128,329 138,329 133,335" fill="#3676b8"/>
+<rect x="36" y="336" width="888" height="66" rx="8" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="44" y="345" width="30" height="21" rx="5" fill="#3676b8"/>
+<text x="59" y="360" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">v4</text>
+<text x="81" y="360" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">可折抵发现</text>
+<text x="44" y="385" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Discountable findings</text>
+<line x1="230" y1="345" x2="230" y2="393" stroke="#c8daec" stroke-width="1"/>
+<text x="242" y="362" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#212529">后续反证可折抵或推翻既有发现</text>
+<text x="242" y="383" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">贴近人类工程师随证据调整判断</text>
+<rect x="546" y="342" width="370" height="54" rx="6" fill="#f8fbfe" stroke="#c8daec" stroke-width="1"/>
+<text x="558" y="361" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">每轮全量重综合导致端到端延迟偏高</text>
+<text x="558" y="381" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#295a8f">→ 改为按并行检索波次仅写入认知增量</text>
+<line x1="133" y1="402" x2="133" y2="410" stroke="#3676b8" stroke-width="2"/>
+<polygon points="128,409 138,409 133,415" fill="#3676b8"/>
+<rect x="36" y="416" width="888" height="66" rx="8" fill="#e3effb" stroke="#3676b8" stroke-width="1.5"/>
+<rect x="44" y="425" width="30" height="21" rx="5" fill="#245c96"/>
+<text x="59" y="440" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">v5</text>
+<text x="81" y="440" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">按波次增量写入</text>
+<text x="44" y="465" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Written in waves</text>
+<line x1="230" y1="425" x2="230" y2="473" stroke="#c8daec" stroke-width="1"/>
+<text x="242" y="442" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#212529">每轮并行检索后只写入本波次 delta</text>
+<text x="242" y="463" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">持续刷新状态并交由质疑 Agent 对抗</text>
+<rect x="546" y="422" width="370" height="54" rx="6" fill="#eef7f1" stroke="#9bc6ab" stroke-width="1"/>
+<text x="558" y="441" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">当前生产基线：通道每条结论可溯源至原始证据</text>
+<text x="558" y="461" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#1f5f3b">✓ 证据不足时也能坦诚标明“尚不确定”</text>
+<text x="36" y="514" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#596775">阅读整理配图 · 基于 incident.io 原文对 Findings 五代演进的工程描述绘制（非原文配图）</text>
+</svg>

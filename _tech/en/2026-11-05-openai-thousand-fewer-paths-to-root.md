@@ -3,7 +3,7 @@ id: 2026-11-05-openai-thousand-fewer-paths-to-root
 title: '2026-11-05 | Technical reading: A thousand fewer paths to root'
 date: '2026-11-05'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -15,10 +15,11 @@ authoring_source: assistant
 translation_source: assistant
 permalink: /tech/en/2026-11-05-openai-thousand-fewer-paths-to-root/
 long_read: true
-summary: The Linux kernel study separates candidates, dynamic reproduction, exploitability
-  and patch review.
+summary: The Linux kernel study separates candidates, dynamic reproduction, exploitability and patch review.
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 Automated scanning can surface many candidates. Repair capacity depends on which ones reproduce, what security boundary they cross, and whether a proposed fix is suitable for upstream. OpenAI’s [Linux kernel study](https://openai.com/index/a-thousand-fewer-paths-to-root/) records these steps separately.
 
 ## From code findings to runtime evidence

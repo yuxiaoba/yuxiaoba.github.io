@@ -1,0 +1,432 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-04-arxiv-2611.00391",
+  "paper_id": "arxiv-2611.00391",
+  "anchor_id": "paper-arxiv-2611.00391",
+  "digest_date": "2026-11-04",
+  "updated_at_utc": "2026-11-17T03:10:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_staged_section": "/root/.gemini/antigravity-cli/brain/ed08eebc-67a4-461c-aa49-694062446bea/scratch/d2b2-sections/2611.00391/section_zh.md",
+    "en_staged_section": "/root/.gemini/antigravity-cli/brain/ed08eebc-67a4-461c-aa49-694062446bea/scratch/d2b2-sections/2611.00391/section_en.md",
+    "zh_target": "_digest/zh/daily-2026-11-04.md",
+    "en_target": "_digest/en/daily-2026-11-04.md",
+    "translation_provenance": "Assistant-authored paired Chinese/English technical close reading grounded directly in primary arXiv:2611.00391v1 abstract HTML and full extracted paper text."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.00391",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "Only v1 exists on arXiv as of 2026-11-17 verification; no v2 revision or withdrawal notice present.",
+    "title": "Rethinking KV Cache Eviction for Agentic LLM Serving",
+    "authors": [
+      "Jiakun Fan",
+      "Han Meng",
+      "Yuxuan Xia",
+      "Hao Mark Chen",
+      "Dong Li",
+      "Dimitrios S. Nikolopoulos"
+    ],
+    "affiliation": "Virginia Polytechnic Institute and State University (1); University of California, Merced (2); New York University (3); Imperial College London (4)",
+    "correspondence": [
+      "jiakunfan@vt.edu",
+      "dsn@vt.edu"
+    ],
+    "categories": [
+      "cs.DC"
+    ],
+    "submitted_utc": "Fri, 30 Oct 2026 21:14:26 UTC",
+    "submitted_date": "2026-10-30",
+    "doi": "https://doi.org/10.48550/arXiv.2611.00391",
+    "pdf_template_note": "Preprint. arXiv:2611.00391v1 [cs.DC] 30 Oct 2026",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.00391",
+      "abs_v1": "https://arxiv.org/abs/2611.00391v1",
+      "pdf": "https://arxiv.org/pdf/2611.00391",
+      "html_v1": "https://arxiv.org/html/2611.00391v1"
+    },
+    "public_code_repository_in_paper": null,
+    "local_sources": {
+      "frozen_abs_html": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/online/arxiv-2611.00391/page.html",
+        "sha256": "066c43aac887da1bc5ff7c6e2a39ce32d8fb2c99786a4c30eccc67e237c3f3af",
+        "recorded_in": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/fetch-index.json"
+      },
+      "frozen_abs_txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/online/arxiv-2611.00391/page.txt",
+        "sha256_status": "pending_parent_hash_verification",
+        "sha256": "0e5e2175a0f6c75add80af956ce03cc3711a649dd0825e507443643030b45103",
+        "bytes": 4653
+      },
+      "staged_abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2611.00391.abs.html",
+        "lines": 594,
+        "sha256_status": "pending_parent_hash_verification",
+        "sha256": "066c43aac887da1bc5ff7c6e2a39ce32d8fb2c99786a4c30eccc67e237c3f3af",
+        "bytes": 40896
+      },
+      "staged_extracted_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2611.00391.txt",
+        "lines": 887,
+        "sha256_status": "pending_parent_hash_verification",
+        "sha256": "a886c2a0ac5fd6ae08b32a0cec52a1a50d0c37d55d8e19a9a36b84848bb1343b",
+        "bytes": 95203
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "system_name": "Penelope",
+    "implementation": "~2.5K lines of Python atop SGLang commit c36a10aa, zero new GPU kernels, 64-token KV blocks, 1,024-token CPU swap buffer",
+    "software_stack": {
+      "cuda": "12.8",
+      "pytorch": "2.9.1",
+      "sgl_kernel": "0.3.21 (FlashAttention-3)",
+      "flashinfer": "0.6.3 (GPU-CPU decode)"
+    },
+    "hardware_testbeds": {
+      "main": "NVIDIA H100 80 GB servers (1, 4, or 8 GPUs), dual 48-core AMD EPYC 9454, 1.48 TiB DRAM, PCIe Gen4 x16",
+      "generalization": "NVIDIA A100 80 GB servers, dual 40-core Intel Xeon Platinum 8380, 0.98 TiB DRAM, PCIe Gen4 x16"
+    },
+    "models_and_default_gpu_caps": {
+      "Qwen3-8B": "1 GPU, YaRN 4x to 128K, default GPU-only cap 256K tokens",
+      "Qwen3-32B": "4 GPUs TP=4, YaRN 4x to 128K, default GPU-only cap 192K tokens",
+      "Qwen3-235B-A22B-Instruct-2507-FP8": "8 GPUs TP+EP, native 256K context, default GPU-only cap 384K tokens"
+    },
+    "cost_model_and_microbenchmark": {
+      "tracelab_v0_0_2": "665,186 valid requests across 8,041 sessions; median ~132K input tokens; 79% > 64K tokens",
+      "qwen3_8b_cfixed_over_cattn": 23552,
+      "fig1_30pct_eviction_speedup_2k_vs_end": {
+        "8K": "1.14x (model 1.11x)",
+        "16K": "1.31x (model 1.29x)",
+        "32K": "1.64x (model 1.61x)",
+        "64K": "2.21x (model 2.14x)",
+        "96K": "2.59x (model 2.55x)",
+        "128K": "2.93x (model 2.87x)"
+      }
+    },
+    "workloads": {
+      "claude_code_cc": "24 sessions, 4,688 requests, 15.6K shared initial prefix, median 80K per-turn context (83K mean on 8B/32B, 144K mean on 235B)",
+      "freeinference_fi": "48 sessions, 4,089 requests, median 77K input length"
+    },
+    "gpu_only_cc_h100_table5_3run_means": {
+      "8B_CC4": {
+        "sglang": {
+          "hit_pct": 66.5,
+          "ttft_s": 6.7,
+          "p90_s": 24.7,
+          "jct_s": 4649,
+          "in_ktok_s": 20.4
+        },
+        "penelope": {
+          "hit_pct": 83.6,
+          "ttft_s": 2.7,
+          "p90_s": 8.9,
+          "jct_s": 2927,
+          "in_ktok_s": 31.0,
+          "ttft_delta": "-60%",
+          "jct_delta": "-37%"
+        }
+      },
+      "8B_CC8": {
+        "sglang": {
+          "hit_pct": 43.4,
+          "ttft_s": 20.7,
+          "p90_s": 51.4,
+          "jct_s": 8638,
+          "in_ktok_s": 15.1
+        },
+        "penelope": {
+          "hit_pct": 62.2,
+          "ttft_s": 12.3,
+          "p90_s": 30.8,
+          "jct_s": 6047,
+          "in_ktok_s": 21.8,
+          "ttft_delta": "-41%",
+          "jct_delta": "-30%"
+        }
+      },
+      "32B_CC4": {
+        "sglang": {
+          "hit_pct": 52.8,
+          "ttft_s": 11.0,
+          "p90_s": 29.8,
+          "jct_s": 5539,
+          "in_ktok_s": 16.5
+        },
+        "penelope": {
+          "hit_pct": 73.2,
+          "ttft_s": 6.0,
+          "p90_s": 16.0,
+          "jct_s": 3840,
+          "in_ktok_s": 23.5,
+          "ttft_delta": "-45%",
+          "jct_delta": "-31%"
+        }
+      },
+      "32B_CC8": {
+        "sglang": {
+          "hit_pct": 35.4,
+          "ttft_s": 27.4,
+          "p90_s": 58.3,
+          "jct_s": 9204,
+          "in_ktok_s": 13.8
+        },
+        "penelope": {
+          "hit_pct": 57.0,
+          "ttft_s": 17.5,
+          "p90_s": 49.6,
+          "jct_s": 6684,
+          "in_ktok_s": 19.6,
+          "ttft_delta": "-36%",
+          "jct_delta": "-27%"
+        }
+      },
+      "235B_CC4": {
+        "sglang": {
+          "hit_pct": 61.9,
+          "ttft_s": 17.0,
+          "p90_s": 51.9,
+          "jct_s": 19001,
+          "in_ktok_s": 17.9
+        },
+        "penelope": {
+          "hit_pct": 80.7,
+          "ttft_s": 9.8,
+          "p90_s": 24.0,
+          "jct_s": 12805,
+          "in_ktok_s": 26.7,
+          "ttft_delta": "-43%",
+          "jct_delta": "-33%"
+        }
+      }
+    },
+    "gpu_only_cc_a100_table1_8b": {
+      "N_4": {
+        "sglang_ttft_s": 19.1,
+        "penelope_ttft_s": 9.1,
+        "ttft_delta": "-52%",
+        "sglang_jct_min": 180,
+        "penelope_jct_min": 104,
+        "jct_delta": "-42%"
+      },
+      "N_8": {
+        "sglang_ttft_s": 58.1,
+        "penelope_ttft_s": 34.1,
+        "ttft_delta": "-41%",
+        "sglang_jct_min": 361,
+        "penelope_jct_min": 234,
+        "jct_delta": "-35%"
+      }
+    },
+    "gpu_only_fi_h100_8b_fig4": {
+      "N_3": {
+        "ttft_delta": "-30%",
+        "jct_delta": "-2%"
+      },
+      "N_4": {
+        "ttft_delta": "-32%",
+        "jct_delta": "-2%"
+      },
+      "hit_rate_gain_pp": "+1.2 to +2.0"
+    },
+    "two_tier_gpu_cpu_cc_table2": {
+      "baseline_note": "CPU-inclusive LPM counting added to SGLang (cuts baseline TTFT 13-37%); SGLang also receives +1,024 tokens usable capacity from Penelope's swap buffer",
+      "8B_N4_128K_128K": {
+        "sglang_ttft_s": 10.4,
+        "penelope_ttft_s": 4.5,
+        "ttft_delta": "-57%",
+        "sglang_jct_min": 81,
+        "penelope_jct_min": 50,
+        "jct_delta": "-38%"
+      },
+      "8B_N8_128K_128K": {
+        "sglang_ttft_s": 23.5,
+        "penelope_ttft_s": 12.8,
+        "ttft_delta": "-46%",
+        "sglang_jct_min": 124,
+        "penelope_jct_min": 79,
+        "jct_delta": "-36%"
+      },
+      "32B_N4_128K_128K": {
+        "sglang_ttft_s": 11.0,
+        "penelope_ttft_s": 3.9,
+        "ttft_delta": "-65%",
+        "sglang_jct_min": 84,
+        "penelope_jct_min": 47,
+        "jct_delta": "-44%"
+      },
+      "235B_N4_256K_256K": {
+        "sglang_ttft_s": 24.2,
+        "penelope_ttft_s": 5.8,
+        "ttft_delta": "-76%",
+        "sglang_jct_min": 359,
+        "penelope_jct_min": 142,
+        "jct_delta": "-60%"
+      },
+      "235B_matched_128K_128K_control": {
+        "hit_gap_pp": 27,
+        "ttft_delta": "-49%"
+      }
+    },
+    "scheduler_comparison_table3_cc_n4": {
+      "8B": {
+        "lpm_ttft_delta": "-60%",
+        "fcfs_ttft_delta": "-47%",
+        "lpm_full_miss": "27.9% / 2.2%",
+        "fcfs_full_miss": "30.1% / 5.8%"
+      },
+      "32B": {
+        "lpm_ttft_delta": "-45%",
+        "fcfs_ttft_delta": "-26%",
+        "lpm_full_miss": "45.0% / 8.6%",
+        "fcfs_full_miss": "50.2% / 21.0%"
+      },
+      "235B": {
+        "lpm_ttft_delta": "-43%",
+        "fcfs_ttft_delta": "-17%",
+        "lpm_full_miss": "28.8% / 3.9%",
+        "fcfs_full_miss": "35.5% / 21.4%"
+      }
+    },
+    "joint_ablation_table4_8b_cc4_lpm": {
+      "node_last_tail_sglang": {
+        "hit_pct": 64.5,
+        "ttft_delta": "0%",
+        "jct_delta": "0%"
+      },
+      "node_last_head": {
+        "hit_pct": 69.0,
+        "ttft_delta": "-12%",
+        "jct_delta": "-8%"
+      },
+      "node_private_start": {
+        "hit_pct": 66.7,
+        "ttft_delta": "-6%",
+        "jct_delta": "-4%"
+      },
+      "block_last_tail": {
+        "hit_pct": 82.6,
+        "ttft_delta": "-45%",
+        "jct_delta": "-28%"
+      },
+      "block_last_head": {
+        "hit_pct": 81.5,
+        "ttft_delta": "-43%",
+        "jct_delta": "-26%"
+      },
+      "block_private_start_penelope": {
+        "hit_pct": 84.5,
+        "ttft_delta": "-63%",
+        "jct_delta": "-39%"
+      },
+      "recompute_from_ge90pct_lost_histories": "90-94% (node-level) vs 16-23% (block-level)"
+    },
+    "matched_block_tail_table6_8b_cc4": {
+      "penelope": {
+        "hit_pct": 83.6,
+        "ttft_s": 2.7,
+        "p90_s": 8.9,
+        "jct_s": 2927,
+        "in_ktok_s": 31.0
+      },
+      "block_tail": {
+        "hit_pct": 83.6,
+        "ttft_s": 3.8,
+        "p90_s": 11.7,
+        "jct_s": 3436,
+        "in_ktok_s": 26.3
+      }
+    },
+    "overhead_and_correctness": {
+      "co_batching_overhead_32k_128k": "<1% vs two separate ordinary requests",
+      "cache_mgmt_cpu_share_8b_cc8_1h": "1.6% vs 0.54% for SGLang",
+      "tier_equivalence_128k_128k_vs_256k_gpu": "Exact match on 18-req (33.67%), 20 random 699-req (60.13%), and 4-session 1,245-turn CC (69.71%, 602/763 full-tier swaps); 256-tok CPU negative control diverges on all 22 sequences",
+      "deterministic_recompute_40k_vs_256k_ref": "Bit-identical outputs and prompt log-probabilities across same-batch and 8K/4K/2K chunks"
+    }
+  },
+  "explicit_limitations": [
+    "Headline GPU-only maxima (-60% TTFT / -37% JCT on Qwen3-8B CC4) and two-tier maxima (-76% TTFT / -60% JCT on Qwen3-235B CC4 with 256K/256K tiers and 144K mean context) correspond to distinct models and capacity regimes and cannot be merged; on 128K/128K matched trace, 235B two-tier TTFT gain drops to -49%.",
+    "Benefits require intermediate cache pressure: fitting sessions (8B N=2 at 99.5% hit; 4:1 CPU/GPU at 92-94% hit) leave <3% gain, severe 1:1 CPU starvation yields -10%, and external tool-wait dominance (FreeInference) shrinks JCT reduction to -2%.",
+    "GPU-only capacities (256K/192K/384K) are explicitly capped to trigger eviction, CC initial prompts and FI block IDs use synthetic tokens matching trace lengths/sharing, and replay feeds recorded replies rather than sampled outputs (releasing generated KV after each turn).",
+    "Cost model and block recomputation assume full causal attention in every layer and write-back single-node CPU tiering; sliding-window, hybrid linear/Mamba, KV-compressed MLA, and disaggregated PD setups are untested.",
+    "Positional savings depend on cache-aware LPM scheduling (FCFS raises full private-history misses to 21.0-21.4% on 32B/235B and roughly halves TTFT gains), and no public Penelope code repository URL is included in arXiv:2611.00391v1."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "penelope_svgs": {
+      "penelope-prefix-suffix-eviction-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-04/penelope-prefix-suffix-eviction-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/penelope-prefix-suffix-eviction-zh.svg",
+        "sha256_status": "pending_parent_hash_verification",
+        "sha256": "6a921484b2398fabba8722095c3cfd31124280685589f81e08f495d35b58b74d",
+        "bytes": 14281
+      },
+      "penelope-prefix-suffix-eviction-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-04/penelope-prefix-suffix-eviction-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/penelope-prefix-suffix-eviction-en.svg",
+        "sha256_status": "pending_parent_hash_verification",
+        "sha256": "322f244882b5a4e7c7dd3bf4c15fcc78f27fe0a9d0c2981f5e33eb495eadcce0",
+        "bytes": 13807
+      },
+      "penelope-sglang-agentic-eval-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-04/penelope-sglang-agentic-eval-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/penelope-sglang-agentic-eval-zh.svg",
+        "sha256_status": "pending_parent_hash_verification",
+        "sha256": "2d4c3eedc963df6c54989cfee797f1c95548f76ca0e59dd4c7fdcd80868e3e2e",
+        "bytes": 13215
+      },
+      "penelope-sglang-agentic-eval-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-04/penelope-sglang-agentic-eval-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/penelope-sglang-agentic-eval-en.svg",
+        "sha256_status": "pending_parent_hash_verification",
+        "sha256": "194949a50f9419360b00c7f63d02a35dfef586ee5657a955d6c21a27fd959fab",
+        "bytes": 13000
+      }
+    },
+    "preserved_preexisting_or_sibling_assets": [
+      "basin.png",
+      "distdebug.png",
+      "exo.png",
+      "fault-free-rca.png",
+      "fetch-outcomes.png",
+      "gendb-v-architecture-en.svg",
+      "gendb-v-architecture-zh.svg",
+      "gendb-v-verification-eval-en.svg",
+      "gendb-v-verification-eval-zh.svg",
+      "rtp-llm.png"
+    ]
+  },
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice",
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-04.md",
+      "file_bytes_before": 53442,
+      "file_sha256_before": "132b70ae1ad474b08aa54ab243a19a13e4d2797e1dbf32b242362a019cc102a9",
+      "file_bytes_after": 166485,
+      "file_sha256_after": "bc3019fc459a0e12dc3392816c65be08d07d8002da8a5d85eb63158c017b01bf",
+      "old_section_bytes": 750,
+      "old_section_sha256": "c4d32154768351d983f3e270399cca34d9c10ecc5f0a91f099bbb52a736cf803",
+      "new_section_bytes": 26073,
+      "new_section_sha256": "bd5c4331f2a3e050b1a2fd45b7c8e7edebdbddfc5be3c90499b83ab078ebd108"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-04.md",
+      "file_bytes_before": 54712,
+      "file_sha256_before": "aa4c111dc2d577b2573c359a62b1c36267c196b199577ee2313b886b2871fb3e",
+      "file_bytes_after": 161910,
+      "file_sha256_after": "f0a8f9219f714a9ead0d423aa19133cc30d2d20fbaec91dec0385f7380cb73aa",
+      "old_section_bytes": 716,
+      "old_section_sha256": "62429521b176771c8aa7ebd9a4c22a8e8504baedef371b8e867cbdb666fd34eb",
+      "new_section_bytes": 22759,
+      "new_section_sha256": "e6b3768a5b711c840b0875ec3ed595b7648861120f3531dcb76a4ffbc57dda7d"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:24:25.665611+00:00",
+    "preview_release": "20261117-112344-dd9778fd",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

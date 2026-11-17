@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="LEAP 生产训练集群吞吐预测与硬件路由架构：提交时在线热路径、25 万任务族快照、13 桶 EM-GBDT 级联与夜间 30 天重训闭环" style="background:#ffffff;font-family:'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-navy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1e3a8a"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="33" font-size="16.5" font-weight="700" fill="#0f172a">LEAP 生产训练集群吞吐预测与硬件路由闭环</text>
+  <text x="24" y="51" font-size="10.2" fill="#475569">arXiv:2611.04057v1（§2 &amp; 图 2–4, 6–7）· 启动器进程内 CPU 推理 · 25 万任务族历史快照 · 13 桶 EM-GBDT 级联</text>
+  <line x1="24" y1="60" x2="936" y2="60" stroke="#cbd5e1" stroke-width="1"/>
+
+  <rect x="20" y="68" width="920" height="218" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="20" y="68" width="920" height="26" rx="9" fill="#1e3a8a"/>
+  <rect x="20" y="86" width="920" height="8" fill="#1e3a8a"/>
+  <text x="32" y="85.5" font-size="10.6" font-weight="700" fill="#ffffff">在线预测与路由热路径（嵌入 Job Launcher 进程内函数调用 · 无需 GPU、网络 RPC 或计算图缓存）</text>
+
+  <rect x="30" y="102" width="190" height="176" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="38" y="109" width="66" height="17" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="71" y="121" text-anchor="middle" font-size="9.0" font-weight="700" fill="#334155">提交时可用</text>
+  <text x="110" y="121.5" font-size="10.4" font-weight="700" fill="#0f172a">73 维原始输入</text>
+  <text x="38" y="142" font-size="9.0" fill="#334155">• 启动配置与并行规模参数</text>
+  <text x="38" y="159" font-size="8.6" fill="#475569">  （卡数、batch、读者比等）</text>
+  <text x="38" y="180" font-size="9.0" fill="#334155">• 44 项模型架构摘要数值</text>
+  <text x="38" y="200" font-size="9.0" fill="#334155">• 12 项硬件规格 + 1 厂商 ID</text>
+  <text x="38" y="220" font-size="9.0" fill="#334155">• 历史快照（≤25 万任务族）</text>
+  <text x="38" y="238" font-size="8.6" fill="#475569">  标准化名匹配；仅重算距今天数</text>
+  <text x="38" y="259" font-size="8.8" font-weight="600" fill="#1d4ed8">• 冷启动显式插补（绝不填 0）</text>
+
+  <line x1="220" y1="190" x2="236" y2="190" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <rect x="238" y="102" width="216" height="176" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="246" y="109" width="60" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="276" y="121" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1d4ed8">共享模块</text>
+  <text x="312" y="121.5" font-size="10.4" font-weight="700" fill="#1e3a8a">特征构建与置换重要性</text>
+  <text x="246" y="140" font-size="8.6" fill="#475569">56 数值 + 17 类别（图 4 占比；18 列无影响）</text>
+
+  <text x="246" y="159" font-size="8.8" font-weight="600" fill="#0f172a">任务规模</text>
+  <rect x="306" y="151" width="84" height="9" rx="2" fill="#1d4ed8"/>
+  <text x="395" y="159" font-size="8.7" font-weight="700" fill="#1d4ed8">33.2%</text>
+
+  <text x="246" y="179" font-size="8.8" font-weight="600" fill="#0f172a">任务历史</text>
+  <rect x="306" y="171" width="75" height="9" rx="2" fill="#2563eb"/>
+  <text x="386" y="179" font-size="8.7" font-weight="700" fill="#1d4ed8">29.8%</text>
+
+  <text x="246" y="199" font-size="8.8" fill="#334155">模型架构</text>
+  <rect x="306" y="191" width="53" height="9" rx="2" fill="#3b82f6"/>
+  <text x="364" y="199" font-size="8.7" fill="#334155">21.1%</text>
+
+  <text x="246" y="219" font-size="8.8" fill="#334155">配置/包</text>
+  <rect x="306" y="211" width="26" height="9" rx="2" fill="#60a5fa"/>
+  <text x="337" y="219" font-size="8.7" fill="#334155">10.2%</text>
+
+  <text x="246" y="239" font-size="8.8" fill="#475569">硬件规格</text>
+  <rect x="306" y="231" width="15" height="9" rx="2" fill="#93c5fd"/>
+  <text x="326" y="239" font-size="8.5" fill="#475569">5.8%（列间共线摊薄）</text>
+
+  <rect x="246" y="250" width="200" height="20" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="346" y="263.5" text-anchor="middle" font-size="8.4" font-weight="600" fill="#92400e">注：线上曾缺部分并行/缩放参数（§6）</text>
+
+  <line x1="454" y1="190" x2="470" y2="190" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <rect x="472" y="102" width="254" height="176" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="480" y="109" width="58" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="509" y="121" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1d4ed8">CPU 推理</text>
+  <text x="544" y="121.5" font-size="10.4" font-weight="700" fill="#1e3a8a">13 桶 EM-GBDT 级联预测</text>
+
+  <rect x="482" y="132" width="234" height="36" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="490" y="147" font-size="9.1" font-weight="700" fill="#0f172a">1. 分桶分类器 g(x) → P(bin k | x)</text>
+  <text x="490" y="161" font-size="8.5" fill="#475569">为每个候选硬件选最可能分桶 k̂ = argmax g_k(x)</text>
+
+  <line x1="599" y1="168" x2="599" y2="177" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+
+  <rect x="482" y="179" width="234" height="46" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="490" y="194" font-size="9.1" font-weight="700" fill="#0f172a">2. 13 个分位数专家 f₁ … f₁₃ (Hist-GBDT)</text>
+  <text x="490" y="208" font-size="8.5" fill="#334155">τ=0.5 pinball 损失估 ln q 中位数，抑制右偏极值</text>
+  <text x="490" y="220" font-size="8.4" fill="#475569">将特征行 x 送入选中专家 f_k̂(x)</text>
+
+  <line x1="599" y1="225" x2="599" y2="234" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+
+  <rect x="482" y="236" width="234" height="34" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="490" y="251" font-size="9.2" font-weight="700" fill="#1e3a8a">3. 吞吐还原：q̂(x) = exp(f_k̂(x))</text>
+  <text x="490" y="264" font-size="8.4" fill="#1e3a8a">跨 7 数量级；单硬件 p95/p5 仍达 42×–701×</text>
+
+  <line x1="726" y1="190" x2="742" y2="190" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <rect x="744" y="102" width="186" height="176" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="752" y="109" width="60" height="17" rx="4" fill="#d1fae5" stroke="#10b981" stroke-width="0.8"/>
+  <text x="782" y="121" text-anchor="middle" font-size="9.0" font-weight="700" fill="#065f46">单位成本</text>
+  <text x="818" y="121.5" font-size="10.4" font-weight="700" fill="#0f172a">排序与软放置</text>
+  <text x="752" y="142" font-size="8.9" fill="#334155">• 评分 = 预测吞吐 / 作业算力成本</text>
+  <text x="752" y="161" font-size="8.9" fill="#334155">• 过滤未高效利用的溢价硬件</text>
+  <text x="752" y="180" font-size="8.9" fill="#334155">• 返回降序偏好列表给调度器</text>
+  <text x="752" y="198" font-size="8.5" fill="#475569">  按实时容量软调度，非硬约束</text>
+  <text x="752" y="217" font-size="8.8" fill="#334155">• 任一缺失/报错退回空列表</text>
+  <rect x="752" y="229" width="170" height="41" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="760" y="245" font-size="8.6" font-weight="700" fill="#1e3a8a">8 月 6 天窗（~20 万作业）：</text>
+  <text x="760" y="261" font-size="8.5" fill="#1d4ed8">19.9% 作业 / 30% GPUh 落入 #1</text>
+
+  <rect x="116" y="292" width="218" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="225" y="304.5" text-anchor="middle" font-size="8.7" font-weight="700" fill="#1e3a8a">稳定指针切换：热加载模型与快照</text>
+  <line x1="345" y1="316" x2="345" y2="288" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+  <rect x="600" y="292" width="226" height="18" rx="4" fill="#d1fae5" stroke="#10b981" stroke-width="0.8"/>
+  <text x="713" y="304.5" text-anchor="middle" font-size="8.7" font-weight="700" fill="#065f46">作业运行完毕，实测吞吐 q 写入每日分区</text>
+  <line x1="837" y1="286" x2="837" y2="314" stroke="#0f766e" stroke-width="1.8" marker-end="url(#arr-teal)"/>
+
+  <rect x="488" y="316" width="452" height="178" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="488" y="316" width="452" height="26" rx="9" fill="#1e3a8a"/>
+  <rect x="488" y="334" width="452" height="8" fill="#1e3a8a"/>
+  <text x="500" y="333.5" font-size="10.4" font-weight="700" fill="#ffffff">离线夜间 30 天滚动重训（≈750,000 次作业尝试，§2.4）</text>
+
+  <text x="500" y="362" font-size="9.2" fill="#0f172a">1. 每日分区仅剔除缺失或 q=0 样本；<tspan font-weight="700">不删离群点、不截断目标值</tspan></text>
+  <text x="500" y="386" font-size="9.2" fill="#0f172a">2. 按 ln q 划分 13 等频初桶 → 最多 3 轮 EM 重分配（变更 &lt;2% 早停）+ 重拟合</text>
+  <text x="500" y="408" font-size="8.9" fill="#334155">   共训练 ≤52 个 Hist-GBDT 专家（≤3,000 树、255 叶、lr=0.03）与分类器 g(x)</text>
+  <text x="500" y="432" font-size="9.2" fill="#0f172a">3. 聚合最多 250,000 个标准化任务族统计，打包为版本化不可变产物</text>
+  <rect x="500" y="448" width="428" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="510" y="463" font-size="8.9" font-weight="600" fill="#1e3a8a">工程细节：窗口按调度日期相对滑动（防表保留期过期后无数据可训）；</text>
+  <text x="510" y="477" font-size="8.6" fill="#475569">历史版本仅在保留期内可复现；Launcher 按稳定指针加载最新产物。</text>
+
+  <line x1="488" y1="405" x2="474" y2="405" stroke="#1e3a8a" stroke-width="1.8" marker-end="url(#arr-navy)"/>
+
+  <rect x="20" y="316" width="452" height="178" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="20" y="316" width="452" height="26" rx="9" fill="#1d4ed8"/>
+  <rect x="20" y="334" width="452" height="8" fill="#1d4ed8"/>
+  <text x="32" y="333.5" font-size="10.4" font-weight="700" fill="#ffffff">次日留出验证、安全发布与 2026 H1 生产集群效果（§3, §6）</text>
+
+  <rect x="32" y="352" width="428" height="48" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="42" y="369" font-size="9.3" font-weight="700" fill="#1e3a8a">严格次日留出评测（OOT）：30 夜中位 w20 = 77.0%（范围 73.5–80.6%）</text>
+  <text x="42" y="388" font-size="8.7" fill="#b45309" font-weight="600">⚠ 严禁训练窗内评测：早期内部窗内测试曾虚高 &gt;20 个百分点（§6）</text>
+
+  <rect x="32" y="407" width="428" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="42" y="423" font-size="9.0" fill="#0f172a">按 model_type 设运行时开关，支持单模型灰度放量或回滚（实验跑不改指针）</text>
+  <text x="42" y="437" font-size="8.5" fill="#475569">同模型内不同启动亦动态选卡：如 Model Type 1 前四硬件各占 16–31%</text>
+
+  <rect x="32" y="450" width="428" height="34" rx="5" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+  <text x="42" y="465" font-size="9.1" font-weight="700" fill="#065f46">2026 H1 覆盖：58% → 95%（7,700 万可调度 GPUh）· 估省算力成本 ~3%</text>
+  <text x="42" y="478" font-size="8.4" fill="#047857">注：可路由作业占全集群训练成本约一半；~3% 为观察期内成本估算而非随机对照</text>
+
+  <rect x="20" y="502" width="12" height="10" rx="2" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="37" y="511" font-size="9.0" fill="#334155">蓝框：在线热路径与发布验证</text>
+  <rect x="204" y="502" width="12" height="10" rx="2" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.2"/>
+  <text x="221" y="511" font-size="9.0" fill="#334155">深蓝头：夜间滚动重训</text>
+  <rect x="358" y="502" width="12" height="10" rx="2" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+  <text x="375" y="511" font-size="9.0" fill="#334155">青框：反馈数据与生产节约</text>
+  <rect x="536" y="502" width="12" height="10" rx="2" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="553" y="511" font-size="9.0" fill="#334155">琥珀：特征偏斜 / 泄露警告</text>
+  <text x="20" y="527" font-size="8.9" fill="#64748b">注：典型日均 ~25,000 次作业尝试、~660 模型类型与 &gt;20 硬件类型；尾部 560 类模型仍占每日尝试 22%。</text>
+</svg>

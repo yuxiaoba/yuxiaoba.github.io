@@ -1191,6 +1191,556 @@
       "reason": "Owner reselected 2026-11-05 and removed this exact source from the approved latest input; preserve archived drafts and prevent automatic reintroduction.",
       "approved_on": "2026-11-05",
       "title": "SAP 选用 ResolveAI 调查和解决生产问题"
+    },
+    {
+      "url": "https://github.com/karthikrshet/localpay",
+      "reason": "T1-01 (2026年10月21日｜LocalPay：把支付失败变成可重复的本地测试): ",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://engineering.fb.com/2026/10/28/ml-applications/meta-andromeda-next-gen-ads-retrieval-gpu-co-design/",
+      "reason": "T1-02 (2026-10-29｜Meta Andromeda：融合执行与 GPU 共置的边界): ",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://alignment.anthropic.com/2026/automated-em-search/",
+      "reason": "T1-03 (2026年11月1日｜自动化红队能否找出训练数据监控的盲区): ",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://engineering.fb.com/2026/11/03/ml-applications/f3-lightning-how-meta-accelerates-ads-ml-features-to-production/",
+      "reason": "T1-05 (2026-11-04｜F3 Lightning：独立发布与共享执行): ",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://engineering.fb.com/2026/11/11/ml-applications/intelligent-delivery-serve-better-ads/",
+      "reason": "T1-06 (2026年11月12日｜Meta Intelligent Delivery：按算力的边际收益分配请求): ",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://pytorch.org/blog/executorch-webgpu-pytorch-models-on-the-gpu-in-the-browser/",
+      "reason": "T1-07 (2026年11月12日｜ExecuTorch WebGPU：同一导出文件进入浏览器 GPU): ",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://www.datadoghq.com/blog/rum-synthetic-slos-slis/",
+      "reason": "T1-11 (2026年10月20日｜用户旅程的 SLO：把探测可用性与真实体验分开衡量): 用户确认撤稿：Datadog Preview 功能与基础 SLO 算术文档导读，实质增量不足",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://blog.appliedcomputing.io/p/key-autoscaling-metric-2-mean-time",
+      "reason": "T1-13 (2026年10月21日｜扩容不等于恢复：用 MTSS 衡量用户等待): 用户确认撤稿：仅提 MTSS 概念与示意色块图，实质增量不足",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://grafana.com/blog/grafana-ai-autonomous-operations/",
+      "reason": "T1-14 (2026年10月23日｜Grafana AI：从持续观察走到可审查补丁): 用户确认撤稿：Grafana AI GA/预览发布稿，无诊断准确率或 MTTR 对照实验，实质增量不足",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://blogs.nvidia.com/blog/minerva-platform-infrastructure/",
+      "reason": "T1-15 (2026年10月23日｜Minerva 把 AI 集群遥测连到作业根因): 用户确认撤稿：NVIDIA Minerva 平台宣传稿与规格书解读，无具体关联算法、误报/漏报率或 MTTR 对照，实质增量不足",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/agent-anomalies-overview",
+      "reason": "T1-16 (2026年10月25日｜Agent 异常检测：把会话行为接入异步安全审计): 用户确认撤稿：Google Cloud 私有预览接入文档更新，未公开三层管线算法、阈值、漏报率或单位会话成本，实质增量不足",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/how-nvidia-mission-control-2-5-brings-autonomous-recovery-to-kubernetes/",
+      "reason": "T1-18 (2026年10月27日｜GPU 作业先恢复，故障节点再修复): 用户确认撤稿：NVIDIA Mission Control 2.5 版本说明，无受控 MTTR、吞吐提升或一致性协议细节，实质增量不足",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://status.cloud.google.com/incidents/Xs2XTHzAVC9YnafnPyzj",
+      "reason": "T2A-01 (2026年10月21日｜伦敦云故障：跨区切换还要跨过依赖与容量): 用户确认撤稿：原稿基于早期初步通报并以大量假设服务与教材公式填充，决定直接撤除",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://www.baseten.co/blog/fastest-lowest-cost-qwen3-asr-batch-transcription/",
+      "reason": "T2A-02 (2026年10月29日｜技术阅读：The fastest, lowest-cost batch transcription with Qwen3-ASR): 用户确认撤稿：源站仅返回页面外壳、仅百余字转述社交帖语音 ASR 吞吐短摘",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment/",
+      "reason": "T2A-03 (2026年10月30日｜技术阅读：How we detect frontier model misalignment): 用户批量撤稿（Tier 2 第1批 #1）：源站 403 仅得百余字公告短摘",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://newsletter.pragmaticengineer.com/p/ai-sre",
+      "reason": "T2A-04 (2026年10月30日｜技术阅读：AI SRE: what is it, how could it change on-call – and does it work?): 用户批量撤稿（Tier 2 第1批 #2）：付费墙受限仅百余字概括，无机制展开",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://blog.lmcache.ai/en/2026/10/16/finding-reusable-kv-caches-across-a-fleet-of-servers-lmcaches-mp-multiprocess-coordinator/",
+      "reason": "T2B-02 (2026年10月16日｜LMCache MP Coordinator：找到其他服务器上的缓存): 用户批量撤稿（Tier 2 第1批 #4）：MP Coordinator 机制已被 11-13 lmcache-coordinator-fleet-kv 深化覆盖",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://github.com/LMCache/LMCache/releases/tag/v0.5.6",
+      "reason": "T2B-03 (2026年10月20日｜LMCache 0.5.6：KV缓存服务的信任与生命周期边界): 用户批量撤稿（Tier 2 第1批 #5）：0.5.6 微版本安全公告短摘，密度偏薄",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://blog.vllm.ai/blog/2026-10-20-vllm-torchtpu",
+      "reason": "T2B-04 (2026年10月21日｜vLLM TorchTPU：复用服务控制层，把硬件适配放进后端): 用户批量撤稿（Tier 2 第1批 #6）：vLLM TorchTPU 仓外插件公告，底层机制已由 torchtpu.md 覆盖",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://lmsys.org/blog/2026-10-22-sglang-trainium-beta/",
+      "reason": "T2B-05 (2026年10月23日｜SGLang Trainium Beta：把 RL 生成与训练分到不同硬件): 用户批量撤稿（Tier 2 第1批 #7）：SGLang Trainium beta 初始公告，底层机制已由 torchneuron.md 覆盖",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://vllm.ai/blog/2026-10-29-mistral-large-4",
+      "reason": "T2B-07 (2026年10月30日｜vLLM 如何支持稀疏注意力与跨层 KV 共享): 用户批量撤稿（Tier 2 第1批 #9）：Mistral Large 4 Day-0 支持三段短讯，算子与 KV 特性已在服务专篇展开",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/making-kubernetes-ai-ready-for-nvidia-vera-rubin-on-day-one/",
+      "reason": "T2B-10 (2026年11月3日｜技术阅读：Making Kubernetes AI-Ready for NVIDIA Vera Rubin on Day One): 用户批量撤稿（Tier 2 第1批 #12）：Vera Rubin AICR 框架与 10-31 篇重叠且实测延后",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+      "reason": "T2C-05 (2026年10月24日｜训练环境隔离：把防线延伸到宿主机之外): 撤（Tier-C）：前沿训练防权重窃取安全合规框架，偏治理政策而非系统机制或 AgentOps",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/how-to-check-and-configure-nvidia-gpudirect-storage-for-your-platform/",
+      "reason": "T2C-08 (2026年11月1日｜GPUDirect Storage 诊断：确定性检查与 Agent 编排分工): 撤（Tier-C）：单文件 GDS 环境配置检查脚本说明，无新系统机制或漏检/误报率评估",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://www.anthropic.com/research/provable-inference",
+      "reason": "T2C-10 (2026-11-04｜FlashProve：模型来源证明的性能与信任边界): 撤（Tier-C）：72–94x 延迟开销的 zkSNARK 可验证推理实验且作者声明仓库不再维护",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://github.com/Bobliuuu/open-flapping-airplanes",
+      "reason": "T2C-11 (2026-11-04｜开放 megakernel 复现：同时运行与强基线): 撤（Tier-C）：162M 小模型 + Doom 社区娱乐复现，偏离生产云与 AI 系统主线",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/scaling-nvidia-tensorrt-performance-optimization-beyond-a-single-build-route-with-the-global-performance-tuner-part-1/",
+      "reason": "T2C-12 (2026-11-04｜TensorRT 全局调优：构建路线与准确率约束): 撤（Tier-C）：TensorRT 全局调优器 Part 1 概念导言，未给具体搜索算法或实测加速数据",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+      "reason": "T2C-13 (2026年11月5日｜技术阅读：A thousand fewer paths to root): 撤（Tier-C）：Linux 内核提权漏洞挖掘统计，属主机安全攻防而非云运维或 LLM 服务",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://azure.microsoft.com/en-us/blog/predicting-and-detecting-failures-how-azure-strengthens-reliability-for-mission-critical-workloads/",
+      "reason": "T2C-14 (2026年11月5日｜Azure AFPD：预测之后，还要完成迁移与维修): 撤（Tier-C）：回溯旧通知机制的云厂商高层介绍文，缺精确率/召回率与具体算法细节",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://quarkus.io/blog/ai-root-cause-analysis/",
+      "reason": "T2C-19 (2026年11月12日｜Quarkus AI RCA：先把遥测整理成可分析的上下文): 撤（Tier-C）：Java Quarkus 框架接入演示，作者声明混沌工程规模化评测留待后续",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://pytorch.org/blog/integrating-sglang-into-spyre-in-under-a-week-with-ai/",
+      "reason": "T2C-22 (2026年11月13日｜Spyre 接入 SGLang：AI 编码为何能受益于清晰接口): 撤（Tier-C）：约 1500 行 SGLang 接入 IBM Spyre 常规后端适配随笔，偏接口胶水且缺受控服务指标",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/DecagonAI/status/2115511110120120437",
+      "reason": "D1-00 (2026年10月30日｜研究阅读): 用户确认撤稿：paper_count=0 的零论文日报空壳，其中 Decagon 记录已独立成篇，另一条为简短吞吐宣传",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/sgl_project/status/2115913588741468629",
+      "reason": "D1-00 (2026年10月30日｜研究阅读): 用户确认撤稿：paper_count=0 的零论文日报空壳，其中 Decagon 记录已独立成篇，另一条为简短吞吐宣传",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.01148",
+      "reason": "D1-02 (05 · 加密分割推理：联合选择端与边界): 用户确认撤稿：面向 CIFAR-10/PathMNIST 的全同态加密 CNN 批推理，非 LLM 推理服务且无法外推，偏离主线",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.00922",
+      "reason": "D2C-02 (03 · DEFRAG：边缘节点协作检索与生成): 撤：6 台异构移动边缘设备上的去中心化知识图谱共享问答原型，偏离云集群与核心推理栈",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.01126",
+      "reason": "D2C-03 (04 · 空间前缀缓存：缓存命中还要考虑排队): 撤：无线边缘节点地理距离与前缀缓存随机几何解析模拟，偏无线网络通信理论",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/itsharmanjot/status/2083596690175791519",
+      "reason": "社区动态：OpenSRE 短讯: DC2-01: 撤：早期 OpenSRE 公开 alpha 社交介绍短讯，无诊断准确率实验，已被后续多篇 SRE 专篇覆盖",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.02851v1",
+      "reason": "D2C-01 (01 · ByteSplat：把数据搬运与场景表示一起优化): 撤：3DGS 图形渲染分布式训练通信/片上融合，属 CG 场景重建而非云运维与 LLM 服务主线",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/learnk8s/status/2106077007796719994",
+      "reason": "一则阅读线索：learnk8s 线索: DC2-02: 撤：三句 learnk8s 轨迹回放阅读线索导流帖，无独立评测数据",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/marcklingen/status/2106726324316299377",
+      "reason": "C1-01 (实践观察：把生产交互变成诊断反馈（Marc Klingen 原帖）): 用户确认撤稿：无对照实验或定量指标的 X 社区点击观察随笔，实质增量不足",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/naumowf/status/2107263555439411648",
+      "reason": "C1-02 (社区观察：通用榜单之外的运维评测（Franco Naumow 原帖）): 用户确认撤稿：转述单日 X 榜单截图对比（未独立复算且无一手评测细节），实质增量不足",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/kynichol/status/2107841955250237721",
+      "reason": "C1-03 (事故响应的另一种证据缺口（ky nichol 原帖）): 用户确认撤稿：Cutover 创始人四行行业观点短帖，无系统机制或效果评测，实质增量不足",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://github.com/LMCache/LMCache/security",
+      "reason": "DC2-03 (LMCache：多进程通信中的不安全反序列化（另有 10-20 独立笔记）): 撤：与后续独立保留技术笔记 lmcache-056-security.md（CVE-2026-105192）同源重复",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/DailyDarkWeb/status/2107999065384550453",
+      "reason": "LMCache：多进程通信中的不安全反序列化（另有 10-20 独立笔记）: DC2-03: 撤：与后续独立保留技术笔记 lmcache-056-security.md（CVE-2026-105192）同源重复",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/",
+      "reason": "LMCache：多进程通信中的不安全反序列化（另有 10-20 独立笔记）: DC2-03: 撤：与后续独立保留技术笔记 lmcache-056-security.md（CVE-2026-105192）同源重复",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://blog.lmcache.ai/en/2026/10/13/an-update-on-cve-2026-105192/",
+      "reason": "LMCache：多进程通信中的不安全反序列化（另有 10-20 独立笔记）: DC2-03: 撤：与后续独立保留技术笔记 lmcache-056-security.md（CVE-2026-105192）同源重复",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/lnxsec/status/2110108857779253649",
+      "reason": "DC2-04: 撤：单段 LinuxSecurity X 短帖缺受影响配置与复现材料（同节下方 1Password × Mercor AI SRE Agent 保留不动）",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.23252v1",
+      "reason": "D2C-04 (04 · 光网络诊断：用数据引用约束展示的证据): 撤：ECOC 短演示稿，仅给 URI 引用展示约束而无样本规模与对比实验",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/navaneethvb/status/2111092741954515119",
+      "reason": "社区动态：NIXL Push 短讯（已有独立技术笔记 nixl-push.md）: DC2-05: 撤：已有独立长篇技术笔记 nixl-push.md 完整覆盖，此处仅四句重复导流",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.23241v1",
+      "reason": "D2C-05 (05 · Proof Harness：让 Agent 搭验证环境，再独立检查抽象): 撤：curl/libuv 3 例历史断言小样本 CBMC 探索（2 例 unknown），同方向已有更完整的形式化验证收录",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.23047v1",
+      "reason": "D2C-06 (12 · DIFFLET：让静态编译组件进入可常驻的扩散服务): 撤：AWS Trainium2 图像/视频扩散生成模型静态编译引擎，非 LLM 推理或云可靠性主线",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/FSFG/status/2112266181549670598",
+      "reason": "C1-05/DC2-06: 社区短摘或交叉核对帖移除",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://www.techstrong.tv/videos/interviews/gowrisankar-chinnayan-manageengine-observability-alert-noise",
+      "reason": "C1-05/DC2-06: 社区短摘或交叉核对帖移除",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/OneSignalDesk/status/2111987659854021007",
+      "reason": "C1-05/DC2-06: 社区短摘或交叉核对帖移除",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.27273",
+      "reason": "D1-03 (FLINT：给长查询的多向量匹配设定固定预算): 用户确认撤稿：纯文本信息检索多向量编码表征（MS MARCO/BEIR），不直接涉及云运维、LLM 服务调度或 Agent 运行机制，偏离主线",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.26991",
+      "reason": "D2C-08 (3D-MoE：用专家负载互补缓解近存热点): 撤：面向定制 3D 堆叠 DRAM 近存芯片（NMP）的周期级硬件模拟，偏离商用 GPU 云服务软件栈",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/ReignSwords/status/2112993303960432716",
+      "reason": "DC2-07 (社区动态：DeepInfer 的开源边界（另有 10-25 独立笔记 sglang-deepinfer.md）): 撤：后续 2026-10-25 已有独立技术笔记 sglang-deepinfer.md 专篇展开，此处短评重叠",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://github.com/deepseek-ai/DeepInfer",
+      "reason": "社区动态：DeepInfer 的开源边界（另有 10-25 独立笔记 sglang-deepinfer.md）: DC2-07: 撤：后续 2026-10-25 已有独立技术笔记 sglang-deepinfer.md 专篇展开，此处短评重叠",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.30769",
+      "reason": "D1-04 (09 · 从众级联：热度会改变下一轮看见什么): 用户确认撤稿：人设智能体给生成歌曲打分复现 Music Lab 计算社会学实验，无工具调用、系统环境或客观真值，偏离主线",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.30537",
+      "reason": "D1-05 (11 · PLE：评价工程交付，而不只评价题目答案): 用户确认撤稿：土木与物理工程执业及 CAD/BIM 交付物评测基准，属垂直传统工程行业，偏离主线",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.30813",
+      "reason": "D2C-10 (18 · DCIGSE：将输入生成与交错验证解耦): 撤：Linux 6.17 内核并发数据竞争模糊测试，属传统 OS 内核安全工具",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.30990",
+      "reason": "D2C-11 (03 · SnakeCharmer：把预测地址变成有效预取): 撤：基于 AccelSim A100 模拟器的 GPU 硬件预取器微架构控制研究",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.34594",
+      "reason": "D2C-12 (11 · NovaFabric：Agent 执行记录的封存与重放): 撤：单作者开源黑盒记录器技术报告，原文明言未包含新实验",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35999",
+      "reason": "D1-06 (25 · safeL4: Rethinking Safe-Language-Based Single Address Space Microkernels): 用户确认撤稿：Raspberry Pi 3B+ 上的单地址空间 Rust 微内核原语对比，偏嵌入式 OS，偏离云运维与 AI 系统主线",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.01526",
+      "reason": "D2B-01 (07 · An Internet for the KV Cache: Rethinking Classical Infrastructure Boundaries in the LLM Inference Age): 撤：2026-08-02 远期愿景文补读短摘，站内已有更具体的 LMCache/Mooncake 工程深读",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36355",
+      "reason": "D2B-02 (10 · WAKMan: Workload Aware KVCache Manager): 撤：全合成混合流量下仅做 LRU 与 S3FIFO 二选一切换，缺真实引擎端到端延迟评估",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37609",
+      "reason": "D2B-03 (13 · EnvSched: Environment-Aware Scheduling for Rollout-Efficient Agent Reinforcement Learning): 撤：按奖励方差与环境配额做 RL 训练样本课程选择，偏纯 RL 数据调度",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36570",
+      "reason": "D2B-04 (19 · CASEL: Consequence-Aware Selective Execution for Reliable Long-Horizon Tool-Using Agents): 撤：摘要明示干预有效性由模拟器先验假设而非实测，缺真实工具 Agent 系统证据",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.36499",
+      "reason": "D2B-05 (23 · ProCerDCL: Query-Efficient Black-Box Probabilistic Verification of Deep Learning Compiler Optimization): 撤：固定分布与无状态黑盒 oracle 下的三值序贯统计抽样，偏抽象统计方法",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35957",
+      "reason": "D2B-06 (24 · Distributed LLM Inference via Communication-Efficient Speculative Decoding): 撤：端云单请求下服务端复制草稿小模型省词表通信，仅测单请求带宽受限场景",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/RohanArun/status/2115455086520360964",
+      "reason": "C1-06 (社区记录：@RohanArun 竞赛排名帖): 用户确认撤稿：X 竞赛排名/提交短讯，无方法增量或系统机制价值",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/jiayq/status/2115490096049004765",
+      "reason": "DC2-09 (社区记录：jiayq 提案短讯 + ekzhang1 实验库短讯): 撤：jiayq 与 ekzhang1 两条社交短讯未附完整复现实验与基准细则（同节第 3 条 RohanArun 不在此列）",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/ekzhang1/status/2115429450833699165",
+      "reason": "社区记录：@RohanArun 竞赛排名帖, 社区记录：jiayq 提案短讯 + ekzhang1 实验库短讯: C1-06: 用户确认撤稿：X 竞赛排名/提交短讯，无方法增量或系统机制价值; DC2-09: 撤：jiayq 与 ekzhang1 两条社交短讯未附完整复现实验与基准细则（同节第 3 条 RohanArun 不在此列）",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.38809",
+      "reason": "D2B-07 (02 · Causal Attention on CPU: A Cache-Aware and Load-Balanced Scheduling Kernel for Prefill): 撤：纯 CPU 因果 Prefill 分块内核，受测桌面 CPU 无 AMX 且未对比 SGLang AMX 内核",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.37921",
+      "reason": "D2B-08 (06 · FAD-KV: Adaptive Dictionary KV Caching for Efficient Reasoning Decoding): 撤：基于固定大小字典原子复用的有损稀疏 KV 压缩算法，偏张量近似而非服务系统",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.39562",
+      "reason": "D2B-11 (13 · Raincheck: Deferred Multimodal Prefill for Efficient Multi-Turn MLLM Inference): 撤：多模态视觉 token 剪枝加 Decode 空隙延迟补算，系统实测仅单并发请求",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.39621",
+      "reason": "D2B-12 (14 · The Real Cost of Context: Predicting Compute Time and Energy Consumption in LLM Prefill and Decode Phases): 撤：batch=1 下用 GLM 拟合输入/输出长度推算闭源 API 能耗，系统洞察有限",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.38800",
+      "reason": "D2B-16 (23 · When Relevant Code Is Wrong: Runtime-Aware Context for AI Coding Agents): 撤：仅 6 任务 15 产物的手工规则可行性小原型，未验证对编码 Agent 准确率的实际提升",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/vllm_project/status/2115985388649242699",
+      "reason": "C1-07 (社区记录：vLLM Day-0 RL 两句社交喜报): 用户确认撤稿：仅两句 vLLM Day-0 RL 社交喜报，无受控实验或系统机制展开",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/sgl_project/status/2116353629057962217",
+      "reason": "C1-08 (社区记录：SGLang AgentX 合并峰值吞吐喜报): 用户确认撤稿：SGLang AgentX 合并缓存峰值吞吐喜报短帖，缺少硬件明细、长度分布与对照配置",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.00126",
+      "reason": "D2C-13 (01 · 验证器泄漏：先确认还有问题需要求解): 撤：针对模拟需求与库存运筹闭环策略，非云系统或 LLM Agent",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/SemiAnalysis_/status/2116950855718998288",
+      "reason": "C1-09 (社区动态（第1条为 SemiAnalysis vLLM PR #64893 跑分，第2条为 Rubin NVL72 远期 perf/TCO 宣传）): 用户确认全撤：2026-11-02 社区动态下两条 SemiAnalysis 短帖（草稿 PR #64893 跑分与 Rubin NVL72 perf/TCO 宣传）一并撤除",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/SemiAnalysis_/status/2116666571728863431",
+      "reason": "社区动态（第1条为 SemiAnalysis vLLM PR #64893 跑分，第2条为 Rubin NVL72 远期 perf/TCO 宣传）: C1-09: 用户确认全撤：2026-11-02 社区动态下两条 SemiAnalysis 短帖（草稿 PR #64893 跑分与 Rubin NVL72 perf/TCO 宣传）一并撤除",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://github.com/vllm-project/vllm/pull/64893",
+      "reason": "社区动态（第1条为 SemiAnalysis vLLM PR #64893 跑分，第2条为 Rubin NVL72 远期 perf/TCO 宣传）: C1-09: 用户确认全撤：2026-11-02 社区动态下两条 SemiAnalysis 短帖（草稿 PR #64893 跑分与 Rubin NVL72 perf/TCO 宣传）一并撤除",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41209",
+      "reason": "D1-07 (01 · Falcons: Pushing the Speed-Ratio Limits of Lossy Compression for Parallel Scientific Applications): 用户确认撤稿：WRF 气象科学计算有损 I/O 压缩，偏离云运维与 AI 系统主线，且为缺失元数据的两句短摘",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.41457",
+      "reason": "D2B-19 (07 · RecIS: Unifying Sparse and Dense Computation for Efficient Recommendation Training): 撤：传统推荐系统稀疏/稠密分布式训练框架，偏离 LLM 服务与 SRE/AgentOps 主线",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.40917",
+      "reason": "D2B-20 (17 · Towards Portable Specification of the Agent Harness): 撤：围绕法规文档义务的 8 组件 Harness 元数据概念倡议，无系统实现与实验评测",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02102",
+      "reason": "D1-09 (19 · NorthCUA Technical Report: Turbocharging Computer-Use Agents through Experience at Scale): 用户确认撤稿并明确 CUA 收录口径：Computer Use 类研究须偏向性能优化，撤除纯通用经验合成训练报告 NorthCUA",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.00287",
+      "reason": "D1-10 (23 · VerusWeave: A Benchmark for Proof Repair in Concurrent Verus Programs): 用户确认撤稿：纯 Verus 并发程序证明标注修复基准，偏离云运维与 AI 系统主线，且为缺失元数据的两句短摘",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03434",
+      "reason": "D2B-25 (17 · Optimize the Harness, Not the Model: Fitting a Minimal Agent to a Self-Hostable LLM for Investigative Analysis): 撤：单一调查领域面向自托管模型的 Harness 极简裁剪个案，评测依赖抽查 LLM judge",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03634",
+      "reason": "D2B-26 (18 · WebHarbor: Docking Real Websites for Evolving GUI Agent Environments): 撤：153 个 Docker 化仿制网站用于 GUI Agent RL 轨迹扩展，按既定 CUA 准则排除",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.03917",
+      "reason": "D1-12 (10 · Silent Degradation during Auto-Vectorization of bf16/fp16 on RISC-V Under LLVM): 用户确认撤稿：QEMU 模拟指令数层面的 RISC-V LLVM bf16/fp16 自动向量化短摘占位，偏离云运维与 AI 系统主线",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04701",
+      "reason": "D1-13 (25 · Proving the Wrong Program: Miscompilations as a Threat to zkVM Guarantees): 用户确认撤稿：密码学零知识虚拟机（SP1/Jolt）误编译理论性质摘要占位，偏离云运维与 AI 系统主线",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04104",
+      "reason": "D2A2-02 (04 · ModelBlaster: Closing the Performance Gap through Learning-Augmented Agents Across Models, Kernels and Hardware Backends): 撤（按主推荐收敛同日重复赛道）：与同日已保留的 Warpline、ForgeKernel 同属 LLM Kernel 优化方向",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04897",
+      "reason": "D2A2-07 (13 · TapeSAC: Automated, Pareto-Optimal Fine-Grained Memory Management for Large Model Training): 撤（按主推荐排除初筛误标项）：队列初筛误标为 AgentOps 轨迹压缩，实为纯大模型训练选择性激活重算（SAC）显存管理",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.04277",
+      "reason": "D2A2-09 (21 · Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training): 撤（按主推荐收敛）：偏 RL 策略训练期兄弟 Harness 采样救援，运行期机制不如同日 Meta² 直接",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05390",
+      "reason": "D2C-14 (08 · 证据门控评审：限制 reviewer 改写正确提案的权力): 撤：96 道合成规则题上的单作者评审权限讨论，多智能体角色/反馈已由 ATC 等覆盖",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05873",
+      "reason": "D2C-16 (13 · 移动测试记忆：把旧经验当作有范围的证据): 撤：6 个只读 Android GUI 任务且跨会话实验因混杂被作者排除",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.05454",
+      "reason": "D2C-17 (24 · ABE：让行为契约连接测试、权限与线上证据): 撤：单作者企业 Agent 契约治理方法论文章，缺真实系统受控对比实验",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07140",
+      "reason": "D2C-19 (07 · 多 Agent 可靠性：投票器和共同失效也要计入): 撤：仅依赖 9 种化学品声明提取与敏感性参数设定的多模型投票可靠性推演，样本过窄",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07859",
+      "reason": "D2C-21 (CORE：先广泛检索，再让精确片段进入上下文): 撤：封闭静态语料问答（BrowseComp 系列）稠密检索与片段截取，未触及生产系统执行或在线推理调度",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/l4rz/status/2119529451478548528",
+      "reason": "C1-10 (社区观察中 l4rz 3天电信异常检测短帖（同节第1条为 Together 3x 短帖）): 用户确认撤稿：l4rz 3 天部署电信异常检测个人自述短帖，无检测器实现、标注数据、误报率或根因验证记录（保留同节第 92 行 Together AI 条目）",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/togethercompute/status/2119280344704725245",
+      "reason": "DC2-10 (社区观察首条：Together AI 称 Step 5 吞吐超三倍短帖): 撤：Together AI 厂商社交短帖自报 3× 吞吐，缺硬件、负载分布、尾延迟与消融细节（同节 l4rz 段保留不动）",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.08496",
+      "reason": "D2C-22 (20 · MobiInfer：利用 GUI Agent 的轨迹和输出结构): 撤：Android 手机端 MNN 本地多模态 GUI Agent 推理加速（首发于 8 月），属移动端 GUI 范畴",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.21390",
+      "reason": "D2C-23 (21 · PriorityFEC：截止时间前，先送达更有用的 KV): 撤：无线边缘丢包链路滑窗 FEC 与缺块零填充有损接续（且原 PDF 方法图含占位符），偏无线通信传输层",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.14106",
+      "reason": "D1-15 (20 · ProofCoder：把证明脚本当可持续修订的产物): 用户确认撤稿：交互式 Rocq 证明脚本生成，偏离云、LLM 服务与 AgentOps 主线",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.13741",
+      "reason": "D2C-25 (11 · Arknife：把指令布局要求变成全局约束): 撤：跨 x86 / Hexagon DSP VLIW 的指令布局约束代数编译器，偏专用后端算子移植",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.13860",
+      "reason": "D2C-26 (13 · GemAtlas：用硬件微基准校正模拟器的存储层次): 撤：SASS 微基准逆向 GPU 存储参数以校准离线 AccelSim 模拟器（LLM 算子残余 MAPE 23.98%），属离线仿真器调参",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.13378",
+      "reason": "D2C-27 (23 · Looped CED：增加计算深度，不按轮复制全局 KV): 撤：循环编码器—解码器预训练架构，质量验证仅至 340M，552B 服务实验采用假权重/未循环训练权重模拟显存",
+      "approved_on": "2026-11-17"
+    },
+    {
+      "url": "https://x.com/SecDuffy/status/2121426698172293310",
+      "reason": "事故动态：FAA 在通信异常后限制新起飞: DC2-11: 撤：传统民航通信地面停飞官方时间线通报，未披露技术根因与系统架构细节",
+      "approved_on": "2026-11-17"
     }
   ]
 }

@@ -1,0 +1,49 @@
+{
+  "id": "knowledge-graph-context",
+  "review_code": "T1-10",
+  "source_url": "https://grafana.com/blog/full-stack-observability-with-knowledge-graph/",
+  "source_title": "Introducing Knowledge Graph in Grafana Cloud for full-stack observability",
+  "source_author": "Sarah Constant",
+  "source_org": "Grafana Labs",
+  "source_date": "2026-10-20",
+  "note_date": "2026-10-20",
+  "updated_at": "2026-11-15T17:20:00+08:00",
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/knowledge-graph-context.md",
+      "sha256": "cbd8c3d89ec50531b5774a32a7a30e16574c54a074ad52b896cccda290e8633d"
+    },
+    "en_markdown": {
+      "path": "_tech/en/knowledge-graph-context.md",
+      "sha256": "7d6ff0d706b60e2afc228b193b3a6871372ed53da2e74a190aa959a3588a2c6d"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/knowledge-graph-context/entities.png",
+        "origin": "original_grafana_png",
+        "source": "https://grafana.com/blog/full-stack-observability-with-knowledge-graph/",
+        "sha256": "3612e378078cc6d069b311d97877427783eeaaa42f73b4c6aed69cc339a3e6e0"
+      },
+      {
+        "path": "assets/images/tech/knowledge-graph-context/custom-entities.png",
+        "origin": "original_grafana_storyblok_png",
+        "source": "https://a-us.storyblok.com/f/1022730/1999x1198/6af3c9177c/knowledge-graph-updates-custom-entities.png",
+        "sha256": "b43db6d69150452357192f745cdb2803887bc881a45c0bff82e9f4ba6a41b6e0"
+      },
+      {
+        "path": "assets/images/tech/knowledge-graph-context/kg-construction-query-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "fa31cd1e30777c43d22a4691c87820d601fca597b2dec4a00b9155baca9fdf43"
+      },
+      {
+        "path": "assets/images/tech/knowledge-graph-context/kg-construction-query-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "5b0e654a48fef257d8c989251680b830199e0caf7e2ba60acd58f5bfd0d291cb"
+      }
+    ]
+  }
+}

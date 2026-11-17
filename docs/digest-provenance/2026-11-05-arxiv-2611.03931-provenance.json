@@ -1,0 +1,434 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-05-arxiv-2611.03931",
+  "paper_id": "arxiv-2611.03931",
+  "anchor_id": "paper-arxiv-2611.03931",
+  "digest_date": "2026-11-05",
+  "updated_at_utc": "2026-11-17T02:32:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-05.md",
+    "en_target": "_digest/en/daily-2026-11-05.md",
+    "staged_section_zh": "/root/.gemini/antigravity-cli/brain/c4dd2692-ad0b-48fc-9e5a-191c774e4385/scratch/d2a-sections/2611.03931/section_zh.md",
+    "staged_section_en": "/root/.gemini/antigravity-cli/brain/c4dd2692-ad0b-48fc-9e5a-191c774e4385/scratch/d2a-sections/2611.03931/section_en.md",
+    "staging_note": "Subagent write_file enforces brain/<current_conversation_id>/ path sandboxing; staged bilingual sections reside under c4dd2692-ad0b-48fc-9e5a-191c774e4385/scratch/d2a-sections/2611.03931/ for atomic parent flock splice.",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.03931v1 and its supplementary material.",
+    "adjacent_dependency_isolation": "Self-contained entry #paper-arxiv-2611.03931; daily-2026-11-05.md files left untouched by subagent."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.03931",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "v1 only at verification time (no v2 revision or withdrawal notice on arXiv as of 2026-11-17; PDF header reads Preprint, 22 October 2026, Online).",
+    "title": "Beyond Division of Labor: How Roles Shape Feedback and Recovery in Multi-Agent Systems",
+    "authors": [
+      "Chih-Hsuan Yang",
+      "Xinyang Li",
+      "Rajeev Thakur",
+      "Feng Yan"
+    ],
+    "co_first_authors": [
+      "Chih-Hsuan Yang",
+      "Xinyang Li"
+    ],
+    "corresponding_author": "Chih-Hsuan Yang (bellayang@anl.gov)",
+    "affiliation": "Argonne National Laboratory; University of Houston",
+    "categories": [
+      "cs.MA"
+    ],
+    "submitted_utc": "Mon, 2 Nov 2026 20:35:24 UTC",
+    "submitted_date": "2026-11-02",
+    "pages": "19 pages, including supplementary material",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.03931",
+      "abs_v1": "https://arxiv.org/abs/2611.03931v1",
+      "pdf": "https://arxiv.org/pdf/2611.03931",
+      "html_v1": "https://arxiv.org/html/2611.03931v1",
+      "project_website": "https://chihhsuan-yang.github.io/AAMAS2027-AgentProtocols/",
+      "huggingface_dataset": "https://huggingface.co/datasets/AgentsSci/AAMAS2027-Roles"
+    },
+    "frozen_local_sources": {
+      "page_html": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.03931.html",
+      "page_txt": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.03931.txt",
+      "paper_pdf": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/papers/2611.03931.pdf",
+      "paper_txt": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/papers/2611.03931.txt",
+      "paper_txt_lines": 2547,
+      "sha256_computation_deferred_to_parent": true
+    }
+  },
+  "verified_claims_and_metrics": {
+    "topology_and_budget": {
+      "pipeline": "Planner -> Executor -> Reviewer",
+      "max_cycles_per_trajectory": 6,
+      "cycle_schedule": "3 outer rounds x 2 inner cycles",
+      "decoding": "temperature 0 (greedy) on one pinned vLLM server",
+      "evaluator": "gpt-oss-120b with reference answer in view; returns PASS or FAIL + repair hint"
+    },
+    "actor_models": [
+      "gemma-4-31B-it",
+      "gpt-oss-120b",
+      "Llama-3.3-70B-Instruct"
+    ],
+    "benchmarks": {
+      "Omni-MATH": "1,600 sampled free-response problems (1,600 per cell for gemma-4 and gpt-oss; 400 per cell for Llama-3.3)",
+      "SciBench": "574 text-only free-response problems (gemma-4 and gpt-oss; Llama-3.3 not run)"
+    },
+    "frozen_and_exploratory_scale": {
+      "frozen_snapshot_trajectories": 11600,
+      "frozen_role_messages": 83320,
+      "frozen_gradings": 17486,
+      "post_freeze_rf_trajectories": 4748,
+      "context_restored_se_control_per_actor": 400,
+      "forced_submission_subset": 400
+    },
+    "functional_collapse_table1": {
+      "gemma-4-31B": {
+        "RS": 0.0,
+        "RF_minus": 0.976,
+        "RF": 0.974,
+        "adjudicated_no_division_RS_vs_RF_minus": [
+          0.0,
+          0.857
+        ]
+      },
+      "gpt-oss-120b": {
+        "RS": 0.12,
+        "RF_minus": 0.846,
+        "RF": 0.883,
+        "adjudicated_no_division_RS_vs_RF_minus": [
+          0.0,
+          1.0
+        ]
+      },
+      "Llama-3.3-70B": {
+        "RS": 0.0,
+        "RF_minus": 0.872,
+        "RF": 0.9,
+        "adjudicated_no_division_RS_vs_RF_minus": [
+          0.0,
+          1.0
+        ]
+      }
+    },
+    "first_pass_accuracy_omni_math_table_s2": {
+      "gemma-4-31B-it": {
+        "RS": 0.802,
+        "RF_minus": 0.802,
+        "diff": "+0.0000 [-0.0156, +0.0150]"
+      },
+      "gpt-oss-120b": {
+        "RS": 0.713,
+        "RF_minus": 0.763,
+        "diff": "+0.0503 [+0.0339, +0.0666]"
+      },
+      "Llama-3.3-70B-Instruct": {
+        "RS": 0.308,
+        "RF_minus": 0.316,
+        "diff": "+0.0077 [-0.0283, +0.0437]"
+      }
+    },
+    "main_recovery_and_final_accuracy_table2": {
+      "gemma-4_Omni-MATH_1600": {
+        "recovery_RS_RF_RFminus": [
+          0.222,
+          0.609,
+          0.051
+        ],
+        "paired_both_wrong": {
+          "n": 236,
+          "RS_only": 4,
+          "RF_only": 89,
+          "p": "6.2e-22"
+        },
+        "verdict_matched_RS_RF": [
+          0.165,
+          0.153,
+          "p=0.69"
+        ],
+        "final_accuracy_RS_RF": [
+          0.846,
+          0.921,
+          "p=1.7e-24"
+        ],
+        "submissions_per_failed_traj_RS_RF": [
+          1.27,
+          3.2
+        ],
+        "RS_never_submits": "84/316"
+      },
+      "gpt-oss_Omni-MATH_1600": {
+        "recovery_RS_RF_RFminus": [
+          0.324,
+          0.552,
+          0.247
+        ],
+        "paired_both_wrong": {
+          "n": 319,
+          "RS_only": 17,
+          "RF_only": 101,
+          "p": "1.0e-15"
+        },
+        "verdict_matched_RS_RF": [
+          0.229,
+          0.216,
+          "p=0.72"
+        ],
+        "final_accuracy_RS_RF": [
+          0.803,
+          0.894,
+          "p=2.7e-28"
+        ],
+        "submissions_per_failed_traj_RS_RF": [
+          2.1,
+          3.53
+        ],
+        "RS_never_submits": "51/463"
+      },
+      "Llama-3.3_Omni-MATH_400": {
+        "recovery_RS_RF_RFminus": [
+          0.014,
+          0.147,
+          0.015
+        ],
+        "paired_both_wrong": {
+          "n": 250,
+          "RS_only": 1,
+          "RF_only": 26,
+          "p": "4.2e-7"
+        },
+        "verdict_matched_RS_RF": [
+          0.012,
+          0.008,
+          "p=1.0"
+        ],
+        "final_accuracy_RS_RF": [
+          0.315,
+          0.415,
+          "p=1.6e-7"
+        ],
+        "submissions_per_failed_traj_RS_RF": [
+          0.32,
+          2.71
+        ],
+        "RS_never_submits": "205/276"
+      },
+      "gemma-4_SciBench_574": {
+        "recovery_RS_RF_RFminus": [
+          0.254,
+          0.419,
+          0.051
+        ],
+        "paired_both_wrong": {
+          "n": 100,
+          "RS_only": 7,
+          "RF_only": 21,
+          "p": "0.013"
+        },
+        "verdict_matched_RS_RF": [
+          0.23,
+          0.19,
+          "p=0.48"
+        ],
+        "final_accuracy_RS_RF": [
+          0.847,
+          0.88,
+          "p=0.0054"
+        ],
+        "submissions_per_failed_traj_RS_RF": [
+          1.95,
+          3.62
+        ],
+        "RS_never_submits": "3/118"
+      },
+      "gpt-oss_SciBench_574": {
+        "recovery_RS_RF_RFminus": [
+          0.315,
+          0.483,
+          0.231
+        ],
+        "paired_both_wrong": {
+          "n": 93,
+          "RS_only": 7,
+          "RF_only": 18,
+          "p": "0.043"
+        },
+        "verdict_matched_RS_RF": [
+          0.215,
+          0.247,
+          "p=0.68"
+        ],
+        "final_accuracy_RS_RF": [
+          0.852,
+          0.892,
+          "p=1.9e-4"
+        ],
+        "submissions_per_failed_traj_RS_RF": [
+          2.68,
+          3.95
+        ],
+        "RS_never_submits": "1/124"
+      }
+    },
+    "pooled_verdict_matched_table_s5": {
+      "n_paired": 998,
+      "pre_registered_diff_RS_minus_RF": "+0.009 [-0.014, +0.033]",
+      "recoded_scoring_defect_RS_minus_RF": "+0.029 [+0.004, +0.054]",
+      "two_or_more_verdicts_n491_pre_reg": "+0.018 [-0.029, +0.065]",
+      "two_or_more_verdicts_n491_recoded": "+0.026 [-0.020, +0.073]"
+    },
+    "forced_submission_400_gemma4_table_s6": {
+      "RS_frozen_subset": {
+        "first_pass": 0.795,
+        "recovery": "12/82 = 0.146",
+        "final_accuracy": 0.825,
+        "verdicts": 1.41,
+        "approvals": 1.15
+      },
+      "RS_post_freeze_rerun": {
+        "first_pass": 0.773,
+        "recovery": "18/91 = 0.198",
+        "final_accuracy": 0.818,
+        "verdicts": 1.44,
+        "approvals": 1.13
+      },
+      "RS_every_cycle_submitted": {
+        "first_pass": 0.768,
+        "recovery": "57/93 = 0.613",
+        "final_accuracy": 0.91,
+        "verdicts": 4.2,
+        "approvals": 0.98
+      },
+      "RF_with_feedback": {
+        "first_pass": 0.795,
+        "recovery": "45/82 = 0.549",
+        "final_accuracy": 0.908,
+        "verdicts": 3.34,
+        "approvals": 3.34
+      },
+      "paired_forced_vs_rerun": {
+        "n": 72,
+        "recovery_split": "26 / 2",
+        "p_recovery": "3.0e-6",
+        "final_split": "42 / 5",
+        "p_final": "2.5e-8"
+      },
+      "paired_forced_vs_RF": {
+        "n": 70,
+        "recovery_split": "7 / 7",
+        "p_recovery": "1",
+        "final_split": "8 / 7",
+        "p_final": "1"
+      }
+    },
+    "structural_enforcement_table_s8_s9": {
+      "gemma-4-31B-it": {
+        "planner_answer": 0.0,
+        "attrition": "8.0%",
+        "recovery_SE_vs_RS": [
+          0.314,
+          0.222
+        ],
+        "pre_reg_delta": "-0.0225 [-0.0387, -0.0063]",
+        "as_graded_delta": "+0.0190 [+0.0054, +0.0333]"
+      },
+      "gpt-oss-120b": {
+        "planner_answer": 0.0,
+        "attrition": "9.9%",
+        "recovery_SE_vs_RS": [
+          0.395,
+          0.324
+        ],
+        "pre_reg_delta": "-0.0050 [-0.0219, +0.0112]",
+        "as_graded_delta": "+0.0361 [+0.0215, +0.0507]"
+      },
+      "Llama-3.3-70B-Instruct": {
+        "planner_answer": 0.0,
+        "attrition": "17.0%",
+        "recovery_SE_vs_RS": [
+          0.139,
+          0.014
+        ],
+        "pre_reg_delta": "+0.0175 [-0.0200, +0.0550]",
+        "as_graded_delta": "+0.0453 [+0.0030, +0.0876]"
+      },
+      "primary_endpoint_P4": "Null after Holm correction (Holm p = 0.166 to 0.29); only gpt-oss vs gemma-4 (MDE80%=0.0325) is an informative null."
+    }
+  },
+  "explicit_limitations": [
+    "Oracle-gated evaluation: the evaluator holds the gold answer, supplies repair hints on FAIL, and stops on PASS; results govern systems with reliable external feedback rather than intrinsic self-correction or costly/noisy verification.",
+    "Post-freeze exploratory status: both the main RF-with-feedback comparison and the 400-problem forced-submission run (one actor, one domain, single run removing the whole gate) were added after the pre-registration freeze.",
+    "Pre-registered endpoints: P4 (actor x enforcement interaction) returned null after Holm correction with uninformative power on Llama-3.3 contrasts; P1a failed as written and was re-scoped to answer authorship.",
+    "Logging & scoring defects disclosed: 75.7% of gpt-oss RF messages lost hidden reasoning in logs; automated runner graded last submitted answer while recording last held answer (17% disagreement on gemma-4 Omni-MATH RS failed runs, shifting verdict-matched RS-RF from +0.009 to +0.029 [+0.004, +0.054]).",
+    "Evaluator overlap & domain scope: gpt-oss-120b served as both one of the three studied actors and the universal evaluator; benchmarks are restricted to text-only mathematical and scientific reasoning."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "new_svgs": {
+      "roles-feedback-gate-mechanism-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/roles-feedback-gate-mechanism-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/roles-feedback-gate-mechanism-zh.svg",
+        "sha256": "0b4646ffded8918d4ae19ebdcc977857e204e036f31eeb27004361fb8d6e4885",
+        "bytes": 13278
+      },
+      "roles-feedback-gate-mechanism-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/roles-feedback-gate-mechanism-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/roles-feedback-gate-mechanism-en.svg",
+        "sha256": "9d8842f4844d8c29a9bc78b23f05fc2af2d02af33ad0c426a44ad394177e6c51",
+        "bytes": 13116
+      },
+      "roles-recovery-intervention-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/roles-recovery-intervention-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/roles-recovery-intervention-zh.svg",
+        "sha256": "e92efd3d41e0cead9426bec81768d9b815967d28512a756660315956e809c10d",
+        "bytes": 15816
+      },
+      "roles-recovery-intervention-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/roles-recovery-intervention-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/roles-recovery-intervention-en.svg",
+        "sha256": "67c1ac46d1db1570c1cf1b99064f696828b58b7bde8ac1a8e67787f02bc5bd92",
+        "bytes": 15497
+      }
+    },
+    "preserved_preexisting_pngs_observed": [
+      "warpline.png",
+      "badc.png",
+      "leansparse-architecture.png",
+      "insight-hpc.png",
+      "raglog.png",
+      "signals.png",
+      "instrument-errors.png"
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-05.md",
+      "file_bytes_before": 46498,
+      "file_sha256_before": "a57afb9010f0516ba9d15d89c96ef1b07029938279a9d9c03e5902f04f3b8762",
+      "file_bytes_after": 258981,
+      "file_sha256_after": "0c569250568c0975f5704c11bbdfcfff48ddadc7366026be70dc954ece1ce395",
+      "old_section_bytes": 791,
+      "old_section_sha256": "92c13f908740e20f5e5daa1bf2545d6f924fb861991d777c4391f123d64b7056",
+      "new_section_bytes": 22455,
+      "new_section_sha256": "8c323b252829e551720f43b818188ae838559e3f12d1f3f0da2ade1205c22d0e"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-05.md",
+      "file_bytes_before": 49237,
+      "file_sha256_before": "d5c507de897b4e0644651175c569f11bfe5df1cfa94b53b4227ec9422a1d0e06",
+      "file_bytes_after": 247387,
+      "file_sha256_after": "00dc837b0349415fa884dbc628828870d27be980bb81f30127ddd5602addd7a0",
+      "old_section_bytes": 924,
+      "old_section_sha256": "8b13aff1f6a6708639556c0232ce3a034f5e8472ffdb5de36845daabc059caed",
+      "new_section_bytes": 20736,
+      "new_section_sha256": "243ac13579b1d0bc1006f97bca981b351f365451b78fc568197f79ffee210df8"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:08:32.604936+00:00",
+    "preview_release": "20261117-110758-45bc53b9",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

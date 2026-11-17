@@ -1,0 +1,123 @@
+{
+  "review_code": "D1-01",
+  "paper_id": "arxiv-2611.09218",
+  "anchor": "#paper-arxiv-2611.09218",
+  "digest_date": "2026-11-10",
+  "updated_at": "2026-11-15T20:10:00+08:00",
+  "source_title": "BOXBOX: Recursive Harness Self-Improvement for Long-Running Performance Optimization",
+  "source_authors": [
+    "Yuhao Tan",
+    "Hanyun Jiang",
+    "Fangkai Yang",
+    "Yuan Yao",
+    "Taolue Chen",
+    "Bo Qiao",
+    "Yu Kang",
+    "Lu Wang",
+    "Pu Zhao",
+    "Xiaoxing Ma",
+    "Qingwei Lin"
+  ],
+  "source_url_v1_abs": "https://arxiv.org/abs/2611.09218v1",
+  "source_url_v1_pdf": "https://arxiv.org/pdf/2611.09218v1",
+  "source_url_v2_abs": "https://arxiv.org/abs/2611.09218v2",
+  "v1_submitted_utc": "2026-11-06T09:36:00Z",
+  "v2_withdrawn_utc": "2026-11-09T08:31:43Z",
+  "v2_withdrawal_comment": "We are withdrawing this submission temporarily to add a clarification regarding the use of Claude Code, in accordance with our company’s compliance requirements.",
+  "authoring_source": "assistant",
+  "english_translation": "assistant-authored paired Chinese/English digest section rewrite; not supplied by user",
+  "primary_artifacts": {
+    "downloaded_v1_pdf": {
+      "stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d1-01-stage/2611.09218v1.pdf",
+      "sha256": "e4faf7f5b5b7a36136597c0eff55917b67ca0e0b96c16e999a731b4a5ef72b51",
+      "pages": 47
+    },
+    "downloaded_v1_abs_html": {
+      "stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d1-01-stage/abs_v1.html",
+      "sha256": "afbbde26547125086ffab09b67343a0efe0f75e655df2ea33769d5d9ffd46287"
+    },
+    "downloaded_v2_abs_html": {
+      "stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d1-01-stage/abs_v2.html",
+      "sha256": "d13f31db0a58cf471cde61f93b00679462f0c2d72e83c0c31e1f4b81bff5bcf6"
+    },
+    "frozen_paper_pdf": {
+      "path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/fetched/arxiv-2611.09218/paper.pdf",
+      "sha256": "e4faf7f5b5b7a36136597c0eff55917b67ca0e0b96c16e999a731b4a5ef72b51"
+    },
+    "frozen_paper_txt": {
+      "path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/fetched/arxiv-2611.09218/paper.txt",
+      "sha256": "12a277ae174457bf18efc19b4ab2ce8aac85704809a1de5c3771052237cac9b1"
+    },
+    "frozen_page_html": {
+      "path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/fetched/arxiv-2611.09218/page.html",
+      "sha256": "5a9090e68cc802aae7f72ad2f6865fc9c762902db7c3d588fe47d7200753d200"
+    },
+    "frozen_page_txt": {
+      "path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/fetched/arxiv-2611.09218/page.txt",
+      "sha256": "ef9722b94d849c7466d5a70e009ecc1130b18eb39e89a4b9419d0a1662b238a6"
+    },
+    "frozen_run_provenance": {
+      "path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/provenance.json",
+      "sha256": "230ddb5a43600832e935003ccfe1b7afead5783ab1940a777dc8f5afc6c68b7d"
+    },
+    "frozen_run_report": {
+      "path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/report.json",
+      "sha256": "2e5b19025eaae517a119efe6fae8f5e0058fac45c141245990f6384e3168a65a"
+    }
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_digest/zh/daily-2026-11-10.md",
+      "sha256_before": "8f4cb095a5925bc019d3294e92bf6ba24d5fbdc2c4cedc6600bd04c17f8dd176",
+      "sha256_after": "55924385db55619eb657291bedd36e80457aa15e34da3a2eda2487d06f6483ee",
+      "prefix_sha256_unchanged": "2154959a860db4a234cbb801292c0ba7d843cb71fe21956ffc00f6680d3bdc06",
+      "suffix_sha256_unchanged": "5dc3b6f1023b50e39eee5700c9935ab5d29c9894803702ee4074cc424f0d5503",
+      "old_section_bytes": 3941,
+      "new_section_bytes": 15545
+    },
+    "en_markdown": {
+      "path": "_digest/en/daily-2026-11-10.md",
+      "sha256_before": "56e4fd11a17367be934e443b9001f7984505530f2eb3d30054674f91d2c39c78",
+      "sha256_after": "669bf325e2dc0a0843ab64d1caed41f895d2ffbbcc1133d445b9a4c4f14cd1b3",
+      "prefix_sha256_unchanged": "38cd7c884b5725e3806583083ea9227ead5261b026f95776b88c2c125a6c1825",
+      "suffix_sha256_unchanged": "598107a0bf20e88f81f5e76d7d00970f9a7c37ed24f06381688a7221d262b093",
+      "old_section_bytes": 4230,
+      "new_section_bytes": 15212
+    },
+    "preserved_existing_image": {
+      "path": "assets/images/digest/2026-11-10/boxbox.png",
+      "status": "kept_untouched_on_disk_not_referenced_in_rewritten_section",
+      "sha256": "c1adf7e914b6cb34a98b336cd0e084c4011edc5d0144b6d5aa50562a59f1df62"
+    },
+    "images": [
+      {
+        "path": "assets/images/digest/2026-11-10/boxbox-runtime-kernel-zh.svg",
+        "lang": "zh",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-arxiv-2611.09218v1-pdf",
+        "sha256": "9b4d7c1a3034823244783cc29ad5a02937324e0d00f6fe74a972d07ca7d7412f"
+      },
+      {
+        "path": "assets/images/digest/2026-11-10/boxbox-runtime-kernel-en.svg",
+        "lang": "en",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-arxiv-2611.09218v1-pdf",
+        "sha256": "afd3b1d1a2835a247c6d8c92dcbe617dfb0546aa8db88a11988f86b53588ba64"
+      },
+      {
+        "path": "assets/images/digest/2026-11-10/perfrace-harness-comparison-zh.svg",
+        "lang": "zh",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-arxiv-2611.09218v1-pdf",
+        "sha256": "de72057db239d1b4442fcca5336ef239a8cad620f861d553ddfcdf23acf2fe79"
+      },
+      {
+        "path": "assets/images/digest/2026-11-10/perfrace-harness-comparison-en.svg",
+        "lang": "en",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-arxiv-2611.09218v1-pdf",
+        "sha256": "8712e6141af832d36292c98cd153244d93f0c655955f5c2c68530aeeb01398a8"
+      }
+    ]
+  }
+}

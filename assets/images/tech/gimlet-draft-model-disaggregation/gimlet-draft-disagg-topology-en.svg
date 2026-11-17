@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif;">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="34" font-size="18" font-weight="700" fill="#0f172a">Disaggregating the Drafter: Hardware Asymmetry &amp; Topology Evolution</text>
+  <text x="24" y="53" font-size="11" fill="#475569">Based on Gimlet Labs (2026-11-10): keep compute-heavy draft prefill on GPUs; offload weight-bandwidth-bound draft decode to fast accelerators</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Row: Hardware Roofline Asymmetry -->
+  <rect x="24" y="72" width="448" height="102" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="36" y="81" width="154" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="113" y="95" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">GPU · Compute &amp; Capacity</text>
+  <text x="200" y="95" font-size="11" font-weight="700" fill="#1e3a8a">Excels at Parallelism (Target + Prefill)</text>
+  <text x="36" y="121" font-size="10.2" fill="#1e293b">• Prefill computes tokens in parallel and saturates GPU compute</text>
+  <text x="36" y="140" font-size="10.2" fill="#1e293b">• Target verify max(40, 2.5×(D+1)) ms: memory-bound for D ≤ 15</text>
+  <text x="36" y="159" font-size="9.8" fill="#475569">• Small-batch decode stalls on weight reads (Wang et al. roofline)</text>
+
+  <rect x="488" y="72" width="448" height="102" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.1"/>
+  <rect x="500" y="81" width="176" height="20" rx="5" fill="#0369a1"/>
+  <text x="588" y="95" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">Fast Accelerator (e.g. SRAM)</text>
+  <text x="686" y="95" font-size="11" font-weight="700" fill="#0c4a6e">Fast Decode · Uneven Prefill</text>
+  <text x="500" y="121" font-size="10.2" fill="#0f172a">• High weight bandwidth speeds draft decode (modeled 8 → 1.5 ms)</text>
+  <text x="500" y="140" font-size="10.2" fill="#0f172a">• Smaller chip capacity needs more chips → 5× decode energy (30→150 mJ)</text>
+  <text x="500" y="159" font-size="9.8" fill="#0369a1">• Field deployments showed wide draft-prefill latency &amp; energy spread</text>
+
+  <!-- Middle Row: 3 Topology Columns -->
+  <!-- Column 1: All-GPU Baseline -->
+  <rect x="24" y="186" width="278" height="236" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="186" width="278" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="206" width="278" height="10" fill="#dbeafe"/>
+  <text x="36" y="205" font-size="11.5" font-weight="700" fill="#1e3a8a">Topology A: All-GPU Baseline</text>
+
+  <rect x="36" y="226" width="254" height="72" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="46" y="245" font-size="10.8" font-weight="700" fill="#1d4ed8">GPU Runs All 4 Model Phases</text>
+  <text x="46" y="265" font-size="9.8" fill="#334155">• Target Prefill: 150 ms · 250,000 mJ</text>
+  <text x="46" y="284" font-size="9.8" fill="#334155">• Draft Prefill: 20 ms · 20,000 mJ</text>
+
+  <rect x="36" y="306" width="254" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="46" y="325" font-size="10.5" font-weight="700" fill="#0f172a">Weight-Bandwidth Bottleneck</text>
+  <text x="46" y="344" font-size="9.8" fill="#334155">• Draft Decode: 8 ms/tok · 30 mJ/tok</text>
+  <text x="46" y="362" font-size="9.8" fill="#334155">• Target Verify: 40 ms floor (D ≤ 15)</text>
+
+  <rect x="36" y="382" width="254" height="30" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="163" y="401" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">Peak ~61 tok/s (D*=8) · Top tok/kW</text>
+
+  <line x1="303" y1="304" x2="316" y2="304" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- Column 2: Full Drafter on Accelerator -->
+  <rect x="319" y="186" width="286" height="236" rx="8" fill="#ffffff" stroke="#f59e0b" stroke-width="1.2"/>
+  <rect x="319" y="186" width="286" height="30" rx="8" fill="#fef3c7"/>
+  <rect x="319" y="206" width="286" height="10" fill="#fef3c7"/>
+  <text x="331" y="205" font-size="11.5" font-weight="700" fill="#92400e">Topology B: Full Drafter on Accel.</text>
+
+  <rect x="331" y="226" width="262" height="72" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="341" y="245" font-size="10.8" font-weight="700" fill="#1d4ed8">Target on GPU · Full Draft Offloaded</text>
+  <text x="341" y="265" font-size="9.8" fill="#334155">• GPU keeps Target Prefill &amp; Verify</text>
+  <text x="341" y="284" font-size="9.8" fill="#334155">• Accel runs Draft Prefill + Decode (1.5 ms)</text>
+
+  <rect x="331" y="306" width="262" height="66" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+  <text x="341" y="325" font-size="10.5" font-weight="700" fill="#b91c1c">Two Field Prefill Discrepancies</text>
+  <text x="341" y="344" font-size="9.8" fill="#7f1d1d">• Case A Slow prefill: 150 ms raises TTFT</text>
+  <text x="341" y="362" font-size="9.8" fill="#7f1d1d">• Case B Costly prefill: 100 J cuts tok/kW</text>
+
+  <rect x="331" y="382" width="262" height="30" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="462" y="401" font-size="10" font-weight="700" fill="#92400e" text-anchor="middle">137 tok/s (D*=15); draft-prefill penalty</text>
+
+  <line x1="606" y1="304" x2="619" y2="304" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- Column 3: Split Drafter (Gimlet Cloud) -->
+  <rect x="622" y="186" width="314" height="236" rx="8" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.6"/>
+  <rect x="622" y="186" width="314" height="30" rx="8" fill="#1d4ed8"/>
+  <rect x="622" y="206" width="314" height="10" fill="#1d4ed8"/>
+  <text x="634" y="205" font-size="11.5" font-weight="700" fill="#ffffff">Topology C: Split Drafter (Gimlet Cloud)</text>
+
+  <rect x="634" y="224" width="290" height="80" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.1"/>
+  <text x="644" y="242" font-size="10.6" font-weight="700" fill="#1e3a8a">GPU Pool: Target Phases + Draft Prefill</text>
+  <text x="644" y="261" font-size="9.6" fill="#1e293b">• Draft Prefill (20 ms) overlaps Target (150 ms)</text>
+  <text x="644" y="279" font-size="9.6" fill="#1e293b">• Target Verify checks proposals &amp; returns accepted</text>
+  <text x="644" y="296" font-size="9.4" fill="#475569">• Keeps GPU prefill tuned while decoupling kernel teams</text>
+
+  <line x1="664" y1="304" x2="664" y2="326" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+  <text x="674" y="319" font-size="9.2" font-weight="600" fill="#1d4ed8">Draft KV transfer (mostly overlapped)</text>
+
+  <rect x="634" y="328" width="290" height="46" rx="6" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1.1"/>
+  <text x="644" y="346" font-size="10.6" font-weight="700" fill="#5b21b6">Accelerator: Dedicated Draft Decode (1.5 ms/tok)</text>
+  <text x="644" y="364" font-size="9.5" fill="#4c1d95">Focus on decode kernels; move prefill back if faster</text>
+
+  <rect x="634" y="382" width="290" height="30" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+  <text x="779" y="401" font-size="10" font-weight="700" fill="#166534" text-anchor="middle">Keeps 137 tok/s; restores TTFT &amp; tok/kW</text>
+
+  <!-- Bottom Row: Out-of-Model System Costs & Extensions -->
+  <rect x="24" y="432" width="912" height="68" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="36" y="441" width="154" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="113" y="455" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">Out-of-Model Boundaries</text>
+  <text x="200" y="455" font-size="10.6" font-weight="700" fill="#0f172a">Model assumes zero KV transfer cost, fixed batching &amp; fractional chips—check 3 real constraints:</text>
+  <text x="36" y="476" font-size="9.8" fill="#334155">① Unoverlapped KV transfer tail (up to ~10% of prefill latency) adds TTFT (~1 J, 0.4% of 250 J target prefill); ② Integer chip rounding hits small clusters;</text>
+  <text x="36" y="493" font-size="9.8" fill="#475569">③ SpecInfer trees gain path breadth/depth; DSpark must ship hidden states between target and draft, imposing tighter interconnect constraints.</text>
+
+  <text x="24" y="520" font-size="10" fill="#64748b">Assistant diagram (not an original figure) · Topology &amp; model limits from Gimlet Labs "Disaggregating the Disaggregated Model" (2026-11-10)</text>
+</svg>

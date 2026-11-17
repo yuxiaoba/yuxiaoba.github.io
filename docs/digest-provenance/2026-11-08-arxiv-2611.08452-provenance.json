@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-08-arxiv-2611.08452",
+  "paper_id": "arxiv-2611.08452",
+  "anchor_id": "paper-arxiv-2611.08452",
+  "digest_date": "2026-11-08",
+  "updated_at_utc": "2026-11-17T06:51:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-08.md",
+    "en_target": "_digest/en/daily-2026-11-08.md",
+    "staged_zh_section": "/root/.gemini/antigravity-cli/brain/b976e6a4-5fca-4786-84f4-ec086ad1b155/scratch/d2c2-sections/2611.08452/section_zh.md",
+    "staged_en_section": "/root/.gemini/antigravity-cli/brain/b976e6a4-5fca-4786-84f4-ec086ad1b155/scratch/d2c2-sections/2611.08452/section_en.md",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.08452v1."
+  },
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice",
+  "verification_status": "VERIFIED",
+  "primary_source": {
+    "arxiv_id": "2611.08452",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "No v2 revision or withdrawal notice present in saved arXiv:2611.08452 abstract HTML or v1 full text.",
+    "title": "ReproBridge: Building Reproducibility into ML Research Artifacts",
+    "authors": [
+      "Yubo Wang",
+      "Rui Meng",
+      "Jaehyun Nam",
+      "Tomas Pfister",
+      "Jinsung Yoon"
+    ],
+    "affiliations": [
+      "University of Waterloo",
+      "Google"
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "submitted_utc": "Thu, 5 Nov 2026 18:45:36 UTC",
+    "submitted_date": "2026-11-05",
+    "pdf_header_date": "2026-11-06",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.08452",
+      "abs_v1": "https://arxiv.org/abs/2611.08452v1",
+      "pdf": "https://arxiv.org/pdf/2611.08452",
+      "html_v1": "https://arxiv.org/html/2611.08452v1",
+      "project_page": "https://wyyyb.github.io/reprobridge_website/"
+    },
+    "local_staged_sources": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c2-sources/2611.08452.abs.html",
+        "sha256": "f6b73afb8c57b4a2afaf19a814b4d6d564c447d9ec3803bd8a8c79648461fd41",
+        "bytes": 41602
+      },
+      "extracted_text": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c2-sources/2611.08452.txt",
+        "lines": 2532,
+        "sha256": "adf727e0f0217a9b6d2bce37622df63208031e68ba6c95e219615f73831b32aa",
+        "bytes": 171698
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "benchmark_curation_funnel": {
+      "icml_2026_spotlights": 742,
+      "eligible_with_official_code": 241,
+      "random_sample": 50,
+      "excluded_papers": 14,
+      "exclusion_breakdown": {
+        "code_or_artifact_availability": 6,
+        "compute_requirements": 4,
+        "closed_model_api_dependence": 4
+      },
+      "retained_test_papers": 36,
+      "retained_gpu_papers": 28,
+      "retained_cpu_only_papers": 8,
+      "separate_dev_papers": 10
+    },
+    "benchmark_task_distribution": {
+      "total_curated_tasks": 1463,
+      "total_curated_experiments": 502,
+      "cat1_reproduced_stable": 701,
+      "cat2_reproduced_variable": 328,
+      "cat3_numerical_mismatch": 183,
+      "cat4_execution_blocked": 186,
+      "cat5_resource_or_access_limit": 65,
+      "downstream_eval_tasks": 1029,
+      "downstream_eval_experiments": 387,
+      "downstream_full_procedure_tasks": 631,
+      "downstream_eval_only_tasks": 398,
+      "downstream_gpu_tasks": 730,
+      "downstream_cpu_only_tasks": 299,
+      "downstream_lower_is_better": 586,
+      "downstream_higher_is_better": 443,
+      "human_reference_runs_per_task": 5,
+      "one_percent_floor_active_tasks": 197,
+      "zero_target_variable_tasks": 21
+    },
+    "artifact_corpus_stats": {
+      "rra_root_entries": 7,
+      "guide_sections": 12,
+      "change_log_sections": 6,
+      "ambiguity_table_entries_across_36_repos": 932,
+      "launcher_scripts_across_36_repos": 482
+    },
+    "main_eval_3_run_mean_table3": {
+      "Sonnet 4.6": {
+        "raw_success_pct": "72.3±1.1",
+        "rra_success_pct": "91.6±3.4",
+        "gain_pp": 19.3,
+        "raw_tokens_b": "8.48±0.38",
+        "rra_tokens_b": "6.80±0.76",
+        "token_reduction_pct": 19.8,
+        "raw_api_usd": "3165±142",
+        "rra_api_usd": "2512±286",
+        "api_reduction_pct": 20.6
+      },
+      "Sonnet 5": {
+        "raw_success_pct": "76.5±2.8",
+        "rra_success_pct": "93.3±1.4",
+        "gain_pp": 16.8,
+        "raw_tokens_b": "4.98±0.55",
+        "rra_tokens_b": "4.52±0.24",
+        "token_reduction_pct": 9.2,
+        "raw_api_usd": "1726±175",
+        "rra_api_usd": "1317±102",
+        "api_reduction_pct": 23.7
+      },
+      "Opus 5": {
+        "raw_success_pct": "89.2±1.2",
+        "rra_success_pct": "94.7±2.2",
+        "gain_pp": 5.5,
+        "raw_tokens_b": "3.01±0.16",
+        "rra_tokens_b": "2.82±0.29",
+        "token_reduction_pct": 6.3,
+        "raw_api_usd": "3480±165",
+        "rra_api_usd": "2865±312",
+        "api_reduction_pct": 17.7
+      },
+      "Gemini 3.8 Flash": {
+        "raw_success_pct": "67.6±1.9",
+        "rra_success_pct": "90.8±1.1",
+        "gain_pp": 23.2,
+        "raw_tokens_b": "2.24±0.26",
+        "rra_tokens_b": "1.83±0.09",
+        "token_reduction_pct": 18.3,
+        "raw_api_usd": "392±41",
+        "rra_api_usd": "326±16",
+        "api_reduction_pct": 16.8
+      },
+      "cross_model_summary": {
+        "mean_raw_success_pct": 76.4,
+        "mean_rra_success_pct": 92.6,
+        "cross_model_spread_raw_pp": 21.6,
+        "cross_model_spread_rra_pp": 3.9,
+        "mean_api_reduction_pct": 19.7
+      }
+    },
+    "eval1_transitions_and_sensitivity": {
+      "raw_total_passes": 3143,
+      "rra_total_passes": 3820,
+      "recoveries": 813,
+      "recoveries_breakdown": {
+        "numerical_mismatch": 348,
+        "not_run_exec_or_resource_barrier": 210,
+        "audit_invalid_numerical_match": 255
+      },
+      "reversals": 136,
+      "reversals_breakdown": {
+        "numerical_mismatch": 84,
+        "resource_access_limit": 31,
+        "audit_invalid_match": 11,
+        "execution_blocked": 10
+      },
+      "reversals_top4_papers_share_pct": 68.4,
+      "sessions_with_downstream_patches": {
+        "raw": "113/144",
+        "rra": "54/144"
+      },
+      "paper_macro_gain_pp_range": [
+        6.7,
+        20.7
+      ],
+      "stricter_80pct_interval_gain_pp_range": [
+        10.3,
+        39.1
+      ]
+    },
+    "component_ablations_table6": {
+      "model": "Sonnet 5",
+      "papers": 12,
+      "tasks": 287,
+      "raw_code_pct": 73.9,
+      "ordinary_outputs_pct": 81.2,
+      "full_rra_pct": 93.0,
+      "without_refined_codebase_pct": 87.8,
+      "without_environment_setup_pct": 88.5,
+      "without_reproduction_guide_pct": 89.2,
+      "without_experiment_launchers_pct": 89.9
+    },
+    "external_core_bench_hard_table4": {
+      "capsules": 45,
+      "questions": 79,
+      "raw": {
+        "success_pct": 62.2,
+        "usd_per_success": 8.43,
+        "median_min": 33.0
+      },
+      "veritas": {
+        "success_pct": 68.9,
+        "usd_per_success": 6.78,
+        "median_min": 24.5
+      },
+      "rra": {
+        "success_pct": 73.3,
+        "usd_per_success": 4.34,
+        "median_min": 14.4
+      }
+    },
+    "human_audit_validation_table12": {
+      "sampled_papers": 8,
+      "tasks_per_condition": 409,
+      "total_outcomes": 818,
+      "human_invalid_total": 39,
+      "human_invalid_raw": 33,
+      "human_invalid_rra": 6,
+      "human_valid_total": 779,
+      "codex_precision_pct": 88.6,
+      "codex_recall_pct": 79.5,
+      "codex_fp": 4,
+      "codex_fn": 8,
+      "claude_precision_pct": 85.7,
+      "claude_recall_pct": 61.5,
+      "claude_fp": 4,
+      "claude_fn": 15
+    },
+    "construction_api_cost_and_payback": {
+      "total_build_api_usd": 5026,
+      "per_paper_build_api_usd": 139.61,
+      "payback_complete_rounds": {
+        "Sonnet 4.6": 8,
+        "Sonnet 5": 13,
+        "Opus 5": 9
+      }
+    }
+  },
+  "explicit_limitations": [
+    "Results condition on 36 retained ICML 2026 Spotlight papers (after excluding 14 of 50 for missing code/artifacts, >100 H100h compute or multi-node setups, or closed-API reliance) and 1,029/1,463 (70.3%) compatible tasks; 434 tasks failed reference verification (183 mismatch, 186 blocked, 65 resource/access) and do not represent a conference-wide reproduction rate.",
+    "Five human-verified reference observations are a protocol choice rather than a statistical guarantee of complete uncertainty coverage; numerical compatibility does not certify scientific correctness, and RRAs can preserve flawed assumptions or introduce incorrect choices (84 numerical reversals).",
+    "Automated post-hoc Auditors remain imperfect against 818 two-person human labels: Codex misses 8/39 (20.5%) and Claude misses 15/39 (38.5%) confirmed violations (with 4/779 = 0.5% false positives each). Separate static Aligner analysis also recorded 238 paper-code contradiction findings across 669 tasks.",
+    "Reported -19.7% downstream API savings and 8–13 round API break-even cover downstream Reproducer API usage only, excluding $5,026 build API, Auditor API, 8x H100 GPU runtime, 5-person human verification, and ongoing maintenance.",
+    "Ordinary outputs vs. Full RRA compares two separate upstream workflows together rather than isolating file reorganization on identical outputs; component ablations measure losses conditional on remaining components; cross-vendor model comparisons are descriptive due to differing CLI harnesses; and human researcher reuse was not experimentally tested."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "preserved_official_png": {
+      "site_path": "/assets/images/digest/2026-11-08/arxiv-2611.08452.png",
+      "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-08/arxiv-2611.08452.png",
+      "sha256": "bd13e7c2e1554e0d363735a3d15a853bf8acdb19b3341e6042eca163f6ed3eb9",
+      "bytes": 63450
+    },
+    "new_svgs": {
+      "reprobridge-artifact-auditor-workflow-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-08/reprobridge-artifact-auditor-workflow-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-08/reprobridge-artifact-auditor-workflow-zh.svg",
+        "sha256": "86a1cd54eb806abd66e305abfbe928c1ec7e441c0e86c1dd2715079f56000b7e",
+        "bytes": 12147
+      },
+      "reprobridge-artifact-auditor-workflow-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-08/reprobridge-artifact-auditor-workflow-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-08/reprobridge-artifact-auditor-workflow-en.svg",
+        "sha256": "997674dbeec5f806c4cd3090dc0c8e49fe81499d27393e29ad8848bfc5eede2c",
+        "bytes": 11623
+      },
+      "reprobridge-bench-4model-eval-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-08/reprobridge-bench-4model-eval-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-08/reprobridge-bench-4model-eval-zh.svg",
+        "sha256": "9274483974f1b4b66e2998c6abebfb9645d86a5d4a99c4f86f7884c41d3b535c",
+        "bytes": 15206
+      },
+      "reprobridge-bench-4model-eval-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-08/reprobridge-bench-4model-eval-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-08/reprobridge-bench-4model-eval-en.svg",
+        "sha256": "115212b2f20fc1b0c99e57d8e2bed0069042bf5efa74c54c08e447b3edc77922",
+        "bytes": 14808
+      }
+    }
+  },
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-08.md",
+      "file_bytes_before": 21499,
+      "file_sha256_before": "51dbba9cfe7a2ada2d21bcda7943dd9e17ac293bd7598739d74b1a91c2e07557",
+      "file_bytes_after": 46140,
+      "file_sha256_after": "582dfbd4217d57cb818bac5a26f72a2f28edaba40edf6f640f9537310c2277de",
+      "old_section_bytes": 1887,
+      "old_section_sha256": "7440f2f6f350b124c9b498d11ae798ee91a09fce9b7055442d66b4e474ea86a8",
+      "new_section_bytes": 26528,
+      "new_section_sha256": "368be2b5649f9dcdc467f90a46563ea3abdc57a5e7e98cc84a9aa4aba0c40f42"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-08.md",
+      "file_bytes_before": 23771,
+      "file_sha256_before": "1999fb98696245af40d1cfdf1b605be444468c2b24e0c08cba28fab3d8301d91",
+      "file_bytes_after": 47320,
+      "file_sha256_after": "564aaa38b13a3c935e61bf3a110590fdf3d4b7345625061dc2e78e58f6976440",
+      "old_section_bytes": 2156,
+      "old_section_sha256": "dc1574e13d86b13a2b0425900dd469e499723ac34a070d69b8aa42ba8c39608f",
+      "new_section_bytes": 25705,
+      "new_section_sha256": "76d57b81002fe6bfb1bb29eb786d3b8f0982520b31bb5e4f22ca03ef80133548"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T06:56:45.982051+00:00",
+    "preview_release": "20261117-145620-767b2d70",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

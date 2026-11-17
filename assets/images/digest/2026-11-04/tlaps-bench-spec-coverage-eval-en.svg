@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="TLAPS-Bench empirical evaluation: pass@3 success rates and USD cost divergence, per-spec target coverage across 12 systems, failure breakdown, and methodological boundaries" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="32" font-size="16.5" font-weight="700" fill="#0f172a">TLAPS-Bench Evaluation: pass@3 Rates, Cost Divergence &amp; Failure Modes</text>
+  <text x="24" y="50" font-size="10.1" fill="#475569">Based on arXiv:2611.02849v1 (Tables 2–5 &amp; A2–A14): 70 active targets across 12 specs · pass@3 (3 runs) · 60 min / 2M output-token cap</text>
+  <line x1="24" y1="60" x2="936" y2="60" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Panel A: Overall pass@3 and Cost -->
+  <rect x="20" y="68" width="452" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="68" width="452" height="25" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="85" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="93" x2="472" y2="93" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="30" y="84.5" font-size="10.4" font-weight="700" fill="#1e3a8a">A. 12-Config pass@3 Success &amp; Total Spend (Table 3, n=70)</text>
+
+  <line x1="142" y1="100" x2="142" y2="239" stroke="#cbd5e1" stroke-width="0.9"/>
+  <line x1="212" y1="100" x2="212" y2="239" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="3 2"/>
+  <line x1="282" y1="100" x2="282" y2="239" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="3 2"/>
+  <text x="142" y="247" text-anchor="middle" font-size="7.6" fill="#64748b">0%</text>
+  <text x="212" y="247" text-anchor="middle" font-size="7.6" fill="#64748b">25%</text>
+  <text x="282" y="247" text-anchor="middle" font-size="7.6" fill="#64748b">50%</text>
+
+  <text x="136" y="112" text-anchor="end" font-size="8.4" font-weight="700" fill="#1d4ed8">Sol (max)</text>
+  <rect x="142" y="103" width="124.0" height="10.5" rx="2" fill="#1d4ed8"/>
+  <text x="272" y="111.5" font-size="8.1" font-weight="700" fill="#1d4ed8">44.3% (31) · $328.86 · 1,456M in</text>
+
+  <text x="136" y="129" text-anchor="end" font-size="8.4" fill="#334155">Sol (high)</text>
+  <rect x="142" y="120" width="96.0" height="10.5" rx="2" fill="#3b82f6"/>
+  <text x="244" y="128.5" font-size="8.1" fill="#334155">34.3% (24) · $134.75 · 636M in</text>
+
+  <text x="136" y="146" text-anchor="end" font-size="8.4" fill="#334155">Sol (low)</text>
+  <rect x="142" y="137" width="100.0" height="10.5" rx="2" fill="#60a5fa"/>
+  <text x="248" y="145.5" font-size="8.1" fill="#334155">35.7% (25) · $97.75 · 549M in</text>
+
+  <text x="136" y="163" text-anchor="end" font-size="8.4" font-weight="700" fill="#0f172a">Astra (max)</text>
+  <rect x="142" y="154" width="120.1" height="10.5" rx="2" fill="#1e3a8a"/>
+  <text x="268" y="162.5" font-size="8.1" font-weight="600" fill="#0f172a">42.9% (30) · $1,086.44 · 770M in</text>
+
+  <text x="136" y="180" text-anchor="end" font-size="8.4" fill="#334155">Astra (high)</text>
+  <rect x="142" y="171" width="96.0" height="10.5" rx="2" fill="#2563eb"/>
+  <text x="244" y="179.5" font-size="8.1" fill="#334155">34.3% (24) · $486.57 · 353M in</text>
+
+  <text x="136" y="197" text-anchor="end" font-size="8.4" fill="#334155">Astra (low)</text>
+  <rect x="142" y="188" width="96.0" height="10.5" rx="2" fill="#93c5fd"/>
+  <text x="244" y="196.5" font-size="8.1" fill="#334155">34.3% (24) · $373.41 · 273M in</text>
+
+  <text x="136" y="214" text-anchor="end" font-size="8.4" fill="#475569">Terra (max)</text>
+  <rect x="142" y="205" width="59.9" height="10.5" rx="2" fill="#64748b"/>
+  <text x="208" y="213.5" font-size="8.1" fill="#475569">21.4% (15) · $5,602.15 · 56.2M out</text>
+
+  <text x="136" y="231" text-anchor="end" font-size="8.4" fill="#475569">Luna (max)</text>
+  <rect x="142" y="222" width="28.0" height="10.5" rx="2" fill="#94a3b8"/>
+  <text x="176" y="230.5" font-size="8.1" fill="#475569">10.0% (7) · $31.11 · 9.6M out</text>
+
+  <rect x="28" y="252" width="436" height="18" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.8"/>
+  <text x="36" y="264" font-size="8.0" fill="#1e3a8a">Terra/Luna high &amp; low: 0.0% (0/70) · Sol uses ~2× tokens at ~3.3× lower USD than Astra</text>
+
+  <!-- Panel B: Per-Spec Matrix -->
+  <rect x="484" y="68" width="456" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="484" y="68" width="456" height="25" rx="8" fill="#eff6ff"/>
+  <rect x="484" y="85" width="456" height="8" fill="#eff6ff"/>
+  <line x1="484" y1="93" x2="940" y2="93" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="494" y="84.5" font-size="10.4" font-weight="700" fill="#1e3a8a">B. Solved Targets Across 12 Specs (Table A2, max effort)</text>
+
+  <text x="494" y="106.5" font-size="8.2" font-weight="700" fill="#334155">Specification (Targets / Kind)</text>
+  <text x="720" y="106.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">Sol</text>
+  <text x="774" y="106.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1e3a8a">Astra</text>
+  <text x="828" y="106.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#475569">Terra</text>
+  <text x="884" y="106.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#475569">Luna</text>
+  <line x1="494" y1="111" x2="930" y2="111" stroke="#cbd5e1" stroke-width="0.9"/>
+
+  <rect x="494" y="114" width="436" height="12.2" fill="#f8fafc"/>
+  <text x="498" y="123" font-size="8.1" fill="#0f172a">FLASH coherence (15: 7S+8L)</text>
+  <text x="720" y="123" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">15/15</text>
+  <text x="774" y="123" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">15/15</text>
+  <text x="828" y="123" text-anchor="middle" font-size="8.1" fill="#334155">11/15</text>
+  <text x="884" y="123" text-anchor="middle" font-size="8.1" fill="#334155">4/15</text>
+
+  <text x="498" y="135.6" font-size="8.1" fill="#0f172a">OpenAddressing (5 S)</text>
+  <text x="720" y="135.6" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">5/5</text>
+  <text x="774" y="135.6" text-anchor="middle" font-size="8.1" fill="#334155">2/5</text>
+  <text x="828" y="135.6" text-anchor="middle" font-size="8.1" fill="#334155">2/5</text>
+  <text x="884" y="135.6" text-anchor="middle" font-size="8.1" fill="#334155">2/5</text>
+
+  <rect x="494" y="139.2" width="436" height="12.2" fill="#f8fafc"/>
+  <text x="498" y="148.2" font-size="8.1" fill="#0f172a">PirateShip consensus (11 S)</text>
+  <text x="720" y="148.2" text-anchor="middle" font-size="8.1" fill="#334155">5/11</text>
+  <text x="774" y="148.2" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">6/11</text>
+  <text x="828" y="148.2" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/11</text>
+  <text x="884" y="148.2" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/11</text>
+
+  <text x="498" y="160.8" font-size="8.1" fill="#0f172a">etcd Raft system (8 S)</text>
+  <text x="720" y="160.8" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">3/8</text>
+  <text x="774" y="160.8" text-anchor="middle" font-size="8.1" fill="#334155">1/8</text>
+  <text x="828" y="160.8" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/8</text>
+  <text x="884" y="160.8" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/8</text>
+
+  <rect x="494" y="164.4" width="436" height="12.2" fill="#f8fafc"/>
+  <text x="498" y="173.4" font-size="8.1" fill="#0f172a">CCF Raft (2 S)</text>
+  <text x="720" y="173.4" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">1/2</text>
+  <text x="774" y="173.4" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">1/2</text>
+  <text x="828" y="173.4" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/2</text>
+  <text x="884" y="173.4" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/2</text>
+
+  <text x="498" y="186.0" font-size="8.1" fill="#0f172a">HashiCorp Raft (6 S)</text>
+  <text x="720" y="186.0" text-anchor="middle" font-size="8.1" fill="#334155">1/6</text>
+  <text x="774" y="186.0" text-anchor="middle" font-size="8.1" fill="#334155">1/6</text>
+  <text x="828" y="186.0" text-anchor="middle" font-size="8.1" fill="#334155">1/6</text>
+  <text x="884" y="186.0" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/6</text>
+
+  <rect x="494" y="189.6" width="436" height="12.2" fill="#f8fafc"/>
+  <text x="498" y="198.6" font-size="8.1" fill="#0f172a">Ivy TLB (2: 1S+1L, safety only)</text>
+  <text x="720" y="198.6" text-anchor="middle" font-size="8.1" fill="#334155">1/2</text>
+  <text x="774" y="198.6" text-anchor="middle" font-size="8.1" fill="#334155">1/2</text>
+  <text x="828" y="198.6" text-anchor="middle" font-size="8.1" fill="#334155">1/2</text>
+  <text x="884" y="198.6" text-anchor="middle" font-size="8.1" fill="#334155">1/2</text>
+
+  <text x="498" y="211.2" font-size="8.1" fill="#0f172a">ZooKeeper implementation (9 S)</text>
+  <text x="720" y="211.2" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/9</text>
+  <text x="774" y="211.2" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">2/9</text>
+  <text x="828" y="211.2" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/9</text>
+  <text x="884" y="211.2" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/9</text>
+
+  <rect x="494" y="214.8" width="436" height="12.2" fill="#f8fafc"/>
+  <text x="498" y="223.8" font-size="8.1" fill="#0f172a">ZooKeeper protocol Zab (9 S)</text>
+  <text x="720" y="223.8" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/9</text>
+  <text x="774" y="223.8" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">1/9</text>
+  <text x="828" y="223.8" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/9</text>
+  <text x="884" y="223.8" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/9</text>
+
+  <text x="498" y="236.4" font-size="8.1" fill="#64748b">Cahill SSI (1 S)</text>
+  <text x="720" y="236.4" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="774" y="236.4" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="828" y="236.4" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="884" y="236.4" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+
+  <rect x="494" y="240.0" width="436" height="12.2" fill="#f8fafc"/>
+  <text x="498" y="249.0" font-size="8.1" fill="#64748b">MongoDB transactions (1 S)</text>
+  <text x="720" y="249.0" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="774" y="249.0" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="828" y="249.0" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="884" y="249.0" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+
+  <text x="498" y="261.6" font-size="8.1" fill="#64748b">Wildfire refinement (1 R)</text>
+  <text x="720" y="261.6" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="774" y="261.6" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="828" y="261.6" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="884" y="261.6" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+
+  <!-- Panel C: Failure Breakdown & Effort Table -->
+  <rect x="20" y="284" width="452" height="212" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="284" width="452" height="25" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="301" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="309" x2="472" y2="309" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="30" y="300.5" font-size="10.4" font-weight="700" fill="#1e3a8a">C. Failure Taxonomy (Table 5) &amp; Effort Effect (Table 4)</text>
+
+  <rect x="30" y="315" width="432" height="101" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="38" y="328" font-size="8.7" font-weight="700" fill="#0f172a">Failed Proof Attempts Across 3 Runs (pass@3, Table 5)</text>
+
+  <text x="198" y="343" text-anchor="end" font-size="7.9" font-weight="700" fill="#0f172a">Incomplete proofs (missing inv/link)</text>
+  <rect x="204" y="335.5" width="206.0" height="8.5" rx="2" fill="#1d4ed8"/>
+  <text x="415" y="343" font-size="8.0" font-weight="700" fill="#1d4ed8">1,455</text>
+
+  <text x="198" y="356" text-anchor="end" font-size="7.9" font-weight="600" fill="#334155">Undecomposed backend calls</text>
+  <rect x="204" y="348.5" width="76.0" height="8.5" rx="2" fill="#3b82f6"/>
+  <text x="285" y="356" font-size="8.0" font-weight="600" fill="#334155">537</text>
+
+  <text x="198" y="369" text-anchor="end" font-size="7.9" fill="#475569">SANY syntax/semantic errors</text>
+  <rect x="204" y="361.5" width="5.5" height="8.5" rx="1.5" fill="#94a3b8"/>
+  <text x="214" y="369" font-size="8.0" fill="#475569">31</text>
+
+  <text x="198" y="382" text-anchor="end" font-size="7.9" fill="#475569">Verification timeout (60 min)</text>
+  <rect x="204" y="374.5" width="4.0" height="8.5" rx="1.5" fill="#94a3b8"/>
+  <text x="213" y="382" font-size="8.0" fill="#475569">21</text>
+
+  <text x="198" y="395" text-anchor="end" font-size="7.9" fill="#475569">Task preservation violations</text>
+  <rect x="204" y="387.5" width="3.0" height="8.5" rx="1.5" fill="#f59e0b"/>
+  <text x="212" y="395" font-size="8.0" fill="#475569">15</text>
+
+  <text x="198" y="408" text-anchor="end" font-size="7.9" fill="#475569">Incorrect counterexample claims</text>
+  <rect x="204" y="400.5" width="2.2" height="8.5" rx="1.5" fill="#f59e0b"/>
+  <text x="211" y="408" font-size="8.0" fill="#475569">9</text>
+
+  <rect x="30" y="422" width="432" height="66" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="38" y="435" font-size="8.7" font-weight="700" fill="#1e3a8a">GPT-6.1 Sol Cost vs. Reasoning Effort (Table 4 · 3-run total)</text>
+  <text x="38" y="454" font-size="8.0" fill="#0f172a">• FLASH (15/15): low $36.96 (1,400 req) → high $24.92 (691) → max $37.27 (788)</text>
+  <text x="38" y="472" font-size="8.0" fill="#334155">• Cahill SSI (0/1): low $0.81 (72 req) → high $4.32 (196) → max $8.01 (277 req)</text>
+
+  <!-- Panel D: Methodological Boundaries -->
+  <rect x="484" y="284" width="456" height="212" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="484" y="284" width="456" height="25" rx="8" fill="#eff6ff"/>
+  <rect x="484" y="301" width="456" height="8" fill="#eff6ff"/>
+  <line x1="484" y1="309" x2="940" y2="309" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="494" y="300.5" font-size="10.4" font-weight="700" fill="#1e3a8a">D. Scope Boundaries, Unsolved Gaps &amp; Key Lessons</text>
+
+  <rect x="494" y="316" width="436" height="39" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="501" y="325" width="96" height="20" rx="4" fill="#dbeafe"/>
+  <text x="549" y="338.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">70 vs. 265 Scope</text>
+  <text x="605" y="332" font-size="8.1" fill="#0f172a">44.3% (31/70) is pass@3 on 70 active targets, not single-run</text>
+  <text x="605" y="346" font-size="8.1" fill="#475569">success on all 265; 195 easier targets are retired (Table A1).</text>
+
+  <rect x="494" y="361" width="436" height="39" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="501" y="370" width="96" height="20" rx="4" fill="#dbeafe"/>
+  <text x="549" y="383.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">Spec vs. Impl</text>
+  <text x="605" y="377" font-size="8.1" fill="#0f172a">Proving Spec ⇒ P does not verify production Go/Rust/C++ code;</text>
+  <text x="605" y="391" font-size="8.1" fill="#475569">curation uncovered 46 source spec/theorem issues (35 fixed).</text>
+
+  <rect x="494" y="406" width="436" height="39" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="501" y="415" width="96" height="20" rx="4" fill="#dbeafe"/>
+  <text x="549" y="428.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">Four 0% Walls</text>
+  <text x="605" y="422" font-size="8.1" fill="#0f172a">Cahill SSI, MongoDB, Wildfire refinement, and Ivy NonStarvation</text>
+  <text x="605" y="436" font-size="8.1" fill="#475569">fail 0% across all 12 configs (ordered histories &amp; fairness loops).</text>
+
+  <rect x="494" y="451" width="436" height="39" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="501" y="460" width="96" height="20" rx="4" fill="#dbeafe"/>
+  <text x="549" y="473.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">Abstraction Wins</text>
+  <text x="605" y="467" font-size="8.1" fill="#0f172a">On ZooKeeper, Astra's claim abstraction solves 3 targets while</text>
+  <text x="605" y="481" font-size="8.1" fill="#475569">Terra hits 2M cap at ~13k LOC; eval covers Codex GPTs only.</text>
+
+  <!-- Footer -->
+  <text x="20" y="512" font-size="8.4" fill="#475569">Table 1 supplement: TILAPIA also proved previously unproved targets on OSWALD/SlateDB/Walgit WAL, DiskStateQueue, Disruptor &amp; BufferedRandomAccessFile.</text>
+  <text x="20" y="527" font-size="8.4" fill="#64748b">Hardware: Ubuntu 24.04.3 VM (96-vCPU AMD EPYC 9V74, 378 GiB DRAM), 8 vCPUs/Docker container; S/L/R = Safety (60), Liveness (9), Refinement (1).</text>
+</svg>

@@ -1,0 +1,307 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-05-arxiv-2611.04449",
+  "paper_id": "arxiv-2611.04449",
+  "anchor_id": "paper-arxiv-2611.04449",
+  "digest_date": "2026-11-05",
+  "updated_at_utc": "2026-11-17T03:03:00Z",
+  "assistant_translated": true,
+  "verification_status": "VERIFIED",
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-05.md",
+    "en_target": "_digest/en/daily-2026-11-05.md",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/3775da37-7cfc-4e9a-8084-65d4a847b0fe/scratch/d2a-sections/2611.04449/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/3775da37-7cfc-4e9a-8084-65d4a847b0fe/scratch/d2a-sections/2611.04449/section_en.md",
+    "note": "Written to subagent scratch brain directory due to harness brain-directory isolation (parent will splice atomically under flock and compute final SHA-256 digests).",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.04449v1 (16-page PDF and frozen arXiv metadata HTML)."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.04449",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "v1 only in the frozen 2026-11-05 primary snapshot (16 pages, 6 figures); no v2 revision or withdrawal notice present on frozen HTML.",
+    "title": "Near-Zero Token Embeddings Silently Stall Training in Gated Sequence Models",
+    "authors": [
+      "Xin Liu",
+      "Boyuan Sun",
+      "Yuxin Wang",
+      "Haoran Song",
+      "Mingjian Zhao",
+      "Mengyu Liu"
+    ],
+    "affiliation": "Not printed as explicit institutional headers in the v1 PDF; author email domains correspond to Washington University in St. Louis (xinliu, wang.yuxin, haoran.song, mingjian.z @wustl.edu) and Nankai University (boyuansun@mail.nankai.edu.cn), while Mengyu Liu lists fionaliumengyu@gmail.com.",
+    "categories": [
+      "cs.LG",
+      "cs.CL"
+    ],
+    "submitted_utc": "Tue, 3 Nov 2026 07:39:19 UTC",
+    "submitted_date": "2026-11-03",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.04449",
+      "abs_v1": "https://arxiv.org/abs/2611.04449v1",
+      "pdf": "https://arxiv.org/pdf/2611.04449",
+      "html_v1": "https://arxiv.org/html/2611.04449v1",
+      "ancillary_files": "https://arxiv.org/src/2611.04449v1/anc"
+    },
+    "frozen_artifacts": {
+      "abs_txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.04449.txt",
+        "lines": 4,
+        "sha256": "a734b4449f74cf813b7b305f3a45b6623e743da07812bd5e1b4cc2101f2c0b12",
+        "bytes": 2035
+      },
+      "abs_html": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.04449.html",
+        "lines": 649,
+        "sha256": "ead03a937d0bfe8d7c5b68bae24ab3de964f84633c4d12555f6eeec106f4359a",
+        "bytes": 60039
+      },
+      "pdf": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/papers/2611.04449.pdf",
+        "pages": 16,
+        "sha256": "63071cb3c611f891863eff14d4923f2ec5ae52c53dffcc3c60ae04e676f92179",
+        "bytes": 504431
+      },
+      "pdf_extracted_txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/papers/2611.04449.txt",
+        "bytes": 83511,
+        "sha256": "2d67bb63b6265518b4953f475a2fbf2affd6072ab7aba6f21bf4642f8608db9b",
+        "note": "Rejected by read_file as binary due to control chars; full 16-page PDF read directly via read_file."
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "census_repos_total": 291,
+    "census_distinct_tables": 280,
+    "census_mirror_transformer_copies": 11,
+    "census_weight_tied_total": 101,
+    "census_untied_total": 190,
+    "census_raw_below_1e_6": 92,
+    "census_reachable_overall": {
+      "count": "67/291",
+      "pct": 23.0
+    },
+    "census_reachable_weight_tied": {
+      "count": "0/101",
+      "transformers": "0/80",
+      "gated_hybrid": "0/21",
+      "pct": 0.0
+    },
+    "census_reachable_untied": {
+      "overall": "67/190 (35.3%)",
+      "transformers": "47/152 (30.9%)",
+      "gated_hybrid": "20/38 (52.6%)"
+    },
+    "affected_vocab_share_median_pct": 0.04,
+    "affected_vocab_share_range_pct": "0.001-0.25",
+    "olmoe_1b_7b_audit": {
+      "corpus": "OLMoE-mix-0924",
+      "sampled_tokens": 364000000,
+      "near_zero_rows_total": 251,
+      "near_zero_rows_observed_in_sample": 0,
+      "cluster_count": 250,
+      "cluster_norm_range": "[3.23e-12, 3.50e-12]",
+      "cluster_mean": 3.36e-12,
+      "cluster_cv": 0.0159,
+      "outlier_id_34761_norm": 6.5e-07
+    },
+    "output_row_health_above_0_3x_median": {
+      "sampled_tokens": 979,
+      "healthy_count": 901,
+      "pct": 92.0
+    },
+    "pre_rmsnorm_per_layer_gain": {
+      "eps_1e_6": 1000,
+      "eps_1e_5": 316
+    },
+    "fp32_clip_overflow_threshold": 1.84e+19,
+    "gradient_magnitudes_observed": {
+      "llama_3_1_8b_mid": "56-98",
+      "rwkv_4_1_5b_mid": 8.5,
+      "falcon_h1_1_5b_native_tid5700": 4750000.0,
+      "falcon_mamba_7b_r_1e_30": 1.3e+30,
+      "xlstm_7b_r_1e_30": 1e+32,
+      "nemotron_3_nano_4b_peak_sweep": 4.5e+34,
+      "nemotron_3_nano_4b_native_tid25304_inf": 2.12e+35,
+      "nemotron_3_nano_4b_native_tid25304_fp64_l2": 1.05e+36,
+      "kimi_linear_48b_base_im_user_t0": 21000000.0,
+      "kimi_linear_48b_base_im_user_t_gt_0": 207
+    },
+    "causal_gate_patching_nemotron_table4": {
+      "orig_keep_linf": 2.12e+35,
+      "l0_orig_cut_linf": 1.74e+31,
+      "l0_norm_keep_st_linf": 6.71,
+      "l0_norm_keep_st_h1_l2": 0.607,
+      "orig_cut_all_21_linf": 4.45
+    },
+    "anomaly_funnel_nemotron_telugu_1000steps_table6": {
+      "reachable_nz_vocab": "62/131072 (0.047%)",
+      "corpus_hit_ppm": 32.3,
+      "hit_batches_per_1000": "225.0 +/- 9.5 (22.5%)",
+      "alpha_eff_lt_1e_4_per_1000": "200.3 +/- 9.9 (89.0% of hits)",
+      "fp32_inf_zeroed_per_1000": "198.3 +/- 9.9 (19.8% of all steps; 88.1% of hits)",
+      "fresh_batch_backbone_displacement_on_inf": 0.0,
+      "weights_changed_on_inf_of_3562515040": 0
+    },
+    "groupclip_overhead_h100_e36": {
+      "global_clip_step_sec": 2.88,
+      "groupclip_fp64_step_sec": 2.84,
+      "groupclip_copy_free_step_sec": 2.85,
+      "clip_call_ms": {
+        "global": 18.8,
+        "groupclip_fp64": 21.2,
+        "groupclip_copy_free": 20.8
+      },
+      "peak_memory_gb_all_three": 69.7,
+      "fp64_transient_buffer_gb": 3.1,
+      "copy_free_max_relative_diff_on_3e31": 2.3e-07
+    },
+    "continual_pretraining_table2_flores_ppl": {
+      "nemotron_4b_telugu_1000_fp32_global": "13.44 +/- 0.17 (198.3 +/- 9.9 stalled)",
+      "nemotron_4b_telugu_1000_oracle_mask": "13.04 +/- 0.19 (0.0 +/- 0.0 stalled)",
+      "nemotron_4b_telugu_1000_groupclip_fp32": "13.05 +/- 0.18 (0.0 +/- 0.0 stalled)",
+      "nemotron_4b_telugu_1000_groupclip_fp64": "13.04 +/- 0.19 (0.0 +/- 0.0 stalled; matches 1000-step baseline by step 800)",
+      "falcon_h1_1_5b_mongolian_1000_fp32_global": "15.68 +/- 0.11 (11.7 +/- 3.5 stalled)",
+      "falcon_h1_1_5b_mongolian_1000_oracle_mask": "15.63 +/- 0.10 (0.0 +/- 0.0 stalled)",
+      "falcon_h1_1_5b_mongolian_1000_groupclip": "15.58 +/- 0.10 (0.0 +/- 0.0 stalled; step-100 PPL 37.47 vs 40.40)",
+      "nemotron_4b_telugu_300_ablation": {
+        "fp32_global_clip": "16.57 +/- 0.39 (57.0 +/- 7.5 stalled)",
+        "skip_on_inf": "16.63 +/- 0.36 (57.0 +/- 7.5 stalled)",
+        "zclip": "16.57 +/- 0.39 (57.0 +/- 7.5 stalled)",
+        "grad_stabilizer": "16.23 +/- 0.30 (0.0 stalled backbone; skips E_in 52.0 +/- 8.2 steps, v_t=inf)",
+        "freeze_e_in": "16.16 +/- 0.24 (0.0 stalled)",
+        "fp64_global_norm": "16.09 +/- 0.35 (18.0 +/- 1.0 stalled)",
+        "mean_reinit": "15.96 +/- 0.24 (0.0 stalled; Falcon3-7B tail NLL 3.8 -> 9.8)",
+        "oracle_mask": "15.94 +/- 0.26 (0.0 stalled)",
+        "groupclip_fp32": "15.97 +/- 0.26 (0.0 stalled)",
+        "groupclip_fp64": "15.95 +/- 0.25 (0.0 stalled)"
+      }
+    },
+    "gatefloor_from_scratch_table3": {
+      "mamba2_165m_1_05b_silu_2s": {
+        "ppl": 30.63,
+        "tok_s": 115700,
+        "mid_r_1e_30": 2.8e+28,
+        "pos0_r_1e_30": 3.6e+28
+      },
+      "mamba2_165m_1_05b_sigmoid_s0": {
+        "ppl": 31.19,
+        "tok_s": 115300,
+        "mid_r_1e_30": 0.2,
+        "pos0_r_1e_30": 0.73
+      },
+      "mamba2_165m_1_05b_gatefloor_0_1_2s": {
+        "ppl": 30.78,
+        "tok_s": 114200,
+        "mid_r_1e_30": 0.52,
+        "pos0_r_1e_30": 0.73
+      },
+      "hybrid_203m_1_05b_silu": {
+        "ppl": 23.38,
+        "tok_s": 130600,
+        "mid_r_1e_30": 130000.0,
+        "pos0_r_1e_30": 2e+29
+      },
+      "hybrid_203m_1_05b_gatefloor_0_1": {
+        "ppl": 23.45,
+        "tok_s": 129800,
+        "mid_r_1e_30": 0.19,
+        "pos0_r_1e_30": 0.23
+      },
+      "hybrid_370m_1_57b_silu": {
+        "ppl": 22.45,
+        "tok_s": 527200,
+        "mid_r_1e_30": 33000.0,
+        "pos0_r_1e_30": 1.6e+28
+      },
+      "hybrid_370m_1_57b_sigmoid": {
+        "ppl": 22.66,
+        "tok_s": 546400,
+        "mid_r_1e_30": 0.19,
+        "pos0_r_1e_30": 0.18
+      },
+      "hybrid_370m_1_57b_gatefloor_0_1": {
+        "ppl": 22.28,
+        "tok_s": 542800,
+        "mid_r_1e_30": 0.16,
+        "pos0_r_1e_30": 0.13
+      }
+    }
+  },
+  "explicit_limitations": [
+    "From-scratch GateFloor pretraining experiments reach only 370M parameters (1.05B-1.57B tokens, seq len 1,024) with 1-2 seeds (203M and 370M are single-seed, whereas 165M baseline seeds already differ by 0.15 PPL).",
+    "GateFloor relies on a non-zero conv1d bias (b_conv != 0, enabled by default in Mamba2Config/BambaConfig) to lift Layer 0 out of sub-epsilon at t = 0, and offsetting a SiLU gate alone does not address architectures with bias-free linear queries such as xLSTM (mLSTM) C_{t-1} q_t.",
+    "Of 313 HuggingFace census candidates, 57 were unreadable due to gated access, missing safetensors, or embedding tensors exceeding 3 GB.",
+    "GroupClip and GateFloor target this specific untied near-zero clipping/amplification chain and do not remedy general activation outliers, attention sinks, or depth-wise state explosion (e.g., Mamba-2 Issue #529 forward inf).",
+    "Close reading audited the frozen 16-page v1 PDF without re-running the HuggingFace scan or GPU training runs locally."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "created_svgs": {
+      "nearzero-embedding-overflow-chain-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/nearzero-embedding-overflow-chain-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/nearzero-embedding-overflow-chain-zh.svg",
+        "sha256": "ffed8216b92d91873b8f7626ee2f1b63067759815a077dce77a3cc542d82fa05",
+        "bytes": 15710
+      },
+      "nearzero-embedding-overflow-chain-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/nearzero-embedding-overflow-chain-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/nearzero-embedding-overflow-chain-en.svg",
+        "sha256": "0f6baf8ad79608b438ad9cf3c4a85866172fa127309aae034fbbfb083a5e4e90",
+        "bytes": 15071
+      },
+      "groupclip-gatefloor-remedies-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/groupclip-gatefloor-remedies-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/groupclip-gatefloor-remedies-zh.svg",
+        "sha256": "9e5871f7bdfd566136b19c2876ac7b8e1917b5c5508db0e6db4ced1913b34743",
+        "bytes": 13717
+      },
+      "groupclip-gatefloor-remedies-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/groupclip-gatefloor-remedies-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/groupclip-gatefloor-remedies-en.svg",
+        "sha256": "55f6a9ad9a67c0d850d476c04eaede3565cfc90baca966cae734bea3a893cc72",
+        "bytes": 13352
+      }
+    },
+    "preserved_preexisting_pngs": [
+      "warpline.png",
+      "badc.png",
+      "leansparse-architecture.png",
+      "insight-hpc.png",
+      "raglog.png",
+      "signals.png",
+      "instrument-errors.png"
+    ]
+  },
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-05.md",
+      "file_bytes_before": 46498,
+      "file_sha256_before": "a57afb9010f0516ba9d15d89c96ef1b07029938279a9d9c03e5902f04f3b8762",
+      "file_bytes_after": 258981,
+      "file_sha256_after": "0c569250568c0975f5704c11bbdfcfff48ddadc7366026be70dc954ece1ce395",
+      "old_section_bytes": 805,
+      "old_section_sha256": "ab68be8bf7e4d185ab00e34a214bb092ac6fdf53ca921d3d7a1a6722a5fdb870",
+      "new_section_bytes": 28621,
+      "new_section_sha256": "aaaaeabb43a8358ecc707ec2ae48fb7063090060e29244a7ef2a42aa589542e4"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-05.md",
+      "file_bytes_before": 49237,
+      "file_sha256_before": "d5c507de897b4e0644651175c569f11bfe5df1cfa94b53b4227ec9422a1d0e06",
+      "file_bytes_after": 247387,
+      "file_sha256_after": "00dc837b0349415fa884dbc628828870d27be980bb81f30127ddd5602addd7a0",
+      "old_section_bytes": 923,
+      "old_section_sha256": "c55a515d5095a3719801bd63da2af157a6fe8c3fc0d0d47df8d92ed72d5a8e32",
+      "new_section_bytes": 26835,
+      "new_section_sha256": "c6c0c48eadfdcca28976f66d966f504cc98b866ad750a9bb471ddd60c318f3cc"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:08:32.604936+00:00",
+    "preview_release": "20261117-110758-45bc53b9",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

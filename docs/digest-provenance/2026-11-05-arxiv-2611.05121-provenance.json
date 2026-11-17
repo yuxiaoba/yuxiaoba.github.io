@@ -1,0 +1,422 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-05-arxiv-2611.05121",
+  "paper_id": "arxiv-2611.05121",
+  "anchor_id": "paper-arxiv-2611.05121",
+  "digest_date": "2026-11-05",
+  "updated_at_utc": "2026-11-17T02:45:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-05.md",
+    "en_target": "_digest/en/daily-2026-11-05.md",
+    "staged_section_zh": "/root/.gemini/antigravity-cli/brain/565abe21-632d-43c6-80af-8d40d0a63ed9/scratch/d2a-sections/2611.05121/section_zh.md",
+    "staged_section_en": "/root/.gemini/antigravity-cli/brain/565abe21-632d-43c6-80af-8d40d0a63ed9/scratch/d2a-sections/2611.05121/section_en.md",
+    "staging_path_note": "Requested path under parent brain dir 151be13a-2bae-44cf-a94b-71b25706bafd was blocked by write_file artifact-dir sandbox; staged identically under active subagent dir 565abe21-632d-43c6-80af-8d40d0a63ed9.",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.05121v1 (24-page frozen PDF + extracted TXT + frozen abstract).",
+    "adjacent_dependency_isolation": "Isolated staged sections only; target daily-2026-11-05.md files untouched pending parent atomic flock splice."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.05121",
+    "arxiv_version_verified": "v1",
+    "prior_publication_note": "PDF carries ACM ISSTA 2025 publication metadata: Proc. ACM Softw. Eng. 2, ISSTA, Article ISSTA073 (July 2025), doi:10.1145/3728950; received 2025-02-27, accepted 2025-03-31; arXiv stamp reads arXiv:2611.05121v1 [cs.SE] 3 Nov 2026.",
+    "title": "An Investigation on Numerical Bugs in GPU Programs Towards Automated Bug Detection",
+    "authors": [
+      "Ravishka Rathnasuriya",
+      "Nidhi Majoju",
+      "Zihe Song",
+      "Wei Yang"
+    ],
+    "affiliation": "University of Texas at Dallas, Richardson, USA",
+    "categories": [
+      "cs.SE"
+    ],
+    "submitted_date": "2026-11-03",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.05121",
+      "pdf": "https://arxiv.org/pdf/2611.05121",
+      "doi": "https://doi.org/10.1145/3728950",
+      "dataset_website": "https://gpu-program-bug-study.github.io/Comprehensive-Study-on-GPU-Program-Numerical-Issues.github.io/"
+    },
+    "frozen_artifacts": {
+      "abstract_txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.05121.txt",
+        "sha256": "2ec1dd86c60bd0c144a141484c3595c287693cc7b0d9b9a4ee62e684535c7bc0",
+        "bytes": 1693
+      },
+      "paper_txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/papers/2611.05121.txt",
+        "lines": 1908,
+        "sha256": "4c3f625cfefc6a1f449afb392147834dd4cc92786aa8e052d731bab02fff9f6d",
+        "bytes": 97984
+      },
+      "paper_pdf": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/papers/2611.05121.pdf",
+        "pages": 24,
+        "sha256": "0f6e7a499eda595017b60ece55b1002b363d0434ace898964680644974c77982",
+        "bytes": 1089704
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "empirical_study_window": "January 2020 to June 2024 (GitHub issues)",
+    "corpus_funnel": {
+      "closed_source_raw_gpu_reports": 118438,
+      "closed_source_keyword_filtered": 10380,
+      "closed_source_valid_closed_with_fix": 624,
+      "open_source_initial_repos": 76,
+      "open_source_valid_closed_issues": 282,
+      "manually_examined_total": 906,
+      "unique_gpu_nbs_final": 397,
+      "closed_source_final": 229,
+      "open_source_final": 168,
+      "labeling_disagreements_resolved": 25
+    },
+    "table2_root_causes": {
+      "precision_arithmetic_operation": {
+        "closed": 20,
+        "open": 11,
+        "total": 31
+      },
+      "precision_rounding_approximation": {
+        "closed": 25,
+        "open": 9,
+        "total": 34
+      },
+      "precision_casting": {
+        "closed": 23,
+        "open": 9,
+        "total": 32
+      },
+      "precision_subtotal": 97,
+      "data_type": {
+        "closed": 84,
+        "open": 59,
+        "total": 143
+      },
+      "operator": {
+        "closed": 37,
+        "open": 57,
+        "total": 94
+      },
+      "data_type_and_operator_table2_sum": 237,
+      "special_value": {
+        "closed": 33,
+        "open": 15,
+        "total": 48
+      },
+      "device_specific": {
+        "closed": 7,
+        "open": 8,
+        "total": 15
+      }
+    },
+    "table3_symptoms": {
+      "error_messages": {
+        "overflow_underflow": 36,
+        "casting": 11,
+        "data_type": 90,
+        "operator": 37,
+        "undefined_computation": 7,
+        "subtotal": 181,
+        "closed": 104,
+        "open": 77
+      },
+      "wrong_results": {
+        "before_and_after_casting": 20,
+        "different_data_types": 26,
+        "different_precision_range": 50,
+        "nan_outputs": 43,
+        "different_amount_of_precision": 40,
+        "subtotal": 179,
+        "closed": 99,
+        "open": 80
+      },
+      "performance_bottlenecks": {
+        "cast_operations": 2,
+        "data_types": 21,
+        "cpu_programs": 14,
+        "subtotal": 37,
+        "closed": 26,
+        "open": 11
+      }
+    },
+    "table7_fixing_strategies": {
+      "arithmetic_checkers": {
+        "closed": 17,
+        "open": 10,
+        "total": 27
+      },
+      "changing_precision": {
+        "closed": 28,
+        "open": 10,
+        "total": 38
+      },
+      "upcast_downcast": {
+        "closed": 23,
+        "open": 9,
+        "total": 32
+      },
+      "refactor_operator": {
+        "closed": 39,
+        "open": 55,
+        "total": 94
+      },
+      "custom_kernel": {
+        "closed": 1,
+        "open": 4,
+        "total": 5
+      },
+      "add_or_change_data_type": {
+        "closed": 84,
+        "open": 59,
+        "total": 143
+      },
+      "nan_checkers": {
+        "closed": 31,
+        "open": 16,
+        "total": 47
+      },
+      "mixed_precision_or_change_type": {
+        "closed": 6,
+        "open": 5,
+        "total": 11
+      }
+    },
+    "gpu_nbdetect_evaluation": {
+      "hardware": "Intel Xeon E5-26 CPU + 8x NVIDIA GTX 1080 Ti GPUs, CUDA 11.1",
+      "samples_per_function": 100,
+      "independent_cycles": 3,
+      "libraries_and_function_counts": {
+        "CUDA_Math": 53,
+        "CUDA_Thrust": 53,
+        "CuPy": 40,
+        "Numba": 40,
+        "total_functions": 186
+      },
+      "table5_c_libraries": {
+        "CUDA_Math": {
+          "XScope": {
+            "overflow": 8,
+            "underflow": 8,
+            "special_value": 12,
+            "total": 28,
+            "overhead_s": 8.7
+          },
+          "XScope-RS": {
+            "overflow": 4,
+            "underflow": 5,
+            "special_value": 4,
+            "total": 13,
+            "overhead_s": 2.7
+          },
+          "BinFPE": {
+            "overflow": 5,
+            "underflow": 2,
+            "special_value": 5,
+            "total": 12,
+            "overhead_s": 3.2
+          },
+          "GPU-FPX": {
+            "overflow": 6,
+            "underflow": 4,
+            "special_value": 5,
+            "total": 15,
+            "overhead_s": 4.2
+          },
+          "GPU-NBDetect": {
+            "overflow": 10,
+            "underflow": 14,
+            "rounding": 24,
+            "casting": 10,
+            "data_type": 14,
+            "special_value": 12,
+            "total": 84,
+            "overhead_s": 1.1
+          }
+        },
+        "CUDA_Thrust": {
+          "XScope": {
+            "overflow": 4,
+            "underflow": 7,
+            "special_value": 6,
+            "total": 17,
+            "overhead_s": 8.4
+          },
+          "XScope-RS": {
+            "overflow": 4,
+            "underflow": 4,
+            "special_value": 5,
+            "total": 13,
+            "overhead_s": 3.4
+          },
+          "BinFPE": {
+            "overflow": 5,
+            "underflow": 6,
+            "special_value": 8,
+            "total": 19,
+            "overhead_s": 3.9
+          },
+          "GPU-FPX": {
+            "overflow": 5,
+            "underflow": 8,
+            "special_value": 9,
+            "total": 22,
+            "overhead_s": 5.0
+          },
+          "GPU-NBDetect": {
+            "overflow": 8,
+            "underflow": 16,
+            "rounding": 20,
+            "casting": 4,
+            "data_type": 8,
+            "special_value": 14,
+            "total": 70,
+            "overhead_s": 1.3
+          }
+        }
+      },
+      "table6_python_libraries": {
+        "CuPy": {
+          "RS": {
+            "overflow": 6,
+            "underflow": 4,
+            "rounding": 2,
+            "casting": 0,
+            "data_type": 2,
+            "special_value": 4,
+            "total_printed": 16,
+            "row_sum": 18,
+            "overhead_s": 2.1
+          },
+          "BO": {
+            "overflow": 7,
+            "underflow": 4,
+            "rounding": 2,
+            "casting": 0,
+            "data_type": 2,
+            "special_value": 4,
+            "total": 19,
+            "overhead_s": 2.2
+          },
+          "GPU-NBDetect": {
+            "overflow": 9,
+            "underflow": 7,
+            "rounding": 4,
+            "casting": 3,
+            "data_type": 4,
+            "special_value": 8,
+            "total": 35,
+            "overhead_s": 1.7
+          }
+        },
+        "Numba": {
+          "RS": {
+            "overflow": 6,
+            "underflow": 3,
+            "rounding": 2,
+            "casting": 1,
+            "data_type": 3,
+            "special_value": 4,
+            "total": 19,
+            "overhead_s": 2.3
+          },
+          "BO": {
+            "overflow": 7,
+            "underflow": 5,
+            "rounding": 3,
+            "casting": 2,
+            "data_type": 3,
+            "special_value": 6,
+            "total": 26,
+            "overhead_s": 2.3
+          },
+          "GPU-NBDetect": {
+            "overflow": 9,
+            "underflow": 8,
+            "rounding": 4,
+            "casting": 3,
+            "data_type": 4,
+            "special_value": 9,
+            "total": 37,
+            "overhead_s": 1.6
+          }
+        }
+      },
+      "total_detected_reports": 226,
+      "developer_confirmed_total": 60,
+      "baseline_false_positives_reported": {
+        "XScope": 17,
+        "GPU-FPX": 33
+      }
+    }
+  },
+  "explicit_limitations": [
+    "Detection reports (226 across 186 functions) and developer confirmations (60 on the NVIDIA forum, 26.5%) are distinct denominators; the paper omits per-library and per-category confirmation counts and does not report GPU-NBDetect's own false-positive count.",
+    "NVIDIA developers noted that rounding discrepancies flagged against CPU C math.h can still lie within CUDA's documented ULP tolerance bounds rather than constituting formal CUDA spec violations.",
+    "GPU-NBDetect supports only float (FP32) and double (FP64) scalar math APIs across 4 libraries on a single GPU generation (GTX 1080 Ti, CUDA 11.1); FP16, BF16, Decimal64/128, Operator bugs, and Device-specific latency inversions (Strategies 7-9) are excluded from Tables 5-6.",
+    "Assertion thresholds (1e-7, 0.9, 0.01, 2.5x/3x) are fixed heuristics not scaled by ULP; the authors acknowledge timing strategies (S7-S9) can produce false positives and mutation operators introduce run-to-run randomness.",
+    "Internal PDF printing discrepancies documented transparently: Table 2 Data Type + Operator sums to 237 (143+94, matching total 397) while Table 1 F-4 and Section 4.2 state 239 (59.6%); Table 6 CuPy RS counts sum to 18 while Total prints 16; Table 4 Row 2 prints 'or' instead of 'and' for subnormal underflow; Section 5.3 calls the mutators 'seven mutation operators' while listing eight bullets."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "svgs": {
+      "gpu-nbdetect-bug-taxonomy-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/gpu-nbdetect-bug-taxonomy-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/gpu-nbdetect-bug-taxonomy-zh.svg",
+        "sha256": "6680037dc9c48a3e7bfd2ba9108962649e62137ed2a294b77448d126298f5dc2",
+        "bytes": 14988
+      },
+      "gpu-nbdetect-bug-taxonomy-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/gpu-nbdetect-bug-taxonomy-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/gpu-nbdetect-bug-taxonomy-en.svg",
+        "sha256": "4194fc10bb64d3fd90994d7f4f69c8d033af1e23ad3d019334708d2a68cf8461",
+        "bytes": 14642
+      },
+      "gpu-nbdetect-detection-results-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/gpu-nbdetect-detection-results-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/gpu-nbdetect-detection-results-zh.svg",
+        "sha256": "61dcd5840285d806323d955f01662bb320c594d5373a18e802a82e1d8e7351d5",
+        "bytes": 16301
+      },
+      "gpu-nbdetect-detection-results-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/gpu-nbdetect-detection-results-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/gpu-nbdetect-detection-results-en.svg",
+        "sha256": "8153d9c354ac958895a9b3ba242cfb9990d3fabca450efa46c91aa7307b63bc7",
+        "bytes": 15932
+      }
+    }
+  },
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-05.md",
+      "file_bytes_before": 46498,
+      "file_sha256_before": "a57afb9010f0516ba9d15d89c96ef1b07029938279a9d9c03e5902f04f3b8762",
+      "file_bytes_after": 258981,
+      "file_sha256_after": "0c569250568c0975f5704c11bbdfcfff48ddadc7366026be70dc954ece1ce395",
+      "old_section_bytes": 774,
+      "old_section_sha256": "e739abf9dd8cff4c18e579c63d6937b98d431455640c338b6ce5b6f401073ee3",
+      "new_section_bytes": 20985,
+      "new_section_sha256": "32e00794736ebd11e1841403d0c6a4bdde875996ce6c1a28f74c35e48f3c831f"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-05.md",
+      "file_bytes_before": 49237,
+      "file_sha256_before": "d5c507de897b4e0644651175c569f11bfe5df1cfa94b53b4227ec9422a1d0e06",
+      "file_bytes_after": 247387,
+      "file_sha256_after": "00dc837b0349415fa884dbc628828870d27be980bb81f30127ddd5602addd7a0",
+      "old_section_bytes": 857,
+      "old_section_sha256": "227badb5cc2455ade1f57b2d6c17fb59e423d388bdec374880e59e6139d5b450",
+      "new_section_bytes": 18757,
+      "new_section_sha256": "15c197c26589ce502bf7ca45308dbfd4dd1e075c7056c3bcdd0783c4c3a63b30"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:08:32.604936+00:00",
+    "preview_release": "20261117-110758-45bc53b9",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

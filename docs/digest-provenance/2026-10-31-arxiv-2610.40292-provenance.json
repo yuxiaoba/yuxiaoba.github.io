@@ -1,0 +1,411 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-10-31-arxiv-2610.40292",
+  "paper_id": "arxiv-2610.40292",
+  "anchor_id": "paper-arxiv-2610.40292",
+  "digest_date": "2026-10-31",
+  "updated_at_utc": "2026-11-17T02:57:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-10-31.md",
+    "en_target": "_digest/en/daily-2026-10-31.md",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/43d855ce-674f-4a9b-af2f-b11640969c37/scratch/d2b1-sections/2610.40292/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/43d855ce-674f-4a9b-af2f-b11640969c37/scratch/d2b1-sections/2610.40292/section_en.md",
+    "requested_parent_stage_dir_blocked_by_tool_sandbox": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sections/2610.40292/",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2610.40292v1.",
+    "adjacent_dependency_isolation": "Staged isolated entry #paper-arxiv-2610.40292 (entry 17); daily-2026-10-31.md files left untouched pending parent atomic splice under flock."
+  },
+  "primary_source": {
+    "arxiv_id": "2610.40292",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "v1 only in saved arXiv abs HTML (submitted Thu, 29 Oct 2026 15:42:05 UTC; no v2 revision or withdrawal notice present). Initial daily digest metadata listed 2026-10-30 by announcement-date / UTC+8 rollover.",
+    "title": "DolphinRouting: Cluster-Level Binary Routing for Disaggregated LLM Inference Serving",
+    "authors": [
+      "Yishuo Yuan",
+      "Shaoyu Yang",
+      "Chunrong Fang"
+    ],
+    "equal_contribution": [
+      "Yishuo Yuan",
+      "Shaoyu Yang"
+    ],
+    "corresponding_author": "Chunrong Fang <fangchunrong@nju.edu.cn>",
+    "affiliation": "Nanjing University, Nanjing, China",
+    "categories": [
+      "cs.LG"
+    ],
+    "submitted_utc": "Thu, 29 Oct 2026 15:42:05 UTC",
+    "submitted_date": "2026-10-29",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2610.40292",
+      "abs_v1": "https://arxiv.org/abs/2610.40292v1",
+      "pdf": "https://arxiv.org/pdf/2610.40292",
+      "html_v1": "https://arxiv.org/html/2610.40292v1",
+      "doi": "https://doi.org/10.48550/arXiv.2610.40292",
+      "github": null
+    },
+    "github_note": "No source repository or artifact URL is listed in arXiv:2610.40292v1 PDF or abs HTML.",
+    "local_sources": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.40292.abs.html",
+        "lines": 611,
+        "sha256": "1492f3bb14f283bb9b4abd0b9c5f01632a9710ce19f7dfce943d39dd7f49d16c",
+        "sha256_note": "Pending parent hash computation (subagent run_command prohibited).",
+        "bytes": 40203
+      },
+      "pdf": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.40292.pdf",
+        "pages": 11,
+        "reported_arxiv_size": "643 KB",
+        "sha256": "fa4b863e233f897463df926d0056b1a3b13b78bcbf2d0aa3497599d3a4a79f28",
+        "sha256_note": "Pending parent hash computation (subagent run_command prohibited).",
+        "bytes": 988556
+      },
+      "txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.40292.txt",
+        "lines": 766,
+        "sha256": "f1de631844b6be4d17d957478ac0c26588ce96d9b9b1ff0f67497f7b3c0dc9d9",
+        "sha256_note": "Pending parent hash computation (subagent run_command prohibited).",
+        "bytes": 74033
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "served_model": "Qwen3.8-72B",
+    "serving_stack": "vLLM + Mooncake KV transfer",
+    "node_hardware": "4 x NVIDIA H20-SXM GPUs (141 GB HBM3e, 900 GB/s NVLink), Intel Xeon Platinum 8457C CPU, up to 800 Gb/s RDMA NICs",
+    "pd_allocations": [
+      "P3D1",
+      "P2D2"
+    ],
+    "offline_trace_split": "20% non-overlapping historical trace per dataset",
+    "clustering_methods": [
+      "k-means",
+      "GMM"
+    ],
+    "default_clusters_k": 8,
+    "repeats_per_config": 3,
+    "search_hyperparameters": {
+      "epsilon_0": 0.5,
+      "epsilon_min": 0.01,
+      "decay_time_constant": "K",
+      "init_scans_total": "2K (16 at K=8)"
+    },
+    "online_osl_predictor": "Clairvoyant (CPU XGBoost, 19 tokenizer-free lexical features, 0.029 ms/request reported by Clairvoyant authors, predicting short/medium/long mapped to representative lengths)",
+    "slo_normalization": "b_TTFT and b_TPOT measured on Naive at 0.1 req/s; SLO bounds B_TTFT = 10 * b_TTFT, B_TPOT = 5 * b_TPOT; evaluated at Naive saturated req/s",
+    "datasets_table1": {
+      "ArXiv Summarization": {
+        "avg_input": 8088,
+        "avg_output": 229,
+        "cache_ratio": "~0%",
+        "arrival": "Poisson"
+      },
+      "L-Eval": {
+        "avg_input": 19019,
+        "avg_output": 72,
+        "cache_ratio": ">80%",
+        "arrival": "Poisson"
+      },
+      "HumanEval": {
+        "avg_input": 198,
+        "avg_output": 221,
+        "cache_ratio": "~0%",
+        "arrival": "Poisson"
+      },
+      "Real Data": {
+        "avg_input": 12035,
+        "avg_output": 343,
+        "cache_ratio": "~50%",
+        "arrival": "Timestamp"
+      }
+    },
+    "main_results_table2": {
+      "ArXiv": {
+        "Naive": {
+          "P3D1_TTFT": 1.0,
+          "P3D1_TPOT": 0.49,
+          "P2D2_TTFT": 1.0,
+          "P2D2_TPOT": 0.22
+        },
+        "Dynamo": {
+          "P3D1_TTFT": 0.99,
+          "P3D1_TPOT": 0.5,
+          "P2D2_TTFT": 1.01,
+          "P2D2_TPOT": 0.24
+        },
+        "DolphinRouting_kmeans": {
+          "P3D1_TTFT": 0.98,
+          "P3D1_TPOT": 0.51,
+          "P2D2_TTFT": 1.03,
+          "P2D2_TPOT": 0.24
+        },
+        "DolphinRouting_GMM": {
+          "P3D1_TTFT": 0.99,
+          "P3D1_TPOT": 0.5,
+          "P2D2_TTFT": 1.02,
+          "P2D2_TPOT": 0.23
+        }
+      },
+      "L-Eval": {
+        "Naive": {
+          "P3D1_TTFT": 0.21,
+          "P3D1_TPOT": 1.0,
+          "P2D2_TTFT": 0.99,
+          "P2D2_TPOT": 0.25
+        },
+        "Dynamo": {
+          "P3D1_TTFT": 0.24,
+          "P3D1_TPOT": 0.92,
+          "P2D2_TTFT": 0.91,
+          "P2D2_TPOT": 0.27
+        },
+        "DolphinRouting_kmeans": {
+          "P3D1_TTFT": 0.25,
+          "P3D1_TPOT": 0.9,
+          "P2D2_TTFT": 0.85,
+          "P2D2_TPOT": 0.28
+        },
+        "DolphinRouting_GMM": {
+          "P3D1_TTFT": 0.24,
+          "P3D1_TPOT": 0.92,
+          "P2D2_TTFT": 0.9,
+          "P2D2_TPOT": 0.27
+        }
+      },
+      "HumanEval": {
+        "Naive": {
+          "P3D1_TTFT": 0.12,
+          "P3D1_TPOT": 1.01,
+          "P2D2_TTFT": 0.19,
+          "P2D2_TPOT": 1.02
+        },
+        "Dynamo": {
+          "P3D1_TTFT": 0.11,
+          "P3D1_TPOT": 1.03,
+          "P2D2_TTFT": 0.19,
+          "P2D2_TPOT": 1.03
+        },
+        "DolphinRouting_kmeans": {
+          "P3D1_TTFT": 0.13,
+          "P3D1_TPOT": 1.04,
+          "P2D2_TTFT": 0.2,
+          "P2D2_TPOT": 1.06
+        },
+        "DolphinRouting_GMM": {
+          "P3D1_TTFT": 0.13,
+          "P3D1_TPOT": 1.03,
+          "P2D2_TTFT": 0.21,
+          "P2D2_TPOT": 1.05
+        }
+      },
+      "Hybrid": {
+        "Naive": {
+          "P3D1_TTFT": 0.42,
+          "P3D1_TPOT": 1.0,
+          "P2D2_TTFT": 1.01,
+          "P2D2_TPOT": 0.3
+        },
+        "Dynamo": {
+          "P3D1_TTFT": 0.4,
+          "P3D1_TPOT": 0.89,
+          "P2D2_TTFT": 0.89,
+          "P2D2_TPOT": 0.31
+        },
+        "DolphinRouting_kmeans": {
+          "P3D1_TTFT": 0.37,
+          "P3D1_TPOT": 0.8,
+          "P2D2_TTFT": 0.82,
+          "P2D2_TPOT": 0.29
+        },
+        "DolphinRouting_GMM": {
+          "P3D1_TTFT": 0.39,
+          "P3D1_TPOT": 0.83,
+          "P2D2_TTFT": 0.84,
+          "P2D2_TPOT": 0.3
+        }
+      },
+      "Real Data": {
+        "Naive": {
+          "P3D1_TTFT": 0.38,
+          "P3D1_TPOT": 1.0,
+          "P2D2_TTFT": 1.02,
+          "P2D2_TPOT": 0.42
+        },
+        "Dynamo": {
+          "P3D1_TTFT": 0.35,
+          "P3D1_TPOT": 0.91,
+          "P2D2_TTFT": 0.92,
+          "P2D2_TPOT": 0.39
+        },
+        "DolphinRouting_kmeans": {
+          "P3D1_TTFT": 0.33,
+          "P3D1_TPOT": 0.86,
+          "P2D2_TTFT": 0.86,
+          "P2D2_TPOT": 0.38
+        },
+        "DolphinRouting_GMM": {
+          "P3D1_TTFT": 0.35,
+          "P3D1_TPOT": 0.89,
+          "P2D2_TTFT": 0.87,
+          "P2D2_TPOT": 0.37
+        }
+      }
+    },
+    "headline_improvements_vs_dynamo_kmeans": {
+      "mixed_and_real_p90_ttft_reduction_pct": "5.7-7.9%",
+      "mixed_and_real_p90_tpot_reduction_pct": "2.6-10.1%",
+      "kmeans_vs_gmm_hybrid_real_wins": "7/8 (GMM slightly better only on Real Data P2D2 Norm TPOT: 0.37 vs 0.38)"
+    },
+    "hybrid_load_sweep_figs3_4": {
+      "P3D1_at_2.5_req_s_TPOT": {
+        "Naive": 0.88,
+        "Dynamo": 0.83,
+        "DolphinRouting_kmeans": 0.75
+      },
+      "P3D1_at_3.0_req_s_kmeans": {
+        "TPOT": 1.73,
+        "TTFT": 0.7,
+        "TTFT_at_2.5_req_s": 0.31
+      },
+      "P2D2_at_2.5_req_s_TTFT": {
+        "Naive": 1.26,
+        "Dynamo": 1.19,
+        "DolphinRouting_kmeans": 1.08,
+        "TTFT_at_2.0_req_s": 0.47,
+        "TPOT_approx": 0.32
+      }
+    },
+    "ablations_hybrid": {
+      "k_sweep_fig5": {
+        "K2": {
+          "P3D1_rounds": 5.3,
+          "P3D1_TPOT": 0.96,
+          "P2D2_rounds": 6.0,
+          "P2D2_TTFT": 0.93
+        },
+        "K4": {
+          "P3D1_rounds": 14.3,
+          "P3D1_TPOT": 0.91,
+          "P2D2_rounds": 15.1,
+          "P2D2_TTFT": 0.89
+        },
+        "K8": {
+          "P3D1_rounds": 25.8,
+          "P3D1_TPOT": 0.8,
+          "P2D2_rounds": 26.2,
+          "P2D2_TTFT": 0.82
+        },
+        "K16": {
+          "P3D1_rounds": 75.9,
+          "P3D1_TPOT": 0.82,
+          "P2D2_rounds": 76.3,
+          "P2D2_TTFT": 0.83
+        }
+      },
+      "init_stage_table3_P3D1_K8": {
+        "full_pipeline": {
+          "rounds": 25.8,
+          "TTFT": 0.37,
+          "TPOT": 0.8
+        },
+        "wo_initialization": {
+          "rounds": 39.6,
+          "TTFT": 0.4,
+          "TPOT": 0.91
+        }
+      },
+      "osl_feature_table4_K8": {
+        "P3D1_full": {
+          "TTFT": 0.37,
+          "TPOT": 0.8
+        },
+        "P3D1_wo_OSL": {
+          "TTFT": 0.42,
+          "TPOT": 0.93
+        },
+        "P2D2_full": {
+          "TTFT": 0.82,
+          "TPOT": 0.29
+        },
+        "P2D2_wo_OSL": {
+          "TTFT": 0.92,
+          "TPOT": 0.3
+        }
+      }
+    }
+  },
+  "explicit_limitations": [
+    "Offline clustering uses historical ground-truth output length L whereas online admission uses Clairvoyant's 3-class proxy L_hat; class token boundaries, representative lengths, Clairvoyant accuracy on the 5 traces, oracle-L vs L_hat error ablation, and drift re-clustering are absent.",
+    "Table 2 normalizes latencies to 10x/5x of Naive's 0.1 req/s P90 and compares all methods at Naive's saturation req/s; raw latencies (ms/s) and per-method maximum sustainable req/s are unprinted outside Hybrid load sweeps.",
+    "Section 4.4 compares Dynamo's static effective-ISL and ratio rules only (global threshold constants unprinted) and explicitly excludes Dynamo's load-based policies.",
+    "Single-regime workloads show no simultaneous improvement over Dynamo/Naive: ArXiv P2D2 reaches 1.03/0.24 vs Naive 1.00/0.22, L-Eval swaps TTFT vs TPOT across P3D1/P2D2, and all 4 methods exceed 1.0 TPOT (1.01-1.06) on HumanEval.",
+    "Each policy table binds to a fixed P/D allocation (P3D1 or P2D2); evaluation covers a single model (Qwen3.8-72B on 4xH20-SXM nodes), Algorithm 1's Span(P_c) > tau check is undefined in prose, and no code repository is linked."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "dolphinrouting_svgs": {
+      "dolphinrouting-cluster-binary-router-zh.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/dolphinrouting-cluster-binary-router-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/dolphinrouting-cluster-binary-router-zh.svg",
+        "sha256": "ee375cb8602df79f96a3e575c93c9d32f98b83d2b3d535103fbb13ba46b98e23",
+        "sha256_note": "Pending parent hash computation (subagent run_command prohibited).",
+        "bytes": 12058
+      },
+      "dolphinrouting-cluster-binary-router-en.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/dolphinrouting-cluster-binary-router-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/dolphinrouting-cluster-binary-router-en.svg",
+        "sha256": "727378f12449a02d81cea16914d6fc5fe6ca738fe3647b82fc7ccf1913f90ca1",
+        "sha256_note": "Pending parent hash computation (subagent run_command prohibited).",
+        "bytes": 11729
+      },
+      "dolphinrouting-pd-slo-evaluation-zh.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/dolphinrouting-pd-slo-evaluation-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/dolphinrouting-pd-slo-evaluation-zh.svg",
+        "sha256": "8d4fc939dc546c4b47ff490568cd7dfd660851c4dcb1019f1c4a6209d7194a4f",
+        "sha256_note": "Pending parent hash computation (subagent run_command prohibited).",
+        "bytes": 17066
+      },
+      "dolphinrouting-pd-slo-evaluation-en.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/dolphinrouting-pd-slo-evaluation-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/dolphinrouting-pd-slo-evaluation-en.svg",
+        "sha256": "07a1679c8f07f0fd2ddf3e6906b520186c7e48892a1d3ca9ff76fce32df51234",
+        "sha256_note": "Pending parent hash computation (subagent run_command prohibited).",
+        "bytes": 16773
+      }
+    },
+    "preserved_preexisting_assets_note": "Pre-existing images in assets/images/digest/2026-10-31/ (including sandman-architecture.png) were left untouched."
+  },
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-10-31.md",
+      "file_bytes_before": 133852,
+      "file_sha256_before": "914b1485853911d6d30321a5715154713ce2027bd0def43c9936becb30db98e7",
+      "file_bytes_after": 133852,
+      "file_sha256_after": "914b1485853911d6d30321a5715154713ce2027bd0def43c9936becb30db98e7",
+      "old_section_bytes": 21961,
+      "old_section_sha256": "22af5646e4441a028f5ae1f5e826455be082fd423707fd9d305649291813a120",
+      "new_section_bytes": 21961,
+      "new_section_sha256": "22af5646e4441a028f5ae1f5e826455be082fd423707fd9d305649291813a120"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-10-31.md",
+      "file_bytes_before": 125711,
+      "file_sha256_before": "503243d78f648c5fb31529a6e7724b76b3506a5c88e3a4263b04b60e2e862806",
+      "file_bytes_after": 125711,
+      "file_sha256_after": "503243d78f648c5fb31529a6e7724b76b3506a5c88e3a4263b04b60e2e862806",
+      "old_section_bytes": 20953,
+      "old_section_sha256": "e670cd30d50c951ea09000d0d214e56b814ba291e9976672bbc61eb9c016eb5d",
+      "new_section_bytes": 20953,
+      "new_section_sha256": "e670cd30d50c951ea09000d0d214e56b814ba291e9976672bbc61eb9c016eb5d"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:06:58.469964+00:00",
+    "preview_release": "20261117-110636-2781322a",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

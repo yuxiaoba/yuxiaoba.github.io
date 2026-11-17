@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-10-31-arxiv-2610.39999",
+  "paper_id": "arxiv-2610.39999",
+  "anchor_id": "paper-arxiv-2610.39999",
+  "digest_date": "2026-10-31",
+  "updated_at_utc": "2026-11-17T02:43:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-10-31.md",
+    "en_target": "_digest/en/daily-2026-10-31.md",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/2834c680-4a54-4f8e-b4b0-42709c6c6a78/scratch/d2b1-sections/2610.39999/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/2834c680-4a54-4f8e-b4b0-42709c6c6a78/scratch/d2b1-sections/2610.39999/section_en.md",
+    "staging_sandbox_note": "write_file enforces current-conversation brain isolation (2834c680-4a54-4f8e-b4b0-42709c6c6a78), blocking direct writes to parent brain path 151be13a-2bae-44cf-a94b-71b25706bafd; parent splice can read directly from staged_zh_path and staged_en_path.",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English close reading derived directly from primary arXiv:2610.39999v1.",
+    "adjacent_dependency_isolation": "Staged as isolated section_zh.md and section_en.md; _digest/{zh,en}/daily-2026-10-31.md left untouched for parent atomic flock splice."
+  },
+  "primary_source": {
+    "arxiv_id": "2610.39999",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "No v2 revision or withdrawal notice present in verified 2610.39999.abs.html (submitted Thu, 29 Oct 2026 13:19:00 UTC; Comments: Accepted by IEEE HPCC 2026).",
+    "title": "PhOSv1: Efficient Scaling of Model Sleeping on a Single Server for Autoscaling with GPU-Context Deduplication",
+    "authors": [
+      "Tianle Sun",
+      "Xingda Wei",
+      "Rong Chen"
+    ],
+    "affiliation": "Shanghai Jiao Tong University, China",
+    "categories": [
+      "cs.DC",
+      "cs.OS"
+    ],
+    "submitted_utc": "Thu, 29 Oct 2026 13:19:00 UTC",
+    "submitted_date": "2026-10-29",
+    "digest_stub_date_note": "Earlier daily-2026-10-31 stub listed 2026-10-30; primary arXiv v1 dateline is 2026-10-29.",
+    "venue_comment": "Accepted by IEEE HPCC 2026",
+    "doi": "https://doi.org/10.48550/arXiv.2610.39999",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2610.39999",
+      "abs_v1": "https://arxiv.org/abs/2610.39999v1",
+      "pdf": "https://arxiv.org/pdf/2610.39999",
+      "html_v1": "https://arxiv.org/html/2610.39999v1",
+      "github": "https://github.com/blitz-serving/PhoenixOSv1"
+    },
+    "github_search_web_verified": true,
+    "local_source_artifacts": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.39999.abs.html",
+        "sha256": "7015dbb95a7cd2e221f647b7550fb80dd79413d06d3a91d3dbd81aab7c400e0f",
+        "sha256_status": "pending_parent_hash_verification",
+        "bytes": 42039
+      },
+      "full_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.39999.html",
+        "sha256": "3196518a38f857243b548c73a7feb9a0706f19236a7afac1032e9d56c5e2f46d",
+        "sha256_status": "pending_parent_hash_verification",
+        "bytes": 117044
+      },
+      "pdf": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.39999.pdf",
+        "sha256": "7a787f852bd212b9509b0afa333d85cffb9f3eca726bf37d0dc475e8a0d76e2b",
+        "sha256_status": "pending_parent_hash_verification",
+        "bytes": 1192553
+      },
+      "txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.39999.txt",
+        "sha256": "802e679e27a9a6383f4764c173ba82844db5c75220380781220fa2b2c1df7f96",
+        "sha256_status": "pending_parent_hash_verification",
+        "bytes": 56369
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "implementation_loc_rust": 10825,
+    "target_engine_evaluated": "vLLM v0.19.1",
+    "cuda_version": "CUDA 12.9",
+    "testbed_server_hardware": "Single server with 8x NVIDIA A800 (80 GB HBM each), 2x Intel Xeon Platinum 8350C (64 cores total), 1 TB DRAM",
+    "testbed_evaluated_gpu_count": 1,
+    "memory_measurement_tool": "NVML after putting vLLM engine to sleep (model weights excluded)",
+    "vanilla_cold_start_fig1c_breakdown_sec": {
+      "cpu_context": 6.6,
+      "gpu_context": 3.5,
+      "model_loading": "<1"
+    },
+    "phoenixos_cr_fig1c_cpu_restore_sec": 0.57,
+    "phoenixos_cr_worst_case_criu_tail_sec": "10-20",
+    "vanilla_vllm_cpu_context_gb": 2.9,
+    "vanilla_sleep_24_models_gpu_mem_gb": "~27 (34% of 80 GB A800)",
+    "kv_cache_squeeze_qwen3_6_27b_throughput_tok_s": {
+      "0_gib_occupied": 747,
+      "16_gib_occupied": 341,
+      "drop_pct": 54
+    },
+    "context_component_rebuild_ms": {
+      "cuda_context_from_scratch": "~430",
+      "gpu_buffers_from_scratch": "~30"
+    },
+    "fig4_per_model_total_context_mib_excl_weights": {
+      "Qwen3-8B": 544,
+      "Qwen3-30B-A3B": 1184,
+      "Qwen3-30B-A3B-In": 1238,
+      "Qwen3.6-35B-A3B": 1260,
+      "Qwen3.5-27B": 1272,
+      "Qwen3.6-27B": 1272,
+      "gpt-oss-20b": 1338,
+      "Qwen2.5-VL-7B": 1360,
+      "gemma-4-26B-A4B": 1646
+    },
+    "fig5_kernel_pairwise_similarity_17_models_pct": "59-99",
+    "fig5_highlighted_pairs": {
+      "Qwen-1.5B_vs_Qwen-3B": 1.0,
+      "Qwen3-4B_vs_Qwen3-8B": 1.0,
+      "Gemma-E2B_vs_Gemma-E4B": 1.0,
+      "Llama-3B_vs_Qwen-3B": 0.99,
+      "Llama-3B_vs_Qwen3-4B": 0.99
+    },
+    "sleep_memory_23_models_gib": {
+      "vanilla_vllm_sleep": 25.67,
+      "phosv1_plus_sleep": 0.49,
+      "reduction_pct": 98.1
+    },
+    "startup_latency_16_models_mean_sec_io_normalized": {
+      "cold_start": 24.41,
+      "vanilla_sleep": 4.89,
+      "phosv1": 4.12,
+      "context_service_connect_avg_ms": 72
+    },
+    "end_to_end_10_model_sharegpt_trace": {
+      "models": "10 popular Qwen models (0.6B-32B)",
+      "duration_min": 10,
+      "poisson_arrival_req_per_min_per_model": 0.3,
+      "vanilla_sleep_budget_gb": 6,
+      "eviction_policy": "LFU",
+      "avg_e2e_ttft_sec": {
+        "vanilla_vllm": 146.82,
+        "phosv1": 19.09,
+        "reduction_pct": 87.0
+      },
+      "p50_e2e_ttft_sec": {
+        "vanilla_vllm": 142.39,
+        "phosv1": 14.65
+      },
+      "active_serving_window_sec": {
+        "vanilla_vllm": 728,
+        "phosv1": 578
+      },
+      "throughput_retention_vs_vanilla_vllm_pct_min": 97.3
+    }
+  },
+  "explicit_limitations": [
+    "Single-GPU evaluation only: although the host server has 8x A800 GPUs, all reported evaluation metrics run on 1 GPU; multi-GPU tensor-parallel NCCL coordination and cross-card wake-ups are not empirically measured.",
+    "Trusted-engine / single-tenant assumption (§5): sharing a CUDA Primary Context removes hardware driver-level process isolation; sharing contexts across untrusted multi-tenant workloads is explicitly out of scope.",
+    "Single active engine per GPU (§2): multiple sleeping engines may reside on a GPU, but at most one engine wakes up and executes at a time; concurrent spatial GPU sharing is outside scope.",
+    "No CUDA Graphs support (§5): checkpointing/restoring CUDA graphs requires preserving or rewriting embedded device pointers and kernel references and is left to future work.",
+    "Engine & workload coverage: implementation and benchmarks cover vLLM v0.19.1 only (SGLang is not benchmarked); 59-99% kernel similarity relies on shared operators/libraries (e.g., FlashInfer, cuBLAS), and host DRAM (1 TB in testbed) must store weights, host CPU contexts, and checkpointed GPU buffers.",
+    "Cold-start and PhoenixOS weight-loading times in Fig. 7 (right) are normalized to remove storage I/O overhead."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "phosv1_svgs": {
+      "phosv1-cuda-context-dedup-arch-zh.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/phosv1-cuda-context-dedup-arch-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/phosv1-cuda-context-dedup-arch-zh.svg",
+        "sha256": "ee4e69256291f17efb98d605230880c089d57a3ea6d3c42b7cd2f380e761f36e",
+        "sha256_status": "pending_parent_hash_verification",
+        "bytes": 14143
+      },
+      "phosv1-cuda-context-dedup-arch-en.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/phosv1-cuda-context-dedup-arch-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/phosv1-cuda-context-dedup-arch-en.svg",
+        "sha256": "c71f2e43b112f738d1f5366ecbf1198d2a75e11c1ca489de5b77964eb6ad450d",
+        "sha256_status": "pending_parent_hash_verification",
+        "bytes": 13851
+      },
+      "phosv1-sleeping-scaleup-memory-zh.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/phosv1-sleeping-scaleup-memory-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/phosv1-sleeping-scaleup-memory-zh.svg",
+        "sha256": "66d3c85a5f2789708bdd0884cb2fba2edd5427fcfe3dbc3e2cf2d098b5c2aedc",
+        "sha256_status": "pending_parent_hash_verification",
+        "bytes": 10448
+      },
+      "phosv1-sleeping-scaleup-memory-en.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/phosv1-sleeping-scaleup-memory-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/phosv1-sleeping-scaleup-memory-en.svg",
+        "sha256": "9294b89785e58657defd12ead781b12f07d7be5dff8957569d309840bca9dbc3",
+        "sha256_status": "pending_parent_hash_verification",
+        "bytes": 10321
+      }
+    },
+    "preserved_preexisting_or_sibling_assets": [
+      "sandman-architecture.png"
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-10-31.md",
+      "file_bytes_before": 133852,
+      "file_sha256_before": "914b1485853911d6d30321a5715154713ce2027bd0def43c9936becb30db98e7",
+      "file_bytes_after": 133852,
+      "file_sha256_after": "914b1485853911d6d30321a5715154713ce2027bd0def43c9936becb30db98e7",
+      "old_section_bytes": 19463,
+      "old_section_sha256": "f7ab528a27daf6c7495d992cb46708efd64fea41263de97f76b327f84f42d482",
+      "new_section_bytes": 19463,
+      "new_section_sha256": "f7ab528a27daf6c7495d992cb46708efd64fea41263de97f76b327f84f42d482"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-10-31.md",
+      "file_bytes_before": 125711,
+      "file_sha256_before": "503243d78f648c5fb31529a6e7724b76b3506a5c88e3a4263b04b60e2e862806",
+      "file_bytes_after": 125711,
+      "file_sha256_after": "503243d78f648c5fb31529a6e7724b76b3506a5c88e3a4263b04b60e2e862806",
+      "old_section_bytes": 18571,
+      "old_section_sha256": "8aeef799b00c61383a7e02e2166f909617e39d324158fe1abba2c6e2255a9200",
+      "new_section_bytes": 18571,
+      "new_section_sha256": "8aeef799b00c61383a7e02e2166f909617e39d324158fe1abba2c6e2255a9200"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:06:58.469964+00:00",
+    "preview_release": "20261117-110636-2781322a",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

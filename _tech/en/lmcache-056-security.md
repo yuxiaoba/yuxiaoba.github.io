@@ -3,7 +3,7 @@ id: lmcache-056-security
 title: '2026-10-20 | LMCache 0.5.6: Trust and Lifecycle Boundaries in KV Cache Services'
 date: '2026-10-20'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: manual-research
 source_type: tech
@@ -18,10 +18,12 @@ permalink: /tech/en/lmcache-056-security/
 authorship: assistant
 translation_source: assistant
 published_at: '2026-10-22T08:54:49.993592+08:00'
-updated_at: '2026-10-22T08:54:49.993592+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 input_urls:
 - https://blog.lmcache.ai/en/2026/10/20/lmcache-v0-5-6-release/
 source_published_at: '2026-10-14T22:21:42Z'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 LMCache Maintainers · 2026-10-15 (Asia/Shanghai) · [Official release](https://github.com/LMCache/LMCache/releases/tag/v0.5.6)
 

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" style="background:#ffffff;">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="38" font-size="18.5" font-weight="700" fill="#0f172a">数值混杂风险与四层静默回退拦截门控</text>
+  <text x="24" y="58" font-size="11.2" fill="#475569">依据 Issue #28455 评论区（@sinanezhadian、@JohannesGaessler）与建议修复整理的数值评测陷阱及工程防线</text>
+  <line x1="24" y1="70" x2="936" y2="70" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Row Left: Confounded Perplexity Table -->
+  <rect x="24" y="82" width="446" height="164" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2"/>
+  <rect x="24" y="82" width="446" height="28" rx="8" fill="#fef3c7"/>
+  <rect x="24" y="100" width="446" height="10" fill="#fef3c7"/>
+  <text x="36" y="101" font-size="11.5" font-weight="700" fill="#92400e">二阶隐蔽伤害：KV 量化困惑度评测发生“后端混杂”</text>
+
+  <rect x="36" y="118" width="204" height="84" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="46" y="136" font-size="10.5" font-weight="700" fill="#15803d">留在 GPU 执行的组别</text>
+  <text x="46" y="155" font-size="10.2" fill="#14532d">• q4_0 / q8_0 / f16 / bf16</text>
+  <text x="46" y="173" font-size="10" fill="#166534">走 CUDA FlashAttention</text>
+  <text x="46" y="191" font-size="10" fill="#166534">按 GPU 浮点归约顺序计算</text>
+
+  <rect x="254" y="118" width="204" height="84" rx="6" fill="#fff1f2" stroke="#e11d48" stroke-width="1"/>
+  <text x="264" y="136" font-size="10.5" font-weight="700" fill="#be123c">悄悄滑向 CPU 的组别</text>
+  <text x="264" y="155" font-size="10.2" fill="#881337">• q4_1 / q5_0 / q5_1 / 混合</text>
+  <text x="264" y="173" font-size="10" fill="#9f1239">默认构建悄然走 CPU FA</text>
+  <text x="264" y="191" font-size="10" fill="#9f1239">累加顺序与数值输出不同</text>
+
+  <text x="36" y="221" font-size="10.2" font-weight="700" fill="#78350f">后果：研究者把“CPU 对 CUDA 后端切换”误算成“量化比特位宽损失”，</text>
+  <text x="36" y="238" font-size="10.2" fill="#92400e">且 llama-bench 仍把两者一律标注为 fa=1，掩盖了真实数值配置差异。</text>
+
+  <line x1="472" y1="164" x2="494" y2="164" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- Top Row Right: Controlled Experiment & Scale Context -->
+  <rect x="498" y="82" width="438" height="164" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="498" y="82" width="438" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="498" y="100" width="438" height="10" fill="#dbeafe"/>
+  <text x="510" y="101" font-size="11.5" font-weight="700" fill="#1e3a8a">零混杂对照设计 &amp; 外部尺度警示（#28455 评论 #1）</text>
+
+  <text x="510" y="128" font-size="10.5" font-weight="700" fill="#1d4ed8">• 天然对照对（固定模型、RTX 4080、q5_1/q5_1）：</text>
+  <text x="522" y="146" font-size="10" fill="#1e293b">默认二进制（197.15 t/s CPU）vs 重编译 ON（1509.70 t/s CUDA）</text>
+  <text x="510" y="165" font-size="10" font-weight="600" fill="#b45309">• 未执行项：原帖建议用 llama-perplexity 实测纯后端差异，但评论区未跑</text>
+
+  <line x1="510" y1="178" x2="924" y2="178" stroke="#bfdbfe" stroke-width="1"/>
+
+  <text x="510" y="198" font-size="10.5" font-weight="700" fill="#0f172a">• 外部尺度佐证（arXiv:2605.19537，五套推理引擎对照）：</text>
+  <text x="522" y="216" font-size="10" fill="#334155">固定权重、硬件与解码参数仅换引擎，基准分波动最高达 16.6 分</text>
+  <text x="522" y="234" font-size="10" fill="#475569">（仅作跨引擎量级警示，不直接等同 llama.cpp q5_1 CPU/GPU 差值）</text>
+
+  <!-- Section Divider Banner -->
+  <rect x="24" y="256" width="912" height="24" rx="6" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="272" font-size="11.2" font-weight="700" fill="#1e3a8a">四层工程防线：从编译契约、运行时显式告警、基准表标记到生产遥测与 CI 门控</text>
+
+  <!-- 4 Gate Cards (y=288..438, h=150, w=219 each) -->
+  <rect x="24" y="288" width="219" height="150" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="36" y="298" width="128" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="100" y="312" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">1. 构建与配置契约</text>
+  <text x="36" y="336" font-size="10.8" font-weight="700" fill="#0f172a">对齐选项与发行镜像</text>
+  <text x="36" y="357" font-size="10" fill="#334155">• 按需打开 ALL_QUANTS=ON</text>
+  <text x="36" y="375" font-size="10" fill="#334155">• 权衡编译耗时与二进制体积</text>
+  <text x="36" y="393" font-size="10" fill="#334155">• 默认构建应显式拒绝对外</text>
+  <text x="36" y="411" font-size="10" fill="#475569">  宣传却未编入的 -ctk/-ctv</text>
+
+  <rect x="255" y="288" width="219" height="150" rx="8" fill="#ffffff" stroke="#f59e0b" stroke-width="1.1"/>
+  <rect x="267" y="298" width="128" height="20" rx="5" fill="#b45309"/>
+  <text x="331" y="312" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">2. 运行时显式告警</text>
+  <text x="267" y="336" font-size="10.8" font-weight="700" fill="#0f172a">阻断静默降级至 CPU</text>
+  <text x="267" y="357" font-size="10" fill="#334155">• 拦截 -ngl 非零却派往 CPU</text>
+  <text x="267" y="375" font-size="10" fill="#334155">• 启动日志打印缺核具体类型</text>
+  <text x="267" y="393" font-size="10" fill="#334155">• 线上服务提供严格模式：</text>
+  <text x="267" y="411" font-size="10" fill="#475569">  发生回退直接 fail-fast 退出</text>
+
+  <rect x="486" y="288" width="219" height="150" rx="8" fill="#ffffff" stroke="#e11d48" stroke-width="1.1"/>
+  <rect x="498" y="298" width="128" height="20" rx="5" fill="#be123c"/>
+  <text x="562" y="312" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">3. 评测表输出诚信</text>
+  <text x="498" y="336" font-size="10.8" font-weight="700" fill="#0f172a">不误标 fa=1 数值路径</text>
+  <text x="498" y="357" font-size="10" fill="#334155">• llama-bench 结果表直接标注</text>
+  <text x="498" y="375" font-size="10" fill="#334155">  是否发生算子离卡（off-GPU）</text>
+  <text x="498" y="393" font-size="10" fill="#334155">• 警告不隐藏在 --verbose 后</text>
+  <text x="498" y="411" font-size="10" fill="#475569">• 跑 PPL 前先校验全 GPU 落位</text>
+
+  <rect x="717" y="288" width="219" height="150" rx="8" fill="#ffffff" stroke="#22c55e" stroke-width="1.1"/>
+  <rect x="729" y="298" width="128" height="20" rx="5" fill="#15803d"/>
+  <text x="793" y="312" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">4. 生产遥测与 CI 门控</text>
+  <text x="729" y="336" font-size="10.8" font-weight="700" fill="#0f172a">资源指纹与冒烟基线</text>
+  <text x="729" y="357" font-size="10" fill="#334155">• 联动监测 TTFT + GPU% + CPU%</text>
+  <text x="729" y="375" font-size="10" fill="#334155">• 告警特征：GPU 0% 配高核载</text>
+  <text x="729" y="393" font-size="10" fill="#334155">• CI 按目标 K/V 组合跑短提示</text>
+  <text x="729" y="411" font-size="10" fill="#475569">  吞吐断言与算子设备核对</text>
+
+  <!-- Bottom Lifecycle & Boundary Bar -->
+  <rect x="24" y="448" width="912" height="54" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="34" y="456" width="128" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="98" y="470" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">议题状态与来源边界</text>
+  <text x="172" y="470" font-size="10.2" font-weight="700" fill="#0f172a">Issue #28455 已于 2026-09-06 关闭：维护者确认“此为已知问题”，同时依反 AI 发帖规范封禁原帖作者。</text>
+  <text x="34" y="491" font-size="10" fill="#475569">防线 1–3 对应原帖及评论 #1 的修改建议；防线 4（生产遥测联动与 CI 组合冒烟门控）为助手结合遥测数据的工程延伸。</text>
+
+  <text x="24" y="519" font-size="10" fill="#64748b">阅读整理配图（非原图）· 依据 Issue #28455 评论区（@sinanezhadian、@JohannesGaessler）与 arXiv:2605.19537 引用边界整理</text>
+</svg>

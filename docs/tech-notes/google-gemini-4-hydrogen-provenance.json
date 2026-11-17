@@ -1,0 +1,94 @@
+{
+  "id": "google-gemini-4-hydrogen",
+  "review_code": "T1-25",
+  "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+  "companion_source_url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+  "source_post_url": "https://x.com/GoogleDeepMind/status/2120940338869055788",
+  "source_title": "Introducing Gemini 4 Hydrogen",
+  "companion_source_title": "Gemini 4 Hydrogen and Orchestrator",
+  "source_author": "Koray Kavukcuoglu (main blog); The Antigravity Team (companion post)",
+  "source_org": "Google DeepMind / Google Antigravity",
+  "source_date": "2026-11-12",
+  "note_date": "2026-11-13",
+  "updated_at": "2026-11-15T20:08:06+08:00",
+  "frozen_primary_html": {
+    "path": ".preview/research-jobs/runs/20261113-083004-2e17ddd193-b40adf/work/sources/google-gemini-4-hydrogen/source.html",
+    "bytes": 417284,
+    "sha256": "3b904a260002437ec45759c2ce7a105f4f13d55a72a0c87324c1cbd85e1989e9",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+  },
+  "frozen_companion_html": {
+    "path": ".preview/research-jobs/runs/20261113-083004-2e17ddd193-b40adf/work/sources/google-gemini-4-hydrogen/antigravity.html",
+    "bytes": 180566,
+    "sha256": "a0d4487bc7b6834fe7e3b081793bf090916765eb925e21c13d9d7e8d689bc2e5",
+    "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/"
+  },
+  "frozen_primary_txt": {
+    "path": ".preview/research-jobs/runs/20261113-083004-2e17ddd193-b40adf/work/sources/google-gemini-4-hydrogen/text.txt",
+    "bytes": 14106,
+    "sha256": "89a49d60f22a3c444a004642f8ff33248c3d1816cc897e1c25bf86920d44339c"
+  },
+  "frozen_x_post_json": {
+    "path": ".preview/research-jobs/runs/20261113-083004-2e17ddd193-b40adf/work/sources/x_exports/2120940338869055788/post.json",
+    "bytes": 2692,
+    "sha256": "2a388495fc14dbd70f8ef292527660f76e4133c5034ae8ebfd242f0bea3e79e6",
+    "url": "https://x.com/GoogleDeepMind/status/2120940338869055788"
+  },
+  "frozen_intake_yaml": {
+    "path": ".incoming/research/2026-11-13.yaml",
+    "bytes": 7230,
+    "sha256": "2e17ddd19383bc43b0d7c961faf8e60d0d6cf6df8db11e1f8a48ef9f532d6a66"
+  },
+  "frozen_run_report": {
+    "path": ".preview/research-jobs/runs/20261113-083004-2e17ddd193-b40adf/report.json",
+    "bytes": 14448,
+    "sha256": "f3cad4dbde96e36ba084dbb05454b0a8af055e85d5493fe874f2aa498f915f31"
+  },
+  "frozen_run_editorial_result": {
+    "path": ".preview/research-jobs/runs/20261113-083004-2e17ddd193-b40adf/work/sources/editorial-result.json",
+    "bytes": 20151,
+    "sha256": "6efb5cc18433143b219914ae94dd57d1baf6823271b8c515a2b2ef3d0b72bc08"
+  },
+  "unfetched_referenced_links": [
+    "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Hydrogen-Model-Card.pdf",
+    "https://www.tbench.ai/news/terminal-bench-4-0"
+  ],
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/google-gemini-4-hydrogen.md",
+      "sha256": "8814d3b247c66e79d3124a8a1c971d353e189d82ffb5963ee8fb0fb52bdab451"
+    },
+    "en_markdown": {
+      "path": "_tech/en/google-gemini-4-hydrogen.md",
+      "sha256": "44af7dc46105c73554b3ffcd61e85b986f4e3913edcfc105516c18524311ebf0"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/google-gemini-4-hydrogen/orchestrator-handoff-loop-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-frozen-primary-posts",
+        "sha256": "5b9bcbc28d376eff902040d21b501aa63fa1882e27fcc04c57fc2e83538228c9"
+      },
+      {
+        "path": "assets/images/tech/google-gemini-4-hydrogen/orchestrator-handoff-loop-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-frozen-primary-posts",
+        "sha256": "1c45643d329fbf3873c4e446803e5ba1f4edb68af480027750ea18531c856049"
+      },
+      {
+        "path": "assets/images/tech/google-gemini-4-hydrogen/hydrogen-operating-cost-audit-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-frozen-primary-posts",
+        "sha256": "6e2a8cb087d8a966b0ce2ac254371696ce6ac65e74446c3a92c3db31ad44923f"
+      },
+      {
+        "path": "assets/images/tech/google-gemini-4-hydrogen/hydrogen-operating-cost-audit-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-frozen-primary-posts",
+        "sha256": "183da3a765167d1ca3a37cc7506154799c0e38f683a542228e9b136aa6d8f5f6"
+      }
+    ]
+  }
+}

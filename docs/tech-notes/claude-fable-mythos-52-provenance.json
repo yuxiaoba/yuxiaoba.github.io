@@ -1,0 +1,72 @@
+{
+  "id": "claude-fable-mythos-52",
+  "review_code": "T1-24",
+  "source_url": "https://www.anthropic.com/news/claude-fable-and-mythos-5-2",
+  "source_canonical_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+  "source_title": "Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+  "source_author": "Anthropic (institutional byline)",
+  "source_org": "Anthropic",
+  "source_date": "2026-11-09",
+  "note_date": "2026-11-10",
+  "updated_at": "2026-11-15T19:57:00+08:00",
+  "frozen_primary_html": {
+    "path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/fetched/anthropic-fable-mythos-5-2/page.html",
+    "sha256": "3f12b99068aeb35264ad46c55c4a271129979c0c79aa585aab7909fefc0eb662"
+  },
+  "frozen_primary_text": {
+    "path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/fetched/anthropic-fable-mythos-5-2/page.txt",
+    "sha256": "23b6ec1e65ad728835b8de249d6de10d5a3a0fa7ae4235cfb17ee66c5ebe8037"
+  },
+  "frozen_run_report": {
+    "path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/report.json",
+    "sha256": "1d3a9c3c9cec16931ea2b1b7d09382f35832364fb889d07efe22404d958f5191"
+  },
+  "frozen_batch_r002_yaml": {
+    "path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/2026-11-10.r002.yaml",
+    "sha256": "71b806c6319e5eb91ac11b4d8a7294761781dd08727f28edbf56f98ed0b01625"
+  },
+  "frozen_batch_r003_yaml": {
+    "path": ".incoming/research/2026-11-10.r003.yaml",
+    "sha256": "d0146137dd2ca435a31fcc156d76d08e72209ab45d4da8db45487214555573b5"
+  },
+  "external_system_card_frozen": false,
+  "external_system_card_url": "https://www.anthropic.com/document/claude-fable-5-2-mythos-5-2-system-card",
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/claude-fable-mythos-52.md",
+      "sha256": "60581c038861b848ba87c7dfb1929efac259ab352cef5b34317c874155fdd1f0"
+    },
+    "en_markdown": {
+      "path": "_tech/en/claude-fable-mythos-52.md",
+      "sha256": "2cbce3607dbb4a2e0877b0ac39f3a353cb52f46ffffb56e8ee7b00fa3249e073"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/claude-fable-mythos-52/fable-mythos-operating-curves-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-frozen-source-and-embedded-chart-csvs",
+        "sha256": "e40d487d917455a38afb21d05d1a92a6902e417355d0bac97820d07aa5ff4319"
+      },
+      {
+        "path": "assets/images/tech/claude-fable-mythos-52/fable-mythos-operating-curves-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-frozen-source-and-embedded-chart-csvs",
+        "sha256": "9199be5ed8c2206991ca87915ea42727902808affd04b2f2cc88178aef0f2918"
+      },
+      {
+        "path": "assets/images/tech/claude-fable-mythos-52/fable-mythos-routing-eval-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-frozen-source-and-embedded-chart-csvs",
+        "sha256": "8bfad5a8b541082740742a59a0da345407138fc6f5ae4eedbf4f71c86c120ffa"
+      },
+      {
+        "path": "assets/images/tech/claude-fable-mythos-52/fable-mythos-routing-eval-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-frozen-source-and-embedded-chart-csvs",
+        "sha256": "d8d3fea9ca3214c00d404423e55ca25b5aa1b50a759a9b98e78a97b3a6ae5a65"
+      }
+    ]
+  }
+}

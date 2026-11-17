@@ -1,0 +1,43 @@
+{
+  "id": "review-haoailab-pika-h3-flex",
+  "review_code": "T1-04",
+  "source_url": "https://haoailab.com/blogs/pika-h3-flex/",
+  "source_title": "Pika H3 Flex in FastVideo: 7x Faster, and Near Real Time in 4-bit",
+  "source_author": "Aryan Kumar, Will Lin, Hao Zhang",
+  "source_org": "Hao AI Lab @ UCSD (FastVideo)",
+  "source_date": "2026-11-04",
+  "note_date": "2026-11-04",
+  "updated_at": "2026-11-15T17:20:00+08:00",
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/review-haoailab-pika-h3-flex.md",
+      "sha256": "fb4290ddb3c628fc6a4643aece8af932eed106e05d5267e01bc95c6c60aa8b59"
+    },
+    "en_markdown": {
+      "path": "_tech/en/review-haoailab-pika-h3-flex.md",
+      "sha256": "f6e320eaa7bc6fe2e3878fe9ee7ac5d04ee5c695a81b9cbfb0305ed65e3c6fb7"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/review-haoailab-pika-h3-flex/official-figure.png",
+        "origin": "original_haoailab_png",
+        "source": "https://haoailab.com/blogs/pika-h3-flex/",
+        "sha256": "b51cb4d458d6a65791f78b3c91e3703ef701845feb30dd6bb89941894a17cf28"
+      },
+      {
+        "path": "assets/images/tech/review-haoailab-pika-h3-flex/pika-h3-pipeline-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "194ff2c7bafb97cd340c095c5cae5a9150d8f5b4ea1b0069d1600a6460ccb90b"
+      },
+      {
+        "path": "assets/images/tech/review-haoailab-pika-h3-flex/pika-h3-pipeline-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "f3bf989a08ae37b5b1979bd6e5d86deacc4983b3910718009c3c84c43b28d879"
+      }
+    ]
+  }
+}

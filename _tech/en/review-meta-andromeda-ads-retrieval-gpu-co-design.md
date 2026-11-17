@@ -1,10 +1,9 @@
 ---
 id: review-meta-andromeda-ads-retrieval-gpu-co-design
-title: '2026-10-29 | Meta Andromeda: Powering the Next Generation of Ads Retrieval
-  Through Model-System Co-Design'
+title: '2026-10-29 | Meta Andromeda: Powering the Next Generation of Ads Retrieval Through Model-System Co-Design'
 date: '2026-10-29'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,9 +16,11 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/en/review-meta-andromeda-ads-retrieval-gpu-co-design/
 long_read: true
-summary: "How Andromeda removes intermediate and cross-host candidate traffic, with distinct kernel and pipeline measurements."
+summary: How Andromeda removes intermediate and cross-host candidate traffic, with distinct kernel and pipeline measurements.
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 ## Retrieval becomes a data-movement problem
 
 Andromeda narrows a huge advertising candidate pool within a millisecond budget before expensive ranking. Meta's architecture uses specialized user experts, context-aware ad representations and an MoE gating interaction layer. The reported roughly 300-fold FLOP reduction relative to the 2024 retrieval model creates room for system fusion.

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Gemini 4 Hydrogen thinking tiers, 1M pricing, and cross-post benchmark audit diagram">
+  <title>Gemini 4 Hydrogen thinking tiers, 1M pricing, and cross-post benchmark audit diagram</title>
+  <desc>Mapping disclosed operating points against trajectory cost drivers and conflicting quota claims</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc"/>
+  <rect x="14" y="14" width="932" height="512" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="32" y="46" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">Thinking Tiers, Flat 1M Pricing, and the Cross-Post Benchmark Audit</text>
+<text x="32" y="68" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start">Mapping disclosed operating points against trajectory cost drivers and conflicting quota claims</text>
+<line x1="32" y1="80" x2="928" y2="80" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="30" y="92" width="442" height="236" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="46" y="114" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#1e3a8a" text-anchor="start">4 Thinking Levels &amp; Published Eval Points</text>
+<rect x="44" y="126" width="414" height="50" rx="7" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1"/>
+<text x="56" y="146" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="700" fill="#475569" text-anchor="start">low / medium</text>
+<text x="446" y="146" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.8" font-weight="700" fill="#475569" text-anchor="end">Latency / Cost Knobs</text>
+<text x="56" y="165" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10" font-weight="400" fill="#334155" text-anchor="start">Quality-latency-cost tradeoff tiers; eval scores not split out in prose</text>
+<rect x="44" y="184" width="414" height="50" rx="7" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.1"/>
+<text x="56" y="204" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">high (default)</text>
+<text x="446" y="204" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="end">AA 51 · T-Bench 4.1: 57%</text>
+<text x="56" y="223" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10" font-weight="400" fill="#334155" text-anchor="start">AA Index 51 (&gt; Argon 50); T-Bench 4.1 57% vs 18.2% (3.8 Flash), 2.5x faster</text>
+<rect x="44" y="242" width="414" height="50" rx="7" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.1"/>
+<text x="56" y="262" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">xhigh</text>
+<text x="446" y="262" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="end">AA 54 · Domain Peak</text>
+<text x="56" y="281" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10" font-weight="400" fill="#334155" text-anchor="start">AA Index 54; Tax 52.3% (#1), Legal 55.8% (T-#1), HLE-D 58.8%, ALE 71.6%</text>
+<text x="46" y="316" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="9.8" font-weight="400" fill="#64748b" text-anchor="start">Note: Publisher/benchmark figures; Model Card PDF &amp; chart GIFs are not frozen.</text>
+<rect x="488" y="92" width="442" height="236" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="504" y="114" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#1e3a8a" text-anchor="start">Flat 1M Token Price vs. Trajectory Task Cost</text>
+<rect x="502" y="126" width="414" height="72" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+<text x="514" y="145" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#1e3a8a" text-anchor="start">Published Flat Rate Across Full 1M Native Context</text>
+<text x="514" y="167" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#0f172a" text-anchor="start">$1.50 / 1M input tokens   |   $7.50 / 1M output tokens</text>
+<text x="514" y="187" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10" font-weight="400" fill="#475569" text-anchor="start">Undisclosed: cached-input rates &amp; per-thinking-tier billing multipliers</text>
+<rect x="502" y="208" width="414" height="108" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="514" y="229" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#0f172a" text-anchor="start">Cost = Rate x (Appended In + Out) x Retries + Carbon Escalations</text>
+<text x="514" y="252" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.4" font-weight="400" fill="#334155" text-anchor="start">• Multi-turn code loops re-send growing repo context each step</text>
+<text x="514" y="273" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.4" font-weight="400" fill="#334155" text-anchor="start">• Partner claims vs 3.8 Flash: -12% to -23% tokens (Box/STAN)</text>
+<text x="514" y="294" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.4" font-weight="400" fill="#334155" text-anchor="start">• High retries or frequent Carbon fallback erode unit-price gains</text>
+<rect x="30" y="340" width="900" height="172" rx="10" fill="#f1f5f9" stroke="#1d4ed8" stroke-width="1.3" stroke-dasharray="6,4"/>
+<text x="46" y="362" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#1e3a8a" text-anchor="start">Cross-Post Discrepancy &amp; Accounting Audit: Main Launch Blog vs. Antigravity Companion Post</text>
+<rect x="46" y="372" width="418" height="92" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+<text x="58" y="392" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="start">Main Launch Post (blog.google · Koray Kavukcuoglu)</text>
+<text x="58" y="412" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.8" font-weight="400" fill="#334155" text-anchor="start">Claims near-Carbon success rate while consuming</text>
+<text x="58" y="429" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.8" font-weight="400" fill="#334155" text-anchor="start">24% less quota and completing 19% faster on:</text>
+<rect x="58" y="438" width="394" height="20" rx="5" fill="#eff6ff"/>
+<text x="66" y="452" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="start">Cited benchmark: Terminal-Bench 4.0 (link &amp; chart alt both 4.0)</text>
+<text x="480" y="422" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">≠</text>
+<rect x="496" y="372" width="418" height="92" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+<text x="508" y="392" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="start">Antigravity Post (antigravity.google · Antigravity Team)</text>
+<text x="508" y="412" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.8" font-weight="400" fill="#334155" text-anchor="start">Quotes the exact same 24% less quota and 19% faster</text>
+<text x="508" y="429" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.8" font-weight="400" fill="#334155" text-anchor="start">Orchestrator figure alongside standalone 57% score on:</text>
+<rect x="508" y="438" width="394" height="20" rx="5" fill="#dbeafe"/>
+<text x="516" y="452" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="start">Cited benchmark: Terminal-Bench 4.1 (4.0 vs 4.1 conflict)</text>
+<rect x="46" y="472" width="868" height="28" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+<text x="58" y="490" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.8" font-weight="700" fill="#0f172a" text-anchor="start">Audit takeaway: (1) Unresolved 4.0 vs 4.1 label conflict across sibling posts; (2) opaque subscription 'quota' is a rate-limit unit, not API $ cost.</text>
+</svg>

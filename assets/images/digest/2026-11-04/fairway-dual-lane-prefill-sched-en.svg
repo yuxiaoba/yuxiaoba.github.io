@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Fairway Adaptive Reuse Scheduling: Dual Virtual Lanes and Work-Charge Merge" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="32" font-size="16.5" font-weight="700" fill="#0f172a">Fairway Adaptive Reuse Scheduling: Dual Virtual Lanes &amp; Work-Charge Merge</text>
+  <text x="24" y="51" font-size="10.0" fill="#475569">From arXiv:2611.02082v1 (§4, Figs. 5–6, Alg. 1, App. A): Reorders vLLM waiting queue each step with frozen w=4, 3× est, 1s floor</text>
+  <line x1="24" y1="61" x2="936" y2="61" stroke="#cbd5e1" stroke-width="1"/>
+
+  <rect x="20" y="70" width="286" height="270" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="70" width="286" height="26" rx="8" fill="#1e3a8a"/>
+  <rect x="20" y="88" width="286" height="8" fill="#1e3a8a"/>
+  <text x="32" y="87.5" font-size="10.6" font-weight="700" fill="#ffffff">1. Waiting Queue &amp; Fast-Lane Score</text>
+
+  <rect x="30" y="104" width="266" height="66" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="40" y="121" font-size="10.0" font-weight="700" fill="#1e3a8a">Graded KV Reuse &amp; Work (70–250× spread)</text>
+  <text x="40" y="139" font-size="9.0" fill="#334155">• Cached prefix h_r ← KV manager (16-tok blocks)</text>
+  <text x="40" y="156" font-size="9.0" fill="#0f172a">• Uncached work c_r = max(1, len_r − h_r)</text>
+
+  <rect x="30" y="177" width="266" height="74" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.0"/>
+  <text x="40" y="194" font-size="10.0" font-weight="700" fill="#1e3a8a">Relative Wait &amp; Patience SLO_r (R2, §4.3)</text>
+  <text x="40" y="212" font-size="9.2" font-weight="700" fill="#0f172a">SLO_r = max(1 s, 3 · est(len_r))</text>
+  <text x="40" y="229" font-size="8.7" fill="#334155">• est(len_r) uses idle prefill time on full len_r</text>
+  <text x="40" y="244" font-size="8.7" fill="#475569">• 1 s floor prevents sub-sec noise beating reuse</text>
+
+  <rect x="30" y="258" width="266" height="74" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="40" y="275" font-size="10.0" font-weight="700" fill="#1d4ed8">Unitless Fast-Lane Score s_r</text>
+  <text x="40" y="294" font-size="10.4" font-weight="700" fill="#0f172a">s_r = h_r / c_r + wait_r / SLO_r</text>
+  <text x="40" y="311" font-size="8.6" fill="#334155">• Short queue → reuse ratio h_r/c_r dominates (R1)</text>
+  <text x="40" y="325" font-size="8.6" fill="#1e3a8a">• At wait_r = 3·est, a miss ties a 50%-cached req</text>
+
+  <line x1="307" y1="205" x2="322" y2="205" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+  <rect x="324" y="70" width="314" height="270" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="324" y="70" width="314" height="26" rx="8" fill="#1d4ed8"/>
+  <rect x="324" y="88" width="314" height="8" fill="#1d4ed8"/>
+  <text x="336" y="87.5" font-size="10.6" font-weight="700" fill="#ffffff">2. Dual Virtual Lanes &amp; Work-Charge Merge</text>
+
+  <rect x="334" y="104" width="294" height="44" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.0"/>
+  <rect x="340" y="111" width="60" height="17" rx="4" fill="#1d4ed8"/>
+  <text x="370" y="122.5" text-anchor="middle" font-size="8.4" font-weight="700" fill="#ffffff">Fast Lane</text>
+  <text x="408" y="123" font-size="9.3" font-weight="700" fill="#1e3a8a">Ranks Q by s_r desc (ties: oldest first)</text>
+  <text x="340" y="140" font-size="8.6" fill="#334155">Init charge A = w · c_Fast[1]; advances by +w·c_r (w = 4)</text>
+
+  <rect x="334" y="155" width="294" height="44" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.0"/>
+  <rect x="340" y="162" width="60" height="17" rx="4" fill="#475569"/>
+  <text x="370" y="173.5" text-anchor="middle" font-size="8.4" font-weight="700" fill="#ffffff">Fair Lane</text>
+  <text x="408" y="174" font-size="9.3" font-weight="700" fill="#0f172a">Ranks Q by arrival (oldest o at head)</text>
+  <text x="340" y="191" font-size="8.6" fill="#334155">Init charge F = c_Fair[1] = c_o; advances by +c_r</text>
+
+  <rect x="334" y="206" width="294" height="126" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.1"/>
+  <text x="344" y="223" font-size="9.7" font-weight="700" fill="#1e3a8a">Stride Merge Loop (skip already-placed reqs)</text>
+  <text x="344" y="241" font-size="8.9" fill="#0f172a">• If A ≤ F: pick next unplaced in Fast, A ← A + 4·c_r</text>
+  <text x="344" y="257" font-size="8.9" fill="#0f172a">• Else (A &gt; F): pick next in Fair, F ← F + c_r</text>
+  <text x="344" y="273" font-size="8.7" fill="#475569">• Tie → Fast; orders full queue so no budget wastes</text>
+
+  <rect x="342" y="284" width="278" height="40" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="350" y="299" font-size="8.7" font-weight="700" fill="#92400e">Critical invariant: Reset A &amp; F every step!</text>
+  <text x="350" y="314" font-size="8.3" fill="#78350f">Carrying charges across steps forces 80% FCFS &amp; loses median</text>
+
+  <line x1="639" y1="205" x2="654" y2="205" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+  <rect x="656" y="70" width="284" height="270" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="656" y="70" width="284" height="26" rx="8" fill="#0f172a"/>
+  <rect x="656" y="88" width="284" height="8" fill="#0f172a"/>
+  <text x="668" y="87.5" font-size="10.6" font-weight="700" fill="#ffffff">3. Step Admission &amp; Formal Bound</text>
+
+  <rect x="666" y="104" width="264" height="79" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="676" y="121" font-size="9.8" font-weight="700" fill="#1e3a8a">Orthogonal Hook in vLLM (Fig. 5)</text>
+  <text x="676" y="138" font-size="8.7" fill="#334155">• Continue running reqs; admit order up to B</text>
+  <text x="676" y="154" font-size="8.7" fill="#334155">• Leaves chunking (B=2,048) &amp; eviction intact</text>
+  <text x="676" y="170" font-size="8.7" fill="#334155">• Re-sorts per step to capture new cached KV</text>
+
+  <rect x="666" y="191" width="264" height="141" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="676" y="208" font-size="9.8" font-weight="700" fill="#1d4ed8">Lemma 1 &amp; Corollary 1 (App. A Bound)</text>
+  <text x="676" y="226" font-size="9.6" font-weight="700" fill="#0f172a">W ≤ c_o / w + c_{a_k} − c_{a_1}</text>
+  <text x="676" y="244" font-size="8.6" fill="#334155">• Work placed before oldest req o is ≤ c_o/4 + 1 req</text>
+  <text x="676" y="258" font-size="8.6" fill="#334155">  regardless of queue depth or flood hits (R3)</text>
+  <text x="676" y="275" font-size="8.6" fill="#0f172a">• If remaining B &amp; KV suffice, o starts in-step</text>
+  <text x="676" y="289" font-size="8.6" fill="#0f172a">  (covers c_o ≤ ~w·B = 8k tokens at B=2,048)</text>
+  <text x="676" y="307" font-size="8.5" font-weight="700" fill="#b45309">• Reqs &gt; ~8k advance via relative wait aging</text>
+  <text x="676" y="322" font-size="8.5" fill="#475569">• Evaluated worst wait stays ≤ 2.3× p99 (0 starved)</text>
+
+  <rect x="20" y="352" width="920" height="174" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="352" width="920" height="24" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="368" width="920" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="376" x2="940" y2="376" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="368" font-size="10.0" font-weight="700" fill="#1e3a8a">Fig. 6 Worked Step (w = 4, budget B = 2,048): Oldest miss M (6,000 uncached tok) vs. 6 later hits H1–H6 (300 each)</text>
+
+  <rect x="32" y="384" width="286" height="40" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="42" y="399" font-size="8.8" font-weight="700" fill="#334155">Waiting queue (oldest first):</text>
+  <rect x="42" y="405" width="76" height="15" rx="3" fill="#fee2e2" stroke="#dc2626" stroke-width="0.8"/>
+  <text x="80" y="415.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#991b1b">M (6,000)</text>
+  <rect x="124" y="405" width="182" height="15" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="215" y="415.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1e3a8a">H1  H2  H3  H4  H5  H6 (300 ea)</text>
+
+  <rect x="328" y="384" width="302" height="40" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="338" y="399" font-size="8.8" font-weight="700" fill="#1d4ed8">Fast: H1 H2 H3 H4 H5 H6 → M (+1,200/pick)</text>
+  <text x="338" y="415" font-size="8.8" font-weight="700" fill="#334155">Fair: M → H1 H2 H3 H4 H5 H6 (F=6,000 at head)</text>
+
+  <rect x="640" y="384" width="288" height="40" rx="5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="650" y="399" font-size="8.8" font-weight="700" fill="#1e3a8a">Charge race: 6,000 ÷ (4 × 300) = 5 Fast picks</text>
+  <text x="650" y="415" font-size="8.6" fill="#334155">At most 1,500 tok (= 1/4 of M) goes before M</text>
+
+  <rect x="32" y="432" width="896" height="84" rx="6" fill="#f8fafc" stroke="#bfdbfe" stroke-width="1.0"/>
+  <rect x="44" y="442" width="82" height="34" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="85" y="456" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1e3a8a">1. H1 (300)</text>
+  <text x="85" y="469" text-anchor="middle" font-size="8.0" fill="#334155">A=1,200≤F</text>
+
+  <rect x="134" y="442" width="82" height="34" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="175" y="456" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1e3a8a">2. H2 (300)</text>
+  <text x="175" y="469" text-anchor="middle" font-size="8.0" fill="#334155">A=2,400≤F</text>
+
+  <rect x="224" y="442" width="82" height="34" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="265" y="456" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1e3a8a">3. H3 (300)</text>
+  <text x="265" y="469" text-anchor="middle" font-size="8.0" fill="#334155">A=3,600≤F</text>
+
+  <rect x="314" y="442" width="82" height="34" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="355" y="456" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1e3a8a">4. H4 (300)</text>
+  <text x="355" y="469" text-anchor="middle" font-size="8.0" fill="#334155">A=4,800≤F</text>
+
+  <rect x="404" y="442" width="82" height="34" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="445" y="456" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1e3a8a">5. H5 (300)</text>
+  <text x="445" y="469" text-anchor="middle" font-size="8.0" fill="#334155">A=6,000≤F</text>
+
+  <rect x="502" y="442" width="190" height="34" rx="4" fill="#dcfce7" stroke="#15803d" stroke-width="1.4"/>
+  <text x="597" y="456" text-anchor="middle" font-size="9.4" font-weight="700" fill="#166534">6. M 1st chunk (548 tok)</text>
+  <text x="597" y="469" text-anchor="middle" font-size="8.1" fill="#14532d">Next A=7,200 &gt; F=6,000 → Fair</text>
+
+  <line x1="702" y1="436" x2="702" y2="510" stroke="#1d4ed8" stroke-width="1.4" stroke-dasharray="4,3"/>
+
+  <rect x="714" y="442" width="200" height="34" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.0" stroke-dasharray="3,2"/>
+  <text x="814" y="456" text-anchor="middle" font-size="9.2" font-weight="700" fill="#475569">7. H6 (300 tok) next step</text>
+  <text x="814" y="469" text-anchor="middle" font-size="8.0" fill="#64748b">B = 2,048 full (1,500 + 548)</text>
+
+  <line x1="44" y1="483" x2="486" y2="483" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="265" y="497" text-anchor="middle" font-size="8.6" font-weight="600" fill="#1e3a8a">5 cheap hits = 1,500 tok finish in-step</text>
+  <text x="597" y="497" text-anchor="middle" font-size="8.6" font-weight="600" fill="#166534">M runs first in subsequent steps</text>
+  <text x="814" y="497" text-anchor="middle" font-size="8.5" fill="#475569">H6 admitted once budget clears</text>
+</svg>

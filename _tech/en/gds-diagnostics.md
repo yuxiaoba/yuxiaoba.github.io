@@ -1,10 +1,9 @@
 ---
 id: gds-diagnostics
-title: '2026-11-01 | GPUDirect Storage Diagnostics: Deterministic Checks and Agent
-  Orchestration'
+title: '2026-11-01 | GPUDirect Storage Diagnostics: Deterministic Checks and Agent Orchestration'
 date: '2026-11-01'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -12,17 +11,17 @@ tags:
 - systems-reliability
 - observability
 - inference-serving
-summary: gds-diag separates platform, configuration, container, and mount checks while
-  an optional agent coordinates interpretation.
+summary: gds-diag separates platform, configuration, container, and mount checks while an optional agent coordinates interpretation.
 translation_source: assistant
 authorship: assistant
 long_read: true
 source_url: https://developer.nvidia.com/blog/how-to-check-and-configure-nvidia-gpudirect-storage-for-your-platform/
 permalink: /tech/en/gds-diagnostics/
 published_at: '2026-11-01T08:44:13.804154+08:00'
-updated_at: '2026-11-01T08:44:13.804154+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
-
 A GPU being able to access storage does not establish that an application uses the intended GPUDirect Storage path. Platform support, CUDA and driver configuration, containers, mount points, and configuration overrides all matter. NVIDIA’s gds-diag organizes these questions into independent diagnostic subcommands, with an optional agent skill providing a natural-language entry point.
 
 Original: [How to Check and Configure NVIDIA GPUDirect Storage for Your Platform](https://developer.nvidia.com/blog/how-to-check-and-configure-nvidia-gpudirect-storage-for-your-platform/) · Phil Carns · NVIDIA · 2026-10-30.

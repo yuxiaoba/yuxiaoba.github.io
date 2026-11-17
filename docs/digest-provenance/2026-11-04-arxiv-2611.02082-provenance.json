@@ -1,0 +1,316 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-04-arxiv-2611.02082",
+  "paper_id": "arxiv-2611.02082",
+  "anchor_id": "paper-arxiv-2611.02082",
+  "digest_date": "2026-11-04",
+  "updated_at_utc": "2026-11-17T03:09:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-04.md",
+    "en_target": "_digest/en/daily-2026-11-04.md",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/bf7cc5ec-38eb-4222-b76e-8f34a6754e7f/scratch/d2b2-sections/2611.02082/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/bf7cc5ec-38eb-4222-b76e-8f34a6754e7f/scratch/d2b2-sections/2611.02082/section_en.md",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.02082v1 HTML and extracted full text."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.02082",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "No v2 revision or withdrawal notice present in saved arXiv:2611.02082v1 abstract HTML or frozen fetch-index.json.",
+    "title": "Fairway: Load-Aware KV Cache Reuse for LLM Prefill Scheduling",
+    "authors": [
+      "Hamidreza Alikhani",
+      "Nazmul Takbir",
+      "Matin Khajavi",
+      "Rajat Bhattacharjya",
+      "Sangeetha Abdu Jyothi",
+      "Nikil Dutt"
+    ],
+    "affiliation": "University of California, Irvine (Alikhani, Takbir, Bhattacharjya, Jyothi, Dutt); Apiphany (Khajavi)",
+    "correspondence": "Hamidreza Alikhani <hamidra@uci.edu>",
+    "categories": [
+      "cs.DC"
+    ],
+    "submitted_utc": "Sun, 1 Nov 2026 17:42:31 UTC",
+    "submitted_date": "2026-11-01",
+    "pdf_template_note": "ICML-style preprint layout; footer reads Preprint. Copyright 2026 by the author(s). Includes AI Usage Disclosure.",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.02082",
+      "abs_v1": "https://arxiv.org/abs/2611.02082v1",
+      "pdf": "https://arxiv.org/pdf/2611.02082",
+      "html_v1": "https://arxiv.org/html/2611.02082v1",
+      "doi": "https://doi.org/10.48550/arXiv.2611.02082"
+    },
+    "official_code_repo_in_paper": null,
+    "frozen_manifest_artifacts": {
+      "fetch_index": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/fetch-index.json",
+        "arxiv_2611_02082_sha256": "98451d81269040241b953cd7ebdc63a9af4b144cd73ce575ac4324c9ecb28d3f",
+        "sha256": "6516dec4a5188fa789e7c917b8403436bc6d38568acb3b2e275e662884b64ba8",
+        "bytes": 148898
+      },
+      "page_html": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/online/arxiv-2611.02082/page.html",
+        "lines": 594,
+        "sha256": "98451d81269040241b953cd7ebdc63a9af4b144cd73ce575ac4324c9ecb28d3f",
+        "bytes": 41867
+      },
+      "page_txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/online/arxiv-2611.02082/page.txt",
+        "sha256": "157f890be3b4730258ba63f6a4253b01e7df6cf9131f6b7d1906bad7c6dad471",
+        "bytes": 4993
+      }
+    },
+    "staged_source_artifacts": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2611.02082.abs.html",
+        "lines": 594,
+        "sha256": "98451d81269040241b953cd7ebdc63a9af4b144cd73ce575ac4324c9ecb28d3f",
+        "bytes": 41867
+      },
+      "full_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2611.02082.html",
+        "lines": 2372,
+        "sha256": "502baf0cc93c44b6d2a934906ecf67f2cfb59aa4dd018d31668c850d2a5f9ee5",
+        "bytes": 226751
+      },
+      "extracted_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2611.02082.txt",
+        "lines": 964,
+        "sha256": "2656660fdedc6da303b837943d95f10244e9d93418308f3fc1e682549a1000ff",
+        "bytes": 98353
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "serving_platform": {
+      "model": "Llama-3.1-8B",
+      "engine": "vLLM 0.16.0",
+      "hardware": "1x NVIDIA A6000 (48 GB)",
+      "deployment_role": "Prefill node in P/D disaggregated serving (1 output token generated per request)",
+      "step_token_budget_b": 2048,
+      "kv_cache_sizing": "1/4 to 1/3 of each trace's distinct reusable blocks",
+      "shared_eviction_policy": "PEEK demand-aware eviction (Appendix C) used across all 8 methods"
+    },
+    "frozen_hyperparameters": {
+      "fast_lane_weight_w": 4,
+      "patience_multiplier": 3,
+      "patience_floor_seconds": 1.0,
+      "tuning_origin": "Single-seed SEC trace, then frozen unchanged across all evaluations"
+    },
+    "graded_reuse_characterization_s3_1": {
+      "uncached_work_p90_p10_ratio": "70-250x across four evaluated workloads",
+      "sec_qa": "1.5k-token prompts; ~50% full hits (question only), 30-35% partial hits carry 54-64% of prefill work",
+      "mooncake_traces": "58% conversation and 65% tool-agent requests partially cached; uncached tokens span a few hundred to ~18k (~100x)"
+    },
+    "baselines": [
+      "FCFS",
+      "LPM (SGLang)",
+      "k-LPM (k=4, k=8)",
+      "RAGCache",
+      "PEEK",
+      "Preble"
+    ],
+    "dynamic_sec_traces_s5_2": {
+      "phase_targets_met": "6/6 on both traces in every run (max 4/6 for any baseline)",
+      "spike_60s_median_ttft_s": {
+        "fairway": 0.82,
+        "fcfs": "5.1-5.9 (5.9 in Fig. 1)",
+        "lpm_and_ragcache": 0.8
+      },
+      "spike_60s_p99_ttft_s": {
+        "fairway": "8.4 (traffic surge) / 7.6 (topic shift)",
+        "fcfs": 7.8,
+        "k_lpm_4": "9.9 (surge) / 14.2 (topic shift)",
+        "preble": "11-12",
+        "lpm_and_k_lpm_8": "13-15 (15.0 in Fig. 1)",
+        "peek": "18-19",
+        "ragcache": "42-50 (41.8 in Fig. 1)"
+      }
+    },
+    "eleven_scenarios_s5_3": {
+      "p99_wins_vs_non_starving": "10/11 lower by 2-18%, 1/11 tie (Mooncake rho=1.1, k-LPM 4 at -2%)",
+      "max_p99_reduction_vs_prior_prefix_aware": "up to 8.6x lower p99 TTFT",
+      "starvation_definition": "worst TTFT > 3x own p99",
+      "starvation_counts": {
+        "fairway": "0/11 (worst wait always <= 2.3x p99)",
+        "ragcache": "10/11 (worst 16-365s; 11th p99=162s)",
+        "peek": "3/11 (4 more >2x FCFS)",
+        "preble": "0/11 (5-53% higher p99 than Fairway in every scenario)"
+      },
+      "sec_static_examples": {
+        "sec_rho_0_9": "Fairway median 0.70s (LPM 0.68s), p99 3.82s (FCFS 3.9s, LPM 5.9s, k-LPM4 +12%, k-LPM8 +42%)",
+        "sec_rho_1_1": "Fairway p99 10.55s (-18% vs best baseline, half LPM 22.2s, k-LPM4 +22%, k-LPM8 +61%)"
+      }
+    },
+    "flood_stress_table1_s5_4": {
+      "backlog_misses_p50_max_s": {
+        "fairway": [
+          11.7,
+          22.0
+        ],
+        "fcfs": [
+          11.8,
+          22.5
+        ],
+        "k_lpm_4": [
+          11.8,
+          22.4
+        ],
+        "preble": [
+          7.8,
+          17.2
+        ],
+        "lpm": [
+          12.3,
+          123.9
+        ],
+        "peek": [
+          4.7,
+          66.3
+        ],
+        "ragcache": [
+          1.4,
+          201.4
+        ]
+      },
+      "flood_hits_p50_p99_s": {
+        "fairway": [
+          18.2,
+          22.2
+        ],
+        "fcfs": [
+          18.6,
+          22.7
+        ],
+        "k_lpm_4": [
+          18.3,
+          22.1
+        ],
+        "preble": [
+          21.9,
+          28.2
+        ],
+        "lpm": [
+          1.6,
+          4.4
+        ],
+        "peek": [
+          3.1,
+          63.5
+        ],
+        "ragcache": [
+          1.2,
+          2.0
+        ]
+      }
+    },
+    "ablation_table2_s5_5": {
+      "kv_reuse_ratio_only": {
+        "topic_shift": "5.9 (62.9)",
+        "mixed_short": 3.1,
+        "mixed_long": 25.3,
+        "flood_worst": 201.4
+      },
+      "plus_absolute_wait": {
+        "topic_shift": "6.7 (7.9)",
+        "mixed_short": 13.6,
+        "mixed_long": 15.1,
+        "flood_worst": 33.4
+      },
+      "plus_relative_wait": {
+        "topic_shift": "6.7 (8.1)",
+        "mixed_short": 5.9,
+        "mixed_long": 20.2,
+        "flood_worst": 59.1
+      },
+      "plus_fair_lane_fairway": {
+        "topic_shift": "6.7 (7.9)",
+        "mixed_short": 8.6,
+        "mixed_long": 18.1,
+        "flood_worst": 22.0
+      }
+    },
+    "mixed_lengths_table5_app_e": {
+      "short_prompts_p99_reduction_vs_abs_wait": "23-42% (SEC 8.6s -37%, Mooncake 0.9 8.2s -23%, Mooncake 1.1 14.2s -42%, Public QA 21.4s -23%)",
+      "long_prompts_p99_increase_vs_abs_wait": "6-31% (SEC 18.1s +20%, Mooncake 0.9 13.2s +11%, Mooncake 1.1 32.5s +31%, Public QA 31.4s +6%)"
+    },
+    "cpu_overhead_s5_6": {
+      "queue_sort_ms_per_step": "0.02 ms at median queue (7 reqs), 0.6 ms at max queue (509 reqs) vs 106-355 ms GPU steps",
+      "share_with_prefix_lookup": "<0.1% typical, 1-3% at concurrency limit"
+    }
+  },
+  "explicit_limitations": [
+    "Prefill-isolation protocol: each request generates only 1 output token on a single 48 GB A6000 P/D prefill node; reported TTFT tail/median ratios do not establish full multi-turn agent workflow JCT gains.",
+    "Trace approximations: RAG workloads synthesize Zipf (alpha=0.9) popularity and Poisson arrivals plus crafted bursts; Mooncake traces keep 1 in 8 sessions, scale prompt lengths by 1/4, and time-compress native rho=0.8 to 0.9 and 1.1.",
+    "Median latency cost regimes: under persistent overload with shallow reuse (MuSiQue rho=1.1), Fairway median TTFT rises to 3.0s vs LPM 0.9s (for lowest p99 12.62s vs 14.2s); under flood stress, cached hits wait at 18.2s median while backlog drains.",
+    "One-step work-charge bound covers oldest requests up to ~w*B (~8k tokens at w=4, B=2,048) assuming budget and KV headroom without self-eviction; larger prompts rely on relative-wait aging, est(len_r) assumes static idle prefill timing, and no official code repository is linked in v1."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "fairway_svgs": {
+      "fairway-dual-lane-prefill-sched-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-04/fairway-dual-lane-prefill-sched-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/fairway-dual-lane-prefill-sched-zh.svg",
+        "lang": "zh",
+        "sha256": "240354a295da6046d346fd0852cd2c8ba7cd42226c27ec1494099a8e4032bd11",
+        "bytes": 13159
+      },
+      "fairway-dual-lane-prefill-sched-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-04/fairway-dual-lane-prefill-sched-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/fairway-dual-lane-prefill-sched-en.svg",
+        "lang": "en",
+        "sha256": "72ea1d462776598281f537964ac9f4eda6b6e25213ae485e18c60b278e5ba32a",
+        "bytes": 12690
+      },
+      "fairway-tail-median-ttft-eval-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-04/fairway-tail-median-ttft-eval-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/fairway-tail-median-ttft-eval-zh.svg",
+        "lang": "zh",
+        "sha256": "a8934b57c6052a756cfe317035cecb4344796e90321ecb85c3f825c8c4cea2ec",
+        "bytes": 15044
+      },
+      "fairway-tail-median-ttft-eval-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-04/fairway-tail-median-ttft-eval-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/fairway-tail-median-ttft-eval-en.svg",
+        "lang": "en",
+        "sha256": "a7f2c10933aaa509449d3918458d57d98cce3157a56769d5683fa0bd1dfed256",
+        "bytes": 14738
+      }
+    }
+  },
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice",
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-04.md",
+      "file_bytes_before": 53442,
+      "file_sha256_before": "132b70ae1ad474b08aa54ab243a19a13e4d2797e1dbf32b242362a019cc102a9",
+      "file_bytes_after": 166485,
+      "file_sha256_after": "bc3019fc459a0e12dc3392816c65be08d07d8002da8a5d85eb63158c017b01bf",
+      "old_section_bytes": 779,
+      "old_section_sha256": "cd539eee777e528ddaa125efd03139ef0684eec1fef12692e7d283ffb2e66f8d",
+      "new_section_bytes": 24179,
+      "new_section_sha256": "8b8c7677e49abfdb5500b7163a741c721c576e01249acb7dd6c3f1db1fd30f70"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-04.md",
+      "file_bytes_before": 54712,
+      "file_sha256_before": "aa4c111dc2d577b2573c359a62b1c36267c196b199577ee2313b886b2871fb3e",
+      "file_bytes_after": 161910,
+      "file_sha256_after": "f0a8f9219f714a9ead0d423aa19133cc30d2d20fbaec91dec0385f7380cb73aa",
+      "old_section_bytes": 699,
+      "old_section_sha256": "cd903fd92ce13a5d7465286efb22c5ee92f8dc3f244e2d274e373db762fbb46a",
+      "new_section_bytes": 23384,
+      "new_section_sha256": "6d7cf8cac2dbeee3ef66fac2771e4b61ef6718ed8a021d4f662483226d90ab24"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:24:25.665611+00:00",
+    "preview_release": "20261117-112344-dd9778fd",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

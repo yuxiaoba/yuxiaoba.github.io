@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect x="0" y="0" width="960" height="540" fill="#ffffff"/>
+<text x="36" y="37" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="19.5" font-weight="700" fill="#212529">Grafana Cloud Knowledge Graph: Scoped Construction, Dual-Ring Insights &amp; Agent Queries</text>
+<text x="36" y="59" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" fill="#526779">Synthesized from Grafana's ObservabilityCON 2026 post &amp; 4 official docs: telemetry graph -&gt; insights -&gt; shared triage</text>
+<line x1="36" y1="71" x2="924" y2="71" stroke="#d8e4f0" stroke-width="1"/>
+<rect x="36" y="84" width="888" height="122" rx="8" fill="#f8fbfe" stroke="#b8cfe5" stroke-width="1"/>
+<text x="48" y="104" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#245c96">Layer 1 · Builder Construction &amp; Organizational Context (in every stack; adds ~5%–10% active series)</text>
+<rect x="46" y="114" width="280" height="82" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="56" y="133" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#212529">PromQL Entities &amp; Scope</text>
+<text x="56" y="151" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">definedBy reads Prometheus labels</text>
+<text x="56" y="168" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">name + scope (ns/env/site) avoids merge</text>
+<text x="56" y="185" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">enrichedBy appends fields (no new node)</text>
+<rect x="340" y="114" width="280" height="82" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="350" y="133" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#212529">Relation Rules &amp; Custom Entities</text>
+<text x="350" y="151" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">PROPERTY_MATCH joins matching properties</text>
+<text x="350" y="168" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">METRICS joins entities via PromQL rules</text>
+<text x="350" y="185" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Custom YAML / Terraform groups products</text>
+<rect x="634" y="114" width="280" height="82" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="644" y="133" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#212529">Org &amp; Operational Context (Preview)</text>
+<text x="644" y="151" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Service Center: owners, on-call, runbooks</text>
+<text x="644" y="168" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Grafana IRM: tried actions &amp; outcomes</text>
+<text x="644" y="185" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Infrastructure memory + Agent (preview)</text>
+<line x1="480" y1="206" x2="480" y2="218" stroke="#3676b8" stroke-width="2"/>
+<polygon points="475,217 485,217 480,224" fill="#3676b8"/>
+<rect x="36" y="224" width="888" height="128" rx="8" fill="#f8fbfe" stroke="#b8cfe5" stroke-width="1"/>
+<text x="48" y="244" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#245c96">Layer 2 · Five Implication-Driven Insight Categories (Blue Info · Yellow Warn · Red Critical)</text>
+<rect x="46" y="254" width="166" height="62" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="54" y="272" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#212529">Saturation</text>
+<text x="54" y="290" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">CPU/mem/conn vs limits</text>
+<text x="54" y="306" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">Critical fires -&gt; mutes Warn</text>
+<rect x="220" y="254" width="166" height="62" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="228" y="272" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#212529">Amend (Blue)</text>
+<text x="228" y="290" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">Deploys, scaling, reloads</text>
+<text x="228" y="306" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">Time-aligned on RCA timeline</text>
+<rect x="394" y="254" width="166" height="62" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="402" y="272" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#212529">Anomaly (Warn)</text>
+<text x="402" y="290" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">Daily/weekly bounds</text>
+<text x="402" y="306" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">Sparseness check filters noise</text>
+<rect x="568" y="254" width="166" height="62" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="576" y="272" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#212529">Failure (Crit)</text>
+<text x="576" y="290" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">Clear break, no threshold</text>
+<text x="576" y="306" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">Pod crashloop, Kafka !=1 lead</text>
+<rect x="742" y="254" width="166" height="62" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="750" y="272" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#212529">Error (Ratio/Lat)</text>
+<text x="750" y="290" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">5xx rates &amp; chronic drift</text>
+<text x="750" y="306" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">Multi-burn ErrorBuildup, P99</text>
+<text x="48" y="340" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#526779">Dual UI rings: Outer ring = insight directly on this entity | Inner ring = propagated from child entities (e.g., Pod -&gt; Service)</text>
+<line x1="480" y1="352" x2="480" y2="364" stroke="#3676b8" stroke-width="2"/>
+<polygon points="475,363 485,363 480,370" fill="#3676b8"/>
+<rect x="36" y="370" width="888" height="126" rx="8" fill="#eef7f1" stroke="#9bc6ab" stroke-width="1.2"/>
+<text x="48" y="390" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#1f5f3b">Layer 3 · Shared Runtime Entry Points &amp; Engineering Guardrails (GA Graph Context + Safe Mode Split)</text>
+<rect x="46" y="400" width="280" height="84" rx="6" fill="#ffffff" stroke="#9bc6ab" stroke-width="1"/>
+<text x="56" y="419" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#212529">Human UI &amp; RCA Workbench</text>
+<text x="56" y="438" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Catalog opens pre-filtered RED, logs, traces</text>
+<text x="56" y="455" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">RCA Workbench stacks entity events on 1 timeline</text>
+<text x="56" y="472" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Instrumentation quality exposes label/metric gaps</text>
+<rect x="340" y="400" width="280" height="84" rx="6" fill="#ffffff" stroke="#9bc6ab" stroke-width="1"/>
+<text x="350" y="419" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#212529">Grafana Assistant Mode Split</text>
+<text x="350" y="438" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Knowledge Graph mode: debug edges &amp; rules</text>
+<text x="350" y="455" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">RCA / Investigation modes: troubleshoot faults</text>
+<text x="350" y="472" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Config &amp; recording-rule diffs still require review</text>
+<rect x="634" y="400" width="280" height="84" rx="6" fill="#ffffff" stroke="#9bc6ab" stroke-width="1"/>
+<text x="644" y="419" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#212529">External Agents (gcx CLI + Cypher)</text>
+<text x="644" y="438" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Cypher queries paths + live health directly</text>
+<text x="644" y="455" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Time boundary: don't project today onto yesterday</text>
+<text x="644" y="472" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Missing edge != non-interaction (check telemetry)</text>
+<text x="36" y="520" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#596775">Assistant diagram synthesized from Grafana's Knowledge Graph announcement and official docs (not a screenshot)</text>
+</svg>

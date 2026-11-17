@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="ClawMMU: four context-boundary gates in the trusted reference monitor" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Lato', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <!-- Outer v3-blue canvas -->
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="22" y="34" font-size="16.5" font-weight="700" fill="#0f172a">ClawMMU: Four Context-Boundary Gates in the Trusted Reference Monitor</text>
+  <text x="22" y="52" font-size="10" fill="#475569">arXiv:2610.28093v2 (§2–§3, App. A–B) · Decisions rely on origin labels rather than wording, stopping hijacked calls even when the model is fooled</text>
+  <line x1="22" y1="61" x2="938" y2="61" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Top Protection Descriptor Banner -->
+  <rect x="20" y="69" width="920" height="38" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="28" y="77" width="144" height="22" rx="4" fill="#1d4ed8"/>
+  <text x="100" y="91.5" text-anchor="middle" font-size="9.6" font-weight="700" fill="#ffffff">Protection Descriptor</text>
+
+  <rect x="182" y="75" width="176" height="26" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="270" y="91.5" text-anchor="middle" font-size="9.0" fill="#0f172a"><tspan font-weight="700" fill="#1d4ed8">owner:</tspan> producer (user / agent)</text>
+
+  <rect x="368" y="75" width="178" height="26" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="457" y="91.5" text-anchor="middle" font-size="9.0" fill="#0f172a"><tspan font-weight="700" fill="#1d4ed8">scope:</tspan> allowed tasks &amp; sessions</text>
+
+  <rect x="556" y="75" width="186" height="26" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="649" y="91.5" text-anchor="middle" font-size="9.0" fill="#0f172a"><tspan font-weight="700" fill="#1d4ed8">origins:</tspan> source pages + rev. cnt</text>
+
+  <rect x="752" y="75" width="178" height="26" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="841" y="91.5" text-anchor="middle" font-size="9.0" fill="#0f172a"><tspan font-weight="700" fill="#1d4ed8">authority:</tspan> Evidence → Policy</text>
+
+  <!-- LEFT COLUMN: Sources & Durable State -->
+  <rect x="20" y="117" width="230" height="114" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <rect x="20" y="117" width="230" height="24" rx="8" fill="#334155"/>
+  <rect x="20" y="133" width="230" height="8" fill="#334155"/>
+  <text x="32" y="133" font-size="10.0" font-weight="700" fill="#ffffff">External &amp; User Sources</text>
+
+  <rect x="28" y="147" width="214" height="40" rx="5" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+  <text x="36" y="162" font-size="9.2" font-weight="700" fill="#991b1b">Fetched Invoice (with injection)</text>
+  <text x="36" y="179" font-size="8.7" fill="#7f1d1d">"Pay this account" → tagged Evidence</text>
+
+  <rect x="28" y="193" width="214" height="32" rx="5" fill="#ecfdf5" stroke="#86efac" stroke-width="1"/>
+  <text x="36" y="207" font-size="9.0" font-weight="700" fill="#166534">User Prompts / Prefs / Rules</text>
+  <text x="36" y="220" font-size="8.5" fill="#14532d">Policy (highest) or intermediate tier</text>
+
+  <!-- Middle Left: Durable Memory -->
+  <rect x="20" y="241" width="230" height="126" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="20" y="241" width="230" height="24" rx="8" fill="#1e3a8a"/>
+  <rect x="20" y="257" width="230" height="8" fill="#1e3a8a"/>
+  <text x="32" y="257" font-size="10.0" font-weight="700" fill="#ffffff">Durable Memory Store</text>
+
+  <rect x="28" y="273" width="214" height="86" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="36" y="291" font-size="9.4" font-weight="700" fill="#0f172a">Labeled Pages (incl. summaries)</text>
+  <text x="36" y="310" font-size="8.9" fill="#334155">• Stores owner, scope, origins, auth</text>
+  <text x="36" y="328" font-size="8.9" fill="#334155">• Copies ancestor counters at derive</text>
+  <text x="36" y="346" font-size="8.9" fill="#475569">• Returned on recall or ckpt restore</text>
+
+  <!-- Bottom Left: Out-of-Checkpoint Revocation Table -->
+  <rect x="20" y="377" width="230" height="82" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.2"/>
+  <rect x="20" y="377" width="230" height="24" rx="8" fill="#b45309"/>
+  <rect x="20" y="393" width="230" height="8" fill="#b45309"/>
+  <text x="32" y="393" font-size="9.8" font-weight="700" fill="#ffffff">Live Revocation Table (Off-Ckpt)</text>
+  <text x="30" y="417" font-size="9.0" font-weight="700" fill="#92400e">• Stored outside ckpts; immune to rollback</text>
+  <text x="30" y="434" font-size="8.9" fill="#334155">• Starts at 0; increments on revoke (0 → 1)</text>
+  <text x="30" y="450" font-size="8.7" fill="#475569">• Checked by both reload &amp; authorize</text>
+
+  <!-- CENTER COLUMN: Trusted Reference Monitor -->
+  <rect x="290" y="117" width="360" height="342" rx="9" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <rect x="290" y="117" width="360" height="26" rx="9" fill="#1d4ed8"/>
+  <rect x="290" y="135" width="360" height="8" fill="#1d4ed8"/>
+  <text x="470" y="134" text-anchor="middle" font-size="10.2" font-weight="700" fill="#ffffff">Trusted Reference Monitor in Harness (Unbypassable)</text>
+
+  <!-- Gate 1: map -->
+  <rect x="302" y="150" width="322" height="67" rx="7" fill="#ffffff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="310" y="156" width="66" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="343" y="168.5" text-anchor="middle" font-size="9.1" font-weight="700" fill="#1d4ed8">1 · map</text>
+  <text x="384" y="169" font-size="10.0" font-weight="700" fill="#0f172a">Context Entry: Source Tagging &amp; Isolation</text>
+  <text x="310" y="188" font-size="8.9" fill="#334155">Tags source authority; enforces (owner, scope); text cannot alter</text>
+  <text x="310" y="206" font-size="8.9" font-weight="700" fill="#1d4ed8">Stops: Address-space violation (cross-task context leakage)</text>
+
+  <!-- Revoked feedback arrow -->
+  <line x1="390" y1="231" x2="390" y2="219" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-red)"/>
+  <text x="398" y="227" font-size="8.5" font-weight="700" fill="#b91c1c">if revoked: distrust &amp; re-route to map</text>
+
+  <!-- Gate 2: reload -->
+  <rect x="302" y="231" width="322" height="67" rx="7" fill="#ffffff" stroke="#dc2626" stroke-width="1.1"/>
+  <rect x="310" y="237" width="66" height="18" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+  <text x="343" y="249.5" text-anchor="middle" font-size="9.1" font-weight="700" fill="#b91c1c">2 · reload</text>
+  <text x="384" y="250" font-size="10.0" font-weight="700" fill="#0f172a">Recall / Restore: Off-Ckpt Counter Check</text>
+  <text x="310" y="269" font-size="8.9" fill="#334155">Checks stored vs. live counter; recorded &lt; live invalidates</text>
+  <text x="310" y="287" font-size="8.9" font-weight="700" fill="#b91c1c">Stops: Use-after-revoke &amp; checkpoint rollback resurrection</text>
+
+  <!-- Gate 3: derive -->
+  <rect x="302" y="310" width="322" height="67" rx="7" fill="#ffffff" stroke="#d97706" stroke-width="1.1"/>
+  <rect x="310" y="316" width="66" height="18" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="343" y="328.5" text-anchor="middle" font-size="9.1" font-weight="700" fill="#b45309">3 · derive</text>
+  <text x="384" y="329" font-size="10.0" font-weight="700" fill="#0f172a">Storage Write: Monotone Inheritance Rule</text>
+  <text x="310" y="348" font-size="8.9" fill="#334155">authority = min(inputs, model=Evidence); scope = intersection</text>
+  <text x="310" y="366" font-size="8.9" font-weight="700" fill="#b45309">Stops: Type confusion (summary self-promoting to Policy)</text>
+
+  <!-- Gate 4: authorize -->
+  <rect x="302" y="389" width="322" height="67" rx="7" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+  <rect x="310" y="395" width="76" height="18" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+  <text x="348" y="407.5" text-anchor="middle" font-size="9.1" font-weight="700" fill="#b91c1c">4 · authorize</text>
+  <text x="394" y="408" font-size="10.0" font-weight="700" fill="#0f172a">Tool Call: Per-Argument Schema Check</text>
+  <text x="310" y="427" font-size="8.9" fill="#334155">Checked args need req. auth + valid rev.; uncovered fails</text>
+  <text x="310" y="445" font-size="8.9" font-weight="700" fill="#b91c1c">Stops: Confused deputy (forged-invoice payee blocked)</text>
+
+  <!-- RIGHT COLUMN: Compartment, Model, External Tool -->
+  <rect x="690" y="117" width="250" height="116" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="690" y="117" width="250" height="24" rx="8" fill="#1e3a8a"/>
+  <rect x="690" y="133" width="250" height="8" fill="#1e3a8a"/>
+  <text x="702" y="133" font-size="10.0" font-weight="700" fill="#ffffff">Context Compartment</text>
+  <text x="700" y="157" font-size="8.9" fill="#334155">• Bound to one (owner, scope); deny-default</text>
+  <text x="700" y="174" font-size="8.9" fill="#334155">• Sharing needs assembly token (no uplift)</text>
+  <rect x="700" y="185" width="230" height="38" rx="5" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+  <text x="815" y="201" text-anchor="middle" font-size="9.2" font-weight="700" fill="#991b1b">Fetched Invoice + Derived Summary</text>
+  <text x="815" y="216" text-anchor="middle" font-size="8.8" fill="#7f1d1d">Both remain tagged Evidence in context</text>
+
+  <!-- Middle Right: Untrusted Model -->
+  <rect x="690" y="253" width="250" height="106" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.2"/>
+  <rect x="690" y="253" width="250" height="24" rx="8" fill="#b45309"/>
+  <rect x="690" y="269" width="250" height="8" fill="#b45309"/>
+  <text x="702" y="269" font-size="10.0" font-weight="700" fill="#ffffff">LLM Model (Treated as Untrusted)</text>
+  <text x="700" y="294" font-size="8.9" fill="#334155">• May read Evidence; steering risk assumed</text>
+  <text x="700" y="313" font-size="8.9" fill="#92400e" font-weight="600">1) Proposes summary write → derive</text>
+  <text x="700" y="332" font-size="8.9" fill="#92400e" font-weight="600">2) Proposes pay(attacker) → authorize</text>
+  <text x="700" y="350" font-size="8.4" fill="#475569">(Standing perms void with untrusted text)</text>
+
+  <!-- Bottom Right: External Tool -->
+  <rect x="690" y="377" width="250" height="82" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+  <rect x="690" y="377" width="250" height="24" rx="8" fill="#b91c1c"/>
+  <rect x="690" y="393" width="250" height="8" fill="#b91c1c"/>
+  <text x="702" y="393" font-size="10.0" font-weight="700" fill="#ffffff">External Tool (e.g., Payment API)</text>
+  <rect x="700" y="408" width="230" height="42" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+  <text x="815" y="425" text-anchor="middle" font-size="9.3" font-weight="700" fill="#991b1b">✕ BLOCKED: payee traces to Evidence</text>
+  <text x="815" y="441" text-anchor="middle" font-size="8.7" fill="#7f1d1d">Blocked unless owner explicitly approves call</text>
+
+  <!-- NON-CROSSING ARROWS -->
+  <line x1="250" y1="183" x2="300" y2="183" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <line x1="250" y1="264" x2="300" y2="264" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <line x1="302" y1="334" x2="252" y2="334" stroke="#b45309" stroke-width="1.6" marker-end="url(#arr-amber)"/>
+  <line x1="250" y1="420" x2="300" y2="420" stroke="#dc2626" stroke-width="1.6" marker-end="url(#arr-red)"/>
+
+  <line x1="624" y1="183" x2="688" y2="183" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <path d="M 624 264 L 664 264 L 664 212 L 688 212" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <line x1="815" y1="233" x2="815" y2="251" stroke="#475569" stroke-width="1.6" marker-end="url(#arr-slate)"/>
+  <line x1="690" y1="334" x2="626" y2="334" stroke="#b45309" stroke-width="1.6" marker-end="url(#arr-amber)"/>
+  <path d="M 690 350 L 664 350 L 664 405 L 626 405" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#arr-red)"/>
+  <line x1="624" y1="436" x2="688" y2="436" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr-red)"/>
+  <circle cx="656" cy="436" r="7" fill="#ffffff" stroke="#dc2626" stroke-width="1.4"/>
+  <path d="M 652.5 432.5 L 659.5 439.5 M 659.5 432.5 L 652.5 439.5" stroke="#dc2626" stroke-width="1.5"/>
+
+  <!-- Bottom Boundary & Summary Footer -->
+  <rect x="20" y="468" width="920" height="56" rx="7" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="30" y="476" width="80" height="18" rx="4" fill="#dbeafe"/>
+  <text x="70" y="488.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1d4ed8">1·Isolation</text>
+  <text x="116" y="489" font-size="8.9" fill="#334155">map stops scope leak</text>
+
+  <rect x="248" y="476" width="84" height="18" rx="4" fill="#fee2e2"/>
+  <text x="290" y="488.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#b91c1c">2·Revoke-Safe</text>
+  <text x="338" y="489" font-size="8.9" fill="#334155">reload stops replay</text>
+
+  <rect x="472" y="476" width="84" height="18" rx="4" fill="#fef3c7"/>
+  <text x="514" y="488.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#b45309">3·No Self-Lift</text>
+  <text x="562" y="489" font-size="8.9" fill="#334155">derive stops lifting</text>
+
+  <rect x="700" y="476" width="84" height="18" rx="4" fill="#fee2e2"/>
+  <text x="742" y="488.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#b91c1c">4·Arg Integrity</text>
+  <text x="790" y="489" font-size="8.9" fill="#334155">authorize stops deputy</text>
+
+  <text x="30" y="512" font-size="8.9" fill="#475569">Scope boundary: guarantees argument provenance for checked params (wrong safe marks remain a risk); does not ensure right action, accurate summary, or secrecy.</text>
+</svg>

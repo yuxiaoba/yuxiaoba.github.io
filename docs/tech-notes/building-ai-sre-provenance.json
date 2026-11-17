@@ -1,0 +1,60 @@
+{
+  "id": "building-ai-sre",
+  "source_url": "https://incident.io/blog/building-investigations-what-it-takes-to-build-an-ai-sre",
+  "source_title": "Building Investigations: what it takes to build an AI SRE",
+  "source_author": "Martha Lambert",
+  "source_org": "incident.io",
+  "source_date": "2026-10-01",
+  "note_date": "2026-10-12",
+  "updated_at": "2026-11-15T16:55:00+08:00",
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/building-ai-sre.md",
+      "sha256": "4a519d41a749b899f7f15f3c52965a9ab0183b3b3af2397beb6e1731b1ddac73"
+    },
+    "en_markdown": {
+      "path": "_tech/en/building-ai-sre.md",
+      "sha256": "39cfee97e91c74f95eb0f70872ba3111615307e138160f2aeb43b0885d421a95"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/building-ai-sre/evaluation.svg",
+        "origin": "original_incident_io_svg",
+        "source": "https://incident.io/blog/building-investigations-what-it-takes-to-build-an-ai-sre",
+        "sha256": "c458e82c12ee39980b7b8815748f8d034328f0a33dc4214d45a4a8ca7b685764"
+      },
+      {
+        "path": "assets/images/tech/building-ai-sre/context-poisoning.svg",
+        "origin": "original_incident_io_svg",
+        "source": "https://incident.io/blog/building-investigations-what-it-takes-to-build-an-ai-sre",
+        "sha256": "e12cb2bb6b20755e3f180c0c34330896fb058db8efd8211dc3a5bfde35359d42"
+      },
+      {
+        "path": "assets/images/tech/building-ai-sre/harness.svg",
+        "origin": "original_incident_io_svg",
+        "source": "https://incident.io/blog/building-investigations-what-it-takes-to-build-an-ai-sre",
+        "sha256": "65a86b1da4457b79f428b64f18b2bc17142f23c534f36f42b94a798c52d8dc98"
+      },
+      {
+        "path": "assets/images/tech/building-ai-sre/explore-memory.svg",
+        "origin": "original_incident_io_svg",
+        "source": "https://incident.io/blog/building-investigations-what-it-takes-to-build-an-ai-sre",
+        "sha256": "0c90f61eca878b1a8b984f07544a5b2702c67755b3da24da37ad13128473b811"
+      },
+      {
+        "path": "assets/images/tech/building-ai-sre/findings-evolution-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "4b5a36101554faa49ee962f0b3853142a0a5a2bbb46b9e9d2dce52eb29d0e207"
+      },
+      {
+        "path": "assets/images/tech/building-ai-sre/findings-evolution-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "6041d466134181dbc0a01a50c6c3c839598dcf9254a12b1bf5ed5d7fc4bf17fa"
+      }
+    ]
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-04-arxiv-2611.00002",
+  "paper_id": "arxiv-2611.00002",
+  "anchor_id": "paper-arxiv-2611.00002",
+  "digest_date": "2026-11-04",
+  "updated_at_utc": "2026-11-17T03:22:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-04.md",
+    "en_target": "_digest/en/daily-2026-11-04.md",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/07d2b51c-1255-46a3-83be-8912482c6b1f/scratch/d2b2-sections/2611.00002/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/07d2b51c-1255-46a3-83be-8912482c6b1f/scratch/d2b2-sections/2611.00002/section_en.md",
+    "translation_provenance": "Assistant-authored Chinese technical close reading and paired English technical close reading grounded directly in primary arXiv:2611.00002v1 PDF and abstract HTML."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.00002",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "No v2 revision or withdrawal notice present on verified arXiv abstract HTML.",
+    "title": "An Agentic OS Kernel for Flexible and Enhanced Semantics",
+    "authors": [
+      "Haocheng Wang",
+      "Xinyue Sun",
+      "Hao Yi",
+      "Dong Du",
+      "Yubin Xia",
+      "Haibo Chen"
+    ],
+    "corresponding_author": "Dong Du",
+    "affiliation": "Shanghai Jiao Tong University; Advanced Research Center for Agent-Oriented OS; Zhejiang University",
+    "categories": [
+      "cs.OS"
+    ],
+    "submitted_utc": "Sun, 2 Aug 2026 05:49:54 UTC",
+    "submitted_date": "2026-08-02",
+    "date_discrepancy_note": "Both arXiv abs.html ([Submitted on 2 Aug 2026]) and PDF page-1 stamp (arXiv:2611.00002v1 [cs.OS] 2 Aug 2026) read 2026-08-02, conflicting with the 2611.xxxxx (2026-11) identifier sequence; no first-publication date is inferred.",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.00002",
+      "abs_v1": "https://arxiv.org/abs/2611.00002v1",
+      "pdf": "https://arxiv.org/pdf/2611.00002",
+      "doi": "https://doi.org/10.48550/arXiv.2611.00002",
+      "code_repository": null
+    },
+    "code_availability_note": "Paper Section 1 states 'IntentOS will be fully open-sourced.' with no repository URL provided in PDF or abstract HTML.",
+    "local_artifacts": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2611.00002.abs.html",
+        "frozen_page_html": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/online/arxiv-2611.00002/page.html",
+        "frozen_fetch_index_sha256": "9e2829964529830bd82f92e15abdcb5eb94f6108f128d51d670533b37f7ef0c7",
+        "sha256": "9e2829964529830bd82f92e15abdcb5eb94f6108f128d51d670533b37f7ef0c7",
+        "bytes": 42374
+      },
+      "pdf_v1": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2611.00002.pdf",
+        "pages": 15,
+        "sha256": "9612a8c23e5f9d9431c1074215e247df1f516ad908e875678474db138eb73605",
+        "bytes": 1172959
+      },
+      "extracted_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2611.00002.txt",
+        "lines": 1095,
+        "sha256": "41c3395a8ba9cca673678fc668f37edd2da1ec178cccf3069c9a6dce08e74a33",
+        "bytes": 139522
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "linux_syscall_evolution": {
+      "linux_3_0_to_6_18_syscall_growth_pct": 26.7,
+      "linux_v2_6_plus_merge_over_400_days_pct": "nearly 40%"
+    },
+    "fork_vfork_latency_breakdown_fig2": {
+      "fork_copy_mm_ns": 82185,
+      "fork_copy_mm_pct": 78.89,
+      "vfork_wait_for_child_ns": 43661,
+      "vfork_wait_for_child_pct": 70.281,
+      "vfork_share_mm_ns": 78
+    },
+    "runtime_composition_distribution_fig3": {
+      "per_result_validation_and_staging": {
+        "fork_exec_pct": 53.59,
+        "batch_unlink_pct": 21.1,
+        "dir_traverse_pct": 21.94
+      },
+      "analysis_on_whole_tree_snapshot": {
+        "dir_traverse_pct": 46.7,
+        "mmap_related_pct": 23.78,
+        "stream_write_pct": 24.36
+      }
+    },
+    "implementation": {
+      "domains": [
+        "process_management",
+        "file_systems",
+        "memory_management"
+      ],
+      "isyscall_entries": [
+        "isyscall_rt",
+        "isyscall_dev",
+        "isyscall_dry_run"
+      ],
+      "fork_exec_micro_syscalls_count": 12,
+      "safety_guarantees": [
+        "pre_execution_6_class_checks (UPtr, Exist, Len/OVF, Perm, RLimit, Flags)",
+        "indirect_kernel_resource_access_via_handles",
+        "cross_boundary_lock_reentrancy",
+        "all_or_nothing_failure_rollback",
+        "static_bounded_loop_verifier"
+      ]
+    },
+    "evaluation_hardware": {
+      "cpu": "Intel Xeon Platinum 8468V @ 2.4 GHz (192 cores)",
+      "memory": "1024 GB DDR5 ECC @ 4800 MHz (32 x 32 GB, 2R, 1.1 V)",
+      "host_os": "Ubuntu 22.04 (Linux 6.18.6)",
+      "virtualization_for_compat": "QEMU-10.2.0-KVM",
+      "planner_models": [
+        "Qwen3.6-Plus",
+        "DeepSeek-V4-Pro",
+        "Gemini-3.1-Pro-Preview",
+        "GPT-5.4"
+      ]
+    },
+    "reasoning_accuracy_sec6_3": {
+      "intents_total": 31,
+      "domains": [
+        "FS",
+        "MEM",
+        "COMM"
+      ],
+      "intentos_avg_pct": 98.38,
+      "oracle_raw_kernel_code_avg_pct": 66.74
+    },
+    "microbenchmarks_sec6_4": {
+      "fork_exec_max_latency_reduction_pct": 69.83,
+      "batchunlink_max_latency_reduction_vs_unlink_pct": 20.69,
+      "slidingmmap_page_cache_reduction_pct": 94.49,
+      "slidingmmap_max_access_latency_overhead_pct": 10.89,
+      "slidingmmap_window_mb": 16,
+      "slidingmmap_memory_cap_gb": 5
+    },
+    "end_to_end_app_gains_sec6_5": {
+      "busybox_ash_fork_exec_max_latency_reduction_pct": 17.55,
+      "unix_rm_batchunlink_performance_gain_pct": 6.97,
+      "nginx_grep_slidingmmap_impact_reduction_pct": 75.52
+    },
+    "kernel_compatibility_sec6_6": [
+      "Linux 3.18",
+      "Linux 4.19",
+      "Linux 5.15",
+      "Linux 6.18"
+    ],
+    "jit_plan_cache_ablation_table4": {
+      "fork_exec": {
+        "wo_plan_ms": 56340,
+        "with_plan_ms": 4.56,
+        "speedup": "12378x"
+      },
+      "batch_unlink": {
+        "wo_plan_ms": 26477,
+        "with_plan_ms": 4.4,
+        "speedup": "6020x"
+      },
+      "sliding_mmap": {
+        "wo_plan_ms": 28816,
+        "with_plan_ms": 8742,
+        "speedup": "3.30x"
+      }
+    },
+    "framework_hit_path_max_overhead_pct_fig14": 6.714
+  },
+  "explicit_limitations": [
+    "Evaluation covers only 31 intents across 3 domains, 3 performance case studies, and 4 Linux versions; it does not formally prove global state-machine safety under arbitrary multi-step micro-syscall compositions.",
+    "Uncached cold-path isyscall invocations still incur 26.5-56.3 s LLM inference latency (Table 4), and 98.38% average accuracy leaves probabilistic errors on unseen intents.",
+    "Figures 9-13 report aggregated or normalized plots without full per-model/per-case raw tables, and no source code repository URL is published yet despite the open-source intent statement in Section 1.",
+    "Both arXiv abs.html and PDF stamp report 2026-08-02, conflicting with the 2611.00002 (2026-11) arXiv identifier; no first-publication date is inferred."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "svgs": [
+      {
+        "site_path": "/assets/images/digest/2026-11-04/intentos-isyscall-microsyscall-arch-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/intentos-isyscall-microsyscall-arch-zh.svg",
+        "lang": "zh",
+        "sha256": "70a6f0bc556b83557cfc89c5ce8be77988344b11e8ec280373dfd1376708ef5e",
+        "bytes": 15766
+      },
+      {
+        "site_path": "/assets/images/digest/2026-11-04/intentos-isyscall-microsyscall-arch-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/intentos-isyscall-microsyscall-arch-en.svg",
+        "lang": "en",
+        "sha256": "69082c8233f84defb303b042c49df33fe5a9802575cc212a801a54809e938388",
+        "bytes": 15476
+      },
+      {
+        "site_path": "/assets/images/digest/2026-11-04/intentos-linux-plan-cache-eval-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/intentos-linux-plan-cache-eval-zh.svg",
+        "lang": "zh",
+        "sha256": "25f2448b3c253112772e9caf674b0e4c5132fa7aea5c8a71327832a9491029e7",
+        "bytes": 12901
+      },
+      {
+        "site_path": "/assets/images/digest/2026-11-04/intentos-linux-plan-cache-eval-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/intentos-linux-plan-cache-eval-en.svg",
+        "lang": "en",
+        "sha256": "b3624f4bdc2b8f85405752986932229acb268cff6dad8637931db91e5d3d99d1",
+        "bytes": 12659
+      }
+    ]
+  },
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice",
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-04.md",
+      "file_bytes_before": 53442,
+      "file_sha256_before": "132b70ae1ad474b08aa54ab243a19a13e4d2797e1dbf32b242362a019cc102a9",
+      "file_bytes_after": 166485,
+      "file_sha256_after": "bc3019fc459a0e12dc3392816c65be08d07d8002da8a5d85eb63158c017b01bf",
+      "old_section_bytes": 620,
+      "old_section_sha256": "197df5b15b6287970ac84b35b92af43640c94033d2c1428a6a875ffb1526e617",
+      "new_section_bytes": 21364,
+      "new_section_sha256": "6065c1a28d833470d728a9237e229a35bee7138ca2890d0fc99fd99f808ea8a7"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-04.md",
+      "file_bytes_before": 54712,
+      "file_sha256_before": "aa4c111dc2d577b2573c359a62b1c36267c196b199577ee2313b886b2871fb3e",
+      "file_bytes_after": 161910,
+      "file_sha256_after": "f0a8f9219f714a9ead0d423aa19133cc30d2d20fbaec91dec0385f7380cb73aa",
+      "old_section_bytes": 632,
+      "old_section_sha256": "ad130bcc6d78b3e784cad842ac57567b999cc2d37d639319572c7d30bf2c482a",
+      "new_section_bytes": 20306,
+      "new_section_sha256": "da88ea2b95489570d8d5036672a05e113d3eb1d2e8841f494d1825d20115c92f"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:24:25.665611+00:00",
+    "preview_release": "20261117-112344-dd9778fd",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="多智能体角色实证结果图：5组实验恢复率对比、6轮预算去向、400题强制提交干预与结构强制幸存者偏差" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="33" font-size="16.5" font-weight="700" fill="#0f172a">实证结果：错误后恢复率、400 题强制提交干预与结构强制流失代价</text>
+  <text x="24" y="51" font-size="10.2" fill="#475569">arXiv:2611.03931v1（§5.2–§5.4, Fig. 2, Fig. S4, Tables 2, S5, S6 &amp; S8）· 外部评测器持有标准答案，PASS 即止</text>
+  <line x1="24" y1="60" x2="936" y2="60" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Quadrant A: Recovery across 5 settings -->
+  <rect x="20" y="69" width="452" height="209" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="69" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="87" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="95" x2="472" y2="95" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="86.5" font-size="11.0" font-weight="700" fill="#1e3a8a">A. 首答出错后恢复率（全 5 组模型×基准设置，Table 2）</text>
+  <text x="32" y="109" font-size="8.8" fill="#475569">各条件各自首错分母；右侧括号给出双组皆错样本上的配对精确 McNemar p</text>
+
+  <!-- Gridlines for A: x=148 (0.00), x=223 (0.25), x=298 (0.50), x=358 (0.70); scale 1.0 = 300px -->
+  <line x1="148" y1="115" x2="148" y2="245" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="223" y1="115" x2="223" y2="245" stroke="#e2e8f0" stroke-width="0.9"/>
+  <line x1="298" y1="115" x2="298" y2="245" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="148" y="256" text-anchor="middle" font-size="8.2" fill="#64748b">0.00</text>
+  <text x="223" y="256" text-anchor="middle" font-size="8.2" fill="#64748b">0.25</text>
+  <text x="298" y="256" text-anchor="middle" font-size="8.2" fill="#64748b">0.50</text>
+
+  <!-- Row 1: gemma-4 Omni -->
+  <text x="30" y="128" font-size="9.0" font-weight="700" fill="#0f172a">gemma-4 · Omni</text>
+  <rect x="148" y="116" width="182.7" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <text x="334" y="121" font-size="8.1" font-weight="700" fill="#1d4ed8">0.609</text>
+  <rect x="148" y="123" width="66.6" height="5.5" rx="1.5" fill="#60a5fa"/>
+  <text x="218" y="128" font-size="8.1" fill="#1e3a8a">0.222</text>
+  <rect x="148" y="130" width="15.3" height="5.5" rx="1.5" fill="#94a3b8"/>
+  <text x="167" y="135" font-size="8.1" fill="#64748b">0.051</text>
+  <text x="462" y="129" text-anchor="end" font-size="8.2" fill="#334155">p=6.2×10⁻²²</text>
+
+  <!-- Row 2: gpt-oss Omni -->
+  <text x="30" y="154" font-size="9.0" font-weight="700" fill="#0f172a">gpt-oss · Omni</text>
+  <rect x="148" y="142" width="165.6" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <text x="317" y="147" font-size="8.1" font-weight="700" fill="#1d4ed8">0.552</text>
+  <rect x="148" y="149" width="97.2" height="5.5" rx="1.5" fill="#60a5fa"/>
+  <text x="249" y="154" font-size="8.1" fill="#1e3a8a">0.324</text>
+  <rect x="148" y="156" width="74.1" height="5.5" rx="1.5" fill="#94a3b8"/>
+  <text x="226" y="161" font-size="8.1" fill="#64748b">0.247</text>
+  <text x="462" y="155" text-anchor="end" font-size="8.2" fill="#334155">p=1.0×10⁻¹⁵</text>
+
+  <!-- Row 3: Llama-3.3 Omni -->
+  <text x="30" y="180" font-size="9.0" font-weight="700" fill="#0f172a">Llama-3.3 · Omni</text>
+  <rect x="148" y="168" width="44.1" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <text x="196" y="173" font-size="8.1" font-weight="700" fill="#1d4ed8">0.147</text>
+  <rect x="148" y="175" width="4.2" height="5.5" rx="1.5" fill="#60a5fa"/>
+  <text x="156" y="180" font-size="8.1" fill="#1e3a8a">0.014</text>
+  <rect x="148" y="182" width="4.5" height="5.5" rx="1.5" fill="#94a3b8"/>
+  <text x="156" y="187" font-size="8.1" fill="#64748b">0.015 (205/276 未交)</text>
+  <text x="462" y="181" text-anchor="end" font-size="8.2" fill="#334155">p=4.2×10⁻⁷</text>
+
+  <!-- Row 4: gemma-4 SciBench -->
+  <text x="30" y="206" font-size="9.0" font-weight="700" fill="#0f172a">gemma-4 · SciBench</text>
+  <rect x="148" y="194" width="125.7" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <text x="277" y="199" font-size="8.1" font-weight="700" fill="#1d4ed8">0.419</text>
+  <rect x="148" y="201" width="76.2" height="5.5" rx="1.5" fill="#60a5fa"/>
+  <text x="228" y="206" font-size="8.1" fill="#1e3a8a">0.254</text>
+  <rect x="148" y="208" width="15.3" height="5.5" rx="1.5" fill="#94a3b8"/>
+  <text x="167" y="213" font-size="8.1" fill="#64748b">0.051</text>
+  <text x="462" y="207" text-anchor="end" font-size="8.2" fill="#334155">p=0.013</text>
+
+  <!-- Row 5: gpt-oss SciBench -->
+  <text x="30" y="232" font-size="9.0" font-weight="700" fill="#0f172a">gpt-oss · SciBench</text>
+  <rect x="148" y="220" width="144.9" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <text x="296" y="225" font-size="8.1" font-weight="700" fill="#1d4ed8">0.483</text>
+  <rect x="148" y="227" width="94.5" height="5.5" rx="1.5" fill="#60a5fa"/>
+  <text x="246" y="232" font-size="8.1" fill="#1e3a8a">0.315</text>
+  <rect x="148" y="234" width="69.3" height="5.5" rx="1.5" fill="#94a3b8"/>
+  <text x="221" y="239" font-size="8.1" fill="#64748b">0.231</text>
+  <text x="462" y="233" text-anchor="end" font-size="8.2" fill="#334155">p=0.043</text>
+
+  <!-- Legend inside A -->
+  <rect x="30" y="262" width="10" height="7" rx="1.5" fill="#1d4ed8"/>
+  <text x="44" y="269" font-size="8.4" fill="#1e293b">RF 无角色+反馈</text>
+  <rect x="144" y="262" width="10" height="7" rx="1.5" fill="#60a5fa"/>
+  <text x="158" y="269" font-size="8.4" fill="#1e293b">RS 角色结构</text>
+  <rect x="242" y="262" width="10" height="7" rx="1.5" fill="#94a3b8"/>
+  <text x="256" y="269" font-size="8.4" fill="#475569">RF− 断反馈诊断</text>
+
+  <!-- Quadrant B: Budget Allocation & Verdict Matching -->
+  <rect x="488" y="69" width="452" height="209" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="69" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="87" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="95" x2="940" y2="95" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="86.5" font-size="11.0" font-weight="700" fill="#1e3a8a">B. 6 轮预算消耗与等判定数匹配分析（Fig. 2C &amp; Table S5）</text>
+  <text x="500" y="109" font-size="8.7" fill="#475569">gemma-4 Omni-MATH 首错轨迹：蓝=提交评测轮，灰=未批准内部轮（满分 6 轮）</text>
+
+  <!-- Budget bars: x=614 to x=788 (width=174px = 6 cycles; 1 cycle = 29px) -->
+  <text x="500" y="127" font-size="8.8" font-weight="700" fill="#0f172a">RS 角色结构</text>
+  <rect x="614" y="118" width="36.8" height="10" rx="2" fill="#1d4ed8"/>
+  <rect x="650.8" y="118" width="123.3" height="10" rx="2" fill="#cbd5e1"/>
+  <text x="796" y="127" font-size="8.5" fill="#334155">1.27 交 + 4.25 未交</text>
+
+  <text x="500" y="145" font-size="8.8" font-weight="700" fill="#0f172a">SE 结构强制</text>
+  <rect x="614" y="136" width="58.6" height="10" rx="2" fill="#3b82f6"/>
+  <rect x="672.6" y="136" width="65.3" height="10" rx="2" fill="#cbd5e1"/>
+  <text x="796" y="145" font-size="8.5" fill="#334155">2.02 交 + 2.25 未交</text>
+
+  <text x="500" y="163" font-size="8.8" font-weight="700" fill="#1e3a8a">RF 无角色+反馈</text>
+  <rect x="614" y="154" width="92.8" height="10" rx="2" fill="#1d4ed8"/>
+  <rect x="706.8" y="154" width="22.0" height="10" rx="2" fill="#cbd5e1"/>
+  <text x="796" y="163" font-size="8.5" font-weight="700" fill="#1d4ed8">3.20 交 + 0.76 未交</text>
+
+  <text x="500" y="181" font-size="8.8" font-weight="700" fill="#475569">RF− 断反馈</text>
+  <rect x="614" y="172" width="168.2" height="10" rx="2" fill="#94a3b8"/>
+  <rect x="782.2" y="172" width="1.5" height="10" rx="1" fill="#e2e8f0"/>
+  <text x="796" y="181" font-size="8.5" fill="#64748b">5.80 交 + 0.03（无hint）</text>
+
+  <text x="500" y="199" font-size="8.8" font-weight="700" fill="#0f766e">强制每轮提交(400)</text>
+  <rect x="614" y="190" width="121.8" height="10" rx="2" fill="#0f766e"/>
+  <text x="796" y="199" font-size="8.5" font-weight="700" fill="#0f766e">4.20 交（0 内部拦截）</text>
+
+  <!-- Verdict-matched box -->
+  <rect x="500" y="211" width="428" height="58" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="510" y="226" font-size="9.4" font-weight="700" fill="#1e3a8a">事后按相同判定数截断匹配（5 组配对 n=998，Table S5）</text>
+  <text x="510" y="243" font-size="8.7" fill="#0f172a">• 预注册口径：RS − RF = +0.009（95% CI [-0.014, +0.033]；无一单元格显著）</text>
+  <text x="510" y="259" font-size="8.7" fill="#334155">• §7 评分缺陷重编码：+0.029 [+0.004, +0.054]（gemma-4 17% 持有与提交答案异）</text>
+
+  <!-- Quadrant C: 400-problem forced submission intervention -->
+  <rect x="20" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="316" x2="472" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="307.5" font-size="11.0" font-weight="700" fill="#1e3a8a">C. 400 题强制提交干预：保留角色、仅移除闸门（Table S6）</text>
+  <text x="32" y="331" font-size="8.7" fill="#475569">同批 400 道 Omni-MATH（gemma-4-31B）· 角色提示字节级不变，管线强行每轮送评</text>
+
+  <rect x="32" y="340" width="428" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="41" y="357.5" font-size="9.0" font-weight="700" fill="#334155">RS 冻结快照子集</text>
+  <text x="155" y="357.5" font-size="8.8" fill="#475569">首答 0.795 · 判定 1.41</text>
+  <text x="275" y="357.5" font-size="9.0" font-weight="700" fill="#0f172a">恢复 0.146 (12/82)</text>
+  <text x="392" y="357.5" font-size="9.0" fill="#334155">终准 0.825</text>
+
+  <rect x="32" y="372" width="428" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="41" y="389.5" font-size="9.0" font-weight="700" fill="#334155">RS 冻后重跑基线</text>
+  <text x="155" y="389.5" font-size="8.8" fill="#475569">首答 0.773 · 判定 1.44</text>
+  <text x="275" y="389.5" font-size="9.0" font-weight="700" fill="#0f172a">恢复 0.198 (18/91)</text>
+  <text x="392" y="389.5" font-size="9.0" fill="#334155">终准 0.818</text>
+
+  <rect x="32" y="404" width="428" height="28" rx="5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="41" y="421.5" font-size="9.0" font-weight="700" fill="#1e3a8a">RS + 强制每轮提交</text>
+  <text x="155" y="421.5" font-size="8.8" fill="#1e3a8a">首答 0.768 · 判定 4.20</text>
+  <text x="275" y="421.5" font-size="9.1" font-weight="700" fill="#1d4ed8">恢复 0.613 (57/93)</text>
+  <text x="392" y="421.5" font-size="9.0" font-weight="700" fill="#1d4ed8">终准 0.910</text>
+
+  <rect x="32" y="436" width="428" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="41" y="453.5" font-size="9.0" font-weight="700" fill="#0f172a">RF 无角色+反馈</text>
+  <text x="155" y="453.5" font-size="8.8" fill="#475569">首答 0.795 · 判定 3.34</text>
+  <text x="275" y="453.5" font-size="9.0" font-weight="700" fill="#0f172a">恢复 0.549 (45/82)</text>
+  <text x="392" y="453.5" font-size="9.0" fill="#334155">终准 0.908</text>
+
+  <rect x="32" y="468" width="428" height="21" rx="4" fill="#ecfdf5" stroke="#10b981" stroke-width="0.9"/>
+  <text x="41" y="481.5" font-size="8.6" font-weight="600" fill="#065f46">配对检定：强制 vs 重跑 26 对 2 (p=3.0×10⁻⁶)；vs RF 7 对 7 (p=1)；Reviewer 自身仍只批 0.98 次/轨</text>
+
+  <!-- Quadrant D: Structural Enforcement Attrition & Survivorship Bias -->
+  <rect x="488" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="316" x2="940" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="307.5" font-size="11.0" font-weight="700" fill="#1e3a8a">D. 结构强制 (SE − RS)：恢复率上升但被格式流失抵消（Table S8）</text>
+  <text x="500" y="331" font-size="8.7" fill="#475569">终局准确率差（零基准 x=698）：蓝/琥珀=预注册(未完计错)，虚线=仅评完成(幸存者偏差)</text>
+
+  <!-- Zero axis at x=698; scale 0.01 = 12px -->
+  <line x1="698" y1="340" x2="698" y2="452" stroke="#64748b" stroke-width="1.1"/>
+  <text x="698" y="463" text-anchor="middle" font-size="8.0" fill="#64748b">0.00</text>
+  <text x="662" y="463" text-anchor="middle" font-size="8.0" fill="#64748b">-0.03</text>
+  <text x="734" y="463" text-anchor="middle" font-size="8.0" fill="#64748b">+0.03</text>
+
+  <!-- gemma-4 SE -->
+  <text x="500" y="353" font-size="8.9" font-weight="700" fill="#0f172a">gemma-4-31B</text>
+  <text x="500" y="366" font-size="8.1" fill="#b45309">8.0% 耗死 · 恢复 0.314</text>
+  <rect x="671" y="343" width="27" height="8" rx="1.5" fill="#d97706"/>
+  <rect x="698" y="354" width="22.8" height="8" rx="1.5" fill="#fef3c7" stroke="#d97706" stroke-width="1" stroke-dasharray="2 1.5"/>
+  <text x="766" y="350" font-size="8.3" font-weight="700" fill="#92400e">预注册 -0.0225 (降)</text>
+  <text x="766" y="362" font-size="8.2" fill="#64748b">删未完 +0.0190 (假升)</text>
+
+  <!-- gpt-oss SE -->
+  <text x="500" y="391" font-size="8.9" font-weight="700" fill="#0f172a">gpt-oss-120b</text>
+  <text x="500" y="404" font-size="8.1" fill="#b45309">9.9% 耗死 · 恢复 0.395</text>
+  <rect x="692" y="381" width="6" height="8" rx="1.5" fill="#64748b"/>
+  <rect x="698" y="392" width="43.3" height="8" rx="1.5" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" stroke-dasharray="2 1.5"/>
+  <text x="766" y="388" font-size="8.3" font-weight="700" fill="#334155">预注册 -0.0050 (平)</text>
+  <text x="766" y="400" font-size="8.2" fill="#64748b">删未完 +0.0361 (假升)</text>
+
+  <!-- Llama-3.3 SE -->
+  <text x="500" y="429" font-size="8.9" font-weight="700" fill="#0f172a">Llama-3.3-70B</text>
+  <text x="500" y="442" font-size="8.1" fill="#b45309">17.0% 耗死 · 恢复 0.139</text>
+  <rect x="698" y="419" width="21" height="8" rx="1.5" fill="#1d4ed8"/>
+  <rect x="698" y="430" width="54.4" height="8" rx="1.5" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" stroke-dasharray="2 1.5"/>
+  <text x="766" y="426" font-size="8.3" font-weight="700" fill="#1e3a8a">预注册 +0.0175 (平)</text>
+  <text x="766" y="438" font-size="8.2" fill="#64748b">删未完 +0.0453 (假升)</text>
+
+  <rect x="500" y="468" width="428" height="21" rx="4" fill="#fffbeb" stroke="#fcd34d" stroke-width="0.9"/>
+  <text x="509" y="481.5" font-size="8.5" fill="#78350f">主终点 P4 (模型×强制交互) 呈零效应 (Holm p=0.17–0.29)；Llama 样本量功效不足</text>
+
+  <!-- Footer -->
+  <text x="20" y="513" font-size="8.9" fill="#334155">边界说明：实验依赖掌握标准答案的 Oracle 评测器与固定轮次预算；仅在外部反馈可靠时应放松拦截，否则严谨把关可节省昂贵验证。</text>
+  <text x="20" y="527" font-size="8.8" fill="#64748b">探索性披露：RF 有反馈对照与 400 题强制提交干预均在冻结后追加（独立存档、未混入冻结池）；强制干预仅单次运行于 gemma-4 + Omni-MATH。</text>
+</svg>

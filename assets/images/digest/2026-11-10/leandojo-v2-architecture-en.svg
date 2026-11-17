@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-navy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1e3a8a"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17.0" font-weight="700" fill="#0f172a" text-anchor="start">LeanDojo-v2 End-to-End Architecture: Extraction, Training, and Proving</text>
+  <text x="24" y="53" font-size="10.3" font-weight="400" fill="#475569" text-anchor="start">From arXiv:2611.09048v1 (Fig. 1 &amp; §2) and lean-dojo/LeanDojo-v2: unified repo tracing, training, and proving</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="74" width="204" height="424" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="74" width="204" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="24" y="94" width="204" height="8" fill="#1e3a8a"/>
+  <text x="36" y="92.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">1. Extraction &amp; DB</text>
+  <rect x="34" y="112" width="184" height="94" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="43" y="130" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">Repo Input &amp; Dep Toggle</text>
+  <text x="43" y="148" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• GitHub URL+Commit / Local path</text>
+  <text x="43" y="165" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• build_deps=True (LeanAgent)</text>
+  <text x="43" y="182" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• build_deps=False (HF/External)</text>
+  <text x="43" y="198" font-size="8.6" font-weight="400" fill="#475569" text-anchor="start">• Requires matching elan &amp; PAT</text>
+  <line x1="126" y1="206" x2="126" y2="224" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <rect x="34" y="226" width="184" height="118" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="43" y="244" font-size="10.0" font-weight="700" fill="#1d4ed8" text-anchor="start">LeanDojo Tracing Pipeline</text>
+  <text x="43" y="262" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• ExtractData.lean extracts ASTs,</text>
+  <text x="43" y="278" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">  deps, theorems, proofs, premises</text>
+  <text x="43" y="296" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• Splits proofs into (state, tactic)</text>
+  <text x="43" y="314" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">• Drops sorry; exports corpus.jsonl</text>
+  <text x="43" y="331" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">  + random / novel_premises splits</text>
+  <line x1="126" y1="344" x2="126" y2="362" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <rect x="34" y="364" width="184" height="122" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="43" y="382" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">DynamicDatabase Curriculum</text>
+  <text x="43" y="400" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• Bins proof steps via 33rd / 67th</text>
+  <text x="43" y="417" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">  percentiles (Easy/Medium/Hard)</text>
+  <text x="43" y="435" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• Sorts repos by Easy theorem count</text>
+  <text x="43" y="453" font-size="8.8" font-weight="400" fill="#475569" text-anchor="start">• Tracks unproved sorry theorems</text>
+  <text x="43" y="471" font-size="8.5" font-weight="400" fill="#475569" text-anchor="start">  across traced repo snapshots</text>
+  <rect x="252" y="74" width="234" height="424" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="252" y="74" width="234" height="28" rx="8" fill="#1d4ed8"/>
+  <rect x="252" y="94" width="234" height="8" fill="#1d4ed8"/>
+  <text x="264" y="92.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">2. Trainers &amp; API</text>
+  <rect x="262" y="112" width="214" height="104" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="271" y="130" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">Path A · LeanAgent Curriculum</text>
+  <text x="271" y="148" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• RetrievalTrainer progressive runs</text>
+  <text x="271" y="166" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• Tunes ReProver premise retriever</text>
+  <text x="271" y="184" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">  (ByT5-small + indexed corpus)</text>
+  <text x="271" y="202" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">• Builds deps for domain retrieval</text>
+  <rect x="262" y="228" width="214" height="136" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="271" y="246" font-size="10.0" font-weight="700" fill="#1d4ed8" text-anchor="start">Path B · HuggingFace Fine-Tuning</text>
+  <text x="271" y="264" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• SFTTrainer: state → tactic loss</text>
+  <text x="271" y="282" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• LoRA (PEFT) cuts memory &amp; cost</text>
+  <text x="271" y="300" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• RL: GRPOTrainer / PPO with custom</text>
+  <text x="271" y="318" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">  rewards (syntax, proof success)</text>
+  <text x="271" y="336" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">• Incremental per-repo curriculum</text>
+  <text x="271" y="353" font-size="8.4" font-weight="400" fill="#64748b" text-anchor="start">  (e.g. DeepSeek-Prover-V2-7B)</text>
+  <rect x="262" y="376" width="214" height="110" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="271" y="394" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">Path C · Hosted HF API Inference</text>
+  <text x="271" y="412" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• ExternalAgent calls HF Token API</text>
+  <text x="271" y="430" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• Reaches DeepSeek-Prover-V2-671B</text>
+  <text x="271" y="448" font-size="8.8" font-weight="600" fill="#0f766e" text-anchor="start">• Drops local CTranslate2 C++ build</text>
+  <text x="271" y="466" font-size="8.8" font-weight="600" fill="#0f766e" text-anchor="start">• Build time: &gt;10 min → few seconds</text>
+  <rect x="510" y="74" width="240" height="424" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="510" y="74" width="240" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="510" y="94" width="240" height="8" fill="#1e3a8a"/>
+  <text x="522" y="92.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">3. Dual-Mode Prover</text>
+  <rect x="520" y="112" width="220" height="252" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="530" y="130" font-size="9.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Step-by-Step Search (Pantograph)</text>
+  <rect x="530" y="140" width="200" height="44" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="540" y="158" font-size="9.4" font-weight="700" fill="#1d4ed8" text-anchor="start">Tactic Generator</text>
+  <text x="540" y="174" font-size="8.4" font-weight="400" fill="#475569" text-anchor="start">Retrieval / HF / External / Custom</text>
+  <rect x="530" y="207" width="200" height="58" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="540" y="225" font-size="9.4" font-weight="700" fill="#0f172a" text-anchor="start">Pantograph REPL (Lean RPC)</text>
+  <text x="540" y="242" font-size="8.5" font-weight="600" fill="#b45309" text-anchor="start">Runs goal_tactic; keeps old state</text>
+  <text x="540" y="257" font-size="8.2" font-weight="400" fill="#475569" text-anchor="start">on failure + records tactic_feedback</text>
+  <rect x="530" y="290" width="200" height="64" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="540" y="308" font-size="9.3" font-weight="700" fill="#1e3a8a" text-anchor="start">Goal–Tactic Graph &amp; Shortest Path</text>
+  <text x="540" y="326" font-size="8.2" font-weight="400" fill="#334155" text-anchor="start">• DFS (BaseProver) / MCTS (Pantograph)</text>
+  <text x="540" y="343" font-size="8.3" font-weight="600" fill="#0f766e" text-anchor="start">• nx.shortest_path extracts min proof</text>
+  <line x1="595" y1="184" x2="595" y2="205" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <text x="601" y="198" font-size="8.1" font-weight="600" fill="#1d4ed8" text-anchor="start">Tactic</text>
+  <line x1="665" y1="207" x2="665" y2="186" stroke="#475569" stroke-width="1.4" marker-end="url(#arr-slate)"/>
+  <text x="671" y="198" font-size="8.1" font-weight="600" fill="#475569" text-anchor="start">GoalState</text>
+  <line x1="630" y1="265" x2="630" y2="288" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <text x="638" y="280" font-size="8.1" font-weight="600" fill="#1d4ed8" text-anchor="start">Graph edge</text>
+  <rect x="520" y="378" width="220" height="108" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="530" y="396" font-size="9.8" font-weight="700" fill="#1d4ed8" text-anchor="start">Whole-Proof Generation</text>
+  <text x="530" y="415" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• agent.prove(whole_proof=True)</text>
+  <text x="530" y="433" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• Single LLM forward pass per lemma</text>
+  <text x="530" y="451" font-size="8.8" font-weight="400" fill="#475569" text-anchor="start">• Supports local HF or hosted API</text>
+  <text x="530" y="469" font-size="8.6" font-weight="400" fill="#b45309" text-anchor="start">• RetrievalProver raises NotImpl</text>
+  <rect x="774" y="74" width="162" height="424" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="774" y="74" width="162" height="28" rx="8" fill="#1d4ed8"/>
+  <rect x="774" y="94" width="162" height="8" fill="#1d4ed8"/>
+  <text x="786" y="92.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">4. Proof &amp; IDE</text>
+  <rect x="784" y="114" width="142" height="122" rx="6" fill="#ecfdf5" stroke="#0f766e" stroke-width="1.2"/>
+  <text x="793" y="134" font-size="10.0" font-weight="700" fill="#0f766e" text-anchor="start">Verified Proof</text>
+  <text x="793" y="154" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">• Fills sorry theorems</text>
+  <text x="793" y="172" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">• Minimal tactic chain</text>
+  <text x="801" y="189" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">or whole Lean proof</text>
+  <text x="793" y="208" font-size="8.6" font-weight="400" fill="#0f766e" text-anchor="start">• Confirmed via Lean</text>
+  <text x="801" y="224" font-size="8.6" font-weight="400" fill="#0f766e" text-anchor="start">(Goals accomplished)</text>
+  <rect x="784" y="252" width="142" height="234" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="793" y="272" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">Lean4Code Editor</text>
+  <text x="793" y="290" font-size="8.4" font-weight="400" fill="#475569" text-anchor="start">Zero-telemetry VSCodium</text>
+  <text x="793" y="312" font-size="8.7" font-weight="600" fill="#1e3a8a" text-anchor="start">• Modified Lean4 ext</text>
+  <text x="793" y="329" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">  auto-bundles tools</text>
+  <text x="793" y="350" font-size="8.7" font-weight="600" fill="#1e3a8a" text-anchor="start">• LeanDojo Panel</text>
+  <text x="793" y="367" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">  1-click trace to out/</text>
+  <text x="793" y="388" font-size="8.7" font-weight="600" fill="#1e3a8a" text-anchor="start">• LeanCopilot Panel</text>
+  <text x="793" y="405" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">  Infoview autocomplete</text>
+  <text x="793" y="426" font-size="8.7" font-weight="600" fill="#1e3a8a" text-anchor="start">• Agent-TARS Panel</text>
+  <text x="793" y="443" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">  Chat / Agentic terminal</text>
+  <text x="793" y="468" font-size="8.2" font-weight="400" fill="#64748b" text-anchor="start">(No manual C++ build)</text>
+  <path d="M 228 286 L 250 286" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <path d="M 228 424 L 240 424 L 240 164 L 250 164" fill="none" stroke="#1e3a8a" stroke-width="1.4" marker-end="url(#arr-navy)"/>
+  <path d="M 486 164 L 508 164" fill="none" stroke="#1d4ed8" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+  <path d="M 486 294 L 494 294 L 494 164 L 508 164" fill="none" stroke="#1d4ed8" stroke-width="1.5"/>
+  <path d="M 486 432 L 508 432" fill="none" stroke="#1d4ed8" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+  <path d="M 486 410 L 501 410 L 501 168 L 508 168" fill="none" stroke="#1d4ed8" stroke-width="1.3" stroke-dasharray="3,2"/>
+  <path d="M 750 320 L 762 320 L 762 174 L 772 174" fill="none" stroke="#0f766e" stroke-width="1.8" marker-end="url(#arr-teal)"/>
+  <path d="M 750 432 L 762 432 L 762 174" fill="none" stroke="#0f766e" stroke-width="1.5"/>
+  <path d="M 750 364 L 772 364" fill="none" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <text x="24" y="520" font-size="9.4" font-weight="400" fill="#64748b" text-anchor="start">Diagram (arXiv:2611.09048v1) · Module symbols (DynamicDatabase, build_deps) verified in lean-dojo/LeanDojo-v2</text>
+</svg>

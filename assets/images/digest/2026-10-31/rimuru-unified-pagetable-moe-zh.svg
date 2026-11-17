@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Rimuru 统一显存管理架构：多视图共享页池、三级分裂合并分配器、双缓冲预取与页表感知 FusedMoE 执行" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Lato', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="33" font-size="16.4" font-weight="700" fill="#0f172a">Rimuru 统一显存机制：多视图页池、三级分裂合并与页表感知 FusedMoE</text>
+  <text x="24" y="51" font-size="10.0" fill="#475569">arXiv:2610.40305v1 (§5.1–§5.3, Fig. 6–8, Eq. 1) · 同块连续物理显存零拷贝多视图映射 + 直接离散页执行</text>
+  <line x1="24" y1="60" x2="936" y2="60" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Left Panel: Multi-View & Multi-Level Allocator -->
+  <rect x="20" y="70" width="452" height="420" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="70" width="452" height="28" rx="9" fill="#1e3a8a"/>
+  <rect x="20" y="90" width="452" height="8" fill="#1e3a8a"/>
+  <text x="32" y="88.5" font-size="10.6" font-weight="700" fill="#ffffff">A · 多视图共享页池与三级分裂/合并分配器 (§5.1–§5.2)</text>
+
+  <!-- Box A1: Multi-View Memory Layout -->
+  <rect x="30" y="106" width="432" height="160" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.0"/>
+  <text x="40" y="123" font-size="10.0" font-weight="700" fill="#1e3a8a">1. 对齐大页之上的零拷贝内存视图 (.view(dtype) / .view(shape))</text>
+
+  <text x="40" y="145" font-size="8.8" font-weight="700" fill="#334155">共享字节池</text>
+  <rect x="114" y="132" width="168" height="20" rx="3" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="198" y="145.5" text-anchor="middle" font-size="8.7" font-weight="700" fill="#1e3a8a">Huge Page 1 (P_h)</text>
+  <rect x="282" y="132" width="168" height="20" rx="3" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="366" y="145.5" text-anchor="middle" font-size="8.7" font-weight="700" fill="#1e3a8a">Huge Page 2 (P_h)</text>
+
+  <text x="40" y="170" font-size="8.7" font-weight="700" fill="#1e3a8a">w1,w3 / w2</text>
+  <rect x="114" y="158" width="83" height="18" rx="3" fill="#bfdbfe" stroke="#2563eb" stroke-width="0.9"/>
+  <text x="155.5" y="170.5" text-anchor="middle" font-size="8.4" font-weight="600" fill="#1e3a8a">P1 [f,d]</text>
+  <rect x="199" y="158" width="83" height="18" rx="3" fill="#bfdbfe" stroke="#2563eb" stroke-width="0.9"/>
+  <text x="240.5" y="170.5" text-anchor="middle" font-size="8.4" font-weight="600" fill="#1e3a8a">P2 [f,d]</text>
+  <rect x="282" y="158" width="83" height="18" rx="3" fill="#bfdbfe" stroke="#2563eb" stroke-width="0.9"/>
+  <text x="323.5" y="170.5" text-anchor="middle" font-size="8.4" font-weight="600" fill="#1e3a8a">P3 [f,d]</text>
+  <rect x="367" y="158" width="83" height="18" rx="3" fill="#bfdbfe" stroke="#2563eb" stroke-width="0.9"/>
+  <text x="408.5" y="170.5" text-anchor="middle" font-size="8.4" font-weight="600" fill="#1e3a8a">P4 [f,d]</text>
+
+  <text x="40" y="196" font-size="8.7" font-weight="700" fill="#0f766e">SSM 视图</text>
+  <rect x="114" y="183" width="54.5" height="18" rx="3" fill="#d1fae5" stroke="#0f766e" stroke-width="0.9"/>
+  <text x="141.2" y="195.5" text-anchor="middle" font-size="8.3" font-weight="600" fill="#065f46">P1</text>
+  <rect x="170.5" y="183" width="54.5" height="18" rx="3" fill="#d1fae5" stroke="#0f766e" stroke-width="0.9"/>
+  <text x="197.7" y="195.5" text-anchor="middle" font-size="8.3" font-weight="600" fill="#065f46">P2</text>
+  <rect x="227" y="183" width="55" height="18" rx="3" fill="#d1fae5" stroke="#0f766e" stroke-width="0.9"/>
+  <text x="254.5" y="195.5" text-anchor="middle" font-size="8.3" font-weight="600" fill="#065f46">P3</text>
+  <rect x="282" y="183" width="54.5" height="18" rx="3" fill="#d1fae5" stroke="#0f766e" stroke-width="0.9"/>
+  <text x="309.2" y="195.5" text-anchor="middle" font-size="8.3" font-weight="600" fill="#065f46">P4</text>
+  <rect x="338.5" y="183" width="54.5" height="18" rx="3" fill="#d1fae5" stroke="#0f766e" stroke-width="0.9"/>
+  <text x="365.7" y="195.5" text-anchor="middle" font-size="8.3" font-weight="600" fill="#065f46">P5</text>
+  <rect x="395" y="183" width="55" height="18" rx="3" fill="#d1fae5" stroke="#0f766e" stroke-width="0.9"/>
+  <text x="422.5" y="195.5" text-anchor="middle" font-size="8.3" font-weight="600" fill="#065f46">P6</text>
+
+  <text x="40" y="221" font-size="8.7" font-weight="700" fill="#b45309">conv 视图</text>
+  <rect x="132" y="208" width="136" height="18" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="0.9"/>
+  <line x1="177" y1="208" x2="177" y2="226" stroke="#d97706" stroke-width="0.7"/>
+  <line x1="222" y1="208" x2="222" y2="226" stroke="#d97706" stroke-width="0.7"/>
+  <text x="200" y="220" text-anchor="middle" font-size="8.0" font-weight="600" fill="#92400e">m 连续行 [pos, +m]</text>
+  <text x="292" y="220" font-size="8.2" fill="#334155">[1, d] 行单元 (例: [3, 8192])</text>
+
+  <text x="40" y="246" font-size="8.7" font-weight="700" fill="#0369a1">KV 视图</text>
+  <rect x="114" y="233" width="26" height="18" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.8"/>
+  <rect x="142" y="233" width="26" height="18" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.8"/>
+  <rect x="170" y="233" width="26" height="18" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.8"/>
+  <rect x="198" y="233" width="26" height="18" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.8"/>
+  <rect x="226" y="233" width="26" height="18" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.8"/>
+  <rect x="254" y="233" width="26" height="18" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.8"/>
+  <text x="292" y="245" font-size="8.2" fill="#0369a1">16 token/页 · 整除 P_h 对齐</text>
+
+  <line x1="282" y1="130" x2="282" y2="258" stroke="#1e3a8a" stroke-dasharray="3,3" stroke-width="1.2"/>
+
+  <!-- Box A2: Multi-Level Split & Merge -->
+  <rect x="30" y="276" width="432" height="204" rx="7" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="40" y="294" font-size="10.0" font-weight="700" fill="#0f172a">2. 三级页表按需分裂与全空逆向合并 (L1 → L2 → L3)</text>
+
+  <rect x="40" y="304" width="294" height="32" rx="5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.0"/>
+  <rect x="46" y="310" width="28" height="20" rx="3" fill="#1d4ed8"/>
+  <text x="60" y="323.5" text-anchor="middle" font-size="9.0" font-weight="700" fill="#ffffff">L1</text>
+  <text x="82" y="324" font-size="9.2" font-weight="600" fill="#1e3a8a">全局大页空闲队列 (P_h = lcm(P_e, P_s))</text>
+
+  <line x1="138" y1="336" x2="138" y2="349" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <line x1="242" y1="351" x2="242" y2="338" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+
+  <rect x="40" y="352" width="294" height="38" rx="5" fill="#f8fafc" stroke="#3b82f6" stroke-width="1.0"/>
+  <rect x="46" y="361" width="28" height="20" rx="3" fill="#dbeafe"/>
+  <text x="60" y="374.5" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1d4ed8">L2</text>
+  <rect x="82" y="358" width="118" height="26" rx="4" fill="#dbeafe" stroke="#60a5fa" stroke-width="0.9"/>
+  <text x="141" y="374.5" text-anchor="middle" font-size="8.7" font-weight="700" fill="#1e3a8a">专家页 w1/w2/w3</text>
+  <rect x="206" y="358" width="120" height="26" rx="4" fill="#d1fae5" stroke="#10b981" stroke-width="0.9"/>
+  <text x="266" y="374.5" text-anchor="middle" font-size="8.7" font-weight="700" fill="#065f46">SSM 状态页</text>
+
+  <line x1="138" y1="390" x2="138" y2="403" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <line x1="242" y1="405" x2="242" y2="392" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+
+  <rect x="40" y="406" width="294" height="40" rx="5" fill="#f8fafc" stroke="#3b82f6" stroke-width="1.0"/>
+  <rect x="46" y="416" width="28" height="20" rx="3" fill="#e0f2fe"/>
+  <text x="60" y="429.5" text-anchor="middle" font-size="9.0" font-weight="700" fill="#0369a1">L3</text>
+  <rect x="82" y="412" width="118" height="28" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.9"/>
+  <text x="141" y="429.5" text-anchor="middle" font-size="8.7" font-weight="700" fill="#0c4a6e">KV 页 (16 entries)</text>
+  <rect x="206" y="412" width="120" height="28" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="0.9"/>
+  <text x="266" y="429.5" text-anchor="middle" font-size="8.7" font-weight="700" fill="#92400e">Conv 行页 ([1, d])</text>
+
+  <rect x="342" y="304" width="112" height="68" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="350" y="320" font-size="8.8" font-weight="700" fill="#1d4ed8">按需分裂约束</text>
+  <text x="350" y="336" font-size="8.1" fill="#334155">• 禁 L1 直接拆 L3</text>
+  <text x="350" y="351" font-size="8.1" fill="#334155">• 先复用空闲 L3/L2</text>
+  <text x="350" y="366" font-size="8.1" fill="#334155">• 同请求集中同 L2</text>
+
+  <rect x="342" y="378" width="112" height="68" rx="5" fill="#ecfdf5" stroke="#10b981" stroke-width="0.9"/>
+  <text x="350" y="394" font-size="8.8" font-weight="700" fill="#0f766e">全释放逆向合并</text>
+  <text x="350" y="410" font-size="8.1" fill="#334155">• 子页全空才合回</text>
+  <text x="350" y="425" font-size="8.1" fill="#334155">• 无跨类型死锁余量</text>
+  <text x="350" y="440" font-size="8.1" fill="#334155">• 碎片仅限 L3 尾页</text>
+
+  <text x="40" y="466" font-size="8.4" fill="#475569">若 P_s 整除 P_e，则 P_h = P_e 且 SSM 作专家子页调度；碎片仅限 L3 尾页。</text>
+
+  <!-- Right Panel: Dual Buffer & Page-Table-Aware FusedMoE -->
+  <rect x="488" y="70" width="452" height="420" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="488" y="70" width="452" height="28" rx="9" fill="#1d4ed8"/>
+  <rect x="488" y="90" width="452" height="8" fill="#1d4ed8"/>
+  <text x="500" y="88.5" font-size="10.6" font-weight="700" fill="#ffffff">B · 双缓冲预取重叠与页表感知 FusedMoE 执行 (§5.3)</text>
+
+  <!-- Box B1: Dual Buffer -->
+  <rect x="498" y="106" width="432" height="160" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="508" y="123" font-size="10.0" font-weight="700" fill="#0f172a">1. 单缓冲写后读冲突 vs. 双缓冲免 DtoD 拷贝重叠 (Fig. 8)</text>
+
+  <text x="508" y="152" font-size="8.7" font-weight="700" fill="#475569">单缓冲</text>
+  <rect x="564" y="135" width="96" height="25" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="0.9"/>
+  <text x="612" y="151" text-anchor="middle" font-size="8.4" font-weight="600" fill="#92400e">Async HtoD 预取</text>
+  <line x1="660" y1="147.5" x2="674" y2="147.5" stroke="#b45309" stroke-width="1.3" marker-end="url(#arr-amber)"/>
+  <rect x="676" y="135" width="134" height="25" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="0.9"/>
+  <text x="743" y="151" text-anchor="middle" font-size="8.3" font-weight="700" fill="#991b1b">✗ Sync 等待 / DtoD 重排</text>
+  <line x1="810" y1="147.5" x2="824" y2="147.5" stroke="#475569" stroke-width="1.3" marker-end="url(#arr-blue)"/>
+  <rect x="826" y="135" width="92" height="25" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="0.9"/>
+  <text x="872" y="151" text-anchor="middle" font-size="8.4" font-weight="600" fill="#1e293b">层计算 Comp.</text>
+
+  <text x="508" y="198" font-size="8.7" font-weight="700" fill="#1d4ed8">双缓冲</text>
+  <text x="546" y="195" font-size="8.3" font-weight="700" fill="#334155">B1</text>
+  <text x="546" y="224" font-size="8.3" font-weight="700" fill="#334155">B2</text>
+
+  <rect x="564" y="180" width="84" height="22" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="0.9"/>
+  <text x="606" y="194.5" text-anchor="middle" font-size="8.3" font-weight="600" fill="#92400e">Comm l+1</text>
+  <rect x="653" y="180" width="84" height="22" rx="3" fill="#dbeafe" stroke="#1d4ed8" stroke-width="0.9"/>
+  <text x="695" y="194.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#1e3a8a">Comp l+1</text>
+  <rect x="742" y="180" width="84" height="22" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="0.9"/>
+  <text x="784" y="194.5" text-anchor="middle" font-size="8.3" font-weight="600" fill="#92400e">Comm l+3</text>
+  <rect x="831" y="180" width="87" height="22" rx="3" fill="#dbeafe" stroke="#1d4ed8" stroke-width="0.9"/>
+  <text x="874.5" y="194.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#1e3a8a">Comp l+3</text>
+
+  <rect x="564" y="208" width="84" height="22" rx="3" fill="#dbeafe" stroke="#1d4ed8" stroke-width="0.9"/>
+  <text x="606" y="222.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#1e3a8a">Comp l</text>
+  <rect x="653" y="208" width="84" height="22" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="0.9"/>
+  <text x="695" y="222.5" text-anchor="middle" font-size="8.3" font-weight="600" fill="#92400e">Comm l+2</text>
+  <rect x="742" y="208" width="84" height="22" rx="3" fill="#dbeafe" stroke="#1d4ed8" stroke-width="0.9"/>
+  <text x="784" y="222.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#1e3a8a">Comp l+2</text>
+  <rect x="831" y="208" width="87" height="22" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="0.9"/>
+  <text x="874.5" y="222.5" text-anchor="middle" font-size="8.3" font-weight="600" fill="#92400e">Comm l+4</text>
+
+  <text x="508" y="253" font-size="8.4" fill="#475569">B1/B2 跨层交替充当“计算源/预取目标”，容量由 expert_offload_limit (EOL) 封顶。</text>
+
+  <!-- Box B2: Page-Table-Aware FusedMoE -->
+  <rect x="498" y="276" width="432" height="204" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.0"/>
+  <text x="508" y="294" font-size="10.0" font-weight="700" fill="#1e3a8a">2. 页表感知 Triton FusedMoE 算子：免重排直读非连续权重 (Eq. 1)</text>
+
+  <rect x="508" y="303" width="132" height="36" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="574" y="318" text-anchor="middle" font-size="8.7" font-weight="700" fill="#1d4ed8">缓存专家页</text>
+  <text x="574" y="332" text-anchor="middle" font-size="8.0" fill="#334155">页 ID p_{e,1}, p_{e,3}</text>
+
+  <rect x="648" y="303" width="132" height="36" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="0.9"/>
+  <text x="714" y="318" text-anchor="middle" font-size="8.7" font-weight="700" fill="#b45309">双缓冲加载槽</text>
+  <text x="714" y="332" text-anchor="middle" font-size="8.0" fill="#334155">非常驻专家槽位</text>
+
+  <rect x="788" y="303" width="132" height="36" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="854" y="318" text-anchor="middle" font-size="8.7" font-weight="700" fill="#0f172a">路由与位置元数据</text>
+  <text x="854" y="332" text-anchor="middle" font-size="8.0" fill="#334155">专家来源/页表映射</text>
+
+  <line x1="574" y1="339" x2="574" y2="352" stroke="#1d4ed8" stroke-width="1.3" marker-end="url(#arr-blue)"/>
+  <line x1="714" y1="339" x2="714" y2="352" stroke="#b45309" stroke-width="1.3" marker-end="url(#arr-amber)"/>
+  <line x1="854" y1="339" x2="854" y2="352" stroke="#1d4ed8" stroke-width="1.3" marker-end="url(#arr-blue)"/>
+
+  <rect x="508" y="354" width="412" height="52" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.1"/>
+  <text x="518" y="372" font-size="8.5" font-weight="700" fill="#0f172a">p_e(n) = p_{e,1} (n &lt; f) 或 p_{e,3} (n ≥ f) · n∈[0,2f), t∈[0,d)</text>
+  <text x="518" y="394" font-size="9.0" font-weight="700" fill="#1d4ed8">addr_e(n, t) = B_P + p_e(n)·f·d + (n mod f)·d + t</text>
+  <rect x="826" y="362" width="86" height="36" rx="4" fill="#1d4ed8"/>
+  <text x="869" y="378" text-anchor="middle" font-size="8.4" font-weight="700" fill="#ffffff">按输出 Tile</text>
+  <text x="869" y="391" text-anchor="middle" font-size="8.0" fill="#dbeafe">解析一次基址</text>
+
+  <rect x="508" y="414" width="202" height="56" rx="5" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="517" y="430" font-size="8.8" font-weight="700" fill="#1e3a8a">内循环与微批加速</text>
+  <text x="517" y="446" font-size="8.0" fill="#334155">• 归约内循环固定步长加载稠密 tile</text>
+  <text x="517" y="460" font-size="8.0" fill="#334155">• ≤32 分配内建 B_M 分组，直写输出</text>
+
+  <rect x="718" y="414" width="202" height="56" rx="5" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="727" y="430" font-size="8.8" font-weight="700" fill="#1e3a8a">算子代价与 CUDA Graph</text>
+  <text x="727" y="446" font-size="8.0" fill="#334155">• 全配置均值仅 +0.83% (M≥1K ≤1.31%)</text>
+  <text x="727" y="460" font-size="8.0" fill="#334155">• 地址固定兼容分段 CUDA Graph</text>
+
+  <!-- Footer -->
+  <rect x="20" y="500" width="12" height="10" rx="2" fill="#bfdbfe" stroke="#2563eb" stroke-width="0.9"/>
+  <text x="36" y="509" font-size="8.8" fill="#334155">专家权重 / 计算</text>
+  <rect x="132" y="500" width="12" height="10" rx="2" fill="#d1fae5" stroke="#0f766e" stroke-width="0.9"/>
+  <text x="148" y="509" font-size="8.8" fill="#334155">SSM 状态</text>
+  <rect x="218" y="500" width="12" height="10" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="0.9"/>
+  <text x="234" y="509" font-size="8.8" fill="#334155">KV 细粒度页</text>
+  <rect x="324" y="500" width="12" height="10" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="0.9"/>
+  <text x="340" y="509" font-size="8.8" fill="#334155">Conv 连续行 / HtoD 预取</text>
+  <rect x="494" y="500" width="12" height="10" rx="2" fill="#fee2e2" stroke="#dc2626" stroke-width="0.9"/>
+  <text x="510" y="509" font-size="8.8" fill="#334155">被消除的同步与局部 DtoD 拷贝</text>
+  <text x="20" y="525" font-size="8.8" fill="#64748b">注：Kernel 延迟对比来自 §8.4 相同路由/输入下的算子微基准（M=1 最坏 +9.63% 即 +3.38 µs）；§8 端到端实验为公平对照未开 CUDA Graph。</text>
+</svg>

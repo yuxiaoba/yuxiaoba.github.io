@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- Header -->
+  <text x="24" y="37" font-size="18" font-weight="700" fill="#0f172a">OpenRouter Two-Layer Model &amp; Provider Routing Pipeline</text>
+  <text x="24" y="56" font-size="11" fill="#475569">From Brian Thomas (2026-11-06): narrow eligible pool, pick (model, reasoning effort) statefully, then delegate host selection</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Stage 1 -->
+  <rect x="24" y="78" width="210" height="180" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="78" width="210" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="98" width="210" height="10" fill="#dbeafe"/>
+  <text x="34" y="97" font-size="11.5" font-weight="700" fill="#1e3a8a">1 · Governance Pool Filter</text>
+  <text x="34" y="126" font-size="10.5" font-weight="600" fill="#0f172a">600+ catalog models eligible</text>
+  <text x="34" y="144" font-size="10" fill="#475569">Hard policy constraints prune pool:</text>
+  <text x="34" y="164" font-size="10" fill="#334155">• Guardrails &amp; ZDR compliance</text>
+  <text x="34" y="181" font-size="10" fill="#334155">• Capabilities / Provider / BYOK</text>
+  <text x="34" y="198" font-size="10" fill="#334155">• allowed / excluded_models</text>
+  <text x="34" y="215" font-size="10" fill="#334155">• cost_tier (low through max)</text>
+  <rect x="32" y="228" width="194" height="22" rx="5" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+  <text x="129" y="243" font-size="9.5" font-weight="600" fill="#991b1b" text-anchor="middle">Empty intersection returns 404</text>
+
+  <line x1="236" y1="168" x2="250" y2="168" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2 -->
+  <rect x="252" y="78" width="218" height="180" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="252" y="78" width="218" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="252" y="98" width="218" height="10" fill="#dbeafe"/>
+  <text x="262" y="97" font-size="11.5" font-weight="700" fill="#1e3a8a">2 · Fast Decision Model (1 Call)</text>
+  <text x="262" y="126" font-size="10.5" font-weight="600" fill="#0f172a">Rates 11 request properties</text>
+  <text x="262" y="144" font-size="10" font-weight="600" fill="#1d4ed8">Route step p90: 1.96s -&gt; 0.65s</text>
+  <text x="262" y="164" font-size="10" fill="#334155">• Task type &amp; task-change flag</text>
+  <text x="262" y="181" font-size="10" fill="#334155">• Difficulty, precision, speed need</text>
+  <text x="262" y="198" font-size="10" fill="#334155">• Vision &amp; codebase integration</text>
+  <text x="262" y="215" font-size="10" fill="#334155">• Larger / thinking / cheaper gain</text>
+  <rect x="260" y="228" width="202" height="22" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="361" y="243" font-size="9.5" font-weight="600" fill="#1e3a8a" text-anchor="middle">Insights visible; weights private</text>
+
+  <line x1="472" y1="168" x2="486" y2="168" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Stage 3 -->
+  <rect x="488" y="78" width="228" height="180" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="488" y="78" width="228" height="30" rx="8" fill="#1d4ed8"/>
+  <rect x="488" y="98" width="228" height="10" fill="#1d4ed8"/>
+  <text x="498" y="97" font-size="11.5" font-weight="700" fill="#ffffff">3 · Stateful Policy: Model + Effort</text>
+  <text x="498" y="126" font-size="10" font-weight="600" fill="#0f172a">Weighs 11 signals, price, eval, cache</text>
+  <rect x="496" y="135" width="212" height="44" rx="5" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+  <text x="504" y="152" font-size="10" font-weight="700" fill="#166534">Tune reasoning effort first</text>
+  <text x="504" y="169" font-size="9.5" fill="#14532d">Beta kept same model ~90% of turns</text>
+  <rect x="496" y="184" width="212" height="39" rx="5" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <text x="504" y="200" font-size="10" font-weight="700" fill="#92400e">Switch only if gain &gt; cache rebuild</text>
+  <text x="504" y="216" font-size="9.5" fill="#78350f">Repeat errors / failing tests -&gt; switch</text>
+  <rect x="496" y="228" width="212" height="22" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="602" y="243" font-size="9.5" font-weight="600" fill="#1e3a8a" text-anchor="middle">Auto Code: coding tier + fail penalty</text>
+
+  <line x1="718" y1="168" x2="732" y2="168" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Stage 4 -->
+  <rect x="734" y="78" width="202" height="180" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="734" y="78" width="202" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="734" y="98" width="202" height="10" fill="#dbeafe"/>
+  <text x="744" y="97" font-size="11.5" font-weight="700" fill="#1e3a8a">4 · Provider Routing (Serving)</text>
+  <text x="744" y="126" font-size="10.2" font-weight="600" fill="#0f172a">Separates model vs. host choice</text>
+  <text x="744" y="145" font-size="9.8" fill="#334155">Ranks endpoints by uptime, TTFT,</text>
+  <text x="744" y="161" font-size="9.8" fill="#334155">throughput, price &amp; prompt cache</text>
+  <text x="744" y="181" font-size="9.8" fill="#334155">• Sticky prompt-cache affinity</text>
+  <text x="744" y="198" font-size="9.8" fill="#334155">• allow_fallbacks governs failover</text>
+  <text x="744" y="215" font-size="9.8" fill="#334155">• Explicit order beats stickiness</text>
+  <rect x="742" y="228" width="186" height="22" rx="5" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="835" y="243" font-size="9.5" font-weight="600" fill="#92400e" text-anchor="middle">Host failover breaks local cache</text>
+
+  <!-- Stage 5 Carryover Feedback Loop -->
+  <line x1="835" y1="258" x2="835" y2="274" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="602" y1="276" x2="602" y2="260" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="24" y="276" width="912" height="78" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="36" y="286" width="194" height="22" rx="5" fill="#1d4ed8"/>
+  <text x="133" y="301" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">5 · Turn Carryover &amp; Audit</text>
+  <text x="240" y="301" font-size="10.8" font-weight="700" fill="#1e3a8a">Carries struggling signals (repeated errors / post-edit test failures) + cache state into next turn</text>
+  <text x="36" y="325" font-size="10.2" fill="#334155">• Response model field names chosen model; billed at standard model price (zero extra router fee)</text>
+  <text x="36" y="343" font-size="10.2" fill="#1e40af">• Chatroom Routing insights &amp; live difficulty charts; X-OpenRouter-Metadata: enabled exposes openrouter_metadata</text>
+
+  <!-- Bottom Row: 3 Router Channels -->
+  <rect x="24" y="366" width="294" height="134" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="36" y="378" width="130" height="22" rx="5" fill="#dbeafe"/>
+  <text x="101" y="393" font-size="11" font-weight="700" fill="#1e3a8a" text-anchor="middle">openrouter/auto</text>
+  <text x="174" y="393" font-size="11.2" font-weight="700" fill="#0f172a">General Flagship</text>
+  <text x="36" y="420" font-size="10" fill="#334155">Mixed workloads &amp; general agents; restores pricing</text>
+  <text x="36" y="438" font-size="10" fill="#334155">toward earlier balance to widen capable model mix</text>
+  <text x="36" y="460" font-size="9.8" fill="#475569">• Need prior low-cost drift behavior?</text>
+  <text x="36" y="478" font-size="9.8" font-weight="600" fill="#1d4ed8">Pass cost_tier: "low" in auto-router plugin</text>
+
+  <rect x="333" y="366" width="294" height="134" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.4"/>
+  <rect x="345" y="378" width="152" height="22" rx="5" fill="#1d4ed8"/>
+  <text x="421" y="393" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">openrouter/auto-code</text>
+  <text x="505" y="393" font-size="11.2" font-weight="700" fill="#0f172a">Coding Harnesses</text>
+  <text x="345" y="420" font-size="10" fill="#334155">Same core engine tuned for coding agents; starts</text>
+  <text x="345" y="438" font-size="10" fill="#334155">in a higher coding tier prioritizing speed &amp; pass rate</text>
+  <text x="345" y="460" font-size="9.8" fill="#475569">• Harshly penalizes clear-cut task failures to pivot</text>
+  <text x="345" y="478" font-size="9.8" font-weight="600" fill="#1d4ed8">• Uses specialized coding tier over generic cost_tier</text>
+
+  <rect x="642" y="366" width="294" height="134" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="654" y="378" width="152" height="22" rx="5" fill="#e0f2fe"/>
+  <text x="730" y="393" font-size="10.5" font-weight="700" fill="#0369a1" text-anchor="middle">openrouter/auto-beta</text>
+  <text x="814" y="393" font-size="11.2" font-weight="700" fill="#0f172a">Release Channel</text>
+  <text x="654" y="420" font-size="10" fill="#334155">Ships policy updates before graduating to auto;</text>
+  <text x="654" y="438" font-size="10" fill="#334155">verified alongside typesafe/jev-router in prod</text>
+  <text x="654" y="460" font-size="9.8" fill="#475569">• Zero Data Retention (ZDR) enforced in beta</text>
+  <text x="654" y="478" font-size="9.8" font-weight="600" fill="#0369a1">• Plugin config must use id: "auto-beta-router"</text>
+
+  <text x="24" y="521" font-size="10" fill="#64748b">Assistant diagram (not an original figure) · Synthesized from OpenRouter (2026-11-06) post &amp; docs; internal scoring weights remain undisclosed</text>
+</svg>

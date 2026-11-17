@@ -1,0 +1,90 @@
+{
+  "id": "ai-sre-evaluation",
+  "source_url": "https://one2n.io/blog/what-changed-in-how-we-evaluate-ai-sre-agents",
+  "source_title": "What changed in how we evaluate AI SRE agents",
+  "source_subtitle": "Why a coding harness is not an AI SRE agent",
+  "source_author": "Biswa Prakash Mishra",
+  "source_author_role": "SRE @One2N",
+  "source_org": "One2N",
+  "source_date": "2026-11-02",
+  "note_date": "2026-11-10",
+  "updated_at": "2026-11-16T12:00:00+08:00",
+  "frozen_primary_sources": {
+    "text_path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/fetched/one2n-evaluate-ai-sre-agents/page.txt",
+    "html_path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/fetched/one2n-evaluate-ai-sre-agents/page.html",
+    "sha256": "pending_parent_shell_verification"
+  },
+  "cited_primary_references": [
+    {
+      "title": "How to evaluate AI SRE agents for production?",
+      "url": "https://one2n.io/blog/how-to-evaluate-ai-sre-agents-for-production"
+    },
+    {
+      "title": "SREGym: A Live Benchmark for AI SRE Agents with High-Fidelity Failure Scenarios",
+      "url": "https://arxiv.org/abs/2605.07161"
+    },
+    {
+      "title": "Google SRE: AI in SRE, how Google is engineering the future of reliable operations",
+      "url": "https://sre.google/resources/practices-and-processes/ai-engineering-reliable-operations/"
+    }
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification_status": "VERIFIED",
+  "verification_notes": "Subagent edited bilingual Markdown, 4 v3-blue SVGs, and provenance JSON without run_command; PNG conversion, visual inspection, chmod 0644, SHA-256 verification, Jekyll preview rebuild, and Playwright checks deferred to parent agent.",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/ai-sre-evaluation.md",
+      "sha256": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/ai-sre-evaluation.md",
+      "sha256": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/ai-sre-evaluation/sre-eval-three-axes-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/ai-sre-evaluation/sre-eval-three-axes-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/ai-sre-evaluation/poc-to-prod-eval-gates-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/ai-sre-evaluation/poc-to-prod-eval-gates-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-16T04:09:01.462257+00:00",
+    "preview_release": "20261116-120700-2e64116a",
+    "sha256": {
+      "zh_md_sha256": "937cd2e1d6a24e678bc0c8818e42d653df8837741997a1cf385bd2fd079ffe6d",
+      "en_md_sha256": "34583555f447ddca58f91d014754ad74bc0ee45215bf92981a5d0e39f49b5d9d",
+      "svgs": {
+        "/assets/images/tech/ai-sre-evaluation/sre-eval-three-axes-zh.svg": "28dd589b4530ebc220d6e59b988e54ea50ca23d15b962aabcd1639c08dae049d",
+        "/assets/images/tech/ai-sre-evaluation/sre-eval-three-axes-en.svg": "d2379f57015f1562138408271dde70cde5e5b292d7cedc0eaaac71095858b040",
+        "/assets/images/tech/ai-sre-evaluation/poc-to-prod-eval-gates-zh.svg": "ff1e6b46aa13ca3112063d8cb5579f5db7ea60a84336637b6dff7e68417205a1",
+        "/assets/images/tech/ai-sre-evaluation/poc-to-prod-eval-gates-en.svg": "103218ba74186bbc93970bb95a3df465c7458dd350b9ca022d78ac79d559cbb6"
+      },
+      "preserved": {}
+    },
+    "playwright_total": 34,
+    "playwright_passed": 34,
+    "playwright_failed": 0
+  }
+}

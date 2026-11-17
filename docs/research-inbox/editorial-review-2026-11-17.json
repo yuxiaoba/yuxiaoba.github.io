@@ -1,0 +1,533 @@
+{
+  "approved_on": "2026-11-17",
+  "base_commit": "4e3ffb39480220954aff8a6ab900cb4c4033f272",
+  "audit_total": 171,
+  "kept_total": 68,
+  "withdrawn_or_removed_total": 103,
+  "withdrawn_tech": [
+    "2026-10-29-baseten-fastest-lowest-cost-qwen3-asr-batch-transcription",
+    "2026-10-30-openai-how-we-detect-frontier-model-misalignment",
+    "2026-10-30-pragmatic-engineer-ai-sre",
+    "2026-11-03-nvidia-kubernetes-ai-ready-vera-rubin",
+    "2026-11-05-openai-thousand-fewer-paths-to-root",
+    "agent-anomaly-detection",
+    "automated-em-search",
+    "autoscaling-mtss",
+    "azure-failure-prediction-detection",
+    "frontier-training-containment",
+    "gcp-london-failover",
+    "gds-diagnostics",
+    "grafana-autonomous",
+    "lmcache-056-security",
+    "lmcache-mp-coordinator",
+    "localpay",
+    "meta-intelligent-delivery-ads-compute",
+    "minerva",
+    "nvidia-mission-control-2-5-autonomous-recovery",
+    "pytorch-executorch-webgpu",
+    "pytorch-sglang-ibm-spyre-ai",
+    "quarkus-ai-root-cause-analysis",
+    "review-anthropic-provable-inference",
+    "review-github-open-flapping-airplanes",
+    "review-meta-andromeda-ads-retrieval-gpu-co-design",
+    "review-meta-f3-lightning",
+    "review-nvidia-tensorrt-global-performance-tuner-1",
+    "review-openbmb-forgekernel",
+    "rum-synthetic-slos",
+    "sglang-trainium",
+    "vllm-mistral-large-4",
+    "vllm-torchtpu"
+  ],
+  "withdrawn_digest_issues": [
+    "2026-10-30"
+  ],
+  "removed_digest_papers": [
+    {
+      "date": "2026-08-02",
+      "paper_id": "split-inference",
+      "code": "D1-02"
+    },
+    {
+      "date": "2026-10-22",
+      "paper_id": "arxiv-2610.27273",
+      "code": "D1-03"
+    },
+    {
+      "date": "2026-10-24",
+      "paper_id": "arxiv-2610.30769",
+      "code": "D1-04"
+    },
+    {
+      "date": "2026-10-24",
+      "paper_id": "arxiv-2610.30537",
+      "code": "D1-05"
+    },
+    {
+      "date": "2026-10-29",
+      "paper_id": "arxiv-2610.35999",
+      "code": "D1-06"
+    },
+    {
+      "date": "2026-11-03",
+      "paper_id": "arxiv-2610.41209",
+      "code": "D1-07"
+    },
+    {
+      "date": "2026-11-04",
+      "paper_id": "arxiv-2611.02102",
+      "code": "D1-09"
+    },
+    {
+      "date": "2026-11-04",
+      "paper_id": "arxiv-2611.00287",
+      "code": "D1-10"
+    },
+    {
+      "date": "2026-11-05",
+      "paper_id": "arxiv-2611.03917",
+      "code": "D1-12"
+    },
+    {
+      "date": "2026-11-05",
+      "paper_id": "arxiv-2611.04701",
+      "code": "D1-13"
+    },
+    {
+      "date": "2026-11-12",
+      "paper_id": "arxiv-2611.14106",
+      "code": "D1-15"
+    },
+    {
+      "date": "2026-11-05",
+      "paper_id": "arxiv-2611.04104",
+      "code": "D2A2-02"
+    },
+    {
+      "date": "2026-11-05",
+      "paper_id": "arxiv-2611.04897",
+      "code": "D2A2-07"
+    },
+    {
+      "date": "2026-11-05",
+      "paper_id": "arxiv-2611.04277",
+      "code": "D2A2-09"
+    },
+    {
+      "date": "2026-10-29",
+      "paper_id": "arxiv-2608.01526",
+      "code": "D2B-01"
+    },
+    {
+      "date": "2026-10-29",
+      "paper_id": "arxiv-2610.36355",
+      "code": "D2B-02"
+    },
+    {
+      "date": "2026-10-29",
+      "paper_id": "arxiv-2610.37609",
+      "code": "D2B-03"
+    },
+    {
+      "date": "2026-10-29",
+      "paper_id": "arxiv-2610.36570",
+      "code": "D2B-04"
+    },
+    {
+      "date": "2026-10-29",
+      "paper_id": "arxiv-2610.36499",
+      "code": "D2B-05"
+    },
+    {
+      "date": "2026-10-29",
+      "paper_id": "arxiv-2610.35957",
+      "code": "D2B-06"
+    },
+    {
+      "date": "2026-10-31",
+      "paper_id": "arxiv-2610.38809",
+      "code": "D2B-07"
+    },
+    {
+      "date": "2026-10-31",
+      "paper_id": "arxiv-2610.37921",
+      "code": "D2B-08"
+    },
+    {
+      "date": "2026-10-31",
+      "paper_id": "arxiv-2610.39562",
+      "code": "D2B-11"
+    },
+    {
+      "date": "2026-10-31",
+      "paper_id": "arxiv-2610.39621",
+      "code": "D2B-12"
+    },
+    {
+      "date": "2026-10-31",
+      "paper_id": "arxiv-2610.38800",
+      "code": "D2B-16"
+    },
+    {
+      "date": "2026-11-03",
+      "paper_id": "arxiv-2610.41457",
+      "code": "D2B-19"
+    },
+    {
+      "date": "2026-11-03",
+      "paper_id": "arxiv-2610.40917",
+      "code": "D2B-20"
+    },
+    {
+      "date": "2026-11-04",
+      "paper_id": "arxiv-2611.03434",
+      "code": "D2B-25"
+    },
+    {
+      "date": "2026-11-04",
+      "paper_id": "arxiv-2611.03634",
+      "code": "D2B-26"
+    },
+    {
+      "date": "2026-10-02",
+      "paper_id": "arxiv-2610.02851",
+      "code": "D2C-01"
+    },
+    {
+      "date": "2026-08-02",
+      "paper_id": "defrag",
+      "code": "D2C-02"
+    },
+    {
+      "date": "2026-08-02",
+      "paper_id": "spatial-prefix",
+      "code": "D2C-03"
+    },
+    {
+      "date": "2026-10-16",
+      "paper_id": "arxiv-2610.23252",
+      "code": "D2C-04"
+    },
+    {
+      "date": "2026-10-20",
+      "paper_id": "arxiv-2610.23241",
+      "code": "D2C-05"
+    },
+    {
+      "date": "2026-10-20",
+      "paper_id": "arxiv-2610.23047",
+      "code": "D2C-06"
+    },
+    {
+      "date": "2026-10-22",
+      "paper_id": "arxiv-2610.26991",
+      "code": "D2C-08"
+    },
+    {
+      "date": "2026-10-24",
+      "paper_id": "arxiv-2610.30813",
+      "code": "D2C-10"
+    },
+    {
+      "date": "2026-10-25",
+      "paper_id": "arxiv-2610.30990",
+      "code": "D2C-11"
+    },
+    {
+      "date": "2026-10-28",
+      "paper_id": "arxiv-2610.34594",
+      "code": "D2C-12"
+    },
+    {
+      "date": "2026-11-02",
+      "paper_id": "arxiv-2610.00126",
+      "code": "D2C-13"
+    },
+    {
+      "date": "2026-11-06",
+      "paper_id": "arxiv-2611.05390",
+      "code": "D2C-14"
+    },
+    {
+      "date": "2026-11-06",
+      "paper_id": "arxiv-2611.05873",
+      "code": "D2C-16"
+    },
+    {
+      "date": "2026-11-06",
+      "paper_id": "arxiv-2611.05454",
+      "code": "D2C-17"
+    },
+    {
+      "date": "2026-11-07",
+      "paper_id": "arxiv-2611.07140",
+      "code": "D2C-19"
+    },
+    {
+      "date": "2026-11-08",
+      "paper_id": "arxiv-2611.07859",
+      "code": "D2C-21"
+    },
+    {
+      "date": "2026-11-10",
+      "paper_id": "arxiv-2611.08496",
+      "code": "D2C-22"
+    },
+    {
+      "date": "2026-11-10",
+      "paper_id": "arxiv-2610.21390",
+      "code": "D2C-23"
+    },
+    {
+      "date": "2026-11-12",
+      "paper_id": "arxiv-2611.13741",
+      "code": "D2C-25"
+    },
+    {
+      "date": "2026-11-12",
+      "paper_id": "arxiv-2611.13860",
+      "code": "D2C-26"
+    },
+    {
+      "date": "2026-11-12",
+      "paper_id": "arxiv-2611.13378",
+      "code": "D2C-27"
+    }
+  ],
+  "removed_community_items": [
+    {
+      "date": "2026-10-04",
+      "code": "C1-01",
+      "title_zh": "实践观察：把生产交互变成诊断反馈（Marc Klingen 原帖）"
+    },
+    {
+      "date": "2026-10-06",
+      "code": "C1-02",
+      "title_zh": "社区观察：通用榜单之外的运维评测（Franco Naumow 原帖）"
+    },
+    {
+      "date": "2026-10-07",
+      "code": "C1-03",
+      "title_zh": "事故响应的另一种证据缺口（ky nichol 原帖）"
+    },
+    {
+      "date": "2026-10-20",
+      "code": "C1-05",
+      "title_zh": "社区动态（ManageEngine 访谈 + OneSignalDesk 二手帖；同节另含 Agent Skills 交叉链接）"
+    },
+    {
+      "date": "2026-10-29",
+      "code": "C1-06",
+      "title_zh": "社区记录：@RohanArun 竞赛排名帖"
+    },
+    {
+      "date": "2026-10-31",
+      "code": "C1-07",
+      "title_zh": "社区记录：vLLM Day-0 RL 两句社交喜报"
+    },
+    {
+      "date": "2026-11-01",
+      "code": "C1-08",
+      "title_zh": "社区记录：SGLang AgentX 合并峰值吞吐喜报"
+    },
+    {
+      "date": "2026-11-02",
+      "code": "C1-09",
+      "title_zh": "社区动态（第1条为 SemiAnalysis vLLM PR #64893 跑分，第2条为 Rubin NVL72 远期 perf/TCO 宣传）"
+    },
+    {
+      "date": "2026-11-09",
+      "code": "C1-10",
+      "title_zh": "社区观察中 l4rz 3天电信异常检测短帖（同节第1条为 Together 3x 短帖）"
+    },
+    {
+      "date": "2026-08-02",
+      "code": "DC2-01",
+      "title_zh": "社区动态：OpenSRE 短讯"
+    },
+    {
+      "date": "2026-10-02",
+      "code": "DC2-02",
+      "title_zh": "一则阅读线索：learnk8s 线索"
+    },
+    {
+      "date": "2026-10-08",
+      "code": "DC2-03",
+      "title_zh": "LMCache：多进程通信中的不安全反序列化（另有 10-20 独立笔记）"
+    },
+    {
+      "date": "2026-10-14",
+      "code": "DC2-04",
+      "title_zh": "社区观察中 LinuxSecurity vLLM 调度器帖（同节第 2 条为 Nancy Wang）"
+    },
+    {
+      "date": "2026-10-16",
+      "code": "DC2-05",
+      "title_zh": "社区动态：NIXL Push 短讯（已有独立技术笔记 nixl-push.md）"
+    },
+    {
+      "date": "2026-10-20",
+      "code": "DC2-06",
+      "title_zh": "社区动态首条：@FSFG AgentLoupe 对照回指"
+    },
+    {
+      "date": "2026-10-22",
+      "code": "DC2-07",
+      "title_zh": "社区动态：DeepInfer 的开源边界（另有 10-25 独立笔记 sglang-deepinfer.md）"
+    },
+    {
+      "date": "2026-10-27",
+      "code": "DC2-08",
+      "title_zh": "AKV：缓存复用还必须匹配操作历史（2 句回指 10-22 日报）"
+    },
+    {
+      "date": "2026-10-29",
+      "code": "DC2-09",
+      "title_zh": "社区记录：jiayq 提案短讯 + ekzhang1 实验库短讯"
+    },
+    {
+      "date": "2026-11-09",
+      "code": "DC2-10",
+      "title_zh": "社区观察首条：Together AI 称 Step 5 吞吐超三倍短帖"
+    },
+    {
+      "date": "2026-11-15",
+      "code": "DC2-11",
+      "title_zh": "事故动态：FAA 在通信异常后限制新起飞"
+    }
+  ],
+  "added_curation_exclusions": 110,
+  "files": [
+    "_digest/en/daily-2026-08-02.md",
+    "_digest/en/daily-2026-10-02.md",
+    "_digest/en/daily-2026-10-04.md",
+    "_digest/en/daily-2026-10-06.md",
+    "_digest/en/daily-2026-10-07.md",
+    "_digest/en/daily-2026-10-08.md",
+    "_digest/en/daily-2026-10-14.md",
+    "_digest/en/daily-2026-10-16.md",
+    "_digest/en/daily-2026-10-20.md",
+    "_digest/en/daily-2026-10-22.md",
+    "_digest/en/daily-2026-10-24.md",
+    "_digest/en/daily-2026-10-25.md",
+    "_digest/en/daily-2026-10-27.md",
+    "_digest/en/daily-2026-10-28.md",
+    "_digest/en/daily-2026-10-29.md",
+    "_digest/en/daily-2026-10-30.md",
+    "_digest/en/daily-2026-10-31.md",
+    "_digest/en/daily-2026-11-01.md",
+    "_digest/en/daily-2026-11-02.md",
+    "_digest/en/daily-2026-11-03.md",
+    "_digest/en/daily-2026-11-04.md",
+    "_digest/en/daily-2026-11-05.md",
+    "_digest/en/daily-2026-11-06.md",
+    "_digest/en/daily-2026-11-07.md",
+    "_digest/en/daily-2026-11-08.md",
+    "_digest/en/daily-2026-11-09.md",
+    "_digest/en/daily-2026-11-10.md",
+    "_digest/en/daily-2026-11-12.md",
+    "_digest/en/daily-2026-11-15.md",
+    "_digest/zh/daily-2026-08-02.md",
+    "_digest/zh/daily-2026-10-02.md",
+    "_digest/zh/daily-2026-10-04.md",
+    "_digest/zh/daily-2026-10-06.md",
+    "_digest/zh/daily-2026-10-07.md",
+    "_digest/zh/daily-2026-10-08.md",
+    "_digest/zh/daily-2026-10-14.md",
+    "_digest/zh/daily-2026-10-16.md",
+    "_digest/zh/daily-2026-10-20.md",
+    "_digest/zh/daily-2026-10-22.md",
+    "_digest/zh/daily-2026-10-24.md",
+    "_digest/zh/daily-2026-10-25.md",
+    "_digest/zh/daily-2026-10-27.md",
+    "_digest/zh/daily-2026-10-28.md",
+    "_digest/zh/daily-2026-10-29.md",
+    "_digest/zh/daily-2026-10-30.md",
+    "_digest/zh/daily-2026-10-31.md",
+    "_digest/zh/daily-2026-11-01.md",
+    "_digest/zh/daily-2026-11-02.md",
+    "_digest/zh/daily-2026-11-03.md",
+    "_digest/zh/daily-2026-11-04.md",
+    "_digest/zh/daily-2026-11-05.md",
+    "_digest/zh/daily-2026-11-06.md",
+    "_digest/zh/daily-2026-11-07.md",
+    "_digest/zh/daily-2026-11-08.md",
+    "_digest/zh/daily-2026-11-09.md",
+    "_digest/zh/daily-2026-11-10.md",
+    "_digest/zh/daily-2026-11-12.md",
+    "_digest/zh/daily-2026-11-15.md",
+    "_tech/en/2026-10-29-baseten-fastest-lowest-cost-qwen3-asr-batch-transcription.md",
+    "_tech/en/2026-10-30-openai-how-we-detect-frontier-model-misalignment.md",
+    "_tech/en/2026-10-30-pragmatic-engineer-ai-sre.md",
+    "_tech/en/2026-11-03-nvidia-kubernetes-ai-ready-vera-rubin.md",
+    "_tech/en/2026-11-05-openai-thousand-fewer-paths-to-root.md",
+    "_tech/en/agent-anomaly-detection.md",
+    "_tech/en/automated-em-search.md",
+    "_tech/en/autoscaling-mtss.md",
+    "_tech/en/azure-failure-prediction-detection.md",
+    "_tech/en/frontier-training-containment.md",
+    "_tech/en/gcp-london-failover.md",
+    "_tech/en/gds-diagnostics.md",
+    "_tech/en/grafana-autonomous.md",
+    "_tech/en/lmcache-056-security.md",
+    "_tech/en/lmcache-mp-coordinator.md",
+    "_tech/en/localpay.md",
+    "_tech/en/meta-intelligent-delivery-ads-compute.md",
+    "_tech/en/minerva.md",
+    "_tech/en/nvidia-mission-control-2-5-autonomous-recovery.md",
+    "_tech/en/pytorch-executorch-webgpu.md",
+    "_tech/en/pytorch-sglang-ibm-spyre-ai.md",
+    "_tech/en/quarkus-ai-root-cause-analysis.md",
+    "_tech/en/review-anthropic-provable-inference.md",
+    "_tech/en/review-github-open-flapping-airplanes.md",
+    "_tech/en/review-meta-andromeda-ads-retrieval-gpu-co-design.md",
+    "_tech/en/review-meta-f3-lightning.md",
+    "_tech/en/review-nvidia-tensorrt-global-performance-tuner-1.md",
+    "_tech/en/review-openbmb-forgekernel.md",
+    "_tech/en/rum-synthetic-slos.md",
+    "_tech/en/sglang-trainium.md",
+    "_tech/en/vllm-mistral-large-4.md",
+    "_tech/en/vllm-torchtpu.md",
+    "_tech/zh/2026-10-29-baseten-fastest-lowest-cost-qwen3-asr-batch-transcription.md",
+    "_tech/zh/2026-10-30-openai-how-we-detect-frontier-model-misalignment.md",
+    "_tech/zh/2026-10-30-pragmatic-engineer-ai-sre.md",
+    "_tech/zh/2026-11-03-nvidia-kubernetes-ai-ready-vera-rubin.md",
+    "_tech/zh/2026-11-05-openai-thousand-fewer-paths-to-root.md",
+    "_tech/zh/agent-anomaly-detection.md",
+    "_tech/zh/automated-em-search.md",
+    "_tech/zh/autoscaling-mtss.md",
+    "_tech/zh/azure-failure-prediction-detection.md",
+    "_tech/zh/frontier-training-containment.md",
+    "_tech/zh/gcp-london-failover.md",
+    "_tech/zh/gds-diagnostics.md",
+    "_tech/zh/grafana-autonomous.md",
+    "_tech/zh/lmcache-056-security.md",
+    "_tech/zh/lmcache-mp-coordinator.md",
+    "_tech/zh/localpay.md",
+    "_tech/zh/meta-intelligent-delivery-ads-compute.md",
+    "_tech/zh/minerva.md",
+    "_tech/zh/nvidia-mission-control-2-5-autonomous-recovery.md",
+    "_tech/zh/pytorch-executorch-webgpu.md",
+    "_tech/zh/pytorch-sglang-ibm-spyre-ai.md",
+    "_tech/zh/quarkus-ai-root-cause-analysis.md",
+    "_tech/zh/review-anthropic-provable-inference.md",
+    "_tech/zh/review-github-open-flapping-airplanes.md",
+    "_tech/zh/review-meta-andromeda-ads-retrieval-gpu-co-design.md",
+    "_tech/zh/review-meta-f3-lightning.md",
+    "_tech/zh/review-nvidia-tensorrt-global-performance-tuner-1.md",
+    "_tech/zh/review-openbmb-forgekernel.md",
+    "_tech/zh/rum-synthetic-slos.md",
+    "_tech/zh/sglang-trainium.md",
+    "_tech/zh/vllm-mistral-large-4.md",
+    "_tech/zh/vllm-torchtpu.md",
+    "compat-decagon-autoresearch-en.html",
+    "compat-decagon-autoresearch-zh.html",
+    "compat-supplement-en-2026-10-29.html",
+    "compat-supplement-en-2026-10-31.html",
+    "compat-supplement-en-2026-11-03.html",
+    "compat-supplement-en-2026-11-04.html",
+    "compat-supplement-zh-2026-10-29.html",
+    "compat-supplement-zh-2026-10-31.html",
+    "compat-supplement-zh-2026-11-03.html",
+    "compat-supplement-zh-2026-11-04.html"
+  ]
+}

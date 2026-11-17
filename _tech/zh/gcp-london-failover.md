@@ -3,7 +3,7 @@ id: gcp-london-failover
 title: 2026年10月21日｜伦敦云故障：跨区切换还要跨过依赖与容量
 date: '2026-10-21'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,7 +17,9 @@ authoring_source: assistant
 translation_source: assistant
 permalink: /tech/zh/gcp-london-failover/
 published_at: '2026-10-24T08:39:06.506729+08:00'
-updated_at: '2026-10-24T08:39:06.506729+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 多可用区架构最值得追问的是：一个区退出以后，剩下的系统能否完成同一项业务？这要求应用同时具有可用副本、可执行的控制路径和足够容量。伦敦云故障提供了一个具体入口，让我们把“部署在多个区”拆成可以分别检查的恢复条件。
 

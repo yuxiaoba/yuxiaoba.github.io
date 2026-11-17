@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="38" font-size="19" font-weight="700" fill="#0f172a" text-anchor="start">APEX-SWE 可观测性失败分布、语言梯度与“69.8% 补数”边界</text>
+  <text x="24" y="58" font-size="11.3" font-weight="400" fill="#475569" text-anchor="start">为什么把“约 3 成未通过”直接等价于“根因判断错”会混淆四类完全不同的工程断层</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="80" width="460" height="328" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="80" width="460" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="100" width="460" height="12" fill="#dbeafe"/>
+  <text x="36" y="101" font-size="12.2" font-weight="700" fill="#1e3a8a" text-anchor="start">论文 11 模型失效归因分布（Held-Out n=100，图 6）</text>
+  <rect x="36" y="122" width="436" height="64" rx="6" fill="#eff6ff" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="44" y="140" font-size="11.3" font-weight="700" fill="#1d4ed8" text-anchor="start">1. 上下文与取证不当 · 38%</text>
+  <rect x="314" y="131" width="146" height="10" rx="4" fill="#e2e8f0"/>
+  <rect x="314" y="131" width="138.7" height="10" rx="4" fill="#1d4ed8"/>
+  <text x="44" y="158" font-size="10.1" font-weight="600" fill="#1e293b" text-anchor="start">忽略截断警告 15% · 未过滤日志 14% · 单一信源 6% · 未查日志 ~3%</text>
+  <text x="44" y="175" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">例：DeepSeek V3.2 单次拉取 16,515 字符触发截断仍直接改代码</text>
+  <rect x="36" y="192" width="436" height="64" rx="6" fill="#f5f3ff" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="44" y="210" font-size="11.3" font-weight="700" fill="#7c3aed" text-anchor="start">2. 验证与迭代不足 · 28%</text>
+  <rect x="314" y="201" width="146" height="10" rx="4" fill="#e2e8f0"/>
+  <rect x="314" y="201" width="102.2" height="10" rx="4" fill="#7c3aed"/>
+  <text x="44" y="228" font-size="10.1" font-weight="600" fill="#1e293b" text-anchor="start">开环编辑未跑测试 16% · 轮次耗尽 12%</text>
+  <text x="44" y="245" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">例：Grok 4 有 86% 的轨迹在修改代码后未执行任何验证即结束</text>
+  <rect x="36" y="262" width="436" height="64" rx="6" fill="#f0fdfa" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="44" y="280" font-size="11.3" font-weight="700" fill="#0f766e" text-anchor="start">3. 基础设施与工具级联错 · 18%</text>
+  <rect x="314" y="271" width="146" height="10" rx="4" fill="#e2e8f0"/>
+  <rect x="314" y="271" width="65.7" height="10" rx="4" fill="#0f766e"/>
+  <text x="44" y="298" font-size="10.1" font-weight="600" fill="#1e293b" text-anchor="start">高频工具报错 15%(图6)/16%(正文) · MCP 服务异常 ~3%</text>
+  <text x="44" y="315" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">例：Grok 4 超 1/3 str_replace 失败；DeepSeek V3.2 近半 view_file 参数错</text>
+  <rect x="36" y="332" width="436" height="64" rx="6" fill="#fffbeb" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="44" y="350" font-size="11.3" font-weight="700" fill="#b45309" text-anchor="start">4. 代码执行与环境失配 · 16%</text>
+  <rect x="314" y="341" width="146" height="10" rx="4" fill="#e2e8f0"/>
+  <rect x="314" y="341" width="58.4" height="10" rx="4" fill="#b45309"/>
+  <text x="44" y="368" font-size="10.1" font-weight="600" fill="#1e293b" text-anchor="start">导入缺失 6% · 编译失败 6% · 语法错误 4%</text>
+  <text x="44" y="385" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">例：Kimi K2 与 Gemini 3 Pro 导入未安装日志库报 ModuleNotFoundError</text>
+  <rect x="500" y="80" width="436" height="328" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="500" y="80" width="436" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="500" y="100" width="436" height="12" fill="#dbeafe"/>
+  <text x="512" y="101" font-size="12.2" font-weight="700" fill="#1e3a8a" text-anchor="start">语言诊断梯度与 Rubric-Pass@1 剪刀差</text>
+  <text x="514" y="136" font-size="10.6" font-weight="700" fill="#0f172a" text-anchor="start">Python (n=25)</text>
+  <rect x="632" y="126" width="240" height="12" rx="4" fill="#e2e8f0"/>
+  <rect x="632" y="126" width="187.2" height="12" rx="4" fill="#1d4ed8"/>
+  <text x="880" y="136" font-size="10.5" font-weight="700" fill="#0f172a" text-anchor="start">27.3%</text>
+  <text x="514" y="151" font-size="9.6" font-weight="400" fill="#475569" text-anchor="start">宽松运行时反馈促成迭代自修正</text>
+  <text x="514" y="171" font-size="10.6" font-weight="700" fill="#0f172a" text-anchor="start">Go (n=30)</text>
+  <rect x="632" y="161" width="240" height="12" rx="4" fill="#e2e8f0"/>
+  <rect x="632" y="161" width="139.9" height="12" rx="4" fill="#2563eb"/>
+  <text x="880" y="171" font-size="10.5" font-weight="700" fill="#0f172a" text-anchor="start">20.4%</text>
+  <text x="514" y="186" font-size="9.6" font-weight="400" fill="#475569" text-anchor="start">显式 error 返回 + 编译反馈（op-geth 所属）</text>
+  <text x="514" y="206" font-size="10.6" font-weight="700" fill="#0f172a" text-anchor="start">C++ (n=10)</text>
+  <rect x="632" y="196" width="240" height="12" rx="4" fill="#e2e8f0"/>
+  <rect x="632" y="196" width="137.1" height="12" rx="4" fill="#3b82f6"/>
+  <text x="880" y="206" font-size="10.5" font-weight="700" fill="#0f172a" text-anchor="start">20.0%</text>
+  <text x="514" y="221" font-size="9.6" font-weight="400" fill="#475569" text-anchor="start">嵌入式自包含库，依赖头文件与构建推理</text>
+  <text x="514" y="241" font-size="10.6" font-weight="700" fill="#0f172a" text-anchor="start">TypeScript (n=25)</text>
+  <rect x="632" y="231" width="240" height="12" rx="4" fill="#e2e8f0"/>
+  <rect x="632" y="231" width="83.0" height="12" rx="4" fill="#64748b"/>
+  <text x="880" y="241" font-size="10.5" font-weight="700" fill="#0f172a" text-anchor="start">12.1%</text>
+  <text x="514" y="256" font-size="9.6" font-weight="400" fill="#475569" text-anchor="start">strictNullChecks 与模块解析收窄反馈</text>
+  <text x="514" y="276" font-size="10.6" font-weight="700" fill="#0f172a" text-anchor="start">Java (n=10)</text>
+  <rect x="632" y="266" width="240" height="12" rx="4" fill="#e2e8f0"/>
+  <rect x="632" y="266" width="68.6" height="12" rx="4" fill="#94a3b8"/>
+  <text x="880" y="276" font-size="10.5" font-weight="700" fill="#0f172a" text-anchor="start">10.0%</text>
+  <text x="514" y="291" font-size="9.6" font-weight="400" fill="#475569" text-anchor="start">Spring WebFlux 响应式链路难跟踪 (-17.3 pp)</text>
+  <rect x="512" y="302" width="412" height="96" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="520" y="320" font-size="11" font-weight="700" fill="#1e3a8a" text-anchor="start">实证剪刀差：部分逻辑合规 != 端到端通过（图 7 &amp; op-geth #553）</text>
+  <text x="520" y="340" font-size="9.9" font-weight="400" fill="#1e293b" text-anchor="start">• 论文图 7：6 个模型 Rubric ~70%（Kimi K2.5 功能 80.9%），Pass@1 仅 18–32%</text>
+  <text x="520" y="359" font-size="9.9" font-weight="400" fill="#1e293b" text-anchor="start">• Inspect 样例评语：Opus 4.6 (7/13) 与 DeepSeek-V3.2 (10/13) 均写了成本函数</text>
+  <text x="520" y="378" font-size="9.9" font-weight="600" fill="#b91c1c" text-anchor="start">  却因漏把函数接入 legacypool.go 验证路径，最终 583 项单测 0 项通过</text>
+  <rect x="24" y="420" width="912" height="82" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.1"/>
+  <rect x="36" y="431" width="186" height="22" rx="5" fill="#b91c1c"/>
+  <text x="129.0" y="446.0" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">归因边界 · 69.8% 的补数 30.2%</text>
+  <text x="234" y="446" font-size="10.8" font-weight="700" fill="#7f1d1d" text-anchor="start">不能将 Opus 5.5 Max 在 Terminus-2 的 ~30.2% 未通过率直接拆分归因为“漏证据 / 误诊断 / 补丁错”（@laduramvishnoi 之问）</text>
+  <text x="36" y="472" font-size="10.1" font-weight="400" fill="#7f1d1d" text-anchor="start">1. 页面未发布 Opus 5.5 的每题轨迹与分级统计，样例页显式标注 No rubric data available；2. 从论文 11 模型分布看，仅取证截断与未验证就占 66%，</text>
+  <text x="36" y="490" font-size="10.1" font-weight="400" fill="#7f1d1d" text-anchor="start">   不能把所有失败统称为“模型看错根因”——必须访问对应任务全链路轨迹、F2P/P2P 输出与状态转换检查才能定责。</text>
+  <text x="24" y="522" font-size="10.3" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 数据严格核对自 arXiv:2601.08806v3（图 6/图 7/表 4）与 Mercor observability-swe 冻存评语数据（非原文配图）</text>
+</svg>

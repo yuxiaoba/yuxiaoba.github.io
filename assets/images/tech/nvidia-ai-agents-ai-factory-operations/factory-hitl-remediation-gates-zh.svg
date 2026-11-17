@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Noto Sans CJK SC','Noto Sans SC',sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- Header -->
+  <text x="24" y="36" font-size="18" font-weight="700" fill="#0f172a">工具边界权限隔离、只读 RBAC 验证与人工在环（HITL）护栏</text>
+  <text x="24" y="56" font-size="11" fill="#475569">约束落在真实访问路径而非提示词：无凭据 OpenShell 沙箱 → 服务端只读 run_kubectl → 透明证据交 SRE 审批</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Column 1: OpenShell Sandbox & Credential Separation -->
+  <rect x="24" y="78" width="284" height="248" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="78" width="284" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="100" width="284" height="10" fill="#dbeafe"/>
+  <text x="36" y="99" font-size="11.8" font-weight="700" fill="#1e3a8a">1. OpenShell 每会话沙箱隔离</text>
+
+  <rect x="34" y="120" width="264" height="92" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="138" font-size="10.8" font-weight="700" fill="#1d4ed8">会话级 K8s 沙箱（非网关 Pod）</text>
+  <text x="44" y="157" font-size="9.8" fill="#334155">• 仅注入工作区、选定技能与命令策略</text>
+  <text x="44" y="175" font-size="9.8" fill="#334155">• 内核级限制隔离多租户代理与工具</text>
+  <text x="44" y="193" font-size="9.8" fill="#475569">• 生命周期不改动现有服务与生产负载</text>
+
+  <rect x="34" y="220" width="264" height="94" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+  <text x="44" y="238" font-size="10.8" font-weight="700" fill="#991b1b">关键凭据剥离（非“口头约束”）</text>
+  <text x="44" y="257" font-size="9.8" fill="#7f1d1d">✗ 沙箱内不分发 kubectl 二进制</text>
+  <text x="44" y="275" font-size="9.8" fill="#7f1d1d">✗ 沙箱内不含 Kubernetes 集群凭据</text>
+  <text x="44" y="293" font-size="9.8" fill="#991b1b">→ 阻断模型越权直接读写集群控制面</text>
+
+  <line x1="310" y1="202" x2="334" y2="202" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Column 2: Server-side run_kubectl & RBAC Proof -->
+  <rect x="337" y="78" width="286" height="248" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="337" y="78" width="286" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="337" y="100" width="286" height="10" fill="#dbeafe"/>
+  <text x="349" y="99" font-size="11.8" font-weight="700" fill="#1e3a8a">2. 服务端工具与 RBAC 真实路径</text>
+
+  <rect x="347" y="120" width="266" height="66" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="357" y="138" font-size="10.8" font-weight="700" fill="#1e3a8a">run_kubectl 固定二进制 + 只读账号</text>
+  <text x="357" y="156" font-size="9.8" fill="#334155">绑定登记过的只读 ServiceAccount</text>
+  <text x="357" y="173" font-size="9.8" fill="#1e40af">多租户按 namespace / job / node 限定</text>
+
+  <rect x="347" y="194" width="266" height="120" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="357" y="212" font-size="10.5" font-weight="700" fill="#0f172a">运行时同一路径 auth can-i 权限检查</text>
+
+  <rect x="357" y="221" width="246" height="18" rx="4" fill="#dcfce7"/>
+  <text x="365" y="233" font-size="9.6" font-weight="600" fill="#14532d">✓ get pods / get configmaps</text>
+  <text x="595" y="233" font-size="9.6" font-weight="700" fill="#166534" text-anchor="end">yes</text>
+
+  <rect x="357" y="244" width="246" height="18" rx="4" fill="#fee2e2"/>
+  <text x="365" y="256" font-size="9.6" font-weight="600" fill="#7f1d1d">✗ get secrets</text>
+  <text x="595" y="256" font-size="9.6" font-weight="700" fill="#991b1b" text-anchor="end">no</text>
+
+  <rect x="357" y="267" width="246" height="18" rx="4" fill="#fee2e2"/>
+  <text x="365" y="279" font-size="9.6" font-weight="600" fill="#7f1d1d">✗ create pods / update pods</text>
+  <text x="595" y="279" font-size="9.6" font-weight="700" fill="#991b1b" text-anchor="end">no</text>
+
+  <text x="357" y="303" font-size="9.2" fill="#475569">注：中央运维保留更广集群视图；租户互不可见</text>
+
+  <line x1="625" y1="202" x2="649" y2="202" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Column 3: Transparent Reasoning & HITL Remediation Gate -->
+  <rect x="652" y="78" width="284" height="248" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="652" y="78" width="284" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="652" y="100" width="284" height="10" fill="#dbeafe"/>
+  <text x="664" y="99" font-size="11.8" font-weight="700" fill="#1e3a8a">3. 透明取证与人工审批闸门</text>
+
+  <rect x="662" y="120" width="264" height="88" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="672" y="138" font-size="10.8" font-weight="700" fill="#1d4ed8">只读证据链与建议输出</text>
+  <text x="672" y="157" font-size="9.8" fill="#334155">• 公开全部工具调用、日志与遥测依据</text>
+  <text x="672" y="175" font-size="9.8" fill="#334155">• Job Recovery 仅确认根因后提恢复建议</text>
+  <text x="672" y="193" font-size="9.8" fill="#1e40af">• 跨层信号关联不自动等同因果成立</text>
+
+  <rect x="662" y="216" width="264" height="98" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="672" y="234" font-size="10.8" font-weight="700" fill="#92400e">人工在环（HITL）变更门控</text>
+  <text x="672" y="253" font-size="9.8" fill="#78350f">1. SRE 现场审阅工具输出与排查结论</text>
+  <text x="672" y="271" font-size="9.8" fill="#78350f">2. 由人工或已审批流程执行生产恢复</text>
+  <text x="672" y="289" font-size="9.8" fill="#92400e">3. 持续追踪 RCA 准确率与 SRE 一致性</text>
+  <text x="672" y="305" font-size="9.2" fill="#b45309">原则：Read-only first — 先调查取信再自动化</text>
+
+  <!-- Bottom Section: Evidence Maturity & Companion FOX Scope -->
+  <rect x="24" y="340" width="912" height="156" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="36" y="350" width="176" height="22" rx="5" fill="#1e3a8a"/>
+  <text x="124" y="365" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">证据边界与同日蓝图区分</text>
+  <text x="222" y="365" font-size="11" font-weight="700" fill="#0f172a">区分“已落实的权限隔离设计”与“缺席的量化收益 / 同日制造蓝图指标”</text>
+
+  <rect x="36" y="382" width="438" height="104" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="46" y="401" font-size="10.8" font-weight="700" fill="#1e3a8a">本篇 GPU 集群运维框架实证边界</text>
+  <text x="46" y="420" font-size="9.6" fill="#334155">• 内部已跑在 DGX H100 / B200 / GB300 集群，但未披露集群规模与样本数</text>
+  <text x="46" y="438" font-size="9.6" fill="#334155">• Video 1 明确标注为“向 DGX 集群注入故障的内部演示”</text>
+  <text x="46" y="456" font-size="9.6" fill="#b45309">• 未公布指标：无 MTTR 降幅、无 RCA 准确率、无 SRE 一致性或误报率实测</text>
+  <text x="46" y="474" font-size="9.4" fill="#475569">• 开源编排软件属实验性质（API 可变）；NVIDIA 领域子代理需另外联系申请</text>
+
+  <rect x="486" y="382" width="438" height="104" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="496" y="401" font-size="10.8" font-weight="700" fill="#1e3a8a">对照同日 FOX 制造蓝图（共享底座但勿混用数字）</text>
+  <text x="496" y="420" font-size="9.6" fill="#334155">• 共享架构栈：同样采用 NemoClaw + OpenShell + Nemotron + MCP 委派</text>
+  <text x="496" y="438" font-size="9.6" fill="#334155">• 不同对象：FOX 面向 SMT 电路板产线（Cosmos / Isaac Sim / Kumo / ES）</text>
+  <text x="496" y="456" font-size="9.6" fill="#334155">• 相近护栏：FOX 亦强调初始部署由操作员审批搬运，RCA 出具带证据 PDF</text>
+  <text x="496" y="474" font-size="9.4" fill="#1e40af">• 边界禁区：Siemens 规划降本 20% / 上市快 40% 不可移植为集群运维收益</text>
+
+  <!-- Footer -->
+  <text x="24" y="518" font-size="10" fill="#64748b">阅读整理配图（非原文原图）· 核对自 NVIDIA 两篇 2026-11-04 博文（AI Factory Cluster Ops 与 Factory Operations Blueprint / FOX）</text>
+</svg>

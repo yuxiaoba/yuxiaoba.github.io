@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- Outer Frame -->
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17.5" font-weight="700" fill="#0f172a" text-anchor="start">Muse Spark Open Megakernels: 8× GB300 GPU vs. 4-Chip TPU v7 Pipelines</text>
+  <text x="24" y="53" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start">Same 816B MoE (62 layers, 8/256 NVFP4 experts): GPU stops at 1 launch/layer (~128 KB icache) while TPU v7 fuses all 62 layers</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row A: GPU (LMSYS 8x GB300) -->
+  <rect x="24" y="72" width="912" height="196" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="72" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="90" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="90" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">A · 8× GB300 GPU (LMSYS sgl-muse-mega, CUDA / PTX): 1 Launch/Layer (1,450 → 97/step) · 144 SMs × 12 Static Warps</text>
+
+  <!-- Card A1 -->
+  <rect x="34" y="108" width="210" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="44" y="116" width="144" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="116" y="130" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">1 · Layer Scope &amp; Warps</text>
+  <text x="44" y="152" font-size="9.4" font-weight="600" fill="#0f172a" text-anchor="start">Attn → Next Layer QKV + KV Write</text>
+  <text x="44" y="170" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Old KV ready early; loads overlap</text>
+  <text x="44" y="188" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">4-block clusters + 12 warps per SM</text>
+  <text x="44" y="206" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">W0-1 load; W2-11 TC/SwiGLU/sync</text>
+  <rect x="44" y="220" width="190" height="28" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="139" y="238" font-size="9.1" font-weight="600" fill="#92400e" text-anchor="middle">215–314 KB code &gt; ~128 KB SM icache</text>
+
+  <line x1="244" y1="183" x2="256" y2="183" stroke="#2563eb" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <!-- Card A2 -->
+  <rect x="258" y="108" width="210" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="268" y="116" width="148" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="342" y="130" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">2 · Caches &amp; Code Warm</text>
+  <text x="268" y="152" font-size="9.4" font-weight="600" fill="#0f172a" text-anchor="start">SMEM 5×32 KB (~23MB) + L2 135MB</text>
+  <text x="268" y="170" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Known weights → ring; evict-first L2</text>
+  <text x="268" y="188" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">W3 pulls top-14 prev experts (~50MB)</text>
+  <text x="268" y="206" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Keep loops rolled (~50 KB code saved)</text>
+  <rect x="268" y="220" width="190" height="28" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.9"/>
+  <text x="363" y="238" font-size="9.1" font-weight="600" fill="#0369a1" text-anchor="middle">Warm 128B lines + 2-pass dry run</text>
+
+  <line x1="468" y1="183" x2="480" y2="183" stroke="#2563eb" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <!-- Card A3 -->
+  <rect x="482" y="108" width="210" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="492" y="116" width="150" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="567" y="130" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">3 · N-Shard TP8 &amp; Sync</text>
+  <text x="492" y="152" font-size="9.4" font-weight="600" fill="#0f172a" text-anchor="start">Both GEMMs N-sharded (5 stops)</text>
+  <text x="492" y="170" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Intra-SM mbarrier; NVLink busy poll</text>
+  <text x="492" y="188" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Avoids 3.6–4.0 µs TMA-stalled fence</text>
+  <text x="492" y="206" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Double buffers reset off-path</text>
+  <rect x="492" y="220" width="190" height="28" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="0.9"/>
+  <text x="587" y="238" font-size="9.1" font-weight="600" fill="#166534" text-anchor="middle">Lamport sentinel: bf16 FFFF / +0↔-0</text>
+
+  <line x1="692" y1="183" x2="704" y2="183" stroke="#2563eb" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <!-- Card A4 -->
+  <rect x="706" y="108" width="220" height="150" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="716" y="116" width="156" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="794" y="130" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">4 · Draft Fusion &amp; Scope</text>
+  <text x="716" y="152" font-size="9.4" font-weight="600" fill="#0f172a" text-anchor="start">DFlash V2: 175 → 8 launches</text>
+  <text x="716" y="170" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Draft latency 1.16 → 0.44 ms (2.6×)</text>
+  <text x="716" y="188" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Draft + verify in one CUDA Graph</text>
+  <text x="716" y="206" font-size="9.1" font-weight="600" fill="#1d4ed8" text-anchor="start">GSM8K BS=1: 517 → 1,109 tok/s</text>
+  <rect x="716" y="220" width="200" height="28" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="816" y="238" font-size="9.1" font-weight="600" fill="#92400e" text-anchor="middle">Current scope: BS=1 + SpecDec only</text>
+
+  <!-- Row B: TPU v7 (PyTorch / RadixArk) -->
+  <rect x="24" y="278" width="912" height="196" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="278" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="296" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="296" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">B · 4-Chip TPU v7 (PyTorch / RadixArk SGLang-TorchTPU, Pallas): 1 pallas_call Across All 62 Layers · Single-Thread DMA</text>
+
+  <!-- Card B1 -->
+  <rect x="34" y="314" width="210" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="44" y="322" width="152" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="120" y="336" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">1 · 62-Layer Program</text>
+  <text x="44" y="358" font-size="9.4" font-weight="600" fill="#0f172a" text-anchor="start">1 thread/device runs all 62 layers</text>
+  <text x="44" y="376" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">No 128 KB multi-warp icache cliff</text>
+  <text x="44" y="394" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Eliminates ~45 µs/layer collective gap</text>
+  <text x="44" y="412" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Embed, draft, KV write stay outside</text>
+  <rect x="44" y="426" width="190" height="28" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.9"/>
+  <text x="139" y="444" font-size="9.0" font-weight="600" fill="#0369a1" text-anchor="middle">Why: XLA copies remote-DMA aliases</text>
+
+  <line x1="244" y1="389" x2="256" y2="389" stroke="#2563eb" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <!-- Card B2 -->
+  <rect x="258" y="314" width="210" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="268" y="322" width="152" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="344" y="336" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">2 · VMEM Ring &amp; Loop Split</text>
+  <text x="268" y="358" font-size="9.4" font-weight="600" fill="#0f172a" text-anchor="start">~10 tiles in flight: 3.34 TB/s/dev</text>
+  <text x="268" y="376" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Single DMA stream only 1.13 TB/s</text>
+  <text x="268" y="394" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">3 experts on route; defer next attn</text>
+  <text x="268" y="412" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Split expert loop: ≤4 vs &gt;4 rows</text>
+  <rect x="268" y="426" width="190" height="28" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="0.9"/>
+  <text x="363" y="444" font-size="9.0" font-weight="600" fill="#166534" text-anchor="middle">61–64% fewer spills (+13–19% speed)</text>
+
+  <line x1="468" y1="389" x2="480" y2="389" stroke="#2563eb" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <!-- Card B3 -->
+  <rect x="482" y="314" width="210" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="492" y="322" width="154" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="569" y="336" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">3 · Folding &amp; Max-Free Attn</text>
+  <text x="492" y="358" font-size="9.4" font-weight="600" fill="#0f172a" text-anchor="start">Remote DMA direct to peer (~3 µs)</text>
+  <text x="492" y="376" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">RMSNorm commutes: slice matmul</text>
+  <text x="492" y="394" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">QK-norm caps scores ≤43.8 (safe exp)</text>
+  <text x="492" y="412" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Drop running max; fp8 keys in MXU</text>
+  <rect x="492" y="426" width="190" height="28" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="0.9"/>
+  <text x="587" y="444" font-size="9.0" font-weight="600" fill="#166534" text-anchor="middle">3.9× attn microbench; +18% at 500K</text>
+
+  <line x1="692" y1="389" x2="704" y2="389" stroke="#2563eb" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <!-- Card B4 -->
+  <rect x="706" y="314" width="220" height="150" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="716" y="322" width="156" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="794" y="336" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">4 · KV Write &amp; Concurrency</text>
+  <text x="716" y="358" font-size="9.4" font-weight="600" fill="#0f172a" text-anchor="start">Sequence-on-lane fp8: 512 → 256 B</text>
+  <text x="716" y="376" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Dual-bank KV write: 810 → 155 µs</text>
+  <text x="716" y="394" font-size="9.1" font-weight="600" fill="#1d4ed8" text-anchor="start">BS=1 TPOT 3.78 → 1.95 ms (1.94×)</text>
+  <text x="716" y="412" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">Verify within 1.5–1.7× HBM floor</text>
+  <rect x="716" y="426" width="200" height="28" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.9"/>
+  <text x="816" y="444" font-size="9.0" font-weight="600" fill="#0369a1" text-anchor="middle">BS=2 1.85×; narrows at higher batch</text>
+
+  <!-- Bottom Banner & Caption -->
+  <rect x="24" y="482" width="912" height="26" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="499" font-size="9.8" font-weight="600" fill="#1e3a8a" text-anchor="start">Core contrast: GPU hides 5 intra-layer stops with 12 warps + icache warming; TPU fuses 62 layers via DMA + VMEM rings, keeping only KV write outside</text>
+  <text x="24" y="523" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram · Synthesized from LMSYS (2026-11-11) and PyTorch / RadixArk (2026-11-10) primary engineering posts (not an original figure)</text>
+</svg>

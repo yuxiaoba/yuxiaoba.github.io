@@ -1,10 +1,9 @@
 ---
 id: review-nvidia-tensorrt-global-performance-tuner-1
-title: 2026-11-04 | Scaling NVIDIA TensorRT Performance Optimization Beyond a Single
-  Build Route with the Global Performance Tuner, Part 1
+title: 2026-11-04 | Scaling NVIDIA TensorRT Performance Optimization Beyond a Single Build Route with the Global Performance Tuner, Part 1
 date: '2026-11-04'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,9 +17,11 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/en/review-nvidia-tensorrt-global-performance-tuner-1/
 long_read: true
-summary: "Separating TensorRT candidate reachability, end-to-end selection and accuracy constraints."
+summary: Separating TensorRT candidate reachability, end-to-end selection and accuracy constraints.
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 ## Fast local kernels need not form the fastest engine
 
 TensorRT construction couples graph transformations, fusion, kernels, memory layouts and quantization. An individually fast kernel may disrupt fusion or increase traffic in the full graph; reduced precision may exceed application tolerance. The article therefore treats complete build routes as the optimization unit.

@@ -1,0 +1,125 @@
+{
+  "id": "llm-d-1-0",
+  "source_url": "https://cloud.google.com/blog/topics/ai-infrastructure/llm-d-1-0-an-open-source-stack-for-distributed-inference/",
+  "source_title": "Announcing llm-d 1.0: Open distributed inference for agents on Google Cloud TPUs and GPUs",
+  "source_authors": [
+    "Mark Lohmeyer",
+    "Sean Horgan"
+  ],
+  "source_org": "Google Cloud",
+  "source_date": "2026-10-20",
+  "note_date": "2026-10-20",
+  "published_at": "2026-10-23T12:22:02.560508+08:00",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": ".preview/research-jobs/runs/20261023-120001-8b97f3d712-d7bb7b/work/sources/pages/cloud-google-com-blog-topics-ai-infrastructure-llm-d-1-0-an-open-sourc.txt",
+      "kind": "extracted_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261023-120001-8b97f3d712-d7bb7b/work/sources/pages/cloud-google-com-blog-topics-ai-infrastructure-llm-d-1-0-an-open-sourc.html",
+      "kind": "raw_html"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261023-120001-8b97f3d712-d7bb7b/work/sources/support/llmd-async.md",
+      "kind": "frozen_primary_doc"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261023-120001-8b97f3d712-d7bb7b/work/sources/support/llmd-cache.txt",
+      "kind": "frozen_primary_doc"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261023-120001-8b97f3d712-d7bb7b/work/sources/support/llmd-disagg.txt",
+      "kind": "frozen_primary_doc"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://llm-d.ai/docs/well-lit-paths/foundations/tiered-prefix-cache",
+    "https://llm-d.ai/docs/dev/architecture/model-server-orchestration/disaggregatedset",
+    "https://github.com/llm-d/llm-d-async",
+    "https://llm-d.ai/docs/well-lit-paths/foundations/pd-disaggregation",
+    "https://github.com/llm-d/llm-d/blob/main/guides/models/qwen3-coder-480b/README.md",
+    "https://cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway#llm-d-router",
+    "https://cloud.google.com/blog/products/containers-kubernetes/bringing-you-agent-sandbox-on-gke-and-agent-substrate",
+    "https://developers.googleblog.com/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/",
+    "https://cloud.google.com/blog/products/containers-kubernetes/introducing-co-operative-time-slicing-for-rl-in-llm-d",
+    "https://cloud.google.com/blog/products/containers-kubernetes/how-gke-inference-gateway-improved-latency-for-vertex-ai",
+    "https://cloud.google.com/blog/products/containers-kubernetes/gpu-and-tpu-utilization-with-multi-cluster-gke-inference-gateway",
+    "https://cloud.google.com/blog/topics/developers-practitioners/scaling-llm-inference-multi-node-kv-cache-offloading-with-gke-managed-lustre",
+    "https://prism.llm-d.ai/",
+    "https://github.com/llm-d/llm-d-benchmark",
+    "https://github.com/kubernetes-sigs/inference-perf",
+    "https://github.com/llm-d-incubation/llm-d-rl-time-slicing",
+    "https://github.com/llm-d/llm-d"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/llm-d-1-0.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/llm-d-1-0.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/llm-d-1-0/serving.png",
+        "origin": "primary_source_preserved",
+        "source": "https://storage.googleapis.com/gweb-cloudblog-publish/images/1_-_Figure_1_-_llm-d_1.0_distributed_infer.max-2200x2200.png",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/llm-d-1-0/llmd-disaggregated-routing-stack-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/llm-d-1-0/llmd-disaggregated-routing-stack-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/llm-d-1-0/llmd-kv-offload-benchmarks-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/llm-d-1-0/llmd-kv-offload-benchmarks-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "dc5cb729a3817c500736fa2fd8db36df8aab8cb84b4077b8b1084bac50415052",
+      "en_md_sha256": "9c6c093e70c457f4a867e8c89d311a0d1b552531272de1302e586392028b7ff1",
+      "svgs": {
+        "/assets/images/tech/llm-d-1-0/llmd-disaggregated-routing-stack-zh.svg": "15047a35e9f6f78df1b9293bf0efa6c5f12cd8a1414d4bd569a6e13f68db160e",
+        "/assets/images/tech/llm-d-1-0/llmd-disaggregated-routing-stack-en.svg": "8f86211ecae2185ac1206f48849a15fcce5eb22c9fc118b1688e06de7c9d88a5",
+        "/assets/images/tech/llm-d-1-0/llmd-kv-offload-benchmarks-zh.svg": "955a5255b91ad803e4d708e8919fb487d8b01accc85d9614af7aef1dc0a27446",
+        "/assets/images/tech/llm-d-1-0/llmd-kv-offload-benchmarks-en.svg": "5cf2ff0ccc3e4ea7fdfac37a3a4ab4a07c7480dbd580539ef668900ad2ccf52b"
+      },
+      "preserved": {
+        "serving.png": "6f8f9fcd644e89917e71eb6ff4a2ff523932d4268753ab843f51ee627b5a46e9"
+      }
+    },
+    "playwright_total": 35,
+    "playwright_passed": 35,
+    "playwright_failed": 0
+  }
+}

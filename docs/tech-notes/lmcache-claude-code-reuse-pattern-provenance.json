@@ -1,0 +1,101 @@
+{
+  "id": "lmcache-claude-code-reuse-pattern",
+  "review_code": "T2C-21",
+  "source_url": "https://blog.lmcache.ai/en/2025/12/23/context-engineering-reuse-pattern-under-the-hood-of-claude-code/",
+  "source_title": "Context Engineering & Reuse Pattern Under the Hood of Claude Code",
+  "source_authors": [
+    "Kobe",
+    "Mengbing"
+  ],
+  "source_org": "LMCache Blog",
+  "source_date": "2025-12-23",
+  "note_date": "2026-11-13",
+  "published_at": "2026-11-13T08:46:43.062448+08:00",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": ".preview/research-jobs/runs/20261113-083004-2e17ddd193-b40adf/work/sources/lmcache-claude-code-reuse-pattern/text.txt",
+      "kind": "extracted_text"
+    },
+    {
+      "path": "assets/images/tech/lmcache-claude-code-reuse-pattern/figure.png",
+      "kind": "preserved_primary_image"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://github.com/kobe0938/claude-code-tracing",
+    "https://wide-preface-8a2.notion.site/Claude-Code-tracing-30c13b4793fb80d7a26ac1def9c71388?pvs=74",
+    "https://arxiv.org/abs/2405.16444"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/lmcache-claude-code-reuse-pattern.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/lmcache-claude-code-reuse-pattern.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/lmcache-claude-code-reuse-pattern/figure.png",
+        "origin": "primary_source_preserved",
+        "preserved_untouched": true,
+        "source": "https://blog.lmcache.ai/en/2025/12/23/context-engineering-reuse-pattern-under-the-hood-of-claude-code/",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/lmcache-claude-code-reuse-pattern/claude-code-prefix-reuse-anatomy-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/lmcache-claude-code-reuse-pattern/claude-code-prefix-reuse-anatomy-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/lmcache-claude-code-reuse-pattern/context-mutation-cache-invalidation-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/lmcache-claude-code-reuse-pattern/context-mutation-cache-invalidation-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "69e9dd2f587ded50e923b105bf71ec5fc88b8cc35a03a0a99d0b5752695ade3c",
+      "en_md_sha256": "1ce43253a253fc8bfe8fde05bdd9bef06f0cc17d58a1963c8ca59640190bf9ab",
+      "svgs": {
+        "/assets/images/tech/lmcache-claude-code-reuse-pattern/claude-code-prefix-reuse-anatomy-zh.svg": "482c8f99e320f25e9ae74071498d09aa46f5c736ef6760873ede654c09a41ba6",
+        "/assets/images/tech/lmcache-claude-code-reuse-pattern/claude-code-prefix-reuse-anatomy-en.svg": "d3f06a7d668ddd5d3462983529e743dcf1e3a289fe4dece7b5aecc9c50e6ec6a",
+        "/assets/images/tech/lmcache-claude-code-reuse-pattern/context-mutation-cache-invalidation-zh.svg": "5e8d0efb7856eff23aed3b2b763618c241c988a186340061ec9e47e66ed1cf09",
+        "/assets/images/tech/lmcache-claude-code-reuse-pattern/context-mutation-cache-invalidation-en.svg": "963825835fc876faed36e912e0bd35522354b0eeeca2b7e7550c7d20bf577c83"
+      },
+      "preserved": {
+        "figure.png": "4adc78727869ff688a656e6ad70f416f0a604bfd4cf99bd89a6f7af4dc9774f8"
+      }
+    },
+    "playwright_total": 35,
+    "playwright_passed": 35,
+    "playwright_failed": 0
+  }
+}

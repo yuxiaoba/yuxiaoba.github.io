@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">Agentic Multi-Turn KV Reuse Topology &amp; Disaggregated Datapath</text>
+  <text x="24" y="56" font-size="11" font-weight="400" fill="#475569" text-anchor="start">Synthesizing Simon Mo's Runtime 2026 talk &amp; vLLM x Mooncake (May 2026): why single-node caches &amp; co-located serving stall</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Column 1: Workload Profile & 3 Pressures -->
+  <rect x="24" y="76" width="282" height="376" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="76" width="282" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="96" width="282" height="10" fill="#dbeafe"/>
+  <text x="36" y="95" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">1 · Agent Session &amp; 3 Pressures</text>
+
+  <rect x="34" y="114" width="262" height="144" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="44" y="122" width="142" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="115" y="136" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">AgentX Trace Profile</text>
+  <text x="44" y="159" font-size="10.5" font-weight="700" fill="#0f172a" text-anchor="start">Turn 1 full prefill → Turn 43 delta</text>
+  <text x="44" y="178" font-size="10" font-weight="400" fill="#334155" text-anchor="start">43 turns · P50 142K in / 444 out</text>
+  <text x="44" y="197" font-size="10" font-weight="400" fill="#334155" text-anchor="start">Theor. reuse &gt;95% (&gt;96% in AgentX)</text>
+  <text x="44" y="216" font-size="10" font-weight="400" fill="#334155" text-anchor="start">44% sessions spawn bursty sub-agents</text>
+  <text x="44" y="237" font-size="9.6" font-weight="400" fill="#475569" text-anchor="start">100K-token tool results; GBs per session</text>
+
+  <rect x="34" y="268" width="262" height="174" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="288" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">Three Scaling Pressures (Talk)</text>
+  <text x="44" y="311" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">1) Prefix cache pressure</text>
+  <text x="44" y="327" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">Busy nodes evict GBs; recompute stalls</text>
+  <text x="44" y="350" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">2) Execution efficiency</text>
+  <text x="44" y="366" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">More tokens/step inside tight latency SLO</text>
+  <text x="44" y="389" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">3) Global routing dilemma</text>
+  <text x="44" y="405" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">Sticky overloads GPUs; balancing misses</text>
+  <text x="44" y="427" font-size="9.3" font-weight="400" fill="#64748b" text-anchor="start">(Aggregated P/D stalls streaming &amp; TTFT)</text>
+
+  <!-- Arrow Col 1 -> Col 2 -->
+  <line x1="306" y1="264" x2="322" y2="264" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Column 2: Control Plane & P/D Disaggregation -->
+  <rect x="324" y="76" width="326" height="376" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="324" y="76" width="326" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="324" y="96" width="326" height="10" fill="#dbeafe"/>
+  <text x="336" y="95" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">2 · Control Plane &amp; P/D Disaggregation</text>
+
+  <rect x="334" y="114" width="306" height="110" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="344" y="122" width="110" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="399" y="136" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Control Plane</text>
+  <text x="462" y="136" font-size="10.2" font-weight="600" fill="#0f172a" text-anchor="start">Token-block hash lookup</text>
+  <text x="344" y="159" font-size="10" font-weight="400" fill="#334155" text-anchor="start">vLLM Scheduler → Mooncake Master (index)</text>
+  <text x="344" y="180" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="start">Hybrid KV Manager (Jenga LCM 1-pool)</text>
+  <text x="344" y="201" font-size="9.6" font-weight="400" fill="#475569" text-anchor="start">Full + sliding + linear share 1 pool (2-2.5x spoken)</text>
+
+  <rect x="334" y="234" width="306" height="208" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="344" y="242" width="118" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="403" y="256" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Execution · P/D Split</text>
+  <text x="470" y="256" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">DistServe isolates phases</text>
+
+  <rect x="344" y="270" width="138" height="114" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="351" y="289" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="start">Prefill Pool</text>
+  <text x="351" y="309" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">Compute-heavy · TTFT</text>
+  <text x="351" y="328" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">Pulls prefix from pool</text>
+  <text x="351" y="347" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">Computes delta only</text>
+  <text x="351" y="366" font-size="9.3" font-weight="400" fill="#0f172a" text-anchor="start">Hands KV to Decode</text>
+
+  <rect x="492" y="270" width="138" height="114" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="499" y="289" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="start">Decode Pool</text>
+  <text x="499" y="309" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">BW-bound · TPOT</text>
+  <text x="499" y="328" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">Streams ~444 tok</text>
+  <text x="499" y="347" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">Writes new KV to pool</text>
+  <text x="499" y="366" font-size="9.3" font-weight="600" fill="#b45309" text-anchor="start">May '26: no pool read</text>
+
+  <rect x="344" y="392" width="286" height="42" rx="5" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="353" y="409" font-size="9.6" font-weight="600" fill="#78350f" text-anchor="start">MultiConnector chains P/D transfer + shared Store;</text>
+  <text x="353" y="425" font-size="9.3" font-weight="400" fill="#92400e" text-anchor="start">multipath concurrent reads remained future work (May '26)</text>
+
+  <!-- Bidirectional Arrow Col 2 <-> Col 3 -->
+  <line x1="650" y1="264" x2="666" y2="264" stroke="#2563eb" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <!-- Column 3: Distributed KV Pool & Next Steps -->
+  <rect x="668" y="76" width="268" height="376" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="668" y="76" width="268" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="668" y="96" width="268" height="10" fill="#dbeafe"/>
+  <text x="680" y="95" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">3 · Distributed KV Pool &amp; Next</text>
+
+  <rect x="678" y="114" width="248" height="196" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="688" y="122" width="124" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="750" y="136" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Datapath · RDMA</text>
+  <text x="688" y="159" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">Embedded Mooncake Client in Worker</text>
+  <text x="688" y="178" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">GPU KV registered as RDMA buffers</text>
+  <text x="688" y="197" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">Background I/O threads keep CPU off path</text>
+  <text x="688" y="216" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">GPUDirect avoids SM &amp; CPU staging</text>
+
+  <rect x="688" y="232" width="110" height="68" rx="5" fill="#ffffff" stroke="#2563eb" stroke-width="1.1"/>
+  <text x="743" y="250" font-size="10.2" font-weight="700" fill="#1d4ed8" text-anchor="middle">CPU DRAM</text>
+  <text x="743" y="268" font-size="9.4" font-weight="600" fill="#1e3a8a" text-anchor="middle">May 2026 Test</text>
+  <text x="743" y="285" font-size="9.2" font-weight="400" fill="#475569" text-anchor="middle">3.8x Tput / 46x TTFT</text>
+
+  <rect x="806" y="232" width="110" height="68" rx="5" fill="#fffbeb" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4 2"/>
+  <text x="861" y="250" font-size="10.2" font-weight="700" fill="#b45309" text-anchor="middle">NVMe SSD</text>
+  <text x="861" y="268" font-size="9.4" font-weight="600" fill="#92400e" text-anchor="middle">Added Later</text>
+  <text x="861" y="285" font-size="9.2" font-weight="400" fill="#78350f" text-anchor="middle">Not in May '26 run</text>
+
+  <rect x="678" y="320" width="248" height="122" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="688" y="340" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">Next: Programmable KV &amp; Kernels</text>
+  <text x="688" y="361" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">• Hints: tier TTL, priority, prefetch/evict</text>
+  <text x="688" y="381" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">• End premature abstraction: per-model</text>
+  <text x="688" y="401" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">• TPU v7 Pallas: 92 layers + VMEM prefetch</text>
+  <text x="688" y="422" font-size="9.3" font-weight="400" fill="#64748b" text-anchor="start">(Ref: vLLM Q4 2026 Roadmap #61024)</text>
+
+  <!-- Bottom Banner -->
+  <rect x="24" y="464" width="912" height="38" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="487" font-size="10.4" font-weight="600" fill="#1e3a8a" text-anchor="start">Engineering boundary: theoretical reuse (&gt;95%) ≠ resident hit rate; pool pays off when saved prefill &gt; GPUDirect + lookup cost</text>
+  <text x="24" y="522" font-size="10.2" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram · Synthesized from Simon Mo's Runtime 2026 talk, vLLM x Mooncake, Hybrid KV &amp; Q4 Roadmap docs (not an original slide)</text>
+</svg>

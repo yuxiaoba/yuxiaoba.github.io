@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- Outer Frame -->
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17.5" font-weight="700" fill="#0f172a" text-anchor="start">From BS=1 Peaks to 1M AgentX: Megakernel Gains &amp; Bottleneck Shift</text>
+  <text x="24" y="53" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start">Launch gaps &amp; HBM weight streaming dominate BS=1-2; 1M-context agent concurrency shifts pressure to KV capacity &amp; prefill fairness</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Regime 1 -->
+  <rect x="24" y="72" width="286" height="198" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="72" width="286" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="90" width="286" height="10" fill="#dbeafe"/>
+  <text x="36" y="90" font-size="11.2" font-weight="700" fill="#1e3a8a" text-anchor="start">Regime 1 · BS=1–2 Low-Latency Peak</text>
+  <text x="36" y="118" font-size="9.4" font-weight="700" fill="#1d4ed8" text-anchor="start">Dominant limit: Launch &amp; collective gaps</text>
+  <text x="36" y="136" font-size="9.0" font-weight="400" fill="#334155" text-anchor="start">Low math/weight; every sync wait is exposed</text>
+  <text x="36" y="155" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">GPU (8×GB300): 517 → 1,109 tok/s (2.1×)</text>
+  <text x="36" y="172" font-size="8.9" font-weight="400" fill="#475569" text-anchor="start">GSM8K BS=1, 12.9→5.9 ms, 16 ver / 6.6 acc</text>
+  <text x="36" y="191" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">TPU v7 (4-chip): 3.78 → 1.95 ms (1.94×)</text>
+  <text x="36" y="208" font-size="8.9" font-weight="400" fill="#475569" text-anchor="start">1.85× at BS=2; verify 1.5–1.7× HBM floor</text>
+  <rect x="36" y="226" width="262" height="32" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="167" y="246" font-size="9.0" font-weight="600" fill="#92400e" text-anchor="middle">Limit: GPU megakernel is BS=1 only today</text>
+
+  <line x1="312" y1="171" x2="328" y2="171" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Regime 2 -->
+  <rect x="330" y="72" width="296" height="198" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="330" y="72" width="296" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="330" y="90" width="296" height="10" fill="#dbeafe"/>
+  <text x="342" y="90" font-size="11.2" font-weight="700" fill="#1e3a8a" text-anchor="start">Regime 2 · Multi-Req &amp; 500K Context</text>
+  <text x="342" y="118" font-size="9.4" font-weight="700" fill="#1d4ed8" text-anchor="start">Shift: Attention KV reads &amp; spills lead</text>
+  <text x="342" y="136" font-size="9.0" font-weight="400" fill="#334155" text-anchor="start">More tokens in flight hide sync boundaries</text>
+  <text x="342" y="155" font-size="9.0" font-weight="600" fill="#0f172a" text-anchor="start">• Max-free attn: +18% decode @ 500K (BS=2)</text>
+  <text x="342" y="173" font-size="9.0" font-weight="600" fill="#0f172a" text-anchor="start">• Split expert loops (≤4 vs &gt;4r): +13–19%</text>
+  <text x="342" y="191" font-size="9.0" font-weight="600" fill="#0f172a" text-anchor="start">• Sequence-on-lane fp8: halves KV bytes</text>
+  <text x="342" y="208" font-size="8.9" font-weight="400" fill="#475569" text-anchor="start">512 → 256 B/tok/L/dev; draft in SW +38%</text>
+  <rect x="342" y="226" width="272" height="32" rx="5" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.9"/>
+  <text x="478" y="246" font-size="8.9" font-weight="600" fill="#0369a1" text-anchor="middle">LMSYS note: larger batches make overlap easier</text>
+
+  <line x1="628" y1="171" x2="644" y2="171" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Regime 3 -->
+  <rect x="646" y="72" width="290" height="198" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="646" y="72" width="290" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="646" y="90" width="290" height="10" fill="#1e3a8a"/>
+  <text x="658" y="90" font-size="11.2" font-weight="700" fill="#ffffff" text-anchor="start">Regime 3 · 1M AgentX Concurrency</text>
+  <text x="658" y="118" font-size="9.4" font-weight="700" fill="#1d4ed8" text-anchor="start">Limit: ~20 GiB KV/device &amp; prefill cost</text>
+  <text x="658" y="136" font-size="9.0" font-weight="600" fill="#0f172a" text-anchor="start">TPU: 433/req @ 6.1K → 95/req @ 25.9K/chip</text>
+  <text x="658" y="155" font-size="9.0" font-weight="400" fill="#334155" text-anchor="start">• L2 HiCache (960 GB host DRAM): up to +77%</text>
+  <text x="658" y="173" font-size="9.0" font-weight="400" fill="#334155" text-anchor="start">• Session-aware evict: 1.2× → 1–5% oracle</text>
+  <text x="658" y="191" font-size="9.0" font-weight="400" fill="#334155" text-anchor="start">• Prefill pair-xchg + SP: 440→384ms (-51ms)</text>
+  <text x="658" y="209" font-size="9.0" font-weight="400" fill="#334155" text-anchor="start">• Chunk sharing (≥1,024 tok): -58% E2E med</text>
+  <rect x="658" y="226" width="266" height="32" rx="5" fill="#dcfce7" stroke="#22c55e" stroke-width="0.9"/>
+  <text x="791" y="246" font-size="8.9" font-weight="600" fill="#166534" text-anchor="middle">Hybrid trap: losing 2,048 SW wastes full KV</text>
+
+  <!-- Bottom Left: Curve & Scope Gap -->
+  <rect x="24" y="280" width="448" height="214" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="38" y="301" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start">AgentX 1M Curve vs. BS=1 Latency Points (Avoid Conflation)</text>
+
+  <!-- Chart Axes -->
+  <line x1="84" y1="318" x2="84" y2="432" stroke="#475569" stroke-width="1.3"/>
+  <line x1="84" y1="432" x2="296" y2="432" stroke="#475569" stroke-width="1.3"/>
+  <text x="78" y="325" font-size="8.8" font-weight="600" fill="#475569" text-anchor="end">25.9K</text>
+  <text x="78" y="337" font-size="8.2" font-weight="400" fill="#64748b" text-anchor="end">tok/s/chip</text>
+  <text x="78" y="420" font-size="8.8" font-weight="600" fill="#475569" text-anchor="end">6.1K</text>
+  <text x="104" y="446" font-size="8.8" font-weight="600" fill="#475569" text-anchor="middle">95</text>
+  <text x="272" y="446" font-size="8.8" font-weight="600" fill="#475569" text-anchor="middle">433</text>
+  <text x="190" y="460" font-size="8.8" font-weight="400" fill="#475569" text-anchor="middle">Output tok/s per request</text>
+
+  <!-- TPU v7 Pareto Curve -->
+  <path d="M 104 328 C 134 338, 198 378, 272 414" fill="none" stroke="#1d4ed8" stroke-width="2.4"/>
+  <circle cx="104" cy="328" r="4.5" fill="#1d4ed8"/>
+  <circle cx="176" cy="364" r="4" fill="#3b82f6"/>
+  <circle cx="272" cy="414" r="4.5" fill="#1d4ed8"/>
+  <text x="112" y="329" font-size="8.6" font-weight="600" fill="#1e3a8a" text-anchor="start">High batch: 95/req @ 25,906/chip</text>
+  <text x="260" y="421" font-size="8.6" font-weight="600" fill="#1e3a8a" text-anchor="end">Low batch: 433 @ 6,101</text>
+
+  <!-- Separate Callout Box on Chart Right -->
+  <rect x="306" y="316" width="154" height="142" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="314" y="335" font-size="9.4" font-weight="700" fill="#92400e" text-anchor="start">Separate BS=1 Points</text>
+  <text x="314" y="354" font-size="8.7" font-weight="600" fill="#78350f" text-anchor="start">• GPU 8×GB300 (GSM8K)</text>
+  <text x="314" y="369" font-size="8.7" font-weight="400" fill="#92400e" text-anchor="start">  1,109 tok/s (single req)</text>
+  <text x="314" y="388" font-size="8.7" font-weight="600" fill="#78350f" text-anchor="start">• TPU 4-chip (GSM8K)</text>
+  <text x="314" y="403" font-size="8.7" font-weight="400" fill="#92400e" text-anchor="start">  1.95 ms/tok (vs 3.78 ms)</text>
+  <text x="314" y="424" font-size="8.3" font-weight="400" fill="#78350f" text-anchor="start">Distinct hardware, baselines,</text>
+  <text x="314" y="438" font-size="8.3" font-weight="400" fill="#78350f" text-anchor="start">&amp; checkpoints — not 1:1 A/B</text>
+
+  <text x="38" y="481" font-size="8.6" font-weight="400" fill="#64748b" text-anchor="start">AgentX 1M: 393 Claude Code sessions (990K prompt, P90 ≤47s); InferenceX owning cost USD 1.21 vs USD 1.86/hr</text>
+
+  <!-- Bottom Right: Verification Boundaries & Open Risks -->
+  <rect x="488" y="280" width="448" height="214" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="502" y="301" font-size="11" font-weight="700" fill="#1e3a8a" text-anchor="start">Verification Boundaries, Numerics &amp; Open Roadmap</text>
+
+  <rect x="502" y="314" width="66" height="20" rx="4" fill="#fee2e2"/>
+  <text x="535" y="328" font-size="8.6" font-weight="700" fill="#991b1b" text-anchor="middle">Baselines</text>
+  <text x="576" y="328" font-size="9.0" font-weight="400" fill="#1e293b" text-anchor="start">TPU chart cites InferenceX 11-02 GB200 FP4; LMSYS tests 8×GB300</text>
+
+  <rect x="502" y="346" width="66" height="20" rx="4" fill="#fef3c7"/>
+  <text x="535" y="360" font-size="8.6" font-weight="700" fill="#92400e" text-anchor="middle">Numerics</text>
+  <text x="576" y="360" font-size="9.0" font-weight="400" fill="#1e293b" text-anchor="start">Folding &amp; SP alter rounding; loop split &amp; stamps bit-exact</text>
+
+  <rect x="502" y="378" width="66" height="20" rx="4" fill="#e0f2fe"/>
+  <text x="535" y="392" font-size="8.6" font-weight="700" fill="#0369a1" text-anchor="middle">Invariants</text>
+  <text x="576" y="392" font-size="9.0" font-weight="400" fill="#1e293b" text-anchor="start">Lamport sentinels assume value bounds; max-free needs QK-norm ≤43.8</text>
+
+  <rect x="502" y="410" width="66" height="20" rx="4" fill="#dbeafe"/>
+  <text x="535" y="424" font-size="8.6" font-weight="700" fill="#1e3a8a" text-anchor="middle">Telemetry</text>
+  <text x="576" y="424" font-size="9.0" font-weight="400" fill="#1e293b" text-anchor="start">GPU %globaltimer adds 2.8% step cost (2.5 µs/layer), compile-time flag</text>
+
+  <rect x="502" y="444" width="420" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="512" y="460" font-size="8.9" font-weight="600" fill="#0f172a" text-anchor="start">Open roadmap: GPU multi-batch &amp; dynamic runtime scheduling (GPU VM);</text>
+  <text x="512" y="473" font-size="8.9" font-weight="400" fill="#475569" text-anchor="start">TPU topology-aware EP+TP MoE, larger prefill graphs &amp; host-split P/D</text>
+
+  <text x="24" y="519" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram · Grounded in LMSYS (8×GB300) and PyTorch / RadixArk (4-chip TPU v7) benchmark scopes &amp; caveats (not an original figure)</text>
+</svg>

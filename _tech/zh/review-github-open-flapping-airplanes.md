@@ -3,7 +3,7 @@ id: review-github-open-flapping-airplanes
 title: 2026-11-04｜开放 megakernel 复现：同时运行与强基线
 date: '2026-11-04'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,9 +17,11 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/zh/review-github-open-flapping-airplanes/
 long_read: true
-summary: "持久 GPU 任务队列和固定 SM 分区怎样工作，以及为何 CUDA Graph 基线仍能更快。"
+summary: 持久 GPU 任务队列和固定 SM 分区怎样工作，以及为何 CUDA Graph 基线仍能更快。
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 ## 持久 kernel 如何同时执行三种工作
 
 open-flapping-airplanes 根据公开视频独立重建一个演示：一次持久 GPU kernel 启动后，同时训练语言模型、用更新中的权重提供文本，以及运行 Doom。它未使用原演示代码，原模型和训练配置也未公开，因此首先是独立实现，而不是原系统性能复现。

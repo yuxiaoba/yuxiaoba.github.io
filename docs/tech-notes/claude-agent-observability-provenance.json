@@ -1,0 +1,97 @@
+{
+  "id": "claude-agent-observability",
+  "source_url": "https://claude.com/resources/articles/agent-observability-on-the-claude-platform",
+  "source_title": "Agent observability on the Claude Platform",
+  "source_authors": [
+    "Anthropic"
+  ],
+  "source_org": "Anthropic (Claude Platform)",
+  "source_date": "2026-10-14",
+  "note_date": "2026-10-14",
+  "published_at": "2026-10-20T10:46:23.513966+08:00",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": ".preview/research-jobs/runs/20261020-102921-bd347c5fad-7da113/work/sources/claude-articles-agent-observability-on-the-clau.txt",
+      "kind": "extracted_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261020-102921-bd347c5fad-7da113/work/sources/claude-otel-docs.txt",
+      "kind": "extracted_text"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://claude.com/resources/articles/agent-observability-on-the-claude-platform",
+    "https://platform.claude.com/docs/en/manage-claude/opentelemetry"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/claude-agent-observability.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/claude-agent-observability.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/claude-agent-observability/28fe34519808d40faa51162351234a3790230860.png",
+        "origin": "primary_source_preserved",
+        "source": "https://claude.com/resources/articles/agent-observability-on-the-claude-platform",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/claude-agent-observability/claude-otel-telemetry-pipeline-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/claude-agent-observability/claude-otel-telemetry-pipeline-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/claude-agent-observability/privacy-tiering-eval-loop-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/claude-agent-observability/privacy-tiering-eval-loop-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "4a27e67c0f4181378bbb122bd2830eb5b16e33df946912849f7515b91a31bb01",
+      "en_md_sha256": "1e5570152c1b872d1871cf4faa0507fcd4a356c5e35769643b182792082d1fd3",
+      "svgs": {
+        "/assets/images/tech/claude-agent-observability/claude-otel-telemetry-pipeline-zh.svg": "b581b21e41a5ca1504f11707dedfccaa682926be7497eba6fd6e837845b8bddd",
+        "/assets/images/tech/claude-agent-observability/claude-otel-telemetry-pipeline-en.svg": "2438e853a03c1943a8987ea602adf542ec1bdddf9e98b2e90ff17c31deb0a9d2",
+        "/assets/images/tech/claude-agent-observability/privacy-tiering-eval-loop-zh.svg": "eef219bd9a45c0e6f68ba891583fc79e43778a7efa7d30c1543791a89ce00f5b",
+        "/assets/images/tech/claude-agent-observability/privacy-tiering-eval-loop-en.svg": "32f26514395709a02d70a34af257e32f32ad47af6e5d0934295bfe862414f620"
+      },
+      "preserved": {
+        "28fe34519808d40faa51162351234a3790230860.png": "4e723430cb3fc229d9a55a387b6afdea1a6e4a8f50379acfb7ebdfbd412e1f14"
+      }
+    },
+    "playwright_total": 35,
+    "playwright_passed": 35,
+    "playwright_failed": 0
+  }
+}

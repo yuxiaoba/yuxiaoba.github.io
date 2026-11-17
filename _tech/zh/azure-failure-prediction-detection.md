@@ -3,7 +3,7 @@ id: azure-failure-prediction-detection
 title: 2026年11月5日｜Azure AFPD：预测之后，还要完成迁移与维修
 date: '2026-11-05'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,7 +17,9 @@ permalink: /tech/zh/azure-failure-prediction-detection/
 translation_source: assistant
 authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
-updated_at: '2026-11-05T08:55:14.344660+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 原文: [Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads](https://azure.microsoft.com/en-us/blog/predicting-and-detecting-failures-how-azure-strengthens-reliability-for-mission-critical-workloads/)  
 Mark Russinovich · 2026-11-04

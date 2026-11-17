@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="37" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">LAB 推理权衡模型：三条边界、绑定条件与双运行模式</text>
+  <text x="24" y="57" font-size="11.2" font-weight="400" fill="#475569" text-anchor="start">借用 CAP / PACELC 形状（非数学定理）：仅当受信任模型与已验证备选均无法按时返回时，必有一项让步</text>
+  <line x1="24" y1="67" x2="936" y2="67" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="76" width="466" height="364" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="76" width="466" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="94" width="466" height="10" fill="#dbeafe"/>
+  <text x="36" y="95" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">LAB 三角与三种显式工作负载策略位置</text>
+  <polygon points="257,152 114,344 400,344" fill="#eff6ff" fill-opacity="0.72" stroke="#1d4ed8" stroke-width="2.2" stroke-linejoin="round"/>
+  <rect x="147" y="108" width="220" height="40" rx="6" fill="#1e3a8a"/>
+  <text x="257" y="125" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">Behavior (B) · 规则行为</text>
+  <text x="257" y="141" font-size="9.8" font-weight="400" fill="#bfdbfe" text-anchor="middle">格式 / 决策 / 工具调用 / 升级与安全边界</text>
+  <rect x="186" y="260" width="142" height="54" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="257" y="278" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="middle">已验证多副本区域</text>
+  <text x="257" y="294" font-size="9.6" font-weight="400" fill="#334155" text-anchor="middle">可短暂达三角中心</text>
+  <text x="257" y="308" font-size="9.4" font-weight="400" fill="#64748b" text-anchor="middle">仍受共享限流与漂移制约</text>
+  <rect x="32" y="174" width="160" height="60" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="112" y="192" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="middle">LB · 不切换 (No Fallback)</text>
+  <text x="112" y="209" font-size="9.6" font-weight="400" fill="#334155" text-anchor="middle">固定单模型：快且守规</text>
+  <text x="112" y="224" font-size="9.4" font-weight="400" fill="#475569" text-anchor="middle">主模型故障或变慢即拒服</text>
+  <line x1="192" y1="204" x2="218" y2="204" stroke="#3b82f6" stroke-width="1.3" stroke-dasharray="3 2"/>
+  <rect x="322" y="174" width="160" height="60" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="402" y="192" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="middle">AB · 等待/排队 (Wait)</text>
+  <text x="402" y="209" font-size="9.6" font-weight="400" fill="#334155" text-anchor="middle">在受信任模型上排队或重试</text>
+  <text x="402" y="224" font-size="9.4" font-weight="400" fill="#475569" text-anchor="middle">保行为与完成，但超过期限</text>
+  <line x1="322" y1="204" x2="296" y2="204" stroke="#3b82f6" stroke-width="1.3" stroke-dasharray="3 2"/>
+  <rect x="32" y="352" width="140" height="46" rx="6" fill="#1e3a8a"/>
+  <text x="102" y="370" font-size="11.2" font-weight="700" fill="#ffffff" text-anchor="middle">Latency (L) · 延迟</text>
+  <text x="102" y="387" font-size="9.6" font-weight="400" fill="#bfdbfe" text-anchor="middle">期限内获有用回答</text>
+  <rect x="342" y="352" width="140" height="46" rx="6" fill="#1e3a8a"/>
+  <text x="412" y="370" font-size="11.2" font-weight="700" fill="#ffffff" text-anchor="middle">Availability (A) · 可用</text>
+  <text x="412" y="387" font-size="9.6" font-weight="400" fill="#bfdbfe" text-anchor="middle">故障期工作仍可完成</text>
+  <line x1="257" y1="344" x2="257" y2="364" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <rect x="178" y="364" width="158" height="64" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="257" y="382" font-size="10.8" font-weight="700" fill="#92400e" text-anchor="middle">LA · 自动改道 (Reroute)</text>
+  <text x="257" y="399" font-size="9.5" font-weight="400" fill="#78350f" text-anchor="middle">切往可达或更快的模型</text>
+  <text x="257" y="415" font-size="9.3" font-weight="400" fill="#b45309" text-anchor="middle">API 保持常绿，未验证则漂移</text>
+  <rect x="502" y="76" width="434" height="114" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="502" y="76" width="434" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="502" y="94" width="434" height="10" fill="#dbeafe"/>
+  <text x="514" y="95" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">模式一 · 压力期 (Under Stress)：可用性 vs. 行为</text>
+  <text x="514" y="122" font-size="10.3" font-weight="400" fill="#334155" text-anchor="start">• 示例条件：主模型宕机 20 分钟、请求期限 10 秒（原文假设例）</text>
+  <text x="514" y="142" font-size="10.3" font-weight="600" fill="#0f172a" text-anchor="start">• 硬约束前提：主模型及所有已验证备选均无法在期限前响应</text>
+  <text x="514" y="162" font-size="10.1" font-weight="400" fill="#b45309" text-anchor="start">• 意外落入 LA：2:14 p.m. 假设例中错误清零，风险代理却悄然越权放行</text>
+  <text x="514" y="180" font-size="9.9" font-weight="400" fill="#475569" text-anchor="start">• 严格 AB 变体：直接拒答保 B，但此刻不产出可用工作</text>
+  <rect x="502" y="200" width="434" height="112" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="502" y="200" width="434" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="502" y="218" width="434" height="10" fill="#dbeafe"/>
+  <text x="514" y="219" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">模式二 · 常态期 (Normal Ops)：延迟与成本 vs. 行为</text>
+  <text x="514" y="246" font-size="10.3" font-weight="400" fill="#334155" text-anchor="start">• 无故障主动降级：把简单请求路由到更小、更快、更便宜的模型</text>
+  <text x="514" y="266" font-size="10.3" font-weight="600" fill="#0f172a" text-anchor="start">• 软权衡非定理：小模型未必更差，但未经该工作负载验证就无法承诺</text>
+  <text x="514" y="286" font-size="10.1" font-weight="400" fill="#475569" text-anchor="start">• 策略隔离要求：摘要、工具调用与付款决策不可共用一条默认路由规则</text>
+  <rect x="502" y="322" width="434" height="118" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="502" y="322" width="434" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="502" y="340" width="434" height="10" fill="#dbeafe"/>
+  <text x="514" y="341" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">全时段压力 · 不切换模型也会发生的行为漂移</text>
+  <text x="514" y="368" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">1. 模型版本退役与别名迁移（如 &quot;latest&quot; 指向静默更新到新模型）</text>
+  <text x="514" y="389" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">2. 同名开源权重跨厂商差异：精度、推理栈、上下文上限与定价均不同</text>
+  <text x="514" y="410" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">3. 固定配置下相同请求仍非完全确定；多厂商副本亦受共享限流/容量波及</text>
+  <rect x="24" y="452" width="912" height="50" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="36" y="472" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="start">为什么把 Latency 与 Availability 拆开：实时聊天晚到一分钟即失效（L 与 A 重合）；夜间批处理晚到一小时仍算完成</text>
+  <text x="36" y="491" font-size="10.2" font-weight="400" fill="#1e40af" text-anchor="start">三个术语定义：L = 期限内获得「有用」回答（快速错误不算）  |  A = 故障期工作继续完成  |  B = 满足规则、格式、工具与升级约束（非逐字相同）</text>
+  <text x="24" y="522" font-size="10.2" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 基于 Sunil Mallya《The LAB Problem》原文及假设例绘制（非原文配图，不含未核验第三方基准/故障数字）</text>
+</svg>

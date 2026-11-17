@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Fairway Evaluation: Spike Latency, 11-Scenario Robustness, Flood and Ablations" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="32" font-size="16.5" font-weight="700" fill="#0f172a">Fairway Evaluation: Spike Latency, 11-Scenario Robustness, Flood &amp; Ablations</text>
+  <text x="24" y="51" font-size="10.0" fill="#475569">vLLM 0.16.0 + Llama-3.1-8B (1× A6000 48GB, B=2,048, 1 output token/req isolating prefill, shared PEEK eviction; frozen params)</text>
+  <line x1="24" y1="61" x2="936" y2="61" stroke="#cbd5e1" stroke-width="1"/>
+
+  <rect x="20" y="70" width="454" height="218" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="70" width="454" height="24" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="86" width="454" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="94" x2="474" y2="94" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="86.5" font-size="10.5" font-weight="700" fill="#1e3a8a">A. 60s Load Spike: Median vs. p99 TTFT (SEC QA, Fig. 1 &amp; §5.2)</text>
+
+  <text x="104" y="112" font-size="8.8" font-weight="700" fill="#334155">Median TTFT (s) [0–6.5s]</text>
+  <text x="262" y="112" font-size="8.8" font-weight="700" fill="#1e3a8a">p99 TTFT (s) [0–45s]</text>
+
+  <line x1="104" y1="118" x2="104" y2="232" stroke="#cbd5e1" stroke-width="0.9"/>
+  <line x1="154.8" y1="118" x2="154.8" y2="232" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2"/>
+  <text x="154.8" y="242" text-anchor="middle" font-size="8.0" fill="#64748b">3s</text>
+  <line x1="205.7" y1="118" x2="205.7" y2="232" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2"/>
+  <text x="205.7" y="242" text-anchor="middle" font-size="8.0" fill="#64748b">6s</text>
+
+  <line x1="262" y1="118" x2="262" y2="232" stroke="#cbd5e1" stroke-width="0.9"/>
+  <line x1="312.0" y1="118" x2="312.0" y2="232" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2"/>
+  <text x="312.0" y="242" text-anchor="middle" font-size="8.0" fill="#64748b">20s</text>
+  <line x1="362.0" y1="118" x2="362.0" y2="232" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2,2"/>
+  <text x="362.0" y="242" text-anchor="middle" font-size="8.0" fill="#64748b">40s</text>
+
+  <text x="97" y="136" text-anchor="end" font-size="9.5" font-weight="700" fill="#1d4ed8">Fairway</text>
+  <rect x="104" y="124" width="13.9" height="15" rx="3" fill="#1d4ed8"/>
+  <text x="122" y="135.5" font-size="8.8" font-weight="700" fill="#1d4ed8">0.82s (6× lower)</text>
+  <rect x="262" y="124" width="21.0" height="15" rx="3" fill="#1d4ed8"/>
+  <text x="288" y="135.5" font-size="8.8" font-weight="700" fill="#1d4ed8">7.6–8.4s (keeps FCFS tail)</text>
+
+  <text x="97" y="164" text-anchor="end" font-size="9.5" font-weight="600" fill="#334155">FCFS</text>
+  <rect x="104" y="152" width="100.0" height="15" rx="3" fill="#94a3b8"/>
+  <text x="209" y="163.5" font-size="8.8" font-weight="700" fill="#475569">5.9s</text>
+  <rect x="262" y="152" width="19.5" height="15" rx="3" fill="#64748b"/>
+  <text x="286" y="163.5" font-size="8.8" font-weight="700" fill="#334155">7.8s</text>
+
+  <text x="97" y="192" text-anchor="end" font-size="9.5" font-weight="600" fill="#334155">LPM</text>
+  <rect x="104" y="180" width="13.6" height="15" rx="3" fill="#60a5fa"/>
+  <text x="122" y="191.5" font-size="8.8" fill="#334155">0.8s</text>
+  <rect x="262" y="180" width="37.5" height="15" rx="3" fill="#60a5fa"/>
+  <text x="304" y="191.5" font-size="8.8" font-weight="600" fill="#1e3a8a">15.0s (13–15s)</text>
+
+  <text x="97" y="220" text-anchor="end" font-size="9.5" font-weight="600" fill="#991b1b">RAGCache</text>
+  <rect x="104" y="208" width="13.6" height="15" rx="3" fill="#93c5fd"/>
+  <text x="122" y="219.5" font-size="8.8" fill="#334155">0.8s</text>
+  <rect x="262" y="208" width="104.5" height="15" rx="3" fill="#fecaca" stroke="#dc2626" stroke-width="0.9"/>
+  <text x="372" y="219.5" font-size="8.8" font-weight="700" fill="#991b1b">41.8s (to 50s)</text>
+
+  <rect x="30" y="248" width="434" height="33" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="38" y="261" font-size="8.5" font-weight="700" fill="#1e3a8a">Meets all 6/6 phase targets (≤10% of best) on both dynamic traces (no baseline &gt; 4/6)</text>
+  <text x="38" y="274" font-size="8.3" fill="#475569">Other spike p99: Preble 11–12s · k-LPM4 9.9s/14.2s · k-LPM8 13–15s · PEEK 18–19s</text>
+
+  <rect x="486" y="70" width="454" height="218" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="486" y="70" width="454" height="24" rx="8" fill="#eff6ff"/>
+  <rect x="486" y="86" width="454" height="8" fill="#eff6ff"/>
+  <line x1="486" y1="94" x2="940" y2="94" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="498" y="86.5" font-size="10.5" font-weight="700" fill="#1e3a8a">B. 11-Scenario Robustness &amp; Starvation Audit (§5.3, Fig. 8, Table 4)</text>
+
+  <rect x="498" y="102" width="430" height="58" rx="5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.1"/>
+  <text x="508" y="118" font-size="9.6" font-weight="700" fill="#1d4ed8">Fairway: Lower p99 in 10/11 (2–18%) · 1/11 tie · 0/11 starved</text>
+  <text x="508" y="134" font-size="8.7" fill="#0f172a">• Up to 8.6× lower p99 vs. prior prefix-aware schedulers; worst wait ≤ 2.3× p99</text>
+  <text x="508" y="150" font-size="8.7" fill="#334155">• SEC ρ=0.9: 3.82s (LPM 5.9s) · SEC ρ=1.1: 10.55s (−18% vs best, half LPM 22.2s)</text>
+
+  <rect x="498" y="166" width="430" height="58" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="508" y="182" font-size="9.5" font-weight="700" fill="#0f172a">k-LPM Dilemma (Table 4) &amp; Starving Baselines (max &gt; 3× p99)</text>
+  <text x="508" y="198" font-size="8.6" fill="#334155">• k-LPM 4: +92% p99 on topic shift; k-LPM 8: +42%/+61% on SEC, +30% Mooncake</text>
+  <text x="508" y="214" font-size="8.6" fill="#991b1b">• RAGCache starves 10/11 (max 16–365s; 11th p99=162s); PEEK 3/11; Preble +5–53%</text>
+
+  <rect x="498" y="230" width="430" height="50" rx="5" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.0"/>
+  <text x="508" y="246" font-size="9.3" font-weight="700" fill="#92400e">Measured Median Tradeoff (§5.6, MuSiQue Shallow-Reuse Overload ρ=1.1)</text>
+  <text x="508" y="261" font-size="8.5" fill="#78350f">When queues persist and partial hits save little, median rises to 3.0s (LPM 0.9s) for</text>
+  <text x="508" y="274" font-size="8.5" fill="#78350f">lowest p99 (12.62s vs. 14.2s); removing relative wait raises MuSiQue p99 +37%</text>
+
+  <rect x="20" y="298" width="454" height="228" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="298" width="454" height="24" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="314" width="454" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="322" x2="474" y2="322" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="314.5" font-size="10.5" font-weight="700" fill="#1e3a8a">C. Flood Stress Test: Backlog Miss Max Wait vs. Hit Flood (Table 1)</text>
+
+  <text x="90" y="337" text-anchor="end" font-size="8.4" font-weight="700" fill="#475569">Scheduler</text>
+  <text x="96" y="337" font-size="8.4" font-weight="700" fill="#0f172a">Backlog Miss Max TTFT (s) [p50]</text>
+  <text x="358" y="337" font-size="8.4" font-weight="700" fill="#1e3a8a">Flood Hit p50 / p99</text>
+
+  <text x="90" y="356" text-anchor="end" font-size="8.9" font-weight="700" fill="#1d4ed8">Fairway</text>
+  <rect x="96" y="346" width="16.5" height="12" rx="2.5" fill="#1d4ed8"/>
+  <text x="117" y="356" font-size="8.4" font-weight="700" fill="#1d4ed8">22.0s (11.7s)</text>
+  <text x="358" y="356" font-size="8.4" font-weight="600" fill="#1e3a8a">18.2s / 22.2s</text>
+
+  <text x="90" y="376" text-anchor="end" font-size="8.9" fill="#334155">FCFS</text>
+  <rect x="96" y="366" width="16.9" height="12" rx="2.5" fill="#64748b"/>
+  <text x="117" y="376" font-size="8.4" fill="#334155">22.5s (11.8s)</text>
+  <text x="358" y="376" font-size="8.4" fill="#475569">18.6s / 22.7s</text>
+
+  <text x="90" y="396" text-anchor="end" font-size="8.9" fill="#334155">k-LPM 4</text>
+  <rect x="96" y="386" width="16.8" height="12" rx="2.5" fill="#64748b"/>
+  <text x="117" y="396" font-size="8.4" fill="#334155">22.4s (11.8s)</text>
+  <text x="358" y="396" font-size="8.4" fill="#475569">18.3s / 22.1s</text>
+
+  <text x="90" y="416" text-anchor="end" font-size="8.9" fill="#334155">Preble</text>
+  <rect x="96" y="406" width="12.9" height="12" rx="2.5" fill="#3b82f6"/>
+  <text x="113" y="416" font-size="8.4" fill="#334155">17.2s (7.8s)</text>
+  <text x="358" y="416" font-size="8.4" fill="#475569">21.9s / 28.2s</text>
+
+  <text x="90" y="436" text-anchor="end" font-size="8.9" fill="#b45309">PEEK</text>
+  <rect x="96" y="426" width="49.7" height="12" rx="2.5" fill="#fde68a" stroke="#d97706" stroke-width="0.8"/>
+  <text x="150" y="436" font-size="8.4" font-weight="600" fill="#92400e">66.3s (4.7s)</text>
+  <text x="358" y="436" font-size="8.4" fill="#92400e">3.1s / 63.5s</text>
+
+  <text x="90" y="456" text-anchor="end" font-size="8.9" fill="#991b1b">LPM</text>
+  <rect x="96" y="446" width="92.9" height="12" rx="2.5" fill="#fecaca" stroke="#dc2626" stroke-width="0.8"/>
+  <text x="193" y="456" font-size="8.4" font-weight="600" fill="#991b1b">123.9s (12.3s)</text>
+  <text x="358" y="456" font-size="8.4" fill="#475569">1.6s / 4.4s</text>
+
+  <text x="90" y="476" text-anchor="end" font-size="8.9" font-weight="700" fill="#991b1b">RAGCache</text>
+  <rect x="96" y="466" width="151.0" height="12" rx="2.5" fill="#fca5a5" stroke="#b91c1c" stroke-width="0.9"/>
+  <text x="251" y="476" font-size="8.4" font-weight="700" fill="#991b1b">201.4s (1.4s)</text>
+  <text x="358" y="476" font-size="8.4" fill="#475569">1.2s / 2.0s</text>
+
+  <rect x="30" y="486" width="434" height="32" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="38" y="499" font-size="8.4" font-weight="700" fill="#1e3a8a">Fair lane limits hits to c_o/4 per step: caps 66–201s backlog misses at 22.0s</text>
+  <text x="38" y="512" font-size="8.3" fill="#334155">Cost: flood hits wait while backlog drains (18.2s median vs 1.6s LPM), then go first again</text>
+
+  <rect x="486" y="298" width="454" height="228" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="486" y="298" width="454" height="24" rx="8" fill="#eff6ff"/>
+  <rect x="486" y="314" width="454" height="8" fill="#eff6ff"/>
+  <line x1="486" y1="322" x2="940" y2="322" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="498" y="314.5" font-size="10.5" font-weight="700" fill="#1e3a8a">D. Mechanism Ablation &amp; Mixed-Length Impact (Tables 2 &amp; 5, TTFT / s)</text>
+
+  <rect x="498" y="330" width="430" height="106" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+  <rect x="498" y="330" width="430" height="22" rx="4" fill="#eff6ff"/>
+  <text x="506" y="344.5" font-size="8.5" font-weight="700" fill="#1e3a8a">Order / Mechanism</text>
+  <text x="652" y="344.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1e3a8a">Topic Shift (max)</text>
+  <text x="734" y="344.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1e3a8a">Mixed Short</text>
+  <text x="802" y="344.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1e3a8a">Mixed Long</text>
+  <text x="880" y="344.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1e3a8a">Flood Worst</text>
+
+  <line x1="498" y1="352" x2="928" y2="352" stroke="#bfdbfe" stroke-width="0.8"/>
+  <text x="506" y="366" font-size="8.6" fill="#334155">KV reuse ratio (base)</text>
+  <text x="652" y="366" text-anchor="middle" font-size="8.6" fill="#991b1b">5.9 (62.9)</text>
+  <text x="734" y="366" text-anchor="middle" font-size="8.6" fill="#334155">3.1</text>
+  <text x="802" y="366" text-anchor="middle" font-size="8.6" fill="#334155">25.3</text>
+  <text x="880" y="366" text-anchor="middle" font-size="8.6" fill="#991b1b">201.4</text>
+
+  <line x1="498" y1="373" x2="928" y2="373" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="506" y="387" font-size="8.6" fill="#334155">+ absolute wait</text>
+  <text x="652" y="387" text-anchor="middle" font-size="8.6" fill="#334155">6.7 (7.9)</text>
+  <text x="734" y="387" text-anchor="middle" font-size="8.6" fill="#b45309">13.6</text>
+  <text x="802" y="387" text-anchor="middle" font-size="8.6" fill="#334155">15.1</text>
+  <text x="880" y="387" text-anchor="middle" font-size="8.6" fill="#334155">33.4</text>
+
+  <line x1="498" y1="394" x2="928" y2="394" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="506" y="408" font-size="8.6" fill="#334155">+ relative wait (replaces)</text>
+  <text x="652" y="408" text-anchor="middle" font-size="8.6" fill="#334155">6.7 (8.1)</text>
+  <text x="734" y="408" text-anchor="middle" font-size="8.6" font-weight="600" fill="#1d4ed8">5.9</text>
+  <text x="802" y="408" text-anchor="middle" font-size="8.6" fill="#b45309">20.2</text>
+  <text x="880" y="408" text-anchor="middle" font-size="8.6" fill="#991b1b">59.1</text>
+
+  <rect x="499" y="414" width="428" height="21" rx="3" fill="#dbeafe"/>
+  <text x="506" y="428.5" font-size="8.6" font-weight="700" fill="#1e3a8a">+ Fair lane (Fairway)</text>
+  <text x="652" y="428.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1d4ed8">6.7 (7.9)</text>
+  <text x="734" y="428.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1d4ed8">8.6</text>
+  <text x="802" y="428.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1d4ed8">18.1</text>
+  <text x="880" y="428.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1d4ed8">22.0</text>
+
+  <rect x="498" y="443" width="430" height="36" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="506" y="457" font-size="8.4" font-weight="700" fill="#1e3a8a">Mixed lengths (Table 5 vs. abs. wait): short p99 −23% to −42%, long +6% to +31%</text>
+  <text x="506" y="471" font-size="8.3" fill="#334155">SEC long-doc: mean −21%, p90 −35%, lowest p99 (14.3s vs 14.7s); Mooncake median halved</text>
+
+  <rect x="498" y="485" width="430" height="33" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="506" y="498" font-size="8.4" font-weight="700" fill="#334155">Overhead &amp; boundary (§5.1, §5.6): sort takes 0.02–0.6 ms/step (&lt;0.1% typ., 1–3% at max)</text>
+  <text x="506" y="511" font-size="8.3" fill="#475569">Prefill isolation: 1 output token/req; ratios do not imply full multi-turn agent speedup</text>
+</svg>

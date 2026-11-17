@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="16.5" font-weight="700" fill="#0f172a" text-anchor="start">BlackSwan：基于“猜想与反驳”的写前动作证伪机制</text>
+  <text x="24" y="53" font-size="10.0" font-weight="400" fill="#475569" text-anchor="start">依据 arXiv:2611.02950v1（§3、Algorithm 1、Table 4–5）：仅写操作触发 Expect–Suspect–Test，任一怀疑证实即拦截重拟</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Column 1: Draft, Gating & Static Anatomy -->
+  <rect x="20" y="73" width="276" height="323" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="73" width="276" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="20" y="93" width="276" height="8" fill="#1e3a8a"/>
+  <text x="32" y="91.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">1. 草拟动作、词表锚定与门控分流</text>
+
+  <rect x="29" y="109" width="258" height="96" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="39" y="126" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">代码动作与词–端点表 T（Prompt 1–2）</text>
+  <text x="39" y="144" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• 持久化 REPL 每步草拟一个 Python cell c</text>
+  <text x="39" y="160" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• 格式硬规：先读文档再调用；complete_task 独行</text>
+  <text x="39" y="176" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• 每新应用建表 T（≤8 项）：任务原词 ↔ API 端点</text>
+  <text x="39" y="192" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">• 附带通用备选栏，防误用宽泛接口或遗漏要求</text>
+
+  <line x1="158" y1="205" x2="158" y2="218" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <rect x="29" y="220" width="258" height="96" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="39" y="237" font-size="10.0" font-weight="700" fill="#1d4ed8" text-anchor="start">写前拦截分流（Algorithm 1 第 5 行）</text>
+  <rect x="37" y="247" width="115" height="58" rx="5" fill="#dcfce7" stroke="#86efac" stroke-width="1.0"/>
+  <text x="45" y="264" font-size="8.9" font-weight="700" fill="#166534" text-anchor="start">纯只读快速通道</text>
+  <text x="45" y="280" font-size="8.3" font-weight="400" fill="#166534" text-anchor="start">全为 GET / 查文档</text>
+  <text x="45" y="295" font-size="8.3" font-weight="600" fill="#166534" text-anchor="start">/ login → 直接运行</text>
+  <rect x="162" y="247" width="117" height="58" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="170" y="264" font-size="8.9" font-weight="700" fill="#1e3a8a" text-anchor="start">暂扣并进入验证</text>
+  <text x="170" y="280" font-size="8.3" font-weight="400" fill="#1e3a8a" text-anchor="start">含写调用 / 无 API</text>
+  <text x="170" y="295" font-size="8.3" font-weight="600" fill="#1d4ed8" text-anchor="start">/ complete_task</text>
+
+  <line x1="158" y1="316" x2="158" y2="329" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <rect x="29" y="331" width="258" height="55" rx="6" fill="#f8fafc" stroke="#93c5fd" stroke-width="1.0"/>
+  <text x="39" y="348" font-size="9.7" font-weight="700" fill="#1e3a8a" text-anchor="start">静态解析 ANATOMY(c)</text>
+  <text x="39" y="365" font-size="8.6" font-weight="400" fill="#334155" text-anchor="start">按求值顺序展开变量绑定与 API 调用，显式暴露</text>
+  <text x="39" y="378" font-size="8.6" font-weight="400" fill="#475569" text-anchor="start">所有参数（含 passed: false 的文档默认值）</text>
+
+  <!-- Arrow Col 1 -> Col 2 -->
+  <line x1="297" y1="235" x2="316" y2="235" stroke="#1d4ed8" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+
+  <!-- Column 2: Preregistered Conjecture (Expect + Suspect) -->
+  <rect x="318" y="73" width="302" height="323" rx="8" fill="#ffffff" stroke="#60a5fa" stroke-width="1.2"/>
+  <rect x="318" y="73" width="302" height="28" rx="8" fill="#1d4ed8"/>
+  <rect x="318" y="93" width="302" height="8" fill="#1d4ed8"/>
+  <text x="330" y="91.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">2. 预注册猜想：EXPECT + SUSPECT</text>
+
+  <rect x="327" y="109" width="284" height="88" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="337" y="126" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">Stage 1 · EXPECT（Prompt 3，≤500 字符）</text>
+  <text x="337" y="144" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• 采集任何新观察前生成局部预期 κt ~ π(·|ct-1, at)</text>
+  <text x="337" y="160" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• 仅陈述本次执行对用户任务状态的局部贡献</text>
+  <text x="337" y="176" font-size="8.8" font-weight="400" fill="#475569" text-anchor="start">• 禁止在未证实前宣称“全部 / 唯一 / 精确”</text>
+
+  <line x1="469" y1="197" x2="469" y2="210" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <rect x="327" y="212" width="284" height="174" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="337" y="229" font-size="10.0" font-weight="700" fill="#1d4ed8" text-anchor="start">Stage 2 · SUSPECT（Prompt 4–5，≤5 项）</text>
+  <rect x="336" y="237" width="266" height="22" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="344" y="251.5" font-size="8.5" font-weight="700" fill="#92400e" text-anchor="start">预注册原则：在探测前锁定反例集合 St，防止事后迎合</text>
+  <text x="337" y="274" font-size="8.8" font-weight="600" fill="#0f172a" text-anchor="start">每项 (si, zi) 锚定具体代码元素，覆盖五类证伪（Table 5）：</text>
+  <text x="337" y="292" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">1. Wrong object：操作的记录或 ID 非任务所指</text>
+  <text x="337" y="309" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">2. Incomplete set：任务要求集合仍有成员被遗漏</text>
+  <text x="337" y="326" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">3. Wrong value：参数值、数量或接口选择偏离语义</text>
+  <text x="337" y="343" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">4. Hidden state：账户/购物车/前序状态改变执行效果</text>
+  <text x="337" y="360" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">5. Task's words：对照表 T 查漏条件或更贴切端点</text>
+  <text x="337" y="377" font-size="8.4" font-weight="400" fill="#475569" text-anchor="start">注：结束任务调用改用 Prompt 5 逐项反查未竟写操作（≤2 次）</text>
+
+  <!-- Arrow Col 2 -> Col 3 -->
+  <line x1="621" y1="235" x2="640" y2="235" stroke="#1d4ed8" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+
+  <!-- Column 3: Read-only Probing & Asymmetric Gate -->
+  <rect x="642" y="73" width="298" height="323" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="642" y="73" width="298" height="28" rx="8" fill="#0f172a"/>
+  <rect x="642" y="93" width="298" height="8" fill="#0f172a"/>
+  <text x="654" y="91.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">3. 只读实证探测与不对称裁决</text>
+
+  <rect x="651" y="109" width="280" height="114" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="661" y="126" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">Stage 3 · TEST（Prompt 6–7，≤50 探针）</text>
+  <text x="661" y="144" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• 把未执行的 at 与怀疑列表 St 一起写入上下文</text>
+  <text x="661" y="160" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• 仅可复用历史或发 GET / 文档 / 登录等只读探针</text>
+  <text x="661" y="176" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• 越权写探针直接拒跑；探到待验写操作记 deferred</text>
+  <text x="661" y="192" font-size="8.8" font-weight="600" fill="#1d4ed8" text-anchor="start">• 举证责任倒置：不寻找支持证据，专找反例证据</text>
+  <text x="661" y="209" font-size="8.5" font-weight="400" fill="#475569" text-anchor="start">• 必须逐条对 St 给出 ≤400 字符依据，不得静默忽略</text>
+
+  <line x1="791" y1="223" x2="791" y2="236" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <rect x="651" y="238" width="280" height="148" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="661" y="255" font-size="10.0" font-weight="700" fill="#1d4ed8" text-anchor="start">三态判决 vt(si) 与执行闸门（Eq. 4a–4b）</text>
+
+  <rect x="660" y="264" width="262" height="44" rx="5" fill="#fee2e2" stroke="#f87171" stroke-width="1.0"/>
+  <text x="669" y="281" font-size="8.9" font-weight="700" fill="#991b1b" text-anchor="start">confirmed（任一条 si 证实成立）→ 拦截 at</text>
+  <text x="669" y="297" font-size="8.4" font-weight="400" fill="#7f1d1d" text-anchor="start">注入判决依据至历史，重拟替代代码 a't（每步最多 3 次）</text>
+
+  <rect x="660" y="314" width="262" height="44" rx="5" fill="#dcfce7" stroke="#4ade80" stroke-width="1.0"/>
+  <text x="669" y="331" font-size="8.9" font-weight="700" fill="#166534" text-anchor="start">dismissed / deferred（全部未证实）→ 放行 at</text>
+  <text x="669" y="347" font-size="8.4" font-weight="400" fill="#14532d" text-anchor="start">deferred 仅限只读无法判定的运行期依赖；重发执行 at</text>
+
+  <text x="661" y="376" font-size="8.4" font-weight="400" fill="#475569" text-anchor="start">注（Alg. 1 L13）：连拦 3 次后第 4 稿仍执行以防死循环</text>
+
+  <!-- Bottom Strip: Qualitative Contrast (Tables 9 & 10) -->
+  <rect x="20" y="406" width="920" height="116" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="406" width="920" height="24" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="422" width="920" height="8" fill="#eff6ff"/>
+  <text x="32" y="422" font-size="9.8" font-weight="700" fill="#1e3a8a" text-anchor="start">论文实例对比（Appendix F Table 9–10，Qwen3.5-27B 关思考）：为何“确认式核验”仍漏掉真实反例？</text>
+  <line x1="480" y1="434" x2="480" y2="515" stroke="#cbd5e1" stroke-width="1.0"/>
+
+  <!-- Case 1 -->
+  <text x="32" y="447" font-size="9.2" font-weight="700" fill="#0f172a" text-anchor="start">例 A · 禁用同事取消会议的闹钟（Task c1091c7_1）</text>
+  <text x="32" y="464" font-size="8.4" font-weight="400" fill="#334155" text-anchor="start">• 共享起手：搜 "cancel meeting" 找到 Stacy（744）与 Kristin（745）</text>
+  <text x="32" y="481" font-size="8.4" font-weight="400" fill="#991b1b" text-anchor="start">• ACCORD 确认式：复搜 "cancel" 确认无遗漏即 APPROVE → 漏掉</text>
+  <text x="39" y="495" font-size="8.4" font-weight="400" fill="#991b1b" text-anchor="start">Stephen 邮件 “Skip this time?” / “Cannot make it.”，闹钟 743 仍开启 ✗</text>
+  <text x="32" y="511" font-size="8.4" font-weight="600" fill="#166534" text-anchor="start">• BlackSwan 证伪式：怀疑“或用其他措辞取消”→ 探测多关键词全关 ✓</text>
+
+  <!-- Case 2 -->
+  <text x="492" y="447" font-size="9.2" font-weight="700" fill="#0f172a" text-anchor="start">例 B · 近两月是否退回活动扳手（Task 3650990_3）</text>
+  <text x="492" y="464" font-size="8.4" font-weight="400" fill="#334155" text-anchor="start">• 共享起手：查 33 条退货未见商品名含 "crescent wrench"，拟答 "no"</text>
+  <text x="492" y="481" font-size="8.4" font-weight="400" fill="#991b1b" text-anchor="start">• ACCORD 确认式：核对退货见 “Craftsman 8-Inch Adjustable Wrench”</text>
+  <text x="499" y="495" font-size="8.4" font-weight="400" fill="#991b1b" text-anchor="start">但商品名确无 "crescent"，确认匹配逻辑成立后 APPROVE "no" ✗</text>
+  <text x="492" y="511" font-size="8.4" font-weight="600" fill="#166534" text-anchor="start">• BlackSwan 证伪式：怀疑近义品类 → 搜商品库见 product_type 改答 yes ✓</text>
+</svg>

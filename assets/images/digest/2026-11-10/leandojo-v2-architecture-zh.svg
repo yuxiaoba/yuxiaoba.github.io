@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-navy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1e3a8a"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17.0" font-weight="700" fill="#0f172a" text-anchor="start">LeanDojo-v2 端到端工具链架构：数据抽取、渐进训练与证明生成</text>
+  <text x="24" y="53" font-size="10.3" font-weight="400" fill="#475569" text-anchor="start">依据 arXiv:2611.09048v1（图 1 与 §2）及开源实现 lean-dojo/LeanDojo-v2：统一仓储状态、微调/RL 与双路径证明</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="74" width="204" height="424" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="74" width="204" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="24" y="94" width="204" height="8" fill="#1e3a8a"/>
+  <text x="36" y="92.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">1. 仓库追踪与抽取</text>
+  <rect x="34" y="112" width="184" height="94" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="43" y="130" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">仓库输入与依赖开关</text>
+  <text x="43" y="148" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• GitHub URL + Commit / 本地目录</text>
+  <text x="43" y="165" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• build_deps=True（LeanAgent）</text>
+  <text x="43" y="182" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• build_deps=False（HF / External）</text>
+  <text x="43" y="198" font-size="8.6" font-weight="400" fill="#475569" text-anchor="start">• 对接 elan + GitHub PAT 校验</text>
+  <line x1="126" y1="206" x2="126" y2="224" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <rect x="34" y="226" width="184" height="118" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="43" y="244" font-size="10.0" font-weight="700" fill="#1d4ed8" text-anchor="start">LeanDojo Tracing 抽取</text>
+  <text x="43" y="262" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• ExtractData.lean 提取 AST、</text>
+  <text x="43" y="278" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">  文件依赖、定理、证明与前提</text>
+  <text x="43" y="296" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• 拆解为序列 (state_before, tactic)</text>
+  <text x="43" y="314" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">• 过滤 sorry，导出 corpus.jsonl</text>
+  <text x="43" y="331" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">  与 random / novel_premises 划分</text>
+  <line x1="126" y1="344" x2="126" y2="362" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <rect x="34" y="364" width="184" height="122" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="43" y="382" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">DynamicDatabase 课程排序</text>
+  <text x="43" y="400" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• 按证明步数 33% / 67% 分位</text>
+  <text x="43" y="417" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">  划定 Easy / Medium / Hard</text>
+  <text x="43" y="435" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• 依 Easy 定理数排列多仓库顺序</text>
+  <text x="43" y="453" font-size="8.8" font-weight="400" fill="#475569" text-anchor="start">• 持续登记待证明 sorry 目标</text>
+  <text x="43" y="471" font-size="8.5" font-weight="400" fill="#475569" text-anchor="start">  （供 LeanAgent 与多库 SFT 复用）</text>
+  <rect x="252" y="74" width="234" height="424" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="252" y="74" width="234" height="28" rx="8" fill="#1d4ed8"/>
+  <rect x="252" y="94" width="234" height="8" fill="#1d4ed8"/>
+  <text x="264" y="92.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">2. 训练与托管推理</text>
+  <rect x="262" y="112" width="214" height="104" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="271" y="130" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">路径 A · LeanAgent 检索课程</text>
+  <text x="271" y="148" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• RetrievalTrainer 逐库渐进训练</text>
+  <text x="271" y="166" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• 微调 ReProver 稠密前提检索器</text>
+  <text x="271" y="184" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">  （ByT5-small + 索引语料库）</text>
+  <text x="271" y="202" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">• 跨数学子域保持终身学习能力</text>
+  <rect x="262" y="228" width="214" height="136" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="271" y="246" font-size="10.0" font-weight="700" fill="#1d4ed8" text-anchor="start">路径 B · HuggingFace 模型训练</text>
+  <text x="271" y="264" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• SFTTrainer：state → tactic 监督</text>
+  <text x="271" y="282" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• LoRA（PEFT）降低显存与微调开销</text>
+  <text x="271" y="300" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• RL：GRPOTrainer / PPO 支持自定义</text>
+  <text x="271" y="318" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">  奖励（语法正确率、证明成功等）</text>
+  <text x="271" y="336" font-size="8.7" font-weight="400" fill="#475569" text-anchor="start">• 多库同样按难度排序逐库递增微调</text>
+  <text x="271" y="353" font-size="8.4" font-weight="400" fill="#64748b" text-anchor="start">  （示例模型 DeepSeek-Prover-V2-7B）</text>
+  <rect x="262" y="376" width="214" height="110" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="271" y="394" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">路径 C · 托管 API 免训练推理</text>
+  <text x="271" y="412" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• ExternalAgent 直连 HF 推理 API</text>
+  <text x="271" y="430" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• 支持 DeepSeek-Prover-V2-671B</text>
+  <text x="271" y="448" font-size="8.8" font-weight="600" fill="#0f766e" text-anchor="start">• 无需本地安装 CTranslate2 C++ 栈</text>
+  <text x="271" y="466" font-size="8.8" font-weight="600" fill="#0f766e" text-anchor="start">• 论文报告构建从 &gt;10 分钟缩至数秒</text>
+  <rect x="510" y="74" width="240" height="424" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="510" y="74" width="240" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="510" y="94" width="240" height="8" fill="#1e3a8a"/>
+  <text x="522" y="92.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">3. 双路径 Prover</text>
+  <rect x="520" y="112" width="220" height="252" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="530" y="130" font-size="9.8" font-weight="700" fill="#1e3a8a" text-anchor="start">逐步搜索（BaseProver + Pantograph）</text>
+  <rect x="530" y="140" width="200" height="44" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="540" y="158" font-size="9.4" font-weight="700" fill="#1d4ed8" text-anchor="start">Tactic Generator</text>
+  <text x="540" y="174" font-size="8.4" font-weight="400" fill="#475569" text-anchor="start">Retrieval / HF / External / 自定义</text>
+  <rect x="530" y="207" width="200" height="58" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="540" y="225" font-size="9.4" font-weight="700" fill="#0f172a" text-anchor="start">Pantograph REPL（Lean RPC）</text>
+  <text x="540" y="242" font-size="8.5" font-weight="600" fill="#b45309" text-anchor="start">执行 goal_tactic；失败保留原状态</text>
+  <text x="540" y="257" font-size="8.2" font-weight="400" fill="#475569" text-anchor="start">并返回 updated GoalState / feedback</text>
+  <rect x="530" y="290" width="200" height="64" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="540" y="308" font-size="9.4" font-weight="700" fill="#1e3a8a" text-anchor="start">Search Graph 与最短路重建</text>
+  <text x="540" y="326" font-size="8.3" font-weight="400" fill="#334155" text-anchor="start">• DFS（BaseProver）/ MCTS（Pantograph）</text>
+  <text x="540" y="343" font-size="8.4" font-weight="600" fill="#0f766e" text-anchor="start">• nx.shortest_path 剥离死胡同步数</text>
+  <line x1="600" y1="184" x2="600" y2="205" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <text x="606" y="198" font-size="8.1" font-weight="600" fill="#1d4ed8" text-anchor="start">Tactic</text>
+  <line x1="665" y1="207" x2="665" y2="186" stroke="#475569" stroke-width="1.4" marker-end="url(#arr-slate)"/>
+  <text x="671" y="198" font-size="8.1" font-weight="600" fill="#475569" text-anchor="start">GoalState</text>
+  <line x1="630" y1="265" x2="630" y2="288" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <text x="638" y="280" font-size="8.1" font-weight="600" fill="#1d4ed8" text-anchor="start">DiGraph 边</text>
+  <rect x="520" y="378" width="220" height="108" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="530" y="396" font-size="9.8" font-weight="700" fill="#1d4ed8" text-anchor="start">整证单次生成（Whole-Proof）</text>
+  <text x="530" y="415" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• agent.prove(whole_proof=True)</text>
+  <text x="530" y="433" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">• 单次前向直接生成完整 Lean 证明</text>
+  <text x="530" y="451" font-size="8.8" font-weight="400" fill="#475569" text-anchor="start">• 支持本地 HF 模型或远端 API</text>
+  <text x="530" y="469" font-size="8.6" font-weight="400" fill="#b45309" text-anchor="start">• RetrievalProver 不支持此模式</text>
+  <rect x="774" y="74" width="162" height="424" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="774" y="74" width="162" height="28" rx="8" fill="#1d4ed8"/>
+  <rect x="774" y="94" width="162" height="8" fill="#1d4ed8"/>
+  <text x="786" y="92.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">4. 证明与 IDE</text>
+  <rect x="784" y="114" width="142" height="122" rx="6" fill="#ecfdf5" stroke="#0f766e" stroke-width="1.2"/>
+  <text x="793" y="134" font-size="10.0" font-weight="700" fill="#0f766e" text-anchor="start">输出验证证明</text>
+  <text x="793" y="154" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">• 填补目标定理 sorry</text>
+  <text x="793" y="172" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">• 最短 tactic 序列或</text>
+  <text x="801" y="189" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">整段 Lean 4 证明体</text>
+  <text x="793" y="208" font-size="8.6" font-weight="400" fill="#0f766e" text-anchor="start">• 经 Lean/Pantograph</text>
+  <text x="801" y="224" font-size="8.6" font-weight="400" fill="#0f766e" text-anchor="start">核检 Goals=0</text>
+  <rect x="784" y="252" width="142" height="234" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="793" y="272" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">Lean4Code 编辑器</text>
+  <text x="793" y="290" font-size="8.5" font-weight="400" fill="#475569" text-anchor="start">VSCodium 免遥测桌面</text>
+  <text x="793" y="312" font-size="8.7" font-weight="600" fill="#1e3a8a" text-anchor="start">• 修改版 Lean4 扩展</text>
+  <text x="793" y="329" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">  自动注入工具配置</text>
+  <text x="793" y="350" font-size="8.7" font-weight="600" fill="#1e3a8a" text-anchor="start">• LeanDojo 面板</text>
+  <text x="793" y="367" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">  一键生成追踪产物</text>
+  <text x="793" y="388" font-size="8.7" font-weight="600" fill="#1e3a8a" text-anchor="start">• LeanCopilot 面板</text>
+  <text x="793" y="405" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">  Infoview tactic 补全</text>
+  <text x="793" y="426" font-size="8.7" font-weight="600" fill="#1e3a8a" text-anchor="start">• Agent-TARS 面板</text>
+  <text x="793" y="443" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">  对话/规划多模态助手</text>
+  <text x="793" y="468" font-size="8.2" font-weight="400" fill="#64748b" text-anchor="start">（统一降低学者配置门槛）</text>
+  <path d="M 228 286 L 250 286" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <path d="M 228 424 L 240 424 L 240 164 L 250 164" fill="none" stroke="#1e3a8a" stroke-width="1.4" marker-end="url(#arr-navy)"/>
+  <path d="M 486 164 L 508 164" fill="none" stroke="#1d4ed8" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+  <path d="M 486 294 L 494 294 L 494 164 L 508 164" fill="none" stroke="#1d4ed8" stroke-width="1.5"/>
+  <path d="M 486 432 L 508 432" fill="none" stroke="#1d4ed8" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+  <path d="M 486 410 L 501 410 L 501 168 L 508 168" fill="none" stroke="#1d4ed8" stroke-width="1.3" stroke-dasharray="3,2"/>
+  <path d="M 750 320 L 762 320 L 762 174 L 772 174" fill="none" stroke="#0f766e" stroke-width="1.8" marker-end="url(#arr-teal)"/>
+  <path d="M 750 432 L 762 432 L 762 174" fill="none" stroke="#0f766e" stroke-width="1.5"/>
+  <path d="M 750 364 L 772 364" fill="none" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <text x="24" y="520" font-size="9.4" font-weight="400" fill="#64748b" text-anchor="start">阅读配图（arXiv:2611.09048v1）· DynamicDatabase / build_deps 等模块名核验自官方仓库 lean-dojo/LeanDojo-v2</text>
+</svg>

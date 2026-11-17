@@ -1,6 +1,6 @@
 ---
 date: '2026-11-12'
-published: true
+published: false
 layout: article
 maintenance: daily-research
 translation_source: assistant
@@ -14,11 +14,12 @@ source_url: https://engineering.fb.com/2026/11/11/ml-applications/intelligent-de
 tags:
 - inference-serving
 - observability
-summary: An industrial design connecting prediction, resource controls, and experiments
-  across requests, hardware, and regions.
+summary: An industrial design connecting prediction, resource controls, and experiments across requests, hardware, and regions.
 permalink: /tech/en/meta-intelligent-delivery-ads-compute/
 published_at: '2026-11-12T08:58:59.941917+08:00'
-updated_at: '2026-11-12T08:58:59.941917+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 [Intelligent Delivery: Making Every Unit of Compute Serve Better Ads](https://engineering.fb.com/2026/11/11/ml-applications/intelligent-delivery-serve-better-ads/)  
 Zhaojun Zhang, Qinwei Zhu, Gang Li, Jianwei Xiao, Yanan Wang, Hongmei Li, Deepak Vijaywargi, Ke Pan, Li Yu · 2026-11-11

@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a">LLM 推理冷启动流水线与五层状态复用边界</text>
+  <text x="24" y="56" font-size="11.2" fill="#475569">依据 Baofa Fan / CNCF（2026-11-06）综述：容器运行不等于可服务容量；每类机制仅跨过特定阶段并留有明确恢复成本</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Header Row -->
+  <rect x="24" y="76" width="226" height="58" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="137" y="100" font-size="12.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">机制分层与代表项目</text>
+  <text x="137" y="119" font-size="10.5" fill="#475569" text-anchor="middle">按保留的状态粒度划分</text>
+
+  <rect x="262" y="76" width="130" height="58" rx="7" fill="#1e3a8a"/>
+  <text x="327" y="99" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">1. 进程与库导入</text>
+  <text x="327" y="119" font-size="10" fill="#bfdbfe" text-anchor="middle">容器启动 · Python 导入</text>
+
+  <rect x="398" y="76" width="130" height="58" rx="7" fill="#1e3a8a"/>
+  <text x="463" y="99" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">2. 读取与权重转换</text>
+  <text x="463" y="119" font-size="10" fill="#bfdbfe" text-anchor="middle">加载 · 张量构建 · 量化</text>
+
+  <rect x="534" y="76" width="130" height="58" rx="7" fill="#1e3a8a"/>
+  <text x="599" y="99" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">3. 运行时与通信</text>
+  <text x="599" y="119" font-size="10" fill="#bfdbfe" text-anchor="middle">Worker 通信 · 显存分配</text>
+
+  <rect x="670" y="76" width="130" height="58" rx="7" fill="#1e3a8a"/>
+  <text x="735" y="99" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">4. 编译与调优</text>
+  <text x="735" y="119" font-size="10" fill="#bfdbfe" text-anchor="middle">Kernel · Autotune</text>
+
+  <rect x="806" y="76" width="130" height="58" rx="7" fill="#1e3a8a"/>
+  <text x="871" y="99" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">5. 图捕获与校验</text>
+  <text x="871" y="119" font-size="10" fill="#bfdbfe" text-anchor="middle">CUDA Graph · 首生成</text>
+
+  <!-- Subtle vertical guides -->
+  <line x1="395" y1="138" x2="395" y2="438" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="531" y1="138" x2="531" y2="438" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="667" y1="138" x2="667" y2="438" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="803" y1="138" x2="803" y2="438" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- Row 0: Model Files -->
+  <rect x="24" y="142" width="226" height="54" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="34" y="162" font-size="11.5" font-weight="700" fill="#1d4ed8">① 模型文件预置与高效加载</text>
+  <text x="34" y="181" font-size="10" fill="#475569">llm-d 模型缓存 · fastsafetensors</text>
+
+  <rect x="262" y="142" width="130" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="327" y="164" font-size="10.5" font-weight="600" fill="#334155" text-anchor="middle">仍需进程与导入</text>
+  <text x="327" y="182" font-size="9.8" fill="#64748b" text-anchor="middle">冷启拉起框架</text>
+
+  <rect x="398" y="142" width="130" height="54" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="4 2"/>
+  <text x="463" y="164" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">跳过下载 / 提速读</text>
+  <text x="463" y="182" font-size="9.8" fill="#1e40af" text-anchor="middle">仍需构张量与转换</text>
+
+  <rect x="534" y="142" width="402" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="546" y="164" font-size="10.2" font-weight="600" fill="#334155">仍需：Worker 通信、显存分配、Kernel 编译、调优与 Graph 捕获</text>
+  <text x="546" y="182" font-size="9.8" fill="#64748b">注：模型文件本地命中后，后续引擎初始化耗时占比会更明显</text>
+
+  <!-- Row 1: Compile & Autotune -->
+  <rect x="24" y="202" width="226" height="54" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="34" y="222" font-size="11.5" font-weight="700" fill="#1d4ed8">② 编译与调优持久缓存</text>
+  <text x="34" y="241" font-size="10" fill="#475569">vLLM 编译缓存 · Autotune 缓存</text>
+
+  <rect x="262" y="202" width="402" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="274" y="224" font-size="10.2" font-weight="600" fill="#334155">仍需：进程导入、权重读取与转换、Worker 通信及显存分配</text>
+  <text x="274" y="242" font-size="9.8" fill="#64748b">注：可与高效加载器叠加复用，但不能替代运行时创建</text>
+
+  <rect x="670" y="202" width="130" height="54" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="735" y="224" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">复用编译 / 调优</text>
+  <text x="735" y="242" font-size="9.8" fill="#1e40af" text-anchor="middle">跳过重复编译选优</text>
+
+  <rect x="806" y="202" width="130" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="871" y="224" font-size="10.5" font-weight="600" fill="#334155" text-anchor="middle">仍需 Graph 捕获</text>
+  <text x="871" y="242" font-size="9.8" fill="#64748b" text-anchor="middle">开服务前重新录制</text>
+
+  <!-- Row 2: Processed Weights -->
+  <rect x="24" y="262" width="226" height="54" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="34" y="282" font-size="11.5" font-weight="700" fill="#1d4ed8">③ 已处理 GPU 权重复用/传输</text>
+  <text x="34" y="301" font-size="9.6" fill="#475569">vLLM/SGLang IPC · ModelExpress</text>
+
+  <rect x="262" y="262" width="130" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="327" y="284" font-size="10.5" font-weight="600" fill="#334155" text-anchor="middle">仍需进程与导入</text>
+  <text x="327" y="302" font-size="9.8" fill="#64748b" text-anchor="middle">新引擎独立拉起</text>
+
+  <rect x="398" y="262" width="130" height="54" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="463" y="284" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">复用/直传权重</text>
+  <text x="463" y="302" font-size="9.8" fill="#1e40af" text-anchor="middle">CUDA IPC / NIXL</text>
+
+  <rect x="534" y="262" width="402" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="546" y="284" font-size="10.2" font-weight="600" fill="#334155">仍需：构建其余引擎；vLLM preload 可预备 FlashInfer 调优</text>
+  <text x="546" y="302" font-size="9.8" fill="#64748b">约束：CUDA IPC 限单节点；zero-copy 需 daemon 活过引擎</text>
+
+  <!-- Row 3: Live Engine -->
+  <rect x="24" y="322" width="226" height="54" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="34" y="342" font-size="11.5" font-weight="700" fill="#1d4ed8">④ 活引擎 Sleep/Wake 与热池</text>
+  <text x="34" y="361" font-size="10" fill="#475569">vLLM sleep · SGLang · llm-d FMA</text>
+
+  <rect x="262" y="322" width="130" height="54" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="327" y="344" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">进程/模块保活</text>
+  <text x="327" y="362" font-size="9.8" fill="#1e40af" text-anchor="middle">常驻或预导入拉起</text>
+
+  <rect x="398" y="322" width="538" height="54" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="4 2"/>
+  <text x="410" y="344" font-size="10.5" font-weight="700" fill="#1e3a8a">唤醒并恢复已释放的 GPU 资源（无需从零重建整套引擎）</text>
+  <text x="410" y="362" font-size="9.8" fill="#334155">约束：FMA 热路径须匹配已分配 GPU；vLLM preload zero-copy 与 sleep 权重卸载存在限制</text>
+
+  <!-- Row 4: Snapshots -->
+  <rect x="24" y="382" width="226" height="54" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="34" y="402" font-size="11.5" font-weight="700" fill="#1d4ed8">⑤ 已初始化执行态快照</text>
+  <text x="34" y="421" font-size="9.8" fill="#475569">vLLM/SGLang · Snapshot · llm-d/GKE</text>
+
+  <rect x="262" y="382" width="538" height="54" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.4"/>
+  <text x="274" y="404" font-size="10.5" font-weight="700" fill="#1e3a8a">保存已初始化进程、运行时、编译与 Graph 状态（捕获前常清空 KV 缓存）</text>
+  <text x="274" y="422" font-size="9.8" fill="#1e40af">范围：vLLM 实验合入 / SGLang 开放 RFC+PR，多限同机兼容环境、单卡 TP=1</text>
+
+  <rect x="806" y="382" width="130" height="54" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.2"/>
+  <text x="871" y="404" font-size="10.5" font-weight="700" fill="#92400e" text-anchor="middle">恢复重载与校验</text>
+  <text x="871" y="422" font-size="9.8" fill="#78350f" text-anchor="middle">重载权重/KV + 首生成</text>
+
+  <!-- Legend -->
+  <rect x="24" y="446" width="14" height="14" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.1"/>
+  <text x="44" y="457" font-size="10.5" fill="#1e3a8a" font-weight="600">直接复用 / 跳过</text>
+
+  <rect x="172" y="446" width="14" height="14" rx="3" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1" stroke-dasharray="3 2"/>
+  <text x="192" y="457" font-size="10.5" fill="#1d4ed8" font-weight="600">部分跳过 / 需条件恢复</text>
+
+  <rect x="364" y="446" width="14" height="14" rx="3" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="384" y="457" font-size="10.5" fill="#334155">仍需在目标端重建</text>
+
+  <rect x="526" y="446" width="14" height="14" rx="3" fill="#fffbeb" stroke="#d97706" stroke-width="1.1"/>
+  <text x="546" y="457" font-size="10.5" fill="#92400e" font-weight="600">恢复期外部重载与生成核对</text>
+
+  <!-- Measurement Rule Banner -->
+  <rect x="24" y="470" width="912" height="34" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.1"/>
+  <text x="36" y="491" font-size="10.8" font-weight="600" fill="#1e3a8a">评估口径：任何启动优化均以“恢复后完成有效生成”为止点，不能仅看进程出现；CNCF 原文梳理机制与状态，未报告统一跨机制耗时基准。</text>
+
+  <!-- Footer -->
+  <text x="24" y="522" font-size="10" fill="#64748b">阅读整理配图 · 依据 Baofa Fan / CNCF《Faster LLM inference startup: What you need to know》(2026-11-06) 机制分层梳理（非原文配图）</text>
+</svg>

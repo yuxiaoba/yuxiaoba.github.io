@@ -1,0 +1,273 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-11-15T12:37:01Z",
+  "paper_id": "arxiv-2610.40747",
+  "arxiv_id": "2610.40747",
+  "arxiv_version": "v1",
+  "version_status": "v1 only at verification time (submitted 2026-10-29); no v2 revision or withdrawal",
+  "date": "2026-11-03",
+  "daily_paths": {
+    "zh": "/digest/zh/daily/2026-11-03/#paper-arxiv-2610.40747",
+    "en": "/digest/en/daily/2026-11-03/#paper-arxiv-2610.40747"
+  },
+  "anchor": "paper-arxiv-2610.40747",
+  "title": "Mage-VL-Cowork: A Full Training Recipe to Learn Hybrid Computer Use From Evolved Harnesses",
+  "authors": [
+    "Xiaoyi Zhang",
+    "Haoqing Wang",
+    "Xinjie Zhang",
+    "Xiang Ming",
+    "Xing Wang",
+    "Senqiao Yang",
+    "Kaichen Zhang",
+    "Zhaoyang Jia",
+    "Andong Tan",
+    "Xinjiang Wang",
+    "Jinghao Guo",
+    "Yifei Shen",
+    "Xiao Li",
+    "Peng Zhang",
+    "Xun Guo",
+    "Jiahao Li",
+    "Shicheng Zheng",
+    "Jinglu Wang",
+    "Zongyu Guo",
+    "Wenxuan Xie",
+    "Bin Li",
+    "Yan Lu"
+  ],
+  "equal_contribution": [
+    "Xiaoyi Zhang",
+    "Haoqing Wang"
+  ],
+  "project_lead": {
+    "name": "Xiaoyi Zhang",
+    "email": "xiaoyizhang@microsoft.com"
+  },
+  "affiliation": "Microsoft Mage Team",
+  "submitted_date": "2026-10-29",
+  "submitted_timestamp_utc": "2026-10-29T15:54:48Z",
+  "authoring_source": "assistant",
+  "assistant_translated": true,
+  "translation_note": "Assistant-authored bilingual Chinese and English close reading grounded directly in primary arXiv:2610.40747v1 artifacts; not user-supplied translation.",
+  "primary_artifacts": {
+    "frozen_abs_html": {
+      "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/mage-vl-cowork-stage/frozen_abs.html",
+      "bytes": 43729,
+      "sha256": "c27882ba1b27ec1be6dda41d220c14c7476245a0adb51c225bf6e7645079a531"
+    },
+    "live_abs_html": {
+      "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/mage-vl-cowork-stage/live_abs.html",
+      "bytes": 43729,
+      "sha256": "c27882ba1b27ec1be6dda41d220c14c7476245a0adb51c225bf6e7645079a531",
+      "url": "https://arxiv.org/abs/2610.40747"
+    },
+    "frozen_paper_pdf": {
+      "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/mage-vl-cowork-stage/frozen_paper.pdf",
+      "bytes": 1444783,
+      "sha256": "6c07f6e44feddcee8e1c8145c68aaa053954010b9ce73352feae5d0ed358f129"
+    },
+    "live_paper_pdf": {
+      "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/mage-vl-cowork-stage/live_paper.pdf",
+      "bytes": 1444783,
+      "sha256": "6c07f6e44feddcee8e1c8145c68aaa053954010b9ce73352feae5d0ed358f129",
+      "url": "https://arxiv.org/pdf/2610.40747"
+    },
+    "frozen_paper_txt": {
+      "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/mage-vl-cowork-stage/frozen_paper.txt",
+      "bytes": 128037,
+      "sha256": "48bbfd094e4930a5e609ace7ad4b8aa35323b740dc9de0da986ac8f8b339c141"
+    },
+    "live_html_v1": {
+      "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/mage-vl-cowork-stage/live_html_v1.html",
+      "bytes": 291862,
+      "sha256": "575a08b5e1b9dc613be4971f51cbb98bb2c2cd480240fa17f51995981b52c4c9",
+      "url": "https://arxiv.org/html/2610.40747v1"
+    },
+    "external_urls_checked": [
+      {
+        "url": "https://microsoft.github.io/Mage/",
+        "note": "Project page HTTP 200 after 301 redirect"
+      },
+      {
+        "url": "https://github.com/microsoft/Mage",
+        "note": "Code repository HTTP 200"
+      },
+      {
+        "url": "https://huggingface.co/collections/microsoft/mage",
+        "note": "Model collection URL cited in paper"
+      }
+    ]
+  },
+  "files": {
+    "zh_markdown": {
+      "repo_path": "_digest/zh/daily-2026-11-03.md",
+      "sha256_before": "f5c0af0085b838fba4b5ec23379e1aaccde3860138a8a16c18be8d8c16d6c795",
+      "sha256_after": "0001ff4e6571c1927098f83b94751459d119d71a9daf4aa41ca65ecab2c75faf",
+      "bytes_before": 26331,
+      "bytes_after": 45916,
+      "prefix_bytes": 23213,
+      "prefix_sha256_before": "36bedeca6f7cceccb83a712cd49bbb8b0dfeae9a2e77e9c1edb745b3360d45fe",
+      "prefix_sha256_after": "36bedeca6f7cceccb83a712cd49bbb8b0dfeae9a2e77e9c1edb745b3360d45fe",
+      "prefix_unchanged": true,
+      "suffix_bytes": 2490,
+      "suffix_sha256_before": "4ee0860f58812cf90dfdd9ef46e45d52ee4395390f9ba531aac368935f1c7b63",
+      "suffix_sha256_after": "4ee0860f58812cf90dfdd9ef46e45d52ee4395390f9ba531aac368935f1c7b63",
+      "suffix_unchanged": true,
+      "section_bytes_before": 628,
+      "section_sha256_before": "728eb2da4735e4a453bffa7f168c9a76c18e452ded82954035fa245a31438d85",
+      "section_bytes_after": 20213,
+      "section_sha256_after": "48165b88b495cf49f7f735d740a69b2b3670c5f8ec13ef9277953177df3871b7"
+    },
+    "en_markdown": {
+      "repo_path": "_digest/en/daily-2026-11-03.md",
+      "sha256_before": "82651bb95c450629a0e98452797a99d5c453bc1eeedaef30b0cf5880a4cfb72f",
+      "sha256_after": "37823692503901bd5d2647f45d570901dfef91ed422c7b8c949995e615820c47",
+      "bytes_before": 26874,
+      "bytes_after": 45038,
+      "prefix_bytes": 23648,
+      "prefix_sha256_before": "ff444c83764b5f93a6004931edf01d083b275fd37f97762789adc6fdcf50b727",
+      "prefix_sha256_after": "ff444c83764b5f93a6004931edf01d083b275fd37f97762789adc6fdcf50b727",
+      "prefix_unchanged": true,
+      "suffix_bytes": 2553,
+      "suffix_sha256_before": "88e0cfcd5e454140983c7b130d5e675ce90504686a8495413fa0683f8a6745f0",
+      "suffix_sha256_after": "88e0cfcd5e454140983c7b130d5e675ce90504686a8495413fa0683f8a6745f0",
+      "suffix_unchanged": true,
+      "section_bytes_before": 673,
+      "section_sha256_before": "48c099d84d4d55b47874ccedb97b6e99a9034c73b35c2dc0caea24715f6e6900",
+      "section_bytes_after": 18837,
+      "section_sha256_after": "6f55f40e006c64661980a6e1b308789a24129e8dddcbae98c128dc485f48db35"
+    }
+  },
+  "preserved_existing_image": {
+    "repo_path": "assets/images/digest/2026-11-03/replayrca.png",
+    "bytes": 59082,
+    "sha256": "faf8059407653d2955b9efc5361513f68da89514e61399f9266243a3b7fb10d1",
+    "untouched": true
+  },
+  "images": [
+    {
+      "language": "zh",
+      "repo_path": "assets/images/digest/2026-11-03/mage-vl-cowork-pipeline-zh.svg",
+      "public_url": "/assets/images/digest/2026-11-03/mage-vl-cowork-pipeline-zh.svg",
+      "bytes": 14806,
+      "sha256": "a01dd94d2ae35cfe6c56aa5880566973d72e459117e26c462d82c2372a5c66e7",
+      "palette": "v3-blue",
+      "viewBox": "0 0 960 540",
+      "description": "Evolved Harness (α→ε), Mage-CUA-Forge synthesis pipeline & 5-stage recipe (ZH)"
+    },
+    {
+      "language": "en",
+      "repo_path": "assets/images/digest/2026-11-03/mage-vl-cowork-pipeline-en.svg",
+      "public_url": "/assets/images/digest/2026-11-03/mage-vl-cowork-pipeline-en.svg",
+      "bytes": 14633,
+      "sha256": "c1f58e83c5ea280368e6ca025d38530e0bd0fd9b4ef8c88ec7168712fbe90127",
+      "palette": "v3-blue",
+      "viewBox": "0 0 960 540",
+      "description": "Evolved Harness (α→ε), Mage-CUA-Forge synthesis pipeline & 5-stage recipe (EN)"
+    },
+    {
+      "language": "zh",
+      "repo_path": "assets/images/digest/2026-11-03/mage-vl-cowork-eval-cost-zh.svg",
+      "public_url": "/assets/images/digest/2026-11-03/mage-vl-cowork-eval-cost-zh.svg",
+      "bytes": 17943,
+      "sha256": "426641f901f4caacc8aeeba2dbdb02065c1d4fa513c52b44889ad7ccb2e706e9",
+      "palette": "v3-blue",
+      "viewBox": "0 0 960 540",
+      "description": "OSWorld-Verified progression, pruning ablation, WebVoyager-Static & caveats (ZH)"
+    },
+    {
+      "language": "en",
+      "repo_path": "assets/images/digest/2026-11-03/mage-vl-cowork-eval-cost-en.svg",
+      "public_url": "/assets/images/digest/2026-11-03/mage-vl-cowork-eval-cost-en.svg",
+      "bytes": 17822,
+      "sha256": "e1018e92b47ad52886c8e0843245b0dc12bd515ceeeb76465c6fffa556b83241",
+      "palette": "v3-blue",
+      "viewBox": "0 0 960 540",
+      "description": "OSWorld-Verified progression, pruning ablation, WebVoyager-Static & caveats (EN)"
+    }
+  ],
+  "verbatim_primary_claims": {
+    "osworld_verified_4b_50steps_2run_avg": "66.0%",
+    "osworld_verified_domains": {
+      "OS": "87.5%",
+      "Office": "64.9%",
+      "Daily": "65.0%",
+      "Professional": "66.3%",
+      "Workflow": "62.7%"
+    },
+    "osworld_stage_progression_table6": {
+      "stage2_gui_sft": {
+        "acc": "45.56%",
+        "calls_mean_med_p90": [
+          25.36,
+          19,
+          50
+        ],
+        "out_tokens": 6401.2,
+        "think_tokens": 4549.4
+      },
+      "stage4_hybrid_sft": {
+        "acc": "55.84%",
+        "calls_mean_med_p90": [
+          21.57,
+          15,
+          50
+        ],
+        "out_tokens": 7374.4,
+        "think_tokens": 3327.6
+      },
+      "stage5_hybrid_rl": {
+        "acc": "66.0%",
+        "calls_mean_med_p90": [
+          18.77,
+          14,
+          42
+        ],
+        "out_tokens": 5498.6,
+        "think_tokens": 2482.4
+      },
+      "gpt_5_4_mini_xhigh_1run": {
+        "acc": "69.57%",
+        "calls_mean_med_p90": [
+          18.24,
+          13,
+          48
+        ],
+        "api_out_tokens": 12397.4,
+        "api_think_tokens": 11630.6
+      }
+    },
+    "harness_pruning_672_tasks_table5": {
+      "teacher_gpt_5_4": {
+        "beta1_gui_code": "92.0% / 25.0 steps",
+        "beta2_gui_code_ax": "89.6% / 35.3 steps"
+      },
+      "student_4b_sft": {
+        "beta1_gui_code": "37.6% / 30.91 steps",
+        "beta2_gui_code_ax": "25.1% / 39.4 steps"
+      }
+    },
+    "synthesis_scale": {
+      "atomic_skills": 6915,
+      "refinement_rounds": 3,
+      "tasks": 293806,
+      "single_app_share": "61.76%",
+      "multi_app_share": "38.24%",
+      "infiniteweb_tasks": 17542,
+      "file_references": 877608,
+      "retained_hybrid_trajectories": 318837,
+      "gui_vs_terminal_call_share": {
+        "gui": "68.19%",
+        "terminal": "31.81%"
+      },
+      "recurring_generation_cost_table3": {
+        "from": "$0.906 / 1,276K tok",
+        "to": "$0.158 / 85K tok",
+        "savings": "82.6% cost / 93.3% tokens (recurring per-task generation only)"
+      }
+    },
+    "webvoyager_static_643_tasks_sft_table4": "58.6% (377/643)",
+    "nominal_lm_compute_total": "7.787e21 FLOPs (7.79 ZFLOPs)"
+  }
+}

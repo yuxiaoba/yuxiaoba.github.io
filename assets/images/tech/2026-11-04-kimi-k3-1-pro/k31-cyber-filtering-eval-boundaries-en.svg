@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">Two-Stage Cyber Filtering Ablation &amp; Benchmark Evaluation Conditions</text>
+  <text x="24" y="56" font-size="11.0" font-weight="400" fill="#475569" text-anchor="start">Top: xdev-bench-hard removal vs. general-coding transfer · Bottom: 6 footnote overrides beyond max / temp 1.0 / top-p 0.95</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="76" width="912" height="214" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="76" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="94" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="95" font-size="11.6" font-weight="700" fill="#1e3a8a" text-anchor="start">Cybersecurity Intervention &amp; xdev-bench-hard (pass@3): Filtering Lowers Peak, General Coding Still Transfers</text>
+  <rect x="36" y="114" width="212" height="72" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="46" y="134" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">Stage 1 · Mid-Training Corpus</text>
+  <text x="46" y="154" font-size="10" font-weight="400" fill="#1e293b" text-anchor="start">Identify &amp; remove embedded cyber data</text>
+  <text x="46" y="172" font-size="10" font-weight="400" fill="#475569" text-anchor="start">Retain general-purpose coding tasks</text>
+  <rect x="260" y="114" width="212" height="72" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="270" y="134" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">Stage 2 · RL Environment Mix</text>
+  <text x="270" y="154" font-size="10" font-weight="400" fill="#1e293b" text-anchor="start">Filter cyber tasks out of RL env mix</text>
+  <text x="270" y="172" font-size="10" font-weight="400" fill="#475569" text-anchor="start">Keep long-horizon debugging RL</text>
+  <rect x="36" y="196" width="436" height="82" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="46" y="215" font-size="10.8" font-weight="700" fill="#0f172a" text-anchor="start">xdev-bench-hard Sandbox Verifier Setup (KimiCode Harness)</text>
+  <text x="46" y="234" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• Targets: Linux kernel, Node.js, JavaScriptCore, Exim, VirGL (mitigations on)</text>
+  <text x="46" y="251" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• Spec: vulnerable source + short hint + binary → isolated sandbox ACE secret</text>
+  <text x="46" y="268" font-size="9.8" font-weight="400" fill="#64748b" text-anchor="start">• Protocol: random subset pass@3, no hard timeouts or output token limits</text>
+  <rect x="488" y="114" width="436" height="164" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="500" y="134" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start">xdev-bench-hard Pass Rate Comparison (pass@3 %)</text>
+  <text x="500" y="159" font-size="9.9" font-weight="600" fill="#1e293b" text-anchor="start">Kimi K3 (Predecessor)</text>
+  <rect x="500" y="164" width="240" height="11" rx="3" fill="#e2e8f0"/>
+  <rect x="500" y="164" width="79.9" height="11" rx="3" fill="#94a3b8"/>
+  <text x="748" y="173" font-size="9.8" font-weight="700" fill="#0f172a" text-anchor="start">33.3%</text>
+  <text x="500" y="193" font-size="9.9" font-weight="600" fill="#1e293b" text-anchor="start">Final K3.1 Pro (Filtered)</text>
+  <rect x="500" y="198" width="240" height="11" rx="3" fill="#e2e8f0"/>
+  <rect x="500" y="198" width="194.4" height="11" rx="3" fill="#1d4ed8"/>
+  <text x="748" y="207" font-size="9.8" font-weight="700" fill="#0f172a" text-anchor="start">81.0% (+47.7 pp transfer)</text>
+  <text x="500" y="227" font-size="9.9" font-weight="600" fill="#1e293b" text-anchor="start">Unfiltered Checkpoint (Control)</text>
+  <rect x="500" y="232" width="240" height="11" rx="3" fill="#e2e8f0"/>
+  <rect x="500" y="232" width="217.2" height="11" rx="3" fill="#f59e0b"/>
+  <text x="748" y="241" font-size="9.8" font-weight="700" fill="#0f172a" text-anchor="start">90.5% (-9.5 pp drop)</text>
+  <text x="500" y="266" font-size="9.2" font-weight="400" fill="#475569" text-anchor="start">External cyber (behind &gt;3-mo frontier): ExploitBench 74.7 (vs 100) · ExploitGym 20.7 (vs 42.4)</text>
+  <rect x="24" y="300" width="912" height="202" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="300" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="318" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="319" font-size="11.6" font-weight="700" fill="#1e3a8a" text-anchor="start">Benchmark Evaluation Protocol &amp; Six Footnote Overrides (Default: max effort · temp=1.0 · top-p=0.95)</text>
+  <rect x="36" y="338" width="288" height="68" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="46" y="358" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">1. Mixed Harnesses</text>
+  <text x="46" y="377" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">Coding &amp; OfficeQA use Claude-Code;</text>
+  <text x="46" y="394" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">ALE/xdev use KimiCode; GPT uses Codex</text>
+  <rect x="336" y="338" width="288" height="68" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="346" y="358" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">2. Sampling &amp; Compaction</text>
+  <text x="346" y="377" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">BrowseComp overrides top-p=1.0,</text>
+  <text x="346" y="394" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">200K compact, 500-step forced answer</text>
+  <rect x="636" y="338" width="288" height="68" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="646" y="358" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">3. Subsets &amp; Judge Swaps</text>
+  <text x="646" y="377" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">BenchCAD samples 1k/17.9k cases;</text>
+  <text x="646" y="394" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">PostTrainBench swaps H20 &amp; judge</text>
+  <rect x="36" y="416" width="288" height="68" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="46" y="436" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">4. Maxima &amp; Fallbacks</text>
+  <text x="46" y="455" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">TB4 blends blog &amp; leaderboard maxima;</text>
+  <text x="46" y="472" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">Claude/GPT notes flag fallback/guards</text>
+  <rect x="336" y="416" width="288" height="68" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="346" y="436" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">5. Zeroed Online Lookups</text>
+  <text x="346" y="455" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">ALE &amp; image-only OfficeQA zeroed</text>
+  <text x="346" y="472" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">external runs fetching answers online</text>
+  <rect x="636" y="416" width="288" height="68" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="646" y="436" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">6. Unmatched Claims</text>
+  <text x="646" y="455" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">Highspeed 2–3x lacks matched eval;</text>
+  <text x="646" y="472" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">Hallu Bench is stress test, not daily</text>
+  <text x="24" y="522" font-size="10.2" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram (not an original figure) · Synthesized from Cybersecurity section &amp; all four benchmark footnote groups</text>
+</svg>

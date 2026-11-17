@@ -1,0 +1,373 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-03-arxiv-2610.41432",
+  "paper_id": "arxiv-2610.41432",
+  "anchor_id": "paper-arxiv-2610.41432",
+  "digest_date": "2026-11-03",
+  "updated_at_utc": "2026-11-17T02:53:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-03.md",
+    "en_target": "_digest/en/daily-2026-11-03.md",
+    "staged_zh": "/root/.gemini/antigravity-cli/brain/e414bc9f-cba3-44e8-8daf-b53bb12a98af/scratch/d2b2-sections/2610.41432/section_zh.md",
+    "staged_en": "/root/.gemini/antigravity-cli/brain/e414bc9f-cba3-44e8-8daf-b53bb12a98af/scratch/d2b2-sections/2610.41432/section_en.md",
+    "translation_provenance": "Assistant-authored bilingual Chinese and English close reading grounded directly in primary arXiv:2610.41432v1 artifacts; not user-supplied translation.",
+    "adjacent_dependency_isolation": "Self-contained entry; zero cross-references to adjacent #paper-arxiv-2610.40747 (Mage-VL-Cowork)."
+  },
+  "primary_source": {
+    "arxiv_id": "2610.41432",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "No v2 revision or withdrawal notice present in saved abs HTML (submitted 2026-10-30).",
+    "title": "Hybrid Computer Use: A Unified Programmatic, Semantic, and Visual Interface for General Agents",
+    "authors": [
+      "Haoqing Wang",
+      "Xiaoyi Zhang",
+      "Sicheng Fan",
+      "Zhexin Zhang",
+      "Xinjie Zhang",
+      "Jiahao Li",
+      "Bin Li",
+      "Yan Lu"
+    ],
+    "author_notes": {
+      "internship_star": "Haoqing Wang (work done during an internship at Microsoft Research Asia)",
+      "project_lead": "Xiaoyi Zhang (xiaoyizhang@microsoft.com)"
+    },
+    "affiliation": "Microsoft Research; Fudan University; Tsinghua University",
+    "categories": [
+      "cs.HC",
+      "cs.CL"
+    ],
+    "submitted_utc": "Fri, 30 Oct 2026 08:38:29 UTC",
+    "submitted_date": "2026-10-30",
+    "doi": "https://doi.org/10.48550/arXiv.2610.41432",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2610.41432",
+      "abs_v1": "https://arxiv.org/abs/2610.41432v1",
+      "pdf": "https://arxiv.org/pdf/2610.41432",
+      "html_v1": "https://arxiv.org/html/2610.41432v1",
+      "project_page": "https://microsoft.github.io/Hybrid-Computer-Use",
+      "github": "https://github.com/microsoft/Hybrid-Computer-Use"
+    },
+    "local_source_artifacts": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2610.41432.abs.html",
+        "lines": 598,
+        "sha256": "38778315d8f2a69dca231df295fc9774f5cf56cc06d006d4bded7722214ed02c",
+        "bytes": 42739
+      },
+      "extracted_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2610.41432.txt",
+        "lines": 2223,
+        "sha256": "26c11a10f8428223653f9d642c38dcda899a5ac394ff069e4d38d17a77c873b5",
+        "bytes": 141871
+      },
+      "pdf_note": "Extracted text sourced from arXiv:2610.41432v1 PDF; subagent read_file only (run_command disabled)."
+    }
+  },
+  "verified_claims_and_metrics": {
+    "osworld_2_0_main_0808_108_tasks_500_steps": {
+      "HCU_GPT6_Astra_Codex": {
+        "partial_pct": 72.37,
+        "binary_pct": 32.4,
+        "steps": 85,
+        "tool_calls": 78.4,
+        "input_tokens_m": 6.9,
+        "output_tokens_k": 25.4,
+        "time_mean_min": 38.25,
+        "time_median_min": 32.95,
+        "cost_usd": 10.03
+      },
+      "HCU_Claude_Opus5_ClaudeCode": {
+        "partial_pct": 72.06,
+        "binary_pct": 35.19,
+        "outer_turns": 75.8,
+        "steps": 88.0,
+        "tool_calls": 81.6,
+        "input_tokens_m": 8.16,
+        "output_tokens_k": 118.29,
+        "time_mean_min": 113.95,
+        "cost_usd": 22.67
+      },
+      "CUA_Driver_GPT6_Astra_Codex": {
+        "partial_pct": 68.82,
+        "binary_pct": 31.5,
+        "steps": 94,
+        "tool_calls": 111.7,
+        "input_tokens_m": 6.9,
+        "output_tokens_k": 25.8,
+        "time_mean_min": 48.42,
+        "time_median_min": 36.8,
+        "cost_usd": 10.05
+      },
+      "Official_Claude_Opus_5": {
+        "partial_pct": 68.31,
+        "binary_pct": 31.43,
+        "output_tokens_k": 102.87,
+        "cost_usd": 28.43
+      },
+      "Muse_Spark_1_3": {
+        "partial_pct": 66.9,
+        "binary_pct": 32.0
+      },
+      "GPT_5_6_Sol": {
+        "partial_pct": 62.72,
+        "binary_pct": 27.34,
+        "output_tokens_k": 36.14,
+        "cost_usd": 13.94
+      },
+      "StateAct_Opus_4_8_0624": {
+        "partial_pct": 61.6,
+        "binary_pct": 26.9,
+        "output_tokens_k_approx": 100.0,
+        "cost_usd_approx": 7.8
+      },
+      "Gemini_3_8_Flash_pre0808": {
+        "partial_pct": 59.0
+      },
+      "Kimi_K3_pre0808": {
+        "partial_pct": 58.3
+      },
+      "GPT6_Astra_offline_subset_unranked": {
+        "partial_pct": 72.6
+      }
+    },
+    "osworld_1_0_ablations_gpt54_361_tasks_3_runs": {
+      "HCU": {
+        "score_mean_sd": "65.59 +- 0.61",
+        "runs": [
+          66.16,
+          65.65,
+          64.95
+        ],
+        "steps": 28.6,
+        "input_m": 0.941,
+        "time_s": 351.3,
+        "cost_usd": 2.52
+      },
+      "HCU_wo_GUI": {
+        "score_mean_sd": "66.08 +- 1.66",
+        "runs": [
+          65.64,
+          64.7,
+          67.92
+        ],
+        "steps": 32.16,
+        "input_m": 0.909,
+        "time_s": 352.4,
+        "cost_usd": 2.45
+      },
+      "HCU_wo_AX": {
+        "score_mean_sd": "62.79 +- 0.65",
+        "runs": [
+          63.53,
+          62.3,
+          62.55
+        ],
+        "steps": 33.28,
+        "input_m": 1.051,
+        "time_s": 401.8,
+        "cost_usd": 2.82
+      },
+      "HCU_wo_skill": {
+        "score_mean_sd": "64.00 +- 1.25",
+        "runs": [
+          62.84,
+          65.33,
+          63.83
+        ],
+        "steps": 33.47,
+        "input_m": 0.962,
+        "time_s": 385.5,
+        "cost_usd": 2.57
+      },
+      "CUA_Driver": {
+        "score_mean_sd": "62.30 +- 1.12",
+        "runs": [
+          63.29,
+          61.09,
+          62.51
+        ],
+        "steps": 40.74,
+        "input_m": 2.181,
+        "time_s": 500.8,
+        "cost_usd": 5.65
+      }
+    },
+    "skill_diagnostics_2166_traces_table11": {
+      "schema_rejection_rate_wo_skill_vs_hcu": "2460/14160 (17.37%) -> 147/10783 (1.36%)",
+      "consecutive_schema_failures_task_runs": "484/1083 (44.69%) -> 4/1083 (0.37%)",
+      "all_ax_gui_errors": "2686/14160 (18.97%) -> 638/10783 (5.92%)",
+      "same_tool_retry_fails_again_pct": "64.0% -> 3.0%",
+      "default_diff_omit_observe_pct": "0.2% -> 87.0%",
+      "effective_diff_feedback_pct": "81.25% -> 96.02%",
+      "multi_action_ax_calls": "233/4241 -> 495/3496",
+      "gui_input_actions_per_task": "4.96 -> 1.97"
+    },
+    "ax_projection_token_reduction_figs_14_15": {
+      "chrome_o200k": "1817 -> 1016 (-44.1%, 53/53 refs)",
+      "audacity_o200k": "439 -> 377 (-14.1%, 11/11 refs)",
+      "obsidian_o200k": "1374 -> 1201 (-12.6%, 48/48 refs)",
+      "obsidian_vs_stock_xml": "30526 -> 1237 tokens"
+    },
+    "cross_model_osworld_1_0_table3_fig4": {
+      "GPT_5_4": {
+        "cua": 62.3,
+        "hcu": 65.59,
+        "delta_pp": 3.29,
+        "steps_pct": -30,
+        "input_pct": -57,
+        "time_pct": -30,
+        "cost_pct": -55,
+        "ax_obs_exec_gui_obs_exec": [
+          53.8,
+          26.5,
+          12.5,
+          7.2
+        ],
+        "batch_pct": 17
+      },
+      "Claude_Opus_5_5_n360": {
+        "cua": 68.68,
+        "hcu": 71.62,
+        "delta_pp": 2.94,
+        "steps_pct": -1,
+        "input_pct": -32,
+        "time_pct": 6,
+        "cost_pct": -8,
+        "ax_obs_exec_gui_obs_exec": [
+          4.3,
+          1.6,
+          35.1,
+          59.0
+        ],
+        "batch_pct": 58
+      },
+      "Gemini_3_8_Flash": {
+        "cua": 54.67,
+        "hcu": 67.57,
+        "delta_pp": 12.9,
+        "steps_pct": -17,
+        "input_pct": -39,
+        "time_pct": -29,
+        "cost_pct": -44,
+        "ax_obs_exec_gui_obs_exec": [
+          28.0,
+          23.3,
+          38.6,
+          10.1
+        ],
+        "batch_pct": 11
+      },
+      "Grok_4_7": {
+        "cua": 67.9,
+        "hcu": 74.71,
+        "delta_pp": 6.81,
+        "steps_pct": -22,
+        "input_pct": -18,
+        "time_pct": -13,
+        "cost_pct": -13,
+        "ax_obs_exec_gui_obs_exec": [
+          38.4,
+          29.2,
+          19.0,
+          13.3
+        ],
+        "batch_pct": 21
+      }
+    },
+    "gui_vocabulary_replacement_table12": {
+      "Claude_Opus_5_5_claude_vs_gpt": "72.51% vs 71.70% (+0.82 pp; errors 48.14 vs 92.49 per 1k)",
+      "GPT_5_4_claude_vs_gpt": "63.56% vs 65.59% (-2.03 pp; errors 41.48 vs 10.44 per 1k)"
+    },
+    "cross_platform_released_hcu_appendix_a_gpt54": {
+      "OSWorld_1_0_360": "Released 70.13% ($0.402, 24.92 steps) vs Eval 65.77% ($0.504) vs CUA 62.47% ($0.983)",
+      "WeaveBench_114": "HCU 53.25% ($1.889, 32.59 min) vs CUA 46.37% ($3.518, 40.76 min) vs OpenClaw 43.84% ($3.672, 21.19 min)",
+      "MacAgentBench_28_ui_subset": "HCU 25/28 (89.3%, $0.7245, 544.5 s) vs CUA 24/28 (85.7%, $1.4899, 876.0 s)",
+      "Windows_Agent_Arena_111": "HCU 80.86% (88 full, $0.325, 220.3 s) vs CUA 71.89% (78 full, $0.664, 344.3 s; 110 paired: 80.68% vs 72.54%)"
+    }
+  },
+  "explicit_limitations": [
+    "Per-model harness confounding: each model runs exclusively in its own harness (Codex, Claude Code, Gemini CLI, Grok Build), so cross-model rows compare (interface, model, harness) tuples rather than isolated model capability.",
+    "Mixed OSWorld 2.0 comparison regimes: Table 1 places 0808 full-set runs alongside StateAct on 0624, Gemini/Kimi pre-0808 reports with unspecified task counts, and OpenAI's unranked offline subset (72.60%).",
+    "Benchmark coverage limits: OSWorld 2.0 (0808) contains 108 tasks (single-run main results) and MacAgentBench tests only a 28-task UI-dependent subset rather than full macOS coverage.",
+    "Application-level regressions on OSWorld 1.0: VS Code (23 tasks) regresses on 3 of 4 models (-10.1 pp GPT-5.4, -13.0 pp Gemini 3.8 Flash, -2.2 pp Claude Opus 5.5) and Thunderbird drops on Opus (-10.7 pp) and Grok (-6.7 pp).",
+    "Evaluated vs. Released build split: Section 4 main experiments and ablations ran the evaluated build (32-step cap, assert_ax), whereas the released build (64-step cap, unified wait/settle, zoom, JSON prefix) was evaluated only with GPT-5.4 in Appendix A.",
+    "Security and local verification scope: cross-channel prompt-injection resilience across shared shell/AX/GUI sessions is untested, and this close reading did not re-execute the VM benchmarks locally."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewBox": "0 0 960 540",
+    "svgs": [
+      {
+        "language": "zh",
+        "repo_path": "assets/images/digest/2026-11-03/hcu-unified-ax-cli-gui-arch-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-03/hcu-unified-ax-cli-gui-arch-zh.svg",
+        "public_url": "/assets/images/digest/2026-11-03/hcu-unified-ax-cli-gui-arch-zh.svg",
+        "sha256": "895c77a28bfc0f6bac08b9e211b7f7a5bc4b40e1716a7a7661b1749b23fccd9d",
+        "description": "HCU 3-channel unified architecture, composable AX pipeline, cross-channel action guards, and native platform providers (ZH)",
+        "bytes": 13540
+      },
+      {
+        "language": "en",
+        "repo_path": "assets/images/digest/2026-11-03/hcu-unified-ax-cli-gui-arch-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-03/hcu-unified-ax-cli-gui-arch-en.svg",
+        "public_url": "/assets/images/digest/2026-11-03/hcu-unified-ax-cli-gui-arch-en.svg",
+        "sha256": "8ee3f1b30eac21533e2e0a6df7ad0ae54e1165fea53e2f361dd1ea2ffbc9d924",
+        "description": "HCU 3-channel unified architecture, composable AX pipeline, cross-channel action guards, and native platform providers (EN)",
+        "bytes": 13174
+      },
+      {
+        "language": "zh",
+        "repo_path": "assets/images/digest/2026-11-03/hcu-osworld2-channel-eval-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-03/hcu-osworld2-channel-eval-zh.svg",
+        "public_url": "/assets/images/digest/2026-11-03/hcu-osworld2-channel-eval-zh.svg",
+        "sha256": "571a55f93a3b38ed0585b6ce4baa70324eccf5e710b54a45bac85fdf173307db",
+        "description": "OSWorld 2.0 Pareto frontier, GPT-5.4 ablations & skill impact, 4-model channel allocation, and cross-platform transfer with boundaries (ZH)",
+        "bytes": 16285
+      },
+      {
+        "language": "en",
+        "repo_path": "assets/images/digest/2026-11-03/hcu-osworld2-channel-eval-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-03/hcu-osworld2-channel-eval-en.svg",
+        "public_url": "/assets/images/digest/2026-11-03/hcu-osworld2-channel-eval-en.svg",
+        "sha256": "922c0ef939adfa81e666097887a8db9eea5fe2a89a27b44b3fdf8abf5f8fdb25",
+        "description": "OSWorld 2.0 Pareto frontier, GPT-5.4 ablations & skill impact, 4-model channel allocation, and cross-platform transfer with boundaries (EN)",
+        "bytes": 16230
+      }
+    ]
+  },
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice",
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-03.md",
+      "file_bytes_before": 45916,
+      "file_sha256_before": "0001ff4e6571c1927098f83b94751459d119d71a9daf4aa41ca65ecab2c75faf",
+      "file_bytes_after": 109074,
+      "file_sha256_after": "db3480f1207af5efbd095c60919b0d0fef8ee50eaf8af7382cde318882529954",
+      "old_section_bytes": 622,
+      "old_section_sha256": "5cd1e8f9e93cf3d10b5054003d2797a9b1af593efc79877bbc6991af27826bbb",
+      "new_section_bytes": 23763,
+      "new_section_sha256": "a4beadcf9ca25f54abea7939974c2f11f34de423daad2f058d9ea52ab81cdc36"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-03.md",
+      "file_bytes_before": 45038,
+      "file_sha256_before": "37823692503901bd5d2647f45d570901dfef91ed422c7b8c949995e615820c47",
+      "file_bytes_after": 105857,
+      "file_sha256_after": "7413dc390ca23d3aebb7b6bc2880ed6be7293e005f4f6a15ea3b8e982973b6c2",
+      "old_section_bytes": 636,
+      "old_section_sha256": "45c4f6448f2213e9308bee3d7a627c4e1b7bf95eed717d562531b80a4ec2de2d",
+      "new_section_bytes": 22584,
+      "new_section_sha256": "4c60504634eb814bb2eb7beed722eb2e85c9a9091479811c562c14e585b1dec6"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:24:25.665611+00:00",
+    "preview_release": "20261117-112344-dd9778fd",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

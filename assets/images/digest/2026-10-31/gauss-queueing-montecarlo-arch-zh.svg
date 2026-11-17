@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="GAUSS 解析延迟曲面与蒙特卡洛排队预测架构：工作负载分桶、Prefill/Decode 延迟曲面、Lindley 递推与 TTFT/TBT 集成分布" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', 'Lato', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="16.6" font-weight="700" fill="#0f172a">GAUSS 解析延迟曲面与蒙特卡洛排队预测架构</text>
+  <text x="24" y="53" font-size="10.2" fill="#475569">arXiv:2610.37989v1（§3 与 Algorithm 1）· 阶段延迟标定 + 负载分桶 + Lindley M/G/1 递推 → TTFT / TBT 集成分布</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Column 1: Inputs & Phase Surfaces -->
+  <rect x="20" y="74" width="272" height="412" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="74" width="272" height="28" rx="9" fill="#1e3a8a"/>
+  <rect x="20" y="94" width="272" height="8" fill="#1e3a8a"/>
+  <text x="32" y="92.5" font-size="10.6" font-weight="700" fill="#ffffff">1 · 负载输入与阶段曲面（§3.1–3.3）</text>
+
+  <rect x="30" y="112" width="252" height="98" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="38" y="119" width="66" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="71" y="131.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">负载输入</text>
+  <text x="112" y="132" font-size="10.4" font-weight="700" fill="#0f172a">加权分桶与到达过程</text>
+  <text x="38" y="153" font-size="9.0" fill="#334155">• 桶 j = (sⱼ 输入, cⱼ 缓存, oⱼ 输出), 权 wⱼ</text>
+  <text x="38" y="172" font-size="9.0" fill="#334155">• Σ wⱼ = 1（共享系统提示稳定长度分布）</text>
+  <text x="38" y="191" font-size="9.0" fill="#475569">• Poisson 到达：间隔 Aₖ ~ Exp(λ)</text>
+
+  <rect x="30" y="220" width="252" height="132" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="38" y="227" width="66" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="71" y="239.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">计算受限</text>
+  <text x="112" y="240" font-size="10.4" font-weight="700" fill="#1e3a8a">分块 Prefill 曲面（§3.2）</text>
+  <text x="38" y="261" font-size="9.0" fill="#1e293b">• 块大小 Δ；未缓存块数 n = ⌈(s−c)/Δ⌉</text>
+  <text x="38" y="280" font-size="9.0" fill="#1e293b">• 上下文 gᵢ = c+iΔ，块耗 ℓᵢ = a+b·gᵢ</text>
+  <rect x="38" y="292" width="236" height="50" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="46" y="311" font-size="9.5" font-weight="700" fill="#1e3a8a">L_pre(s, c) = a·n + b·σ</text>
+  <text x="46" y="331" font-size="8.8" font-weight="600" fill="#1d4ed8">σ = n·c + Δ·n(n+1)/2 （随 n 二次增长）</text>
+
+  <rect x="30" y="362" width="252" height="114" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="38" y="369" width="66" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="71" y="381.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">访存受限</text>
+  <text x="112" y="382" font-size="10.4" font-weight="700" fill="#1e3a8a">Decode 批步曲面（§3.3）</text>
+  <text x="38" y="403" font-size="9.0" fill="#1e293b">• 并发批大小 B、总上下文 C、均值 C/B</text>
+  <text x="38" y="422" font-size="9.0" fill="#334155">• (p, q, r) 按 batch 区间分段线性标定</text>
+  <rect x="38" y="434" width="236" height="32" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="46" y="454" font-size="9.5" font-weight="700" fill="#1e3a8a">d(B, C) = p + q·(C/B) + r·B</text>
+
+  <!-- Connectors Col 1 -> Col 2 -->
+  <line x1="292" y1="162" x2="311" y2="162" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <line x1="292" y1="286" x2="311" y2="286" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <line x1="292" y1="420" x2="311" y2="420" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <!-- Column 2: Analytical Coupling & Lindley Recurrence -->
+  <rect x="314" y="74" width="324" height="412" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="314" y="74" width="324" height="28" rx="9" fill="#1d4ed8"/>
+  <rect x="314" y="94" width="324" height="8" fill="#1d4ed8"/>
+  <text x="326" y="92.5" font-size="10.6" font-weight="700" fill="#ffffff">2 · 并发耦合与 Lindley 排队递推（Alg. 1）</text>
+
+  <rect x="324" y="112" width="304" height="114" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.1"/>
+  <rect x="332" y="119" width="76" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="370" y="131.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">步骤 1–2</text>
+  <text x="416" y="132" font-size="10.4" font-weight="700" fill="#1e3a8a">并发服务时间与吞吐上限</text>
+  <text x="332" y="153" font-size="9.1" fill="#1e293b">• n 块交错进并发 decode 步 d̄，效率 η 折算耗时</text>
+  <rect x="332" y="162" width="288" height="34" rx="5" fill="#ffffff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="342" y="183" font-size="9.7" font-weight="700" fill="#1e3a8a">S(s, c) = (a·n + b·σ + n·d̄) / η</text>
+  <text x="332" y="214" font-size="9.1" font-weight="700" fill="#0f172a">• E[S] = Σⱼ wⱼ·S(sⱼ, cⱼ)，μ = 1/E[S]，λ* = μ</text>
+
+  <line x1="476" y1="226" x2="476" y2="241" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <rect x="324" y="244" width="304" height="142" rx="7" fill="#fffbeb" stroke="#d97706" stroke-width="1.2"/>
+  <rect x="332" y="251" width="76" height="18" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="370" y="263.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#b45309">步骤 3 · MC</text>
+  <text x="416" y="264" font-size="10.4" font-weight="700" fill="#92400e">Lindley FIFO 排队扫描（M 步）</text>
+  <text x="332" y="285" font-size="9.0" fill="#334155">• 抽象：Chunked Prefill 准入单服务器 M/G/1 队列</text>
+  <text x="332" y="304" font-size="9.0" fill="#334155">• 采样 k = 1..M：Sₖ ~ w，到达间隔 Aₖ ~ Exp(λ)</text>
+  <rect x="332" y="314" width="288" height="36" rx="5" fill="#ffffff" stroke="#d97706" stroke-width="1"/>
+  <text x="342" y="336" font-size="10.0" font-weight="700" fill="#92400e">Wₖ₊₁ = max(0, Wₖ + Sₖ − Aₖ)</text>
+  <text x="332" y="372" font-size="9.0" fill="#475569">• 汇总延迟池 Q，捕捉接近 ρ = λ/μ → 1 时的陡增尾部</text>
+
+  <line x1="476" y1="386" x2="476" y2="401" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <rect x="324" y="404" width="304" height="72" rx="7" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <rect x="332" y="411" width="76" height="18" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="370" y="423.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#334155">稳态平衡</text>
+  <text x="416" y="424" font-size="10.4" font-weight="700" fill="#0f172a">工作批大小 B 与上下文 C（§3.8）</text>
+  <text x="332" y="445" font-size="8.9" fill="#334155">• B 非自由参数：在 λ 时间预算内平衡 prefill 与 decode</text>
+  <text x="332" y="463" font-size="8.9" fill="#475569">• 求解闭合二次方程得到稳态 (B, C) 分布</text>
+
+  <!-- Connectors Col 2 -> Col 3 -->
+  <line x1="638" y1="162" x2="657" y2="162" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr-teal)"/>
+  <line x1="638" y1="315" x2="657" y2="260" stroke="#b45309" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+  <line x1="638" y1="438" x2="657" y2="274" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Column 3: Ensemble Outputs & Scope -->
+  <rect x="660" y="74" width="280" height="412" rx="9" fill="#ffffff" stroke="#0f766e" stroke-width="1.2"/>
+  <rect x="660" y="74" width="280" height="28" rx="9" fill="#0f766e"/>
+  <rect x="660" y="94" width="280" height="8" fill="#0f766e"/>
+  <text x="672" y="92.5" font-size="10.6" font-weight="700" fill="#ffffff">3 · 集成输出分布与 v1 边界</text>
+
+  <rect x="670" y="112" width="260" height="94" rx="7" fill="#ecfdf5" stroke="#10b981" stroke-width="1.1"/>
+  <rect x="678" y="119" width="66" height="18" rx="4" fill="#d1fae5" stroke="#10b981" stroke-width="0.8"/>
+  <text x="711" y="131.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#0f766e">步骤 4</text>
+  <text x="752" y="132" font-size="10.4" font-weight="700" fill="#065f46">TTFT 集成分布</text>
+  <text x="678" y="153" font-size="9.0" fill="#1e293b">• 独立抽取 N 组：S ~ w，W ~ Q</text>
+  <text x="678" y="173" font-size="9.7" font-weight="700" fill="#0f172a">• TTFTᵢ = W + S(s, c)</text>
+  <text x="678" y="193" font-size="8.9" fill="#475569">• 输出完整 P50 / P95 / P99 分位数</text>
+
+  <rect x="670" y="216" width="260" height="94" rx="7" fill="#ecfdf5" stroke="#10b981" stroke-width="1.1"/>
+  <rect x="678" y="223" width="66" height="18" rx="4" fill="#d1fae5" stroke="#10b981" stroke-width="0.8"/>
+  <text x="711" y="235.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#0f766e">步骤 5</text>
+  <text x="752" y="236" font-size="10.4" font-weight="700" fill="#065f46">TBT 集成分布</text>
+  <text x="678" y="257" font-size="9.0" fill="#1e293b">• 在稳态 (B, C) 上计算 d(B, C)/η</text>
+  <text x="678" y="276" font-size="9.0" fill="#1e293b">• 叠加交错 prefill 块引发的步长膨胀</text>
+  <text x="678" y="295" font-size="8.9" fill="#475569">• 跨生成长度 o 均值；小 Δ 抑步抖动</text>
+
+  <rect x="670" y="320" width="260" height="156" rx="7" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.1"/>
+  <rect x="678" y="327" width="66" height="18" rx="4" fill="#fee2e2" stroke="#f87171" stroke-width="0.8"/>
+  <text x="711" y="339.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#b91c1c">v1 边界</text>
+  <text x="752" y="340" font-size="10.2" font-weight="700" fill="#991b1b">显式假设与缺失项</text>
+  <text x="678" y="361" font-size="8.8" fill="#334155">• 仅限单阶段、Decoder-only 模型</text>
+  <text x="678" y="379" font-size="8.8" fill="#334155">• 平稳桶 + Poisson（未计突发方差）</text>
+  <text x="678" y="397" font-size="8.8" fill="#334155">• 无 HBM KV 溢出抢占与 P/D 分离</text>
+  <text x="678" y="415" font-size="8.8" fill="#334155">• 正文略去 B 二次方程、d̄ 与膨胀项</text>
+  <text x="678" y="434" font-size="8.8" font-weight="700" fill="#b91c1c">• v1 未含实机系数 (a..η) 与误差验证</text>
+  <text x="678" y="454" font-size="8.6" fill="#64748b">• 落地前须按目标引擎标定并独立校验</text>
+
+  <!-- Legend & Footnote -->
+  <rect x="20" y="501" width="12" height="10" rx="2" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="37" y="510" font-size="9.1" fill="#334155">蓝框：解析延迟曲面与耦合</text>
+  <rect x="202" y="501" width="12" height="10" rx="2" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+  <text x="219" y="510" font-size="9.1" fill="#334155">琥珀：Lindley 蒙特卡洛排队扫描</text>
+  <rect x="424" y="501" width="12" height="10" rx="2" fill="#ecfdf5" stroke="#0f766e" stroke-width="1"/>
+  <text x="441" y="510" font-size="9.1" fill="#334155">青框：集成 TTFT / TBT 输出</text>
+  <rect x="616" y="501" width="12" height="10" rx="2" fill="#fef2f2" stroke="#f87171" stroke-width="1"/>
+  <text x="633" y="510" font-size="9.1" fill="#334155">红框：v1 建模假设与缺失验证边界</text>
+  <text x="20" y="527" font-size="8.9" fill="#64748b">注：结构严格对照 arXiv:2610.37989v1 §3 与 Algorithm 1；v1 报告仅提供符号公式与方法推导，未报告任何真实引擎参数或预测误差数值。</text>
+</svg>

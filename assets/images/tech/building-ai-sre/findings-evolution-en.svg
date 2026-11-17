@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect x="0" y="0" width="960" height="540" fill="#ffffff"/>
+<text x="36" y="37" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#212529">Harness State Evolution: Five Iterations of the Findings Model</text>
+<text x="36" y="59" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" fill="#526779">Moving from free-form LLM prose to traceable, falsifiable, wave-updated structured records</text>
+<line x1="36" y1="71" x2="924" y2="71" stroke="#d8e4f0" stroke-width="1"/>
+<text x="44" y="87" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#526779">Generation</text>
+<text x="242" y="87" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#526779">Design &amp; Representation</text>
+<text x="556" y="87" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#526779">Failure Mode Exposed → Next Shift</text>
+<rect x="36" y="96" width="888" height="66" rx="8" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="44" y="105" width="30" height="21" rx="5" fill="#3676b8"/>
+<text x="59" y="120" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">v1</text>
+<text x="81" y="120" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">An essay</text>
+<text x="44" y="145" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Free-form prose</text>
+<line x1="230" y1="105" x2="230" y2="153" stroke="#c8daec" stroke-width="1"/>
+<text x="242" y="122" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#212529">Model writes prose on what happened</text>
+<text x="242" y="143" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">Natural text carries all state</text>
+<rect x="546" y="102" width="370" height="54" rx="6" fill="#f8fbfe" stroke="#c8daec" stroke-width="1"/>
+<text x="558" y="121" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">Hallucinated often; talked itself into bad answers</text>
+<text x="558" y="141" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#295a8f">→ Move to concrete structured pieces per source</text>
+<line x1="133" y1="162" x2="133" y2="170" stroke="#3676b8" stroke-width="2"/>
+<polygon points="128,169 138,169 133,175" fill="#3676b8"/>
+<rect x="36" y="176" width="888" height="66" rx="8" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="44" y="185" width="30" height="21" rx="5" fill="#3676b8"/>
+<text x="59" y="200" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">v2</text>
+<text x="81" y="200" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">Structured</text>
+<text x="44" y="225" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Structured findings</text>
+<line x1="230" y1="185" x2="230" y2="233" stroke="#c8daec" stroke-width="1"/>
+<text x="242" y="202" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#212529">Concrete structured pieces per source</text>
+<text x="242" y="223" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">Replaces long paragraphs of prose</text>
+<rect x="546" y="182" width="370" height="54" rx="6" fill="#f8fbfe" stroke="#c8daec" stroke-width="1"/>
+<text x="558" y="201" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">Cannot tell real changes from rephrasing on run #3</text>
+<text x="558" y="221" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#295a8f">→ Track one persistent record per finding + delta</text>
+<line x1="133" y1="242" x2="133" y2="250" stroke="#3676b8" stroke-width="2"/>
+<polygon points="128,249 138,249 133,255" fill="#3676b8"/>
+<rect x="36" y="256" width="888" height="66" rx="8" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="44" y="265" width="30" height="21" rx="5" fill="#3676b8"/>
+<text x="59" y="280" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">v3</text>
+<text x="81" y="280" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">Evidence-backed</text>
+<text x="44" y="305" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Evidence-backed records</text>
+<line x1="230" y1="265" x2="230" y2="313" stroke="#c8daec" stroke-width="1"/>
+<text x="242" y="282" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#212529">Single record updated over time</text>
+<text x="242" y="303" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">Cites exact log lines, docs, or metrics</text>
+<rect x="546" y="262" width="370" height="54" rx="6" fill="#f8fbfe" stroke="#c8daec" stroke-width="1"/>
+<text x="558" y="281" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">Brain anchors on early findings after facts shift</text>
+<text x="558" y="301" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#295a8f">→ Let counter-evidence discount or cancel old ones</text>
+<line x1="133" y1="322" x2="133" y2="330" stroke="#3676b8" stroke-width="2"/>
+<polygon points="128,329 138,329 133,335" fill="#3676b8"/>
+<rect x="36" y="336" width="888" height="66" rx="8" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="44" y="345" width="30" height="21" rx="5" fill="#3676b8"/>
+<text x="59" y="360" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">v4</text>
+<text x="81" y="360" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">Discountable</text>
+<text x="44" y="385" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Discountable findings</text>
+<line x1="230" y1="345" x2="230" y2="393" stroke="#c8daec" stroke-width="1"/>
+<text x="242" y="362" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#212529">New counter-evidence cancels old claims</text>
+<text x="242" y="383" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">Mirrors responders changing minds</text>
+<rect x="546" y="342" width="370" height="54" rx="6" fill="#f8fbfe" stroke="#c8daec" stroke-width="1"/>
+<text x="558" y="361" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">Re-synthesizing everything each cycle is too slow</text>
+<text x="558" y="381" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#295a8f">→ Record incremental deltas per search wave</text>
+<line x1="133" y1="402" x2="133" y2="410" stroke="#3676b8" stroke-width="2"/>
+<polygon points="128,409 138,409 133,415" fill="#3676b8"/>
+<rect x="36" y="416" width="888" height="66" rx="8" fill="#e3effb" stroke="#3676b8" stroke-width="1.5"/>
+<rect x="44" y="425" width="30" height="21" rx="5" fill="#245c96"/>
+<text x="59" y="440" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">v5</text>
+<text x="81" y="440" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">Written in waves</text>
+<text x="44" y="465" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Incremental delta</text>
+<line x1="230" y1="425" x2="230" y2="473" stroke="#c8daec" stroke-width="1"/>
+<text x="242" y="442" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#212529">Write only the delta per search wave</text>
+<text x="242" y="463" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">Feeds hypothesis + disprove-agent loop</text>
+<rect x="546" y="422" width="370" height="54" rx="6" fill="#eef7f1" stroke="#9bc6ab" stroke-width="1"/>
+<text x="558" y="441" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">Current baseline: channel claims link to raw evidence</text>
+<text x="558" y="461" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#1f5f3b">✓ Allows stating uncertainty when evidence is thin</text>
+<text x="36" y="514" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#596775">Assistant-drawn explanatory diagram summarizing the 5 Findings versions described in incident.io (not an original figure)</text>
+</svg>

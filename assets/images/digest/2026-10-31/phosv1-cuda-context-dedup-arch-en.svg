@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="PhOSv1 architecture diagram comparing vanilla vLLM sleep per-process GPU context bloat against PhOSv1 central context daemon with LD_PRELOAD API remoting, kernel deduplication, and lazy GPU buffer reconstruction" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#64748b"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="16.5" font-weight="700" fill="#0f172a">PhOSv1 Architecture: Central GPU-Context Deduplication &amp; Lazy Buffer Rebuild</text>
+  <text x="24" y="53" font-size="10.2" fill="#475569">From arXiv:2610.39999v1 (§2–§3, Fig. 2 &amp; Fig. 6) · 10,825 LoC Rust daemon hooking CUDA Driver API via LD_PRELOAD for vLLM v0.19.1</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Left Column: Vanilla Sleep Baseline -->
+  <rect x="20" y="72" width="304" height="418" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <rect x="20" y="72" width="304" height="28" rx="9" fill="#334155"/>
+  <rect x="20" y="92" width="304" height="8" fill="#334155"/>
+  <text x="32" y="90.5" font-size="10.4" font-weight="700" fill="#ffffff">Baseline: Vanilla vLLM Sleep (Private Context)</text>
+
+  <!-- Sleeping Process A -->
+  <rect x="30" y="109" width="284" height="72" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="38" y="116" width="66" height="18" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="71" y="128.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#334155">Paused A</text>
+  <text x="112" y="129" font-size="10.2" font-weight="700" fill="#0f172a">vLLM (Qwen 2.5)</text>
+  <text x="38" y="150" font-size="8.9" fill="#334155">Host DRAM: CPU context (~2.9 GB) + weights</text>
+  <rect x="38" y="158" width="268" height="18" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+  <text x="46" y="170.5" font-size="8.6" font-weight="600" fill="#991b1b">Private GPU: CUDA ctx + Kernels + Buffers</text>
+
+  <!-- Sleeping Process B -->
+  <rect x="30" y="189" width="284" height="72" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="38" y="196" width="66" height="18" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="71" y="208.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#334155">Paused B</text>
+  <text x="112" y="209" font-size="10.2" font-weight="700" fill="#0f172a">vLLM (Qwen 3.5)</text>
+  <text x="38" y="230" font-size="8.9" fill="#334155">Host DRAM: per-engine CPU state + weights</text>
+  <rect x="38" y="238" width="268" height="18" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+  <text x="46" y="250.5" font-size="8.6" font-weight="600" fill="#991b1b">Private GPU: duplicate ctx + 59–99% kernels</text>
+
+  <!-- Sleeping Process N -->
+  <rect x="30" y="269" width="284" height="42" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="172" y="286.5" text-anchor="middle" font-size="9.1" font-weight="700" fill="#475569">… Engines 3 to 24 Sleeping (Linear Growth)</text>
+  <text x="172" y="302" text-anchor="middle" font-size="8.6" fill="#991b1b">Each pins its own GPU context (weights excl.)</text>
+
+  <line x1="92" y1="311" x2="92" y2="328" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-red)"/>
+  <line x1="172" y1="311" x2="172" y2="328" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-red)"/>
+  <line x1="252" y1="311" x2="252" y2="328" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-red)"/>
+
+  <!-- Baseline HBM impact -->
+  <rect x="30" y="331" width="284" height="148" rx="7" fill="#fef2f2" stroke="#f87171" stroke-width="1.1"/>
+  <text x="40" y="349" font-size="10.0" font-weight="700" fill="#991b1b">80 GB HBM: Linear Tax Starves KV Cache</text>
+  <rect x="40" y="360" width="90" height="22" rx="3" fill="#ef4444"/>
+  <text x="85" y="374.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#ffffff">~27 GB (34%)</text>
+  <rect x="132" y="360" width="84" height="22" rx="3" fill="#94a3b8"/>
+  <text x="174" y="374.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#ffffff">Active Weights</text>
+  <rect x="218" y="360" width="86" height="22" rx="3" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="261" y="374.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#1e3a8a">Squeezed KV</text>
+
+  <text x="40" y="401" font-size="8.8" fill="#334155">• 23 sleeping models use 25.67 GiB (24: ~27 GB)</text>
+  <text x="40" y="420" font-size="8.8" font-weight="700" fill="#991b1b">• 16 GiB context cuts throughput by 54%</text>
+  <text x="40" y="437" font-size="8.6" fill="#475569">  (Qwen3.6-27B: 747 → 341 tok/s, Fig. 3 right)</text>
+  <text x="40" y="458" font-size="8.6" fill="#475569">• Capping sleep at 6 GB triggers 24.41 s cold</text>
+  <text x="40" y="472" font-size="8.6" fill="#475569">  starts on cache misses and long queues</text>
+
+  <!-- Right Column: PhOSv1 Architecture -->
+  <rect x="340" y="72" width="600" height="418" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="340" y="72" width="600" height="28" rx="9" fill="#1d4ed8"/>
+  <rect x="340" y="92" width="600" height="8" fill="#1d4ed8"/>
+  <text x="352" y="90.5" font-size="10.4" font-weight="700" fill="#ffffff">PhOSv1: Central Context Service Daemon + Transparent API Remoting</text>
+
+  <!-- Row 1: vLLM processes -->
+  <rect x="352" y="109" width="184" height="86" rx="7" fill="#f8fafc" stroke="#93c5fd" stroke-width="1"/>
+  <text x="362" y="126" font-size="9.6" font-weight="700" fill="#0f172a">vLLM Process A (Qwen 2.5)</text>
+  <text x="362" y="143" font-size="8.5" fill="#334155">• Paused via cgroup freezer</text>
+  <text x="362" y="159" font-size="8.5" fill="#334155">• Weights &amp; buffers in host RAM</text>
+  <rect x="362" y="168" width="164" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="444" y="180.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">LD_PRELOAD CUDA API Hook</text>
+
+  <rect x="548" y="109" width="184" height="86" rx="7" fill="#f8fafc" stroke="#93c5fd" stroke-width="1"/>
+  <text x="558" y="126" font-size="9.6" font-weight="700" fill="#0f172a">vLLM Process B (Qwen 3.5)</text>
+  <text x="558" y="143" font-size="8.5" fill="#334155">• Zero private GPU ctx while asleep</text>
+  <text x="558" y="159" font-size="8.5" fill="#334155">• Zero changes to engine source</text>
+  <rect x="558" y="168" width="164" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="640" y="180.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">LD_PRELOAD CUDA API Hook</text>
+
+  <rect x="744" y="109" width="184" height="86" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="754" y="126" font-size="9.6" font-weight="700" fill="#1e3a8a">vLLM Process C (Woken)</text>
+  <text x="754" y="143" font-size="8.5" fill="#1e293b">• At most 1 active engine per GPU</text>
+  <text x="754" y="159" font-size="8.5" fill="#1e293b">• Daemon connect avg: 72 ms (§4.2)</text>
+  <rect x="754" y="168" width="164" height="19" rx="4" fill="#1d4ed8"/>
+  <text x="836" y="180.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#ffffff">Batched / Synced Kernel Calls</text>
+
+  <!-- Arrows to Context Service -->
+  <line x1="444" y1="195" x2="444" y2="215" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <line x1="640" y1="195" x2="640" y2="215" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <line x1="836" y1="195" x2="836" y2="215" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <!-- Row 2: Central Context Service Daemon -->
+  <rect x="352" y="218" width="576" height="154" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="364" y="236" font-size="10.0" font-weight="700" fill="#1e3a8a">Per-Server Context Service Daemon (Maintains One Shared Context per Physical GPU)</text>
+
+  <!-- Sub-card 1: CUDA Context -->
+  <rect x="362" y="245" width="178" height="118" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="370" y="252" width="66" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="403" y="263.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#1d4ed8">100% Shared</text>
+  <text x="442" y="264" font-size="9.3" font-weight="700" fill="#1e3a8a">Driver Context</text>
+  <text x="370" y="286" font-size="8.4" fill="#1e293b">• One CUDA Primary Context</text>
+  <text x="370" y="302" font-size="8.4" fill="#1e293b">  shared by all models on GPU</text>
+  <text x="370" y="320" font-size="8.4" fill="#334155">• Avoids ~430 ms init per model</text>
+  <text x="370" y="336" font-size="8.4" fill="#334155">• Multi-GPU wakeups stay indep.</text>
+  <text x="370" y="352" font-size="8.3" font-weight="600" fill="#1d4ed8">• No closed-driver edits needed</text>
+
+  <!-- Sub-card 2: Kernel Deduplication -->
+  <rect x="551" y="245" width="178" height="118" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="559" y="252" width="72" height="17" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+  <text x="595" y="263.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#065f46">59–99% Match</text>
+  <text x="637" y="264" font-size="9.3" font-weight="700" fill="#065f46">Kernel Table</text>
+  <text x="559" y="286" font-size="8.4" fill="#1e293b">• Semantic lookup table over</text>
+  <text x="559" y="302" font-size="8.4" fill="#1e293b">  CUDA calls (cuModuleLoadData)</text>
+  <text x="559" y="320" font-size="8.4" fill="#334155">• Skips duplicate kernel loads</text>
+  <text x="559" y="336" font-size="8.4" fill="#334155">  (FlashInfer / cuBLAS overlap)</text>
+  <text x="559" y="352" font-size="8.3" font-weight="600" fill="#0f766e">• Keeps custom kernels &amp; handles</text>
+
+  <!-- Sub-card 3: Lazy GPU Buffers + LFU -->
+  <rect x="740" y="245" width="178" height="118" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="748" y="252" width="70" height="17" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+  <text x="783" y="263.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#92400e">Lazy ~30 ms</text>
+  <text x="824" y="264" font-size="9.3" font-weight="700" fill="#92400e">Buffer Rebuild</text>
+  <text x="748" y="286" font-size="8.4" fill="#1e293b">• Virtual placeholders on sleep;</text>
+  <text x="748" y="302" font-size="8.4" fill="#1e293b">  contents saved in host DRAM</text>
+  <text x="748" y="320" font-size="8.4" fill="#334155">• Materialized on kernel invoke</text>
+  <text x="748" y="336" font-size="8.4" fill="#334155">  (drops 544–1,646 MiB ctx tax)</text>
+  <text x="748" y="352" font-size="8.3" font-weight="600" fill="#b45309">• LFU eviction above sleep cap</text>
+
+  <!-- Arrow to Physical GPU -->
+  <line x1="640" y1="372" x2="640" y2="390" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+  <!-- Row 3: Physical GPU HBM -->
+  <rect x="352" y="393" width="576" height="86" rx="7" fill="#f8fafc" stroke="#1d4ed8" stroke-width="1.1"/>
+  <text x="364" y="410" font-size="9.8" font-weight="700" fill="#0f172a">Physical GPU HBM (80 GB A800) · Post-Deduplication Memory Layout</text>
+
+  <rect x="364" y="418" width="112" height="27" rx="3" fill="#1d4ed8"/>
+  <text x="420" y="434.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#ffffff">0.49 GiB (-98.1%)</text>
+  <rect x="479" y="418" width="136" height="27" rx="3" fill="#94a3b8"/>
+  <text x="547" y="434.5" text-anchor="middle" font-size="8.4" font-weight="700" fill="#ffffff">Active Weights (1 Model)</text>
+  <rect x="618" y="418" width="298" height="27" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="767" y="434.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1e3a8a">Ample KV Cache (Mean TTFT -87.0% · ≥97.3% Tput)</text>
+
+  <text x="364" y="466" font-size="8.7" fill="#334155">Outcome: 23-model sleep context drops 25.67 GiB → 0.49 GiB; all 10 trace models stay asleep without cold starts</text>
+
+  <!-- Legend & Scope Boundary -->
+  <rect x="20" y="502" width="12" height="10" rx="2" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="37" y="511" font-size="8.9" fill="#334155">Blue: PhOSv1 shared / deduplicated path</text>
+  <rect x="228" y="502" width="12" height="10" rx="2" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+  <text x="245" y="511" font-size="8.9" fill="#334155">Red: vanilla linear context tax</text>
+  <rect x="404" y="502" width="12" height="10" rx="2" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="421" y="511" font-size="8.9" fill="#334155">Amber: non-dedup buffers &amp; LFU cap</text>
+  <text x="20" y="527" font-size="8.8" fill="#64748b">Scope boundaries: assumes trusted provider-managed engines (untrusted multi-tenancy out of scope); 1 active model/GPU; no CUDA Graphs (§5); single-A800 eval.</text>
+</svg>

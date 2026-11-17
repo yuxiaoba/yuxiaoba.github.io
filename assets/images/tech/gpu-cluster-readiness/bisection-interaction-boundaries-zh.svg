@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- Header -->
+  <text x="24" y="38" font-size="18.5" font-weight="700" fill="#0f172a">testScale 拓扑分组、自适应二分隔离与交互型故障边界</text>
+  <text x="24" y="58" font-size="11.2" fill="#475569">左：四种测试尺度分别覆盖的物理域；右：diagnose 二分隔离机制及“子组全过、原组失败”工程判据</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Left Panel: 4 testScale Modes -->
+  <rect x="24" y="78" width="324" height="422" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="78" width="324" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="96" width="324" height="10" fill="#dbeafe"/>
+  <text x="36" y="97" font-size="12" font-weight="700" fill="#1e3a8a">1. testScale 分组策略与覆盖物理域</text>
+
+  <!-- Card 1: intra-node -->
+  <rect x="36" y="116" width="300" height="88" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="44" y="124" width="96" height="20" rx="4" fill="#e0f2fe"/>
+  <text x="92" y="138" font-size="10.2" font-weight="700" fill="#075985" text-anchor="middle">intra-node</text>
+  <text x="148" y="138" font-size="10.8" font-weight="700" fill="#0f172a">单节点独立验证</text>
+  <text x="44" y="160" font-size="10" fill="#334155">每个目标节点独立运行，不发生跨节点通信</text>
+  <text x="44" y="177" font-size="10" fill="#475569">测出：单机 GPU 算力、PCIe/机内 NVLink 异常</text>
+  <text x="44" y="194" font-size="9.4" fill="#64748b">盲区：无法暴露跨节点网卡与交换机降速</text>
+
+  <!-- Card 2: intra-rack -->
+  <rect x="36" y="212" width="300" height="88" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="44" y="220" width="96" height="20" rx="4" fill="#dbeafe"/>
+  <text x="92" y="234" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">intra-rack</text>
+  <text x="148" y="234" font-size="10.8" font-weight="700" fill="#1e3a8a">按 gpu.clique 域分组</text>
+  <text x="44" y="256" font-size="10" fill="#334155">依据 nvidia.com/gpu.clique 拓扑标签分区</text>
+  <text x="44" y="273" font-size="10" fill="#475569">测出：单一 NVLink / MNNVL 域内互联带宽</text>
+  <text x="44" y="290" font-size="9.4" fill="#1e40af">边界：域内达标 ≠ 跨机架 Scale-out 网络正常</text>
+
+  <!-- Card 3: full-scale -->
+  <rect x="36" y="308" width="300" height="88" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="44" y="316" width="96" height="20" rx="4" fill="#e0e7ff"/>
+  <text x="92" y="330" font-size="10.2" font-weight="700" fill="#312e81" text-anchor="middle">full-scale</text>
+  <text x="148" y="330" font-size="10.8" font-weight="700" fill="#0f172a">全目标节点单组压测</text>
+  <text x="44" y="352" font-size="10" fill="#334155">所有目标节点编入同一作业并发同步测试</text>
+  <text x="44" y="369" font-size="10" fill="#475569">测出：跨机架 Scale-out 网络与集合通信尾延迟</text>
+  <text x="44" y="386" font-size="9.4" fill="#64748b">代价：仅见全组降速，全部节点均被牵连</text>
+
+  <!-- Card 4: diagnose -->
+  <rect x="36" y="404" width="300" height="88" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <rect x="44" y="412" width="96" height="20" rx="4" fill="#fef3c7"/>
+  <text x="92" y="426" font-size="10.2" font-weight="700" fill="#92400e" text-anchor="middle">diagnose</text>
+  <text x="148" y="426" font-size="10.8" font-weight="700" fill="#78350f">自适应分层二分隔离</text>
+  <text x="44" y="448" font-size="10" fill="#334155">对失败组逐层二分重测，直至 minGroupSize</text>
+  <text x="44" y="465" font-size="10" fill="#475569">受 maxConcurrent 限制并发，防测试流量拥塞</text>
+  <text x="44" y="482" font-size="9.4" fill="#92400e">产出：缩小后的嫌疑节点集与逐节点失败原因</text>
+
+  <!-- Right Panel: Bisection + Interaction Boundaries -->
+  <rect x="362" y="78" width="574" height="422" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="362" y="78" width="574" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="362" y="96" width="574" height="10" fill="#dbeafe"/>
+  <text x="374" y="97" font-size="12" font-weight="700" fill="#1e3a8a">2. testScale: diagnose 二分隔离过程与交互型故障工程边界</text>
+
+  <!-- Bisection Step 1 -->
+  <rect x="374" y="116" width="160" height="154" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1.1"/>
+  <rect x="384" y="124" width="140" height="20" rx="4" fill="#dc2626"/>
+  <text x="454" y="138" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Step 1 · 全组失败</text>
+  <text x="384" y="162" font-size="10.4" font-weight="700" fill="#0f172a">64 节点 All-Reduce</text>
+  <text x="384" y="182" font-size="9.8" fill="#334155">BusBW 未达 CEL 阈值</text>
+  <text x="384" y="201" font-size="9.8" fill="#334155">同步等待放大局部慢卡</text>
+  <text x="384" y="220" font-size="9.8" fill="#334155">全组 64 节点同等受疑</text>
+  <text x="384" y="252" font-size="9.4" fill="#991b1b">人工逐台排查常耗数天</text>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="536" y1="193" x2="565" y2="193" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+  <text x="551" y="183" font-size="9.8" font-weight="700" fill="#1d4ed8" text-anchor="middle">÷ 2</text>
+
+  <!-- Bisection Step 2 -->
+  <rect x="569" y="116" width="168" height="154" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="579" y="124" width="148" height="20" rx="4" fill="#1d4ed8"/>
+  <text x="653" y="138" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Step 2 · 拓扑二分重测</text>
+  <rect x="579" y="152" width="148" height="28" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="1"/>
+  <text x="653" y="170" font-size="10" font-weight="600" fill="#166534" text-anchor="middle">子组 A (32) · PASS</text>
+  <rect x="579" y="186" width="148" height="28" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+  <text x="653" y="204" font-size="10" font-weight="600" fill="#991b1b" text-anchor="middle">子组 B (32) · FAIL</text>
+  <text x="579" y="233" font-size="9.5" fill="#1e3a8a">仅对失败半区继续递归拆分</text>
+  <text x="579" y="252" font-size="9.5" fill="#334155">受 maxConcurrent 并发护栏限流</text>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="739" y1="193" x2="768" y2="193" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+  <text x="754" y="183" font-size="9.2" font-weight="700" fill="#1d4ed8" text-anchor="middle">min</text>
+
+  <!-- Bisection Step 3 -->
+  <rect x="772" y="116" width="152" height="154" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <rect x="782" y="124" width="132" height="20" rx="4" fill="#166534"/>
+  <text x="848" y="138" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Step 3 · 嫌疑集收敛</text>
+  <text x="782" y="162" font-size="9.8" font-weight="700" fill="#0f172a">抵达 minGroupSize 边界</text>
+  <text x="782" y="182" font-size="9.6" fill="#334155">仍失败小组标为嫌疑节点</text>
+  <text x="782" y="210" font-size="9.3" fill="#991b1b">gpu-node-07: Threshold</text>
+  <text x="782" y="228" font-size="9.3" fill="#991b1b">gpu-node-12: HW Fault</text>
+  <text x="782" y="252" font-size="9.4" fill="#166534">交由 NVSentinel 隔离排空</text>
+
+  <!-- Bottom Edge Case A: Interaction Faults -->
+  <rect x="374" y="282" width="270" height="208" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2"/>
+  <rect x="384" y="292" width="250" height="24" rx="4" fill="#fef3c7"/>
+  <text x="509" y="308" font-size="10.8" font-weight="700" fill="#92400e" text-anchor="middle">边界 A：交互型故障与切分失真</text>
+  <text x="386" y="334" font-size="9.8" font-weight="700" fill="#78350f">现象：子组 A、B 均通过，但原组失败</text>
+  <text x="386" y="352" font-size="9.6" fill="#334155">成因：问题仅在跨交换机链路、特定节点</text>
+  <text x="386" y="369" font-size="9.6" fill="#334155">对或高并发下触发，切小后压力消失</text>
+  <text x="386" y="393" font-size="9.8" font-weight="700" fill="#991b1b">禁区：绝不可把“子组全过”当成已解决</text>
+  <text x="386" y="413" font-size="9.6" fill="#0f172a">• 独立归档“子组全过 / 原组失败”结论</text>
+  <text x="386" y="431" font-size="9.6" fill="#0f172a">• 保留原失败节点全集并轮换分组切法复测</text>
+  <text x="386" y="449" font-size="9.6" fill="#0f172a">• 排查组间共享链路、拥塞点与规模效应</text>
+  <text x="386" y="476" font-size="9" fill="#92400e">（工程边界分析，补充原文二分隔离默认假设）</text>
+
+  <!-- Bottom Edge Case B: Scope & Invalidation -->
+  <rect x="654" y="282" width="270" height="208" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="664" y="292" width="250" height="24" rx="4" fill="#dbeafe"/>
+  <text x="789" y="308" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="middle">边界 B：作用域限定与运维护栏</text>
+  <text x="666" y="334" font-size="9.8" font-weight="700" fill="#1e3a8a">1. 结论附带严格范围描述</text>
+  <text x="666" y="351" font-size="9.6" fill="#334155">注明节点、互联、消息大小、并发与时长</text>
+  <text x="666" y="375" font-size="9.8" font-weight="700" fill="#1e3a8a">2. CEL 阈值随软硬件与规模版本化</text>
+  <text x="666" y="392" font-size="9.6" fill="#334155">跨代 GPU、NCCL 或规模变更需重定基线</text>
+  <text x="666" y="416" font-size="9.8" font-weight="700" fill="#1e3a8a">3. 认证失效条件与混沌验证</text>
+  <text x="666" y="433" font-size="9.6" fill="#334155">驱动/固件/拓扑/维修变更后重测对应类别</text>
+  <text x="666" y="451" font-size="9.6" fill="#334155">自动隔离前核查置信度、影响面与回退路径</text>
+  <text x="666" y="476" font-size="9" fill="#1e40af">• 混沌实验：注入已知慢卡核查嫌疑集大小</text>
+
+  <!-- Footer -->
+  <text x="24" y="521" font-size="10" fill="#64748b">阅读整理配图 · 结合 NVIDIA NVCRE 原文 testScale / diagnose 机制与工程交互故障边界分析绘制（非原文配图）</text>
+</svg>

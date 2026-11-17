@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="PhOSv1 empirical evaluation 4-panel chart showing GPU context anatomy, 98.1 percent sleep memory reduction across 23 models, 4.12 s average wake-up across 16 models, and 87.0 percent lower E2E TTFT with at least 97.3 percent throughput retention" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="16.5" font-weight="700" fill="#0f172a">PhOSv1 Empirical Evidence: 98.1% Sleep HBM Reduction &amp; 87.0% Lower E2E TTFT</text>
+  <text x="24" y="53" font-size="10.1" fill="#475569">From arXiv:2610.39999v1 (§2–§4, Fig. 3–5 &amp; Fig. 7–8) · Single 80 GB NVIDIA A800 GPU in an 8-GPU server (CUDA 12.9, vLLM v0.19.1, NVML excl. weights)</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Panel A: Context Anatomy -->
+  <rect x="20" y="72" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="72" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="90" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="98" x2="472" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="89.5" font-size="10.6" font-weight="700" fill="#1e3a8a">A. Sleeping GPU-Context Anatomy &amp; Deduplicability (§3, Fig. 4–5)</text>
+
+  <rect x="32" y="106" width="84" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="74" y="119" text-anchor="middle" font-size="8.4" font-weight="700" fill="#1d4ed8">CUDA ctx</text>
+  <text x="124" y="119" font-size="8.8" fill="#0f172a">Driver primary ctx · ~430 ms init · 100% shared/GPU</text>
+
+  <rect x="32" y="135" width="84" height="19" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+  <text x="74" y="148" text-anchor="middle" font-size="8.4" font-weight="700" fill="#065f46">GPU Kernels</text>
+  <text x="124" y="148" font-size="8.8" fill="#0f172a">Compiled ops · 59–99% pair overlap (0.99–1.00 same-fam.)</text>
+
+  <rect x="32" y="164" width="84" height="19" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+  <text x="74" y="177" text-anchor="middle" font-size="8.4" font-weight="700" fill="#92400e">GPU Buffers</text>
+  <text x="124" y="177" font-size="8.8" fill="#0f172a">Model-specific · host-checkpointed · ~30 ms lazy rebuild</text>
+
+  <rect x="32" y="193" width="84" height="19" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="74" y="206" text-anchor="middle" font-size="8.4" font-weight="700" fill="#334155">Handles</text>
+  <text x="124" y="206" font-size="8.8" fill="#0f172a">Streams / cuBLAS registries · negligible HBM footprint</text>
+
+  <rect x="32" y="224" width="428" height="44" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="42" y="241" font-size="8.8" font-weight="700" fill="#1e3a8a">Fig. 4 per-model total context (excl. weights; spikes driven by GPU buffers):</text>
+  <text x="42" y="258" font-size="8.5" fill="#334155">Qwen3-8B 544 MiB · Qwen3.6-27B 1,272 · Qwen2.5-VL-7B 1,360 · gemma-4-26B-A4B 1,646</text>
+
+  <!-- Panel B: Resident Memory & Throughput Impact -->
+  <rect x="488" y="72" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="72" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="90" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="98" x2="940" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="89.5" font-size="10.6" font-weight="700" fill="#1e3a8a">B. Sleep HBM Savings (23 Models) &amp; KV Starvation (Fig. 3 &amp; 7L)</text>
+
+  <text x="500" y="114" font-size="8.9" font-weight="700" fill="#0f172a">1. GPU context memory for 23 sleeping models (weights excluded):</text>
+  <text x="598" y="135" text-anchor="end" font-size="8.7" fill="#334155">Vanilla Sleep</text>
+  <rect x="606" y="124" width="224" height="14" rx="2.5" fill="#ef4444"/>
+  <text x="836" y="134.5" font-size="8.8" font-weight="700" fill="#991b1b">25.67 GiB</text>
+
+  <text x="598" y="156" text-anchor="end" font-size="8.7" font-weight="700" fill="#1d4ed8">PhOSv1</text>
+  <rect x="606" y="145" width="5" height="14" rx="1.5" fill="#1d4ed8"/>
+  <text x="617" y="155.5" font-size="8.8" font-weight="700" fill="#1d4ed8">0.49 GiB (-98.1%)</text>
+  <text x="500" y="174" font-size="8.3" fill="#475569">Note: 24 models under vanilla sleep occupy ~27 GB (34% of 80 GB A800)</text>
+
+  <line x1="500" y1="183" x2="928" y2="183" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="500" y="199" font-size="8.9" font-weight="700" fill="#0f172a">2. Active throughput drop as sleep HBM grows (Qwen3.6-27B):</text>
+  <text x="598" y="220" text-anchor="end" font-size="8.7" fill="#1d4ed8">0 GiB occupied</text>
+  <rect x="606" y="209" width="224" height="14" rx="2.5" fill="#1d4ed8"/>
+  <text x="836" y="219.5" font-size="8.8" font-weight="700" fill="#1e3a8a">747 tok/s</text>
+
+  <text x="598" y="241" text-anchor="end" font-size="8.7" fill="#334155">16 GiB occupied</text>
+  <rect x="606" y="230" width="102" height="14" rx="2.5" fill="#64748b"/>
+  <text x="714" y="240.5" font-size="8.8" font-weight="700" fill="#991b1b">341 tok/s (-54%)</text>
+  <text x="500" y="264" font-size="8.3" fill="#475569">Less free HBM shrinks KV-cache room and context length, causing queueing</text>
+
+  <!-- Panel C: Startup Latency -->
+  <rect x="20" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="316" x2="472" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="307.5" font-size="10.6" font-weight="700" fill="#1e3a8a">C. Mean Startup / Wake-Up Latency Across 16 Models (§4.2, Fig. 7R)</text>
+  <text x="32" y="332" font-size="8.4" fill="#475569">Cold start &amp; PhoenixOS weight-loading times normalized to exclude storage I/O</text>
+
+  <text x="142" y="355" text-anchor="end" font-size="8.9" font-weight="700" fill="#334155">Cold Start</text>
+  <rect x="150" y="344" width="244" height="15" rx="2.5" fill="#64748b"/>
+  <text x="400" y="355" font-size="8.8" font-weight="700" fill="#334155">24.41 s</text>
+
+  <text x="142" y="381" text-anchor="end" font-size="8.9" font-weight="700" fill="#334155">Vanilla Sleep</text>
+  <rect x="150" y="370" width="49" height="15" rx="2.5" fill="#d97706"/>
+  <text x="205" y="381" font-size="8.8" font-weight="700" fill="#92400e">4.89 s</text>
+
+  <text x="142" y="407" text-anchor="end" font-size="8.9" font-weight="700" fill="#1d4ed8">PhOSv1 + Sleep</text>
+  <rect x="150" y="396" width="41" height="15" rx="2.5" fill="#1d4ed8"/>
+  <text x="197" y="407" font-size="8.8" font-weight="700" fill="#1d4ed8">4.12 s (matches near-zero control-plane wake-up)</text>
+
+  <rect x="32" y="424" width="428" height="60" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="42" y="441" font-size="8.7" font-weight="700" fill="#1e3a8a">• Context service connection adds just 72 ms on average (§4.2)</text>
+  <text x="42" y="458" font-size="8.4" fill="#334155">• PhoenixOS (C/R): 0.57 s base restore (Fig. 1c), yet 10–20 s worst-case CRIU tail</text>
+  <text x="42" y="474" font-size="8.4" fill="#475569">  and lacks io_uring support (bars plotted in Fig. 7R; 16-model mean not printed)</text>
+
+  <!-- Panel D: End-to-End Trace -->
+  <rect x="488" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="316" x2="940" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="307.5" font-size="10.6" font-weight="700" fill="#1e3a8a">D. End-to-End 10-Model ShareGPT Trace Replay (§4.1, Fig. 8)</text>
+  <text x="500" y="331" font-size="8.4" fill="#475569">10 Qwen (0.6B–32B) · 10-min Poisson 0.3 req/min/model · vLLM 6 GB sleep cap + LFU</text>
+
+  <rect x="500" y="340" width="208" height="68" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="510" y="357" font-size="8.9" font-weight="700" fill="#1e3a8a">Mean E2E TTFT</text>
+  <text x="510" y="378" font-size="12.0" font-weight="700" fill="#0f172a">146.82 s → 19.09 s</text>
+  <text x="510" y="397" font-size="8.8" font-weight="700" fill="#1d4ed8">87.0% reduction (avoids cold queues)</text>
+
+  <rect x="720" y="340" width="208" height="68" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="730" y="357" font-size="8.9" font-weight="700" fill="#1e3a8a">p50 E2E TTFT</text>
+  <text x="730" y="378" font-size="12.0" font-weight="700" fill="#0f172a">142.39 s → 14.65 s</text>
+  <text x="730" y="397" font-size="8.7" fill="#334155">All required models stay warm</text>
+
+  <rect x="500" y="416" width="208" height="68" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="510" y="433" font-size="8.9" font-weight="700" fill="#334155">Active Serving Window</text>
+  <text x="510" y="454" font-size="12.0" font-weight="700" fill="#0f172a">728 s → 578 s</text>
+  <text x="510" y="473" font-size="8.7" fill="#475569">Finishes workload 150 s sooner</text>
+
+  <rect x="720" y="416" width="208" height="68" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+  <text x="730" y="433" font-size="8.9" font-weight="700" fill="#065f46">Remoting Throughput</text>
+  <text x="730" y="454" font-size="12.0" font-weight="700" fill="#065f46">≥ 97.3%</text>
+  <text x="730" y="473" font-size="8.7" fill="#065f46">≤ 2.7% overhead vs. vanilla vLLM</text>
+
+  <text x="20" y="519" font-size="8.8" fill="#64748b">Measurement scope: all results come from 1 GPU inside an 8×A800 server (1 TB DRAM); assumes trusted engines, 1 active model/GPU, and no CUDA Graphs (§5).</text>
+</svg>

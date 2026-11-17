@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="PDScope 分相协同架构图：离线画像、PhasePer 预测器、AdaptSched 跨层调度与静态图零拷贝 AsyncIO 引擎" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', 'Lato', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="22" y="33" font-size="16.4" font-weight="700" fill="#0f172a">PDScope 分相协同架构：PhasePer 预测、AdaptSched 调度与零拷贝执行流水线</text>
+  <text x="22" y="52" font-size="10.0" fill="#475569">arXiv:2610.39216v1（§4 与 Fig. 6–8, Alg. 1）· 把 Prefill（算力受限、积极加载）与 Decode（I/O 受限、保守传输）彻底解耦为独立优化空间</text>
+  <line x1="22" y1="61" x2="938" y2="61" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Column 1: Stage 1 Offline Profiling -->
+  <rect x="20" y="70" width="256" height="420" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="70" width="256" height="26" rx="9" fill="#1e3a8a"/>
+  <rect x="20" y="88" width="256" height="8" fill="#1e3a8a"/>
+  <text x="30" y="87" font-size="10.4" font-weight="700" fill="#ffffff">阶段一 · 离线画像 (&lt;30 分钟/模型)</text>
+
+  <rect x="28" y="104" width="240" height="110" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="36" y="111" width="60" height="17" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="66" y="123" text-anchor="middle" font-size="9.0" font-weight="700" fill="#334155">TRACE</text>
+  <text x="104" y="123.5" font-size="10.4" font-weight="700" fill="#0f172a">分相路由轨迹采集</text>
+  <text x="36" y="144" font-size="9.1" fill="#334155">• 128 批 ShareGPT (4096 入 + 512 出)</text>
+  <text x="36" y="162" font-size="9.1" fill="#334155">• 按 Prefill / Decode 隔离存 (a,w_i,e_i)</text>
+  <text x="36" y="180" font-size="9.1" fill="#334155">• 隐状态余弦相似度拐点划分层群：</text>
+  <text x="36" y="198" font-size="9.0" fill="#475569">  Input / Middle / Output 三群 (§3.1)</text>
+
+  <line x1="148" y1="214" x2="148" y2="227" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="28" y="229" width="240" height="116" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="36" y="236" width="60" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="66" y="248" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1d4ed8">COST</text>
+  <text x="104" y="248.5" font-size="10.4" font-weight="700" fill="#1e3a8a">硬件自适应成本表</text>
+  <text x="36" y="269" font-size="9.1" fill="#1e293b">• 映射 token 数 → CPU 计算 t_c(·)</text>
+  <text x="36" y="287" font-size="9.1" fill="#1e293b">• 标定 GPU 执行 t_g 与 Attention t_attn</text>
+  <text x="36" y="305" font-size="9.1" fill="#1e293b">• 测量 PCIe 启动 α 与传输耗时 t_io</text>
+  <text x="36" y="323" font-size="9.0" fill="#334155">• 自动适配 A100/3090/V100 平台</text>
+
+  <line x1="148" y1="345" x2="148" y2="358" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="28" y="360" width="240" height="118" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="36" y="367" width="60" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="66" y="379" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1d4ed8">CACHE</text>
+  <text x="104" y="379.5" font-size="10.4" font-weight="700" fill="#1e3a8a">热专家表静态缓存</text>
+  <text x="36" y="400" font-size="9.1" fill="#1e293b">• 24GB 显存余量 (5.8–8.7GB) 预载热专家</text>
+  <text x="36" y="418" font-size="9.1" fill="#1e293b">• 摊薄高频专家的冷启动加载开销</text>
+  <text x="36" y="436" font-size="9.1" fill="#334155">• 极紧显存可关闭 (§5.4)：直接流式覆写</text>
+  <text x="36" y="454" font-size="9.0" font-weight="700" fill="#1d4ed8">  Prefill 仅降 1.8% · Decode 降 8.2%</text>
+
+  <!-- Connectors Col 1 -> Col 2 -->
+  <line x1="276" y1="158" x2="294" y2="158" stroke="#1d4ed8" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+  <line x1="276" y1="288" x2="294" y2="355" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Column 2 Top: Stage 2 PhasePer -->
+  <rect x="296" y="70" width="346" height="172" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="296" y="70" width="346" height="26" rx="9" fill="#1d4ed8"/>
+  <rect x="296" y="88" width="346" height="8" fill="#1d4ed8"/>
+  <text x="306" y="87" font-size="10.4" font-weight="700" fill="#ffffff">阶段二 · PhasePer 分相激活排序预测 (§4.2)</text>
+
+  <rect x="304" y="102" width="162" height="82" rx="6" fill="#f8fafc" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="312" y="117" font-size="9.3" font-weight="700" fill="#1e3a8a">Input/Output 浅层网络</text>
+  <text x="312" y="135" font-size="8.0" fill="#0f172a">P: L_expert(1/f_i) + λL_focal</text>
+  <text x="312" y="151" font-size="8.0" fill="#0f172a">D: 仅用 L_focal (单 token 无偏)</text>
+  <text x="312" y="169" font-size="8.0" fill="#475569">防噪声过拟合，抑制长尾激活失衡</text>
+
+  <rect x="472" y="102" width="162" height="82" rx="6" fill="#f8fafc" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="480" y="117" font-size="9.3" font-weight="700" fill="#1e3a8a">Middle 深度门控残差网</text>
+  <text x="480" y="135" font-size="8.3" fill="#0f172a">隐状态 a 动态调制残差门控单元</text>
+  <text x="480" y="151" font-size="8.3" fill="#0f172a">双相统一采用标准 BCE 稳态收敛</text>
+  <text x="480" y="169" font-size="8.2" fill="#475569">利用高余弦相似度捕捉跨层映射</text>
+
+  <rect x="304" y="190" width="330" height="44" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="312" y="206" font-size="8.7" fill="#0f172a">在线微调：16-token 滑窗误率 &gt;25% → 2.1ms 微调 (128P+32D)</text>
+  <text x="312" y="223" font-size="8.6" font-weight="700" fill="#1d4ed8">&gt;500P / &gt;1000D 步触发 · Top-6(±2) 90–100% · 0.12–0.48ms 隐藏</text>
+
+  <!-- Arrow PhasePer -> AdaptSched -->
+  <line x1="469" y1="242" x2="469" y2="254" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <!-- Column 2 Bottom: Stage 3 AdaptSched -->
+  <rect x="296" y="256" width="346" height="234" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="296" y="256" width="346" height="26" rx="9" fill="#1e3a8a"/>
+  <rect x="296" y="274" width="346" height="8" fill="#1e3a8a"/>
+  <text x="306" y="273" font-size="10.4" font-weight="700" fill="#ffffff">阶段三 · AdaptSched 跨层成本调度 (Alg. 1)</text>
+
+  <rect x="304" y="288" width="330" height="22" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="312" y="302.5" font-size="8.6" fill="#334155">前提：非驻留专家按 token 升序 · 单调加载 · 串行 I/O (防并发拥塞)</text>
+
+  <!-- Prefill Sub-panel -->
+  <rect x="304" y="316" width="162" height="166" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="312" y="332" font-size="9.5" font-weight="700" fill="#1e3a8a">Prefill · 积极预取 (3 步)</text>
+  <text x="312" y="350" font-size="8.4" font-weight="700" fill="#0f172a">1. 跨层全局队列 E_all</text>
+  <text x="312" y="365" font-size="8.2" fill="#334155">   比对 T_all^G &lt; T_all^C</text>
+  <text x="312" y="384" font-size="8.4" font-weight="700" fill="#0f172a">2. 局部重评 (防误差级联)</text>
+  <text x="312" y="399" font-size="8.2" fill="#334155">   按真实 E_cur 判 T_G &lt; T_C 定 L_on</text>
+  <text x="312" y="418" font-size="8.4" font-weight="700" fill="#0f172a">3. 置信度预取 L_pre</text>
+  <text x="312" y="433" font-size="8.2" fill="#334155">   利用 T_gap+t_attn，ξ&gt;0 发边界</text>
+  <rect x="311" y="447" width="148" height="26" rx="4" fill="#dbeafe"/>
+  <text x="385" y="463.5" text-anchor="middle" font-size="8.4" font-weight="700" fill="#1d4ed8">消除欠取，填满 GPU 计算</text>
+
+  <!-- Decode Sub-panel -->
+  <rect x="472" y="316" width="162" height="166" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.1"/>
+  <text x="480" y="332" font-size="9.5" font-weight="700" fill="#92400e">Decode · 保守 I/O (4 模式)</text>
+  <text x="480" y="349" font-size="7.7" font-weight="600" fill="#78350f">n_c=argmin max((k-n_c)t_g, n_c t_c)</text>
+  <text x="480" y="368" font-size="8.3" fill="#0f172a">• a 加载：Eq.(5) 压单层延迟</text>
+  <text x="480" y="387" font-size="8.3" fill="#0f172a">• b 预取：卸载+Eq.(6) 防过取</text>
+  <text x="480" y="406" font-size="8.3" fill="#0f172a">• c 卸载：CPU 有备份零 I/O</text>
+  <text x="480" y="425" font-size="8.3" fill="#0f172a">• d 跨层：Step 1–3 + Eq.(6)</text>
+  <rect x="479" y="447" width="148" height="26" rx="4" fill="#fef3c7"/>
+  <text x="553" y="463.5" text-anchor="middle" font-size="8.4" font-weight="700" fill="#b45309">消 PCIe 气泡，Mode d 扩批</text>
+
+  <!-- Connectors Col 2 -> Col 3 -->
+  <line x1="642" y1="156" x2="656" y2="156" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr-teal)"/>
+  <line x1="642" y1="382" x2="656" y2="382" stroke="#0f766e" stroke-width="1.7" marker-end="url(#arr-teal)"/>
+
+  <!-- Column 3: Stage 4 Static Graph & Zero-Copy Engine -->
+  <rect x="658" y="70" width="282" height="420" rx="9" fill="#ffffff" stroke="#0f766e" stroke-width="1.2"/>
+  <rect x="658" y="70" width="282" height="26" rx="9" fill="#0f766e"/>
+  <rect x="658" y="88" width="282" height="8" fill="#0f766e"/>
+  <text x="668" y="87" font-size="10.4" font-weight="700" fill="#ffffff">阶段四 · 静态图与零拷贝 AsyncIO (§4.4)</text>
+
+  <rect x="666" y="104" width="266" height="174" rx="7" fill="#ecfdf5" stroke="#10b981" stroke-width="1.1"/>
+  <rect x="674" y="111" width="76" height="17" rx="4" fill="#d1fae5" stroke="#10b981" stroke-width="0.8"/>
+  <text x="712" y="123" text-anchor="middle" font-size="8.9" font-weight="700" fill="#065f46">静态图编排</text>
+  <text x="756" y="123.5" font-size="10.1" font-weight="700" fill="#065f46">两阶段编译 (消轮询税)</text>
+
+  <text x="674" y="146" font-size="8.9" font-weight="700" fill="#065f46">1. 预编译（执行第 l-1 层时）</text>
+  <text x="674" y="162" font-size="8.6" fill="#334155">   对 PhasePer 高置信热/冷专家生成草稿图</text>
+  <text x="674" y="182" font-size="8.9" font-weight="700" fill="#065f46">2. 重编译（第 l 层 Gate 就绪后）</text>
+  <text x="674" y="198" font-size="8.6" fill="#334155">   用真实路由重算并覆写草稿，零误差传播</text>
+  <text x="674" y="218" font-size="8.9" font-weight="700" fill="#065f46">3. 微架构执行与延迟掩蔽 (§5.6)</text>
+  <text x="674" y="234" font-size="8.6" fill="#334155">   CPU LLC 预取 + GPU 合并单次 Kernel 发射</text>
+  <text x="674" y="254" font-size="8.6" font-weight="700" fill="#0f766e">   Sort 8.1ms 全掩蔽于 12 GPU+4 CPU 专家</text>
+
+  <line x1="799" y1="278" x2="799" y2="291" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+
+  <rect x="666" y="293" width="266" height="185" rx="7" fill="#f8fafc" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="674" y="300" width="76" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="712" y="312" text-anchor="middle" font-size="8.9" font-weight="700" fill="#1d4ed8">零拷贝 I/O</text>
+  <text x="756" y="312.5" font-size="10.1" font-weight="700" fill="#1e3a8a">AsyncIO 异步传输引擎</text>
+
+  <text x="674" y="335" font-size="8.8" fill="#0f172a">• 一次性预注册两类 GPU 权重缓冲区：</text>
+  <rect x="676" y="344" width="118" height="35" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="735" y="358" text-anchor="middle" font-size="8.4" font-weight="700" fill="#1d4ed8">Ping-Pong Buffer</text>
+  <text x="735" y="372" text-anchor="middle" font-size="8.0" fill="#334155">当前层 l 按需加载</text>
+
+  <rect x="804" y="344" width="118" height="35" rx="5" fill="#ecfdf5" stroke="#0f766e" stroke-width="0.9"/>
+  <text x="863" y="358" text-anchor="middle" font-size="8.4" font-weight="700" fill="#0f766e">Prefetch Buffers</text>
+  <text x="863" y="372" text-anchor="middle" font-size="8.0" fill="#334155">下层 l+1 预取无冲突</text>
+
+  <text x="674" y="398" font-size="8.8" fill="#0f172a">• 3 条独立 CUDA Stream 并发传输三矩阵：</text>
+  <text x="674" y="414" font-size="8.5" font-weight="600" fill="#1d4ed8">  gate_proj / up_proj / down_proj (Pinned Mem)</text>
+
+  <rect x="676" y="427" width="246" height="41" rx="5" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+  <text x="684" y="443" font-size="8.7" font-weight="700" fill="#065f46">实测 PCIe 带宽利用率 66%–80% (Table 3)</text>
+  <text x="684" y="459" font-size="8.3" fill="#334155">DeepSeek 2.78→0.76ms · Mixtral 51.1→13.98ms</text>
+
+  <!-- Legend & Footnote -->
+  <rect x="20" y="501" width="12" height="10" rx="2" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="37" y="510" font-size="9.0" fill="#334155">蓝框：离线校准 / Prefill 积极调度</text>
+  <rect x="232" y="501" width="12" height="10" rx="2" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+  <text x="249" y="510" font-size="9.0" fill="#334155">琥珀：Decode 保守 I/O 与抗气泡约束</text>
+  <rect x="466" y="501" width="12" height="10" rx="2" fill="#ecfdf5" stroke="#0f766e" stroke-width="1"/>
+  <text x="483" y="510" font-size="9.0" fill="#334155">青框：静态图重编译与 AsyncIO 并发流</text>
+  <text x="20" y="527" font-size="8.9" fill="#64748b">注：多批次 (§5.3, §8.6) 采用 chunk=256 分相批处理（Decode 直接用 Mode d）；设计面向单机低批约束，不支持分布式 P/D 重叠并发 (§6)。</text>
+</svg>

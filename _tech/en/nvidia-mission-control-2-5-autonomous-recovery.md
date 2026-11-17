@@ -3,23 +3,22 @@ id: nvidia-mission-control-2-5-autonomous-recovery
 title: 2026-10-27 | Restore GPU Jobs While Faulty Nodes Are Repaired
 date: '2026-10-27'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
 tags:
 - systems-reliability
 - observability
-summary: Mission Control 2.5 separates job recovery, hardware remediation, and scheduling;
-  the engineering trade-offs lie in isolation, retries, and returning capacity to
-  service.
+summary: Mission Control 2.5 separates job recovery, hardware remediation, and scheduling; the engineering trade-offs lie in isolation, retries, and returning capacity to service.
 long_read: true
 source_url: https://developer.nvidia.com/blog/how-nvidia-mission-control-2-5-brings-autonomous-recovery-to-kubernetes/
 permalink: /tech/en/nvidia-mission-control-2-5-autonomous-recovery/
-translation_source: assistant-authored Chinese and English; English translation by
-  assistant
+translation_source: assistant-authored Chinese and English; English translation by assistant
 published_at: '2026-10-27T08:49:56.503057+08:00'
-updated_at: '2026-10-27T08:49:56.503057+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 A GPU fault can stall an entire distributed training job, but restoring the workload and repairing the hardware need not finish together. NVIDIA Mission Control 2.5 extends autonomous recovery to Kubernetes workloads managed through NVIDIA Run:ai. The useful change is the division of responsibility: move work toward healthy capacity, remove suspect nodes from scheduling, and complete diagnosis and repair alongside workload recovery. The article explains the workflow without presenting controlled MTTR or training-throughput comparisons.
 

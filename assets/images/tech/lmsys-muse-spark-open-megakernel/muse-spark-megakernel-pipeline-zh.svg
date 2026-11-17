@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- Outer Frame -->
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17.5" font-weight="700" fill="#0f172a" text-anchor="start">Muse Spark Open 跨层 Megakernel：8× GB300 GPU 与 4 芯片 TPU v7 执行流水线对比</text>
+  <text x="24" y="53" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start">同一 816B MoE（62 层 · 每 token 激活 8/256 NVFP4 专家）：GPU 受限于约 128 KB SM 指令缓存止步每层 1 核，TPU 单核吞下全步 62 层</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row A: GPU (LMSYS 8x GB300) -->
+  <rect x="24" y="72" width="912" height="196" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="72" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="90" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="90" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">A · 8× GB300 GPU（LMSYS sgl-muse-mega，CUDA / PTX）：每层 1 次 Launch（1,450 → 97 次/步）· 144 SM × 12 Warp 静态多任务</text>
+
+  <!-- Card A1 -->
+  <rect x="34" y="108" width="210" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="44" y="116" width="136" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="112" y="130" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">1 · 跨层边界与 Warp</text>
+  <text x="44" y="152" font-size="9.5" font-weight="600" fill="#0f172a" text-anchor="start">Attn 起始 → 下层 QKV 与 KV 写</text>
+  <text x="44" y="170" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">历史 KV 已有，不等上层即可读</text>
+  <text x="44" y="188" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">4 块集群 + 12 Warp 分工载/算</text>
+  <text x="44" y="206" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">W0/1 预取，W2-11 张量核/SwiGLU</text>
+  <rect x="44" y="220" width="190" height="28" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="139" y="238" font-size="9.2" font-weight="600" fill="#92400e" text-anchor="middle">代码 215–314 KB &gt; 128 KB I-cache</text>
+
+  <line x1="244" y1="183" x2="256" y2="183" stroke="#2563eb" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <!-- Card A2 -->
+  <rect x="258" y="108" width="210" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="268" y="116" width="144" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="340" y="130" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">2 · 三级缓冲与代码预热</text>
+  <text x="268" y="152" font-size="9.5" font-weight="600" fill="#0f172a" text-anchor="start">SMEM 环 5×32 KB + L2 135 MB</text>
+  <text x="268" y="170" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">已知权重进环，余量 evict-first 进 L2</text>
+  <text x="268" y="188" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">W3 推测预取上步 Top-14 专家 (~50MB)</text>
+  <text x="268" y="206" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">保持循环不展开省约 50 KB 代码</text>
+  <rect x="268" y="220" width="190" height="28" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.9"/>
+  <text x="363" y="238" font-size="9.2" font-weight="600" fill="#0369a1" text-anchor="middle">每核读 128B 代码行 + 2-pass 干跑</text>
+
+  <line x1="468" y1="183" x2="480" y2="183" stroke="#2563eb" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <!-- Card A3 -->
+  <rect x="482" y="108" width="210" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="492" y="116" width="144" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="564" y="130" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">3 · N 维切分与无 Fence</text>
+  <text x="492" y="152" font-size="9.5" font-weight="600" fill="#0f172a" text-anchor="start">两专家 GEMM 均按 N 切 (5 次停顿)</text>
+  <text x="492" y="170" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">SM 内用 mbarrier；跨 GPU 轮询</text>
+  <text x="492" y="188" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">避开 3.6–4.0 µs MEMBAR.ALL.SYS</text>
+  <text x="492" y="206" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">专家交换用双缓冲轮换脱离关键路径</text>
+  <rect x="492" y="220" width="190" height="28" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="0.9"/>
+  <text x="587" y="238" font-size="9.2" font-weight="600" fill="#166534" text-anchor="middle">Lamport 哨兵：bf16 FFFF / +0↔-0</text>
+
+  <line x1="692" y1="183" x2="704" y2="183" stroke="#2563eb" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <!-- Card A4 -->
+  <rect x="706" y="108" width="220" height="150" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="716" y="116" width="148" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="790" y="130" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">4 · 草稿融合与实测范围</text>
+  <text x="716" y="152" font-size="9.5" font-weight="600" fill="#0f172a" text-anchor="start">DFlash V2：175 → 8 次 Launch</text>
+  <text x="716" y="170" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">草稿耗时 1.16 → 0.44 ms (2.6×)</text>
+  <text x="716" y="188" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">验证与草稿并入同一 CUDA Graph</text>
+  <text x="716" y="206" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="start">GSM8K BS=1：517 → 1,109 tok/s</text>
+  <rect x="716" y="220" width="200" height="28" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="816" y="238" font-size="9.2" font-weight="600" fill="#92400e" text-anchor="middle">当前范围：仅支持 BS=1 + 投机采样</text>
+
+  <!-- Row B: TPU v7 (PyTorch / RadixArk) -->
+  <rect x="24" y="278" width="912" height="196" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="278" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="296" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="296" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">B · 4 芯片 TPU v7（PyTorch / RadixArk SGLang-TorchTPU，Pallas）：单次 pallas_call 贯通全部 62 层 · 单线程 DMA 流水</text>
+
+  <!-- Card B1 -->
+  <rect x="34" y="314" width="210" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="44" y="322" width="136" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="112" y="336" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">1 · 单线程全步 62 层</text>
+  <text x="44" y="358" font-size="9.5" font-weight="600" fill="#0f172a" text-anchor="start">单设备单线程，1 次调用跑完 62 层</text>
+  <text x="44" y="376" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">无 GPU 式 128 KB SM I-cache 挤兑</text>
+  <text x="44" y="394" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">消除 ~45 µs/层独立集合通信边界</text>
+  <text x="44" y="412" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">嵌入/草稿/KV 写/采样留在核外</text>
+  <rect x="44" y="426" width="190" height="28" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.9"/>
+  <text x="139" y="444" font-size="9.1" font-weight="600" fill="#0369a1" text-anchor="middle">原因：XLA 会复制远程 DMA 别名缓冲</text>
+
+  <line x1="244" y1="389" x2="256" y2="389" stroke="#2563eb" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <!-- Card B2 -->
+  <rect x="258" y="314" width="210" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="268" y="322" width="144" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="340" y="336" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">2 · VMEM 环与循环拆分</text>
+  <text x="268" y="358" font-size="9.5" font-weight="600" fill="#0f172a" text-anchor="start">~10 权重块在途达 3.34 TB/s/设备</text>
+  <text x="268" y="376" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">对比单 DMA 流仅 1.13 TB/s</text>
+  <text x="268" y="394" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">路由结束立即 3 专家在途，下层延后</text>
+  <text x="268" y="412" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">专家按行数分 ≤4 与 &gt;4 两条循环</text>
+  <rect x="268" y="426" width="190" height="28" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="0.9"/>
+  <text x="363" y="444" font-size="9.1" font-weight="600" fill="#166534" text-anchor="middle">溢出少 61–64%，多请求快 13–19%</text>
+
+  <line x1="468" y1="389" x2="480" y2="389" stroke="#2563eb" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <!-- Card B3 -->
+  <rect x="482" y="314" width="210" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="492" y="322" width="144" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="564" y="336" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">3 · 集合折叠与无 Max</text>
+  <text x="492" y="358" font-size="9.5" font-weight="600" fill="#0f172a" text-anchor="start">核内远程 DMA 直写对端 (~3 µs)</text>
+  <text x="492" y="376" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">RMSNorm 标量可交换，片到即乘</text>
+  <text x="492" y="394" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">QK-norm 锁死得分 ≤43.8 零溢出</text>
+  <text x="492" y="412" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">删 running max + fp8 键直入 MXU</text>
+  <rect x="492" y="426" width="190" height="28" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="0.9"/>
+  <text x="587" y="444" font-size="9.1" font-weight="600" fill="#166534" text-anchor="middle">注意力微基准 3.9×；500K 步 +18%</text>
+
+  <line x1="692" y1="389" x2="704" y2="389" stroke="#2563eb" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <!-- Card B4 -->
+  <rect x="706" y="314" width="220" height="150" rx="6" fill="#f8fafc" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="716" y="322" width="148" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="790" y="336" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">4 · 核外 KV 写与并发效果</text>
+  <text x="716" y="358" font-size="9.5" font-weight="600" fill="#0f172a" text-anchor="start">sequence-on-lane fp8：512→256 B</text>
+  <text x="716" y="376" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">双 VMEM 体写 KV：810 → 155 µs</text>
+  <text x="716" y="394" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="start">BS=1 TPOT 3.78 → 1.95 ms (1.94×)</text>
+  <text x="716" y="412" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">Verify 达纯 HBM 权重流 1.5–1.7×</text>
+  <rect x="716" y="426" width="200" height="28" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.9"/>
+  <text x="816" y="444" font-size="9.1" font-weight="600" fill="#0369a1" text-anchor="middle">2 并发 1.85×；随并发升高增益收窄</text>
+
+  <!-- Bottom Banner & Caption -->
+  <rect x="24" y="482" width="912" height="26" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="499" font-size="10" font-weight="600" fill="#1e3a8a" text-anchor="start">核心对照：GPU 靠 12 Warp + I-cache 预热掩盖层内 5 次等卡；TPU 靠单线程 DMA + VMEM 环融合 62 层，仅将 KV 写回留于核外</text>
+  <text x="24" y="523" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 依据 LMSYS (2026-11-11) 与 PyTorch / RadixArk (2026-11-10) 一手博文机制整理绘制（非原博配图）</text>
+</svg>

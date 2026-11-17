@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">Kimi K3.1 Pro 后训练扩展层与 human-atlas 长程诊断路径</text>
+  <text x="24" y="56" font-size="11.2" font-weight="400" fill="#475569" text-anchor="start">依据官方技术博客梳理：区分已披露基准收益、单一长程排障案例与未公开调度机制</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="76" width="912" height="52" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="34" y="86" width="194" height="32" rx="5" fill="#1d4ed8"/>
+  <text x="131.0" y="106.0" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">K3 → K3.1 Pro · 3T 级 / 1M</text>
+  <text x="240" y="98" font-size="11.2" font-weight="600" fill="#0f172a" text-anchor="start">在 K3 基础上大幅增加跨数百个下游领域的联合 RL 算力（同时发布未附对照表的 Highspeed 2–3× 版本）</text>
+  <text x="240" y="118" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">公开口径边界：报告主要给结果分数与产品通道，未提供可直接复现的集群/训练调度参数</text>
+  <rect x="24" y="138" width="446" height="186" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="138" width="446" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="156" width="446" height="10" fill="#dbeafe"/>
+  <text x="36" y="157" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">提及的六层支撑栈（仅列名称，未公开实现）</text>
+  <rect x="34" y="175" width="136" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="42" y="192" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">RL 框架</text>
+  <text x="42" y="208" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">强化学习训练底座</text>
+  <rect x="178" y="175" width="136" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="186" y="192" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">长上下文推理</text>
+  <text x="186" y="208" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">支持 1M 上下文窗口</text>
+  <rect x="322" y="175" width="136" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="330" y="192" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">训练效率</text>
+  <text x="330" y="208" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">提高单位算力回报</text>
+  <rect x="34" y="225" width="136" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="42" y="242" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">沙箱基础设施</text>
+  <text x="42" y="258" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">代码与环境隔离执行</text>
+  <rect x="178" y="225" width="136" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="186" y="242" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">Rollout 调度</text>
+  <text x="186" y="258" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">长程轨迹生成编排</text>
+  <rect x="322" y="225" width="136" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="330" y="242" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">统一环境质检</text>
+  <text x="330" y="258" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">跨领域环境质量校验</text>
+  <rect x="34" y="279" width="426" height="36" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="44" y="295" font-size="9.8" font-weight="600" fill="#92400e" text-anchor="start">未公开细节：Rollout 调度算法、Off-Policy 陈旧度容忍、沙箱并发配额、</text>
+  <text x="44" y="309" font-size="9.8" font-weight="400" fill="#78350f" text-anchor="start">奖励校验器结构与分领域消融曲线（不可仅凭“优化全栈”脑补架构）</text>
+  <rect x="490" y="138" width="446" height="186" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="490" y="138" width="446" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="490" y="156" width="446" height="10" fill="#dbeafe"/>
+  <text x="502" y="157" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">跨领域官方报告结果（均基于 max 推理强度）</text>
+  <rect x="500" y="172" width="426" height="33" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="506" y="178" width="86" height="21" rx="5" fill="#1e40af"/>
+  <text x="549.0" y="192.5" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">编码与长程</text>
+  <text x="600" y="186" font-size="9.6" font-weight="600" fill="#0f172a" text-anchor="start">Terminal-Bench 4.0: 65.7% · SWE Marathon: 51.7%</text>
+  <text x="600" y="199" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">Kimi Code Bench 3.0 Long-horizon: 61.2%（前代 K3: 55.95%）</text>
+  <rect x="500" y="209" width="426" height="33" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="506" y="215" width="86" height="21" rx="5" fill="#1e40af"/>
+  <text x="549.0" y="229.5" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">3D / CAD</text>
+  <text x="600" y="223" font-size="9.6" font-weight="600" fill="#0f172a" text-anchor="start">BenchCAD (1k 抽样): 含工具 92.7% vs 无工具 72.8%</text>
+  <text x="600" y="236" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">无需 MCP 即可编排 Blender / FreeCAD / Unity / Godot</text>
+  <rect x="500" y="246" width="426" height="33" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="506" y="252" width="86" height="21" rx="5" fill="#1e40af"/>
+  <text x="549.0" y="266.5" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">金融工作流</text>
+  <text x="600" y="260" font-size="9.6" font-weight="600" fill="#0f172a" text-anchor="start">OfficeQA Pro v2: 64.4 · Frontier Finance: 58.6</text>
+  <text x="600" y="273" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">内部建模 +7.2（57.6）· 研究 +11.6（70.4）· 运营 ~4.2×</text>
+  <rect x="500" y="283" width="426" height="33" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="506" y="289" width="86" height="21" rx="5" fill="#1e40af"/>
+  <text x="549.0" y="303.5" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">事实压测</text>
+  <text x="600" y="297" font-size="9.6" font-weight="600" fill="#0f172a" text-anchor="start">Hallu Bench Hard: 23.4% → 8.3%（出错率降至 K3 的 42.4%）</text>
+  <text x="600" y="310" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">声明：专为易错场景构造的压力测试，不代表日常错误率</text>
+  <rect x="24" y="334" width="912" height="168" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="334" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="352" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="353" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">长程诊断案例：human-atlas 人体行走动力学模拟器（167 次任务 · 420 次独立评审）</text>
+  <rect x="36" y="374" width="204" height="114" rx="7" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="46" y="396" font-size="11.2" font-weight="700" fill="#1e3a8a" text-anchor="start">1. 解剖模型与初态</text>
+  <text x="46" y="420" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">human-atlas: 296 骨骼</text>
+  <text x="46" y="439" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">（含软骨）+ 402 肌肉</text>
+  <line x1="46" y1="452" x2="230" y2="452" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="46" y="471" font-size="9.9" font-weight="600" fill="#1e3a8a" text-anchor="start">初始行走控制器数秒摔倒</text>
+  <line x1="242" y1="431" x2="256" y2="431" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="260" y="374" width="204" height="114" rx="7" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="270" y="396" font-size="11.2" font-weight="700" fill="#92400e" text-anchor="start">2. 奖励塑形受阻</text>
+  <text x="270" y="420" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">调整奖励函数后</text>
+  <text x="270" y="439" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">手臂摆动仍无明显改善</text>
+  <line x1="270" y1="452" x2="454" y2="452" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="270" y="471" font-size="9.9" font-weight="600" fill="#92400e" text-anchor="start">若只调权重将陷入局部死循环</text>
+  <line x1="466" y1="431" x2="480" y2="431" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="484" y="374" width="204" height="114" rx="7" fill="#eff6ff" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="494" y="396" font-size="11.2" font-weight="700" fill="#1d4ed8" text-anchor="start">3. 开环动力学探针</text>
+  <text x="494" y="420" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">放弃仅靠调奖励，改对</text>
+  <text x="494" y="439" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">模拟器动力学做开环探测</text>
+  <line x1="494" y1="452" x2="678" y2="452" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="494" y="471" font-size="9.9" font-weight="600" fill="#1d4ed8" text-anchor="start">定位 36 处肩部肌肉力臂错误</text>
+  <line x1="690" y1="431" x2="704" y2="431" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="708" y="374" width="204" height="114" rx="7" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.2"/>
+  <text x="718" y="396" font-size="11.2" font-weight="700" fill="#166534" text-anchor="start">4. 重训与边界提示</text>
+  <text x="718" y="420" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">修正环境错误后重训控制器</text>
+  <text x="718" y="439" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">实现 11.2 秒连续交替行走</text>
+  <line x1="718" y1="452" x2="902" y2="452" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="718" y="471" font-size="9.9" font-weight="600" fill="#166534" text-anchor="start">注意：系单一案例，非统计保证</text>
+  <text x="24" y="522" font-size="10.2" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图（非原文配图）· 数据严格出自 Moonshot AI《Kimi K3.1 Pro Tech Blog》（2026-11-04）</text>
+</svg>

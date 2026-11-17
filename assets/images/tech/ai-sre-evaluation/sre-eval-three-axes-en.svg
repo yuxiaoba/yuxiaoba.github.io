@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="38" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">AI SRE Evaluation Split: Diagnosis, Evidence Citations &amp; Blast-Radius Control</text>
+  <text x="24" y="58" font-size="11.2" font-weight="400" fill="#475569" text-anchor="start">From One2N (2026-11-02): separating the OpenSRE -1 misdiagnosis and coding-harness blind spots into 3 axes</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="24" y="78" width="446" height="68" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.1"/>
+  <rect x="34" y="85" width="132" height="20" rx="5" fill="#b91c1c"/>
+  <text x="100" y="99" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="middle">OpenSRE PoC · -1</text>
+  <text x="174" y="99" font-size="10.8" font-weight="700" fill="#7f1d1d" text-anchor="start">kubectl scale=0 blamed Helm rollback (0 proof)</text>
+  <text x="34" y="120" font-size="10.2" font-weight="400" fill="#991b1b" text-anchor="start">One -1 score hides 3 defects: wrong target, false story, missing proof</text>
+  <text x="34" y="136" font-size="9.7" font-weight="400" fill="#7f1d1d" text-anchor="start">Fixes differ: broader tools != better reasoning != enforced citations</text>
+
+  <rect x="490" y="78" width="446" height="68" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <rect x="500" y="85" width="134" height="20" rx="5" fill="#b45309"/>
+  <text x="567" y="99" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="middle">Coding Harness Gap</text>
+  <text x="642" y="99" font-size="10.8" font-weight="700" fill="#78350f" text-anchor="start">"Just use Claude" misses ops context</text>
+  <text x="500" y="120" font-size="10.2" font-weight="400" fill="#92400e" text-anchor="start">Lacks shared org runbooks; laptop creds blur audit logs &amp; scope</text>
+  <text x="500" y="136" font-size="9.7" font-weight="400" fill="#78350f" text-anchor="start">Emits opaque bash scripts: untrusted or blindly run under incident stress</text>
+
+  <rect x="24" y="158" width="292" height="276" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="158" width="292" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="178" width="292" height="10" fill="#dbeafe"/>
+  <text x="36" y="178" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Axis 1 · Diagnostic Quality (SREGym 3x3)</text>
+
+  <rect x="34" y="196" width="272" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="216" font-size="11.3" font-weight="700" fill="#1d4ed8" text-anchor="start">Fault Localization (3 Binary Qs)</text>
+  <text x="42" y="236" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">Pinpoints true origin component</text>
+  <text x="42" y="254" font-size="10.2" font-weight="400" fill="#0f172a" text-anchor="start">Separates origin vs. symptom noise</text>
+
+  <rect x="34" y="276" width="272" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="296" font-size="11.3" font-weight="700" fill="#1d4ed8" text-anchor="start">Fault Characterization (3 Binary Qs)</text>
+  <text x="42" y="316" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">Explains true failure mechanism</text>
+  <text x="42" y="334" font-size="10.2" font-weight="400" fill="#0f172a" text-anchor="start">Rejects false rollback stories</text>
+
+  <rect x="34" y="356" width="272" height="70" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="376" font-size="11.3" font-weight="700" fill="#1d4ed8" text-anchor="start">Failure Scope &amp; 7/9 Pass Rule</text>
+  <text x="42" y="396" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">Bounds affected pods &amp; services</text>
+  <text x="42" y="414" font-size="10.2" font-weight="400" fill="#0f172a" text-anchor="start">7/9 pass: fails if 1 axis scores 0/3</text>
+
+  <rect x="334" y="158" width="292" height="276" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="334" y="158" width="292" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="334" y="178" width="292" height="10" fill="#dbeafe"/>
+  <text x="346" y="178" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Axis 2 · Grounded Evidence &amp; Audit</text>
+
+  <rect x="344" y="196" width="272" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="352" y="216" font-size="11.3" font-weight="700" fill="#1d4ed8" text-anchor="start">Hypothesis Evidence Links</text>
+  <text x="352" y="236" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">Binds logs, metrics &amp; traces</text>
+  <text x="352" y="254" font-size="10.2" font-weight="400" fill="#0f172a" text-anchor="start">Shows supporting &amp; rejecting proof</text>
+
+  <rect x="344" y="276" width="272" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="352" y="296" font-size="11.3" font-weight="700" fill="#1d4ed8" text-anchor="start">Stored Traces &amp; Shared View</text>
+  <text x="352" y="316" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">Logs alert, queries, calls &amp; verdict</text>
+  <text x="352" y="334" font-size="10.2" font-weight="400" fill="#0f172a" text-anchor="start">Shared ruled-out view on handoff</text>
+
+  <rect x="344" y="356" width="272" height="70" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="352" y="376" font-size="11.3" font-weight="700" fill="#1d4ed8" text-anchor="start">Separate Agent ID &amp; Intent</text>
+  <text x="352" y="396" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">Own agent ID (never user creds)</text>
+  <text x="352" y="414" font-size="10.2" font-weight="400" fill="#0f172a" text-anchor="start">Readable intent over long raw CoT</text>
+
+  <rect x="644" y="158" width="292" height="276" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="644" y="158" width="292" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="644" y="178" width="292" height="10" fill="#dbeafe"/>
+  <text x="656" y="178" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Axis 3 · Blast-Radius &amp; Guardrails</text>
+
+  <rect x="654" y="196" width="272" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="662" y="216" font-size="11.3" font-weight="700" fill="#1d4ed8" text-anchor="start">Least Privilege &amp; Dry Runs</text>
+  <text x="662" y="236" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">Read-only default + short-lived creds</text>
+  <text x="662" y="254" font-size="10.2" font-weight="400" fill="#0f172a" text-anchor="start">Pre-checks, dry run &amp; rollback steps</text>
+
+  <rect x="654" y="276" width="272" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="662" y="296" font-size="11.3" font-weight="700" fill="#1d4ed8" text-anchor="start">Action Caps &amp; Loop Breakers</text>
+  <text x="662" y="316" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">Blast cap: 1 deployment or 1 AZ max</text>
+  <text x="662" y="334" font-size="10.2" font-weight="400" fill="#0f172a" text-anchor="start">Rate limits + stops restart loops</text>
+
+  <rect x="654" y="356" width="272" height="70" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="662" y="376" font-size="11.3" font-weight="700" fill="#1d4ed8" text-anchor="start">Risk Score, PII Scrub &amp; Escalate</text>
+  <text x="662" y="396" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">Action risk score; scrub PII/secrets</text>
+  <text x="662" y="414" font-size="10.2" font-weight="400" fill="#0f172a" text-anchor="start">Escalates with full investigation log</text>
+
+  <rect x="24" y="446" width="912" height="54" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="36" y="468" font-size="11.2" font-weight="700" fill="#1e3a8a" text-anchor="start">Core Shift: Coding harnesses give one engineer an answer; AI SRE agents run shared, auditable, bounded investigations</text>
+  <text x="36" y="488" font-size="10" font-weight="400" fill="#334155" text-anchor="start">Scope note: SREGym 7/9 is cited by One2N from an external rubric; One2N reports zero comparative product scores or MTTR trials here</text>
+
+  <text x="24" y="520" font-size="9.8" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram synthesized from One2N's "What changed in how we evaluate AI SRE agents" (Biswa Prakash Mishra, 2026-11-02; not an original figure)</text>
+</svg>

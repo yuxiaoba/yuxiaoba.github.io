@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">Primary Source Lineage, Metric Boundaries &amp; Deployment Evaluation</text>
+  <text x="24" y="56" font-size="11" font-weight="400" fill="#475569" text-anchor="start">Distinguishing Runtime 2026 talk statements, May-Oct 2026 primary engineering posts, and secondary summary additions (vLLM Bangkok)</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Lane 1: AgentX Workload Stats -->
+  <rect x="24" y="76" width="912" height="84" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="34" y="86" width="114" height="64" rx="6" fill="#1e3a8a"/>
+  <text x="91" y="114" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Workload</text>
+  <text x="91" y="135" font-size="10.5" font-weight="600" fill="#bfdbfe" text-anchor="middle">AgentX Metrics</text>
+
+  <rect x="162" y="84" width="242" height="68" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="172" y="103" font-size="10.3" font-weight="700" fill="#1e3a8a" text-anchor="start">Primary · vLLM x AgentX (Sep 8)</text>
+  <text x="172" y="123" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">43 turns · P50 142K in / 444 out</text>
+  <text x="172" y="141" font-size="9.5" font-weight="400" fill="#475569" text-anchor="start">&gt;96% theor. reuse · 44% sub-agents</text>
+  <line x1="406" y1="118" x2="416" y2="118" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="419" y="84" width="242" height="68" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="429" y="103" font-size="10.3" font-weight="700" fill="#78350f" text-anchor="start">Secondary · Arithmetic &amp; X Gloss</text>
+  <text x="429" y="123" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">Blog divides medians (~320 ratio)</text>
+  <text x="429" y="141" font-size="9.5" font-weight="400" fill="#92400e" text-anchor="start">X thread calls reuse "&gt;95% hit rate"</text>
+  <line x1="663" y1="118" x2="673" y2="118" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="676" y="84" width="250" height="68" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="686" y="103" font-size="10.3" font-weight="700" fill="#166534" text-anchor="start">Boundary · Avoid Conflation</text>
+  <text x="686" y="123" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">Public AgentX, not Inferact traffic</text>
+  <text x="686" y="141" font-size="9.5" font-weight="400" fill="#14532d" text-anchor="start">Not mean ratio; Mooncake avg 131:1</text>
+
+  <!-- Lane 2: Mooncake May 2026 Experiments -->
+  <rect x="24" y="166" width="912" height="84" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="34" y="176" width="114" height="64" rx="6" fill="#1e3a8a"/>
+  <text x="91" y="204" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Mooncake</text>
+  <text x="91" y="225" font-size="10.5" font-weight="600" fill="#bfdbfe" text-anchor="middle">May '26 Bench</text>
+
+  <rect x="162" y="174" width="242" height="68" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="172" y="193" font-size="10.3" font-weight="700" fill="#1e3a8a" text-anchor="start">Primary · vLLM x Mooncake (May 6)</text>
+  <text x="172" y="213" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">Kimi-2.5, 12x GB200 1P1D, 610 traces</text>
+  <text x="172" y="231" font-size="9.5" font-weight="400" fill="#475569" text-anchor="start">Hit 1.7%→92.2% · 3.8x · 46x TTFT</text>
+  <line x1="406" y1="208" x2="416" y2="208" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="419" y="174" width="242" height="68" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="429" y="193" font-size="10.3" font-weight="700" fill="#78350f" text-anchor="start">Secondary · Tier &amp; Baseline Drift</text>
+  <text x="429" y="213" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">X thread lists DRAM/SSD beside 3.8x</text>
+  <text x="429" y="231" font-size="9.5" font-weight="400" fill="#92400e" text-anchor="start">Omits system-prompt-only baseline</text>
+  <line x1="663" y1="208" x2="673" y2="208" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="676" y="174" width="250" height="68" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="686" y="193" font-size="10.3" font-weight="700" fill="#166534" text-anchor="start">Boundary · DRAM vs Synthetic</text>
+  <text x="686" y="213" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">3.8x used CPU DRAM (SSD added later)</text>
+  <text x="686" y="231" font-size="9.5" font-weight="400" fill="#14532d" text-anchor="start">60-GPU scale: synthetic round-robin</text>
+
+  <!-- Lane 3: Spoken Hybrid KV & TPU Megakernel -->
+  <rect x="24" y="256" width="912" height="84" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="34" y="266" width="114" height="64" rx="6" fill="#1e3a8a"/>
+  <text x="91" y="294" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Spoken &amp;</text>
+  <text x="91" y="315" font-size="10.5" font-weight="600" fill="#bfdbfe" text-anchor="middle">TPU Peak</text>
+
+  <rect x="162" y="264" width="242" height="68" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="172" y="283" font-size="10.3" font-weight="700" fill="#1e3a8a" text-anchor="start">Talk Speech + Inferact TPU (Sep)</text>
+  <text x="172" y="303" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">Hybrid LCM: spoken 2-2.5x free KV</text>
+  <text x="172" y="321" font-size="9.5" font-weight="400" fill="#475569" text-anchor="start">TPU v7 Pallas: 709 vs GB200 452</text>
+  <line x1="406" y1="298" x2="416" y2="298" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="419" y="264" width="242" height="68" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="429" y="283" font-size="10.3" font-weight="700" fill="#78350f" text-anchor="start">Risk · Broad Extrapolation</text>
+  <text x="429" y="303" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">Treating verbal claim as benchmark</text>
+  <text x="429" y="321" font-size="9.5" font-weight="400" fill="#92400e" text-anchor="start">Projecting 1-user peak to cluster</text>
+  <line x1="663" y1="298" x2="673" y2="298" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="676" y="264" width="250" height="68" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="686" y="283" font-size="10.3" font-weight="700" fill="#166534" text-anchor="start">Boundary · Matched Config Tests</text>
+  <text x="686" y="303" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">2-2.5x is verbal; unpublished figure</text>
+  <text x="686" y="321" font-size="9.5" font-weight="400" fill="#14532d" text-anchor="start">709 is 1-user DSpark (len=6) study</text>
+
+  <!-- Bottom Section: Pareto Chart & Checklist -->
+  <rect x="24" y="350" width="424" height="148" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="38" y="370" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start">Pareto Tradeoff (SemiAnalysis InferenceX, Sep 21)</text>
+
+  <!-- Mini Pareto Graph -->
+  <line x1="68" y1="384" x2="68" y2="472" stroke="#475569" stroke-width="1.2"/>
+  <line x1="68" y1="472" x2="256" y2="472" stroke="#475569" stroke-width="1.2"/>
+  <text x="62" y="390" font-size="8.6" font-weight="600" fill="#475569" text-anchor="end">Tput</text>
+  <text x="62" y="401" font-size="8.6" font-weight="600" fill="#475569" text-anchor="end">/chip</text>
+  <text x="162" y="488" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">P90 Interactivity (tok/s/user)</text>
+  <path d="M 86 396 C 122 404, 174 434, 238 460" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="90" cy="397" r="4" fill="#1d4ed8"/>
+  <circle cx="152" cy="422" r="4" fill="#1d4ed8"/>
+  <circle cx="234" cy="458" r="4" fill="#1d4ed8"/>
+  <line x1="156" y1="420" x2="206" y2="394" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#arrow)"/>
+  <text x="166" y="388" font-size="9" font-weight="700" fill="#1d4ed8" text-anchor="start">Push curve top-right</text>
+
+  <text x="272" y="398" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">Top-left · Economical</text>
+  <text x="272" y="414" font-size="9.2" font-weight="400" fill="#475569" text-anchor="start">High chip Tput for batch runs</text>
+  <text x="272" y="436" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">Bottom-right · Fastest</text>
+  <text x="272" y="452" font-size="9.2" font-weight="400" fill="#475569" text-anchor="start">Low-concurrency + SpecDec</text>
+  <text x="272" y="474" font-size="9" font-weight="400" fill="#64748b" text-anchor="start">GB200/GB300/B300/MI355X</text>
+
+  <!-- Right Panel: Checklist -->
+  <rect x="462" y="350" width="474" height="148" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="476" y="370" font-size="11" font-weight="700" fill="#1e3a8a" text-anchor="start">Deployment Checklist (vLLM Bangkok Editorial Guide, Not Talk Slide)</text>
+  <text x="476" y="395" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">1) Measure traffic: real I/O ratio, turns/session, &amp; resident cache hit rate</text>
+  <text x="476" y="419" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">2) Stabilize prefix: place system prompt + tools first; strip timestamps</text>
+  <text x="476" y="443" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">3) Pick Pareto point: batch → chip Tput; interactive → P90 tok/s/user</text>
+  <text x="476" y="467" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">4) Disaggregate at scale: add P/D + Mooncake/NIXL beyond single node</text>
+  <text x="476" y="487" font-size="9.2" font-weight="400" fill="#64748b" text-anchor="start">Rule: never project production gains from a system-prompt-only baseline</text>
+
+  <text x="24" y="522" font-size="10.2" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram · Cross-checked with vLLM Bangkok, vLLM Blog (May/Sep/Oct 2026), Inferact TPU &amp; Q4 Roadmap (not an original figure)</text>
+</svg>

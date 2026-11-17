@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', sans-serif" style="background:#ffffff;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">Claude Code Multi-Role Context Branches &amp; 92% Prefix Reuse</text>
+  <text x="24" y="56" font-size="11" font-weight="400" fill="#475569" text-anchor="start">From LMCache's trace of SWE-bench_Verified task #80 (django/django): role-isolated branches across 92+ calls &amp; ~2M tokens</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Strip: Sequential Call Flow -->
+  <rect x="24" y="74" width="912" height="58" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="32" y="82" width="136" height="42" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="100" y="99" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">#1–#5 Warmup/Aux</text>
+  <text x="100" y="115" font-size="9.1" font-weight="400" fill="#475569" text-anchor="middle">47,177 · 0.22% reuse</text>
+  <line x1="170" y1="103" x2="181" y2="103" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="184" y="82" width="136" height="42" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="252" y="99" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">#6 Main Init</text>
+  <text x="252" y="115" font-size="9.1" font-weight="400" fill="#1e40af" text-anchor="middle">20K+ sys + 18 tools</text>
+  <line x1="322" y1="103" x2="333" y2="103" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="336" y="82" width="136" height="42" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="404" y="99" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">#7–#45 3x Explore</text>
+  <text x="404" y="115" font-size="9.1" font-weight="400" fill="#475569" text-anchor="middle">546,104 · 92.06% reuse</text>
+  <line x1="474" y1="103" x2="485" y2="103" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="488" y="82" width="136" height="42" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="556" y="99" font-size="10.2" font-weight="700" fill="#92400e" text-anchor="middle">#46 Main Merge</text>
+  <text x="556" y="115" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="middle">3 summaries (omitted)</text>
+  <line x1="626" y1="103" x2="637" y2="103" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="640" y="82" width="136" height="42" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="708" y="99" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">#47–#72 Plan</text>
+  <text x="708" y="115" font-size="9.1" font-weight="400" fill="#475569" text-anchor="middle">528,286 · 93.23% reuse</text>
+  <line x1="778" y1="103" x2="789" y2="103" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="792" y="82" width="136" height="42" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="860" y="99" font-size="10.2" font-weight="700" fill="#166534" text-anchor="middle">#73–#92 Exec (+#93)</text>
+  <text x="860" y="115" font-size="9.1" font-weight="400" fill="#14532d" text-anchor="middle">827,411 · 97.83% reuse</text>
+
+  <!-- Column 1: Warm-up & One-shot Aux -->
+  <rect x="24" y="142" width="282" height="298" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="142" width="282" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="162" width="282" height="10" fill="#dbeafe"/>
+  <text x="36" y="161" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">1 · Warmup &amp; One-Shot Aux</text>
+
+  <rect x="34" y="182" width="262" height="118" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="44" y="190" width="142" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="115" y="204" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Warmup Calls (#2–#4)</text>
+  <text x="44" y="226" font-size="9.6" font-weight="700" fill="#0f172a" text-anchor="start">Prompt-only calls before task work</text>
+  <text x="44" y="245" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">• #2 Tool list · #3 Explore · #4 Plan</text>
+  <text x="44" y="264" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">• Authors interpret as cache priming</text>
+  <text x="44" y="283" font-size="9.0" font-weight="600" fill="#b45309" text-anchor="start">Limit: trace cannot prove intent or TTFT</text>
+
+  <rect x="34" y="308" width="262" height="122" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="328" font-size="10.3" font-weight="700" fill="#1d4ed8" text-anchor="start">Sidebar &amp; Safety Helpers</text>
+  <text x="44" y="349" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">• #1 Summary: compact status recap</text>
+  <text x="44" y="368" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">• #5 New Topic: 2–3 word title check</text>
+  <text x="44" y="387" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">• #93 Extract Bash: command prefix guard</text>
+  <text x="44" y="406" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">• Display Content (in original figure)</text>
+  <text x="44" y="422" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="start">Disjoint roots: 0.22% overlap in #1–#6</text>
+
+  <line x1="308" y1="291" x2="321" y2="291" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Column 2: Subagent Isolated Loops -->
+  <rect x="324" y="142" width="306" height="298" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="324" y="142" width="306" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="324" y="162" width="306" height="10" fill="#dbeafe"/>
+  <text x="336" y="161" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">2 · Isolated Subagent ReAct Loops</text>
+
+  <rect x="334" y="182" width="286" height="122" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="344" y="190" width="142" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="415" y="204" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">3x Explore (#7–#45)</text>
+  <text x="494" y="204" font-size="9.5" font-weight="700" fill="#1e3a8a" text-anchor="start">92.06% shared</text>
+  <text x="344" y="226" font-size="9.3" font-weight="700" fill="#0f172a" text-anchor="start">Parallel: JSONField / display_for_field / ro</text>
+  <text x="344" y="245" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• #7–#26, #8–#37, #9–#45 append locally</text>
+  <text x="344" y="264" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• Fresh context; 1–3 parallel tools/turn</text>
+  <text x="344" y="283" font-size="9.2" font-weight="400" fill="#475569" text-anchor="start">• Subset 10/18 tools (no edit/plan tools)</text>
+
+  <rect x="334" y="312" width="286" height="118" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="344" y="320" width="142" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="415" y="334" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Plan Agent (#47–#72)</text>
+  <text x="494" y="334" font-size="9.5" font-weight="700" fill="#1e3a8a" text-anchor="start">93.23% shared</text>
+  <text x="344" y="356" font-size="9.3" font-weight="700" fill="#0f172a" text-anchor="start">Explore summaries + architect prompt only</text>
+  <text x="344" y="375" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• Drops main &amp; raw Explore histories</text>
+  <text x="344" y="394" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• 10/18 tools; grows 11,552 → 38,819 tok</text>
+  <text x="344" y="413" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="start">Tradeoff: clean context splits KV root</text>
+
+  <line x1="632" y1="291" x2="645" y2="291" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Column 3: Main Agent Spine -->
+  <rect x="648" y="142" width="288" height="298" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="648" y="142" width="288" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="648" y="162" width="288" height="10" fill="#dbeafe"/>
+  <text x="660" y="161" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">3 · Main Anchor &amp; Exec Loop</text>
+
+  <rect x="658" y="182" width="268" height="114" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="668" y="190" width="146" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="741" y="204" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">20K+ Static Root</text>
+  <text x="668" y="226" font-size="9.4" font-weight="700" fill="#0f172a" text-anchor="start">20,000+ tokens before turn history</text>
+  <text x="668" y="245" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• Full git history/status + 18 tool specs</text>
+  <text x="668" y="264" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• #46 appends 3 Explore summaries only</text>
+  <text x="668" y="283" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">• Retains Edit/Write/Task/Plan tools</text>
+
+  <rect x="658" y="304" width="268" height="126" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <rect x="668" y="312" width="136" height="20" rx="5" fill="#166534"/>
+  <text x="736" y="326" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Exec (#73–#92)</text>
+  <text x="812" y="326" font-size="9.5" font-weight="700" fill="#166534" text-anchor="start">97.83% shared</text>
+  <text x="668" y="348" font-size="9.2" font-weight="400" fill="#14532d" text-anchor="start">• #73–#76 review, write plan, user gate</text>
+  <text x="668" y="367" font-size="9.2" font-weight="400" fill="#14532d" text-anchor="start">• #77–#91 edit &amp; test via TODO markdown</text>
+  <text x="668" y="386" font-size="9.2" font-weight="400" fill="#14532d" text-anchor="start">• 827,411 cumulative tok (#92 finish)</text>
+  <text x="668" y="405" font-size="9.0" font-weight="600" fill="#166534" text-anchor="start">20K+ anchor drives late-stage overlap</text>
+
+  <!-- Bottom Banner -->
+  <rect x="24" y="450" width="912" height="52" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="470" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="start">Accounting check: 4 table rows sum to 1,948,978 tokens (~92.60% weighted overlap), omitting #46 while text also cites #93</text>
+  <text x="36" y="490" font-size="9.8" font-weight="400" fill="#1e40af" text-anchor="start">Core distinction: 92% measures prompt-text prefix overlap in logs—not metered server KV hit rate or 92% compute saved</text>
+
+  <text x="24" y="522" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram · Synthesized from Kobe &amp; Mengbing (LMCache Blog, 2025-12-23) text &amp; original figure (not an original chart)</text>
+</svg>

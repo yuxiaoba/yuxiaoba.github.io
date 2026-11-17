@@ -1,0 +1,474 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-11-arxiv-2611.10063",
+  "paper_id": "arxiv-2611.10063",
+  "anchor_id": "paper-arxiv-2611.10063",
+  "digest_date": "2026-11-11",
+  "updated_at_utc": "2026-11-17T06:55:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-11.md",
+    "en_target": "_digest/en/daily-2026-11-11.md",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/32f5652a-496a-4100-a059-e0fa3fe0e20d/scratch/d2c2-sections/2611.10063/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/32f5652a-496a-4100-a059-e0fa3fe0e20d/scratch/d2c2-sections/2611.10063/section_en.md",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.10063v1.",
+    "adjacent_dependency_isolation": "Self-contained staged section for entry 05 (paper-arxiv-2611.10063); sibling entries in daily-2026-11-11.md untouched."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.10063",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "Only v1 present in saved abs HTML (submitted Fri, 6 Nov 2026 09:05:00 UTC); no v2 revision or withdrawal notice.",
+    "title": "Done Is Not Correct: Measuring Silent Failures and Self-Verification Calibration When LLM Agents Take CAD Actions",
+    "authors": [
+      "Carson Rodrigues",
+      "Clive Rodrigues",
+      "Aravind Reddy G"
+    ],
+    "affiliations": {
+      "Carson Rodrigues": "Celabe",
+      "Clive Rodrigues": "Hochschule Coburg, University of Applied Sciences",
+      "Aravind Reddy G": "Independent"
+    },
+    "categories": [
+      "cs.SE",
+      "cs.LG"
+    ],
+    "submitted_utc": "Fri, 6 Nov 2026 09:05:00 UTC",
+    "submitted_date": "2026-11-06",
+    "pdf_note": "18 pages, 3 figures, 2 tables; suite v1.1 (MIT for code, CC BY 4.0 for task specs/reference solutions/records/transcripts)",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.10063",
+      "abs_v1": "https://arxiv.org/abs/2611.10063v1",
+      "pdf": "https://arxiv.org/pdf/2611.10063",
+      "html_v1": "https://arxiv.org/html/2611.10063v1",
+      "github": "https://github.com/rodriguescarson/cad-silent-failure-bench",
+      "zenodo": "https://doi.org/10.5281/zenodo.22312792"
+    },
+    "github_http_status_checked": null,
+    "zenodo_http_status_checked": null,
+    "staged_source_files": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c2-sources/2611.10063.abs.html",
+        "sha256": "0dfe9d35dafe3d2b822e9f5907ce44f5d30e94f35a982cb7471acde338a2e778",
+        "bytes": 42726
+      },
+      "extracted_text": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c2-sources/2611.10063.txt",
+        "sha256": "0efa3b4ff1bb0185b6754e9771d7477b0954a129cd62a94a4bd62e190ae69478",
+        "bytes": 79127
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "kernel_and_runtime": {
+      "cad_kernel": "build123d / OpenCascade",
+      "executor_timeout_sec": 60,
+      "max_output_tokens": 4096,
+      "repetitions_per_cell": 3,
+      "tool_use_turn_cap": "4 model turns + 1 confirmation turn",
+      "multi_agent_turn_cap": "1 plan + 3 coder-checker rounds (same model for all 3 roles)"
+    },
+    "benchmark_schema": {
+      "tasks_count": 13,
+      "tiers": {
+        "T1_single_feature": 5,
+        "T2_multi_feature": 6,
+        "T4_edit_under_constraint": 2
+      },
+      "checks_count": 122,
+      "check_breakdown": {
+        "approx": 58,
+        "range": 13,
+        "equal": 13,
+        "validity": 13,
+        "cylinder_count_with_axial_extents": 22,
+        "bolt_circle": 3
+      }
+    },
+    "primary_population": {
+      "models": [
+        "claude-haiku-4-5",
+        "claude-sonnet-4-6",
+        "deepseek-v3.2",
+        "qwen3.7-max"
+      ],
+      "attempts_per_architecture": 156,
+      "total_primary_attempts": 468,
+      "single_shot": {
+        "claim_count": "153/156",
+        "claim_rate_pct": 98,
+        "silent_failure_count": "22/156",
+        "silent_failure_pct": 14.1,
+        "silent_task_cluster_ci_95": [
+          5.8,
+          24.4
+        ],
+        "silent_wilson_ci_95": [
+          9.5,
+          20.4
+        ],
+        "conditional_silent_among_valid_claims": "22/120 (18.3%)",
+        "success_pct": 64.1,
+        "claim_precision_pct": 64.1,
+        "pooled_ece": 0.324,
+        "mean_stated_conf": 0.97,
+        "mean_tokens_in_out": [
+          211,
+          735
+        ]
+      },
+      "enforced_tool_use": {
+        "claim_count": "126/156",
+        "claim_rate_pct": 80.8,
+        "silent_failure_count": "5/156",
+        "silent_failure_pct": 3.2,
+        "mcnemar_vs_ss": "18 removed, 1 created, p < 10^-4; diff CI [3.8, 19.2] pp",
+        "conditional_silent_among_valid_claims": "5/126 (4.0%)",
+        "success_pct": 77.6,
+        "success_mcnemar_vs_ss": "25 fixed, 4 broken, p = 1.0e-4 (GEE p = 0.00014)",
+        "claim_precision_pct": 96.0,
+        "pooled_ece": 0.091,
+        "mean_tokens_in_out": [
+          2821,
+          1549
+        ]
+      },
+      "multi_agent": {
+        "claim_count": "89/156",
+        "claim_rate_pct": 57.1,
+        "silent_failure_count": "4/156",
+        "silent_failure_pct": 2.6,
+        "mcnemar_vs_ss": "19 removed, 1 created, p < 10^-4",
+        "conditional_silent_among_valid_claims": "4/89 (4.5%)",
+        "success_pct": 61.5,
+        "claim_precision_pct": 95.5,
+        "pooled_ece": 0.11,
+        "failed_episodes_breakdown": "60 total failed = 53 never built valid solid + 3 valid-wrong rightly withheld + 4 silent failures (plus 11 correct parts falsely withheld)",
+        "mean_tokens_in_out": [
+          2279,
+          2787
+        ]
+      },
+      "per_model_table1": {
+        "claude-haiku-4-5": {
+          "single_shot": {
+            "n": 39,
+            "success_pct": 46,
+            "silent_pct": 21,
+            "conf": 0.93,
+            "ece": 0.498,
+            "steps": 1.0,
+            "auroc": 0.72
+          },
+          "tool_use": {
+            "n": 39,
+            "success_pct": 62,
+            "silent_pct": 3,
+            "conf": 0.93,
+            "ece": 0.102,
+            "steps": 3.0,
+            "auroc": 0.98
+          },
+          "multi_agent": {
+            "n": 39,
+            "success_pct": 41,
+            "silent_pct": 0,
+            "conf": 0.48,
+            "ece": 0.061,
+            "steps": 2.6,
+            "auroc": 0.99
+          }
+        },
+        "claude-sonnet-4-6": {
+          "single_shot": {
+            "n": 39,
+            "success_pct": 90,
+            "silent_pct": 10,
+            "conf": 0.95,
+            "ece": 0.084,
+            "steps": 1.0,
+            "auroc": 0.93
+          },
+          "tool_use": {
+            "n": 39,
+            "success_pct": 100,
+            "silent_pct": 0,
+            "conf": 0.98,
+            "ece": 0.016,
+            "steps": 2.2,
+            "auroc": null
+          },
+          "multi_agent": {
+            "n": 39,
+            "success_pct": 95,
+            "silent_pct": 3,
+            "conf": 0.96,
+            "ece": 0.03,
+            "steps": 1.1,
+            "auroc": 1.0
+          }
+        },
+        "deepseek-v3.2": {
+          "single_shot": {
+            "n": 39,
+            "success_pct": 36,
+            "silent_pct": 18,
+            "conf": 0.99,
+            "ece": 0.671,
+            "steps": 1.0,
+            "auroc": 0.65
+          },
+          "tool_use": {
+            "n": 39,
+            "success_pct": 54,
+            "silent_pct": 5,
+            "conf": 0.98,
+            "ece": 0.279,
+            "steps": 3.3,
+            "auroc": 0.83
+          },
+          "multi_agent": {
+            "n": 39,
+            "success_pct": 38,
+            "silent_pct": 0,
+            "conf": 0.56,
+            "ece": 0.195,
+            "steps": 2.8,
+            "auroc": 0.93
+          }
+        },
+        "qwen3.7-max": {
+          "single_shot": {
+            "n": 39,
+            "success_pct": 85,
+            "silent_pct": 8,
+            "conf": 1.0,
+            "ece": 0.149,
+            "steps": 1.0,
+            "auroc": 0.65
+          },
+          "tool_use": {
+            "n": 39,
+            "success_pct": 95,
+            "silent_pct": 5,
+            "conf": 1.0,
+            "ece": 0.051,
+            "steps": 2.3,
+            "auroc": 0.5
+          },
+          "multi_agent": {
+            "n": 39,
+            "success_pct": 72,
+            "silent_pct": 8,
+            "conf": 0.97,
+            "ece": 0.252,
+            "steps": 1.7,
+            "auroc": 0.55
+          }
+        }
+      },
+      "pooled_3_condition_ece_fig2": 0.18,
+      "consistency": {
+        "pooled_success_at_3_pct": 81.4,
+        "pooled_pass_power_3_pct": 53.8
+      }
+    },
+    "single_variable_claim_contract_ablation": {
+      "n": 156,
+      "legacy_silent": "14/156 (9.0%)",
+      "fixed_silent": "5/156 (3.2%)",
+      "fisher_p": 0.056,
+      "per_model_legacy_vs_fixed": {
+        "claude-haiku-4-5": [
+          6,
+          1
+        ],
+        "claude-sonnet-4-6": [
+          4,
+          0
+        ],
+        "deepseek-v3.2": [
+          4,
+          2
+        ],
+        "qwen3.7-max": [
+          0,
+          2
+        ]
+      },
+      "legacy_vs_fixed_claim_precision_pct": [
+        67.6,
+        96.0
+      ],
+      "claim_precision_p": "< 10^-9",
+      "legacy_vs_fixed_success_pct": [
+        64.1,
+        77.6
+      ],
+      "success_p": 0.013,
+      "protocol_sensitivity_retained_runs": {
+        "count": 143,
+        "deepseek_loophole_vs_fixed": "11/39 (11 in 34 claims) vs 2/39"
+      }
+    },
+    "context_divergence_score_cds": {
+      "agreement_rel_tolerance_pct": 2,
+      "passes_mean": 0.105,
+      "never_built_mean": 0.518,
+      "episode_failure_auroc": 0.86,
+      "round_count_baseline_auroc": 0.87,
+      "validity_flag_baseline_auroc": 0.94,
+      "valid_but_wrong_7_episodes_mean": 0.107
+    },
+    "tolerance_scaling_table2": {
+      "x0.25": {
+        "ss_silent": "33/156 (21.1%)",
+        "tu_silent": "17/156 (10.9%)",
+        "ma_silent": "14/156 (9.0%)",
+        "ss_success": 57.0,
+        "tu_success": 69.9,
+        "diff_pp": 10.3,
+        "mcnemar_p": "<0.001"
+      },
+      "x0.5": {
+        "ss_silent": "22/156 (14.1%)",
+        "tu_silent": "5/156 (3.2%)",
+        "ma_silent": "4/156 (2.6%)",
+        "ss_success": 64.1,
+        "tu_success": 77.6,
+        "diff_pp": 10.9,
+        "mcnemar_p": "<0.001"
+      },
+      "x1_published": {
+        "ss_silent": "22/156 (14.1%)",
+        "tu_silent": "5/156 (3.2%)",
+        "ma_silent": "4/156 (2.6%)",
+        "ss_success": 64.1,
+        "tu_success": 77.6,
+        "diff_pp": 10.9,
+        "mcnemar_p": "<0.001"
+      },
+      "x2": {
+        "ss_silent": "20/156 (12.8%)",
+        "tu_silent": "5/156 (3.2%)",
+        "ma_silent": "4/156 (2.6%)",
+        "ss_success": 65.4,
+        "tu_success": 77.6,
+        "diff_pp": 9.6,
+        "mcnemar_p": "<0.001"
+      },
+      "x4": {
+        "ss_silent": "15/156 (9.6%)",
+        "tu_silent": "5/156 (3.2%)",
+        "ma_silent": "4/156 (2.6%)",
+        "ss_success": 68.6,
+        "tu_success": 77.6,
+        "diff_pp": 6.4,
+        "mcnemar_p": 0.006
+      }
+    },
+    "self_audit_and_expert_bounds": {
+      "oracle_hardening_regraded_attempts": 519,
+      "oracle_hardening_flips_pass_to_fail": 18,
+      "oracle_hardening_flips_fail_to_pass": 0,
+      "oracle_hardening_exposed_silent_failures": "17/48 (35%)",
+      "blind_expert_sample_n": 81,
+      "blind_expert_kappa_all": 0.64,
+      "blind_expert_raw_pct_all": 82.7,
+      "blind_expert_excl_lbracket_n": 62,
+      "blind_expert_kappa_excl_lbracket": 0.87,
+      "blind_expert_raw_pct_excl_lbracket": 93.5,
+      "blind_expert_overturns_excl_lbracket": "4/62 (all grader-fail to expert-pass; 3 of 18 silent failures outside t2-lbracket)",
+      "excl_lbracket_12_tasks_n": 144,
+      "excl_lbracket_rates": {
+        "ss": "16/144 (11.1%)",
+        "tu": "2/144 (1.4%)",
+        "ma": "0/144 (0%)",
+        "mcnemar_p": 0.0005
+      },
+      "t2_lbracket_primary_silent_count": "13/31",
+      "t4_edit_silent_count": 0
+    }
+  },
+  "explicit_limitations": [
+    "Small canonical suite (13 tasks, 122 checks): all 31 primary silent failures occur in T1/T2 (19/31 in t2-lbracket and counterbored plate; 0 in T4); lacks multi-solid assemblies, interference checks, and manufacturability/DFM validation.",
+    "One task specification (t2-lbracket) admits two readings of the 40 mm base depth vs. 8 mm vertical wall (40 mm overall vs. 48 mm outboard), contributing 13/31 silent failures and 10/14 expert-vs-grader disagreements; excluding it lowers absolute rates (11.1% SS vs. 1.4% TU, McNemar p = 0.0005) without altering the architectural contrast.",
+    "Primary population covers June 2026 snapshots of four models (no OpenAI/Google model in primary stats; incomplete 64-attempt gpt-5.5 exploratory run excluded) at 3 uncontrolled provider-default repetitions; sonnet and qwen legacy ablation arms ran 3 months later in September 2026 (sonnet via OpenRouter).",
+    "Blind expert scoring of 81 stratified parts was conducted by a single co-author (Aravind Reddy G); unmodelled geometric properties bound silent-failure rates from below while grader false negatives bound them from above (3/18 outside t2-lbracket overturned).",
+    "Tolerance bands are model-correctness bands rather than ISO IT6-7 functional fit tolerances, tool-use increases mean input tokens from 211 to 2,821, and human oversight in MBD/direct-to-CAM review remains untested."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "done_not_correct_svgs": {
+      "done-not-correct-claim-contract-arch-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-11/done-not-correct-claim-contract-arch-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-11/done-not-correct-claim-contract-arch-zh.svg",
+        "bytes": null,
+        "sha256": "c799dfa45e92a00b2f0eeccf61218eeba42455f4d8cef57e28ea8d299076bf91",
+        "mode_octal": null
+      },
+      "done-not-correct-claim-contract-arch-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-11/done-not-correct-claim-contract-arch-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-11/done-not-correct-claim-contract-arch-en.svg",
+        "bytes": null,
+        "sha256": "52594933f5beed108125542d00611c81ce35c5389c394694f310852a53e84c0e",
+        "mode_octal": null
+      },
+      "done-not-correct-silent-failure-eval-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-11/done-not-correct-silent-failure-eval-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-11/done-not-correct-silent-failure-eval-zh.svg",
+        "bytes": null,
+        "sha256": "f99fadc4cd194ff20c0cdc4c2372685186343e33ababccdc78d057e3d1c7fdd3",
+        "mode_octal": null
+      },
+      "done-not-correct-silent-failure-eval-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-11/done-not-correct-silent-failure-eval-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-11/done-not-correct-silent-failure-eval-en.svg",
+        "bytes": null,
+        "sha256": "1db66bdde676443967f94b4ca5e3a86cf823425a711dd858ee7aaccd2a73f798",
+        "mode_octal": null
+      }
+    },
+    "preserved_sibling_assets_observed_in_digest": [
+      "agency.png",
+      "detent.png",
+      "infrarsi.png",
+      "rounding.png"
+    ],
+    "note": "Pre-existing images in assets/images/digest/2026-11-11/ were left untouched; byte sizes and SHA-256 hashes left null because shell execution is disabled in this isolated staging step."
+  },
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice",
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-11.md",
+      "file_bytes_before": 29866,
+      "file_sha256_before": "bd88442ecb9ee80f467eed65a99613636ec3927272e9ef1ee19cc20fb068edc3",
+      "file_bytes_after": 52322,
+      "file_sha256_after": "851d50ebb729834e1299ca4a3458c75170b153eac5254634bd6b4de91af34c12",
+      "old_section_bytes": 1357,
+      "old_section_sha256": "e42e8d88c3c15db0d74d704dc45fba0250fdbe714ab127ecfe79980847247ebd",
+      "new_section_bytes": 23813,
+      "new_section_sha256": "e49a622a2131a89665fc14acddbf33ecf489bd3cbe9a1f32062a9a2cdd868dcf"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-11.md",
+      "file_bytes_before": 32211,
+      "file_sha256_before": "826e49c6b90a576691def4086f09ab53923d581579c05a5ea8768dc1c62c1d0c",
+      "file_bytes_after": 53109,
+      "file_sha256_after": "1d7b39e63e673d5cd57584cc0e1dbc084e4cd69d59a5d789646cd2a6c9cc491e",
+      "old_section_bytes": 1478,
+      "old_section_sha256": "bfedf5d0e49968d0b8a5448cd5fac57210d047ff8d5979451f1c9c9dec33a62d",
+      "new_section_bytes": 22376,
+      "new_section_sha256": "2c4f4ae4e7826c5a764797201cc5cf59a5aa2d23834b3ecd73437761f826bb90"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T06:56:45.982051+00:00",
+    "preview_release": "20261117-145620-767b2d70",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

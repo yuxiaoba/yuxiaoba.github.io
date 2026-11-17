@@ -3,24 +3,24 @@ id: azure-failure-prediction-detection
 title: '2026-11-05 | Azure AFPD: prediction must connect to migration and repair'
 date: '2026-11-05'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
 tags:
 - systems-reliability
 - anomaly-detection
-summary: How prediction connects to allocation exclusion, migration, notifications,
-  and repair to reduce hardware interruptions.
+summary: How prediction connects to allocation exclusion, migration, notifications, and repair to reduce hardware interruptions.
 long_read: true
 source_url: https://azure.microsoft.com/en-us/blog/predicting-and-detecting-failures-how-azure-strengthens-reliability-for-mission-critical-workloads/
 permalink: /tech/en/azure-failure-prediction-detection/
 translation_source: assistant
 authoring_source: assistant
 published_at: '2026-11-05T08:55:14.344660+08:00'
-updated_at: '2026-11-05T08:55:14.344660+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
-
 Original: [Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads](https://azure.microsoft.com/en-us/blog/predicting-and-detecting-failures-how-azure-strengthens-reliability-for-mission-critical-workloads/)<br>
 Mark Russinovich · 2026-11-04
 

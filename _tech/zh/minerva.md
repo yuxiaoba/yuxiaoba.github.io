@@ -3,7 +3,7 @@ id: minerva
 title: 2026年10月23日｜Minerva 把 AI 集群遥测连到作业根因
 date: '2026-10-23'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,7 +18,9 @@ permalink: /tech/zh/minerva/
 translation_source: assistant
 authorship: assistant
 published_at: '2026-10-23T08:58:47.180720+08:00'
-updated_at: '2026-10-23T08:58:47.180720+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 AI 集群里的故障经常先表现为产出下降：一块 GPU 变慢、一段网络拥塞或一块 NVMe 盘在负载下退化，都可能让整个训练作业等待。Minerva 最值得关注的变化，是把这些组件信号放回作业关系里，试图回答“哪个基础设施问题正在损害哪项工作”，而不是让网络、计算和调度团队分别解释各自仪表盘。
 

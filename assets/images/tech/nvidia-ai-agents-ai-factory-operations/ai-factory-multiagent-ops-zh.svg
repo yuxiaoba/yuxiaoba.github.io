@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Noto Sans CJK SC','Noto Sans SC',sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- Header -->
+  <text x="24" y="36" font-size="18" font-weight="700" fill="#0f172a">NVIDIA AI Factory Operations Agent：控制面隔离与跨层运维架构</text>
+  <text x="24" y="56" font-size="11" fill="#475569">依据 2026-11-04 工程博文整理：Helm 部署控制面，NemoClaw 路由六类领域代理，跨层关联 DGX 集群遥测</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 1: Interfaces, Helm Control Plane, Isolated Inference -->
+  <rect x="24" y="76" width="232" height="88" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="34" y="84" width="118" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="93" y="98" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">入口与审计界面</text>
+  <text x="34" y="121" font-size="10.5" font-weight="600" fill="#1e3a8a">内置 Web Chat UI</text>
+  <text x="34" y="138" font-size="9.8" fill="#334155">自然语言交互 · 切换调查</text>
+  <text x="34" y="154" font-size="9.8" fill="#475569">动态仪表盘 + API 接编码代理</text>
+
+  <line x1="258" y1="120" x2="278" y2="120" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="282" y="76" width="372" height="88" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="292" y="84" width="174" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="379" y="98" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">K8s 控制面服务 (Helm)</text>
+  <text x="476" y="98" font-size="10.8" font-weight="700" fill="#0f172a">NemoClaw 蓝图编排</text>
+  <text x="292" y="121" font-size="10.2" fill="#0f172a">OpenClaw 网关 + NemoClaw 路由请求至领域代理</text>
+  <text x="292" y="138" font-size="10" fill="#1e3a8a">OpenShell 运行时 + 聚焦型 MCP 工具服务器</text>
+  <text x="292" y="154" font-size="9.8" fill="#1e40af">全程记录每步工具调用与证据流以便 SRE 审计</text>
+
+  <line x1="656" y1="120" x2="676" y2="120" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="680" y="76" width="256" height="88" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <rect x="690" y="84" width="144" height="20" rx="5" fill="#166534"/>
+  <text x="762" y="98" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">算力与数据驻留隔离</text>
+  <text x="690" y="121" font-size="10.5" font-weight="600" fill="#14532d">本地推理：NVIDIA Nemotron</text>
+  <text x="690" y="138" font-size="9.8" fill="#166534">大规模：专用 GPU 控制面推理</text>
+  <text x="690" y="154" font-size="9.8" fill="#334155">小规模：RTX PRO / DGX Spark</text>
+
+  <!-- Routing connector down to Domain Agents -->
+  <line x1="468" y1="164" x2="468" y2="180" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Row 2: Six Specialist Sub-Agents + Cross-Cutting MCP -->
+  <rect x="24" y="184" width="912" height="182" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="184" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="202" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="202" font-size="11.5" font-weight="700" fill="#1e3a8a">专业领域子代理生态（职责边界不重叠，经 OpenClaw 插件与 MCP 对接基础设施，输出只读建议）</text>
+
+  <!-- Agent Row A -->
+  <rect x="36" y="220" width="288" height="52" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="46" y="238" font-size="10.8" font-weight="700" fill="#1e3a8a">Job Recovery Agent（作业恢复）</text>
+  <text x="46" y="257" font-size="9.6" fill="#334155">测失败与 goodput；跨四层定因后建议</text>
+
+  <rect x="336" y="220" width="288" height="52" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="346" y="238" font-size="10.8" font-weight="700" fill="#1e3a8a">Hardware Agent（硬件诊断）</text>
+  <text x="346" y="257" font-size="9.6" fill="#334155">分诊 PCIe/ECC/GPU/NVMe 与热异常部件</text>
+
+  <rect x="636" y="220" width="288" height="52" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="646" y="238" font-size="10.8" font-weight="700" fill="#1e3a8a">Observability Agent（可观测）</text>
+  <text x="646" y="257" font-size="9.6" fill="#334155">查 Prometheus 与 Loki，动态建 Web 面板</text>
+
+  <!-- Agent Row B -->
+  <rect x="36" y="280" width="288" height="52" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="46" y="298" font-size="10.8" font-weight="700" fill="#1e3a8a">Research Agent（文档检索）</text>
+  <text x="46" y="317" font-size="9.6" fill="#334155">检 Mission Control、SuperPOD 与站点手册</text>
+
+  <rect x="336" y="280" width="288" height="52" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="346" y="298" font-size="10.8" font-weight="700" fill="#1e3a8a">Kubernetes Agent（只读视图）</text>
+  <text x="346" y="317" font-size="9.6" fill="#334155">只读查看 Pod、Service、GPU 与调度状态</text>
+
+  <rect x="636" y="280" width="288" height="52" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="646" y="298" font-size="10.8" font-weight="700" fill="#1e3a8a">Cluster Management Agent</text>
+  <text x="646" y="317" font-size="9.6" fill="#334155">经诊断 MCP 对接 Base Command Manager</text>
+
+  <!-- Cross-cutting MCP strip -->
+  <rect x="36" y="338" width="888" height="20" rx="4" fill="#e0f2fe" stroke="#bae6fd" stroke-width="0.8"/>
+  <text x="46" y="352" font-size="9.8" font-weight="600" fill="#0369a1">横切 MCP 工具 + 自定义适配：Web 搜索 · 代码执行 · Grafana 面板 · 自定义调度器/监控/集群管理 API（精准定义防误选）</text>
+
+  <!-- Telemetry Connectors between Row 2 & Row 3 -->
+  <line x1="143" y1="386" x2="143" y2="369" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="368" y1="386" x2="368" y2="369" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="593" y1="386" x2="593" y2="369" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="817" y1="386" x2="817" y2="369" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- Row 3: Production DGX SuperPOD Telemetry Plane -->
+  <rect x="24" y="388" width="912" height="108" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <text x="36" y="407" font-size="11" font-weight="700" fill="#0f172a">生产 AI 工厂集群（NVIDIA DGX H100 / B200 / GB300）：仅向控制面输出遥测，不抢占训练 GPU、不中断负载</text>
+
+  <rect x="36" y="417" width="214" height="69" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="46" y="436" font-size="10.5" font-weight="700" fill="#1e3a8a">计算与设备硬件层</text>
+  <text x="46" y="454" font-size="9.6" fill="#334155">GPU 健康状态 · ECC 校验</text>
+  <text x="46" y="472" font-size="9.6" fill="#475569">PCIe · NVMe · 温度传感器</text>
+
+  <rect x="261" y="417" width="214" height="69" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="271" y="436" font-size="10.5" font-weight="700" fill="#1e3a8a">网络与训练应用层</text>
+  <text x="271" y="454" font-size="9.6" fill="#334155">跨节点网络信号交叉关联</text>
+  <text x="271" y="472" font-size="9.6" fill="#475569">训练作业失败与 goodput</text>
+
+  <rect x="486" y="417" width="214" height="69" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="496" y="436" font-size="10.5" font-weight="700" fill="#1e3a8a">调度与集群管理层</text>
+  <text x="496" y="454" font-size="9.6" fill="#334155">Kubernetes 只读资源与调度</text>
+  <text x="496" y="472" font-size="9.6" fill="#475569">Base Command Manager</text>
+
+  <rect x="711" y="417" width="213" height="69" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="721" y="436" font-size="10.5" font-weight="700" fill="#92400e">可观测与文档知识库</text>
+  <text x="721" y="454" font-size="9.6" fill="#78350f">Prometheus + Grafana Loki</text>
+  <text x="721" y="472" font-size="9.6" fill="#92400e">Mission Control 与 Runbook</text>
+
+  <!-- Footer -->
+  <text x="24" y="518" font-size="10" fill="#64748b">阅读整理配图（非原文原图）· 依据 Kavya G Y &amp; Rohan Adwankar (2026-11-04) 原文整理；开源编排框架属实验性，未公布量化 MTTR/RCA 基线</text>
+</svg>

@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="DolphinRouting empirical evaluation 4-panel chart: mixed/real trace improvements over Dynamo, homogeneous regime divergence, K/init/OSL ablations, and boundaries">
+  <g style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+    <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+    <text x="24" y="33" font-size="16.2" font-weight="700" fill="#0f172a">DolphinRouting Evaluation: Mixed/Real Gains, Regime Divergence &amp; Ablations</text>
+    <text x="24" y="51" font-size="9.7" fill="#475569">arXiv:2610.40292v1 (§4.1–§4.8, Tables 1–4, Figs. 3–5) · Qwen3.8-72B · 4×H20-SXM/node · vLLM+Mooncake · Normalized to Naive SLO bound (≤1.0)</text>
+    <line x1="24" y1="60" x2="936" y2="60" stroke="#cbd5e1" stroke-width="1"/>
+
+    <!-- Panel A: Mixed & Real Traces -->
+    <rect x="20" y="68" width="452" height="214" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+    <rect x="20" y="68" width="452" height="26" rx="8" fill="#eff6ff"/>
+    <rect x="20" y="86" width="452" height="8" fill="#eff6ff"/>
+    <line x1="20" y1="94" x2="472" y2="94" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="32" y="85.5" font-size="10.8" font-weight="700" fill="#1e3a8a">A. Mixed &amp; Real Data: Lower Tail Latency vs. Dynamo (Table 2, ↓ better)</text>
+
+    <!-- Legend for Panel A -->
+    <rect x="32" y="100" width="10" height="7" rx="1.5" fill="#94a3b8"/>
+    <text x="46" y="107" font-size="8.4" fill="#334155">Naive</text>
+    <rect x="86" y="100" width="10" height="7" rx="1.5" fill="#60a5fa"/>
+    <text x="100" y="107" font-size="8.4" fill="#334155">Dynamo (length/ratio rule)</text>
+    <rect x="228" y="100" width="10" height="7" rx="1.5" fill="#1d4ed8"/>
+    <text x="242" y="107" font-size="8.4" font-weight="700" fill="#1d4ed8">DolphinRouting (k-means)</text>
+    <text x="134" y="119" font-size="8.4" font-weight="700" fill="#475569">Norm TTFT P90 ↓</text>
+    <text x="314" y="119" font-size="8.4" font-weight="700" fill="#475569">Norm TPOT P90 ↓</text>
+
+    <!-- Row 1: Hybrid P3D1 -->
+    <rect x="28" y="123" width="436" height="33" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.7"/>
+    <text x="34" y="138" font-size="8.9" font-weight="700" fill="#0f172a">Hybrid P3D1</text>
+    <text x="34" y="150" font-size="7.7" fill="#64748b">(1-D bottleneck)</text>
+    <rect x="116" y="127" width="24.4" height="4.5" rx="1" fill="#94a3b8"/>
+    <rect x="116" y="133" width="23.2" height="4.5" rx="1" fill="#60a5fa"/>
+    <rect x="116" y="139" width="21.5" height="4.5" rx="1" fill="#1d4ed8"/>
+    <text x="145" y="139" font-size="8.3" fill="#0f172a">0.42 → 0.40 → <tspan font-weight="700" fill="#1d4ed8">0.37</tspan></text>
+    <text x="145" y="151" font-size="7.8" font-weight="700" fill="#1d4ed8">−7.5% vs Dynamo</text>
+    <rect x="296" y="127" width="58.0" height="4.5" rx="1" fill="#94a3b8"/>
+    <rect x="296" y="133" width="51.6" height="4.5" rx="1" fill="#60a5fa"/>
+    <rect x="296" y="139" width="46.4" height="4.5" rx="1" fill="#1d4ed8"/>
+    <text x="358" y="139" font-size="8.3" fill="#0f172a">1.00 → 0.89 → <tspan font-weight="700" fill="#1d4ed8">0.80</tspan></text>
+    <text x="358" y="151" font-size="7.8" font-weight="700" fill="#1d4ed8">−10.1% vs Dynamo</text>
+
+    <!-- Row 2: Hybrid P2D2 -->
+    <rect x="28" y="158" width="436" height="33" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.7"/>
+    <text x="34" y="173" font-size="8.9" font-weight="700" fill="#0f172a">Hybrid P2D2</text>
+    <text x="34" y="185" font-size="7.7" fill="#64748b">(2-P bottleneck)</text>
+    <rect x="116" y="162" width="58.6" height="4.5" rx="1" fill="#94a3b8"/>
+    <rect x="116" y="168" width="51.6" height="4.5" rx="1" fill="#60a5fa"/>
+    <rect x="116" y="174" width="47.6" height="4.5" rx="1" fill="#1d4ed8"/>
+    <text x="178" y="174" font-size="8.3" fill="#0f172a">1.01 → 0.89 → <tspan font-weight="700" fill="#1d4ed8">0.82</tspan></text>
+    <text x="178" y="186" font-size="7.8" font-weight="700" fill="#1d4ed8">−7.9% vs Dynamo</text>
+    <rect x="296" y="162" width="17.4" height="4.5" rx="1" fill="#94a3b8"/>
+    <rect x="296" y="168" width="18.0" height="4.5" rx="1" fill="#60a5fa"/>
+    <rect x="296" y="174" width="16.8" height="4.5" rx="1" fill="#1d4ed8"/>
+    <text x="320" y="174" font-size="8.3" fill="#0f172a">0.30 → 0.31 → <tspan font-weight="700" fill="#1d4ed8">0.29</tspan></text>
+    <text x="320" y="186" font-size="7.8" font-weight="700" fill="#1d4ed8">−6.5% vs Dynamo</text>
+
+    <!-- Row 3: Real Data P3D1 -->
+    <rect x="28" y="193" width="436" height="33" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.7"/>
+    <text x="34" y="208" font-size="8.9" font-weight="700" fill="#0f172a">Real Data P3D1</text>
+    <text x="34" y="220" font-size="7.7" fill="#64748b">(Mooncake trace)</text>
+    <rect x="116" y="197" width="22.0" height="4.5" rx="1" fill="#94a3b8"/>
+    <rect x="116" y="203" width="20.3" height="4.5" rx="1" fill="#60a5fa"/>
+    <rect x="116" y="209" width="19.1" height="4.5" rx="1" fill="#1d4ed8"/>
+    <text x="145" y="209" font-size="8.3" fill="#0f172a">0.38 → 0.35 → <tspan font-weight="700" fill="#1d4ed8">0.33</tspan></text>
+    <text x="145" y="221" font-size="7.8" font-weight="700" fill="#1d4ed8">−5.7% vs Dynamo</text>
+    <rect x="296" y="197" width="58.0" height="4.5" rx="1" fill="#94a3b8"/>
+    <rect x="296" y="203" width="52.8" height="4.5" rx="1" fill="#60a5fa"/>
+    <rect x="296" y="209" width="49.9" height="4.5" rx="1" fill="#1d4ed8"/>
+    <text x="358" y="209" font-size="8.3" fill="#0f172a">1.00 → 0.91 → <tspan font-weight="700" fill="#1d4ed8">0.86</tspan></text>
+    <text x="358" y="221" font-size="7.8" font-weight="700" fill="#1d4ed8">−5.5% vs Dynamo</text>
+
+    <!-- Row 4: Real Data P2D2 -->
+    <rect x="28" y="228" width="436" height="33" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.7"/>
+    <text x="34" y="243" font-size="8.9" font-weight="700" fill="#0f172a">Real Data P2D2</text>
+    <text x="34" y="255" font-size="7.7" fill="#64748b">(GMM TPOT 0.37)</text>
+    <rect x="116" y="232" width="59.2" height="4.5" rx="1" fill="#94a3b8"/>
+    <rect x="116" y="238" width="53.4" height="4.5" rx="1" fill="#60a5fa"/>
+    <rect x="116" y="244" width="49.9" height="4.5" rx="1" fill="#1d4ed8"/>
+    <text x="178" y="244" font-size="8.3" fill="#0f172a">1.02 → 0.92 → <tspan font-weight="700" fill="#1d4ed8">0.86</tspan></text>
+    <text x="178" y="256" font-size="7.8" font-weight="700" fill="#1d4ed8">−6.5% vs Dynamo</text>
+    <rect x="296" y="232" width="24.4" height="4.5" rx="1" fill="#94a3b8"/>
+    <rect x="296" y="238" width="22.6" height="4.5" rx="1" fill="#60a5fa"/>
+    <rect x="296" y="244" width="22.0" height="4.5" rx="1" fill="#1d4ed8"/>
+    <text x="324" y="244" font-size="8.3" fill="#0f172a">0.42 → 0.39 → <tspan font-weight="700" fill="#1d4ed8">0.38</tspan></text>
+    <text x="324" y="256" font-size="7.8" font-weight="700" fill="#1d4ed8">−2.6% vs Dynamo</text>
+
+    <text x="32" y="274" font-size="8.0" fill="#475569">Overall vs. Dynamo: −5.7–7.9% P90 TTFT, −2.6–10.1% P90 TPOT (vs. Naive: −12–19% / −3–20%)</text>
+
+    <!-- Panel B: Single-Regime Divergence & Load Sweep -->
+    <rect x="488" y="68" width="452" height="214" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+    <rect x="488" y="68" width="452" height="26" rx="8" fill="#eff6ff"/>
+    <rect x="488" y="86" width="452" height="8" fill="#eff6ff"/>
+    <line x1="488" y1="94" x2="940" y2="94" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="500" y="85.5" font-size="10.8" font-weight="700" fill="#1e3a8a">B. Single-Regime Divergence, Breaches &amp; Hybrid Sweep (Tables 1–2, Figs. 3–4)</text>
+
+    <rect x="498" y="100" width="432" height="37" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+    <text x="506" y="114" font-size="9.0" font-weight="700" fill="#0f172a">ArXiv (avg 8088→229 tok, ~0% cache): uniform prefill-heavy demand</text>
+    <text x="506" y="129" font-size="8.3" fill="#334155">P3D1 0.98/0.51 (near Naive 1.00/0.49); P2D2 1.03/0.24 (trails Naive 1.00/0.22, &gt;1.0 SLO)</text>
+
+    <rect x="498" y="141" width="432" height="37" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+    <text x="506" y="155" font-size="9.0" font-weight="700" fill="#0f172a">L-Eval (19019→72 tok, &gt;80% cache): routing shifts P/D pressure only</text>
+    <text x="506" y="170" font-size="8.3" fill="#334155">P3D1 cuts TPOT 1.00→0.90 (TTFT 0.21→0.25); P2D2 cuts TTFT 0.99→0.85 (TPOT 0.25→0.28)</text>
+
+    <rect x="498" y="182" width="432" height="37" rx="5" fill="#fffbeb" stroke="#fcd34d" stroke-width="0.9"/>
+    <text x="506" y="196" font-size="9.0" font-weight="700" fill="#b45309">HumanEval (198→221 tok, ~0% cache): all 4 breach 1.0 TPOT (1.01–1.06)</text>
+    <text x="506" y="211" font-size="8.3" fill="#78350f">k-means 0.13/1.04 (P3D1) &amp; 0.20/1.06 (P2D2), trailing Naive (0.12/1.01, 0.19/1.02) &amp; Dynamo</text>
+
+    <rect x="498" y="223" width="432" height="52" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="0.9"/>
+    <text x="506" y="237" font-size="9.0" font-weight="700" fill="#1e3a8a">Hybrid Request-Rate Sweep (Figs. 3–4 · Bottleneck Flips with P/D Ratio)</text>
+    <text x="506" y="252" font-size="8.2" fill="#1e293b">• P3D1 @ 2.5 req/s: TPOT 0.75 (vs Dynamo 0.83 / Naive 0.88), jumps to 1.73 @ 3.0 req/s</text>
+    <text x="506" y="267" font-size="8.2" fill="#1e293b">• P2D2 @ 2.5 req/s: TTFT 1.08 (vs Dynamo 1.19 / Naive 1.26), TPOT remains near ~0.32</text>
+
+    <!-- Panel C: Ablation Study -->
+    <rect x="20" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+    <rect x="20" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+    <rect x="20" y="308" width="452" height="8" fill="#eff6ff"/>
+    <line x1="20" y1="316" x2="472" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="32" y="307.5" font-size="10.8" font-weight="700" fill="#1e3a8a">C. Ablations: Cluster Count K, Scan Init &amp; OSL Feature (Hybrid)</text>
+
+    <!-- Left Mini-Chart: P3D1 K sweep -->
+    <rect x="30" y="323" width="212" height="96" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+    <text x="38" y="337" font-size="8.6" font-weight="700" fill="#0f172a">P3D1 · K Sweep (Rounds / Norm TPOT)</text>
+    <text x="38" y="354" font-size="8.2" fill="#334155">K=2</text>
+    <rect x="68" y="346" width="6.3" height="7" rx="1.5" fill="#94a3b8"/>
+    <text x="78" y="353.5" font-size="7.9" fill="#334155">5.3 rds · TPOT 0.96</text>
+    <text x="38" y="371" font-size="8.2" fill="#334155">K=4</text>
+    <rect x="68" y="363" width="17.0" height="7" rx="1.5" fill="#94a3b8"/>
+    <text x="89" y="370.5" font-size="7.9" fill="#334155">14.3 rds · TPOT 0.91</text>
+    <text x="38" y="388" font-size="8.2" font-weight="700" fill="#1d4ed8">K=8</text>
+    <rect x="68" y="380" width="30.6" height="7" rx="1.5" fill="#1d4ed8"/>
+    <text x="102" y="387.5" font-size="8.0" font-weight="700" fill="#1d4ed8">25.8 rds · TPOT 0.80 (best)</text>
+    <text x="38" y="405" font-size="8.2" fill="#334155">K=16</text>
+    <rect x="68" y="397" width="88.0" height="7" rx="1.5" fill="#64748b"/>
+    <text x="160" y="404.5" font-size="7.9" fill="#334155">75.9 rds · 0.82</text>
+
+    <!-- Right Mini-Chart: P2D2 K sweep -->
+    <rect x="250" y="323" width="212" height="96" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+    <text x="258" y="337" font-size="8.6" font-weight="700" fill="#0f172a">P2D2 · K Sweep (Rounds / Norm TTFT)</text>
+    <text x="258" y="354" font-size="8.2" fill="#334155">K=2</text>
+    <rect x="288" y="346" width="7.1" height="7" rx="1.5" fill="#94a3b8"/>
+    <text x="299" y="353.5" font-size="7.9" fill="#334155">6.0 rds · TTFT 0.93</text>
+    <text x="258" y="371" font-size="8.2" fill="#334155">K=4</text>
+    <rect x="288" y="363" width="17.8" height="7" rx="1.5" fill="#94a3b8"/>
+    <text x="310" y="370.5" font-size="7.9" fill="#334155">15.1 rds · TTFT 0.89</text>
+    <text x="258" y="388" font-size="8.2" font-weight="700" fill="#1d4ed8">K=8</text>
+    <rect x="288" y="380" width="30.9" height="7" rx="1.5" fill="#1d4ed8"/>
+    <text x="323" y="387.5" font-size="8.0" font-weight="700" fill="#1d4ed8">26.2 rds · TTFT 0.82 (best)</text>
+    <text x="258" y="405" font-size="8.2" fill="#334155">K=16</text>
+    <rect x="288" y="397" width="88.0" height="7" rx="1.5" fill="#64748b"/>
+    <text x="380" y="404.5" font-size="7.9" fill="#334155">76.3 rds · 0.83</text>
+
+    <!-- Bottom Callouts: Init & OSL ablations -->
+    <rect x="30" y="426" width="212" height="62" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="0.9"/>
+    <text x="38" y="442" font-size="8.8" font-weight="700" fill="#1e3a8a">Table 3 · w/o Scan Init (P3D1, K=8)</text>
+    <text x="38" y="458" font-size="8.2" fill="#1e293b">• Conv. rounds: 25.8 → 39.6 (+53.5%)</text>
+    <text x="38" y="474" font-size="8.2" fill="#1e293b">• TTFT 0.37→0.40 · TPOT 0.80→0.91</text>
+
+    <rect x="250" y="426" width="212" height="62" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="0.9"/>
+    <text x="258" y="442" font-size="8.8" font-weight="700" fill="#1e3a8a">Table 4 · w/o Output-Length OSL (K=8)</text>
+    <text x="258" y="458" font-size="8.2" fill="#1e293b">• P3D1: TTFT 0.37→0.42 · TPOT 0.80→0.93</text>
+    <text x="258" y="474" font-size="8.2" fill="#1e293b">• P2D2: TTFT 0.82→0.92 · TPOT 0.29→0.30</text>
+
+    <!-- Panel D: Scientific Boundaries -->
+    <rect x="488" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+    <rect x="488" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+    <rect x="488" y="308" width="452" height="8" fill="#eff6ff"/>
+    <line x1="488" y1="316" x2="940" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="500" y="307.5" font-size="10.8" font-weight="700" fill="#1e3a8a">D. Scientific Boundaries &amp; Deployment Assumptions</text>
+
+    <rect x="498" y="323" width="432" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+    <rect x="505" y="331" width="96" height="19" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+    <text x="553" y="344" text-anchor="middle" font-size="8.6" font-weight="700" fill="#b45309">OSL Proxy &amp; Drift</text>
+    <text x="610" y="338" font-size="8.3" fill="#334155">Offline clusters use true L; online uses Clairvoyant proxy L̂;</text>
+    <text x="610" y="351" font-size="8.3" fill="#475569">no L̂-error ablation, class-cutoff spec, or drift loop tested.</text>
+
+    <rect x="498" y="364" width="432" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+    <rect x="505" y="372" width="96" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="553" y="385" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1d4ed8">Normalized Scope</text>
+    <text x="610" y="379" font-size="8.3" fill="#334155">Table 2 evaluates at Naive's saturation point (10×/5× idle);</text>
+    <text x="610" y="392" font-size="8.3" fill="#475569">raw ms and per-method max req/s omitted outside Hybrid sweeps.</text>
+
+    <rect x="498" y="405" width="432" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+    <rect x="505" y="413" width="96" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="553" y="426" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1d4ed8">Dynamo Baseline</text>
+    <text x="610" y="420" font-size="8.3" fill="#334155">Tests only Dynamo's length+ratio rule (thresholds unprinted);</text>
+    <text x="610" y="433" font-size="8.3" fill="#475569">§4.4 explicitly omits Dynamo's load-based policies.</text>
+
+    <rect x="498" y="446" width="432" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+    <rect x="505" y="454" width="96" height="19" rx="4" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+    <text x="553" y="467" text-anchor="middle" font-size="8.6" font-weight="700" fill="#0369a1">Fixed P/D &amp; Model</text>
+    <text x="610" y="461" font-size="8.3" fill="#334155">Each table binds to a fixed P/D ratio (P3D1 or P2D2);</text>
+    <text x="610" y="474" font-size="8.3" fill="#475569">evaluated solely on Qwen3.8-72B with no open-source repo.</text>
+
+    <text x="20" y="518" font-size="8.7" fill="#64748b">Note: All figures average 3 runs; b_TTFT / b_TPOT are Naive P90 at 0.1 req/s, with SLO bounds B_TTFT = 10·b_TTFT and B_TPOT = 5·b_TPOT.</text>
+  </g>
+</svg>

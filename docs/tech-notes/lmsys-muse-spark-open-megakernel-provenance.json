@@ -1,0 +1,134 @@
+{
+  "id": "lmsys-muse-spark-open-megakernel",
+  "source_url": "https://www.lmsys.org/blog/2026-11-05-muse-spark-open-ultrafast",
+  "source_title": "Muse Spark Open Ultrafast: Pushing beyond 1,000 Tokens per second",
+  "source_authors": [
+    "Pranjal Shankhdhar"
+  ],
+  "source_org": "LMSYS / SGLang",
+  "source_date": "2026-11-11",
+  "companion_primary_source": {
+    "url": "https://pytorch.org/blog/optimizing-muse-spark-open-on-tpu-v7-with-sglang-torchtpu/",
+    "title": "Optimizing Muse Spark Open on TPU v7 with SGLang-TorchTPU",
+    "authors": [
+      "Haolin Fu",
+      "Xiaoyu Zhang",
+      "Junyan Xu",
+      "Wangyuan Zhang",
+      "Haoguang Cai",
+      "RadixArk Team"
+    ],
+    "org": "PyTorch / RadixArk",
+    "date": "2026-11-10"
+  },
+  "note_date": "2026-11-12",
+  "published_at": "2026-11-12T08:58:59.941917+08:00",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": ".preview/research-jobs/runs/20261112-083004-ff7108eff3-bb92bc/work/sources/lmsys-muse-spark-open-megakernel/article.txt",
+      "kind": "extracted_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261112-083004-ff7108eff3-bb92bc/work/sources/lmsys-muse-spark-open-megakernel/article.html",
+      "kind": "raw_html"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261111-083004-9db0cedd4f-77d76a/work/sources/pytorch-muse-spark-open-tpu-v7-article.txt",
+      "kind": "extracted_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261111-083004-9db0cedd4f-77d76a/work/sources/pytorch-muse-spark-open-tpu-v7.html",
+      "kind": "raw_html"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://www.lmsys.org/blog/2026-11-05-muse-spark-open-ultrafast",
+    "https://github.com/facebookresearch/sgl-muse-mega",
+    "https://pytorch.org/blog/optimizing-muse-spark-open-on-tpu-v7-with-sglang-torchtpu/",
+    "https://github.com/sgl-project/sglang-torchtpu/tree/haolin/ms-v11",
+    "https://www.lmsys.org/blog/2026-10-15-meta-muse-spark-open",
+    "https://mimo.mi.com/docs/en-US/news/latest/1000tps",
+    "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro",
+    "https://docs.cloud.google.com/tpu/docs/tpu7x",
+    "https://docs.jax.dev/en/latest/pallas/tpu/details.html",
+    "https://inferencex.semianalysis.com/blog/agentic-benchmark-agent-benchmark-guide",
+    "https://arxiv.org/abs/2602.06036",
+    "https://arxiv.org/abs/2311.01282",
+    "https://lmsys.org/blog/2025-09-10-sglang-hicache/",
+    "https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles",
+    "https://www.usenix.org/conference/osdi26/presentation/cheng",
+    "https://github.com/Inferact/tpu-megakernels/tree/4048f0820aa4ff8787f707ca9d99b2bada9751aa"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/lmsys-muse-spark-open-megakernel.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/lmsys-muse-spark-open-megakernel.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/lmsys-muse-spark-open-megakernel/layer.png",
+        "origin": "primary_source_preserved",
+        "preserved_untouched": true,
+        "source": "https://www.lmsys.org/blog/2026-11-05-muse-spark-open-ultrafast",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/lmsys-muse-spark-open-megakernel/muse-spark-megakernel-pipeline-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/lmsys-muse-spark-open-megakernel/muse-spark-megakernel-pipeline-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/lmsys-muse-spark-open-megakernel/megakernel-batch-regime-boundaries-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/lmsys-muse-spark-open-megakernel/megakernel-batch-regime-boundaries-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "0bb15447401939169ea3e1b31b959f27ad3d55d5bbc9b05e0d709823dff90ad6",
+      "en_md_sha256": "7b3ef5ecefb71168d1800f917fee4b0b455effa3586fee75682c9e26f28e5b72",
+      "svgs": {
+        "/assets/images/tech/lmsys-muse-spark-open-megakernel/muse-spark-megakernel-pipeline-zh.svg": "9445510754aabd51d1496b895b13e8c013b51fae8ea2c406e2ea036db481808d",
+        "/assets/images/tech/lmsys-muse-spark-open-megakernel/muse-spark-megakernel-pipeline-en.svg": "8d209d3f96893fd46ed720ae15ce8b9425c4dec6cfb0e1bd87f0d9f0b576f900",
+        "/assets/images/tech/lmsys-muse-spark-open-megakernel/megakernel-batch-regime-boundaries-zh.svg": "a3862d19e67a7999c2a1a94482b31ec437fe687a47992e367a5d8da01824c9e2",
+        "/assets/images/tech/lmsys-muse-spark-open-megakernel/megakernel-batch-regime-boundaries-en.svg": "c4909c243015277c9708b7ba0571ca1dc9ddd6e5f0e078f0d9d761235b3a4246"
+      },
+      "preserved": {
+        "layer.png": "743ddcbcb784a7706a34bbf5d8883c9439d61f95981b93b8384da294cc5747f3"
+      }
+    },
+    "playwright_total": 35,
+    "playwright_passed": 35,
+    "playwright_failed": 0
+  }
+}

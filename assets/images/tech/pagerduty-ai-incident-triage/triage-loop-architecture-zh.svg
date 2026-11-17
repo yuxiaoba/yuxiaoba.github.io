@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC','PingFang SC','Lato','Microsoft YaHei',sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="38" font-size="18.5" font-weight="700" fill="#0f172a">PagerDuty SRE Agent：AI 事故第一轮分诊架构与证据闭环</text>
+  <text x="24" y="57" font-size="11" fill="#475569">依据 2026-07-21 工程博文整理：先合并质量与服务信号，再经 Connector 与 Runbook Skill 取证并受控建议修改</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 1: Signal Correlation -->
+  <rect x="24" y="78" width="282" height="68" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <rect x="34" y="86" width="128" height="20" rx="5" fill="#b45309"/>
+  <text x="98" y="100" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">AI 质量信号 · 概率</text>
+  <text x="170" y="100" font-size="11" font-weight="600" fill="#78350f">Arize 指标越阈</text>
+  <text x="34" y="121" font-size="10.2" fill="#92400e">语义：可能异常（LLM 裁判存在样本噪声）</text>
+  <text x="34" y="137" font-size="10" fill="#78350f">例：Insights Agent 工具选择质量下降</text>
+
+  <text x="314" y="116" font-size="15" font-weight="700" fill="#2563eb" text-anchor="middle">+</text>
+
+  <rect x="322" y="78" width="274" height="68" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="332" y="86" width="124" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="394" y="100" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">传统服务 · 上游状态</text>
+  <text x="464" y="100" font-size="11" font-weight="600" fill="#1e3a8a">常规可观测栈</text>
+  <text x="332" y="121" font-size="10.2" fill="#1e40af">排查是否由上游依赖故障引发响应错误</text>
+  <text x="332" y="137" font-size="10" fill="#1e3a8a">目标：将质量漂移与服务宕机分开处置</text>
+
+  <line x1="598" y1="112" x2="619" y2="112" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="622" y="78" width="314" height="68" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="632" y="86" width="136" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="700" y="100" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">PagerDuty 聚合控制</text>
+  <text x="776" y="100" font-size="11" font-weight="700" fill="#0f172a">触发 SRE Agent</text>
+  <text x="632" y="121" font-size="10.2" fill="#1e3a8a">三项判定：是否升级人工 / 预批修复 / 建工单</text>
+  <text x="632" y="137" font-size="10" fill="#1e40af">避免凌晨 2 点因非紧急低分盲目唤醒值班</text>
+
+  <line x1="779" y1="146" x2="779" y2="153" stroke="#2563eb" stroke-width="1.5"/>
+  <line x1="166" y1="153" x2="779" y2="153" stroke="#2563eb" stroke-width="1.5"/>
+  <line x1="166" y1="153" x2="166" y2="162" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Row 2: Three Execution Stages -->
+  <!-- Column 1 -->
+  <rect x="24" y="164" width="284" height="218" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="164" width="284" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="186" width="284" height="10" fill="#dbeafe"/>
+  <text x="36" y="185" font-size="12" font-weight="700" fill="#1e3a8a">1. Connector 外部证据接入</text>
+
+  <rect x="34" y="206" width="264" height="82" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="225" font-size="11.5" font-weight="700" fill="#1d4ed8">Arize AI 可观测连接器</text>
+  <text x="44" y="244" font-size="10.2" fill="#334155">检查当前 Monitor 是否已自行恢复</text>
+  <text x="44" y="261" font-size="10.2" fill="#334155">筛选违规 Trace：LLM / 工具 / 检索 / 输出</text>
+  <text x="44" y="278" font-size="10" fill="#475569">提取评估解释（eval explanations）</text>
+
+  <rect x="34" y="296" width="264" height="76" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="315" font-size="11.5" font-weight="700" fill="#1d4ed8">GitHub 代码与文档连接器</text>
+  <text x="44" y="335" font-size="10.2" fill="#334155">检索可能引发退化的近期代码变更</text>
+  <text x="44" y="355" font-size="10.2" fill="#334155">定位系统 Prompt 与工具定义源码</text>
+
+  <line x1="310" y1="273" x2="334" y2="273" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Column 2 -->
+  <rect x="337" y="164" width="284" height="218" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="337" y="164" width="284" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="337" y="186" width="284" height="10" fill="#dbeafe"/>
+  <text x="349" y="185" font-size="12" font-weight="700" fill="#1e3a8a">2. Skill 固化人工分诊流程</text>
+
+  <rect x="347" y="206" width="264" height="82" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="357" y="225" font-size="11.5" font-weight="700" fill="#1d4ed8">create-pagerduty-skill 编码 SOP</text>
+  <text x="357" y="244" font-size="10.2" fill="#334155">依循四步：查恢复状态 → 滤违规轨迹</text>
+  <text x="357" y="261" font-size="10.2" fill="#334155">→ 归纳评估解释共性 → 查近期代码提交</text>
+  <text x="357" y="278" font-size="10" fill="#475569">将既有人工 Runbook 转为可重复步骤</text>
+
+  <rect x="347" y="296" width="264" height="76" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="357" y="315" font-size="11.5" font-weight="700" fill="#1e3a8a">Insights Agent 案例分诊产出</text>
+  <text x="357" y="335" font-size="10.2" fill="#0f172a">判定为“真实但轻微”的工具选择退化</text>
+  <text x="357" y="355" font-size="10.2" fill="#1e40af">输出诊断摘要与排序后的后续改进建议</text>
+
+  <line x1="623" y1="273" x2="647" y2="273" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Column 3 -->
+  <rect x="650" y="164" width="286" height="218" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="650" y="164" width="286" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="650" y="186" width="286" height="10" fill="#dbeafe"/>
+  <text x="662" y="185" font-size="12" font-weight="700" fill="#1e3a8a">3. 边界内代码建议与回归验证</text>
+
+  <rect x="660" y="206" width="266" height="82" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="670" y="225" font-size="11.5" font-weight="700" fill="#1d4ed8">定制 Code-Suggestion Skill</text>
+  <text x="670" y="244" font-size="10.2" fill="#334155">将改动严格限制在团队设定边界之内</text>
+  <text x="670" y="261" font-size="10.2" fill="#334155">针对失败轨迹提出具体系统 Prompt 调整</text>
+  <text x="670" y="278" font-size="10" fill="#475569">仅作候选工程数据点，不绕过评审合入</text>
+
+  <rect x="660" y="296" width="266" height="76" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="670" y="315" font-size="11.5" font-weight="700" fill="#166534">轨迹重放与回归门控</text>
+  <text x="670" y="335" font-size="10.2" fill="#14532d">必须先对失败轨迹重放并跑回归测试</text>
+  <text x="670" y="355" font-size="10.2" fill="#14532d">经人工确认后纳入 Agent 持续改进闭环</text>
+
+  <!-- Row 3: Boundary & Feedback -->
+  <rect x="24" y="398" width="912" height="96" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="36" y="408" width="144" height="22" rx="5" fill="#1e3a8a"/>
+  <text x="108" y="423" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="middle">闭环边界与证据口径</text>
+  <text x="190" y="423" font-size="11.5" font-weight="700" fill="#0f172a">分诊洞察回流 Runbook 与评测集，但默认定位是“第一轮分诊辅助”而非全自动修复</text>
+  <text x="36" y="450" font-size="10.5" fill="#334155">① 控制面原则：调查读取（Monitor / Trace / Commit）与受限改动建议（Code Skill）分离，Prompt 修正必须经重放与回归测试检验。</text>
+  <text x="36" y="472" font-size="10.5" fill="#475569">② 证据界限：原文以内部 Insights Agent 与两段演进视频作案例走查，未报告对照实验、MTTR 降幅或噪声抑制实测数值。</text>
+
+  <text x="24" y="516" font-size="10.2" fill="#64748b">阅读整理配图（非原图）· 依据 PagerDuty Engineering《How the SRE Agent Triages AI Incidents》(2026-07-21) 原文流程与边界整理</text>
+</svg>

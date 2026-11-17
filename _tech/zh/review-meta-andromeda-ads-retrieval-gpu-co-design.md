@@ -3,7 +3,7 @@ id: review-meta-andromeda-ads-retrieval-gpu-co-design
 title: 2026-10-29｜Meta Andromeda：融合执行与 GPU 共置的边界
 date: '2026-10-29'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -16,9 +16,11 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/zh/review-meta-andromeda-ads-retrieval-gpu-co-design/
 long_read: true
-summary: "Andromeda 如何分别减少中间张量与跨机候选搬运，并区分评分峰值和完整流水线。"
+summary: Andromeda 如何分别减少中间张量与跨机候选搬运，并区分评分峰值和完整流水线。
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 ## 从候选检索到内存带宽瓶颈
 
 Andromeda 位于广告推荐的检索阶段，要在毫秒预算内把巨大候选池缩成少量广告，再交给更昂贵的排序模型。Meta 的新架构用多个用户专家表达不同兴趣，广告表示融入实时上下文，交互层用 MoE gating 选择相关专家。原文报告相对 2024 检索模型约减少 300 倍推理 FLOPs；这个模型变化给系统融合留下了空间。

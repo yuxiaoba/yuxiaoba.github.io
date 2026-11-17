@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Penelope 实证评测四象限图：GPU-Only 与 GPU-CPU 双层收益分离口径、位置与粒度消融、以及调度器/并发/容量比敏感性" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="33" font-size="16.5" font-weight="700" fill="#0f172a">Penelope 实证评测：GPU-Only 与双层缓存分离口径、消融归因与敏感性边界</text>
+  <text x="24" y="52" font-size="10.0" fill="#475569">整理自 arXiv:2611.00391v1（§5.2–§5.4, 表 1–6, 图 4–6）· Qwen3-8B / 32B (128K YaRN) 与 235B-A22B-FP8 (256K)</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Panel A: GPU-Only -->
+  <rect x="20" y="72" width="452" height="204" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="72" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="90" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="98" x2="472" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="89.5" font-size="10.8" font-weight="700" fill="#1e3a8a">A. GPU-Only 相对 SGLang 降幅（H100 / A100, 表 1, 5, 图 4）</text>
+  <text x="32" y="113" font-size="8.6" fill="#475569">深蓝 = Mean TTFT 降幅 · 浅蓝 = Mean JCT 降幅（Claude Code / FreeInference 回放）</text>
+
+  <text x="140" y="132" text-anchor="end" font-size="8.8" font-weight="700" fill="#0f172a">8B CC4 (H100)</text>
+  <rect x="146" y="122" width="144.0" height="7" rx="2" fill="#1d4ed8"/>
+  <text x="296" y="128.5" font-size="8.2" font-weight="700" fill="#1d4ed8">−60% (6.7→2.7s)</text>
+  <rect x="146" y="131" width="88.8" height="7" rx="2" fill="#60a5fa"/>
+  <text x="240" y="137.5" font-size="8.2" fill="#334155">−37% (77.5→48.8m)</text>
+
+  <text x="140" y="156" text-anchor="end" font-size="8.8" font-weight="700" fill="#0f172a">8B CC8 (H100)</text>
+  <rect x="146" y="146" width="98.4" height="7" rx="2" fill="#1d4ed8"/>
+  <text x="250" y="152.5" font-size="8.2" font-weight="600" fill="#1d4ed8">−41% (20.7→12.3s)</text>
+  <rect x="146" y="155" width="72.0" height="7" rx="2" fill="#60a5fa"/>
+  <text x="224" y="161.5" font-size="8.2" fill="#334155">−30%</text>
+
+  <text x="140" y="180" text-anchor="end" font-size="8.8" font-weight="700" fill="#0f172a">32B CC4 (H100)</text>
+  <rect x="146" y="170" width="108.0" height="7" rx="2" fill="#1d4ed8"/>
+  <text x="260" y="176.5" font-size="8.2" font-weight="600" fill="#1d4ed8">−45% (11.0→6.0s)</text>
+  <rect x="146" y="179" width="74.4" height="7" rx="2" fill="#60a5fa"/>
+  <text x="226" y="185.5" font-size="8.2" fill="#334155">−31%</text>
+
+  <text x="140" y="204" text-anchor="end" font-size="8.8" font-weight="700" fill="#0f172a">235B CC4 (H100)</text>
+  <rect x="146" y="194" width="103.2" height="7" rx="2" fill="#1d4ed8"/>
+  <text x="255" y="200.5" font-size="8.2" font-weight="600" fill="#1d4ed8">−43% (17.0→9.8s)</text>
+  <rect x="146" y="203" width="79.2" height="7" rx="2" fill="#60a5fa"/>
+  <text x="231" y="209.5" font-size="8.2" fill="#334155">−33%</text>
+
+  <text x="140" y="228" text-anchor="end" font-size="8.8" font-weight="700" fill="#0f172a">8B CC4 (A100)</text>
+  <rect x="146" y="218" width="124.8" height="7" rx="2" fill="#1d4ed8"/>
+  <text x="276" y="224.5" font-size="8.2" font-weight="600" fill="#1d4ed8">−52% (19.1→9.1s)</text>
+  <rect x="146" y="227" width="100.8" height="7" rx="2" fill="#60a5fa"/>
+  <text x="252" y="233.5" font-size="8.2" fill="#334155">−42% (180→104m)</text>
+
+  <text x="140" y="252" text-anchor="end" font-size="8.8" font-weight="700" fill="#0f172a">8B FI N=4 (H100)</text>
+  <rect x="146" y="242" width="76.8" height="7" rx="2" fill="#1d4ed8"/>
+  <text x="228" y="248.5" font-size="8.2" font-weight="600" fill="#1d4ed8">−32% TTFT (FI N=3: −30%)</text>
+  <rect x="146" y="251" width="5.0" height="7" rx="2" fill="#94a3b8"/>
+  <text x="157" y="257.5" font-size="8.2" fill="#475569">−2% JCT（会话耗时以工具等待为主）</text>
+
+  <text x="32" y="270" font-size="8.1" fill="#475569">另测：32B CC8 −36% TTFT / −27% JCT · A100 CC8 −41% TTFT / −35% JCT（工具等待仅占 4–9%）</text>
+
+  <!-- Panel B: Two-Tier GPU-CPU -->
+  <rect x="488" y="72" width="452" height="204" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="72" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="90" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="98" x2="940" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="89.5" font-size="10.8" font-weight="700" fill="#1e3a8a">B. GPU–CPU 双层缓存（对比强化 LPM 基线, 表 2）</text>
+  <text x="500" y="113" font-size="8.6" fill="#475569">基线 SGLang 已计入 CPU 前缀（自身 TTFT 降 13–37%），且多得 1,024 tokens 容量</text>
+
+  <text x="614" y="136" text-anchor="end" font-size="8.7" font-weight="700" fill="#0f172a">8B N=4 (128/128K)</text>
+  <rect x="620" y="125" width="136.8" height="7.5" rx="2" fill="#1d4ed8"/>
+  <text x="762" y="132" font-size="8.2" font-weight="600" fill="#1d4ed8">−57% (10.4→4.5s)</text>
+  <rect x="620" y="135" width="91.2" height="7.5" rx="2" fill="#60a5fa"/>
+  <text x="717" y="142" font-size="8.2" fill="#334155">−38% (81→50m)</text>
+
+  <text x="614" y="167" text-anchor="end" font-size="8.7" font-weight="700" fill="#0f172a">8B N=8 (128/128K)</text>
+  <rect x="620" y="156" width="110.4" height="7.5" rx="2" fill="#1d4ed8"/>
+  <text x="736" y="163" font-size="8.2" font-weight="600" fill="#1d4ed8">−46% (23.5→12.8s)</text>
+  <rect x="620" y="166" width="86.4" height="7.5" rx="2" fill="#60a5fa"/>
+  <text x="712" y="173" font-size="8.2" fill="#334155">−36% (124→79m)</text>
+
+  <text x="614" y="198" text-anchor="end" font-size="8.7" font-weight="700" fill="#0f172a">32B N=4 (128/128K)</text>
+  <rect x="620" y="187" width="156.0" height="7.5" rx="2" fill="#1d4ed8"/>
+  <text x="782" y="194" font-size="8.2" font-weight="600" fill="#1d4ed8">−65% (11.0→3.9s)</text>
+  <rect x="620" y="197" width="105.6" height="7.5" rx="2" fill="#60a5fa"/>
+  <text x="731" y="204" font-size="8.2" fill="#334155">−44% (84→47m)</text>
+
+  <text x="614" y="229" text-anchor="end" font-size="8.7" font-weight="700" fill="#0f172a">235B N=4 (256/256K)</text>
+  <rect x="620" y="218" width="182.4" height="7.5" rx="2" fill="#1e3a8a"/>
+  <text x="808" y="225" font-size="8.2" font-weight="700" fill="#1e3a8a">−76% (24.2→5.8s)</text>
+  <rect x="620" y="228" width="144.0" height="7.5" rx="2" fill="#60a5fa"/>
+  <text x="770" y="235" font-size="8.2" font-weight="600" fill="#334155">−60% (359→142m)</text>
+
+  <rect x="500" y="246" width="428" height="22" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="508" y="260.5" font-size="8.2" font-weight="600" fill="#92400e">容量控制：235B 用同 trace 与 128/128K 容量时，TTFT 降幅 −76%→−49%（命中差 +43→+27 pt）</text>
+
+  <!-- Panel C: Joint Ablation -->
+  <rect x="20" y="288" width="452" height="204" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="288" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="306" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="314" x2="472" y2="314" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="305.5" font-size="10.8" font-weight="700" fill="#1e3a8a">C. 联合消融：淘汰起点 × 释放粒度 (8B CC4, 表 4 &amp; 6)</text>
+  <text x="32" y="328" font-size="8.5" fill="#475569">单改位置而保留整节点淘汰效果微弱；两者协同才能兼顾命中率与重算位置</text>
+
+  <rect x="32" y="336" width="428" height="48" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="42" y="351" font-size="8.9" font-weight="700" fill="#334155">Node-Level 整节点淘汰（90–94% 重算来自全丢私有历史请求）</text>
+  <rect x="42" y="358" width="136" height="20" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="110" y="371.5" text-anchor="middle" font-size="8.0" fill="#334155">末节点尾(SGL): 64.5% | 0%</text>
+  <rect x="184" y="358" width="132" height="20" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="250" y="371.5" text-anchor="middle" font-size="8.0" fill="#334155">末节点头: 69.0% | −12%</text>
+  <rect x="322" y="358" width="128" height="20" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="386" y="371.5" text-anchor="middle" font-size="8.0" fill="#334155">私有起点: 66.7% | −6%</text>
+
+  <rect x="32" y="390" width="428" height="76" rx="5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.1"/>
+  <text x="42" y="405" font-size="8.9" font-weight="700" fill="#1e3a8a">Block-Level 块级切分淘汰（全丢历史占比降至 16–23%）</text>
+
+  <text x="150" y="422.5" text-anchor="end" font-size="8.3" fill="#334155">末节点尾部 (Tail)</text>
+  <rect x="156" y="414" width="90" height="10" rx="2" fill="#60a5fa"/>
+  <text x="252" y="422.5" font-size="8.1" fill="#334155">−45% TTFT / −28% JCT (Hit 82.6%)</text>
+
+  <text x="150" y="439.5" text-anchor="end" font-size="8.3" fill="#334155">末节点头部</text>
+  <rect x="156" y="431" width="86" height="10" rx="2" fill="#93c5fd"/>
+  <text x="248" y="439.5" font-size="8.1" fill="#334155">−43% TTFT / −26% JCT (Hit 81.5%)</text>
+
+  <text x="150" y="456.5" text-anchor="end" font-size="8.3" font-weight="700" fill="#1e3a8a">私有起点 (Penelope)</text>
+  <rect x="156" y="448" width="126" height="10" rx="2" fill="#1d4ed8"/>
+  <text x="288" y="456.5" font-size="8.1" font-weight="700" fill="#1d4ed8">−63% TTFT / −39% JCT (Hit 84.5%)</text>
+
+  <text x="32" y="482" font-size="8.2" font-weight="600" fill="#1d4ed8">表 6 同命中率：8B CC4 均 Hit 83.6%，头部淘汰 TTFT 2.7s 胜过块级尾部 3.8s（−29%）</text>
+
+  <!-- Panel D: Sensitivity -->
+  <rect x="488" y="288" width="452" height="204" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="288" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="306" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="314" x2="940" y2="314" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="305.5" font-size="10.8" font-weight="700" fill="#1e3a8a">D. 调度器、并发压力与 CPU/GPU 容量比敏感性 (§5.3)</text>
+
+  <rect x="500" y="321" width="428" height="90" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="510" y="337" font-size="9.0" font-weight="700" fill="#1e3a8a">1. 调度器耦合：LPM vs. FCFS（CC N=4, 表 3）</text>
+  <line x1="510" y1="343" x2="918" y2="343" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="510" y="355" font-size="8.2" font-weight="700" fill="#475569">模型</text>
+  <text x="562" y="355" font-size="8.2" font-weight="700" fill="#1d4ed8">LPM：ΔTTFT (全丢 SGL→Pen)</text>
+  <text x="746" y="355" font-size="8.2" font-weight="700" fill="#b45309">FCFS：ΔTTFT (全丢 SGL→Pen)</text>
+
+  <text x="510" y="371" font-size="8.3" font-weight="700" fill="#0f172a">8B</text>
+  <text x="562" y="371" font-size="8.3" fill="#0f172a">−60%  (SGL 27.9% → Pen 2.2%)</text>
+  <text x="746" y="371" font-size="8.3" fill="#334155">−47%  (SGL 30.1% → Pen 5.8%)</text>
+
+  <text x="510" y="387" font-size="8.3" font-weight="700" fill="#0f172a">32B</text>
+  <text x="562" y="387" font-size="8.3" fill="#0f172a">−45%  (SGL 45.0% → Pen 8.6%)</text>
+  <text x="746" y="387" font-size="8.3" fill="#92400e">−26%  (SGL 50.2% → Pen 21.0%)</text>
+
+  <text x="510" y="403" font-size="8.3" font-weight="700" fill="#0f172a">235B</text>
+  <text x="562" y="403" font-size="8.3" fill="#0f172a">−43%  (SGL 28.8% → Pen 3.9%)</text>
+  <text x="746" y="403" font-size="8.3" fill="#92400e">−17%  (SGL 35.5% → Pen 21.4%)</text>
+
+  <rect x="500" y="417" width="428" height="69" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="510" y="432" font-size="9.0" font-weight="700" fill="#1e3a8a">2. 缓存压力甜点区（并发数 图 5 &amp; CPU/GPU 比 图 6）</text>
+  <text x="510" y="448" font-size="8.3" fill="#334155">• 并发 N=2 (8B 256K): 均 99.5% 命中，差 &lt;3%；N=24 仍 −31%/−29% TTFT (8B/32B)</text>
+  <text x="510" y="463" font-size="8.3" fill="#334155">• CPU/GPU (8B CC8 FCFS): 1:1 缺命中 −10% → 3:1 峰值 −35% TTFT / −28% JCT</text>
+  <text x="510" y="478" font-size="8.3" fill="#475569">• CPU/GPU 4:1: SGLang 命中达 92% (vs 94%)，TTFT/JCT 差缩至 −2% / −1%</text>
+
+  <rect x="20" y="500" width="920" height="30" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="518.5" font-size="8.9" fill="#0f172a"><tspan font-weight="700" fill="#1e3a8a">结论口径提示：</tspan>GPU-only 峰值 (−60%/−37%) 与双层峰值 (−76%/−60%) 分别对应不同模型与容量配置；实验通过限额 GPU 缓存与合成前缀回放触发竞争。</text>
+</svg>

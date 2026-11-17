@@ -1,0 +1,295 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-11-15T13:01:25Z",
+  "paper_id": "arxiv-2611.09048",
+  "arxiv_id": "2611.09048",
+  "arxiv_version": "v1",
+  "version_status": "v1 only at verification time (submitted 2026-11-06T06:21:06Z UTC); no v2 revision or withdrawal",
+  "digest_date": "2026-11-10",
+  "anchor": "paper-arxiv-2611.09048",
+  "daily_paths": {
+    "zh": "/digest/zh/daily/2026-11-10/#paper-arxiv-2611.09048",
+    "en": "/digest/en/daily/2026-11-10/#paper-arxiv-2611.09048"
+  },
+  "source_title": "LeanDojo-v2: A Comprehensive Library for AI-Assisted Theorem Proving in Lean",
+  "source_authors": [
+    {
+      "name": "Ryan Hsiang",
+      "affiliation": "National Taiwan University",
+      "email": "b11901040@ntu.edu.tw"
+    },
+    {
+      "name": "William Adkisson",
+      "affiliation": "Washington University in St. Louis",
+      "email": "adkisson@wustl.edu"
+    },
+    {
+      "name": "Robert Joseph George",
+      "affiliation": "California Institute of Technology",
+      "email": "rgeorge@caltech.edu"
+    },
+    {
+      "name": "Anima Anandkumar",
+      "affiliation": "California Institute of Technology",
+      "email": "anima@caltech.edu"
+    }
+  ],
+  "venue": "39th Conference on Neural Information Processing Systems (NeurIPS 2025) Workshop: MATH-AI",
+  "arxiv_comments": "11 pages, 7 figures, accepted to NeurIPS Math-AI workshop",
+  "submitted_date": "2026-11-06",
+  "submitted_timestamp_utc": "2026-11-06T06:21:06Z",
+  "source_url_abs": "https://arxiv.org/abs/2611.09048",
+  "source_url_v1_abs": "https://arxiv.org/abs/2611.09048v1",
+  "source_url_v1_pdf": "https://arxiv.org/pdf/2611.09048v1",
+  "source_url_v1_html": "https://arxiv.org/html/2611.09048v1",
+  "authoring_source": "assistant",
+  "assistant_translated": true,
+  "translation_note": "Assistant-authored bilingual Chinese and English close reading grounded directly in primary arXiv:2611.09048v1 artifacts and audited against companion public repos lean-dojo/LeanDojo-v2 and lean-dojo/lean4code; not user-supplied translation.",
+  "primary_artifacts": {
+    "frozen_abs_html": {
+      "repo_path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/fetched/arxiv-2611.09048/page.html",
+      "stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/leandojo-v2-stage/frozen_abs.html",
+      "bytes": 40003,
+      "sha256": "d5604031524a027ed0972dc66b3d04fc92483158568b902c5eaf046c63a757d9"
+    },
+    "live_abs_html": {
+      "url": "https://arxiv.org/abs/2611.09048",
+      "stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/leandojo-v2-stage/live_abs.html",
+      "bytes": 40003,
+      "sha256": "d5604031524a027ed0972dc66b3d04fc92483158568b902c5eaf046c63a757d9",
+      "matches_frozen": true
+    },
+    "frozen_paper_pdf": {
+      "repo_path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/fetched/arxiv-2611.09048/paper.pdf",
+      "stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/leandojo-v2-stage/frozen_paper.pdf",
+      "bytes": 2998439,
+      "sha256": "d5a6a2f1e7bbfebd61114d87f737b11c595f8c73a954af5f81feccd000a375e8",
+      "pages": 11
+    },
+    "live_paper_pdf": {
+      "url": "https://arxiv.org/pdf/2611.09048",
+      "stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/leandojo-v2-stage/live_paper.pdf",
+      "bytes": 2998439,
+      "sha256": "d5a6a2f1e7bbfebd61114d87f737b11c595f8c73a954af5f81feccd000a375e8",
+      "matches_frozen": true
+    },
+    "frozen_paper_txt": {
+      "repo_path": ".preview/research-jobs/runs/20261110-091241-71b806c631-d16e4d/work/sources/fetched/arxiv-2611.09048/paper.txt",
+      "stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/leandojo-v2-stage/frozen_paper.txt",
+      "bytes": 24743,
+      "sha256": "e121676b2c2345eefef0289f6a309edf3b57f2dcfcae95091287e77279f90f90"
+    },
+    "live_html_v1": {
+      "url": "https://arxiv.org/html/2611.09048v1",
+      "stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/leandojo-v2-stage/live_html_v1.html",
+      "bytes": 118445,
+      "sha256": "7ebc15bf903f6b4e62994fa0bdd4f5e71370be59fabf2fd5fc87bf100dc4b399"
+    },
+    "companion_repositories_checked": [
+      {
+        "url": "https://github.com/lean-dojo/LeanDojo-v2",
+        "readme_stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/leandojo-v2-stage/github_leandojo_v2_readme.md",
+        "readme_sha256": "2a25731b6da276068971808485ce82c5d03af35c502ad2ea6ed837e9445da618",
+        "verified_modules": [
+          "lean_dojo_v2/agent/{base_agent,hf_agent,lean_agent,external_agent}.py",
+          "lean_dojo_v2/database/dynamic_database.py",
+          "lean_dojo_v2/prover/{base_prover,hf_prover,external_prover,retrieval_prover}.py",
+          "lean_dojo_v2/trainer/{sft_trainer,grpo_trainer,retrieval_trainer,progress_trainer}.py",
+          "lean_dojo_v2/utils/difficulty.py",
+          "lean_dojo_v2/external_api/ExternalAPI.lean"
+        ]
+      },
+      {
+        "url": "https://github.com/lean-dojo/lean4code",
+        "readme_stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/leandojo-v2-stage/github_lean4code_readme.md",
+        "readme_sha256": "fe655e2dcb2300e67410822d2d501ae9a4fc766d2867370a8ec91c538f71c16c"
+      }
+    ]
+  },
+  "verbatim_factual_claims": {
+    "difficulty_percentiles": "33rd and 67th percentiles of proof lengths measured by number of proof steps (Section 2.1)",
+    "build_time_reduction": "Compared to LeanCopilot, removes CTranslate2 C++ inference library requirement, reducing build time from over ten minutes to just a few seconds (Section 2.1)",
+    "goal_tactic_state_preservation": "If a tactic fails or causes an error, the goal state remains unchanged (Section 2.2 & Figure 2)",
+    "figure_2_example": "⊢ ∀ {p q : Prop}, p ∧ q → q ∧ p -> (rw [Nat.add_comm] loop) -> simp -> ⊢ ∀ {p q : Prop}, p → q → q ∧ p -> (simp loop) -> intro p q hp hq -> p q : Prop, hp : p, hq : q ⊢ q ∧ p -> exact ⟨hq, hp⟩ -> Goals accomplished!",
+    "models_named": [
+      "DeepSeek-Prover-V2-7B",
+      "DeepSeek-Prover-V2-671B",
+      "Byte5 retriever"
+    ],
+    "lean4code_extensions_table_1": [
+      {
+        "extension": "Lean4 (modified)",
+        "purpose": "Downloads and configures Lean4/LeanDojo-v2"
+      },
+      {
+        "extension": "LeanDojo",
+        "purpose": "Supports one-click LeanDojo tracing"
+      },
+      {
+        "extension": "LeanCopilot",
+        "purpose": "Calls models to complete theorems"
+      },
+      {
+        "extension": "Agent-TARS",
+        "purpose": "General agentic AI assistance"
+      }
+    ],
+    "codebase_audit_notes": {
+      "base_prover_search": "Implements stack-based DFS (max_steps=100, max_trials_per_goal=5, nx.shortest_path) while Section 2.2 notes Pantograph supports DFS and MCTS",
+      "build_deps_defaults": "False in HFAgent and ExternalAgent; True in LeanAgent",
+      "benchmark_caveat": "Paper contains no quantitative theorem-proving pass@k benchmark comparison table across miniF2F/ProofNet/Mathlib"
+    }
+  },
+  "files": {
+    "zh_markdown": {
+      "repo_path": "_digest/zh/daily-2026-11-10.md",
+      "sha256_before": "55924385db55619eb657291bedd36e80457aa15e34da3a2eda2487d06f6483ee",
+      "sha256_after": "075a5e0e377070be48d25249c4b632cdfc087089b378a3a8f1723fde0aa7e044",
+      "bytes_before": 53956,
+      "bytes_after": 70404,
+      "prefix_bytes": 52373,
+      "prefix_sha256_before": "dcf4486652da5d4d213253b1726e3d1e41d16544812ce38541dafe1cbf7afc0c",
+      "prefix_sha256_after": "dcf4486652da5d4d213253b1726e3d1e41d16544812ce38541dafe1cbf7afc0c",
+      "prefix_unchanged": true,
+      "suffix_bytes": 506,
+      "suffix_sha256_before": "4ba29a748afed4ef8763f975811772be5ee34064de50253b6646c021dc629d91",
+      "suffix_sha256_after": "4ba29a748afed4ef8763f975811772be5ee34064de50253b6646c021dc629d91",
+      "suffix_unchanged": true,
+      "section_bytes_before": 1077,
+      "section_sha256_before": "90d2d3d67e57e0b188e139efd0b22a69acbc6634fdb94496dc40558723aea4b8",
+      "section_bytes_after": 17525,
+      "section_sha256_after": "f10d985e1fd57f72026854f5a8267bd72158eb689352dcbd671d7935217f7532"
+    },
+    "en_markdown": {
+      "repo_path": "_digest/en/daily-2026-11-10.md",
+      "sha256_before": "669bf325e2dc0a0843ab64d1caed41f895d2ffbbcc1133d445b9a4c4f14cd1b3",
+      "sha256_after": "b929eaad4ceb53b6f5fff12cbf6aec347a190c1a4844b4cefd9cc4a6b99fb142",
+      "bytes_before": 56553,
+      "bytes_after": 71658,
+      "prefix_bytes": 54858,
+      "prefix_sha256_before": "f9d6c5f86e320c0ba2b8f067cb23f11ef256927bea52ad1ed1ab986cb6bea726",
+      "prefix_sha256_after": "f9d6c5f86e320c0ba2b8f067cb23f11ef256927bea52ad1ed1ab986cb6bea726",
+      "prefix_unchanged": true,
+      "suffix_bytes": 535,
+      "suffix_sha256_before": "f7ed59ea92200562470957250a6abdb1995b695e1c4551980983fbf0ebd33e50",
+      "suffix_sha256_after": "f7ed59ea92200562470957250a6abdb1995b695e1c4551980983fbf0ebd33e50",
+      "suffix_unchanged": true,
+      "section_bytes_before": 1160,
+      "section_sha256_before": "a5897ff9519114562e177a3216bb39093fd2efb3f601ca9a4d05c062af7c1370",
+      "section_bytes_after": 16265,
+      "section_sha256_after": "1494b9261a3227935bb73e51a9f2045c1756a45d087f310318db3db865978347"
+    },
+    "images": [
+      {
+        "language": "zh",
+        "role": "architecture",
+        "repo_path": "assets/images/digest/2026-11-10/leandojo-v2-architecture-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-arxiv-2611.09048v1-and-companion-repo",
+        "sha256": "6a0ca7c9e46b69689d81925d9c7dd66541bea97a120014e52d91b840990a9836",
+        "bytes": 15585
+      },
+      {
+        "language": "en",
+        "role": "architecture",
+        "repo_path": "assets/images/digest/2026-11-10/leandojo-v2-architecture-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-arxiv-2611.09048v1-and-companion-repo",
+        "sha256": "2c53f98958180337b3a5870f1e9f84283eb11d087a63f28c52ce9c2a9bb61eaf",
+        "bytes": 15286
+      },
+      {
+        "language": "zh",
+        "role": "search_ide",
+        "repo_path": "assets/images/digest/2026-11-10/leandojo-v2-search-ide-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-arxiv-2611.09048v1-and-companion-repo",
+        "sha256": "559dbe6c2d614eb75598c0db3593848d15453871ca7f2201671b91db54483409",
+        "bytes": 10474
+      },
+      {
+        "language": "en",
+        "role": "search_ide",
+        "repo_path": "assets/images/digest/2026-11-10/leandojo-v2-search-ide-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-arxiv-2611.09048v1-and-companion-repo",
+        "sha256": "63a01adfbd0f990c4d32505fc8959649aa34b1ca19d86b468517c6e0426c9630",
+        "bytes": 10182
+      }
+    ],
+    "preserved_existing_images": [
+      {
+        "repo_path": "assets/images/digest/2026-11-10/bitdecoding-fp4.png",
+        "bytes": 103749,
+        "sha256": "d795c9a186bc20dcbf160f467e2d776271cd0ec01df44dc356f4ae53028892f8",
+        "untouched": true
+      },
+      {
+        "repo_path": "assets/images/digest/2026-11-10/boxbox-runtime-kernel-en.svg",
+        "bytes": 12851,
+        "sha256": "afd3b1d1a2835a247c6d8c92dcbe617dfb0546aa8db88a11988f86b53588ba64",
+        "untouched": true
+      },
+      {
+        "repo_path": "assets/images/digest/2026-11-10/boxbox-runtime-kernel-zh.svg",
+        "bytes": 13150,
+        "sha256": "9b4d7c1a3034823244783cc29ad5a02937324e0d00f6fe74a972d07ca7d7412f",
+        "untouched": true
+      },
+      {
+        "repo_path": "assets/images/digest/2026-11-10/boxbox.png",
+        "bytes": 109475,
+        "sha256": "c1adf7e914b6cb34a98b336cd0e084c4011edc5d0144b6d5aa50562a59f1df62",
+        "untouched": true
+      },
+      {
+        "repo_path": "assets/images/digest/2026-11-10/cache-trap.png",
+        "bytes": 234939,
+        "sha256": "e964f3e76940a9236f5d4242ba6ebbaa2e5d54ea3accc34ed85b4253a7521839",
+        "untouched": true
+      },
+      {
+        "repo_path": "assets/images/digest/2026-11-10/cloud-opsbench.png",
+        "bytes": 126251,
+        "sha256": "b1ed2cf156af4b04821638a37a56b5a874ca1f64d754fae6c5b6542c3ec12b8c",
+        "untouched": true
+      },
+      {
+        "repo_path": "assets/images/digest/2026-11-10/foscar.png",
+        "bytes": 83247,
+        "sha256": "d4e08a09f52275ba01efe7f3bfcb617c1f5a648e1212eaef42e4ea21c6e0f972",
+        "untouched": true
+      },
+      {
+        "repo_path": "assets/images/digest/2026-11-10/mortis.png",
+        "bytes": 108123,
+        "sha256": "da633272aae225644b31ba2b786d8837faa460a4c18235309e45512cbe37b523",
+        "untouched": true
+      },
+      {
+        "repo_path": "assets/images/digest/2026-11-10/patternops.png",
+        "bytes": 170147,
+        "sha256": "fca717a364294e41d612529f29a03188ef97616a848a8654a25325b3382fb50d",
+        "untouched": true
+      },
+      {
+        "repo_path": "assets/images/digest/2026-11-10/perfrace-harness-comparison-en.svg",
+        "bytes": 15264,
+        "sha256": "8712e6141af832d36292c98cd153244d93f0c655955f5c2c68530aeeb01398a8",
+        "untouched": true
+      },
+      {
+        "repo_path": "assets/images/digest/2026-11-10/perfrace-harness-comparison-zh.svg",
+        "bytes": 15472,
+        "sha256": "de72057db239d1b4442fcca5336ef239a8cad620f861d553ddfcdf23acf2fe79",
+        "untouched": true
+      },
+      {
+        "repo_path": "assets/images/digest/2026-11-10/retry-executions.png",
+        "bytes": 163063,
+        "sha256": "1d7626b61357d0e9f1dcf1a1e8c4fbcc2fcdce1c08ce2265344a919f2101c128",
+        "untouched": true
+      }
+    ]
+  }
+}

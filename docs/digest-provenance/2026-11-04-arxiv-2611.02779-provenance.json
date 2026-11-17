@@ -1,0 +1,234 @@
+{
+  "paper_id": "arxiv-2611.02779",
+  "anchor": "paper-arxiv-2611.02779",
+  "date": "2026-11-04",
+  "paper_title": "Stop Handcrafting Your Engine! GenDB-V: Towards AI-Generated and Formally Verified Database Systems",
+  "authors": [
+    "Jiale Lao",
+    "Immanuel Trummer"
+  ],
+  "affiliation": "Cornell University, Ithaca, New York, USA",
+  "arxiv_id": "2611.02779",
+  "arxiv_version": "v1",
+  "submitted_date": "2026-11-02",
+  "submitted_timestamp_utc": "2026-11-02T08:56:44Z",
+  "withdrawal_status": "not_withdrawn_v1_only_at_verification_time",
+  "assistant_translated": true,
+  "translation_provenance": "assistant-authored paired Chinese/English close reading grounded in primary arXiv:2611.02779v1 PDF and HTML",
+  "primary_urls": {
+    "arxiv_abs": "https://arxiv.org/abs/2611.02779",
+    "arxiv_pdf_v1": "https://arxiv.org/pdf/2611.02779v1",
+    "arxiv_html_v1": "https://arxiv.org/html/2611.02779v1",
+    "code_repository": "https://github.com/GenLang-V/GenDB-V"
+  },
+  "primary_artifacts": {
+    "downloaded_abs_html": {
+      "stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/gendb-v-stage/abs.html",
+      "sha256": "6eb6d5709142f169a738e7f2fc6fe35be4dc6bc1dd142a97a117837d0f868762"
+    },
+    "downloaded_v1_pdf": {
+      "stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/gendb-v-stage/paper.pdf",
+      "sha256": "4360288a9d1cc7e78f032f0165642b8de7cc3f17d8f6bb870c300be96cac04c9",
+      "pages": 13
+    },
+    "downloaded_v1_html": {
+      "stage_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/gendb-v-stage/paper.html",
+      "sha256": "b69a0b874188ace3cf4e89605e72b55de79621c37ed1711a7fa5b1dc4d7eedd5"
+    },
+    "frozen_abs_html": {
+      "path": ".preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/online/arxiv-2611.02779/page.html",
+      "sha256": "6eb6d5709142f169a738e7f2fc6fe35be4dc6bc1dd142a97a117837d0f868762"
+    },
+    "frozen_abs_txt": {
+      "path": ".preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/online/arxiv-2611.02779/page.txt",
+      "sha256": "986e8b84bc570f12057c79daf6d819e9b95c8d38a7601b8b3506f8e2759ccc00"
+    },
+    "frozen_fetch_index": {
+      "path": ".preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/fetch-index.json",
+      "sha256": "6516dec4a5188fa789e7c917b8403436bc6d38568acb3b2e275e662884b64ba8"
+    }
+  },
+  "verbatim_grounding": {
+    "verification_toolchain": [
+      "Verus",
+      "Z3 SMT solver",
+      "safe Rust subset (unsafe/assume/admit disabled)",
+      "rustc (--compile ghost-code erasure)",
+      "SQLGlot"
+    ],
+    "spec_foundation": "SQLSpec in Verus modeled on PostgreSQL 18 documentation",
+    "agent_model": "Claude Opus 5.5 (high effort)",
+    "hardware": "2x 16-core Intel Xeon Gold 5218 (32 physical cores, 64 hardware threads), 384 GB RAM",
+    "baselines": [
+      "DuckDB 1.5.6",
+      "Umbra 26.08 (optimized compilation mode)",
+      "Bespoke OLAP (via SynnoDB)"
+    ],
+    "benchmarks": {
+      "tpch": "SF100 (22 templates; 114.64 GB uncompressed dbgen cap)",
+      "sec_edgar": "SF3 (6 templates: Q1, Q2, Q3, Q4, Q6, Q24; 5.44 GB cleaned TSV cap)"
+    },
+    "key_numbers": {
+      "template_verified_count": "28/28",
+      "template_joint_geomean_speedup": "22.0-61.3x (TPC-H: 51.6x DuckDB, 22.0x Umbra; SEC-EDGAR: 61.3x DuckDB, 28.3x Umbra)",
+      "template_plain_array_geomean_speedup": "1.84-5.49x (beats DuckDB 65/66 TPC-H & 18/18 SEC-EDGAR; Umbra 55/66 & 15/18)",
+      "template_workload_time_s_tpch_1_32_64t": {
+        "duckdb": [
+          367.841,
+          21.258,
+          16.74
+        ],
+        "umbra": [
+          170.103,
+          10.209,
+          11.979
+        ],
+        "gendb_v_plain": [
+          50.134,
+          4.452,
+          3.953
+        ],
+        "gendb_v_joint": [
+          10.38,
+          0.844,
+          0.749
+        ]
+      },
+      "template_workload_time_s_sec_1_32_64t": {
+        "duckdb": [
+          26.72,
+          1.869,
+          1.555
+        ],
+        "umbra": [
+          10.94,
+          0.746,
+          1.143
+        ],
+        "gendb_v_plain": [
+          7.043,
+          0.837,
+          0.731
+        ],
+        "gendb_v_joint": [
+          0.296,
+          0.078,
+          0.076
+        ]
+      },
+      "general_engine_v16_tpch_sf100": {
+        "total_time_s_1t": 109.3,
+        "total_time_s_64t": 9.16,
+        "speedup_vs_duckdb_1t_64t": [
+          "3.4x",
+          "1.8x"
+        ],
+        "speedup_vs_umbra_1t_64t": [
+          "1.52x",
+          "1.27x"
+        ],
+        "combined_speedup_range": "1.27-3.4x",
+        "v0_ref_interpreter_sf1_60s": "2/22 queries completed",
+        "v2_cost_usd": 594,
+        "v16_cost_usd": 1229
+      },
+      "bespoke_olap_audit": "wrong answers on valid schema-conforming databases in 16 of 28 templates (10/22 TPC-H + 6/6 SEC-EDGAR); GenDB-V 0/28",
+      "synthesis_cost_and_loc": {
+        "joint_templates_usd": "$2,310 ($1,868 TPC-H median 5.4h + $442 SEC-EDGAR median 3.5h)",
+        "plain_templates_usd": "$1,285 TPC-H + $390 SEC-EDGAR",
+        "template_median_loc": "~6,500 TPC-H / ~5,900 SEC-EDGAR (77% specs/contracts/proofs)",
+        "general_engine_loc": "~104,000 (68% specs/proofs)"
+      }
+    }
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_digest/zh/daily-2026-11-04.md",
+      "sha256_before": "42535e59d07ab1c04e0ec14fbf0313bf28d9731371bc22ce493c46377fe357bd",
+      "sha256_after": "132b70ae1ad474b08aa54ab243a19a13e4d2797e1dbf32b242362a019cc102a9",
+      "prefix_sha256_before": "85fca7f422a845bbfa7a1cacb69ef818123ed5bb7f4bc4547c0d5adca0f25942",
+      "prefix_sha256_after": "85fca7f422a845bbfa7a1cacb69ef818123ed5bb7f4bc4547c0d5adca0f25942",
+      "prefix_identical": true,
+      "suffix_sha256_before": "cb6d3f29d2d855f5559f5ae65bf310615d7c4dd405b79c4d18a31bfd477bb81e",
+      "suffix_sha256_after": "cb6d3f29d2d855f5559f5ae65bf310615d7c4dd405b79c4d18a31bfd477bb81e",
+      "suffix_identical": true,
+      "old_section_bytes": 875,
+      "new_section_bytes": 18089
+    },
+    "en_markdown": {
+      "path": "_digest/en/daily-2026-11-04.md",
+      "sha256_before": "a57dbd326923e736bee7f27a384743b9d766715bc1d905de93f4853d61bb85ff",
+      "sha256_after": "aa4c111dc2d577b2573c359a62b1c36267c196b199577ee2313b886b2871fb3e",
+      "prefix_sha256_before": "d2d300cdec16849c47ee700ab1820b3c12bb209adde77205eea975f5993f1943",
+      "prefix_sha256_after": "d2d300cdec16849c47ee700ab1820b3c12bb209adde77205eea975f5993f1943",
+      "prefix_identical": true,
+      "suffix_sha256_before": "ceb66b78784ff55ffe3c3f181c0bebab66e8dafcfb785defd2a1d28b1211bc1e",
+      "suffix_sha256_after": "ceb66b78784ff55ffe3c3f181c0bebab66e8dafcfb785defd2a1d28b1211bc1e",
+      "suffix_identical": true,
+      "old_section_bytes": 769,
+      "new_section_bytes": 19164
+    },
+    "preserved_existing_images": [
+      {
+        "path": "assets/images/digest/2026-11-04/basin.png",
+        "status": "kept_untouched_on_disk",
+        "sha256": "2984b0e791fc77b7f73105c26f70e97287bbf1bf7e80fcb7157d5687cc4cedb2"
+      },
+      {
+        "path": "assets/images/digest/2026-11-04/distdebug.png",
+        "status": "kept_untouched_on_disk",
+        "sha256": "a7fc76a11303e64142aa0f2d2c75bdfbc070524a8cdc9fb80a59a640dea11a80"
+      },
+      {
+        "path": "assets/images/digest/2026-11-04/exo.png",
+        "status": "kept_untouched_on_disk",
+        "sha256": "08b8c82d1c3fb16d8c581b3953d567363cceabb53d2de6ef623493e4d72a4fbc"
+      },
+      {
+        "path": "assets/images/digest/2026-11-04/fault-free-rca.png",
+        "status": "kept_untouched_on_disk",
+        "sha256": "3cd3e6b97406dc076a2d0914c1fa047f36ae64820c87ca2f5d106a7699dbee6f"
+      },
+      {
+        "path": "assets/images/digest/2026-11-04/fetch-outcomes.png",
+        "status": "kept_untouched_on_disk",
+        "sha256": "10fb255d0eeb5f2e3b493d0d27b8343cc97b2b9d7e0a7020a4029b376ffc6166"
+      },
+      {
+        "path": "assets/images/digest/2026-11-04/rtp-llm.png",
+        "status": "kept_untouched_on_disk",
+        "sha256": "eefb80e16c8c01b6b5a337a80de3f22af2328e69104bbb7fcd1441e3ba99aba0"
+      }
+    ],
+    "images": [
+      {
+        "path": "assets/images/digest/2026-11-04/gendb-v-architecture-zh.svg",
+        "lang": "zh",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-arxiv-2611.02779v1-pdf-and-html",
+        "sha256": "fa67d4255bb0e456f4988d30c9634824b9bf8bdb698c43af0e3e667edb54b4c0"
+      },
+      {
+        "path": "assets/images/digest/2026-11-04/gendb-v-architecture-en.svg",
+        "lang": "en",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-arxiv-2611.02779v1-pdf-and-html",
+        "sha256": "516d709a3dabdc1405a8b08735fe59b80ae96b7b2a7f5ccb6aca0f9ef09d6639"
+      },
+      {
+        "path": "assets/images/digest/2026-11-04/gendb-v-verification-eval-zh.svg",
+        "lang": "zh",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-arxiv-2611.02779v1-pdf-and-html",
+        "sha256": "c8d408aed2b5e3ff8eb198c34a8b210d5189864d02a557a9f55bf72bed601f1c"
+      },
+      {
+        "path": "assets/images/digest/2026-11-04/gendb-v-verification-eval-en.svg",
+        "lang": "en",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-arxiv-2611.02779v1-pdf-and-html",
+        "sha256": "296aef7387ea314ec2ce122578c895711b583be47dea62de238a7f503f009f03"
+      }
+    ]
+  }
+}

@@ -3,7 +3,7 @@ id: automated-em-search
 title: 2026-11-01 | Can Automated Red Teams Find Training-Data Monitoring Gaps?
 date: '2026-11-01'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -12,17 +12,17 @@ tags:
 - self-improvement
 - observability
 - systems-reliability
-summary: Anthropic combines iterative scoring and shared experiment logs to probe
-  monitoring gaps, with important limits on what the objective establishes.
+summary: Anthropic combines iterative scoring and shared experiment logs to probe monitoring gaps, with important limits on what the objective establishes.
 translation_source: assistant
 authorship: assistant
 long_read: true
 source_url: https://alignment.anthropic.com/2026/automated-em-search/
 permalink: /tech/en/automated-em-search/
 published_at: '2026-11-01T08:44:13.804154+08:00'
-updated_at: '2026-11-01T08:44:13.804154+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
-
 Training examples can look benign individually yet induce unwanted behavior after fine-tuning. Anthropic turns this concern into an iterative stress test: agents propose data, query a monitor, fine-tune a small research model, and evaluate downstream behavior. The change is a search process that accumulates experimental evidence beyond the limited attempts available to human red teams.
 
 Original: [Automated Subtle Emergent Misalignment Research](https://alignment.anthropic.com/2026/automated-em-search/) · Oscar Balcells Obeso; Richard Qi, Monte MacDiarmid, Evan Hubinger · Anthropic Alignment Science · October 2026.

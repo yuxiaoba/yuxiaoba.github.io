@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="GraphWeave empirical audit: 4,114-report study funnel, plan collapse rates, NeuG workload reduction, human audits, and 19 confirmed bugs">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="14" y="14" width="932" height="512" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" rx="10"/>
+  <text x="30" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="16.5" font-weight="700" fill="#0f172a">GraphWeave Empirical Audit: Funnel, Plan Collapse, NeuG Triage &amp; 19 Bugs</text>
+  <text x="30" y="57" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" fill="#475569">arXiv:2611.07754v1 · 3 Mature Systems (Neo4j / Memgraph / FalkorDB) × 12h + Industrial NeuG 0.1.1 Evaluation</text>
+  <line x1="30" y1="66" x2="930" y2="66" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Quadrant A -->
+  <rect x="28" y="76" width="442" height="212" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="40" y="95" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">A. 12h Study: Report Funnel &amp; Plan Collapse (Tables 2, 5)</text>
+  <rect x="38" y="103" width="422" height="176" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+
+  <rect x="46" y="109" width="406" height="24" rx="4" fill="#dbeafe"/>
+  <text x="249" y="124.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#1d4ed8">8 Methods: 4,114 Raw Reports → 3,136 FP (76.2%) + Heavy Duplicates</text>
+
+  <text x="48" y="146" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" font-weight="700" fill="#0f172a">3-Seed Collapse Mean (5,000 pairs)</text>
+  <rect x="236" y="138" width="9" height="8" rx="2" fill="#1d4ed8"/>
+  <text x="249" y="145.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#334155">Neo4j</text>
+  <rect x="294" y="138" width="9" height="8" rx="2" fill="#3b82f6"/>
+  <text x="307" y="145.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#334155">Memgraph</text>
+  <rect x="372" y="138" width="9" height="8" rx="2" fill="#93c5fd"/>
+  <text x="385" y="145.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#334155">FalkorDB</text>
+
+  <!-- Bars -->
+  <text x="108" y="166" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#0f172a">Dinkel</text>
+  <rect x="114" y="153" width="120.7" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <rect x="114" y="159.5" width="76.7" height="5.5" rx="1.5" fill="#3b82f6"/>
+  <rect x="114" y="166" width="150.5" height="5.5" rx="1.5" fill="#93c5fd"/>
+  <text x="272" y="165.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" font-weight="700" fill="#1d4ed8">27.44% / 17.44% / 34.21%</text>
+
+  <text x="108" y="195" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#0f172a">GraspDB</text>
+  <rect x="114" y="182" width="24.2" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <rect x="114" y="188.5" width="117.3" height="5.5" rx="1.5" fill="#3b82f6"/>
+  <rect x="114" y="195" width="146.3" height="5.5" rx="1.5" fill="#93c5fd"/>
+  <text x="272" y="194.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">5.50% / 26.67% / 33.24%</text>
+
+  <text x="108" y="224" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#0f172a">GRev</text>
+  <rect x="114" y="211" width="60.3" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <rect x="114" y="217.5" width="25.5" height="5.5" rx="1.5" fill="#3b82f6"/>
+  <rect x="114" y="224" width="86.9" height="5.5" rx="1.5" fill="#93c5fd"/>
+  <text x="272" y="223.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">13.71% / 5.79% / 19.76%</text>
+
+  <text x="108" y="253" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#0f172a">GraphGenie</text>
+  <rect x="114" y="240" width="49.7" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <rect x="114" y="246.5" width="67.5" height="5.5" rx="1.5" fill="#3b82f6"/>
+  <rect x="114" y="253" width="83.3" height="5.5" rx="1.5" fill="#93c5fd"/>
+  <text x="272" y="252.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">11.29% / 15.34% / 18.94%</text>
+
+  <text x="48" y="272" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.2" fill="#475569">Note: 33 of 54 transforms on Neo4j stay 0% collapsed; GraspDB rises via dialect skew.</text>
+
+  <!-- Quadrant B -->
+  <rect x="482" y="76" width="450" height="212" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="494" y="95" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">B. NeuG 0.1.1 Workload Reduction &amp; Audits (Tables 6, 7)</text>
+  <rect x="492" y="103" width="430" height="176" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+
+  <text x="502" y="119" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#0f172a">Representative Continuous Batches on NeuG (Table 6)</text>
+  <rect x="502" y="124" width="410" height="18" rx="3" fill="#eff6ff"/>
+  <text x="508" y="136.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" font-weight="700" fill="#1d4ed8">Batch</text>
+  <text x="560" y="136.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" font-weight="700" fill="#1d4ed8">Raw → Kept</text>
+  <text x="646" y="136.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" font-weight="700" fill="#1d4ed8">Clus → Unit</text>
+  <text x="724" y="136.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" font-weight="700" fill="#1d4ed8">Out (Adap/Gate/Bug)</text>
+  <text x="854" y="136.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" font-weight="700" fill="#1d4ed8">Reduct.</text>
+
+  <text x="514" y="154" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">#1</text>
+  <text x="564" y="154" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">26 → 13</text>
+  <text x="656" y="154" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">3 → 4</text>
+  <text x="748" y="154" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">2 / 1 / 1</text>
+  <text x="856" y="154" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" font-weight="700" fill="#1d4ed8">84.6%</text>
+
+  <text x="514" y="169" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">#2</text>
+  <text x="564" y="169" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">17 → 13</text>
+  <text x="656" y="169" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">3 → 3</text>
+  <text x="748" y="169" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">1 / 2 / 0</text>
+  <text x="856" y="169" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" font-weight="700" fill="#1d4ed8">82.4%</text>
+
+  <text x="514" y="184" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">#3</text>
+  <text x="564" y="184" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">12 → 9</text>
+  <text x="656" y="184" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">3 → 4</text>
+  <text x="748" y="184" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">1 / 2 / 1</text>
+  <text x="856" y="184" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" font-weight="700" fill="#1d4ed8">66.7%</text>
+
+  <rect x="502" y="195" width="201" height="77" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <rect x="508" y="201" width="189" height="17" rx="4" fill="#dbeafe"/>
+  <text x="602.5" y="213" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" font-weight="700" fill="#1d4ed8">Table 7a · n=100 Analyzed</text>
+  <text x="510" y="232" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">• Human agreement: 91 / 100 (91%)</text>
+  <text x="510" y="247" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" font-weight="700" fill="#1d4ed8">• Real-bug recall: 29 / 29 (100%·3 bugs)</text>
+  <text x="510" y="262" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#475569">• FP recall: 62 / 71 (87.3%; 9 escalated)</text>
+
+  <rect x="711" y="195" width="201" height="77" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <rect x="717" y="201" width="189" height="17" rx="4" fill="#dcfce7"/>
+  <text x="811.5" y="213" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" font-weight="700" fill="#166534">Table 7b · n=100 Gated Out</text>
+  <text x="719" y="232" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" font-weight="700" fill="#166534">• Duplicate issues: 100 / 100 (100%)</text>
+  <text x="719" y="247" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">• New bugs missed: 0 / 100 (0%)</text>
+  <text x="719" y="262" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#475569">• Batch #1 missed bug surfaced in #3</text>
+
+  <!-- Quadrant C -->
+  <rect x="28" y="296" width="442" height="200" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="40" y="315" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">C. NeuG 0.1.1 Unique Bugs at Saturation (Fig. 10)</text>
+  <rect x="38" y="323" width="422" height="164" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+
+  <text x="110" y="339" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" font-weight="700" fill="#0f172a">Dinkel</text>
+  <rect x="116" y="331" width="94.5" height="9" rx="2" fill="#3b82f6"/>
+  <text x="216" y="339" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" font-weight="700" fill="#1d4ed8">9 (top single method)</text>
+
+  <text x="110" y="354" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">GraspDB</text>
+  <rect x="116" y="346" width="42.0" height="9" rx="2" fill="#60a5fa"/>
+  <text x="164" y="354" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">4</text>
+
+  <text x="110" y="369" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">GraphGenie</text>
+  <rect x="116" y="361" width="31.5" height="9" rx="2" fill="#60a5fa"/>
+  <text x="154" y="369" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">3</text>
+
+  <text x="110" y="384" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">GSlicer</text>
+  <rect x="116" y="376" width="31.5" height="9" rx="2" fill="#60a5fa"/>
+  <text x="154" y="384" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">3</text>
+
+  <text x="110" y="399" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">GDBMeter</text>
+  <rect x="116" y="391" width="31.5" height="9" rx="2" fill="#60a5fa"/>
+  <text x="154" y="399" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">3</text>
+
+  <text x="110" y="414" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">GDsmith</text>
+  <rect x="116" y="406" width="21.0" height="9" rx="2" fill="#93c5fd"/>
+  <text x="143" y="414" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">2</text>
+
+  <text x="110" y="429" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">GRev</text>
+  <rect x="116" y="421" width="21.0" height="9" rx="2" fill="#93c5fd"/>
+  <text x="143" y="429" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">2</text>
+
+  <text x="110" y="444" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">Gamera</text>
+  <rect x="116" y="436" width="21.0" height="9" rx="2" fill="#93c5fd"/>
+  <text x="143" y="444" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">2</text>
+
+  <text x="110" y="460" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" font-weight="700" fill="#1d4ed8">Total Union</text>
+  <rect x="116" y="451" width="199.5" height="10" rx="2" fill="#1d4ed8"/>
+  <text x="321" y="460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" font-weight="700" fill="#1d4ed8">19 (19 confirmed, 13 fixed)</text>
+
+  <text x="48" y="479" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.2" fill="#475569">No single method covers &gt;9/19 bugs; non-overlapping findings motivate integration.</text>
+
+  <!-- Quadrant D -->
+  <rect x="482" y="296" width="450" height="200" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="494" y="315" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">D. Scientific Audit Boundaries &amp; Scope (§6–§7)</text>
+  <rect x="492" y="323" width="430" height="164" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+
+  <rect x="500" y="330" width="414" height="34" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="506" y="337" width="114" height="19" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="563" y="350" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" font-weight="700" fill="#1d4ed8">Human-in-Loop</text>
+  <text x="628" y="344" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#334155">Multi-agent triage aids reviewers (91% agreement,</text>
+  <text x="628" y="357" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#475569">87.3% FP recall); 2 authors inspect every bug.</text>
+
+  <rect x="500" y="368" width="414" height="34" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="506" y="375" width="114" height="19" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="563" y="388" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" font-weight="700" fill="#92400e">No Completeness</text>
+  <text x="628" y="382" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#334155">19 NeuG bugs under 12h runs ≠ total defect count;</text>
+  <text x="628" y="395" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#475569">NeuG plan-collapse % &amp; agent API cost unprinted.</text>
+
+  <rect x="500" y="406" width="414" height="34" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="506" y="413" width="114" height="19" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="563" y="426" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" font-weight="700" fill="#1d4ed8">Cypher &amp; Bound</text>
+  <text x="628" y="420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#334155">Tested on 4 Cypher systems only; within-engine</text>
+  <text x="628" y="433" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#475569">EXPLAIN hash gives a conservative collapse bound.</text>
+
+  <rect x="500" y="444" width="414" height="34" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="506" y="451" width="114" height="19" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="0.8"/>
+  <text x="563" y="464" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" font-weight="700" fill="#991b1b">Ports &amp; Artifacts</text>
+  <text x="628" y="458" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#334155">Tool ports yield Impl. FPs (GraphGenie 59.2%);</text>
+  <text x="628" y="471" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#475569">no GraphWeave public code URL in v1 preprint.</text>
+
+  <text x="30" y="512" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" fill="#475569">Source: arXiv:2611.07754v1 Tables 2–7, Fig. 10 &amp; §§4–7; Table 5 plan-collapse means cover 3 seeds × 5,000 pairs (spread ≤1.3 pp).</text>
+</svg>

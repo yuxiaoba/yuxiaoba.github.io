@@ -1,0 +1,274 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-03-arxiv-2610.41160",
+  "paper_id": "arxiv-2610.41160",
+  "anchor_id": "paper-arxiv-2610.41160",
+  "digest_date": "2026-11-03",
+  "digest_entry_prefix": "03",
+  "updated_at_utc": "2026-11-17T02:56:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-03.md",
+    "en_target": "_digest/en/daily-2026-11-03.md",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/71eda1fe-963d-44f7-b0f8-4c957a485401/scratch/d2b2-sections/2610.41160/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/71eda1fe-963d-44f7-b0f8-4c957a485401/scratch/d2b2-sections/2610.41160/section_en.md",
+    "translation_provenance": "Assistant-authored Chinese technical close reading and paired English technical close reading derived directly from primary arXiv:2610.41160v1."
+  },
+  "primary_source": {
+    "arxiv_id": "2610.41160",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "No v2 revision or withdrawal notice present in saved arXiv abstract HTML as of verification.",
+    "title": "ARK: Avoiding Routing Collisions for KV Cache Transfer in Disaggregated LLM Inference",
+    "authors": [
+      "Hung-Chun Lin",
+      "Ting-Wei Hsu",
+      "Chung-En Ho",
+      "Ahmed Saeed"
+    ],
+    "equal_contribution": [
+      "Hung-Chun Lin",
+      "Ting-Wei Hsu"
+    ],
+    "affiliation": "Georgia Institute of Technology, Atlanta, GA, USA",
+    "categories": [
+      "cs.NI",
+      "cs.AI",
+      "cs.DC"
+    ],
+    "submitted_utc": "Fri, 30 Oct 2026 02:35:39 UTC",
+    "submitted_date": "2026-10-30",
+    "venue_note": "Proceedings of the ACM SIGCOMM 2026 Conference (SIGCOMM '26), pp. 2067-2073 / ACM SIGCOMM Workshop on Networks for AI Computing (NAIC '26), August 17-21, 2026, Denver, CO, USA; 7 pages; ACM ISBN 979-8-4007-2467-1/26/08",
+    "doi": "10.1145/3789240.3828750",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2610.41160",
+      "abs_v1": "https://arxiv.org/abs/2610.41160v1",
+      "pdf": "https://arxiv.org/pdf/2610.41160",
+      "html_v1": "https://arxiv.org/html/2610.41160v1",
+      "acm_doi": "https://doi.org/10.1145/3789240.3828750"
+    },
+    "public_code_repo_in_paper": null,
+    "local_sources": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2610.41160.abs.html",
+        "lines": 627,
+        "sha256": "e22074c0fe0ac3b46735a020fd2149e84e8adaf37133923ded2f54416ad94b29",
+        "sha256_status": "pending_parent_computation_no_subagent_shell",
+        "bytes": 42526
+      },
+      "html_v1": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2610.41160.html",
+        "lines": 1395,
+        "sha256": "748f86fda9606f2bb2b13ac669aa79023aac6df7e69ab0923c852a0ddda44f1a",
+        "sha256_status": "pending_parent_computation_no_subagent_shell",
+        "bytes": 211954
+      },
+      "txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2610.41160.txt",
+        "lines": 506,
+        "sha256": "bc59997aa9f6c5be2991b0fbd4113742e1d37359d08f5970da395c43cb302003",
+        "sha256_status": "pending_parent_computation_no_subagent_shell",
+        "bytes": 59949
+      },
+      "pdf": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2610.41160.pdf",
+        "pages": 7,
+        "sha256": "53c6aff314703ca0aff9b6ee70ebea62e6271a2be21a6447bbbf6caa1252d7b2",
+        "sha256_status": "pending_parent_computation_no_subagent_shell",
+        "bytes": 700812
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "kv_scale_examples": {
+      "llama_3_1_405b_per_token_kb": 504,
+      "llama_3_1_405b_100k_tokens_gb": 48,
+      "llama_3_1_405b_400gbps_duration_ms": 960,
+      "llama_3_8b_per_token_kb": 128,
+      "llama_3_8b_mean_tokens_approx": 13300,
+      "llama_3_8b_kv_flow_range_mb_to_gb": "125 MB to 6.7 GB",
+      "llama_3_8b_mean_kv_flow_gb": 1.6,
+      "llama_3_8b_min_100gbps_duration_ms": 128,
+      "llama_3_8b_simulated_ref_100gbps_ms": 137
+    },
+    "simulation_setup": {
+      "compute_simulator": "SimAI / Vidur RandomForest regressors trained on per-layer LLaMA-3-8B H100 profiles",
+      "network_simulator": "AstraSim ECMP-based NS-3 packet-level RDMA backend",
+      "topology": "Two-tier spine-leaf Clos (Alibaba HPN style): 16 GPUs across two 8-GPU servers (8 prefill, 8 decode), 2 leaf switches, 4 spines (K=4), 100 Gbps links (800 Gbps ingress vs 400 Gbps spine egress = 2:1 oversubscription)",
+      "workload": "Zipf(alpha=0.7) prompt tokens, random prefill-decode pairs, Poisson arrival QPS 1..30, 1000 requests per experiment"
+    },
+    "fct_reduction_vs_ecmp": {
+      "qps_1": {
+        "mean_pct": -1.9,
+        "p95_pct": -1.2,
+        "source": "section_4_2_text"
+      },
+      "qps_5": {
+        "mean_pct": -12.2,
+        "p95_pct": -15.1,
+        "source": "fig_2_plot_labels"
+      },
+      "qps_10": {
+        "mean_pct": -21.7,
+        "p95_pct": -26.2,
+        "source": "fig_2_plot_labels"
+      },
+      "qps_15": {
+        "mean_pct": -24.8,
+        "p95_pct": -26.5,
+        "source": "fig_2_plot_labels"
+      },
+      "qps_20": {
+        "mean_pct": -28.9,
+        "p95_pct": -32.0,
+        "source": "fig_2_plot_labels"
+      },
+      "qps_25_headline_peak": {
+        "mean_pct": -27.3,
+        "p95_pct": -34.0,
+        "source": "abstract_text_and_fig_2"
+      },
+      "qps_30": {
+        "mean_pct": -13.8,
+        "p95_pct": -12.4,
+        "source": "section_4_2_text_and_fig_2"
+      }
+    },
+    "spine_heatmap_qps_25_fig_3": {
+      "ecmp_peak_concurrent_flows": 18,
+      "ecmp_hotspot_spines": [
+        "Spine 2",
+        "Spine 3"
+      ],
+      "ecmp_underutilized_spines": [
+        "Spine 1",
+        "Spine 4"
+      ],
+      "ark_peak_concurrent_flows_all_spines": "< ~8"
+    },
+    "ttft_reduction_vs_ecmp": {
+      "fixed_prefill_ms_approx": 840,
+      "fixed_decode_1_ms_approx": 10,
+      "qps_5": {
+        "mean_pct": -2.2,
+        "p95_pct": -0.7,
+        "source": "fig_4_plot_labels_and_text_approx_2pct"
+      },
+      "qps_10": {
+        "mean_pct": -4.9,
+        "p95_pct": -4.2,
+        "source": "fig_4_plot_labels"
+      },
+      "qps_15": {
+        "mean_pct": -7.1,
+        "p95_pct": -6.7,
+        "source": "fig_4_plot_labels"
+      },
+      "qps_20": {
+        "mean_pct": -10.6,
+        "p95_pct": -10.3,
+        "source": "fig_4_plot_labels"
+      },
+      "qps_25": {
+        "mean_pct": -12.9,
+        "p95_pct": -10.5,
+        "source": "abstract_text_and_fig_4"
+      },
+      "qps_30": {
+        "mean_pct": -8.5,
+        "p95_pct": -11.5,
+        "source": "fig_4_plot_labels_and_text_approx_12pct"
+      }
+    },
+    "controller_microbenchmarks_table_1_intel_i9_single_core": {
+      "hash_computation_us": 4.1,
+      "reservation_table_lookup_us": 0.87,
+      "boot_initialize_delta_max_2_pow_16_ms": "~326",
+      "on_flow_arrival_k4_us": "<= 3.48",
+      "on_flow_arrival_k1000_us": "<= 870",
+      "ref_1_6gb_at_100gbps_ms": "~137",
+      "k4_reservation_to_kv_transfer_ratio_pct": "~0.0025"
+    }
+  },
+  "explicit_limitations": [
+    "Evaluation is simulation-only (SimAI/Vidur + AstraSim/NS-3) on a single 16-GPU, 2-leaf, 4-spine, 2:1 oversubscribed 100 Gbps Clos with LLaMA-3-8B Zipf Poisson traces (1000 requests/run); no physical RDMA hardware deployment or in-simulator comparison against CONGA, ConWeave, LetFlow, PLB, or packet spraying.",
+    "In Algorithm 1, reservation table R tracks at most K occupied path keys rather than per-spine active flow counts or remaining bytes; once |R| = K (e.g., 4 flows vs Fig. 3's ~8 concurrent flows per spine), subsequent flows fall back to uniform random spine selection.",
+    "Algorithm 1 pseudocode removes p_{k_i*} in OnFlowCompletion without checking flow ID, assumes OnRemoteUpdate loser re-hashing occurs before packets enter an active RDMA QP, and omits lease TTLs for crashed senders that never broadcast RELEASE.",
+    "Protocol assumes predictable/invertible switch ECMP hash H(.) (plus multi-hop inversion for deeper Clos), PTP/Sundial-class clock sync within broadcast delay, single well-known dstPort (or per-(peer, dport) expansion), and preferably a separate low-bandwidth control network; control-packet loss and clock-skew failures are not quantitatively evaluated."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "count": 4,
+    "svgs": [
+      {
+        "language": "zh",
+        "site_path": "/assets/images/digest/2026-11-03/ark-elephant-flow-spine-routing-zh.svg",
+        "repo_path": "assets/images/digest/2026-11-03/ark-elephant-flow-spine-routing-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-03/ark-elephant-flow-spine-routing-zh.svg",
+        "sha256": "244f11b8cd2a2f2cdae7fc632e2f70360b0df892a761a4cc64f4155fd85e75f1",
+        "sha256_status": "pending_parent_computation_no_subagent_shell",
+        "bytes": 24760
+      },
+      {
+        "language": "en",
+        "site_path": "/assets/images/digest/2026-11-03/ark-elephant-flow-spine-routing-en.svg",
+        "repo_path": "assets/images/digest/2026-11-03/ark-elephant-flow-spine-routing-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-03/ark-elephant-flow-spine-routing-en.svg",
+        "sha256": "7af2bf3cbac206f6187f944ce210eb1a11dfaa1cf06c0ce0aa1cb2371884d815",
+        "sha256_status": "pending_parent_computation_no_subagent_shell",
+        "bytes": 24344
+      },
+      {
+        "language": "zh",
+        "site_path": "/assets/images/digest/2026-11-03/ark-rdma-fct-ttft-eval-zh.svg",
+        "repo_path": "assets/images/digest/2026-11-03/ark-rdma-fct-ttft-eval-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-03/ark-rdma-fct-ttft-eval-zh.svg",
+        "sha256": "fe004ab1099bcbe76ca11b6fac90ebf919e5ebc6a9b271941462025833d327c1",
+        "sha256_status": "pending_parent_computation_no_subagent_shell",
+        "bytes": 29070
+      },
+      {
+        "language": "en",
+        "site_path": "/assets/images/digest/2026-11-03/ark-rdma-fct-ttft-eval-en.svg",
+        "repo_path": "assets/images/digest/2026-11-03/ark-rdma-fct-ttft-eval-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-03/ark-rdma-fct-ttft-eval-en.svg",
+        "sha256": "76150c51a72dd048bdc6b51c993b0ca49cfd315d0a349bf350287d0e69fae972",
+        "sha256_status": "pending_parent_computation_no_subagent_shell",
+        "bytes": 28470
+      }
+    ]
+  },
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice",
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-03.md",
+      "file_bytes_before": 45916,
+      "file_sha256_before": "0001ff4e6571c1927098f83b94751459d119d71a9daf4aa41ca65ecab2c75faf",
+      "file_bytes_after": 109074,
+      "file_sha256_after": "db3480f1207af5efbd095c60919b0d0fef8ee50eaf8af7382cde318882529954",
+      "old_section_bytes": 813,
+      "old_section_sha256": "a4531ba83d7a81be7de3e4695bce199cdba4542fbf1fea6a659bf694e9b01307",
+      "new_section_bytes": 19710,
+      "new_section_sha256": "19ab30330057bb62a0ef5e9f71386e07f2cf9a451263d86647724b0c6b9be6a8"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-03.md",
+      "file_bytes_before": 45038,
+      "file_sha256_before": "37823692503901bd5d2647f45d570901dfef91ed422c7b8c949995e615820c47",
+      "file_bytes_after": 105857,
+      "file_sha256_after": "7413dc390ca23d3aebb7b6bc2880ed6be7293e005f4f6a15ea3b8e982973b6c2",
+      "old_section_bytes": 709,
+      "old_section_sha256": "5516b5c165423abb9c96a825f3fca51502f5ee81645ea2fa6cb9c38bad259919",
+      "new_section_bytes": 19098,
+      "new_section_sha256": "361bddf1dd050fd90c374d6cfbe14137661fa2e6e680a09b62ed446a3278052d"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:24:25.665611+00:00",
+    "preview_release": "20261117-112344-dd9778fd",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

@@ -1,0 +1,551 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-03-arxiv-2610.41359",
+  "paper_id": "arxiv-2610.41359",
+  "anchor_id": "paper-arxiv-2610.41359",
+  "digest_date": "2026-11-03",
+  "updated_at_utc": "2026-11-17T02:54:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-03.md",
+    "en_target": "_digest/en/daily-2026-11-03.md",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/915ecb45-4c91-4ef5-aeaf-3f34c93bfd4c/scratch/d2b2-sections/2610.41359/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/915ecb45-4c91-4ef5-aeaf-3f34c93bfd4c/scratch/d2b2-sections/2610.41359/section_en.md",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2610.41359v1.",
+    "adjacent_dependency_isolation": "Self-contained entry staged separately for parent atomic splice under #paper-arxiv-2610.41359."
+  },
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice",
+  "verification_status": "VERIFIED",
+  "primary_source": {
+    "arxiv_id": "2610.41359",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "v1 only at verification time; no v2 revision or withdrawal notice present in saved abs HTML.",
+    "title": "LEAP: Efficient LLM Inference Scheduling with Generalizable Length Prediction",
+    "authors": [
+      "Kwan Yan",
+      "Jialun Zhong",
+      "Yanzeng Li"
+    ],
+    "corresponding_author": {
+      "name": "Yanzeng Li",
+      "email": "liyanzeng@bnu.edu.cn"
+    },
+    "affiliation": "Beijing Normal University (Kwan Yan, Yanzeng Li); Peking University (Jialun Zhong)",
+    "categories": [
+      "cs.AI"
+    ],
+    "submitted_utc": "Fri, 30 Oct 2026 07:23:27 UTC",
+    "submitted_date": "2026-10-30",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2610.41359",
+      "abs_v1": "https://arxiv.org/abs/2610.41359v1",
+      "pdf": "https://arxiv.org/pdf/2610.41359",
+      "html_v1": "https://arxiv.org/html/2610.41359v1",
+      "anonymous_code": "https://anonymous.4open.science/r/LEAP-BBFF/"
+    },
+    "local_sources": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2610.41359.abs.html",
+        "sha256": "e285f85eb84080fd7a98bcd76e86e55ee9c21ba31d42e0a263cea6d4b1a7a39a",
+        "sha256_status": "pending_parent_computation_no_shell_in_subagent",
+        "bytes": 41354
+      },
+      "pdf": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2610.41359.pdf",
+        "sha256": "5719cb08572f5d1bbad12e34e1eec6921ad7350449c417996ccd80beb54bdb35",
+        "sha256_status": "pending_parent_computation_no_shell_in_subagent",
+        "bytes": 643313
+      },
+      "txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2610.41359.txt",
+        "sha256": "8af3c8e088ce9f5bfeacb8185822a4dad83e1b1787ca9e2ffa44d7c457629210",
+        "sha256_status": "pending_parent_computation_no_shell_in_subagent",
+        "bytes": 101993
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "system_setup": {
+      "gpu": "1x NVIDIA A800 80GB PCIe",
+      "cpu": "8x Intel Xeon Gold 6348 logical CPUs",
+      "serving_engine": "vLLM 0.8.5.post1 (V0 eager mode) + native C++ CPU worker",
+      "engine_limits": {
+        "resident_requests": 512,
+        "decode_slots": 64,
+        "kv_blocks": 20592,
+        "kv_block_size": 16,
+        "max_batch_tokens": 4096,
+        "gpu_memory_fraction": 0.8,
+        "waiting_guard_steps": 128,
+        "aging_replay_params": "gamma=0.9, tau=30s",
+        "output_budget_cap_M": 2048
+      },
+      "readout_config": {
+        "qwen3_8b_layer": 30,
+        "mistral_7b_layer": 28,
+        "qwen3_scale_layers": {
+          "0.6B": 24,
+          "1.7B": 24,
+          "4B": 32,
+          "8B": 30,
+          "14B": 36,
+          "32B": 60
+        },
+        "hidden_dim_qwen3_8b": 4096,
+        "parameters_count": 4097,
+        "fp32_weight_bytes_label": "16.39 KB",
+        "source_train_requests": 2880,
+        "source_val_requests": 360,
+        "test_requests_per_setting": 1000,
+        "target_mapping": "sqrt(L)",
+        "rls_update_batch_size_q": 8,
+        "rls_prior_alpha": 1,
+        "rls_inverse_precision_fp32_mem": "~64 MiB at d=4096"
+      }
+    },
+    "initial_prediction_table1": {
+      "qwen3_8b": {
+        "alpaca": {
+          "leap_mae": 71.5,
+          "leap_rho": 0.955,
+          "tie_mae": 161.8,
+          "tie_rho": 0.875,
+          "trail_mae": 114.0,
+          "trail_rho": 0.887,
+          "ltr_rho": 0.863,
+          "ssjf_mae": 139.6,
+          "ssjf_rho": 0.847,
+          "egtp_mae": 241.9,
+          "egtp_rho": 0.482
+        },
+        "sharegpt": {
+          "leap_mae": 171.6,
+          "leap_rho": 0.9,
+          "tie_mae": 316.1,
+          "tie_rho": 0.675,
+          "trail_mae": 278.8,
+          "trail_rho": 0.719,
+          "ltr_rho": 0.733,
+          "ssjf_mae": 280.4,
+          "ssjf_rho": 0.726,
+          "egtp_mae": 428.7,
+          "egtp_rho": 0.142
+        },
+        "lmsys": {
+          "leap_mae": 127.5,
+          "leap_rho": 0.932,
+          "tie_mae": 193.7,
+          "tie_rho": 0.848,
+          "trail_mae": 213.1,
+          "trail_rho": 0.791,
+          "ltr_rho": 0.817,
+          "ssjf_mae": 210.2,
+          "ssjf_rho": 0.811,
+          "egtp_mae": 395.5,
+          "egtp_rho": 0.448
+        }
+      },
+      "llama_3_1_8b_instruct": {
+        "alpaca": {
+          "leap_mae": 63.0,
+          "leap_rho": 0.942,
+          "tie_mae": 130.7,
+          "tie_rho": 0.821,
+          "trail_mae": 67.9,
+          "trail_rho": 0.933,
+          "ltr_rho": 0.862,
+          "ssjf_mae": 98.1,
+          "ssjf_rho": 0.865,
+          "egtp_mae": 202.2,
+          "egtp_rho": 0.462
+        },
+        "sharegpt": {
+          "leap_mae": 145.7,
+          "leap_rho": 0.85,
+          "tie_mae": 214.3,
+          "tie_rho": 0.672,
+          "trail_mae": 160.2,
+          "trail_rho": 0.808,
+          "ltr_rho": 0.691,
+          "ssjf_mae": 196.0,
+          "ssjf_rho": 0.699,
+          "egtp_mae": 276.2,
+          "egtp_rho": 0.101
+        },
+        "lmsys": {
+          "leap_mae": 105.0,
+          "leap_rho": 0.922,
+          "tie_mae": 177.3,
+          "tie_rho": 0.768,
+          "trail_mae": 135.1,
+          "trail_rho": 0.841,
+          "ltr_rho": 0.782,
+          "ssjf_mae": 149.6,
+          "ssjf_rho": 0.785,
+          "egtp_mae": 287.8,
+          "egtp_rho": 0.268
+        }
+      },
+      "mistral_7b_instruct_v0_3": {
+        "alpaca": {
+          "leap_mae": 65.4,
+          "leap_rho": 0.931,
+          "tie_mae": 105.5,
+          "tie_rho": 0.833,
+          "trail_mae": 81.5,
+          "trail_rho": 0.884,
+          "ltr_rho": 0.833,
+          "ssjf_mae": 90.5,
+          "ssjf_rho": 0.852,
+          "egtp_mae": 145.2,
+          "egtp_rho": 0.55
+        },
+        "sharegpt": {
+          "leap_mae": 143.9,
+          "leap_rho": 0.784,
+          "tie_mae": 193.4,
+          "tie_rho": 0.618,
+          "trail_mae": 173.9,
+          "trail_rho": 0.667,
+          "ltr_rho": 0.64,
+          "ssjf_mae": 178.3,
+          "ssjf_rho": 0.646,
+          "egtp_mae": 243.1,
+          "egtp_rho": 0.243
+        },
+        "lmsys": {
+          "leap_mae": 106.9,
+          "leap_rho": 0.896,
+          "tie_mae": 163.5,
+          "tie_rho": 0.792,
+          "trail_mae": 139.7,
+          "trail_rho": 0.808,
+          "ltr_rho": 0.805,
+          "ssjf_mae": 131.9,
+          "ssjf_rho": 0.808,
+          "egtp_mae": 198.9,
+          "egtp_rho": 0.5
+        }
+      },
+      "mae_reduction_vs_best_baseline_pct": "7-39%"
+    },
+    "static_vs_dynamic_table2": {
+      "trail_s": {
+        "sharegpt_mae": 244.67,
+        "lmsys_mae": 170.69
+      },
+      "trail_d": {
+        "sharegpt_mae": 167.01,
+        "sharegpt_delta_resp_pct": "+12.89",
+        "lmsys_mae": 108.84,
+        "lmsys_delta_resp_pct": "+9.16"
+      },
+      "leap_s": {
+        "sharegpt_mae": 154.6,
+        "lmsys_mae": 111.92
+      },
+      "leap_d": {
+        "sharegpt_mae": 141.96,
+        "sharegpt_delta_resp_pct": "+9.42",
+        "lmsys_mae": 103.82,
+        "lmsys_delta_resp_pct": "+8.37"
+      }
+    },
+    "aya_rls_spearman_fig5": {
+      "frozen_leap": 0.498,
+      "leap_plus_rls": 0.82,
+      "relative_improvement_pct": "+64.7%"
+    },
+    "live_sharegpt_serving_table3": {
+      "offered_rate_rps": 2.65,
+      "requests_count": 500,
+      "fcfs": {
+        "mean_ptl_ms": 250.97,
+        "p90_ptl_ms": 359.96,
+        "mean_ttft_ms": 55.1,
+        "p90_ttft_ms": 74.85,
+        "tok_per_s": 1094.03
+      },
+      "trail": {
+        "mean_ptl_ms": 107.42,
+        "p90_ptl_ms": 189.32,
+        "mean_ttft_ms": 67.18,
+        "p90_ttft_ms": 90.28,
+        "tok_per_s": 944.71
+      },
+      "tie": {
+        "mean_ptl_ms": 78.48,
+        "p90_ptl_ms": 152.33,
+        "mean_ttft_ms": 66.5,
+        "p90_ttft_ms": 85.22,
+        "tok_per_s": 1089.84
+      },
+      "ssjf": {
+        "mean_ptl_ms": 76.07,
+        "p90_ptl_ms": 154.5,
+        "mean_ttft_ms": 62.27,
+        "p90_ttft_ms": 80.34,
+        "tok_per_s": 1108.46
+      },
+      "ltr": {
+        "mean_ptl_ms": 75.62,
+        "p90_ptl_ms": 151.95,
+        "mean_ttft_ms": 60.4,
+        "p90_ttft_ms": 80.17,
+        "tok_per_s": 1120.88
+      },
+      "leap": {
+        "mean_ptl_ms": 63.58,
+        "p90_ptl_ms": 127.47,
+        "mean_ttft_ms": 55.27,
+        "p90_ttft_ms": 73.43,
+        "tok_per_s": 1141.93
+      },
+      "mean_ptl_reduction_vs_predictors_pct": "15.9-40.8%",
+      "mean_ptl_reduction_vs_ltr_pct": "15.9%",
+      "mean_ptl_reduction_vs_tie_pct": "19.0%",
+      "mean_ptl_reduction_vs_trail_pct": "40.8%",
+      "throughput_gain_vs_ltr_pct": "1.9%"
+    },
+    "domain_transfer_replay_table4_sec": {
+      "requests_per_stream": 4200,
+      "ssjf": {
+        "aya_1_2": 154.83,
+        "aya_1_5": 253.29,
+        "math_1_2": 80.3,
+        "math_1_5": 126.83
+      },
+      "egtp": {
+        "aya_1_2": 136.62,
+        "aya_1_5": 223.09,
+        "math_1_2": 96.54,
+        "math_1_5": 157.83
+      },
+      "fcfs": {
+        "aya_1_2": 138.4,
+        "aya_1_5": 226.71,
+        "math_1_2": 91.66,
+        "math_1_5": 148.9
+      },
+      "trail": {
+        "aya_1_2": 125.02,
+        "aya_1_5": 201.67,
+        "math_1_2": 77.52,
+        "math_1_5": 123.67
+      },
+      "ltr": {
+        "aya_1_2": 123.32,
+        "aya_1_5": 197.28,
+        "math_1_2": 75.12,
+        "math_1_5": 118.93
+      },
+      "tie": {
+        "aya_1_2": 119.56,
+        "aya_1_5": 190.06,
+        "math_1_2": 75.05,
+        "math_1_5": 118.34
+      },
+      "leap": {
+        "aya_1_2": 115.18,
+        "aya_1_5": 180.59,
+        "math_1_2": 67.39,
+        "math_1_5": 100.94
+      },
+      "leap_rls": {
+        "aya_1_2": 108.07,
+        "aya_1_5": 161.18,
+        "math_1_2": 64.83,
+        "math_1_5": 94.36
+      },
+      "frozen_leap_advantage_over_tie_math_pct": "up to 14.7%"
+    },
+    "ablations_tables_5_6_7_8_9": {
+      "backbone_scale_table5_qwen3": {
+        "0.6B": {
+          "sharegpt_mae": 151.38,
+          "sharegpt_rho": 0.836,
+          "lmsys_mae": 94.81,
+          "lmsys_rho": 0.91
+        },
+        "1.7B": {
+          "sharegpt_mae": 206.26,
+          "sharegpt_rho": 0.856,
+          "lmsys_mae": 144.07,
+          "lmsys_rho": 0.921
+        },
+        "4B": {
+          "sharegpt_mae": 184.84,
+          "sharegpt_rho": 0.879,
+          "lmsys_mae": 124.81,
+          "lmsys_rho": 0.932
+        },
+        "8B": {
+          "sharegpt_mae": 173.26,
+          "sharegpt_rho": 0.901,
+          "lmsys_mae": 129.14,
+          "lmsys_rho": 0.936
+        },
+        "14B": {
+          "sharegpt_mae": 160.31,
+          "sharegpt_rho": 0.909,
+          "lmsys_mae": 116.13,
+          "lmsys_rho": 0.936
+        },
+        "32B": {
+          "sharegpt_mae": 155.3,
+          "sharegpt_rho": 0.915,
+          "lmsys_mae": 116.68,
+          "lmsys_rho": 0.938
+        }
+      },
+      "target_map_table6": {
+        "log_L": {
+          "short": "50.7 / 0.7907",
+          "long": "310.4 / 0.5832",
+          "all": "155.9 / 0.9122"
+        },
+        "sqrt_L": {
+          "short": "68.5 / 0.7179",
+          "long": "279.3 / 0.6009",
+          "all": "149.6 / 0.9161"
+        },
+        "L": {
+          "short": "105.4 / 0.4881",
+          "long": "266.3 / 0.6097",
+          "all": "162.7 / 0.8984"
+        }
+      },
+      "layer_width_table7": {
+        "block_30": {
+          "mae": 149.53,
+          "rho": 0.916,
+          "fp32_input": "16 KiB"
+        },
+        "all_states": {
+          "mae": 144.63,
+          "rho": 0.9204,
+          "fp32_input": "592 KiB",
+          "mae_reduction_pct": "3.3%"
+        }
+      },
+      "predictor_footprint_table8": {
+        "tie": {
+          "params": 185211394,
+          "fp32_weights": "0.741 GB",
+          "ratio_vs_leap": "45,207x"
+        },
+        "ltr": {
+          "params": 125240064,
+          "fp32_weights": "0.501 GB",
+          "ratio_vs_leap": "30,569x"
+        },
+        "ssjf": {
+          "params": 109597313,
+          "fp32_weights": "0.438 GB"
+        },
+        "egtp": {
+          "params": 8435732,
+          "fp32_weights": "33.74 MB"
+        },
+        "trail": {
+          "params": 2118184,
+          "fp32_weights": "8.47 MB"
+        },
+        "leap": {
+          "params": 4097,
+          "fp32_weights": "16.39 KB"
+        }
+      },
+      "cpu_delivery_fig7": {
+        "leap_keeps_pace_up_to_pred_s": 10000,
+        "leap_saturation_pred_s": "~58,000",
+        "leap_p95_delay_ms": "< 3",
+        "egtp_p_cpu_projection_gb": 2.49
+      },
+      "prefill_overlap_fig8": {
+        "async_ready_trials": "144/144 (24/24 across batch 1, 8, 32 x FP32/FP16)",
+        "post_prefill_control_ready": "0/72"
+      },
+      "numerical_checks_app_a3": {
+        "fp64_synthetic_max_coeff_diff": "< 1e-12",
+        "fp32_fp64_4240_stream_max_token_drift": [
+          0.00024,
+          0.0016
+        ]
+      }
+    }
+  },
+  "explicit_limitations": [
+    "Test labels use first-rollout lengths capped at M = 2,048 tokens; the prefill-only readout does not condition on decoding-time parameters (temperature, top-k), and capped completions enter RLS at their served <= 2,048 length without revealing uncapped latent lengths.",
+    "RLS uses uniform equal weights across all incorporated completions with no forgetting factor or sliding window (Appendix A.2); updates require full q = 8 completion batches (incomplete final batches drop at shutdown), leaving pending requests on M or stale theta_pub until transfer and publication finish.",
+    "The 30,569x parameter reduction counts only static readout weights (16.39 KB), excluding the ~64 MiB FP32 inverse precision matrix P (O(d^2)), O(Nd) cached active features, O(qd^2 + q^2d + q^3) FP64 solver updates, and PCIe D2H traffic.",
+    "Shortest-first scheduling trades tail fairness for mean latency: LEAP, LEAP+RLS, and TIE keep higher P95 response time than FCFS, and RLS raises P95 on MATH (Table 4).",
+    "Prototype integration covers single-A800 vLLM 0.8.5.post1 V0 eager mode only; multi-GPU parallelism, prefix caching, and chunked prefill are not tested and alter prefill overlap slack.",
+    "Table 2 (-S vs. -D) uses repeated-generation vs. round-0 remaining-length targets; Table 3 and Figure 6 are single-run host observations (with a concurrent job on GPU 1 and cores 12-15 at 60/80/100 req/s in Fig. 6); Table 4 replay excludes predictor runtime overhead."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "leap_svgs": {
+      "leap-prefill-rls-length-sched-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-03/leap-prefill-rls-length-sched-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-03/leap-prefill-rls-length-sched-zh.svg",
+        "sha256": "a6296034fb465971997673acc39858a611620c7ce29bedb90d258f76e000c00e",
+        "sha256_status": "pending_parent_computation_no_shell_in_subagent",
+        "bytes": 16962
+      },
+      "leap-prefill-rls-length-sched-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-03/leap-prefill-rls-length-sched-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-03/leap-prefill-rls-length-sched-en.svg",
+        "sha256": "d6a5beda2d4dccc6381bda07db0bca268e1d9855ab91efe19baca42f463b04d2",
+        "sha256_status": "pending_parent_computation_no_shell_in_subagent",
+        "bytes": 16705
+      },
+      "leap-domain-shift-latency-eval-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-03/leap-domain-shift-latency-eval-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-03/leap-domain-shift-latency-eval-zh.svg",
+        "sha256": "22800cacad3c78ee4396547cc7f6be67e97b42f2d0f6e6786e3d2941c6390d3c",
+        "sha256_status": "pending_parent_computation_no_shell_in_subagent",
+        "bytes": 15781
+      },
+      "leap-domain-shift-latency-eval-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-03/leap-domain-shift-latency-eval-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-03/leap-domain-shift-latency-eval-en.svg",
+        "sha256": "79d8b0332a55ead98963a668258f3b1c9b2107e544be1571aeba9bf5676955e0",
+        "sha256_status": "pending_parent_computation_no_shell_in_subagent",
+        "bytes": 15564
+      }
+    }
+  },
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-03.md",
+      "file_bytes_before": 45916,
+      "file_sha256_before": "0001ff4e6571c1927098f83b94751459d119d71a9daf4aa41ca65ecab2c75faf",
+      "file_bytes_after": 109074,
+      "file_sha256_after": "db3480f1207af5efbd095c60919b0d0fef8ee50eaf8af7382cde318882529954",
+      "old_section_bytes": 763,
+      "old_section_sha256": "057aa70e0eecbf0c38b94c7b46293713214eb3e4e9eb2bb1c4a816fbcf7979c9",
+      "new_section_bytes": 21882,
+      "new_section_sha256": "d3f59a14fa0791a15bbfe2eb67cb385985f312388fb64dd5de1d92f57664fd89"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-03.md",
+      "file_bytes_before": 45038,
+      "file_sha256_before": "37823692503901bd5d2647f45d570901dfef91ed422c7b8c949995e615820c47",
+      "file_bytes_after": 105857,
+      "file_sha256_after": "7413dc390ca23d3aebb7b6bc2880ed6be7293e005f4f6a15ea3b8e982973b6c2",
+      "old_section_bytes": 672,
+      "old_section_sha256": "d053316541da1c20efa47a4432f420a58403a624fead59c4b22a164fb21deaf2",
+      "new_section_bytes": 21153,
+      "new_section_sha256": "24eee5ceeb2a8b28a30e6f8d9229e545d830a730d5cd26ba17d408849bcdef27"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:24:25.665611+00:00",
+    "preview_release": "20261117-112344-dd9778fd",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

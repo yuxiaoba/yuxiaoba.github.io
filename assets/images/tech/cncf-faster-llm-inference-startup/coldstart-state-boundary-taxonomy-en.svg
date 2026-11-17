@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a">LLM Inference Cold-Start Pipeline &amp; Five-Layer Reuse Boundaries</text>
+  <text x="24" y="56" font-size="11.2" fill="#475569">From Baofa Fan / CNCF (2026-11-06): container start != serving capacity; each tier skips distinct work and retains explicit costs</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Header Row -->
+  <rect x="24" y="76" width="226" height="58" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="137" y="100" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="middle">Tier &amp; Representative Work</text>
+  <text x="137" y="119" font-size="10.2" fill="#475569" text-anchor="middle">Grouped by Preserved State</text>
+
+  <rect x="262" y="76" width="130" height="58" rx="7" fill="#1e3a8a"/>
+  <text x="327" y="99" font-size="11.2" font-weight="700" fill="#ffffff" text-anchor="middle">1. Process &amp; Libs</text>
+  <text x="327" y="119" font-size="9.8" fill="#bfdbfe" text-anchor="middle">Container + Python</text>
+
+  <rect x="398" y="76" width="130" height="58" rx="7" fill="#1e3a8a"/>
+  <text x="463" y="99" font-size="11.2" font-weight="700" fill="#ffffff" text-anchor="middle">2. File &amp; Transform</text>
+  <text x="463" y="119" font-size="9.8" fill="#bfdbfe" text-anchor="middle">Read / Shard / Quant</text>
+
+  <rect x="534" y="76" width="130" height="58" rx="7" fill="#1e3a8a"/>
+  <text x="599" y="99" font-size="11.2" font-weight="700" fill="#ffffff" text-anchor="middle">3. Runtime &amp; Comms</text>
+  <text x="599" y="119" font-size="9.8" fill="#bfdbfe" text-anchor="middle">Workers + HBM Alloc</text>
+
+  <rect x="670" y="76" width="130" height="58" rx="7" fill="#1e3a8a"/>
+  <text x="735" y="99" font-size="11.2" font-weight="700" fill="#ffffff" text-anchor="middle">4. Compile &amp; Tune</text>
+  <text x="735" y="119" font-size="9.8" fill="#bfdbfe" text-anchor="middle">Kernels + Autotune</text>
+
+  <rect x="806" y="76" width="130" height="58" rx="7" fill="#1e3a8a"/>
+  <text x="871" y="99" font-size="11.2" font-weight="700" fill="#ffffff" text-anchor="middle">5. Graph &amp; Verify</text>
+  <text x="871" y="119" font-size="9.8" fill="#bfdbfe" text-anchor="middle">CUDA Graph + Gen</text>
+
+  <!-- Vertical guides -->
+  <line x1="395" y1="138" x2="395" y2="438" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="531" y1="138" x2="531" y2="438" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="667" y1="138" x2="667" y2="438" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="803" y1="138" x2="803" y2="438" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- Row 0: Model Files -->
+  <rect x="24" y="142" width="226" height="54" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="34" y="162" font-size="11" font-weight="700" fill="#1d4ed8">1. File Staging &amp; Fast Loaders</text>
+  <text x="34" y="181" font-size="9.8" fill="#475569">llm-d caches · fastsafetensors</text>
+
+  <rect x="262" y="142" width="130" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="327" y="164" font-size="10.2" font-weight="600" fill="#334155" text-anchor="middle">Proc &amp; imports</text>
+  <text x="327" y="182" font-size="9.5" fill="#64748b" text-anchor="middle">Cold launch</text>
+
+  <rect x="398" y="142" width="130" height="54" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="4 2"/>
+  <text x="463" y="164" font-size="10.2" font-weight="700" fill="#1d4ed8" text-anchor="middle">Skip DL / fast read</text>
+  <text x="463" y="182" font-size="9.5" fill="#1e40af" text-anchor="middle">Still builds tensors</text>
+
+  <rect x="534" y="142" width="402" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="546" y="164" font-size="10" font-weight="600" fill="#334155">Remaining: worker comms, HBM alloc, compile/autotune, CUDA Graph</text>
+  <text x="546" y="182" font-size="9.5" fill="#64748b">Note: caching files locally exposes engine init as the visible delay</text>
+
+  <!-- Row 1: Compile & Autotune -->
+  <rect x="24" y="202" width="226" height="54" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="34" y="222" font-size="11" font-weight="700" fill="#1d4ed8">2. Compile &amp; Autotune Caches</text>
+  <text x="34" y="241" font-size="9.8" fill="#475569">vLLM compile · FlashInfer tune</text>
+
+  <rect x="262" y="202" width="402" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="274" y="224" font-size="10" font-weight="600" fill="#334155">Remaining: imports, weight load/prep, worker comms &amp; HBM alloc</text>
+  <text x="274" y="242" font-size="9.5" fill="#64748b">Note: composable with fast loaders; does not skip runtime setup</text>
+
+  <rect x="670" y="202" width="130" height="54" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="735" y="224" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">Reuse artifacts</text>
+  <text x="735" y="242" font-size="9.5" fill="#1e40af" text-anchor="middle">Skip compile/tune</text>
+
+  <rect x="806" y="202" width="130" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="871" y="224" font-size="10.2" font-weight="600" fill="#334155" text-anchor="middle">Graph capture</text>
+  <text x="871" y="242" font-size="9.5" fill="#64748b" text-anchor="middle">Rebuild on start</text>
+
+  <!-- Row 2: Processed Weights -->
+  <rect x="24" y="262" width="226" height="54" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="34" y="282" font-size="11" font-weight="700" fill="#1d4ed8">3. Processed Weight Reuse/P2P</text>
+  <text x="34" y="301" font-size="9.4" fill="#475569">vLLM/SGLang IPC · ModelExpress</text>
+
+  <rect x="262" y="262" width="130" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="327" y="284" font-size="10.2" font-weight="600" fill="#334155" text-anchor="middle">Proc &amp; imports</text>
+  <text x="327" y="302" font-size="9.5" fill="#64748b" text-anchor="middle">New engine starts</text>
+
+  <rect x="398" y="262" width="130" height="54" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="463" y="284" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">Reuse/P2P weights</text>
+  <text x="463" y="302" font-size="9.5" fill="#1e40af" text-anchor="middle">CUDA IPC / NIXL</text>
+
+  <rect x="534" y="262" width="402" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="546" y="284" font-size="10" font-weight="600" fill="#334155">Remaining: rest of engine init; vLLM preload may prep FlashInfer</text>
+  <text x="546" y="302" font-size="9.5" fill="#64748b">Limits: CUDA IPC is node-local; daemon must outlive zero-copy</text>
+
+  <!-- Row 3: Live Engine -->
+  <rect x="24" y="322" width="226" height="54" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="34" y="342" font-size="11" font-weight="700" fill="#1d4ed8">4. Live Engine Sleep/Wake Pool</text>
+  <text x="34" y="361" font-size="9.8" fill="#475569">vLLM sleep · SGLang · llm-d FMA</text>
+
+  <rect x="262" y="322" width="130" height="54" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="327" y="344" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">Live proc / warm</text>
+  <text x="327" y="362" font-size="9.5" fill="#1e40af" text-anchor="middle">Or pre-import Pod</text>
+
+  <rect x="398" y="322" width="538" height="54" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="4 2"/>
+  <text x="410" y="344" font-size="10.2" font-weight="700" fill="#1e3a8a">Wake and rehydrate released GPU resources (avoids full cold engine build)</text>
+  <text x="410" y="362" font-size="9.6" fill="#334155">Limits: FMA hot path needs GPU match; vLLM preload zero-copy restricts sleep offload</text>
+
+  <!-- Row 4: Snapshots -->
+  <rect x="24" y="382" width="226" height="54" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="34" y="402" font-size="11" font-weight="700" fill="#1d4ed8">5. Initialized State Snapshots</text>
+  <text x="34" y="421" font-size="9.6" fill="#475569">vLLM/SGLang · Snapshot · GKE</text>
+
+  <rect x="262" y="382" width="538" height="54" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.4"/>
+  <text x="274" y="404" font-size="10.2" font-weight="700" fill="#1e3a8a">Save initialized process, runtime, compile &amp; CUDA Graph (KV cleared pre-capture)</text>
+  <text x="274" y="422" font-size="9.6" fill="#1e40af">Scope: vLLM merged exp. / SGLang open RFC+PR; mostly same-host, 1 GPU, TP=1</text>
+
+  <rect x="806" y="382" width="130" height="54" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.2"/>
+  <text x="871" y="404" font-size="10.2" font-weight="700" fill="#92400e" text-anchor="middle">Restore &amp; check</text>
+  <text x="871" y="422" font-size="9.5" fill="#78350f" text-anchor="middle">Reload + gen test</text>
+
+  <!-- Legend -->
+  <rect x="24" y="446" width="14" height="14" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.1"/>
+  <text x="44" y="457" font-size="10.2" fill="#1e3a8a" font-weight="600">Reused / Skipped</text>
+
+  <rect x="168" y="446" width="14" height="14" rx="3" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1" stroke-dasharray="3 2"/>
+  <text x="188" y="457" font-size="10.2" fill="#1d4ed8" font-weight="600">Partial / Conditional Restore</text>
+
+  <rect x="372" y="446" width="14" height="14" rx="3" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="392" y="457" font-size="10.2" fill="#334155">Must Rebuild on Target</text>
+
+  <rect x="546" y="446" width="14" height="14" rx="3" fill="#fffbeb" stroke="#d97706" stroke-width="1.1"/>
+  <text x="566" y="457" font-size="10.2" fill="#92400e" font-weight="600">External Reload &amp; Generation Check</text>
+
+  <!-- Measurement Rule Banner -->
+  <rect x="24" y="470" width="912" height="34" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.1"/>
+  <text x="36" y="491" font-size="10.2" fill="#1e3a8a" font-weight="600">Measurement Boundary: Startup ends only when restored engines generate valid tokens—CNCF reports zero cross-mechanism latency numbers.</text>
+
+  <!-- Footer -->
+  <text x="24" y="522" font-size="10" fill="#64748b">Assistant diagram synthesized from Baofa Fan / CNCF "Faster LLM inference startup: What you need to know" (2026-11-06) (not an original figure)</text>
+</svg>

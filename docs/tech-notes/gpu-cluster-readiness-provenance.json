@@ -1,0 +1,99 @@
+{
+  "id": "gpu-cluster-readiness",
+  "source_url": "https://developer.nvidia.com/blog/validate-gpu-cluster-readiness-before-ai-workloads-land/",
+  "source_title": "Validate GPU Cluster Readiness Before AI Workloads Land",
+  "source_authors": [
+    "Dhvani Chheda",
+    "Kai Wombacher"
+  ],
+  "source_org": "NVIDIA",
+  "source_date": "2026-09-23",
+  "note_date": "2026-10-03",
+  "published_at": "2026-10-22T08:54:49.993592+08:00",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/t2c-sources/gpu-cluster-readiness.txt",
+      "kind": "extracted_text"
+    },
+    {
+      "path": "assets/images/tech/gpu-cluster-readiness/validation.webp",
+      "kind": "primary_source_figure"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://docs.nvidia.com/cluster-readiness-engine/v0.8.0/overview/introduction",
+    "https://github.com/NVIDIA/cluster-readiness-engine",
+    "https://github.com/NVIDIA/cluster-readiness-engine/releases/latest/download/installer"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/gpu-cluster-readiness.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/gpu-cluster-readiness.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/gpu-cluster-readiness/validation.webp",
+        "origin": "primary_source_preserved",
+        "source": "https://developer.nvidia.com/blog/validate-gpu-cluster-readiness-before-ai-workloads-land/",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/gpu-cluster-readiness/nvcre-certification-workflow-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/gpu-cluster-readiness/nvcre-certification-workflow-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/gpu-cluster-readiness/bisection-interaction-boundaries-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/gpu-cluster-readiness/bisection-interaction-boundaries-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "d2fa11ccb3f48db5397fc91fad5cf562f24f8ba243bea028a8b6d1f78d345857",
+      "en_md_sha256": "fbaea9baa5e3842b9c37615bdf8467b8dcbe84aac6ea24f13eeed3d7b849fe56",
+      "svgs": {
+        "/assets/images/tech/gpu-cluster-readiness/nvcre-certification-workflow-zh.svg": "2b340a4a759c93494382837309e22a94343aeca7778218f035eb76423dd482ad",
+        "/assets/images/tech/gpu-cluster-readiness/nvcre-certification-workflow-en.svg": "beddcf25701e2fb0a51f61a9629516d471fe5fc541eee1c2d563906730710075",
+        "/assets/images/tech/gpu-cluster-readiness/bisection-interaction-boundaries-zh.svg": "67ea3ee20a678039f500b032b73c8c07f7d38fe0561970f1201708dfe485fb45",
+        "/assets/images/tech/gpu-cluster-readiness/bisection-interaction-boundaries-en.svg": "b0d6bc13c7d5509aa05dc329784085fbb642c78a2ab7751b42ba0ef1c04b741e"
+      },
+      "preserved": {
+        "validation.webp": "4568b91679fcc944dfec7c75e01ea01d7b14116619d134243e908e0e9f347953"
+      }
+    },
+    "playwright_total": 35,
+    "playwright_passed": 35,
+    "playwright_failed": 0
+  }
+}

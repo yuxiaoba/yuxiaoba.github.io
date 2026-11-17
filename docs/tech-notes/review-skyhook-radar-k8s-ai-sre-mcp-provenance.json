@@ -1,0 +1,100 @@
+{
+  "id": "review-skyhook-radar-k8s-ai-sre-mcp",
+  "source_url": "https://github.com/skyhook-io/radar",
+  "benchmark_url": "https://radarhq.io/benchmark",
+  "source_title": "Radar: open-source Kubernetes UI with built-in MCP server for AI agents",
+  "source_author": "Skyhook (skyhook-io/radar)",
+  "source_org": "Skyhook",
+  "source_date": "2026-10-30",
+  "note_date": "2026-10-31",
+  "updated_at": "2026-11-16T12:00:00+08:00",
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "english_translation": "assistant",
+  "complementary_note": {
+    "id": "radar-sregym-leaderboard",
+    "date": "2026-11-06",
+    "zh_permalink": "/tech/zh/radar-sregym-leaderboard/",
+    "en_permalink": "/tech/en/radar-sregym-leaderboard/"
+  },
+  "frozen_evidence": [
+    {
+      "path": ".preview/research-jobs/depth-repair-2026-11-05/work/evidence/review-skyhook-radar-k8s-ai-sre-mcp.txt",
+      "kind": "primary_repo_readme_text",
+      "sha256": "pending_parent_shell_verification"
+    },
+    {
+      "path": ".preview/research-jobs/depth-repair-2026-11-05/work/evidence/review-skyhook-radar-k8s-ai-sre-mcp.html",
+      "kind": "primary_repo_readme_html",
+      "sha256": "pending_parent_shell_verification"
+    },
+    {
+      "path": ".preview/research-jobs/depth-repair-2026-11-05/work/evidence/radar-benchmark.txt",
+      "kind": "primary_benchmark_text",
+      "sha256": "pending_parent_shell_verification"
+    },
+    {
+      "path": ".preview/research-jobs/depth-repair-2026-11-05/work/evidence/radar-benchmark.html",
+      "kind": "primary_benchmark_html",
+      "sha256": "pending_parent_shell_verification"
+    }
+  ],
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/review-skyhook-radar-k8s-ai-sre-mcp.md",
+      "sha256": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/review-skyhook-radar-k8s-ai-sre-mcp.md",
+      "sha256": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/review-skyhook-radar-k8s-ai-sre-mcp/radar-informer-topology-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/review-skyhook-radar-k8s-ai-sre-mcp/radar-informer-topology-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/review-skyhook-radar-k8s-ai-sre-mcp/radar-mcp-context-budget-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/review-skyhook-radar-k8s-ai-sre-mcp/radar-mcp-context-budget-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification": "pending_parent_shell_verification",
+  "verification_notes": "Subagent edited bilingual Markdown, 4 v3-blue SVGs, and provenance JSON without calling run_command per tool-rule guardrail; parent agent will perform SVG->PNG rendering/inspection, chmod 0644/0755, SHA-256 backfill, preview build, and Playwright verification.",
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-16T04:09:01.462257+00:00",
+    "preview_release": "20261116-120700-2e64116a",
+    "sha256": {
+      "zh_md_sha256": "76d3a1655bcdc039a9ca302d105667b665b07988c6e47e297af6f1c86976e80f",
+      "en_md_sha256": "23cf26b9078e70996491aac98d71c55b175b03f5340eb09f9272e3fa4b7c2c0b",
+      "svgs": {
+        "/assets/images/tech/review-skyhook-radar-k8s-ai-sre-mcp/radar-informer-topology-zh.svg": "c2569dd41464a97e3f6fea9b55555b5833691c22b937bd0782f7f03f1b7be207",
+        "/assets/images/tech/review-skyhook-radar-k8s-ai-sre-mcp/radar-informer-topology-en.svg": "73e00f3c16e2f46577af3b6b979664a81c1f367f606b1f0c95a9c5f5d2f525f9",
+        "/assets/images/tech/review-skyhook-radar-k8s-ai-sre-mcp/radar-mcp-context-budget-zh.svg": "42d675191347a3618d2a7b7354638d7f507a8d6f363098fcd6d10f11f57a1372",
+        "/assets/images/tech/review-skyhook-radar-k8s-ai-sre-mcp/radar-mcp-context-budget-en.svg": "96fdd7625626f8e43d3c3e41351dc25c26373c2a94f8cf68ffa1f02f8d72ad03"
+      },
+      "preserved": {}
+    },
+    "playwright_total": 34,
+    "playwright_passed": 34,
+    "playwright_failed": 0
+  }
+}

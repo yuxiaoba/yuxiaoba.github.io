@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC','PingFang SC','Lato','Microsoft YaHei',sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18" font-weight="700" fill="#0f172a">人机边界、Zero-Facade 验证与证据边界（Gemini 4 Argon）</text>
+  <text x="24" y="56" font-size="11.5" fill="#475569">区分人类设定的架构契约、Teamwork 自主迭代闭环，以及厂商自报指标尚待外部核验的边界</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Row: 3 Columns -->
+  <!-- Col 1 -->
+  <rect x="24" y="78" width="292" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="78" width="292" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="96" width="292" height="10" fill="#dbeafe"/>
+  <text x="36" y="97" font-size="11.8" font-weight="700" fill="#1e3a8a">1. 人类掌控的接口与不变量</text>
+
+  <rect x="34" y="114" width="272" height="76" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="44" y="134" font-size="11" font-weight="700" fill="#1d4ed8">系统接口与内存布局契约</text>
+  <text x="44" y="155" font-size="10.2" fill="#334155">定义 PGAS 平坦地址、RDMA 传输抽象</text>
+  <text x="44" y="176" font-size="10.2" fill="#334155">规定 COO 块流式与 SMEM/VMEM 边界</text>
+
+  <rect x="34" y="198" width="272" height="76" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="44" y="218" font-size="11" font-weight="700" fill="#1d4ed8">数学不变量与无 Mock 标准</text>
+  <text x="44" y="239" font-size="10.2" fill="#334155">设定浮点等价性与连通分量准确定义</text>
+  <text x="44" y="260" font-size="10.2" fill="#334155">严禁以简化桩或 Mock 代替真实测试</text>
+
+  <line x1="317" y1="181" x2="332" y2="181" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Col 2 -->
+  <rect x="334" y="78" width="292" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="334" y="78" width="292" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="334" y="96" width="292" height="10" fill="#dbeafe"/>
+  <text x="346" y="97" font-size="11.8" font-weight="700" fill="#1e3a8a">2. Teamwork 跨栈执行与遥测闭环</text>
+
+  <rect x="344" y="114" width="272" height="76" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="354" y="134" font-size="11" font-weight="700" fill="#1d4ed8">FarArray 五段式门控流水线</text>
+  <text x="354" y="155" font-size="10.2" fill="#334155">传输抽象 → 固定内存区 → 批处理门铃</text>
+  <text x="354" y="176" font-size="10.2" fill="#334155">→ 分布式图算法 → 实机在线审计</text>
+
+  <rect x="344" y="198" width="272" height="76" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="354" y="218" font-size="11" font-weight="700" fill="#1d4ed8">跨栈 Proposer + 硬件遥测调优</text>
+  <text x="354" y="239" font-size="10.2" fill="#334155">覆盖 RDMA verbs / io_uring / Pallas</text>
+  <text x="354" y="260" font-size="10.2" fill="#0f172a">分析高扇入遥测：最大读尖刺降 89%</text>
+
+  <line x1="627" y1="181" x2="642" y2="181" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Col 3 -->
+  <rect x="644" y="78" width="292" height="206" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.2"/>
+  <rect x="644" y="78" width="292" height="28" rx="8" fill="#dcfce7"/>
+  <rect x="644" y="96" width="292" height="10" fill="#dcfce7"/>
+  <text x="656" y="97" font-size="11.8" font-weight="700" fill="#166534">3. 独立审计与 Zero-Facade 门禁</text>
+
+  <rect x="654" y="114" width="272" height="76" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+  <text x="664" y="134" font-size="11" font-weight="700" fill="#166534">四层端到端非 Mock 实测套件</text>
+  <text x="664" y="155" font-size="10.2" fill="#14532d">独立审计 Agent 强制 Zero-Facade</text>
+  <text x="664" y="176" font-size="10.2" fill="#14532d">覆盖功能 / 规模 / 压力 / 故障恢复</text>
+
+  <rect x="654" y="198" width="272" height="76" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+  <text x="664" y="218" font-size="11" font-weight="700" fill="#166534">GNN 内核与图分区的数值对齐</text>
+  <text x="664" y="239" font-size="10.2" fill="#14532d">与原生 JAX 对照前向/反向数值等价</text>
+  <text x="664" y="260" font-size="10.2" fill="#14532d">与单机 GBBS 达成 100% 连通分量一致</text>
+
+  <!-- Bottom Row: Evidence Boundaries -->
+  <rect x="24" y="298" width="912" height="200" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2"/>
+  <rect x="24" y="298" width="912" height="28" rx="8" fill="#fef3c7"/>
+  <rect x="24" y="316" width="912" height="10" fill="#fef3c7"/>
+  <text x="36" y="317" font-size="12" font-weight="700" fill="#92400e">外部可核验边界：哪些已被报告支撑，哪些细节未公开或不可外推</text>
+
+  <!-- B1 -->
+  <rect x="36" y="336" width="280" height="150" rx="6" fill="#ffffff" stroke="#fcd34d" stroke-width="1.1"/>
+  <text x="48" y="357" font-size="11" font-weight="700" fill="#92400e">1. 基准不可混写为单一加速比</text>
+  <text x="48" y="382" font-size="10.2" fill="#334155">40–180× / 6–22× 仅对比 TCP 键值</text>
+  <text x="48" y="406" font-size="10.2" fill="#334155">&gt;100× DRAM 对比分布式 Shuffle</text>
+  <text x="48" y="430" font-size="10.2" fill="#334155">11.3–26.5× 对比 MR + Remote KV</text>
+  <text x="48" y="454" font-size="10.2" fill="#334155">1.14T 边仅证可行（基线不可跑）</text>
+
+  <!-- B2 -->
+  <rect x="340" y="336" width="280" height="150" rx="6" fill="#ffffff" stroke="#fcd34d" stroke-width="1.1"/>
+  <text x="352" y="357" font-size="11" font-weight="700" fill="#92400e">2. 未公开制品与硬件/规模假设</text>
+  <text x="352" y="382" font-size="10.2" fill="#334155">FarArray / Pallas 代码与脚本未开源</text>
+  <text x="352" y="406" font-size="10.2" fill="#334155">未列群集 NIC 型号、节点数与芯片数</text>
+  <text x="352" y="430" font-size="10.2" fill="#334155">122 MiB VMEM 实测止于 50K×256D</text>
+  <text x="352" y="454" font-size="10.2" fill="#334155">未披露浮点精度模式与数值容差</text>
+
+  <!-- B3 -->
+  <rect x="644" y="336" width="280" height="150" rx="6" fill="#ffffff" stroke="#fcd34d" stroke-width="1.1"/>
+  <text x="656" y="357" font-size="11" font-weight="700" fill="#92400e">3. 开发耗时压缩的归因前提</text>
+  <text x="656" y="382" font-size="10.2" fill="#334155">“一年→5 小时”基于项目人工估算</text>
+  <text x="656" y="406" font-size="10.2" fill="#334155">依托既有 DGF / SNAP / GBBS 底座</text>
+  <text x="656" y="430" font-size="10.2" fill="#334155">依托人类预设接口与非 Mock 测试床</text>
+  <text x="656" y="454" font-size="10.2" fill="#334155">无消融实验拆解模型与门禁贡献</text>
+
+  <text x="24" y="519" font-size="10.5" fill="#64748b">阅读整理配图（非原文配图）：依据 Google Antigravity 博客关于人工边界、Zero-Facade 验证与自报基准范围整理</text>
+</svg>

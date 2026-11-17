@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Lato','Noto Sans CJK SC',sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- Header -->
+  <text x="24" y="36" font-size="18" font-weight="700" fill="#0f172a">Tool-Boundary Isolation, Read-Only RBAC &amp; HITL Remediation Gate</text>
+  <text x="24" y="56" font-size="11" fill="#475569">Enforced on the access path, not via prompts: credential-less OpenShell sandbox → server-side run_kubectl → SRE review</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Column 1: OpenShell Sandbox & Credential Separation -->
+  <rect x="24" y="78" width="284" height="248" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="78" width="284" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="100" width="284" height="10" fill="#dbeafe"/>
+  <text x="36" y="99" font-size="11.8" font-weight="700" fill="#1e3a8a">1. OpenShell Per-Session Sandbox</text>
+
+  <rect x="34" y="120" width="264" height="92" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="138" font-size="10.5" font-weight="700" fill="#1d4ed8">Session Pod Isolation (Not Gateway)</text>
+  <text x="44" y="157" font-size="9.6" fill="#334155">• Gets workspace, skills &amp; cmd policy</text>
+  <text x="44" y="175" font-size="9.6" fill="#334155">• Kernel-level sandbox limits per tenant</text>
+  <text x="44" y="193" font-size="9.6" fill="#475569">• Never alters live services or workloads</text>
+
+  <rect x="34" y="220" width="264" height="94" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+  <text x="44" y="238" font-size="10.5" font-weight="700" fill="#991b1b">Credential Stripping (vs. Prompt Rules)</text>
+  <text x="44" y="257" font-size="9.6" fill="#7f1d1d">✗ No kubectl binary in OpenShell</text>
+  <text x="44" y="275" font-size="9.6" fill="#7f1d1d">✗ No Kubernetes credentials inside</text>
+  <text x="44" y="293" font-size="9.6" fill="#991b1b">→ Blocks direct cluster reads or writes</text>
+
+  <line x1="310" y1="202" x2="334" y2="202" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Column 2: Server-side run_kubectl & RBAC Proof -->
+  <rect x="337" y="78" width="286" height="248" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="337" y="78" width="286" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="337" y="100" width="286" height="10" fill="#dbeafe"/>
+  <text x="349" y="99" font-size="11.8" font-weight="700" fill="#1e3a8a">2. Server-Side Tool &amp; RBAC Path</text>
+
+  <rect x="347" y="120" width="266" height="66" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="357" y="138" font-size="10.5" font-weight="700" fill="#1e3a8a">run_kubectl Pinned Binary + SA</text>
+  <text x="357" y="156" font-size="9.6" fill="#334155">Uses registered read-only credentials</text>
+  <text x="357" y="173" font-size="9.6" fill="#1e40af">Tenant-scoped namespace / job / node</text>
+
+  <rect x="347" y="194" width="266" height="120" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="357" y="212" font-size="10.3" font-weight="700" fill="#0f172a">Live Runtime-Path auth can-i Checks</text>
+
+  <rect x="357" y="221" width="246" height="18" rx="4" fill="#dcfce7"/>
+  <text x="365" y="233" font-size="9.5" font-weight="600" fill="#14532d">✓ get pods / get configmaps</text>
+  <text x="595" y="233" font-size="9.5" font-weight="700" fill="#166534" text-anchor="end">yes</text>
+
+  <rect x="357" y="244" width="246" height="18" rx="4" fill="#fee2e2"/>
+  <text x="365" y="256" font-size="9.5" font-weight="600" fill="#7f1d1d">✗ get secrets</text>
+  <text x="595" y="256" font-size="9.5" font-weight="700" fill="#991b1b" text-anchor="end">no</text>
+
+  <rect x="357" y="267" width="246" height="18" rx="4" fill="#fee2e2"/>
+  <text x="365" y="279" font-size="9.5" font-weight="600" fill="#7f1d1d">✗ create pods / update pods</text>
+  <text x="595" y="279" font-size="9.5" font-weight="700" fill="#991b1b" text-anchor="end">no</text>
+
+  <text x="357" y="303" font-size="9" fill="#475569">Central ops keeps cluster view; tenants isolated</text>
+
+  <line x1="625" y1="202" x2="649" y2="202" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Column 3: Transparent Reasoning & HITL Remediation Gate -->
+  <rect x="652" y="78" width="284" height="248" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="652" y="78" width="284" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="652" y="100" width="284" height="10" fill="#dbeafe"/>
+  <text x="664" y="99" font-size="11.8" font-weight="700" fill="#1e3a8a">3. Transparent Evidence &amp; HITL</text>
+
+  <rect x="662" y="120" width="264" height="88" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="672" y="138" font-size="10.5" font-weight="700" fill="#1d4ed8">Read-Only Advisory Output</text>
+  <text x="672" y="157" font-size="9.6" fill="#334155">• Surfaces tool calls, logs &amp; telemetry</text>
+  <text x="672" y="175" font-size="9.6" fill="#334155">• Job Recovery advises only post-RCA</text>
+  <text x="672" y="193" font-size="9.6" fill="#1e40af">• Signal correlation != proven causality</text>
+
+  <rect x="662" y="216" width="264" height="98" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="672" y="234" font-size="10.5" font-weight="700" fill="#92400e">Human-in-the-Loop Action Gate</text>
+  <text x="672" y="253" font-size="9.6" fill="#78350f">1. SRE audits tool trace &amp; evidence</text>
+  <text x="672" y="271" font-size="9.6" fill="#78350f">2. Human executes or approves change</text>
+  <text x="672" y="289" font-size="9.6" fill="#92400e">3. Ongoing tracking: RCA &amp; SRE match</text>
+  <text x="672" y="305" font-size="9" fill="#b45309">Read-only first builds trust pre-automation</text>
+
+  <!-- Bottom Section: Evidence Maturity & Companion FOX Scope -->
+  <rect x="24" y="340" width="912" height="156" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="36" y="350" width="184" height="22" rx="5" fill="#1e3a8a"/>
+  <text x="128" y="365" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">Evidence &amp; Scope Boundary</text>
+  <text x="230" y="365" font-size="11" font-weight="700" fill="#0f172a">Separate enforced control primitives from unquantified outcomes &amp; distinct blueprints</text>
+
+  <rect x="36" y="382" width="438" height="104" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="46" y="401" font-size="10.5" font-weight="700" fill="#1e3a8a">Cluster Ops Evidence Limits (This Post)</text>
+  <text x="46" y="420" font-size="9.4" fill="#334155">• Internal DGX H100/B200/GB300 clusters; scale &amp; case counts omitted</text>
+  <text x="46" y="438" font-size="9.4" fill="#334155">• Video 1 is explicitly an injected-incident internal DGX demo</text>
+  <text x="46" y="456" font-size="9.4" fill="#b45309">• Zero published MTTR delta, RCA accuracy %, or SRE agreement rate</text>
+  <text x="46" y="474" font-size="9.2" fill="#475569">• OSS orchestrator is experimental; NVIDIA domain agents gated</text>
+
+  <rect x="486" y="382" width="438" height="104" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="496" y="401" font-size="10.5" font-weight="700" fill="#1e3a8a">Contrast: Companion FOX Blueprint (Nov 04)</text>
+  <text x="496" y="420" font-size="9.4" fill="#334155">• Shared stack: NemoClaw + OpenShell + Nemotron + MCP routing</text>
+  <text x="496" y="438" font-size="9.4" fill="#334155">• Different domain: PCB/SMT lines (Cosmos, Isaac Sim/ROS 2, Kumo)</text>
+  <text x="496" y="456" font-size="9.4" fill="#334155">• Parallel gate: early operator approval + evidence PDF reports</text>
+  <text x="496" y="474" font-size="9.2" fill="#1e40af">• Never conflate Siemens 20%/40% planning figures with cluster AIOps</text>
+
+  <!-- Footer -->
+  <text x="24" y="518" font-size="10" fill="#64748b">Assistant diagram (not an original figure) · Audited against NVIDIA Nov 04, 2026 posts (AI Factory Ops &amp; FOX Blueprint)</text>
+</svg>

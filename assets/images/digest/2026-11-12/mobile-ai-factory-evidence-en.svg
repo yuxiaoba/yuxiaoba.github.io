@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Mobile AI Factory empirical evidence: device backend inversions, blind-pick miss rates, 1/19 GPU compute savings, and unseen test outcomes" style="background:#ffffff;font-family:'Lato', 'Noto Sans', 'DejaVu Sans', -apple-system, BlinkMacSystemFont, sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="16.8" font-weight="700" fill="#0f172a">Empirical Evidence: Measurement Necessity, 1/19 Search Cost &amp; Unseen Test Results</text>
+  <text x="24" y="53" font-size="10.2" fill="#475569">From arXiv:2611.13509v1 (§3 Tables 1–2, §5.2.3 Fig. 7a, §5.3 Fig. 9c–e, Appendix A Table 5) · Training run noise floor ±0.015</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="20" y="72" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="72" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="90" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="98" x2="472" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="89.5" font-size="11.0" font-weight="700" fill="#1e3a8a">A. Why Spec Sheets Fail: Inversions &amp; 4-bit Gaps (§3)</text>
+
+  <text x="32" y="118" font-size="9.7" font-weight="700" fill="#0f172a">1. Same model/engine GPU-vs-CPU inversion (Qwen3-0.6B llama.cpp prefill):</text>
+  <text x="42" y="135" font-size="9.4" fill="#1d4ed8">OnePlus 15 GPU 5.4× faster · Galaxy S23 1.7× slower · OnePlus 8 Pro 7.4× slower</text>
+  <text x="32" y="158" font-size="9.7" font-weight="700" fill="#0f172a">2. 41/76 failures invisible on specs (364 attempted, 288 completed):</text>
+  <text x="42" y="175" font-size="9.4" fill="#334155">20 MNN FP16 GPU crashes · 10 swapped · 8 OpenCL gaps · 3 load failures</text>
+  <text x="32" y="198" font-size="9.7" font-weight="700" fill="#0f172a">3. Disk size underestimates RAM: S23 GPU holds 2.8× median (8.1× max)</text>
+  <text x="32" y="222" font-size="9.7" font-weight="700" fill="#0f172a">4. Same weights 4-bit gap (CLINC150 fine-tuned SmolLM2-360M):</text>
+  <text x="42" y="239" font-size="9.4" fill="#1d4ed8">llama.cpp Q4_K_M 0.767 vs MNN default 0.659 vs MNN HQQ-32 0.747</text>
+  <rect x="32" y="250" width="428" height="20" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="40" y="263.5" font-size="8.9" fill="#475569">BC5CDR 1s winners: OP15 0.8B(MNN GPU) · S23 360M(MNN CPU) · OP8P 135M(llama CPU)</text>
+  <rect x="488" y="72" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="72" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="90" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="98" x2="940" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="89.5" font-size="11.0" font-weight="700" fill="#1e3a8a">B. Requirement Miss Rate Across 60 App Limits (§5.3, Fig. 9c–e)</text>
+  <text x="500" y="114" font-size="9.1" fill="#475569">20 Easy (≥60% fit), 20 Moderate (30–60% fit), 20 Hard (&lt;30% fit)</text>
+  <line x1="545.0" y1="122" x2="545.0" y2="238" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="545.0" y="249" text-anchor="middle" font-size="8.4" fill="#64748b">0%</text>
+  <line x1="583.8" y1="122" x2="583.8" y2="238" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="583.8" y="249" text-anchor="middle" font-size="8.4" fill="#64748b">25%</text>
+  <line x1="622.5" y1="122" x2="622.5" y2="238" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="622.5" y="249" text-anchor="middle" font-size="8.4" fill="#64748b">50%</text>
+  <line x1="661.2" y1="122" x2="661.2" y2="238" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="661.2" y="249" text-anchor="middle" font-size="8.4" fill="#64748b">75%</text>
+  <line x1="700.0" y1="122" x2="700.0" y2="238" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="700.0" y="249" text-anchor="middle" font-size="8.4" fill="#64748b">100%</text>
+  <text x="538" y="144" text-anchor="end" font-size="9.6" font-weight="700" fill="#0f172a">Easy</text>
+  <rect x="545" y="126" width="38.8" height="6.2" rx="1.5" fill="#d97706"/>
+  <text x="587.8" y="131.5" font-size="8.0" font-weight="600" fill="#334155">25%</text>
+  <rect x="545" y="134" width="7.8" height="6.2" rx="1.5" fill="#f59e0b"/>
+  <text x="556.8" y="139.5" font-size="8.0" font-weight="600" fill="#334155">5%</text>
+  <rect x="545" y="142" width="31.0" height="6.2" rx="1.5" fill="#64748b"/>
+  <text x="580.0" y="147.5" font-size="8.0" font-weight="600" fill="#334155">20%</text>
+  <rect x="545" y="150" width="2.5" height="6.2" rx="1.5" fill="#1d4ed8"/>
+  <text x="551" y="155.5" font-size="8.0" font-weight="700" fill="#1d4ed8">0%</text>
+  <text x="538" y="182" text-anchor="end" font-size="9.6" font-weight="700" fill="#0f172a">Mod.</text>
+  <rect x="545" y="164" width="38.8" height="6.2" rx="1.5" fill="#d97706"/>
+  <text x="587.8" y="169.5" font-size="8.0" font-weight="600" fill="#334155">25%</text>
+  <rect x="545" y="172" width="54.2" height="6.2" rx="1.5" fill="#f59e0b"/>
+  <text x="603.2" y="177.5" font-size="8.0" font-weight="600" fill="#334155">35%</text>
+  <rect x="545" y="180" width="108.5" height="6.2" rx="1.5" fill="#64748b"/>
+  <text x="657.5" y="185.5" font-size="8.0" font-weight="600" fill="#334155">70%</text>
+  <rect x="545" y="188" width="2.5" height="6.2" rx="1.5" fill="#1d4ed8"/>
+  <text x="551" y="193.5" font-size="8.0" font-weight="700" fill="#1d4ed8">0%</text>
+  <text x="538" y="220" text-anchor="end" font-size="9.6" font-weight="700" fill="#0f172a">Hard</text>
+  <rect x="545" y="202" width="93.0" height="6.2" rx="1.5" fill="#d97706"/>
+  <text x="642.0" y="207.5" font-size="8.0" font-weight="600" fill="#334155">60%</text>
+  <rect x="545" y="210" width="124.0" height="6.2" rx="1.5" fill="#f59e0b"/>
+  <text x="673.0" y="215.5" font-size="8.0" font-weight="600" fill="#334155">80%</text>
+  <rect x="545" y="218" width="131.8" height="6.2" rx="1.5" fill="#64748b"/>
+  <text x="680.8" y="223.5" font-size="8.0" font-weight="600" fill="#334155">85%</text>
+  <rect x="545" y="226" width="2.5" height="6.2" rx="1.5" fill="#1d4ed8"/>
+  <text x="551" y="231.5" font-size="8.0" font-weight="700" fill="#1d4ed8">0%</text>
+  <rect x="742" y="124" width="188" height="126" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.9"/>
+  <rect x="750" y="138" width="10" height="8" rx="2" fill="#d97706"/>
+  <text x="765" y="145.5" font-size="8.7" fill="#1e293b">Claude Opus 5.5 (full specs)</text>
+  <rect x="750" y="164" width="10" height="8" rx="2" fill="#f59e0b"/>
+  <text x="765" y="171.5" font-size="8.7" fill="#1e293b">Claude Opus 5.5 (app desc only)</text>
+  <rect x="750" y="190" width="10" height="8" rx="2" fill="#64748b"/>
+  <text x="765" y="197.5" font-size="8.7" fill="#1e293b">Phone-agnostic best model fails</text>
+  <rect x="750" y="216" width="10" height="8" rx="2" fill="#1d4ed8"/>
+  <text x="765" y="223.5" font-size="8.7" fill="#1e293b">Measured pick (prunes 22/61/88%)</text>
+  <text x="500" y="268" font-size="8.8" fill="#475569">Hard 19/20 max feasible ≤ 0.8B · Specs miss backend (75%) or RAM bloat</text>
+  <rect x="20" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="316" x2="472" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="307.5" font-size="11.0" font-weight="700" fill="#1e3a8a">C. Search Efficiency on BC5CDR Entity Extraction (§5.2.3, Fig. 7a)</text>
+
+  <rect x="32" y="325" width="428" height="40" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="42" y="340" font-size="10.0" font-weight="700" fill="#334155">One-Shot Pick (1 variant)</text>
+  <rect x="42" y="348" width="6" height="6" rx="2" fill="#94a3b8"/>
+  <text x="54" y="357" font-size="9.0" fill="#475569">~2 GPU-h (Fig. 7a) · $0.53 · trails tiered search on 8/10 tasks overall</text>
+
+  <rect x="32" y="371" width="428" height="44" rx="5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="42" y="386" font-size="10.2" font-weight="700" fill="#1e3a8a">Tiered Search (2 variants)</text>
+  <rect x="336" y="376" width="116" height="16" rx="4" fill="#1d4ed8"/>
+  <text x="394" y="387.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#ffffff">1/19 GPU time</text>
+  <rect x="42" y="395" width="22" height="6" rx="2" fill="#1d4ed8"/>
+  <text x="70" y="405" font-size="9.2" font-weight="600" fill="#1d4ed8">8.6 GPU-h · $2.62 API → 0.830 F1 (Qwen3.5-0.8B Q4)</text>
+
+  <rect x="32" y="421" width="428" height="42" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="42" y="436" font-size="10.0" font-weight="700" fill="#334155">Exhaustive 27-Variant Sweep</text>
+  <rect x="42" y="443" width="404" height="6" rx="2" fill="#64748b"/>
+  <text x="42" y="458" font-size="9.0" fill="#475569">165 GPU-h · $31.81 API → peak 0.859 F1 (2B Q8 @ 126h)</text>
+
+  <text x="32" y="482" font-size="8.5" font-weight="600" fill="#1e3a8a">S23 summary (≤1GB, ≥350 tok/s prefill): drops 4B (0.482), picks 0.6B Q8 MNN CPU (0.469, -0.013)</text>
+  <rect x="488" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="316" x2="940" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="307.5" font-size="11.0" font-weight="700" fill="#1e3a8a">D. Unseen Test Set vs. 5-Shot Frontier Models (Appendix A, Table 5)</text>
+  <text x="500" y="331" font-size="8.9" fill="#475569">Vs. Claude Sonnet 5 &amp; DeepSeek v4-Flash (no reasoning); SMS Spam omitted (5 rows left)</text>
+
+  <rect x="500" y="339" width="428" height="52" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="510" y="354" font-size="9.8" font-weight="700" fill="#1d4ed8">5 Clear Wins (+0.024 to +0.342)</text>
+  <text x="510" y="370" font-size="8.8" fill="#0f172a">BC5CDR 0.828 (vs 0.652) · Calendar 0.818 (vs 0.644)</text>
+  <text x="510" y="384" font-size="8.8" fill="#0f172a">TOPv2 0.562 (vs 0.221) · MultiCoNER 0.619 (0.594) · DialogSum 0.451 (0.387)</text>
+
+  <rect x="500" y="397" width="428" height="48" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="510" y="412" font-size="9.8" font-weight="700" fill="#334155">3 Ties (within ±0.015 noise floor)</text>
+  <text x="510" y="427" font-size="8.8" fill="#334155">GoEmotions 0.525 (vs 0.515) · BEA-19 0.534 (vs 0.520)</text>
+  <text x="510" y="440" font-size="8.8" fill="#334155">CLINC150 pinned at 0.99: 0.882 (vs 0.894)</text>
+
+  <rect x="500" y="451" width="428" height="36" rx="5" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <text x="510" y="466" font-size="9.8" font-weight="700" fill="#b45309">2 Losses</text>
+  <text x="510" y="481" font-size="8.8" fill="#78350f">BFCL function call 0.816 (vs 0.870) · CLINC default early stop 0.822 (360M)</text>
+  <text x="20" y="518" font-size="9.1" fill="#64748b">Note: Single-run evaluations; §5.3 measured selection satisfies limits by construction (0% miss); cool/idle device profiles exclude thermal &amp; app contention.</text>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="38" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">从 PoC 误诊到准生产门禁：触发时机、双层裁判与回放边界</text>
+  <text x="24" y="58" font-size="11.2" font-weight="400" fill="#475569" text-anchor="start">综合 One2N 修订矩阵、确定性校验门禁与 SREGym 九问量表：明确每一测试环境能证明什么、不能证明什么</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="24" y="78" width="128" height="106" rx="8" fill="#1e3a8a"/>
+  <text x="88" y="124" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">调查触发与</text>
+  <text x="88" y="144" font-size="12" font-weight="600" fill="#bfdbfe" text-anchor="middle">前置上下文门</text>
+
+  <rect x="164" y="78" width="248" height="106" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="176" y="100" font-size="11.5" font-weight="700" fill="#92400e" text-anchor="start">1. 被动触发（Reactive）</text>
+  <text x="176" y="124" font-size="10.2" font-weight="400" fill="#78350f" text-anchor="start">值班者接警后手动贴进编码终端</text>
+  <text x="176" y="144" font-size="10.2" font-weight="400" fill="#78350f" text-anchor="start">白白浪费故障发生到响应的窗口</text>
+  <text x="176" y="164" font-size="9.8" font-weight="400" fill="#b45309" text-anchor="start">上下文随人员笔记与口头引导漂移</text>
+
+  <rect x="426" y="78" width="248" height="106" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="438" y="100" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">2. 主动响应（Proactive）</text>
+  <text x="438" y="124" font-size="10.2" font-weight="400" fill="#1e293b" text-anchor="start">告警一响自动启动全栈只读采集</text>
+  <text x="438" y="144" font-size="10.2" font-weight="400" fill="#1e293b" text-anchor="start">工程师到场前备好带证据的假设</text>
+  <text x="438" y="164" font-size="9.8" font-weight="400" fill="#1d4ed8" text-anchor="start">依托共享架构、技能、Runbook 与记忆</text>
+
+  <rect x="688" y="78" width="248" height="106" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="700" y="100" font-size="11.5" font-weight="700" fill="#166534" text-anchor="start">3. 预防巡检（Preventative）</text>
+  <text x="700" y="124" font-size="10.2" font-weight="400" fill="#14532d" text-anchor="start">在告警拉响前监测异常燃烧趋势</text>
+  <text x="700" y="144" font-size="10.2" font-weight="400" fill="#14532d" text-anchor="start">盯防 Error Budget 与发布变更比对</text>
+  <text x="700" y="164" font-size="9.8" font-weight="400" fill="#15803d" text-anchor="start">注：实际缩短 MTTR 仍需时间戳对照</text>
+
+  <rect x="24" y="196" width="912" height="144" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="36" y="216" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">双层评测裁判分工：先用确定性校验锁死“事实与安全底线”，再由语义裁判评估“诊断表达”</text>
+
+  <rect x="36" y="226" width="430" height="104" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="46" y="234" width="188" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="140" y="248" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="middle">确定性校验 · 客观与安全底线</text>
+  <text x="46" y="272" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">• 引证核实：引用的 Pod、指标、变更事件须在快照中真实存在</text>
+  <text x="46" y="292" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">• 策略门禁：默认只读、独立身份、动作限流与单域爆炸半径封顶</text>
+  <text x="46" y="312" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">• 干跑与脱敏：方案含预检/回滚；日志与模型输入无 PII/密钥泄漏</text>
+
+  <line x1="468" y1="278" x2="490" y2="278" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="494" y="226" width="430" height="104" rx="6" fill="#f8fafc" stroke="#64748b" stroke-width="1.1"/>
+  <rect x="504" y="234" width="196" height="20" rx="5" fill="#334155"/>
+  <text x="602" y="248" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="middle">语义裁判 · SREGym 九问量表</text>
+  <text x="504" y="272" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">• 定位（3 题）+ 刻画（3 题）+ 范围（3 题）等权计分</text>
+  <text x="504" y="292" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">• 7/9 通过阈值：容许同义表达，但禁绝“猜对组件却编错机理”</text>
+  <text x="504" y="312" font-size="10.3" font-weight="400" fill="#475569" text-anchor="start">• 边界警示：LLM/Jev 裁判一致率 ≠ 独立人工真值准确率</text>
+
+  <rect x="24" y="352" width="292" height="146" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="24" y="352" width="292" height="28" rx="8" fill="#e2e8f0"/>
+  <rect x="24" y="370" width="292" height="10" fill="#e2e8f0"/>
+  <text x="38" y="371" font-size="11.5" font-weight="700" fill="#1e293b" text-anchor="start">阶段 1 · 单故障 PoC 沙盒</text>
+  <text x="38" y="398" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">示例：kubectl 手动缩容至 0 副本</text>
+  <text x="38" y="420" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">能暴露：纯编造归因与零引证缺陷</text>
+  <text x="38" y="442" font-size="10.2" font-weight="400" fill="#475569" text-anchor="start">边界：无背景噪声，极易虚高诊断分</text>
+  <rect x="38" y="458" width="264" height="26" rx="5" fill="#fef2f2" stroke="#fca5a5" stroke-width="0.9"/>
+  <text x="170" y="475" font-size="10.2" font-weight="700" fill="#991b1b" text-anchor="middle">不可单独作为准生产放行依据</text>
+
+  <line x1="316" y1="425" x2="332" y2="425" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="334" y="352" width="292" height="146" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="334" y="352" width="292" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="334" y="370" width="292" height="10" fill="#dbeafe"/>
+  <text x="348" y="371" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">阶段 2 · 高保真回放与噪声注入</text>
+  <text x="348" y="398" font-size="10.2" font-weight="400" fill="#1e293b" text-anchor="start">条件：跨栈多层注入 + 生产级噪声</text>
+  <text x="348" y="420" font-size="10.2" font-weight="400" fill="#1e293b" text-anchor="start">能暴露：干扰误判、引证缺失与环路</text>
+  <text x="348" y="442" font-size="10.2" font-weight="400" fill="#475569" text-anchor="start">边界：快照回放难验真实副作用与交互</text>
+  <rect x="348" y="458" width="264" height="26" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="480" y="475" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">核验抗噪诊断与引证完整性</text>
+
+  <line x1="626" y1="425" x2="642" y2="425" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="644" y="352" width="292" height="146" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <rect x="644" y="352" width="292" height="28" rx="8" fill="#dcfce7"/>
+  <rect x="644" y="370" width="292" height="10" fill="#dcfce7"/>
+  <text x="658" y="371" font-size="11.5" font-weight="700" fill="#166534" text-anchor="start">阶段 3 · 影子只读与受控审批灰度</text>
+  <text x="658" y="398" font-size="10.2" font-weight="400" fill="#14532d" text-anchor="start">条件：接真实告警；只读 + 干跑审批</text>
+  <text x="658" y="420" font-size="10.2" font-weight="400" fill="#14532d" text-anchor="start">能暴露：交接断点、凭据与记忆陈旧</text>
+  <text x="658" y="442" font-size="10.2" font-weight="400" fill="#475569" text-anchor="start">边界：须配对照基线才能评估 MTTR</text>
+  <rect x="658" y="458" width="264" height="26" rx="5" fill="#dcfce7" stroke="#86efac" stroke-width="0.9"/>
+  <text x="790" y="475" font-size="10.2" font-weight="700" fill="#166534" text-anchor="middle">验证真实协作成效与半径约束</text>
+
+  <text x="24" y="520" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 综合 One2N 修订维度、SREGym 九问架构与工程回放边界整理（非原文配图，不含未测基准分）</text>
+</svg>

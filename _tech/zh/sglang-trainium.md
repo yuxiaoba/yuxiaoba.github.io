@@ -3,7 +3,7 @@ id: sglang-trainium
 title: 2026年10月23日｜SGLang Trainium Beta：把 RL 生成与训练分到不同硬件
 date: '2026-10-23'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,7 +18,9 @@ permalink: /tech/zh/sglang-trainium/
 translation_source: assistant
 authorship: assistant
 published_at: '2026-10-23T08:58:47.180720+08:00'
-updated_at: '2026-10-23T08:58:47.180720+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 强化学习后训练同时需要生成大量 rollout 和更新策略，两段工作对硬件的要求不同。SGLang 的 Trainium 插件 beta 把这种差异变成容量配置选项：生成可以留在 AWS Trainium，策略更新继续使用 GPU。值得关注的是软件接口与执行链已经接通，而不是公告已经证明哪一种硬件组合最省钱。
 

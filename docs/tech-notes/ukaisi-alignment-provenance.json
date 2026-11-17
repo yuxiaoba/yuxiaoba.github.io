@@ -1,0 +1,110 @@
+{
+  "id": "ukaisi-alignment",
+  "source_url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+  "source_title": "An alignment assessment of the UK AISI cybertesting incident",
+  "source_authors": [
+    "Paul C. Bogdan",
+    "Allison Qi",
+    "Daniel Smilkov",
+    "Thomas Henighan",
+    "Keir Bradwell",
+    "Jake Eaton",
+    "Sara Price",
+    "Jack Lindsey",
+    "Subhash Kantamneni"
+  ],
+  "source_org": "Anthropic Alignment",
+  "source_date": "2026-10-23",
+  "note_date": "2026-10-24",
+  "published_at": "2026-10-26T11:44:51.392682+08:00",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": ".preview/research-jobs/runs/20261026-110921-8a64396b4b-3303ec/work/sources/downloads/anthropic-research-alignment-assessment-ukaisi/article.txt",
+      "kind": "extracted_text"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://www.anthropic.com/research/alignment-assessment-ukaisi"
+  ],
+  "cited_works_without_frozen_urls": [
+    "UK AI Security Institute (AISI) initial report on Claude Mythos 5 cybertesting behavior (2026-08-04)",
+    "UK AI Security Institute (AISI) coordinated independent report (2026-10-23)",
+    "Anthropic post on stronger safeguards on evaluations (2026-08-31)",
+    "Anthropic post on PyPI CTF incident and transcript-assessment methods (2026-09-09)",
+    "Anthropic post: Investigating unintended model actions in our evaluations and internal use (2026-10-09)",
+    "Claude Mythos 5 system card",
+    "Betley et al., 2026"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/ukaisi-alignment.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/ukaisi-alignment.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/ukaisi-alignment/mechanism.png",
+        "origin": "primary_source_preserved",
+        "preserved_untouched": true,
+        "source": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/ukaisi-alignment/ukaisi-audit-protocol-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/ukaisi-alignment/ukaisi-audit-protocol-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/ukaisi-alignment/alignment-eval-validity-boundaries-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/ukaisi-alignment/alignment-eval-validity-boundaries-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "6eba3f81d6b75fec8e8a7851c8577d6e44f61e46ac7917057cd1d4fb0d04faee",
+      "en_md_sha256": "2c47b50ed24d6888a23faee82978203d6f6cb40c451bf2b5083a3180d9a03b35",
+      "svgs": {
+        "/assets/images/tech/ukaisi-alignment/ukaisi-audit-protocol-zh.svg": "d28a5e012a3d672172a9ddb5b0d0892eddaced1475a4342f228d77773daa72c0",
+        "/assets/images/tech/ukaisi-alignment/ukaisi-audit-protocol-en.svg": "9fd2d0e8b2fde28424a4f11104d2f3c324164072ed0b738a3633f6c6d0cdc6f4",
+        "/assets/images/tech/ukaisi-alignment/alignment-eval-validity-boundaries-zh.svg": "f61adcc7a66a1c148c8c7eefde1273686c8b4c5ebf220b784ae28d129c68ee02",
+        "/assets/images/tech/ukaisi-alignment/alignment-eval-validity-boundaries-en.svg": "78e8d309a3d88b6a363de15677658b2ccbc5a23baf5bda249c09b91d1e3944aa"
+      },
+      "preserved": {
+        "mechanism.png": "6bd3659cc9a985a59765776d9235869421d4fdf5265cff8d805b33fd0f3e64cf"
+      }
+    },
+    "playwright_total": 35,
+    "playwright_passed": 35,
+    "playwright_failed": 0
+  }
+}

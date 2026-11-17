@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" style="background:#ffffff;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17" font-weight="700" fill="#0f172a">llm-d 1.0 Kubernetes 原生推理控制面、NIXL P/D 解耦与分层 KV 架构</text>
+  <text x="24" y="53" font-size="10.6" font-weight="400" fill="#475569">综合 Google Cloud 1.0 公告、Gateway API Inference Extension、tiered-prefix-cache、DisaggregatedSet (dev) 与 llm-d-async</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Band 1: Ingress, Async Queues & Gateway API EPP -->
+  <rect x="24" y="72" width="274" height="110" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="34" y="80" width="132" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="100" y="94" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">异步队列与多租户准入</text>
+  <text x="174" y="94" font-size="9.5" font-weight="600" fill="#1e3a8a">Async Processor</text>
+  <text x="34" y="116" font-size="9.6" fill="#0f172a">BYOQ: redis-sortedset / gcp-pubsub / sql</text>
+  <text x="34" y="134" font-size="9.6" fill="#334155">队列 Refuse 退回重试；池 Wait 内存轮询</text>
+  <text x="34" y="152" font-size="9.6" fill="#334155">6 级车道: reserved/overflow × 3 SLA 级别</text>
+  <text x="34" y="170" font-size="9.2" fill="#475569">强制 Unix deadline + 按 worker_pool_id 隔离</text>
+
+  <line x1="298" y1="127" x2="316" y2="127" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="320" y="72" width="328" height="110" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="330" y="80" width="154" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="407" y="94" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">Envoy + Gateway API</text>
+  <text x="492" y="94" font-size="9.8" font-weight="600" fill="#1e3a8a">InferencePool 路由入口</text>
+  <text x="330" y="116" font-size="9.6" fill="#0f172a">L7 代理经 Envoy ext_proc gRPC 询问 EPP 选址</text>
+  <text x="330" y="134" font-size="9.6" fill="#334155">回写 x-gateway-destination-endpoint 与元数据</text>
+  <text x="330" y="152" font-size="9.6" fill="#334155">GKE Gateway Mode 跨区容灾与 Model Armor</text>
+  <text x="330" y="170" font-size="9.2" fill="#475569">Standalone 模式部署自带 Envoy Sidecar 代理</text>
+
+  <line x1="650" y1="127" x2="668" y2="127" stroke="#1d4ed8" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <rect x="670" y="72" width="266" height="110" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="680" y="80" width="136" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="748" y="94" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">llm-d Router (EPP)</text>
+  <text x="822" y="94" font-size="9.5" font-weight="600" fill="#1e3a8a">状态感知调度</text>
+  <text x="680" y="116" font-size="9.6" fill="#0f172a">双前缀评分: gpu + cpu-prefix-cache</text>
+  <text x="680" y="134" font-size="9.6" fill="#334155">手填 lruCapacityPerServer 对齐 Pod 内存</text>
+  <text x="680" y="152" font-size="9.6" fill="#334155">rollout-screener 锁同版 P/D 流量配比</text>
+  <text x="680" y="170" font-size="9.2" fill="#475569">优先级流控 + KEDA / HPA / Kueue 配额</text>
+
+  <!-- Arrows down to Execution Plane -->
+  <line x1="484" y1="182" x2="484" y2="198" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="803" y1="182" x2="803" y2="198" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Band 2: Disaggregated Execution Plane -->
+  <rect x="24" y="200" width="912" height="148" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="24" y="200" width="912" height="26" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="216" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="217" font-size="10.6" font-weight="700" fill="#1e3a8a">DisaggregatedSet (dev 设计：编排子 LeaderWorkerSet) · 拓扑域策略 (ExclusiveSlice / ExclusiveTopology) · 同版锁步滚动更新</text>
+
+  <!-- Prefill Pool -->
+  <rect x="36" y="234" width="276" height="104" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.1"/>
+  <text x="46" y="253" font-size="10.5" font-weight="700" fill="#1d4ed8">Prefill 池（算力密集 · 决定 TTFT）</text>
+  <text x="46" y="273" font-size="9.5" fill="#0f172a">多节点 Wide EP / TP（子 LeaderWorkerSet）</text>
+  <text x="46" y="292" font-size="9.5" fill="#334155">先查本地与外部 KV 层，仅算增量后缀</text>
+  <text x="46" y="311" font-size="9.5" fill="#334155">SGLang 启动 Bootstrap 服务（端口 8998）</text>
+  <text x="46" y="329" font-size="9.1" fill="#475569">按队列深度与 TTFT 经 RoleScaler 独立扩缩</text>
+
+  <line x1="312" y1="286" x2="324" y2="286" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- NIXL KV Transfer -->
+  <rect x="326" y="234" width="292" height="104" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="336" y="253" font-size="10.5" font-weight="700" fill="#92400e">NIXL KV 传输与跨池版本一致门控</text>
+  <text x="336" y="273" font-size="9.5" fill="#0f172a">vLLM NixlConnector: Decode 单边 RDMA 拉取</text>
+  <text x="336" y="292" font-size="9.5" fill="#334155">SGLang: Prefill 主动推送（5600 端口握手）</text>
+  <text x="336" y="311" font-size="9.4" fill="#78350f">SGLang Decode 无回退，缺 bootstrap 即拒绝</text>
+  <text x="336" y="329" font-size="9.1" fill="#1e3a8a">Coordinator 透传 x-llm-d-disagg-revision</text>
+
+  <line x1="618" y1="286" x2="630" y2="286" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Decode Pool -->
+  <rect x="632" y="234" width="292" height="104" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="642" y="253" font-size="10.5" font-weight="700" fill="#166534">Decode 池（带宽受限 · 决定 ITL/TPOT）</text>
+  <text x="642" y="273" font-size="9.5" fill="#0f172a">流式自回归生成，免受重型 Prefill 卡顿</text>
+  <text x="642" y="292" font-size="9.5" fill="#334155">TorchTPU + RL 时间片提升占空比 (~40%→&gt;70%)</text>
+  <text x="642" y="311" font-size="9.5" fill="#334155">支持独立 Multimodal Encode 角色及子池</text>
+  <text x="642" y="329" font-size="9.1" fill="#475569">按并发批大小与 KV 容量经 RoleScaler 扩缩</text>
+
+  <!-- Bi-dir Arrows to Tiered KV Cache -->
+  <line x1="174" y1="348" x2="174" y2="366" stroke="#1d4ed8" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <line x1="778" y1="348" x2="778" y2="366" stroke="#1d4ed8" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <!-- Band 3: Tiered KV Cache -->
+  <rect x="24" y="368" width="274" height="104" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="34" y="376" width="132" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="100" y="390" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">Tier 1 · 加速器 HBM</text>
+  <text x="34" y="412" font-size="9.6" fill="#0f172a">TPU/GPU 本地显存 (--gpu-memory-util 0.90)</text>
+  <text x="34" y="431" font-size="9.6" fill="#334155">指标: vllm:prefix_cache_hits_total</text>
+  <text x="34" y="450" font-size="9.2" fill="#475569">逐出块不直接丢弃，按最低延迟向 Tier 2 卸载</text>
+
+  <line x1="298" y1="420" x2="318" y2="420" stroke="#1d4ed8" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <rect x="320" y="368" width="298" height="104" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="330" y="376" width="154" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="407" y="390" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">Tier 2 · CPU RAM (/dev/shm)</text>
+  <text x="330" y="412" font-size="9.6" fill="#0f172a">vLLM OffloadingConnector / SGLang HiCache</text>
+  <text x="330" y="431" font-size="9.6" fill="#334155">TPU: TPURaidenOffloadingConnector (tpu-sync)</text>
+  <text x="330" y="450" font-size="9.2" fill="#b45309">约束: /dev/shm 计入 Pod 内存上限 (如 300/256 GiB)</text>
+
+  <line x1="618" y1="420" x2="638" y2="420" stroke="#1d4ed8" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <rect x="640" y="368" width="296" height="104" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="1.2"/>
+  <rect x="650" y="376" width="168" height="20" rx="5" fill="#334155"/>
+  <text x="734" y="390" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">Tier 3 · 共享存储 / Mooncake</text>
+  <text x="650" y="412" font-size="9.6" fill="#0f172a">VARIANT=fs: RWX PVC / Managed Lustre (direct_io)</text>
+  <text x="650" y="431" font-size="9.6" fill="#334155">或 Mooncake Client (80G DRAM + 1T SSD, RDMA)</text>
+  <text x="650" y="450" font-size="9.2" fill="#b45309">须配 PYTHONHASHSEED=0；外部 PVC Evictor 回收</text>
+
+  <!-- Bottom Summary Banner -->
+  <rect x="24" y="482" width="912" height="28" rx="6" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="500" font-size="9.8" font-weight="700" fill="#1e3a8a">核心判据：仅当“索引查表 + 排队 + CPU/共享存储回迁耗时 &lt; 重算 Prefill 耗时”且路由器索引与 Pod 内存容量一致时，卸载才有正收益</text>
+  <text x="24" y="525" font-size="9.6" fill="#64748b">阅读整理配图（非原图）· 综合 Google Cloud llm-d 1.0 公告、tiered-prefix-cache、DisaggregatedSet (dev)、pd-disaggregation 与 llm-d-async 文档绘制</text>
+</svg>

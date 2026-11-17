@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="svg-gc-arch-en-title svg-gc-arch-en-desc">
+  <title id="svg-gc-arch-en-title">GC-MoE CUDA Green Context SM Partitioning, 3-Node CUDA Graph, and Symmetric Memory Pipeline</title>
+  <desc id="svg-gc-arch-en-desc">Top panel contrasts DeepGEMM Mega MoE sharing all 148 B300 SMs per CTA with a trailing tag-2 cross-rank barrier against GC-MoE splitting 20 communication SMs and 128 compute SMs with parity-buffered barrier removal. Bottom panel diagrams the 3-node child CUDA Graph (concurrent roots role1 dispatch and role2 grouped GEMM feeding role3 finalize) interacting with the single device-persistent symmetric-memory workspace over NVLink.</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-sky" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#0284c7"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#16a34a"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc"/>
+
+  <!-- Header -->
+  <text x="28" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="17" font-weight="700" fill="#0f172a">GC-MoE: Green-Context SM Split, Token Ring &amp; Barrier-Free Replay</text>
+  <text x="28" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" fill="#475569">Compiled from arXiv:2611.04222v1 Figs. 1–2, Table 1 &amp; §4.1–4.6 (Blackwell SM103 8×B300 default 148-SM split)</text>
+
+  <rect x="724" y="18" width="208" height="32" rx="16" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="828" y="38" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">B300 Aligned: 20 + 128 SMs</text>
+
+  <!-- Top Panel: Timeline Contrast -->
+  <rect x="28" y="68" width="904" height="158" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="42" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#1e293b">1. Layer Execution Timeline: Shared-SM Contention vs. Driver-Level SM Isolation</text>
+
+  <!-- Left Subcard: Baseline -->
+  <rect x="42" y="94" width="424" height="122" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="52" y="101" width="404" height="20" rx="4" fill="#fee2e2"/>
+  <text x="60" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11" font-weight="700" fill="#991b1b">(a) DeepGEMM Mega MoE: 1 persistent kernel on all 148 SMs</text>
+
+  <text x="52" y="144" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#475569">All 148</text>
+  <text x="52" y="158" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#475569">shared</text>
+
+  <rect x="108" y="128" width="58" height="38" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="137" y="145" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#334155">counts +</text>
+  <text x="137" y="158" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#334155">tag-1</text>
+
+  <rect x="170" y="128" width="182" height="18" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="261" y="141" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#92400e">4 dispatch warps/SM: pull</text>
+
+  <rect x="170" y="148" width="182" height="18" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="261" y="161" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#1e40af">TMA/MMA + 8 epilogue/combine</text>
+
+  <rect x="356" y="128" width="46" height="38" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="379" y="151" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#334155">clean</text>
+
+  <rect x="406" y="128" width="50" height="38" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+  <text x="431" y="145" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="700" fill="#991b1b">tag-2</text>
+  <text x="431" y="158" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="600" fill="#991b1b">barrier</text>
+
+  <text x="52" y="185" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#475569">64,512 regs &amp; 227 KB SMEM shared/CTA · 148-SM whole-device sync</text>
+  <text x="52" y="204" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#334155">T_mega = t_pro + max(T_pull, T_gemm) + max(T_comb, t_clean + t_tag2)</text>
+
+  <!-- Right Subcard: GC-MoE -->
+  <rect x="480" y="94" width="438" height="122" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+  <rect x="490" y="101" width="418" height="20" rx="4" fill="#dbeafe"/>
+  <text x="498" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">(b) GC-MoE: Disjoint Green Contexts, no cross-rank tag-2 barrier</text>
+
+  <text x="490" y="141" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="700" fill="#0369a1">20 comm</text>
+  <rect x="540" y="128" width="52" height="18" rx="3" fill="#e0f2fe" stroke="#0284c7" stroke-width="1"/>
+  <text x="566" y="141" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#0c4a6e">tag-1</text>
+
+  <rect x="596" y="128" width="160" height="18" rx="3" fill="#bae6fd" stroke="#0284c7" stroke-width="1"/>
+  <text x="676" y="141" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#0c4a6e">role1: dedicated SM pull</text>
+
+  <text x="490" y="163" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="700" fill="#1d4ed8">128 comp</text>
+  <line x1="622" y1="146" x2="622" y2="150" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <rect x="622" y="150" width="146" height="18" rx="3" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="695" y="163" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#1e3a8a">role2: GEMM (0 dispatch)</text>
+
+  <rect x="772" y="150" width="62" height="18" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="803" y="163" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#166534">role3 comb.</text>
+
+  <rect x="838" y="128" width="70" height="40" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="873" y="145" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="700" fill="#15803d">No tag-2</text>
+  <text x="873" y="159" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" fill="#166534">replay N+1</text>
+
+  <text x="490" y="185" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">First ring block triggers role2 · Balanced workqueues prevent serializing</text>
+  <text x="490" y="204" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="700" fill="#1d4ed8">T_gc = t_pro + max(T_pull^ded, T_gemm) + T_combine (no round-trip tail)</text>
+
+  <!-- Bottom Panel: 3-Node Child CUDA Graph + Symmetric Memory -->
+  <rect x="28" y="236" width="904" height="288" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="42" y="254" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#1e293b">2. Three-Node Child CUDA Graph &amp; Device-Persistent Symmetric Memory (4 Nodes on SM90 w/ Shared Experts)</text>
+
+  <!-- Overhead DAG dependency rail to role3 -->
+  <polyline points="178,274 178,263 782,263 782,272" fill="none" stroke="#475569" stroke-width="1.3" marker-end="url(#arrow-slate)"/>
+  <line x1="478" y1="274" x2="478" y2="263" stroke="#475569" stroke-width="1.3"/>
+  <rect x="598" y="256" width="160" height="14" rx="7" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="678" y="266" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="600" fill="#334155">role3 depends on both roots</text>
+
+  <!-- Role 1 Card -->
+  <rect x="42" y="274" width="272" height="122" rx="8" fill="#f8fafc" stroke="#0284c7" stroke-width="1.4"/>
+  <text x="54" y="294" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="13" font-weight="700" fill="#0c4a6e">role1 · Dispatch (Root 1)</text>
+  <rect x="54" y="301" width="248" height="18" rx="4" fill="#e0f2fe"/>
+  <text x="178" y="314" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#0369a1">Comm Context (20 SMs / 4 on SM90)</text>
+  <text x="54" y="335" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">1. (1&lt;&lt;32)|count packed atomics to peers</text>
+  <text x="54" y="352" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">2. Persistent tag-1 NVLink barrier (3600s)</text>
+  <text x="54" y="369" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">3. Pull remote FP8+scales into ring block</text>
+  <text x="54" y="386" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#0369a1">4. Release generation l1_full_count[b]</text>
+
+  <!-- Concurrent Roots Connector -->
+  <rect x="319" y="316" width="22" height="36" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="330" y="339" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">∥</text>
+  <text x="330" y="366" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9" font-weight="600" fill="#1d4ed8">co-run</text>
+
+  <!-- Role 2 Card -->
+  <rect x="346" y="274" width="276" height="122" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="358" y="294" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="13" font-weight="700" fill="#1e3a8a">role2 · Grouped GEMM (Root 2)</text>
+  <rect x="358" y="301" width="252" height="18" rx="4" fill="#dbeafe"/>
+  <text x="484" y="314" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#1d4ed8">Compute Context (128 SMs · (2,1,1))</text>
+  <text x="358" y="335" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e293b">1. Acquire l1_full_count[b] on 1st block</text>
+  <text x="358" y="352" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e293b">2. W1 + SwiGLU + weight + FP8 requant</text>
+  <text x="358" y="369" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e293b">3. 64-bit l2_full_mask gates W2 (I ≤ 4096)</text>
+  <text x="358" y="386" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#1d4ed8">4. 16B direct scatter BF16 partials</text>
+
+  <!-- Role 3 Card -->
+  <rect x="646" y="274" width="272" height="122" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.4"/>
+  <text x="658" y="294" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="13" font-weight="700" fill="#14532d">role3 · Finalize (2-Half Kernel)</text>
+  <rect x="658" y="301" width="248" height="18" rx="4" fill="#dcfce7"/>
+  <text x="782" y="314" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#15803d">Compute Context (≤64 or full comp. SMs)</text>
+  <text x="658" y="335" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e293b">• 4 bookkeep warps: release readiness</text>
+  <text x="658" y="352" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e293b">• Consume counts &amp; flip recv_parity</text>
+  <text x="658" y="369" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e293b">• Reset ring/bitmap behind peer wait</text>
+  <text x="658" y="386" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#15803d">• Reduce k+1 slots in order, TMA store y</text>
+
+  <!-- Vertical Connectors to Symmetric Memory -->
+  <line x1="178" y1="396" x2="178" y2="414" stroke="#0284c7" stroke-width="1.5" marker-end="url(#arrow-sky)"/>
+  <line x1="484" y1="396" x2="484" y2="414" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <line x1="782" y1="396" x2="782" y2="414" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Symmetric Memory Workspace -->
+  <rect x="42" y="416" width="876" height="96" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2"/>
+  <text x="54" y="433" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11" font-weight="700" fill="#0f172a">Single Symmetric-Memory Workspace (592B by-value descriptor: base + 72 peer offsets over NVLink to P−1 peers)</text>
+
+  <rect x="54" y="441" width="162" height="50" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="135" y="461" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Activations + Scales</text>
+  <text x="135" y="479" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#475569">FP8 + UE8M0 / aliased SE</text>
+
+  <rect x="226" y="441" width="164" height="50" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="308" y="461" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Routing Metadata</text>
+  <text x="308" y="479" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#475569">topk_idx · weights · src_slot</text>
+
+  <rect x="400" y="441" width="166" height="50" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="483" y="461" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#1d4ed8">Global Token Ring</text>
+  <text x="483" y="479" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#1e40af">l1/l2 signals + 64b mask</text>
+
+  <rect x="576" y="441" width="164" height="50" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.1"/>
+  <text x="658" y="461" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#166534">Combine Buffer</text>
+  <text x="658" y="479" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#15803d">k+1 slots · peer-scattered</text>
+
+  <rect x="750" y="441" width="156" height="50" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-width="1.1"/>
+  <text x="828" y="461" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#854d0e">Parity Counters</text>
+  <text x="828" y="479" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#713f12">gen N mod 2 · no host reset</text>
+
+  <text x="480" y="505" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#64748b">All sync state (tag-1 phase, ring gens, recv_parity, combine readiness) stays device-persistent across replays · Single workspace serializes callers</text>
+</svg>

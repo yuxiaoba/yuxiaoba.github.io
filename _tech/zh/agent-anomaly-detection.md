@@ -3,7 +3,7 @@ id: agent-anomaly-detection
 title: 2026年10月25日｜Agent 异常检测：把会话行为接入异步安全审计
 date: '2026-10-25'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,7 +18,9 @@ long_read: true
 source_url: https://docs.cloud.google.com/gemini-enterprise-agent-platform/agent-anomalies-overview
 permalink: /tech/zh/agent-anomaly-detection/
 published_at: '2026-10-25T08:48:16.922011+08:00'
-updated_at: '2026-10-25T08:48:16.922011+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 Agent 没有报错，也可能正在批量抓取数据、越过权限边界或反复消耗资源。Google Cloud 的 Agent Anomaly Detection 把监控对象从响应状态扩展到会话里的工具调用与执行行为：先筛出异常，再异步推理其含义。10 月 22 日的预览更新将运行位置扩展到 GKE 与 Cloud Run，使这一审计路径更贴近实际部署。
 

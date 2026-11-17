@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Taxonomy of 397 real-world GPU numerical bugs: corpus funnel and symptom to root cause to repair mapping" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Lato', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#64748b"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="33" font-size="16.5" font-weight="700" fill="#0f172a">Taxonomy of 397 Real-World GPU Numerical Bugs: Symptom, Root Cause &amp; Fix</text>
+  <text x="24" y="52" font-size="10.0" fill="#475569">arXiv:2611.05121v1 (§3–§4, Tables 2/3/7 &amp; Fig. 2) · Jan 2020–Jun 2024 Closed GitHub Bugs · 229 Closed-Source / 168 Open-Source</text>
+  <line x1="24" y1="61" x2="936" y2="61" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Top Band: Corpus Funnel -->
+  <rect x="20" y="70" width="354" height="62" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="28" y="77" width="88" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="72" y="89" text-anchor="middle" font-size="8.7" font-weight="700" fill="#1d4ed8">Closed-Source</text>
+  <text x="123" y="89.5" font-size="9.7" font-weight="700" fill="#0f172a">Dependent Repos (cuBLAS/cuFFT/Math)</text>
+  <text x="28" y="109" font-size="8.9" fill="#334155">118,438 raw GPU → 10,380 numeric kw → 624 closed w/ fix</text>
+  <text x="28" y="124" font-size="9.0" font-weight="600" fill="#1d4ed8">Retained after dedup &amp; review: 229 bugs (57.7%)</text>
+
+  <circle cx="386" cy="101" r="9" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="386" y="104.8" text-anchor="middle" font-size="12" font-weight="700" fill="#1d4ed8">+</text>
+
+  <rect x="398" y="70" width="312" height="62" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="406" y="77" width="84" height="17" rx="4" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+  <text x="448" y="89" text-anchor="middle" font-size="8.7" font-weight="700" fill="#0369a1">Open-Source</text>
+  <text x="497" y="89.5" font-size="9.7" font-weight="700" fill="#0f172a">CuPy / Numba / MatX / Ginkgo</text>
+  <text x="406" y="109" font-size="8.9" fill="#334155">76+ CUDA numeric repos → 282 closed issues</text>
+  <text x="406" y="124" font-size="9.0" font-weight="600" fill="#0369a1">Retained after dedup &amp; review: 168 bugs (42.3%)</text>
+
+  <line x1="710" y1="101" x2="730" y2="101" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+  <rect x="734" y="70" width="206" height="62" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="837" y="89" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1e3a8a">Final Corpus: 397 GPU-NBs</text>
+  <text x="837" y="107" text-anchor="middle" font-size="8.9" fill="#1e293b">906 manually inspected (624+282)</text>
+  <text x="837" y="123" text-anchor="middle" font-size="8.9" font-weight="600" fill="#1d4ed8">2 authors labeled · 25 resolved</text>
+
+  <!-- Column 1: Observable Symptoms -->
+  <rect x="20" y="142" width="274" height="356" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="142" width="274" height="26" rx="8" fill="#1e3a8a"/>
+  <rect x="20" y="160" width="274" height="8" fill="#1e3a8a"/>
+  <text x="32" y="159" font-size="10.2" font-weight="700" fill="#ffffff">1. Observable Symptoms (Table 3 · 397)</text>
+
+  <rect x="28" y="176" width="258" height="104" rx="6" fill="#fff5f5" stroke="#fca5a5" stroke-width="1"/>
+  <rect x="36" y="183" width="98" height="17" rx="4" fill="#fee2e2" stroke="#f87171" stroke-width="0.7"/>
+  <text x="85" y="194.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#b91c1c">45.6% · 181 cases</text>
+  <text x="142" y="195" font-size="10.2" font-weight="700" fill="#0f172a">Error Messages</text>
+  <text x="36" y="212" font-size="8.5" fill="#475569">104 Closed / 77 Open (manual guard checks)</text>
+  <text x="36" y="230" font-size="8.6" fill="#1e293b">• Unsupported Data Type: 90 (57C / 33O)</text>
+  <text x="36" y="246" font-size="8.6" fill="#1e293b">• Operator: 37 · Overflow/Underflow: 36</text>
+  <text x="36" y="262" font-size="8.6" fill="#1e293b">• Invalid Casting: 11 · Undefined: 7</text>
+
+  <rect x="28" y="286" width="258" height="118" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <rect x="36" y="293" width="98" height="17" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.7"/>
+  <text x="85" y="304.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#b45309">45.1% · 179 cases</text>
+  <text x="142" y="305" font-size="10.2" font-weight="700" fill="#0f172a">Wrong Results</text>
+  <text x="36" y="322" font-size="8.5" fill="#475569">99 Closed / 80 Open (CPU or cast diffs)</text>
+  <text x="36" y="340" font-size="8.6" fill="#1e293b">• Diff. Precision Range: 50 (16C / 34O)</text>
+  <text x="36" y="356" font-size="8.6" fill="#1e293b">• NaN Outputs: 43 · Precision Amt: 40</text>
+  <text x="36" y="372" font-size="8.6" fill="#1e293b">• Diff. Data Types: 26 · Pre/Post Cast: 20</text>
+  <text x="36" y="392" font-size="8.2" fill="#92400e">No GPU exception registers → silent errors</text>
+
+  <rect x="28" y="410" width="258" height="80" rx="6" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="1"/>
+  <rect x="36" y="417" width="92" height="17" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.7"/>
+  <text x="82" y="428.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#0369a1">9.3% · 37 cases</text>
+  <text x="136" y="429" font-size="10.2" font-weight="700" fill="#0f172a">Perf. Bottlenecks</text>
+  <text x="36" y="446" font-size="8.5" fill="#475569">26 Closed / 11 Open (correct output, slow)</text>
+  <text x="36" y="464" font-size="8.6" fill="#1e293b">• Data Types: 21 · Slower than CPU: 14</text>
+  <text x="36" y="480" font-size="8.6" fill="#1e293b">• Cast Ops: 2 (e.g., Dec64→128 2.5× slower)</text>
+
+  <!-- Column 2: Root Causes -->
+  <rect x="326" y="142" width="308" height="356" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="326" y="142" width="308" height="26" rx="8" fill="#1d4ed8"/>
+  <rect x="326" y="160" width="308" height="8" fill="#1d4ed8"/>
+  <text x="338" y="159" font-size="10.2" font-weight="700" fill="#ffffff">2. Root Causes (Table 2 · 4 Groups / 7 Types)</text>
+
+  <rect x="334" y="176" width="292" height="102" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="342" y="183" width="102" height="17" rx="4" fill="#dbeafe" stroke="#60a5fa" stroke-width="0.7"/>
+  <text x="393" y="194.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1d4ed8">59.7%* · 237 cases</text>
+  <text x="452" y="195" font-size="10.2" font-weight="700" fill="#1e3a8a">Data Type &amp; Operator</text>
+  <text x="342" y="216" font-size="8.8" font-weight="600" fill="#0f172a">• Data Type Bugs: 143 (84 Closed / 59 Open)</text>
+  <text x="342" y="234" font-size="8.8" font-weight="600" fill="#0f172a">• Operator Bugs: 94 (37 Closed / 57 Open)</text>
+  <text x="342" y="252" font-size="8.3" fill="#334155">GPU-specific hotspot: opaque CUDA type/op support</text>
+  <text x="342" y="268" font-size="7.9" fill="#64748b">*Table 2 sums to 237 (total 397); prose writes 239 (59.6%)</text>
+
+  <rect x="334" y="284" width="292" height="100" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="342" y="291" width="96" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.7"/>
+  <text x="390" y="302.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1d4ed8">24.4% · 97 cases</text>
+  <text x="446" y="303" font-size="10.2" font-weight="700" fill="#1e3a8a">Precision Issues (3 Subtypes)</text>
+  <text x="342" y="324" font-size="8.6" fill="#1e293b">• Rounding/Approx: 34 (25C / 9O) — no 80-bit mode</text>
+  <text x="342" y="341" font-size="8.6" fill="#1e293b">• Casting Bugs: 32 (23C / 9O) — silent defaults</text>
+  <text x="342" y="358" font-size="8.6" fill="#1e293b">• Arithmetic O/U: 31 (20C / 11O) — mixed-prec. range</text>
+  <text x="342" y="375" font-size="8.0" fill="#475569">Rounding (35.1%) &amp; Casting (33.0%) ~1/3 each</text>
+
+  <rect x="334" y="390" width="292" height="52" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <rect x="342" y="397" width="96" height="17" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.7"/>
+  <text x="390" y="408.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#b45309">12.1% · 48 cases</text>
+  <text x="446" y="409" font-size="10.0" font-weight="700" fill="#0f172a">Special Value (NaN / INF)</text>
+  <text x="342" y="431" font-size="8.4" fill="#334155">33C / 15O · No built-in NaN/INF trap; little-endian only</text>
+
+  <rect x="334" y="448" width="292" height="42" rx="6" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="1"/>
+  <rect x="342" y="454" width="92" height="16" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.7"/>
+  <text x="388" y="465" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0369a1">3.8% · 15 cases</text>
+  <text x="442" y="466" font-size="10.0" font-weight="700" fill="#0f172a">Device-Specific</text>
+  <text x="342" y="482" font-size="8.4" fill="#334155">7C / 8O · e.g., GTX 760 FP64 slower than CPU</text>
+
+  <!-- Column 3: Fixing Strategies -->
+  <rect x="666" y="142" width="274" height="356" rx="8" fill="#ffffff" stroke="#0f766e" stroke-width="1.1"/>
+  <rect x="666" y="142" width="274" height="26" rx="8" fill="#0f766e"/>
+  <rect x="666" y="160" width="274" height="8" fill="#0f766e"/>
+  <text x="678" y="159" font-size="10.2" font-weight="700" fill="#ffffff">3. Manual Repairs (Table 7 · 397)</text>
+
+  <rect x="674" y="176" width="258" height="102" rx="6" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1"/>
+  <rect x="682" y="183" width="76" height="17" rx="4" fill="#dcfce7" stroke="#34d399" stroke-width="0.7"/>
+  <text x="720" y="194.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#047857">242 fixes</text>
+  <text x="765" y="195" font-size="9.9" font-weight="700" fill="#065f46">Type &amp; Operator Repairs</text>
+  <text x="682" y="216" font-size="8.6" fill="#1e293b">• Add/Change Data Type: 143 (84C / 59O)</text>
+  <text x="682" y="234" font-size="8.6" fill="#1e293b">• Refactor Operator: 94 (39C / 55O)</text>
+  <text x="682" y="252" font-size="8.6" fill="#047857">• Custom Kernel: 5 (1C / 4O · 7.0% OSS op)</text>
+  <text x="682" y="269" font-size="8.0" fill="#475569">e.g., CuPy RawKernel / ReductionKernel</text>
+
+  <rect x="674" y="284" width="258" height="100" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="682" y="291" width="76" height="17" rx="4" fill="#dbeafe" stroke="#60a5fa" stroke-width="0.7"/>
+  <text x="720" y="302.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1d4ed8">97 fixes</text>
+  <text x="765" y="303" font-size="9.9" font-weight="700" fill="#1e3a8a">Precision &amp; Cast Repairs</text>
+  <text x="682" y="324" font-size="8.6" fill="#1e293b">• Change Precision: 38 (28C / 10O · 39.2%)</text>
+  <text x="682" y="341" font-size="8.6" fill="#1e293b">• Upcast/Downcast: 32 (23C / 9O · 33.0%)</text>
+  <text x="682" y="358" font-size="8.6" fill="#1e293b">• Arith. Checkers: 27 (17C / 10O · 27.8%)</text>
+  <text x="682" y="375" font-size="8.0" fill="#475569">Manual width tuning rather than automated repair</text>
+
+  <rect x="674" y="390" width="258" height="52" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <rect x="682" y="397" width="76" height="17" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.7"/>
+  <text x="720" y="408.5" text-anchor="middle" font-size="8.6" font-weight="700" fill="#b45309">47 fixes</text>
+  <text x="765" y="409" font-size="9.9" font-weight="700" fill="#0f172a">NaN / INF Checkers</text>
+  <text x="682" y="431" font-size="8.4" fill="#334155">31C / 16O · e.g., clamp near-zero FP16 values</text>
+
+  <rect x="674" y="448" width="258" height="42" rx="6" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="1"/>
+  <rect x="682" y="454" width="76" height="16" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.7"/>
+  <text x="720" y="465" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0369a1">11 fixes</text>
+  <text x="765" y="466" font-size="9.9" font-weight="700" fill="#0f172a">Mixed Prec. / GPU Switch</text>
+  <text x="682" y="482" font-size="8.4" fill="#334155">6C / 5O · e.g., switch to FP32 or newer GPU</text>
+
+  <!-- Corridor Arrows: Column 1 -> Column 2 -->
+  <path d="M 288 226 C 306 226, 312 226, 330 226" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <path d="M 288 258 C 308 258, 308 320, 330 320" fill="none" stroke="#64748b" stroke-width="1.3" stroke-dasharray="3,2" marker-end="url(#arr-slate)"/>
+  <path d="M 288 338 C 306 338, 312 338, 330 338" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <path d="M 288 358 C 308 358, 308 414, 330 414" fill="none" stroke="#64748b" stroke-width="1.3" stroke-dasharray="3,2" marker-end="url(#arr-slate)"/>
+  <path d="M 288 452 C 308 452, 312 468, 330 468" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <!-- Corridor Arrows: Column 2 -> Column 3 -->
+  <line x1="628" y1="226" x2="670" y2="226" stroke="#0f766e" stroke-width="1.7" marker-end="url(#arr-teal)"/>
+  <line x1="628" y1="334" x2="670" y2="334" stroke="#0f766e" stroke-width="1.7" marker-end="url(#arr-teal)"/>
+  <line x1="628" y1="416" x2="670" y2="416" stroke="#0f766e" stroke-width="1.7" marker-end="url(#arr-teal)"/>
+  <line x1="628" y1="469" x2="670" y2="469" stroke="#0f766e" stroke-width="1.7" marker-end="url(#arr-teal)"/>
+
+  <text x="24" y="518" font-size="9.0" fill="#64748b">Note: C = Closed-Source dependents (229), O = Open-Source repos (168). Unlike CPU studies, GPU-NBs concentrate in opaque types, operators &amp; silent casts.</text>
+</svg>

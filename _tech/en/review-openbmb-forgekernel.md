@@ -1,10 +1,9 @@
 ---
 id: review-openbmb-forgekernel
-title: '2026-10-31 | ForgeKernel: Self-Evolving Kernels Catching and Surpassing Experts
-  and Agents'
+title: '2026-10-31 | ForgeKernel: Self-Evolving Kernels Catching and Surpassing Experts and Agents'
 date: '2026-10-31'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -15,9 +14,11 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/en/review-openbmb-forgekernel/
 long_read: true
-summary: "ForgeKernel milestones, probe-backed knowledge and reference promotion, with repository/paper evidence boundaries."
+summary: ForgeKernel milestones, probe-backed knowledge and reference promotion, with repository/paper evidence boundaries.
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 ## Improving an existing reference
 
 ForgeKernel's repository workflow starts from an executable kernel, runs and profiles it, and asks an architecture agent to derive milestones. It addresses repeated rediscovery of hardware constraints and plateaus that parameter tuning cannot cross. Source-visible, black-box and reference-generation modes expose different information and should not be compared as identical budgets.

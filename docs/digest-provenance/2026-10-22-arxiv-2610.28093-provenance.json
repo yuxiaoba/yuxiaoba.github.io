@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-10-22-arxiv-2610.28093",
+  "paper_id": "arxiv-2610.28093",
+  "anchor_id": "paper-arxiv-2610.28093",
+  "digest_date": "2026-10-22",
+  "updated_at_utc": "2026-11-17T06:40:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-10-22.md",
+    "en_target": "_digest/en/daily-2026-10-22.md",
+    "staged_zh_section": "/root/.gemini/antigravity-cli/brain/e1300b81-a2c9-431d-85ac-c5ec5610a3a1/scratch/d2c1-sections/2610.28093/section_zh.md",
+    "staged_en_section": "/root/.gemini/antigravity-cli/brain/e1300b81-a2c9-431d-85ac-c5ec5610a3a1/scratch/d2c1-sections/2610.28093/section_en.md",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2610.28093v2."
+  },
+  "primary_source": {
+    "arxiv_id": "2610.28093",
+    "arxiv_version_verified": "v2",
+    "withdrawal_or_v2_status": "No withdrawal notice; v1 submitted Tue, 20 Oct 2026 12:09:53 UTC (14 KB), revised to v2 on Sun, 25 Oct 2026 08:37:48 UTC (14 KB).",
+    "title": "ClawMMU: Protection-Coherent Virtual Memory for Stateful LLM Agents",
+    "authors": [
+      {
+        "name": "Jinhao Hu",
+        "affiliation": "MPI-SWS"
+      },
+      {
+        "name": "Bardia Mohammadi",
+        "affiliation": "MPI-SWS"
+      },
+      {
+        "name": "Mofasshara Binte Rafique",
+        "affiliation": "Unaffiliated"
+      },
+      {
+        "name": "Lars Henning Klein",
+        "affiliation": "EPFL"
+      },
+      {
+        "name": "Akhil Arora",
+        "affiliation": "Aarhus University"
+      },
+      {
+        "name": "Ashvin Goel",
+        "affiliation": "University of Toronto"
+      },
+      {
+        "name": "Laurent Bindschaedler",
+        "affiliation": "MPI-SWS"
+      }
+    ],
+    "categories": [
+      "cs.CR",
+      "cs.AI",
+      "cs.OS"
+    ],
+    "submitted_date": "2026-10-20",
+    "revised_date": "2026-10-25",
+    "venue_note": "Accepted at the AgenticOS Workshop @ NeurIPS 2026 (non-archival). 6 pages, 1 figure, 1 table.",
+    "public_code_repository": null,
+    "urls": {
+      "abs": "https://arxiv.org/abs/2610.28093",
+      "abs_v1": "https://arxiv.org/abs/2610.28093v1",
+      "abs_v2": "https://arxiv.org/abs/2610.28093v2",
+      "pdf": "https://arxiv.org/pdf/2610.28093",
+      "html_v2": "https://arxiv.org/html/2610.28093v2",
+      "doi": "https://doi.org/10.48550/arXiv.2610.28093"
+    },
+    "saved_source_artifacts_read": {
+      "abs_html": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c1-sources/2610.28093.abs.html",
+      "extracted_txt": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c1-sources/2610.28093.txt"
+    }
+  },
+  "verified_claims_and_metrics": {
+    "paper_nature": "Architectural and mechanism vision paper (not yet implemented; zero empirical benchmark metrics).",
+    "protection_descriptor_fields": [
+      "owner",
+      "scope",
+      "origins",
+      "authority"
+    ],
+    "authority_levels": {
+      "lowest": "Evidence (web pages, tool outputs, and all LLM-written/derived memory)",
+      "intermediate": "User preferences (e.g., preferred airline), teammate instruction files",
+      "highest": "Policy (direct user messages / owner-approved directives)"
+    },
+    "inheritance_rule": "Derived memory receives lowest authority among inputs (treating the LLM model itself as Evidence), scope restricted to the intersection of input scopes, union of origins with live revocation counters, and owner set to deriving actor. Information may rise in authority, but authority never lifts itself.",
+    "four_boundary_crossings": {
+      "map": "Context entry: source-based descriptor assignment and (owner, scope) compartment isolation; stops address-space violations.",
+      "derive": "Storage write: computes descriptor via monotone inheritance rule; stops type confusion from summarization/compaction.",
+      "reload": "Storage retrieval or checkpoint restore: compares descriptor ancestor counters with live out-of-checkpoint counters and re-routes stale labels through map; stops use-after-revoke and rollback resurrection.",
+      "authorize": "External tool call: enforces capability schema (checked / safe / uncovered) and per-argument origin & revocation checks (untraceable values default to Evidence); stops confused-deputy attacks."
+    },
+    "appendix_a_compartments_and_revocation": {
+      "assembly_capability": "Unforgeable owner-granted token permitting two compartments to share a context for reading without raising authority.",
+      "lazy_revocation_counters": "Integer counter per page starting at 0, incrementing by 1 on revoke/correction, stored outside checkpoints to resist checkpoint rollback across caches and search indexes."
+    },
+    "appendix_b_capability_schemas_and_standing_permissions": {
+      "argument_categories": [
+        "checked",
+        "safe",
+        "uncovered (fail-closed refusal)"
+      ],
+      "standing_permission_rule": "Advance owner permissions (e.g., monthly rent) apply only when zero untrusted content entered the context proposing the tool call."
+    },
+    "appendix_c_comparison_table1": {
+      "systems_compared": [
+        "MemGPT",
+        "ClawVM",
+        "CaMeL",
+        "TMA-NM",
+        "MemLineage",
+        "MemTX",
+        "ACRFence",
+        "ClawMMU (design)"
+      ],
+      "design_only_disclosure": "Appendix C explicitly notes that ClawMMU's row lists design properties because ClawMMU is not yet implemented."
+    },
+    "explicit_non_goals": [
+      "Does not guarantee the model selects the right action or appropriate high-authority argument values.",
+      "Does not guarantee derived/summarized memory is semantically accurate.",
+      "Does not guarantee confidentiality of readable content inside an authorized compartment."
+    ]
+  },
+  "explicit_limitations": [
+    "Unimplemented mechanism and vision paper: no code implementation, benchmark defense rates, check latency measurements, or owner-approval frequency counts exist yet.",
+    "Planned evaluation in a ClawVM-based harness on AgentDojo, InjecAgent, and sleeper memory poisoning remains future work (§5).",
+    "Primary residual vulnerability identified in Appendix B: mistakenly marking a security-relevant argument as safe in a tool's capability schema.",
+    "Four open problems flagged in §5: reviewing capability schemas at scale, placing authority in multi-agent systems, handling external actions executed before a source is revoked, and auditing scope-widening approvals."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "preserved_official_png": {
+      "clawmmu.png": {
+        "site_path": "/assets/images/digest/2026-10-22/clawmmu.png",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-22/clawmmu.png",
+        "sha256": "65ba3e1fa41343ce25af406ad9c08b2866ddd7f4e9e33159edce4b8e04f2c9ab",
+        "notes": "Preserved untouched pre-existing paper Figure 1 PNG.",
+        "bytes": 62116
+      }
+    },
+    "clawmmu_svgs": {
+      "clawmmu-four-boundary-gates-zh.svg": {
+        "site_path": "/assets/images/digest/2026-10-22/clawmmu-four-boundary-gates-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-22/clawmmu-four-boundary-gates-zh.svg",
+        "sha256": "20bab7b2b74a929b8d262554631b964723b3685cb6f3d85b2ee851ce431046a8",
+        "bytes": 16058
+      },
+      "clawmmu-four-boundary-gates-en.svg": {
+        "site_path": "/assets/images/digest/2026-10-22/clawmmu-four-boundary-gates-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-22/clawmmu-four-boundary-gates-en.svg",
+        "sha256": "6e8c8a1a1e92639aad0da287469c1bb5c3de9af99792640cd166ba829849d91c",
+        "bytes": 14978
+      },
+      "clawmmu-authority-lattice-revocation-zh.svg": {
+        "site_path": "/assets/images/digest/2026-10-22/clawmmu-authority-lattice-revocation-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-22/clawmmu-authority-lattice-revocation-zh.svg",
+        "sha256": "eaa724192f77e9caee67315cbbaf0681627710a794c1f59ed741e4ec86d4c812",
+        "bytes": 12742
+      },
+      "clawmmu-authority-lattice-revocation-en.svg": {
+        "site_path": "/assets/images/digest/2026-10-22/clawmmu-authority-lattice-revocation-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-22/clawmmu-authority-lattice-revocation-en.svg",
+        "sha256": "822139ebfa5c7469bace174867dd23a55b878f405133760978e478e5609dac21",
+        "bytes": 12104
+      }
+    }
+  },
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice",
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-10-22.md",
+      "file_bytes_before": 36941,
+      "file_sha256_before": "ed40f3b8d2d090342b004579a49727825ea3681657b22a818fb01f626a923308",
+      "file_bytes_after": 58611,
+      "file_sha256_after": "273d5a33ed1e638fbc61b840f87cec40525220a31af91e47857b27f8f461c997",
+      "old_section_bytes": 1915,
+      "old_section_sha256": "dd68022409938c648398ab461796c8def3b859b98de8d3ee523f9fb5d2ff6d43",
+      "new_section_bytes": 23585,
+      "new_section_sha256": "bdd48fcac8b8ac4fcdf8506fba8ae3012ed0278ffc52d043fd77cac50ccb08d3"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-10-22.md",
+      "file_bytes_before": 40538,
+      "file_sha256_before": "b4b68b041ac84df884381e2811b8ef8f3da5d7c138e9d558601a65cf04f5a751",
+      "file_bytes_after": 60795,
+      "file_sha256_after": "0b69b893e361b48a90af2b8573a3eed4f77a7aa91dafa87c230c1031c02c6c2c",
+      "old_section_bytes": 2111,
+      "old_section_sha256": "ba75b68f039dd94b35fcd8c8855f6d56988434b1d63fa4b458d75b0986746b99",
+      "new_section_bytes": 22368,
+      "new_section_sha256": "35f713740e67d949ea779f77111b47f82d8bfb3f15d24bba3dc7499f2d985fad"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T06:47:26.926281+00:00",
+    "preview_release": "20261117-144636-3d0f9707",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "sentry-agent-tracing-five-things",
+  "source_url": "https://x.com/i/article/2118087303029510144",
+  "source_title": "Five things you can do with Sentry's Agent Tracing",
+  "source_authors": [
+    "Sentry",
+    "Dominik Buszowiecki",
+    "Shaun Kaasten"
+  ],
+  "source_org": "Sentry",
+  "source_date": "2026-11-05",
+  "note_date": "2026-11-06",
+  "published_at": "2026-11-09T11:09:45.657368+08:00",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": ".preview/research-jobs/runs/20261109-104549-4b737ddd19-76de5e/work/sources/sentry-agent-tracing-five-things-1.txt",
+      "kind": "extracted_text",
+      "url": "https://docs.sentry.io/concepts/key-terms/agent-tracing/"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261109-104549-4b737ddd19-76de5e/work/sources/sentry-agent-tracing-five-things-2.txt",
+      "kind": "extracted_text",
+      "url": "https://blog.sentry.io/debugging-our-ai-search-assistant-with-agent-tracing/"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261109-104549-4b737ddd19-76de5e/work/sources/sentry-evals.txt",
+      "kind": "extracted_text",
+      "url": "https://sentry.io/cookbook/agent-conversations-to-evals/"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261109-104549-4b737ddd19-76de5e/work/sources/sentry-triage.txt",
+      "kind": "extracted_text",
+      "url": "https://sentry.io/cookbook/automate-ai-agent-triage-claude-routines/"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://x.com/i/article/2118087303029510144",
+    "https://x.com/sentry/status/2118427253084463353",
+    "https://docs.sentry.io/concepts/key-terms/agent-tracing/",
+    "https://blog.sentry.io/debugging-our-ai-search-assistant-with-agent-tracing/",
+    "https://sentry.io/cookbook/agent-conversations-to-evals/",
+    "https://sentry.io/cookbook/automate-ai-agent-triage-claude-routines/",
+    "https://sentry.io/cookbook/track-vercel-ai-sdk-costs-and-llm-calls/",
+    "https://sentry.io/cookbook/monitor-ai-agent-spend-dashboards-alerts/",
+    "https://sentry.io/cookbook/vercel-ai-sdk-opentelemetry/"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/sentry-agent-tracing-five-things.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/sentry-agent-tracing-five-things.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/sentry-agent-tracing-five-things/sentry-agent-span-hierarchy-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/sentry-agent-tracing-five-things/sentry-agent-span-hierarchy-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/sentry-agent-tracing-five-things/sentry-tracing-five-lessons-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/sentry-agent-tracing-five-things/sentry-tracing-five-lessons-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "03f08cf216b86fb2eaaceb8135ea785f873e5e5183788253a1f1ec3aba998ee5",
+      "en_md_sha256": "9051ae12059f51b4e7691f4f97051bc5c43ecf3396f0f9699fa41b286ac450ce",
+      "svgs": {
+        "/assets/images/tech/sentry-agent-tracing-five-things/sentry-agent-span-hierarchy-zh.svg": "a496d002bc568002b24cde8047eb46fb6fcf2aed2e11ad3da59ee5f77c35782a",
+        "/assets/images/tech/sentry-agent-tracing-five-things/sentry-agent-span-hierarchy-en.svg": "f6c047f75cc14c437c2b9fccaa2a89372883cf24aa63602ac7a9b24e123475a4",
+        "/assets/images/tech/sentry-agent-tracing-five-things/sentry-tracing-five-lessons-zh.svg": "6817ef55df2e87b88414f4b83e371e13cde9929ff8765559b125127d88300172",
+        "/assets/images/tech/sentry-agent-tracing-five-things/sentry-tracing-five-lessons-en.svg": "f5b4828081cb77bf1916d7a3f7fddbbe0f62c8b182a7d909e7ef23cacbdd2263"
+      },
+      "preserved": {}
+    },
+    "playwright_total": 34,
+    "playwright_passed": 34,
+    "playwright_failed": 0
+  }
+}

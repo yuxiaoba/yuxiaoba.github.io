@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Lato', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17.0" font-weight="700" fill="#0f172a" text-anchor="start">GenDB-V 评测拆解：模板特化 vs 通用引擎，及无证明合成错误审计</text>
+  <text x="24" y="53" font-size="10.3" font-weight="400" fill="#475569" text-anchor="start">依据 arXiv:2611.02779v1（§6，Table 2–3，Figure 4–5）：双路 Xeon Gold 5218（32 核 64 线程，384 GB RAM），模型为 Claude Opus 5.5</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="20" y="73" width="466" height="449" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="73" width="466" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="20" y="93" width="466" height="8" fill="#1e3a8a"/>
+  <text x="32" y="91.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">1. 严格区分两类引擎的几何平均加速比（相对 DuckDB 1.5.6 / Umbra 26.08）</text>
+  <rect x="30" y="108" width="446" height="214" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="40" y="126" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="start">形态 A · 模板特化引擎（28 个固定模板，Eq. 4，存储≤源数据大小）</text>
+  <text x="40" y="141" font-size="8.9" font-weight="400" fill="#475569" text-anchor="start">跨 1 / 32 / 64 线程几何平均加速比（对数标尺 1×–100×）；28/28 均通过 Verus 证明</text>
+  <line x1="232.0" y1="152" x2="232.0" y2="274" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="232.0" y="286" font-size="8.4" font-weight="400" fill="#475569" text-anchor="middle">1×</text>
+  <line x1="302.6" y1="152" x2="302.6" y2="274" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="302.6" y="286" font-size="8.4" font-weight="400" fill="#475569" text-anchor="middle">5×</text>
+  <line x1="333.0" y1="152" x2="333.0" y2="274" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="333.0" y="286" font-size="8.4" font-weight="400" fill="#475569" text-anchor="middle">10×</text>
+  <line x1="403.6" y1="152" x2="403.6" y2="274" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="403.6" y="286" font-size="8.4" font-weight="400" fill="#475569" text-anchor="middle">50×</text>
+  <line x1="434.0" y1="152" x2="434.0" y2="274" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="434.0" y="286" font-size="8.4" font-weight="400" fill="#475569" text-anchor="middle">100×</text>
+  <text x="40" y="169" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">TPC-H 联合 vs DuckDB</text>
+  <rect x="232" y="158" width="173.0" height="14" rx="3" fill="#1d4ed8"/>
+  <text x="410.0" y="169" font-size="9.1" font-weight="700" fill="#0f172a" text-anchor="start">51.6×</text>
+  <text x="40" y="193" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">TPC-H 联合 vs Umbra</text>
+  <rect x="232" y="182" width="135.6" height="14" rx="3" fill="#3b82f6"/>
+  <text x="372.6" y="193" font-size="9.1" font-weight="700" fill="#0f172a" text-anchor="start">22.0×</text>
+  <text x="40" y="217" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">SEC-EDGAR 联合 vs DuckDB</text>
+  <rect x="232" y="206" width="180.5" height="14" rx="3" fill="#1e3a8a"/>
+  <text x="417.5" y="217" font-size="9.1" font-weight="700" fill="#0f172a" text-anchor="start">61.3×</text>
+  <text x="40" y="241" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">SEC-EDGAR 联合 vs Umbra</text>
+  <rect x="232" y="230" width="146.6" height="14" rx="3" fill="#2563eb"/>
+  <text x="383.6" y="241" font-size="9.1" font-weight="700" fill="#0f172a" text-anchor="start">28.3×</text>
+  <text x="40" y="265" font-size="9.1" font-weight="600" fill="#334155" text-anchor="start">纯数组基线（禁存储优化）</text>
+  <rect x="232" y="254" width="74.7" height="14" rx="3" fill="#bfdbfe" stroke="#3b82f6" stroke-width="0.9"/>
+  <line x1="258.7" y1="254" x2="258.7" y2="268" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="312.7" y="265" font-size="8.8" font-weight="700" fill="#1e3a8a" text-anchor="start">1.84–5.49×（双基准几何均倍）</text>
+  <text x="40" y="301" font-size="8.6" font-weight="400" fill="#334155" text-anchor="start">纯数组胜 DuckDB 65/66（TPC-H）与 18/18（SEC），胜 Umbra 55/66 与 15/18</text>
+  <text x="40" y="315" font-size="8.6" font-weight="400" fill="#475569" text-anchor="start">联合 64T 总耗时：TPC-H 0.749s（DuckDB 16.740s），SEC 0.076s（DuckDB 1.555s）</text>
+  <rect x="30" y="332" width="446" height="180" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="40" y="350" font-size="10.2" font-weight="700" fill="#1d4ed8" text-anchor="start">形态 B · 单一通用查询引擎（接受 TPC-H 任意 Q ∈ Q_Σ，Eq. 5）</text>
+  <text x="40" y="366" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">演化路径：v0 参考解释器 (SF1 60s 内仅 2/22) → v2 ($594, SF100 全通) → v16 ($1,229)</text>
+  <text x="40" y="381" font-size="8.9" font-weight="400" fill="#0f172a" text-anchor="start">v16 总耗时：1 线程 109.3 s · 64 线程 9.16 s（经证明的重写+连接规划+算子融合）</text>
+  <line x1="232.0" y1="391" x2="232.0" y2="458" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="232.0" y="471" font-size="8.3" font-weight="400" fill="#475569" text-anchor="middle">1×</text>
+  <line x1="302.6" y1="391" x2="302.6" y2="458" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="302.6" y="471" font-size="8.3" font-weight="400" fill="#475569" text-anchor="middle">5×</text>
+  <line x1="333.0" y1="391" x2="333.0" y2="458" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="333.0" y="471" font-size="8.3" font-weight="400" fill="#475569" text-anchor="middle">10×</text>
+  <text x="40" y="410" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">通用引擎 v16 vs DuckDB (64T / 1T)</text>
+  <rect x="232" y="398" width="53.7" height="15" rx="3" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="232" y="398" width="25.8" height="15" rx="3" fill="#1d4ed8"/>
+  <text x="291.7" y="410" font-size="9.2" font-weight="700" fill="#1d4ed8" text-anchor="start">1.8× / 3.4×</text>
+  <text x="40" y="437" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">通用引擎 v16 vs Umbra (64T / 1T)</text>
+  <rect x="232" y="425" width="18.4" height="15" rx="3" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <rect x="232" y="425" width="10.5" height="15" rx="3" fill="#60a5fa"/>
+  <text x="256.4" y="437" font-size="9.2" font-weight="700" fill="#1d4ed8" text-anchor="start">1.27× / 1.52×</text>
+  <rect x="40" y="481" width="426" height="23" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="48" y="496" font-size="8.7" font-weight="700" fill="#1e3a8a" text-anchor="start">口径警告：模板 22–61.3× 为单模板特化倍率，不可直接当作通用引擎倍率（1.27–3.4×）。</text>
+  <rect x="500" y="73" width="440" height="449" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="500" y="73" width="440" height="28" rx="8" fill="#0f172a"/>
+  <rect x="500" y="93" width="440" height="8" fill="#0f172a"/>
+  <text x="512" y="91.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">2. 无证明合成审计（vs Bespoke OLAP）与成本 / 覆盖边界</text>
+  <rect x="510" y="108" width="420" height="174" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="520" y="126" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="start">正确性审计：Bespoke OLAP (SynnoDB) vs GenDB-V（§6.4）</text>
+  <rect x="520" y="134" width="194" height="44" rx="5" fill="#ffffff" stroke="#94a3b8" stroke-width="1.0"/>
+  <text x="530" y="151" font-size="9.1" font-weight="700" fill="#334155" text-anchor="start">Bespoke OLAP（仅测试验证）</text>
+  <text x="530" y="168" font-size="10.0" font-weight="700" fill="#0f172a" text-anchor="start">16 / 28 模板在合法库上出错</text>
+  <rect x="724" y="134" width="196" height="44" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="734" y="151" font-size="9.1" font-weight="700" fill="#1d4ed8" text-anchor="start">GenDB-V（Verus 域全证明）</text>
+  <text x="734" y="168" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">0 / 28 失败（全数与 DuckDB 一致）</text>
+  <text x="520" y="196" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• TPC-H（10/22 出错）：Q1/6/14/15 价格 32 位溢出；Q21 订单 &gt;64 行</text>
+  <text x="520" y="212" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">  越界；Q7 假定发运晚于下单；Q7/9/11 假定国名唯一；Q2 键值&lt;32</text>
+  <text x="520" y="229" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• SEC-EDGAR（6/6 出错）：Q2/3/4/6 拒负财年/行业码；Q1 组&gt;2^24 错数</text>
+  <text x="520" y="246" font-size="8.9" font-weight="400" fill="#0f172a" text-anchor="start">• SEC Q6 哨兵碰撞：原 SF3 库未见币种绑定漏算负汇总（返回 21/22 行）</text>
+  <text x="520" y="265" font-size="8.9" font-weight="400" fill="#475569" text-anchor="start">• 线程控制：Bespoke 强用 64T 反慢于 32T；GenDB-V 将线程数作为上限</text>
+  <rect x="510" y="292" width="420" height="110" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.0"/>
+  <text x="520" y="310" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="start">合成成本与产物规模（§6.6，Claude Opus 5.5 高推理投入）</text>
+  <rect x="520" y="320" width="128" height="72" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="528" y="336" font-size="8.9" font-weight="700" fill="#1e3a8a" text-anchor="start">联合模板 (28个)</text>
+  <text x="528" y="357" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="start">$2,310</text>
+  <text x="528" y="373" font-size="8.2" font-weight="400" fill="#334155" text-anchor="start">$1,868 + $442 (TPC/SEC)</text>
+  <text x="528" y="385" font-size="8.2" font-weight="400" fill="#475569" text-anchor="start">中位 5.4h / 3.5h</text>
+  <rect x="656" y="320" width="128" height="72" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="664" y="336" font-size="8.9" font-weight="700" fill="#1e3a8a" text-anchor="start">模板代码与证明</text>
+  <text x="664" y="357" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="start">77% 证明</text>
+  <text x="664" y="373" font-size="8.2" font-weight="400" fill="#334155" text-anchor="start">中位 ~6.5k / ~5.9k 行</text>
+  <text x="664" y="385" font-size="8.2" font-weight="400" fill="#475569" text-anchor="start">纯数组 $1,285 + $390</text>
+  <rect x="792" y="320" width="128" height="72" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="800" y="336" font-size="8.9" font-weight="700" fill="#1e3a8a" text-anchor="start">通用引擎 (v16)</text>
+  <text x="800" y="357" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="start">$1,229</text>
+  <text x="800" y="373" font-size="8.2" font-weight="400" fill="#334155" text-anchor="start">~104,000 总代码行</text>
+  <text x="800" y="385" font-size="8.2" font-weight="400" fill="#475569" text-anchor="start">68% 为规范与证明</text>
+  <rect x="510" y="412" width="420" height="100" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="520" y="430" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">适用边界与未覆盖功能（§3.1, §5.2, §6.1）</text>
+  <text x="520" y="449" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• 仅支持只读分析子集：不含窗口函数、递归查询、事务/WAL 与更新</text>
+  <text x="520" y="466" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• 并发局限于只读共享存储 Fork-Join；共享可变状态并发属未来工作</text>
+  <text x="520" y="483" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• SQLSpec 自身未对接第三方独立形式化证明，依赖社区审计与 PG 校对</text>
+  <text x="520" y="500" font-size="8.9" font-weight="400" fill="#475569" text-anchor="start">• JetStream 同期工作未开源且限定 NOT NULL，论文未作同台实测对比</text>
+</svg>

@@ -3,7 +3,7 @@ id: gds-diagnostics
 title: 2026年11月1日｜GPUDirect Storage 诊断：确定性检查与 Agent 编排分工
 date: '2026-11-01'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,7 +18,9 @@ long_read: true
 source_url: https://developer.nvidia.com/blog/how-to-check-and-configure-nvidia-gpudirect-storage-for-your-platform/
 permalink: /tech/zh/gds-diagnostics/
 published_at: '2026-11-01T08:44:13.804154+08:00'
-updated_at: '2026-11-01T08:44:13.804154+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 GPU 能访问存储，不代表应用已经走上期望的 GPUDirect Storage 路径。平台支持、CUDA 与驱动环境、容器设置、挂载点和配置覆盖都会影响实际行为。NVIDIA 新介绍的 gds-diag 把这些问题整理成可独立运行的诊断子命令，再用可选 Agent 技能提供自然语言入口。
 

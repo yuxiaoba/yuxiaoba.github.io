@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" style="background:#ffffff;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17" font-weight="700" fill="#0f172a">llm-d 1.0 Kubernetes-Native Control Plane, NIXL P/D Disaggregation &amp; Tiered KV Stack</text>
+  <text x="24" y="53" font-size="10.6" font-weight="400" fill="#475569">Synthesized from Google Cloud 1.0 post, Gateway API Inference Extension, tiered-prefix-cache, DisaggregatedSet (dev) &amp; llm-d-async</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Band 1: Ingress, Async Queues & Gateway API EPP -->
+  <rect x="24" y="72" width="274" height="110" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="34" y="80" width="136" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="102" y="94" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Async &amp; Multi-Tenant</text>
+  <text x="178" y="94" font-size="9.5" font-weight="600" fill="#1e3a8a">Async Processor</text>
+  <text x="34" y="116" font-size="9.5" fill="#0f172a">BYOQ: redis-sortedset / gcp-pubsub / sql</text>
+  <text x="34" y="134" font-size="9.5" fill="#334155">Queue Refuse -&gt; nack; Pool Wait -&gt; poll</text>
+  <text x="34" y="152" font-size="9.5" fill="#334155">6 lanes: reserved/overflow × 3 SLA tiers</text>
+  <text x="34" y="170" font-size="9.1" fill="#475569">Unix deadline + per-pool merge isolation</text>
+
+  <line x1="298" y1="127" x2="316" y2="127" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="320" y="72" width="328" height="110" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="330" y="80" width="144" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="402" y="94" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Envoy + Gateway API</text>
+  <text x="482" y="94" font-size="9.6" font-weight="600" fill="#1e3a8a">InferencePool Ingress</text>
+  <text x="330" y="116" font-size="9.5" fill="#0f172a">L7 Proxy calls EPP via Envoy ext_proc gRPC</text>
+  <text x="330" y="134" font-size="9.5" fill="#334155">Sets x-gateway-destination-endpoint header</text>
+  <text x="330" y="152" font-size="9.5" fill="#334155">GKE Gateway Mode: multi-region &amp; Model Armor</text>
+  <text x="330" y="170" font-size="9.1" fill="#475569">Standalone Mode runs managed Envoy sidecar</text>
+
+  <line x1="650" y1="127" x2="668" y2="127" stroke="#1d4ed8" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <rect x="670" y="72" width="266" height="110" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="680" y="80" width="134" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="747" y="94" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">llm-d Router (EPP)</text>
+  <text x="820" y="94" font-size="9.4" font-weight="600" fill="#1e3a8a">State-Aware</text>
+  <text x="680" y="116" font-size="9.5" fill="#0f172a">Dual scorers: gpu + cpu-prefix-cache</text>
+  <text x="680" y="134" font-size="9.5" fill="#334155">Manual lruCapacityPerServer calibration</text>
+  <text x="680" y="152" font-size="9.5" fill="#334155">rollout-screener pins P/D revision split</text>
+  <text x="680" y="170" font-size="9.1" fill="#475569">Flow control + KEDA / HPA / Kueue quotas</text>
+
+  <!-- Arrows down to Execution Plane -->
+  <line x1="484" y1="182" x2="484" y2="198" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="803" y1="182" x2="803" y2="198" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Band 2: Disaggregated Execution Plane -->
+  <rect x="24" y="200" width="912" height="148" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="24" y="200" width="912" height="26" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="216" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="217" font-size="10.4" font-weight="700" fill="#1e3a8a">DisaggregatedSet (dev spec: orchestrates child LWSs) · Placement (ExclusiveSlice / ExclusiveTopology) · Lockstep Role Rollout</text>
+
+  <!-- Prefill Pool -->
+  <rect x="36" y="234" width="276" height="104" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.1"/>
+  <text x="46" y="253" font-size="10.3" font-weight="700" fill="#1d4ed8">Prefill Pool (Compute-Bound · TTFT)</text>
+  <text x="46" y="273" font-size="9.4" fill="#0f172a">Multi-node Wide EP / TP (child LWS)</text>
+  <text x="46" y="292" font-size="9.4" fill="#334155">Restores cached prefix; computes delta</text>
+  <text x="46" y="311" font-size="9.4" fill="#334155">SGLang runs bootstrap server (port 8998)</text>
+  <text x="46" y="329" font-size="9" fill="#475569">Scales on queue/TTFT via RoleScaler</text>
+
+  <line x1="312" y1="286" x2="324" y2="286" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- NIXL KV Transfer -->
+  <rect x="326" y="234" width="292" height="104" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="336" y="253" font-size="10.3" font-weight="700" fill="#92400e">NIXL KV Transfer &amp; Revision Gate</text>
+  <text x="336" y="273" font-size="9.4" fill="#0f172a">vLLM NixlConnector: Decode 1-sided RDMA Pull</text>
+  <text x="336" y="292" font-size="9.4" fill="#334155">SGLang: Prefill Push (port 5600 handshake)</text>
+  <text x="336" y="311" font-size="9.2" fill="#78350f">SGLang Decode rejects missing bootstrap fields</text>
+  <text x="336" y="329" font-size="9" fill="#1e3a8a">Coordinator passes x-llm-d-disagg-revision</text>
+
+  <line x1="618" y1="286" x2="630" y2="286" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Decode Pool -->
+  <rect x="632" y="234" width="292" height="104" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="642" y="253" font-size="10.3" font-weight="700" fill="#166534">Decode Pool (BW-Bound · ITL/TPOT)</text>
+  <text x="642" y="273" font-size="9.4" fill="#0f172a">Streams tokens isolated from heavy prefill</text>
+  <text x="642" y="292" font-size="9.4" fill="#334155">TorchTPU + RL time-slicing (~40% to &gt;70%)</text>
+  <text x="642" y="311" font-size="9.4" fill="#334155">Supports separate Multimodal Encode role</text>
+  <text x="642" y="329" font-size="9" fill="#475569">Scales on active batch &amp; KV via RoleScaler</text>
+
+  <!-- Bi-dir Arrows to Tiered KV Cache -->
+  <line x1="174" y1="348" x2="174" y2="366" stroke="#1d4ed8" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <line x1="778" y1="348" x2="778" y2="366" stroke="#1d4ed8" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <!-- Band 3: Tiered KV Cache -->
+  <rect x="24" y="368" width="274" height="104" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="34" y="376" width="134" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="101" y="390" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Tier 1 · HBM Cache</text>
+  <text x="34" y="412" font-size="9.5" fill="#0f172a">Local TPU/GPU HBM (--gpu-mem-util 0.90)</text>
+  <text x="34" y="431" font-size="9.5" fill="#334155">Metric: vllm:prefix_cache_hits_total</text>
+  <text x="34" y="450" font-size="9.1" fill="#475569">Evictions spill to lowest-latency host tier</text>
+
+  <line x1="298" y1="420" x2="318" y2="420" stroke="#1d4ed8" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <rect x="320" y="368" width="298" height="104" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="330" y="376" width="152" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="406" y="390" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Tier 2 · CPU DRAM (/dev/shm)</text>
+  <text x="330" y="412" font-size="9.5" fill="#0f172a">vLLM OffloadingConnector / SGLang HiCache</text>
+  <text x="330" y="431" font-size="9.5" fill="#334155">TPU: TPURaidenOffloadingConnector (tpu-sync)</text>
+  <text x="330" y="450" font-size="9.1" fill="#b45309">Trap: /dev/shm counts toward Pod memory limit</text>
+
+  <line x1="618" y1="420" x2="638" y2="420" stroke="#1d4ed8" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <rect x="640" y="368" width="296" height="104" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="1.2"/>
+  <rect x="650" y="376" width="166" height="20" rx="5" fill="#334155"/>
+  <text x="733" y="390" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Tier 3 · Shared FS / Mooncake</text>
+  <text x="650" y="412" font-size="9.5" fill="#0f172a">VARIANT=fs: RWX PVC / Lustre (direct_io=true)</text>
+  <text x="650" y="431" font-size="9.5" fill="#334155">Or Mooncake Client (80G DRAM + 1T SSD, RDMA)</text>
+  <text x="650" y="450" font-size="9.1" fill="#b45309">Needs PYTHONHASHSEED=0 + external PVC evictor</text>
+
+  <!-- Bottom Summary Banner -->
+  <rect x="24" y="482" width="912" height="28" rx="6" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="500" font-size="9.8" font-weight="700" fill="#1e3a8a">Break-even criterion: offloading yields net gains only when lookup + queue + restore latency &lt; prefill recompute AND router index matches pod RAM</text>
+  <text x="24" y="525" font-size="9.6" fill="#64748b">Assistant diagram (not an original figure) · Synthesized from Google Cloud llm-d 1.0 post, tiered-prefix-cache, DisaggregatedSet (dev), pd-disaggregation &amp; llm-d-async</text>
+</svg>

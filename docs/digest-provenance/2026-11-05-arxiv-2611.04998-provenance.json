@@ -1,0 +1,372 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-05-arxiv-2611.04998",
+  "paper_id": "arxiv-2611.04998",
+  "anchor_id": "paper-arxiv-2611.04998",
+  "digest_date": "2026-11-05",
+  "updated_at_utc": "2026-11-17T02:28:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-05.md",
+    "en_target": "_digest/en/daily-2026-11-05.md",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.04998v1.",
+    "staged_sections": {
+      "requested_parent_paths": {
+        "zh": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sections/2611.04998/section_zh.md",
+        "en": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sections/2611.04998/section_en.md",
+        "write_blocked_reason": "write_file enforces current conversation brain directory (/root/.gemini/antigravity-cli/brain/e069a593-35d3-481d-b5ca-d9b7fe221e16); parent orchestrator must copy or read from actual_staged_paths below."
+      },
+      "actual_staged_paths": {
+        "zh": "/root/.gemini/antigravity-cli/brain/e069a593-35d3-481d-b5ca-d9b7fe221e16/scratch/d2a-sections/2611.04998/section_zh.md",
+        "en": "/root/.gemini/antigravity-cli/brain/e069a593-35d3-481d-b5ca-d9b7fe221e16/scratch/d2a-sections/2611.04998/section_en.md"
+      }
+    }
+  },
+  "primary_source": {
+    "arxiv_id": "2611.04998",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "v1 only at verification time (no v2 revision or withdrawal notice present in frozen arXiv HTML).",
+    "title": "ForgeKernel: Self-Evolving Kernels Catching and Surpassing Experts and Agents",
+    "authors": [
+      "Yaojian Chen",
+      "Dazhi Peng",
+      "Yiyun Zheng",
+      "Zhui Zhu",
+      "Shengye Xiang",
+      "Leshan Li",
+      "Zhen Li",
+      "Xianglong Deng",
+      "Haojun Sun",
+      "Qingfeng He",
+      "Shangzhan Li",
+      "Yifei Shen",
+      "Lin Gan",
+      "Yuxuan Li",
+      "Xu Han",
+      "Zhiyuan Liu"
+    ],
+    "co_first_authors": [
+      "Yaojian Chen",
+      "Dazhi Peng",
+      "Yiyun Zheng"
+    ],
+    "corresponding_authors": [
+      "Yuxuan Li",
+      "Xu Han",
+      "Zhiyuan Liu"
+    ],
+    "affiliations": [
+      "Tsinghua University",
+      "ModelBest Inc.",
+      "University of Chinese Academy of Sciences",
+      "Harbin Institute of Technology"
+    ],
+    "categories": [
+      "cs.DC"
+    ],
+    "submitted_utc": "Tue, 3 Nov 2026 14:49:28 UTC",
+    "submitted_date": "2026-11-03",
+    "comments": "16 pages, 8 figures, including appendices",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.04998",
+      "abs_v1": "https://arxiv.org/abs/2611.04998v1",
+      "pdf": "https://arxiv.org/pdf/2611.04998",
+      "html_v1": "https://arxiv.org/html/2611.04998v1",
+      "doi": "https://doi.org/10.48550/arXiv.2611.04998",
+      "github": "https://github.com/OpenBMB/ForgeKernel"
+    },
+    "github_verified_via_search_web": true,
+    "frozen_and_local_artifacts": {
+      "frozen_abs_txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.04998.txt",
+        "sha256": "d887226fdcd5a32dccfa2959a05e02c8b55b42cda43128396146e6d5400706c0",
+        "sha256_note": "Pending parent hash computation (subagent prohibited from run_command).",
+        "bytes": 1846
+      },
+      "frozen_abs_html": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.04998.html",
+        "bytes": 46631,
+        "sha256": "70c84563633f16a076c9507234f72b7ffbd2cdc4e8c2eda245c74b4d61fb7f92",
+        "sha256_note": "Pending parent hash computation (subagent prohibited from run_command)."
+      },
+      "local_pdf_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sources/2611.04998.txt",
+        "lines": 1498,
+        "sha256": "698ba96722a7f6f3e57d74bfd243d43fe8c51b9df3006ee7965ddf2c2f0b8446",
+        "sha256_note": "Pending parent hash computation (subagent prohibited from run_command).",
+        "bytes": 115980
+      },
+      "local_pdf": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sources/2611.04998.pdf",
+        "pages": 16,
+        "sha256": "c549b1c5e5d43778e2e00d12294bd2ebb1da3197f23943b55e6038ab07291d9e",
+        "sha256_note": "Pending parent hash computation (subagent prohibited from run_command).",
+        "bytes": 675632
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "models": {
+      "arch_agent": "Claude Fable 5.1",
+      "coding_agent": "Claude Opus 5",
+      "deepseek_v4_1_single_agent_case": "Claude Opus 5.5 (high effort, ~24h/gen, source-visible gen-0)"
+    },
+    "nvidia_per_operator": {
+      "hardware": [
+        "NVIDIA Hopper H100 80 GB (SXM, 132 SMs)",
+        "NVIDIA Blackwell B200 (148 SMs)"
+      ],
+      "combined_operators": 27,
+      "combined_configs": 29,
+      "combined_parity_or_win": "25/29",
+      "combined_geomean_speedup": "1.10x (+10%)",
+      "vs_expert_libraries_fig3": {
+        "configs": 22,
+        "h100_configs": 18,
+        "b200_configs": 4,
+        "parity_or_win": "18/22",
+        "within_1pct_extra": 3,
+        "geomean_gain": "+1.6%",
+        "highlights": {
+          "Conv3D fwd (H100)": "+7.6%",
+          "DSA score recompute (H100)": "+6.2%",
+          "MHA bwd (H100)": "+5.1%",
+          "MLA prefill sparse (B200)": "-1.3%"
+        }
+      },
+      "vs_published_agents_fig4": {
+        "configs": 7,
+        "baselines": [
+          "K-Search",
+          "KDA-v0.5",
+          "CAKE"
+        ],
+        "parity_or_win": "7/7",
+        "geomean_gain": "+39.4%",
+        "highlights": {
+          "MLA decode paged (H100 vs K-Search)": "+170.6%",
+          "MLA prefill paged (H100 vs K-Search)": "+146.1%",
+          "GQA decode paged (H100 vs K-Search)": "+24.5%"
+        }
+      }
+    },
+    "public_leaderboards_dated": {
+      "snapshot_date": "2026-10-30",
+      "sol_execbench_b200_v1_1": {
+        "submission_id": "76892",
+        "rank": 1,
+        "kernels_solved": "26/26",
+        "workloads": 660,
+        "sol_score": 0.815204,
+        "fast1": "647/660 (98.03%)",
+        "avg_speedup_vs_scoring_baseline": "5.54x (5.5403x)",
+        "baseline_caveat": "Measured against official Scoring Baseline, not Reference Implementation or SOL Bound (Appendix D)."
+      },
+      "cann_bench_season1_a3_v1_1_ascend_910c": {
+        "checked_date": "2026-10-15",
+        "rank": 1,
+        "operators": 53,
+        "standard_passed": "1060/1060",
+        "hidden_passed": "4185/4240",
+        "standard_score": 4362.7547,
+        "hidden_score": 4203.3563,
+        "total_score": 8566.111,
+        "standard_geomean_speedup": "1.759x",
+        "hidden_geomean_speedup": "1.854x",
+        "weighted_combined_speedup": "1.835x (1.84x in Table 1; 0.2/0.8 weights)"
+      },
+      "cann_bench_season1_final_l4_public_best_910c": {
+        "operators": 8,
+        "public_cases_per_op": 20,
+        "wins": "8/8",
+        "geomean_gain_vs_public_best": "+25.1%",
+        "per_op_gains": {
+          "GRU": "+44.8%",
+          "GQA": "+41.8%",
+          "GMM-SwiGLU-Quant": "+32.2%",
+          "SparseFA": "+28.5%",
+          "MHA": "+26.2%",
+          "MLA": "+12.4%",
+          "MLA-Prolog": "+10.1%",
+          "LSTM": "+9.8%"
+        }
+      },
+      "cann_bench_2_0_tracks": {
+        "date": "2026-10-30",
+        "tracks_ranked_1": [
+          "Ascend 910C",
+          "Ascend 950DT",
+          "Ascend 950PR"
+        ]
+      }
+    },
+    "self_evolution_table2": {
+      "reference_free_then_forgekernel": {
+        "GDN prefill fwd": {
+          "init_vs_expert": "+82.6%",
+          "round1": "+9.5%",
+          "final_vs_expert": "+100%"
+        },
+        "GQA fwd (16:1)": {
+          "init_vs_expert": "+22.8%",
+          "round1": "+5.0%",
+          "final_vs_expert": "+29%"
+        },
+        "DeepSeek-V4.1 fused sparse-attention prefill": {
+          "init_vs_flashmla": "+5.3%",
+          "round1": "+10.0%",
+          "final_vs_flashmla": "+15.5%"
+        }
+      },
+      "expert_ref_then_self_evolution": {
+        "DSA sparse attn fwd": {
+          "init_vs_expert": "-0.5%",
+          "round1": "+7.2%",
+          "final_vs_expert": "+7%"
+        },
+        "GDN prefill bwd": {
+          "init_vs_expert": "+1.1%",
+          "round1": "+2.0%",
+          "final_vs_expert": "+3%"
+        },
+        "GQA fwd (16:1)": {
+          "init_vs_expert": "+0.3%",
+          "round1": "+9.9%",
+          "round2": "+4.2%",
+          "final_vs_expert": "+15%"
+        }
+      }
+    },
+    "component_ablations_table3": {
+      "Full ForgeKernel": {
+        "attn_bwd": "+0.6%",
+        "gdn_prefill_fwd": "-1.5%",
+        "dsa_sparse_fwd": "+2.0%",
+        "geomean": "+0.4%"
+      },
+      "No milestone template": {
+        "attn_bwd": "+16.2% (lower internal precision)",
+        "gdn_prefill_fwd": "-16.2%",
+        "dsa_sparse_fwd": "+1.4%",
+        "geomean": "-0.4%"
+      },
+      "First milestone only": {
+        "attn_bwd": "-1.0%",
+        "gdn_prefill_fwd": "-4.7%",
+        "dsa_sparse_fwd": "-1.2%",
+        "geomean": "-2.3%"
+      },
+      "No SASS (NCU kept)": {
+        "attn_bwd": "-10.2%",
+        "gdn_prefill_fwd": "+16.2%",
+        "dsa_sparse_fwd": "-5.1%",
+        "geomean": "-0.3%"
+      },
+      "No knowledge base": {
+        "attn_bwd": "+0.3%",
+        "gdn_prefill_fwd": "-16.4%",
+        "dsa_sparse_fwd": "+6.2% (different inputs)",
+        "geomean": "-3.8%"
+      }
+    },
+    "sm90_knowledge_provenance_fig6": {
+      "recipients_count": 23,
+      "adoption_buckets_pct": {
+        "0-5": 17.4,
+        "6-10": 43.5,
+        "11-15": 13.0,
+        "16-20": 8.7,
+        "21-25": 8.7,
+        "26-30": 8.7
+      },
+      "reciprocal_pairs": [
+        "DSA sparse attn fwd <-> GQA bwd (8:1)",
+        "FP16 GEMM <-> MHA bwd"
+      ]
+    }
+  },
+  "explicit_limitations": [
+    "Main per-operator results pick the best optimization run per configuration while hw_kb accumulates across runs; Table 3 ablations use 1 run per cell without multi-seed error bars.",
+    "In Table 3, No milestone template lowers internal precision on Attn bwd (+16.2%†) while still passing tolerance tests, No SASS outperforms Full on GDN (+16.2%), and No knowledge base runs DSA on different inputs (+6.2%).",
+    "DeepSeek-V4.1 fused sparse-attention prefill (§4.3) uses a single coding agent (Claude Opus 5.5) allowed to read gen-0 source rather than the default dual-agent black-box protocol.",
+    "Non-comparable baselines and dated snapshots: SOL-ExecBench 5.54x compares against Scoring Baseline (not expert ref/SOL Bound); CANN-Bench GRU/LSTM compare against hardware bounds in Table 5 (0.262x/0.184x) vs. public best in Fig. 5 (+44.8%/+9.8%); CANN-Bench S1 hidden cases fail 55/4240; leaderboard ranks are snapshots as of 2026-10-15 / 2026-10-30.",
+    "SM90 provenance snapshots (Appendix E) track milestone citation and decision delivery rather than certifying final-code retention or causal attribution; Section 6 notes local optima and microarchitecture-specific hw_kb transfer limits; total token/dollar costs across all 29 runs are unreported."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "svgs": [
+      {
+        "filename": "forgekernel-evolution-loop-zh.svg",
+        "site_path": "/assets/images/digest/2026-11-05/forgekernel-evolution-loop-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/forgekernel-evolution-loop-zh.svg",
+        "sha256": "c3555dc8dd9c3a3baa9641606d2bf91095ec30f76637687bcd319657fec78ebb",
+        "bytes": 14843
+      },
+      {
+        "filename": "forgekernel-evolution-loop-en.svg",
+        "site_path": "/assets/images/digest/2026-11-05/forgekernel-evolution-loop-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/forgekernel-evolution-loop-en.svg",
+        "sha256": "6668cf06f3c38798c3878ec2ae854ebd750d19176ba9aa2478628c73675307d4",
+        "bytes": 14521
+      },
+      {
+        "filename": "forgekernel-benchmark-boundaries-zh.svg",
+        "site_path": "/assets/images/digest/2026-11-05/forgekernel-benchmark-boundaries-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/forgekernel-benchmark-boundaries-zh.svg",
+        "sha256": "e81cf3ac5d9c6e5b5dbf784f7667b311042787d127612fba103c4361c53f32e2",
+        "bytes": 14612
+      },
+      {
+        "filename": "forgekernel-benchmark-boundaries-en.svg",
+        "site_path": "/assets/images/digest/2026-11-05/forgekernel-benchmark-boundaries-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/forgekernel-benchmark-boundaries-en.svg",
+        "sha256": "40f7cea082869f0090406f5dbcbc82974717fe28e90d4113f374c3cbc70d487a",
+        "bytes": 14426
+      }
+    ],
+    "preserved_preexisting_pngs": [
+      "badc.png",
+      "gated-workflow.png",
+      "insight-hpc.png",
+      "instrument-errors.png",
+      "leansparse-architecture.png",
+      "policy-wording.png",
+      "raglog.png",
+      "signals.png",
+      "warpline.png"
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-05.md",
+      "file_bytes_before": 46498,
+      "file_sha256_before": "a57afb9010f0516ba9d15d89c96ef1b07029938279a9d9c03e5902f04f3b8762",
+      "file_bytes_after": 258981,
+      "file_sha256_after": "0c569250568c0975f5704c11bbdfcfff48ddadc7366026be70dc954ece1ce395",
+      "old_section_bytes": 930,
+      "old_section_sha256": "f7405a2de84bbb96cc429f7034e47dcac2eb912e4c261be61ddc9b6bd5db74e3",
+      "new_section_bytes": 20697,
+      "new_section_sha256": "c59871723b86a64fa9256d0ee5d74c22ce02159adc9ee745366c48f30e24f16b"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-05.md",
+      "file_bytes_before": 49237,
+      "file_sha256_before": "d5c507de897b4e0644651175c569f11bfe5df1cfa94b53b4227ec9422a1d0e06",
+      "file_bytes_after": 247387,
+      "file_sha256_after": "00dc837b0349415fa884dbc628828870d27be980bb81f30127ddd5602addd7a0",
+      "old_section_bytes": 1016,
+      "old_section_sha256": "783f7fadbd23f02a95f3fb87ef9d570e8beb67cfceae48ad982c0da9e25dd490",
+      "new_section_bytes": 20679,
+      "new_section_sha256": "8b42421f8a13d3c9472f043b9ea8b85a776dced9392e07a901e3713c2c790829"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:08:32.604936+00:00",
+    "preview_release": "20261117-110758-45bc53b9",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

@@ -3,7 +3,7 @@ id: sglang-trainium
 title: '2026-10-23 | SGLang Trainium Beta: Separating RL Generation and Training Hardware'
 date: '2026-10-23'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -11,16 +11,16 @@ tags:
 - inference-serving
 - self-improvement
 - systems-reliability
-summary: TorchNeuron preserves the PyTorch path and NKI supplies custom kernels; the
-  first heterogeneous RL example establishes feasibility, with performance still to
-  be quantified.
+summary: TorchNeuron preserves the PyTorch path and NKI supplies custom kernels; the first heterogeneous RL example establishes feasibility, with performance still to be quantified.
 long_read: true
 source_url: https://lmsys.org/blog/2026-10-22-sglang-trainium-beta/
 permalink: /tech/en/sglang-trainium/
 translation_source: assistant
 authorship: assistant
 published_at: '2026-10-23T08:58:47.180720+08:00'
-updated_at: '2026-10-23T08:58:47.180720+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 RL post-training requires both large-scale rollout generation and policy updates, which place different demands on hardware. SGLang's Trainium-plugin beta makes that distinction a capacity option: generation can run on AWS Trainium while GPU infrastructure updates the policy. The development is a connected software and execution path, not an established ranking of hardware cost efficiency.
 

@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Done Is Not Correct three agent architectures, isolated kernel feedback, and enforced measure-then-claim contract" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="16.2" font-weight="700" fill="#0f172a">Done Is Not Correct: Architectures &amp; Measure-then-Claim Contract</text>
+  <text x="24" y="53" font-size="10.2" fill="#475569">arXiv:2611.10063v1 (§3 &amp; Appendix B) · Isolated build123d / OpenCascade execution + 13 tasks / 122 B-rep tolerance checks</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Column 1: Single-Shot -->
+  <rect x="20" y="72" width="292" height="258" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <rect x="20" y="72" width="292" height="28" rx="9" fill="#475569"/>
+  <rect x="20" y="92" width="292" height="8" fill="#475569"/>
+  <text x="32" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">1. Single-Shot (SS · 1.0 step)</text>
+
+  <rect x="32" y="110" width="268" height="46" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="128" font-size="9.5" font-weight="700" fill="#0f172a">NL Specification + Conventions</text>
+  <text x="42" y="145" font-size="8.8" fill="#475569">T1 / T2 / T4 task · mm units · +Z primary axis</text>
+
+  <line x1="166" y1="156" x2="166" y2="168" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-slate)"/>
+
+  <rect x="32" y="170" width="268" height="52" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="188" font-size="9.5" font-weight="700" fill="#0f172a">One-Pass Code + Instant Claim</text>
+  <text x="42" y="204" font-size="8.8" fill="#334155">1 build123d block + DONE + CONFIDENCE</text>
+  <text x="42" y="216.5" font-size="8.5" fill="#64748b">Mean 211 input / 735 output tokens</text>
+
+  <line x1="166" y1="222" x2="166" y2="234" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-slate)"/>
+
+  <rect x="32" y="236" width="268" height="44" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="42" y="253" font-size="9.3" font-weight="700" fill="#92400e">No Kernel Measurement Feedback</text>
+  <text x="42" y="269" font-size="8.7" fill="#78350f">Mean stated conf 0.97; ships unmeasured</text>
+
+  <rect x="32" y="288" width="268" height="32" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+  <text x="166" y="308" text-anchor="middle" font-size="9.1" font-weight="700" fill="#991b1b">Claim 98% · Silent failure 14.1% (22/156)</text>
+
+  <!-- Column 2: Enforced Tool-Use -->
+  <rect x="334" y="72" width="292" height="258" rx="9" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.6"/>
+  <rect x="334" y="72" width="292" height="28" rx="9" fill="#1d4ed8"/>
+  <rect x="334" y="92" width="292" height="8" fill="#1d4ed8"/>
+  <text x="346" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">2. Enforced Tool-Use (≤4 + 1 turns)</text>
+
+  <rect x="346" y="110" width="268" height="46" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="356" y="128" font-size="9.5" font-weight="700" fill="#1e3a8a">Subprocess build123d Exec (60s cap)</text>
+  <text x="356" y="145" font-size="8.8" fill="#334155">Quarantines OpenCascade hangs/crashes</text>
+
+  <line x1="480" y1="156" x2="480" y2="168" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="346" y="170" width="268" height="52" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="356" y="188" font-size="9.5" font-weight="700" fill="#1e3a8a">Measured JSON Only (No Spec Leak)</text>
+  <text x="356" y="204" font-size="8.7" fill="#1e293b">valid_solid, bbox, volume, com, cylinders</text>
+  <text x="356" y="216.5" font-size="8.4" fill="#475569">Omits targets, bands &amp; pass/fail verdict</text>
+
+  <line x1="480" y1="222" x2="480" y2="234" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="346" y="236" width="268" height="44" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="356" y="253" font-size="9.3" font-weight="700" fill="#1d4ed8">Measure-then-Claim Contract Gate</text>
+  <text x="356" y="269" font-size="8.6" fill="#1e3a8a">Rejects DONE on fresh unmeasured code</text>
+
+  <rect x="346" y="288" width="268" height="32" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+  <text x="480" y="308" text-anchor="middle" font-size="9.0" font-weight="700" fill="#166534">Claim 80.8% · Silent 3.2% (5/156) · Prec 96%</text>
+
+  <!-- Column 3: Multi-Agent -->
+  <rect x="648" y="72" width="292" height="258" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="648" y="72" width="292" height="28" rx="9" fill="#1e3a8a"/>
+  <rect x="648" y="92" width="292" height="8" fill="#1e3a8a"/>
+  <text x="660" y="90.5" font-size="10.6" font-weight="700" fill="#ffffff">3. Multi-Agent (Plan → Code → Check)</text>
+
+  <rect x="660" y="110" width="268" height="46" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="670" y="128" font-size="9.5" font-weight="700" fill="#0f172a">Same-Model Roles (1 Plan + ≤3 Rounds)</text>
+  <text x="670" y="145" font-size="8.8" fill="#334155">Planner &amp; Coder emit flat DIMS JSON (mm)</text>
+
+  <line x1="794" y1="156" x2="794" y2="168" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="660" y="170" width="268" height="52" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="670" y="188" font-size="9.5" font-weight="700" fill="#1e3a8a">Info-Matched Checker Verdict</text>
+  <text x="670" y="204" font-size="8.7" fill="#334155">Reads same kernel JSON + watertight flag</text>
+  <text x="670" y="216.5" font-size="8.4" fill="#475569">Second-hand feedback raises coder crashes (53)</text>
+
+  <line x1="794" y1="222" x2="794" y2="234" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="660" y="236" width="268" height="44" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="670" y="253" font-size="9.3" font-weight="700" fill="#0f172a">Context Divergence CDS (2% tol.)</text>
+  <text x="670" y="269" font-size="8.6" fill="#475569">Flags crashes (0.518); misses wrong (0.107)</text>
+
+  <rect x="660" y="288" width="268" height="32" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1"/>
+  <text x="794" y="308" text-anchor="middle" font-size="9.0" font-weight="700" fill="#075985">Claim 57.1% · Silent 2.6% (4/156) · Pass 61.5%</text>
+
+  <!-- Bottom Oracle Panel -->
+  <rect x="20" y="342" width="920" height="160" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="342" width="920" height="26" rx="9" fill="#eff6ff"/>
+  <rect x="20" y="360" width="920" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="368" x2="940" y2="368" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="359" font-size="11.0" font-weight="700" fill="#1e3a8a">Self-Audited Exact B-Rep Kernel Oracle &amp; Two-Sided Audit Bounds (No VLM/LLM Judge in Loop)</text>
+
+  <rect x="32" y="378" width="288" height="114" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="396" font-size="9.8" font-weight="700" fill="#1d4ed8">13 Tasks · 122 B-Rep Checks</text>
+  <text x="42" y="415" font-size="8.8" fill="#334155">• T1 single (5) / T2 multi (6) / T4 edit (2)</text>
+  <text x="42" y="433" font-size="8.8" fill="#334155">• 58 approx · 13 range · 13 equal · 13 valid</text>
+  <text x="42" y="451" font-size="8.8" fill="#334155">• 22 cylinder+extent · 3 bolt_circle checks</text>
+  <text x="42" y="472" font-size="8.6" fill="#475569">No multi-part assemblies or DFM checks in v1</text>
+
+  <rect x="336" y="378" width="288" height="114" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="346" y="396" font-size="9.8" font-weight="700" fill="#1d4ed8">Silent Failure &amp; Oracle Hardening</text>
+  <text x="346" y="415" font-size="8.8" fill="#0f172a">• Def: v (valid solid) ∧ d (DONE) ∧ ¬pass</text>
+  <text x="346" y="433" font-size="8.8" fill="#334155">• Excludes loud crashes (¬v) &amp; non-claims</text>
+  <text x="346" y="451" font-size="8.8" fill="#334155">• Added extents, per-hole BC, COM, ±8% vol:</text>
+  <text x="346" y="472" font-size="8.7" font-weight="600" fill="#1d4ed8">  Flipped 18/519 pass→fail (0 fail→pass)</text>
+
+  <rect x="640" y="378" width="288" height="114" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="650" y="396" font-size="9.8" font-weight="700" fill="#1d4ed8">Calibration Gate &amp; Blind Expert Audit</text>
+  <text x="650" y="415" font-size="8.8" fill="#334155">• 13 reference parts pass 100% of checks</text>
+  <text x="650" y="433" font-size="8.8" fill="#334155">• Blind CAD rater (n=81): κ=0.64 (82.7%)</text>
+  <text x="650" y="451" font-size="8.8" fill="#334155">• Excl. spec-ambiguous t2-lbracket: κ=0.87</text>
+  <text x="650" y="472" font-size="8.6" fill="#475569">• Overturned 3/18 silent failures outside it</text>
+
+  <text x="24" y="521" font-size="9.0" fill="#64748b">Note: Legacy-contract ablation (identical kernel feedback, allowing DONE with unmeasured code) yields 14 vs 5 silent failures (Fisher p=0.056).</text>
+</svg>

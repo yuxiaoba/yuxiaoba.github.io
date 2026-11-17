@@ -1,10 +1,9 @@
 ---
 id: gcp-london-failover
-title: '2026-10-21 | London Cloud Outage: Failover Depends on Capacity and Control
-  Paths'
+title: '2026-10-21 | London Cloud Outage: Failover Depends on Capacity and Control Paths'
 date: '2026-10-21'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -13,13 +12,14 @@ long_read: true
 tags:
 - systems-reliability
 - observability
-summary: 'Two constraints on failover in the Google Cloud London incident: surviving
-  capacity and control paths that still wait for the failed zone.'
+summary: 'Two constraints on failover in the Google Cloud London incident: surviving capacity and control paths that still wait for the failed zone.'
 authoring_source: assistant
 translation_source: assistant
 permalink: /tech/en/gcp-london-failover/
 published_at: '2026-10-24T08:39:06.506729+08:00'
-updated_at: '2026-10-24T08:39:06.506729+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 The useful question for a multi-zone architecture is whether the surviving system can complete the same business operation after one zone disappears. That requires available replicas, executable control paths, and sufficient capacity together. The London cloud outage provides a concrete starting point for separating deployment across zones into recovery conditions that can be examined individually.
 

@@ -1,10 +1,9 @@
 ---
 id: 2026-11-03-nvidia-kubernetes-ai-ready-vera-rubin
-title: '2026-11-03 | Technical reading: Making Kubernetes AI-Ready for NVIDIA Vera
-  Rubin on Day One'
+title: '2026-11-03 | Technical reading: Making Kubernetes AI-Ready for NVIDIA Vera Rubin on Day One'
 date: '2026-11-03'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -16,9 +15,11 @@ authoring_source: assistant
 translation_source: assistant
 permalink: /tech/en/2026-11-03-nvidia-kubernetes-ai-ready-vera-rubin/
 long_read: true
-summary: "Vera Rubin driver/IMEX ownership, layered validation, and separate hardware and plugin failure causes."
+summary: Vera Rubin driver/IMEX ownership, layered validation, and separate hardware and plugin failure causes.
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 ## New hardware requires version and ownership constraints
 
 NVIDIA's Vera Rubin NVL72 report captures drivers, runtime, IMEX, networking and scheduling in AICR recipes. The tested host supplies R615.23; GPU Operator leaves driver installation disabled while managing the toolkit. Whole-GPU allocation remains on the device plugin, while DRA ComputeDomains manage cross-node IMEX. These are different responsibilities.

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">一手来源谱系、数据口径边界与部署评估坐标</text>
+  <text x="24" y="56" font-size="11" font-weight="400" fill="#475569" text-anchor="start">区分 Runtime 2026 演讲原话、May–Oct 2026 一手工程博客与二次总结（vLLM Bangkok）的推算与口径漂移</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Lane 1: AgentX Workload Stats -->
+  <rect x="24" y="76" width="912" height="84" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="34" y="86" width="114" height="64" rx="6" fill="#1e3a8a"/>
+  <text x="91" y="114" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">AgentX 轨迹</text>
+  <text x="91" y="135" font-size="10.5" font-weight="600" fill="#bfdbfe" text-anchor="middle">负载统计口径</text>
+
+  <rect x="162" y="84" width="242" height="68" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="172" y="103" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="start">一手源 · vLLM × AgentX (09-08)</text>
+  <text x="172" y="123" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">43 轮 · P50 142K 入 / 444 出</text>
+  <text x="172" y="141" font-size="9.5" font-weight="400" fill="#475569" text-anchor="start">理论复用 &gt;96% · 44% 含子 Agent</text>
+  <line x1="406" y1="118" x2="416" y2="118" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="419" y="84" width="242" height="68" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="429" y="103" font-size="10.5" font-weight="700" fill="#78350f" text-anchor="start">二次总结 · 推算与 X 帖压缩</text>
+  <text x="429" y="123" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">博客将两中位数相除得 ~320</text>
+  <text x="429" y="141" font-size="9.5" font-weight="400" fill="#92400e" text-anchor="start">X 帖把理论复用写成“命中 &gt;95%”</text>
+  <line x1="663" y1="118" x2="673" y2="118" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="676" y="84" width="250" height="68" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="686" y="103" font-size="10.5" font-weight="700" fill="#166534" text-anchor="start">核对边界 · 不得混同实测命中</text>
+  <text x="686" y="123" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">公开基准，非 Inferact 私有生产流</text>
+  <text x="686" y="141" font-size="9.5" font-weight="400" fill="#14532d" text-anchor="start">142K/444 非均值比；Mooncake 为 131:1</text>
+
+  <!-- Lane 2: Mooncake May 2026 Experiments -->
+  <rect x="24" y="166" width="912" height="84" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="34" y="176" width="114" height="64" rx="6" fill="#1e3a8a"/>
+  <text x="91" y="204" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Mooncake</text>
+  <text x="91" y="225" font-size="10.5" font-weight="600" fill="#bfdbfe" text-anchor="middle">2026-05 实测</text>
+
+  <rect x="162" y="174" width="242" height="68" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="172" y="193" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="start">一手源 · vLLM × Mooncake (05-06)</text>
+  <text x="172" y="213" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">Kimi-2.5 · 12× GB200 1P1D · 610 条</text>
+  <text x="172" y="231" font-size="9.5" font-weight="400" fill="#475569" text-anchor="start">命中 1.7%→92.2% · 3.8x · 46x TTFT</text>
+  <line x1="406" y1="208" x2="416" y2="208" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="419" y="174" width="242" height="68" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="429" y="193" font-size="10.5" font-weight="700" fill="#78350f" text-anchor="start">二次总结 · 介质与基线省略</text>
+  <text x="429" y="213" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">X 帖并列 DRAM/SSD 引出 3.8x</text>
+  <text x="429" y="231" font-size="9.5" font-weight="400" fill="#92400e" text-anchor="start">且省略“基线仅缓存 System Prompt”</text>
+  <line x1="663" y1="208" x2="673" y2="208" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="676" y="174" width="250" height="68" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="686" y="193" font-size="10.5" font-weight="700" fill="#166534" text-anchor="start">核对边界 · DRAM 与合成扩展</text>
+  <text x="686" y="213" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">3.8x 仅用 CPU DRAM（SSD 后加）</text>
+  <text x="686" y="231" font-size="9.5" font-weight="400" fill="#14532d" text-anchor="start">60 卡线性来自合成并发 + 轮询路由</text>
+
+  <!-- Lane 3: Spoken Hybrid KV & TPU Megakernel -->
+  <rect x="24" y="256" width="912" height="84" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="34" y="266" width="114" height="64" rx="6" fill="#1e3a8a"/>
+  <text x="91" y="294" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">口述与 TPU</text>
+  <text x="91" y="315" font-size="10.5" font-weight="600" fill="#bfdbfe" text-anchor="middle">实验与特化核</text>
+
+  <rect x="162" y="264" width="242" height="68" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="172" y="283" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="start">口述 + Inferact TPU (09-2026)</text>
+  <text x="172" y="303" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">Hybrid LCM 口述腾出 2–2.5x 空间</text>
+  <text x="172" y="321" font-size="9.5" font-weight="400" fill="#475569" text-anchor="start">TPU v7 Pallas 709 vs GB200 452</text>
+  <line x1="406" y1="298" x2="416" y2="298" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="419" y="264" width="242" height="68" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="429" y="283" font-size="10.5" font-weight="700" fill="#78350f" text-anchor="start">二次风险 · 跨场景过度外推</text>
+  <text x="429" y="303" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">把口述比例当公开基准测试结论</text>
+  <text x="429" y="321" font-size="9.5" font-weight="400" fill="#92400e" text-anchor="start">把单用户峰值当生产集群吞吐比</text>
+  <line x1="663" y1="298" x2="673" y2="298" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="676" y="264" width="250" height="68" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="686" y="283" font-size="10.5" font-weight="700" fill="#166534" text-anchor="start">核对边界 · 同条件实测为准</text>
+  <text x="686" y="303" font-size="9.5" font-weight="400" fill="#1e293b" text-anchor="start">2–2.5x 属演讲口述，无公开评测</text>
+  <text x="686" y="321" font-size="9.5" font-weight="400" fill="#14532d" text-anchor="start">709 为单用户 DSpark(len=6) 试验</text>
+
+  <!-- Bottom Section: Pareto Chart & Checklist -->
+  <rect x="24" y="350" width="424" height="148" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="38" y="370" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start">Pareto 权衡坐标（InferenceX 2026-09-21 口径）</text>
+
+  <!-- Mini Pareto Graph -->
+  <line x1="68" y1="384" x2="68" y2="472" stroke="#475569" stroke-width="1.2"/>
+  <line x1="68" y1="472" x2="256" y2="472" stroke="#475569" stroke-width="1.2"/>
+  <text x="62" y="388" font-size="8.8" font-weight="600" fill="#475569" text-anchor="end">吞吐</text>
+  <text x="62" y="400" font-size="8.8" font-weight="600" fill="#475569" text-anchor="end">/芯</text>
+  <text x="162" y="488" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">P90 单用户交互速率 (tok/s/user)</text>
+  <path d="M 86 396 C 122 404, 174 434, 238 460" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="90" cy="397" r="4" fill="#1d4ed8"/>
+  <circle cx="152" cy="422" r="4" fill="#1d4ed8"/>
+  <circle cx="234" cy="458" r="4" fill="#1d4ed8"/>
+  <line x1="156" y1="420" x2="206" y2="394" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#arrow)"/>
+  <text x="166" y="388" font-size="9" font-weight="700" fill="#1d4ed8" text-anchor="start">推向右上前沿</text>
+
+  <text x="272" y="398" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">左上 · 批量最经济</text>
+  <text x="272" y="414" font-size="9.2" font-weight="400" fill="#475569" text-anchor="start">高每卡吞吐，适异步后台</text>
+  <text x="272" y="436" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">右下 · 单用户最快</text>
+  <text x="272" y="452" font-size="9.2" font-weight="400" fill="#475569" text-anchor="start">低并发 + SpecDec 降延迟</text>
+  <text x="272" y="474" font-size="9" font-weight="400" fill="#64748b" text-anchor="start">含 GB200/GB300/MI355X</text>
+
+  <!-- Right Panel: Checklist -->
+  <rect x="462" y="350" width="474" height="148" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="476" y="370" font-size="11" font-weight="700" fill="#1e3a8a" text-anchor="start">上线前核查四项（系 vLLM Bangkok 建议，非演讲原表）</text>
+  <text x="476" y="395" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">① 先量真实流量：输入输出比、每会话轮次与实际驻留命中率</text>
+  <text x="476" y="419" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">② 固定前缀顺序：系统提示与工具定义前置，剔除变化时间戳</text>
+  <text x="476" y="443" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">③ 明确选型点位：离线代理追每卡吞吐，交互任务盯 P90 速率</text>
+  <text x="476" y="467" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">④ 跨节点才拆 P/D：单机可满足时避免过早引入 Mooncake/NIXL</text>
+  <text x="476" y="487" font-size="9.2" font-weight="400" fill="#64748b" text-anchor="start">对照：不能拿未调优的 system-prompt-only 基线直接推算线上收益</text>
+
+  <text x="24" y="522" font-size="10.2" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 核对自 vLLM Bangkok 总结、vLLM Blog (2026-05 / 09 / 10)、Inferact TPU 与 Q4 Roadmap（非原文配图）</text>
+</svg>

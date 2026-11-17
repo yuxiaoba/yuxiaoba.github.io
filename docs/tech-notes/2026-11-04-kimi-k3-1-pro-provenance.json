@@ -1,0 +1,49 @@
+{
+  "id": "2026-11-04-kimi-k3-1-pro",
+  "review_code": "T1-20",
+  "source_url": "https://www.kimi.com/blog/kimi-k3-1-pro",
+  "source_title": "Kimi K3.1 Pro Tech Blog: Advancing Open Intelligence",
+  "source_author": "Moonshot AI (Kimi)",
+  "source_org": "Moonshot AI",
+  "source_date": "2026-11-04",
+  "note_date": "2026-11-04",
+  "updated_at": "2026-11-15T19:38:00+08:00",
+  "frozen_primary_html": {
+    "path": ".preview/research-jobs/depth-repair-2026-11-05/work/evidence/2026-11-04-kimi-k3-1-pro.html",
+    "sha256": "d6109024127477989af315db5983eeeb1b23e569a048d8f7a215f01c9a398aae"
+  },
+  "frozen_primary_text": {
+    "path": ".preview/research-jobs/depth-repair-2026-11-05/work/evidence/2026-11-04-kimi-k3-1-pro.frozen.txt",
+    "sha256": "a33db490d5af22ccaf933bd79e41c1643b338ba478e4d2da8072c7089b85c43c"
+  },
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/2026-11-04-kimi-k3-1-pro.md",
+      "sha256": "c062efcc7cf8f860fc4b22a63d0cbdd7c29632f6dcebf917b048d57d421dd6a3"
+    },
+    "en_markdown": {
+      "path": "_tech/en/2026-11-04-kimi-k3-1-pro.md",
+      "sha256": "571e10be2336b951e62f0fb7620890822055e0aff930ec7dd4cf860687f43026"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/2026-11-04-kimi-k3-1-pro/k31-posttraining-diagnostics-zh.svg",
+        "sha256": "9177f488f5f98f7df2748c97b77a2a8542cacd0b2351a8116a3209ad987eff76"
+      },
+      {
+        "path": "assets/images/tech/2026-11-04-kimi-k3-1-pro/k31-posttraining-diagnostics-en.svg",
+        "sha256": "ddbc17fb7e866e583377d69d5a24b6285e98def2d95f5ade8500c0f5ab21b47b"
+      },
+      {
+        "path": "assets/images/tech/2026-11-04-kimi-k3-1-pro/k31-cyber-filtering-eval-boundaries-zh.svg",
+        "sha256": "6f10dd1e0ab2404ba3af404ec53e77af71dfd01af4af47392e8a2b14d42058b2"
+      },
+      {
+        "path": "assets/images/tech/2026-11-04-kimi-k3-1-pro/k31-cyber-filtering-eval-boundaries-en.svg",
+        "sha256": "1b2f726c58850a5422cf944dadcab0dcb4ba60e214836bec9e9c669b31965c37"
+      }
+    ]
+  }
+}

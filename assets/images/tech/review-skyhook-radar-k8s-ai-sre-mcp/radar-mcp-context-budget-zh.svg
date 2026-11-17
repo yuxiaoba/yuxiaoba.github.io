@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC','PingFang SC','Lato','Microsoft YaHei',sans-serif;">
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="38" font-size="18.5" font-weight="700" fill="#0f172a">诊断上下文预算对比：非受限 kubectl 循环 vs. Radar MCP 结构化取数</text>
+  <text x="24" y="58" font-size="11.5" font-weight="400" fill="#475569">为何直接运行 kubectl 会把模型轮次与上下文窗口耗在原始 YAML 拼装上（附 SREGym 三组同源实验实测口径）</text>
+  <line x1="24" y1="69" x2="936" y2="69" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Left: Raw kubectl -->
+  <rect x="24" y="78" width="446" height="250" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <rect x="24" y="78" width="446" height="30" rx="8" fill="#e2e8f0"/>
+  <rect x="24" y="98" width="446" height="10" fill="#e2e8f0"/>
+  <text x="36" y="98" font-size="12" font-weight="700" fill="#1e293b">路径 A · 原生 kubectl（多轮试探 + 原始 YAML 膨胀）</text>
+
+  <rect x="36" y="116" width="422" height="44" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="46" y="134" font-size="11" font-weight="700" fill="#334155">1. 串行试探：get pods → describe → get rs → get deploy</text>
+  <text x="46" y="151" font-size="10.2" fill="#475569">缺少关系索引，Agent 每步都要消耗 API 往返并自行拼出归属链</text>
+
+  <rect x="36" y="167" width="422" height="44" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="46" y="185" font-size="11" font-weight="700" fill="#334155">2. -o yaml 拉回大量服务端元信息与冗余状态</text>
+  <text x="46" y="202" font-size="10.2" fill="#475569">附带 managedFields、resourceVersion、last-applied 与全量 status</text>
+
+  <rect x="36" y="218" width="422" height="44" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="46" y="236" font-size="11" font-weight="700" fill="#334155">3. 无去重 Events 与未经筛选的容器长日志</text>
+  <text x="46" y="253" font-size="10.2" fill="#475569">重复 Warning 与普通信息日志持续追加进对话上下文并逐轮重放</text>
+
+  <rect x="36" y="269" width="422" height="48" rx="6" fill="#fff1f2" stroke="#fda4af" stroke-width="1"/>
+  <text x="46" y="288" font-size="11" font-weight="700" fill="#9f1239">实验代价（3 节点 EKS · 同 Agent 同模型）</text>
+  <text x="46" y="306" font-size="10.5" fill="#881337">Study 01 均时 191 秒（2 分钟内正确率 60%）；Study 02 均时 249 秒</text>
+
+  <!-- Top Right: Radar MCP -->
+  <rect x="490" y="78" width="446" height="250" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.3"/>
+  <rect x="490" y="78" width="446" height="30" rx="8" fill="#1d4ed8"/>
+  <rect x="490" y="98" width="446" height="10" fill="#1d4ed8"/>
+  <text x="502" y="98" font-size="12" font-weight="700" fill="#ffffff">路径 B · Radar /mcp-readonly（内存图谱 + 裁剪载荷）</text>
+
+  <rect x="502" y="116" width="422" height="44" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="512" y="134" font-size="11" font-weight="700" fill="#1d4ed8">1. issues / diagnose：直接从排序异常队列切入</text>
+  <text x="512" y="151" font-size="10.2" fill="#1e3a8a">一次调用即可定位受损工作负载、疑似根因与关联事件</text>
+
+  <rect x="502" y="167" width="422" height="44" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="512" y="185" font-size="11" font-weight="700" fill="#1d4ed8">2. get_neighborhood：按 BFS 局部展开依赖子图</text>
+  <text x="512" y="202" font-size="10.2" fill="#1e3a8a">仅传递上下游关联资源及健康状态，避免倾倒无关集群 YAML</text>
+
+  <rect x="502" y="218" width="422" height="44" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="512" y="236" font-size="11" font-weight="700" fill="#1d4ed8">3. get_changes + get_pod_logs：去噪变更与错峰日志</text>
+  <text x="512" y="253" font-size="10.2" fill="#1e3a8a">剔除 managedFields 噪声、折叠重复事件、隐藏 Secret .data</text>
+
+  <rect x="502" y="269" width="422" height="48" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="512" y="288" font-size="11" font-weight="700" fill="#1e3a8a">实验结果（含对错提交的诊断耗时，非平均成功修复时间）</text>
+  <text x="512" y="306" font-size="10.5" fill="#1e40af">Study 01 均时 64 秒（约 3 倍速，2 分钟内 86%）；Study 02 均时 57 秒</text>
+
+  <!-- Bottom Panel: Three SREGym Studies -->
+  <rect x="24" y="340" width="912" height="162" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="340" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="358" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="359" font-size="11.8" font-weight="700" fill="#1e3a8a">SREGym 三组独立实验（3 节点 EKS · Claude Opus 5 统一评判）— 仅限同组内部对比</text>
+
+  <rect x="36" y="376" width="288" height="90" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="44" y="383" width="272" height="20" rx="4" fill="#1d4ed8"/>
+  <text x="180" y="397" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Study 01 · 50 故障（可控工具对照）</text>
+  <text x="46" y="420" font-size="10.2" fill="#0f172a">固定同 Agent 同模型，仅替换工具层</text>
+  <text x="46" y="438" font-size="10.5" font-weight="700" fill="#1d4ed8">64s vs 191s（约 3x）· 86% vs 60%</text>
+  <text x="46" y="456" font-size="9.8" fill="#64748b">均值包含错误答案；两分钟内准确率为作者统计</text>
+
+  <rect x="336" y="376" width="288" height="90" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="344" y="383" width="272" height="20" rx="4" fill="#1d4ed8"/>
+  <text x="480" y="397" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Study 02 · 25 故障（5 MCP + kubectl）</text>
+  <text x="346" y="420" font-size="10.2" fill="#0f172a">同一 Agent 驱动 5 个 MCP 与裸 kubectl</text>
+  <text x="346" y="438" font-size="10.5" font-weight="700" fill="#1d4ed8">Radar 57s（次快 Flux159 135s，2.3x）</text>
+  <text x="346" y="456" font-size="9.8" fill="#64748b">全对 14 题 33s vs 58s；EKS MCP 321s</text>
+
+  <rect x="636" y="376" width="288" height="90" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="644" y="383" width="272" height="20" rx="4" fill="#1d4ed8"/>
+  <text x="780" y="397" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Study 03 · 50 故障（6 款 AI SRE 工具）</text>
+  <text x="646" y="420" font-size="10.2" fill="#0f172a">Claude+Radar vs 5 款产品（各自框架）</text>
+  <text x="646" y="438" font-size="10.5" font-weight="700" fill="#1d4ed8">44/50 (88%) · 79s · $0.27/故障</text>
+  <text x="646" y="456" font-size="9.8" fill="#64748b">其余 5 款：66%-82%、123s-288s、$0.37-$2.26</text>
+
+  <rect x="36" y="473" width="888" height="22" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="46" y="488" font-size="10.2" font-weight="600" fill="#78350f">方法边界：三组故障集、日期与负载各异，禁止跨组排序；完整 90 故障修复榜单（270 次运行 / 95.2%）请衔接 11-06 续篇阅读</text>
+
+  <text x="24" y="522" font-size="10.2" fill="#64748b">阅读整理配图 · 数据严格采自 skyhook-io/radar README 与 radarhq.io/benchmark 冻存快照（非原文配图）</text>
+</svg>

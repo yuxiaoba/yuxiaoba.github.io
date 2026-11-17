@@ -3,7 +3,7 @@ id: review-nvidia-tensorrt-global-performance-tuner-1
 title: 2026-11-04｜TensorRT 全局调优：构建路线与准确率约束
 date: '2026-11-04'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,9 +17,11 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/zh/review-nvidia-tensorrt-global-performance-tuner-1/
 long_read: true
-summary: "区分 TensorRT 构建候选的可达性、端到端搜索和准确率约束，避免局部计时误判。"
+summary: 区分 TensorRT 构建候选的可达性、端到端搜索和准确率约束，避免局部计时误判。
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 ## 单个最快算子为何不组成最快引擎
 
 TensorRT 构建涉及图变换、融合、kernel、内存布局和量化，这些选择互相影响。一个单独计时更快的 kernel，放进完整图后可能破坏融合或增加搬运；低精度选择还可能超过应用可接受误差。原文因此将优化对象从局部 tactic 扩展到完整构建路线。

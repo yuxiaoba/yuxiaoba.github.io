@@ -1,0 +1,113 @@
+{
+  "id": "adaptive-telemetry",
+  "source_url": "https://grafana.com/blog/cut-costs-keep-what-you-need-adaptive-telemetry/",
+  "source_title": "Break the link between data volume and your observability bill with Adaptive Telemetry",
+  "source_authors": [
+    "JK Basra",
+    "Steven Dungan"
+  ],
+  "source_org": "Grafana Labs",
+  "source_date": "2026-10-20",
+  "note_date": "2026-10-20",
+  "published_at": "2026-10-23T12:22:02.560508+08:00",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": ".preview/research-jobs/runs/20261023-120001-8b97f3d712-d7bb7b/work/sources/pages/grafana-com-blog-cut-costs-keep-what-you-need-adaptive-telemetry.txt",
+      "kind": "extracted_blog_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261023-120001-8b97f3d712-d7bb7b/work/sources/support/adaptive-volume.txt",
+      "kind": "extracted_docs_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261023-120001-8b97f3d712-d7bb7b/work/sources/support/adaptive-diversity.txt",
+      "kind": "extracted_docs_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261023-120001-8b97f3d712-d7bb7b/work/sources/support/adaptive-dropped.txt",
+      "kind": "extracted_docs_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261023-120001-8b97f3d712-d7bb7b/work/sources/support/adaptive-auto.txt",
+      "kind": "extracted_docs_text"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://grafana.com/blog/cut-costs-keep-what-you-need-adaptive-telemetry/",
+    "https://grafana.com/docs/grafana-cloud/observe-and-act/adaptive-telemetry/adaptive-traces/manage-recommendations/volumetric-policy/",
+    "https://grafana.com/docs/grafana-cloud/observe-and-act/adaptive-telemetry/adaptive-traces/manage-recommendations/diversity-policy/",
+    "https://grafana.com/docs/grafana-cloud/observe-and-act/adaptive-telemetry/adaptive-traces/query-dropped-traces/",
+    "https://grafana.com/docs/grafana-cloud/observe-and-act/adaptive-telemetry/adaptive-metrics/additional-configuration/auto-apply/"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/adaptive-telemetry.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/adaptive-telemetry.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/adaptive-telemetry/diversity.png",
+        "origin": "primary_source_preserved",
+        "source": "preserved_official_grafana_ui_screenshot",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/adaptive-telemetry/adaptive-telemetry-control-loop-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/adaptive-telemetry/adaptive-telemetry-control-loop-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/adaptive-telemetry/diversity-scoring-guardrails-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/adaptive-telemetry/diversity-scoring-guardrails-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "4803542aefdb62f7ab8b5fa78c91de08277a913e50a4d21313f4e217e36c1378",
+      "en_md_sha256": "92a03540646198ef8fe31ee449381d97bb08d7f08e00483b4b80ccfa571af234",
+      "svgs": {
+        "/assets/images/tech/adaptive-telemetry/adaptive-telemetry-control-loop-zh.svg": "9ef90600d5f2c1eba467a0014b05d41f41707c731060bbb07dc488b597de079d",
+        "/assets/images/tech/adaptive-telemetry/adaptive-telemetry-control-loop-en.svg": "bc8f15e21e880b89c2a2459b44a2d111551afc257eed14f280cd5bf9d807ce3e",
+        "/assets/images/tech/adaptive-telemetry/diversity-scoring-guardrails-zh.svg": "3cdad787c50a12f4650735a15e561aacf234a87084e9774ac24f5bb2a38bbb2b",
+        "/assets/images/tech/adaptive-telemetry/diversity-scoring-guardrails-en.svg": "fd079ccb1448b7493c90a4931ac0ed2c348dff91300493d6fa3303233d114e80"
+      },
+      "preserved": {
+        "diversity.png": "b173b80b9c78b921c804a18505dff0e3b4ef9f5007b2c7ace3efae6ea4272672"
+      }
+    },
+    "playwright_total": 35,
+    "playwright_passed": 35,
+    "playwright_failed": 0
+  }
+}

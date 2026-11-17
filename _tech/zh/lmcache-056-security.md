@@ -3,7 +3,7 @@ id: lmcache-056-security
 title: 2026年10月20日｜LMCache 0.5.6：KV缓存服务的信任与生命周期边界
 date: '2026-10-20'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: manual-research
 source_type: tech
@@ -18,10 +18,12 @@ permalink: /tech/zh/lmcache-056-security/
 authorship: assistant
 translation_source: assistant
 published_at: '2026-10-22T08:54:49.993592+08:00'
-updated_at: '2026-10-22T08:54:49.993592+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 input_urls:
 - https://blog.lmcache.ai/en/2026/10/20/lmcache-v0-5-6-release/
 source_published_at: '2026-10-14T22:21:42Z'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 LMCache Maintainers · 2026-10-15（上海时间） · [官方发布记录](https://github.com/LMCache/LMCache/releases/tag/v0.5.6)
 

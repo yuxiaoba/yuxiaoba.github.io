@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- Outer Frame -->
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17.5" font-weight="700" fill="#0f172a" text-anchor="start">单请求峰值到高并发长上下文：Megakernel 收益衰减与系统瓶颈迁移</text>
+  <text x="24" y="53" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start">低并发由内核启动与 HBM 权重读取主导；1M AgentX 高并发下瓶颈迁往 KV 驻留容量、会话感知驱逐与分块 Prefill 公平性</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Regime 1 -->
+  <rect x="24" y="72" width="286" height="198" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="72" width="286" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="90" width="286" height="10" fill="#dbeafe"/>
+  <text x="36" y="90" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">体制一 · BS=1–2 低延迟交互区间</text>
+  <text x="36" y="118" font-size="9.5" font-weight="700" fill="#1d4ed8" text-anchor="start">主导瓶颈：核启动与集合通信边界</text>
+  <text x="36" y="136" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">算术密度极低；等待全被暴露</text>
+  <text x="36" y="155" font-size="9.2" font-weight="600" fill="#0f172a" text-anchor="start">GPU (8×GB300)：517 → 1,109 tok/s (2.1×)</text>
+  <text x="36" y="172" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">GSM8K BS=1，12.9→5.9 ms，16 验/6.6 接受</text>
+  <text x="36" y="191" font-size="9.2" font-weight="600" fill="#0f172a" text-anchor="start">TPU v7 (4芯片)：3.78 → 1.95 ms/tok (1.94×)</text>
+  <text x="36" y="208" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">2 并发 1.85×；验证逼近 HBM 下限 1.5–1.7×</text>
+  <rect x="36" y="226" width="262" height="32" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="167" y="246" font-size="9.1" font-weight="600" fill="#92400e" text-anchor="middle">边界：GPU Megakernel 目前仅支持 BS=1</text>
+
+  <line x1="312" y1="171" x2="328" y2="171" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Regime 2 -->
+  <rect x="330" y="72" width="296" height="198" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="330" y="72" width="296" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="330" y="90" width="296" height="10" fill="#dbeafe"/>
+  <text x="342" y="90" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">体制二 · 多请求与 500K 长上下文过渡</text>
+  <text x="342" y="118" font-size="9.5" font-weight="700" fill="#1d4ed8" text-anchor="start">瓶颈迁移：注意力读 KV 与专家寄存器溢出</text>
+  <text x="342" y="136" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">批量在途 token 增多，核边界等待自然缩小</text>
+  <text x="342" y="155" font-size="9.2" font-weight="600" fill="#0f172a" text-anchor="start">• 无 max 流水注意力：500K BS=2 提速 18%</text>
+  <text x="342" y="173" font-size="9.2" font-weight="600" fill="#0f172a" text-anchor="start">• 专家循环拆分 (≤4 vs &gt;4 行)：多请求 +13–19%</text>
+  <text x="342" y="191" font-size="9.2" font-weight="600" fill="#0f172a" text-anchor="start">• sequence-on-lane fp8：KV 空间/读取减半</text>
+  <text x="342" y="208" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">512 B → 256 B/token/层/设备；草稿入滑窗 +38%</text>
+  <rect x="342" y="226" width="272" height="32" rx="5" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.9"/>
+  <text x="478" y="246" font-size="9.1" font-weight="600" fill="#0369a1" text-anchor="middle">LMSYS 提示：多 batch 下重叠反而更容易找满工作</text>
+
+  <line x1="628" y1="171" x2="644" y2="171" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Regime 3 -->
+  <rect x="646" y="72" width="290" height="198" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="646" y="72" width="290" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="646" y="90" width="290" height="10" fill="#1e3a8a"/>
+  <text x="658" y="90" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="start">体制三 · 1M AgentX 高并发吞吐区间</text>
+  <text x="658" y="118" font-size="9.5" font-weight="700" fill="#1d4ed8" text-anchor="start">主导瓶颈：HBM 仅剩约 20 GiB KV 与 Prefill</text>
+  <text x="658" y="136" font-size="9.2" font-weight="600" fill="#0f172a" text-anchor="start">TPU 曲线：433/req@6,101 → 95/req@25,906/chip</text>
+  <text x="658" y="155" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• L2 HiCache (960 GB 主机内存) 吞吐最高 +77%</text>
+  <text x="658" y="173" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• 会话感知驱逐：重算 1.2× → 逼近最优 1–5%</text>
+  <text x="658" y="191" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• 芯片内配对交换 + SP：100K 块 440→384 ms (-51ms)</text>
+  <text x="658" y="209" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• Chunk 共享预留 ≥1,024 tok：中位 E2E 降 58%</text>
+  <rect x="658" y="226" width="266" height="32" rx="5" fill="#dcfce7" stroke="#22c55e" stroke-width="0.9"/>
+  <text x="791" y="246" font-size="9.1" font-weight="600" fill="#166534" text-anchor="middle">混合架构警示：丢 2,048 滑窗尾巴会废掉全局 KV</text>
+
+  <!-- Bottom Left: Curve & Scope Gap -->
+  <rect x="24" y="280" width="448" height="214" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="38" y="301" font-size="11.2" font-weight="700" fill="#0f172a" text-anchor="start">AgentX 1M 吞吐-交互曲线 vs. BS=1 单点延迟峰值（防跨口径直比）</text>
+
+  <!-- Chart Axes -->
+  <line x1="84" y1="318" x2="84" y2="432" stroke="#475569" stroke-width="1.3"/>
+  <line x1="84" y1="432" x2="296" y2="432" stroke="#475569" stroke-width="1.3"/>
+  <text x="78" y="325" font-size="8.8" font-weight="600" fill="#475569" text-anchor="end">25.9K</text>
+  <text x="78" y="337" font-size="8.2" font-weight="400" fill="#64748b" text-anchor="end">tok/s/chip</text>
+  <text x="78" y="420" font-size="8.8" font-weight="600" fill="#475569" text-anchor="end">6.1K</text>
+  <text x="104" y="446" font-size="8.8" font-weight="600" fill="#475569" text-anchor="middle">95</text>
+  <text x="272" y="446" font-size="8.8" font-weight="600" fill="#475569" text-anchor="middle">433</text>
+  <text x="190" y="460" font-size="8.8" font-weight="400" fill="#475569" text-anchor="middle">P90 / 每请求输出速率 (tok/s/req)</text>
+
+  <!-- TPU v7 Pareto Curve -->
+  <path d="M 104 328 C 134 338, 198 378, 272 414" fill="none" stroke="#1d4ed8" stroke-width="2.4"/>
+  <circle cx="104" cy="328" r="4.5" fill="#1d4ed8"/>
+  <circle cx="176" cy="364" r="4" fill="#3b82f6"/>
+  <circle cx="272" cy="414" r="4.5" fill="#1d4ed8"/>
+  <text x="112" y="329" font-size="8.8" font-weight="600" fill="#1e3a8a" text-anchor="start">高吞吐区：95/req @ 25,906/chip</text>
+  <text x="260" y="421" font-size="8.8" font-weight="600" fill="#1e3a8a" text-anchor="end">低并发：433/req @ 6,101</text>
+
+  <!-- Separate Callout Box on Chart Right -->
+  <rect x="306" y="316" width="154" height="142" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="314" y="335" font-size="9.6" font-weight="700" fill="#92400e" text-anchor="start">独立 BS=1 延迟测试点</text>
+  <text x="314" y="354" font-size="8.8" font-weight="600" fill="#78350f" text-anchor="start">• GPU 8×GB300 (GSM8K)</text>
+  <text x="314" y="369" font-size="8.8" font-weight="400" fill="#92400e" text-anchor="start">  1,109 tok/s (BS=1 单请求)</text>
+  <text x="314" y="388" font-size="8.8" font-weight="600" fill="#78350f" text-anchor="start">• TPU 4 芯片 (GSM8K)</text>
+  <text x="314" y="403" font-size="8.8" font-weight="400" fill="#92400e" text-anchor="start">  1.95 ms/tok (基线 3.78 ms)</text>
+  <text x="314" y="424" font-size="8.5" font-weight="400" fill="#78350f" text-anchor="start">注：两者硬件、基线与模型</text>
+  <text x="314" y="438" font-size="8.5" font-weight="400" fill="#78350f" text-anchor="start">检查点均不同，不可直接横比</text>
+
+  <text x="38" y="481" font-size="8.8" font-weight="400" fill="#64748b" text-anchor="start">AgentX 1M 含 393 条 Claude Code 会话 (990K prompt, P90 ≤47s)；InferenceX 外部成本口径 1.21 vs 1.86 美元/小时</text>
+
+  <!-- Bottom Right: Verification Boundaries & Open Risks -->
+  <rect x="488" y="280" width="448" height="214" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="502" y="301" font-size="11.2" font-weight="700" fill="#1e3a8a" text-anchor="start">实测边界、数值语义与未决路线图（上线前必查）</text>
+
+  <rect x="502" y="314" width="66" height="20" rx="4" fill="#fee2e2"/>
+  <text x="535" y="328" font-size="8.8" font-weight="700" fill="#991b1b" text-anchor="middle">硬件/口径</text>
+  <text x="576" y="328" font-size="9.2" font-weight="400" fill="#1e293b" text-anchor="start">TPU 图表对比 InferenceX 11-02 GB200 FP4；LMSYS 为自研 8×GB300</text>
+
+  <rect x="502" y="346" width="66" height="20" rx="4" fill="#fef3c7"/>
+  <text x="535" y="360" font-size="8.8" font-weight="700" fill="#92400e" text-anchor="middle">数值一致</text>
+  <text x="576" y="360" font-size="9.2" font-weight="400" fill="#1e293b" text-anchor="start">Collective folding 与 SP prefill 改舍入点（非逐比特）；拆分/插桩逐比特</text>
+
+  <rect x="502" y="378" width="66" height="20" rx="4" fill="#e0f2fe"/>
+  <text x="535" y="392" font-size="8.8" font-weight="700" fill="#0369a1" text-anchor="middle">先决假设</text>
+  <text x="576" y="392" font-size="9.2" font-weight="400" fill="#1e293b" text-anchor="start">Lamport 哨兵要求值域不变量；去 max 要求 QK-norm 得分 ≤43.8</text>
+
+  <rect x="502" y="410" width="66" height="20" rx="4" fill="#dbeafe"/>
+  <text x="535" y="424" font-size="8.8" font-weight="700" fill="#1e3a8a" text-anchor="middle">观测成本</text>
+  <text x="576" y="424" font-size="9.2" font-weight="400" fill="#1e293b" text-anchor="start">GPU 核内 %globaltimer 增 2.8% 开销 (2.5 µs/层)，可编译关闭</text>
+
+  <rect x="502" y="444" width="420" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="512" y="460" font-size="9" font-weight="600" fill="#0f172a" text-anchor="start">后续开放问题：GPU 扩展至大 batch 与运行时动态调度（GPU VM）；</text>
+  <text x="512" y="473" font-size="9" font-weight="400" fill="#475569" text-anchor="start">TPU 扩展至跨芯片 EP+芯片内 TP 的 MoE、更大 Prefill 图以及独立主机 P/D 解耦</text>
+
+  <text x="24" y="519" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 依据 LMSYS (8×GB300) 与 PyTorch / RadixArk (4 芯片 TPU v7) 原文口径与局限整理绘制（非原博配图）</text>
+</svg>

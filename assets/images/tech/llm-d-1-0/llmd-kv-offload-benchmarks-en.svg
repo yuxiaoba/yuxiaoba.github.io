@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" style="background:#ffffff;">
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17" font-weight="700" fill="#0f172a">llm-d 1.0 Benchmark Evidence Boundaries &amp; Router-Engine Reconciliation</text>
+  <text x="24" y="53" font-size="10.6" font-weight="400" fill="#475569">Conditioning six public claims from the Google Cloud post &amp; linked studies beside the four tiered-offload mismatch signatures</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Evidence Table -->
+  <rect x="24" y="72" width="912" height="274" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="72" width="912" height="26" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="88" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="89" font-size="10" font-weight="700" fill="#1e3a8a">Public Benchmark / Case</text>
+  <text x="228" y="89" font-size="10" font-weight="700" fill="#1e3a8a">Reported Metrics</text>
+  <text x="414" y="89" font-size="10" font-weight="700" fill="#1e3a8a">Baseline &amp; Hardware Setup</text>
+  <text x="668" y="89" font-size="10" font-weight="700" fill="#1e3a8a">Validity Boundary &amp; Unproven Scope</text>
+
+  <!-- Row 1 -->
+  <rect x="25" y="99" width="910" height="40" fill="#ffffff"/>
+  <text x="36" y="116" font-size="9.6" font-weight="700" fill="#0f172a">Ironwood TPU (TPU 7x)</text>
+  <text x="36" y="131" font-size="8.8" fill="#475569">Source: Qwen3-Coder-480B</text>
+  <text x="228" y="116" font-size="9.6" font-weight="700" fill="#1d4ed8">Median TTFT &gt;85% lower</text>
+  <text x="228" y="131" font-size="8.9" fill="#334155">2.4× higher total throughput</text>
+  <text x="414" y="116" font-size="9.2" fill="#0f172a">Baseline: plain K8s Service (RR)</text>
+  <text x="414" y="131" font-size="8.8" fill="#475569">Bundles prefix routing + host offload</text>
+  <text x="668" y="116" font-size="9" fill="#92400e">Concurrency &amp; prompt mix omitted inline;</text>
+  <text x="668" y="131" font-size="8.8" fill="#78350f">cannot isolate routing vs. offload gains alone</text>
+  <line x1="25" y1="139" x2="935" y2="139" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 2 -->
+  <rect x="25" y="140" width="910" height="40" fill="#f8fafc"/>
+  <text x="36" y="157" font-size="9.6" font-weight="700" fill="#0f172a">A3 Mega 70B + Lustre</text>
+  <text x="36" y="172" font-size="8.8" fill="#475569">6-node Llama-3.3-70B (src)</text>
+  <text x="228" y="157" font-size="9.6" font-weight="700" fill="#1d4ed8">~40% TTFT · -30% E2E</text>
+  <text x="228" y="172" font-size="8.9" fill="#334155">~60% less GPU-hrs (&gt;50% TCO)</text>
+  <text x="414" y="157" font-size="9.2" fill="#0f172a">Baseline: CPU-RAM-only offload (50k)</text>
+  <text x="414" y="172" font-size="8.8" fill="#475569">Multi-connector CPU + Managed Lustre</text>
+  <text x="668" y="157" font-size="9" fill="#92400e">Assumes 95% cache reuse on 50k prompts;</text>
+  <text x="668" y="172" font-size="8.8" fill="#78350f">low reuse turns remote reads into pure latency</text>
+  <line x1="25" y1="180" x2="935" y2="180" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 3 -->
+  <rect x="25" y="181" width="910" height="40" fill="#ffffff"/>
+  <text x="36" y="198" font-size="9.6" font-weight="700" fill="#0f172a">17,000-Node Multi-Region</text>
+  <text x="36" y="213" font-size="8.8" fill="#475569">US + EU MoE (SGLang in src)</text>
+  <text x="228" y="198" font-size="9.6" font-weight="700" fill="#1d4ed8">2.9× Tput across 3 clusters</text>
+  <text x="228" y="213" font-size="8.9" fill="#334155">99.9% success · &lt;1% overhead</text>
+  <text x="414" y="198" font-size="9.2" fill="#0f172a">Multi-cluster GKE IGW + llm-d router</text>
+  <text x="414" y="213" font-size="8.8" fill="#475569">99.5% of local-cluster call throughput</text>
+  <text x="668" y="198" font-size="9" fill="#92400e">Measures routing overhead &amp; cluster scale;</text>
+  <text x="668" y="213" font-size="8.8" fill="#78350f">omits cross-region egress &amp; P/D tail breakdowns</text>
+  <line x1="25" y1="221" x2="935" y2="221" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 4 -->
+  <rect x="25" y="222" width="910" height="40" fill="#f8fafc"/>
+  <text x="36" y="239" font-size="9.6" font-weight="700" fill="#0f172a">Gemini Platform (Vertex AI)</text>
+  <text x="36" y="254" font-size="8.8" fill="#475569">Live production traffic</text>
+  <text x="228" y="239" font-size="9.6" font-weight="700" fill="#1d4ed8">Prefix hit 35% → 70%</text>
+  <text x="228" y="254" font-size="8.9" fill="#334155">TTFT &gt;35% · P95 TTFT &gt;50%</text>
+  <text x="414" y="239" font-size="9.2" fill="#0f172a">GKE Inference Gateway (load + prefix)</text>
+  <text x="414" y="254" font-size="8.8" fill="#475569">Coding agents &amp; bursty chat traffic</text>
+  <text x="668" y="239" font-size="9" fill="#92400e">Cluster size, raw QPS &amp; model versions</text>
+  <text x="668" y="254" font-size="8.8" fill="#78350f">undisclosed; reflects managed internal fleet</text>
+  <line x1="25" y1="262" x2="935" y2="262" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 5 -->
+  <rect x="25" y="263" width="910" height="40" fill="#ffffff"/>
+  <text x="36" y="280" font-size="9.6" font-weight="700" fill="#0f172a">RL Co-op Time-Slicing</text>
+  <text x="36" y="295" font-size="8.8" fill="#475569">llm-d-rl-time-slicing</text>
+  <text x="228" y="280" font-size="9.6" font-weight="700" fill="#1d4ed8">Duty cycle ~40% → &gt;70%</text>
+  <text x="228" y="295" font-size="8.9" fill="#334155">No RL convergence loss claimed</text>
+  <text x="414" y="280" font-size="9.2" fill="#0f172a">Fills 40–60% RL rollout/weight idle gaps</text>
+  <text x="414" y="295" font-size="8.8" fill="#475569">acquire/yield + host DRAM swap (&lt;1s)</text>
+  <text x="668" y="280" font-size="9" fill="#92400e">Needs ample host DRAM (~50GB CUDA state);</text>
+  <text x="668" y="295" font-size="8.8" fill="#78350f">frequent yields erode effective duty cycle</text>
+  <line x1="25" y1="303" x2="935" y2="303" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 6 -->
+  <rect x="25" y="304" width="910" height="41" rx="8" fill="#f8fafc"/>
+  <text x="36" y="321" font-size="9.6" font-weight="700" fill="#0f172a">Snap · ZenteiQ · Mistral</text>
+  <text x="36" y="336" font-size="8.8" fill="#475569">Partner testimonials</text>
+  <text x="228" y="321" font-size="9.6" font-weight="700" fill="#1d4ed8">75–80% hit · 4× throughput</text>
+  <text x="228" y="336" font-size="8.9" fill="#334155">ZenteiQ: 1.47B → 5.97B tok/1k</text>
+  <text x="414" y="321" font-size="9.2" fill="#0f172a">Envoy Mesh / 1k TPU v6e / SLA tiers</text>
+  <text x="414" y="336" font-size="8.8" fill="#475569">Mistral sheds low tiers to protect paid SLO</text>
+  <text x="668" y="321" font-size="9" fill="#92400e">Vendor-cited partner quotes, not controlled</text>
+  <text x="668" y="336" font-size="8.8" fill="#78350f">ablations; benchmark locally on Prism first</text>
+
+  <!-- Bottom Left: Router vs Engine Reconciliation -->
+  <rect x="24" y="356" width="452" height="152" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="24" y="356" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="24" y="372" width="452" height="10" fill="#eff6ff"/>
+  <text x="36" y="373" font-size="10.2" font-weight="700" fill="#1e3a8a">Router Index vs. Engine Reality: 4 Failure Signatures</text>
+  <text x="36" y="398" font-size="9.1" fill="#0f172a">1) Router hit high, engine ~0: lruCapacityPerServer &gt; actual cpu_bytes_to_use</text>
+  <text x="36" y="423" font-size="9.1" fill="#334155">2) Stores rise, loads ~0: low prefix reuse or tiny CPU tier (pure copy tax)</text>
+  <text x="36" y="448" font-size="9.1" fill="#334155">3) TTFT worse than HBM-only: host/storage read slower than prefill recompute</text>
+  <text x="36" y="473" font-size="9.1" fill="#334155">4) Steady alloc failures: cpu_cache_usage_perc ~ 1.0 (in-flight transfers pin)</text>
+  <text x="36" y="497" font-size="8.7" font-weight="600" fill="#b45309">Note: vLLM gauge tracks in-flight pins, not occupancy; bundled alerts omit offload</text>
+
+  <!-- Bottom Right: Incremental Rollout Sequence -->
+  <rect x="490" y="356" width="446" height="152" rx="8" fill="#ffffff" stroke="#22c55e" stroke-width="1.2"/>
+  <rect x="490" y="356" width="446" height="26" rx="8" fill="#f0fdf4"/>
+  <rect x="490" y="372" width="446" height="10" fill="#f0fdf4"/>
+  <text x="502" y="373" font-size="10.2" font-weight="700" fill="#166534">Incremental Adoption Order (Validate Each Layer on Same Load)</text>
+  <text x="502" y="398" font-size="9.1" fill="#0f172a">Step 1 · Prefix routing: deploy EPP + measure hit rate on Prism / inference-perf</text>
+  <text x="502" y="423" font-size="9.1" fill="#334155">Step 2 · Flow control &amp; async: split reserved/overflow lanes, count queue in E2E</text>
+  <text x="502" y="448" font-size="9.1" fill="#334155">Step 3 · Tiered KV offload: match lruCapacityPerServer, /dev/shm &amp; direct_io</text>
+  <text x="502" y="473" font-size="9.1" fill="#334155">Step 4 · NIXL P/D + DisaggregatedSet: set maxUnavailable: 0 on singleton roles</text>
+  <text x="502" y="497" font-size="8.7" font-weight="600" fill="#166534">Guardrail: never project from un-tuned RR baselines; verify PYTHONHASHSEED=0</text>
+
+  <text x="24" y="525" font-size="9.6" fill="#64748b">Assistant diagram (not an original figure) · Verified against Google Cloud llm-d 1.0 post, linked studies &amp; tiered-prefix-cache ops guide</text>
+</svg>

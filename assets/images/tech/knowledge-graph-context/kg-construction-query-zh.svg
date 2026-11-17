@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect x="0" y="0" width="960" height="540" fill="#ffffff"/>
+<text x="36" y="37" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="19.5" font-weight="700" fill="#212529">Grafana Knowledge Graph：PromQL 构图、双环 Insights 与 Agent Cypher 查询</text>
+<text x="36" y="59" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" fill="#526779">综合 ObservabilityCON 2026 公告与四篇官方文档：从指标标签构图、系统含义信号到人机共享排查起点</text>
+<line x1="36" y1="71" x2="924" y2="71" stroke="#d8e4f0" stroke-width="1"/>
+<rect x="36" y="84" width="888" height="122" rx="8" fill="#f8fbfe" stroke="#b8cfe5" stroke-width="1"/>
+<text x="48" y="104" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#245c96">Layer 1 · 构图引擎与上下文来源（每套 Grafana Cloud 栈内置 · 约增加 5%–10% 活跃时间序列）</text>
+<rect x="46" y="114" width="280" height="82" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="56" y="133" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#212529">PromQL 实体与作用域</text>
+<text x="56" y="151" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">definedBy 查 Prometheus 标签提取实体</text>
+<text x="56" y="168" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">name + scope(namespace/env/site) 判身份</text>
+<text x="56" y="185" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">enrichedBy 补充属性（不新建实体）</text>
+<rect x="340" y="114" width="280" height="82" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="350" y="133" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#212529">连边规则与自定义产品对象</text>
+<text x="350" y="151" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">PROPERTY_MATCH 按属性对齐建边</text>
+<text x="350" y="168" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">METRICS 按模式查指标建边（如 USES）</text>
+<text x="350" y="185" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">自定义规则按标签聚合业务实体（Terraform）</text>
+<rect x="634" y="114" width="280" height="82" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="644" y="133" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#212529">组织与历史运维知识（预览）</text>
+<text x="644" y="151" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Service Center（Priv）：归属团队/值班/手册</text>
+<text x="644" y="168" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Grafana IRM（Priv）：尝过动作及后续效果</text>
+<text x="644" y="185" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Infrastructure memory + Agent（预览阶段）</text>
+<line x1="480" y1="206" x2="480" y2="218" stroke="#3676b8" stroke-width="2"/>
+<polygon points="475,217 485,217 480,224" fill="#3676b8"/>
+<rect x="36" y="224" width="888" height="128" rx="8" fill="#f8fbfe" stroke="#b8cfe5" stroke-width="1"/>
+<text x="48" y="244" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#245c96">Layer 2 · 按“系统含义”分类的五类 Insights（蓝 Info · 黄 Warning · 红 Critical）</text>
+<rect x="46" y="254" width="166" height="62" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="54" y="272" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#212529">Saturation 饱和度</text>
+<text x="54" y="290" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">硬件或连接池逼近阈值</text>
+<text x="54" y="306" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">高优先级仅触发 Crit 抑制 Warn</text>
+<rect x="220" y="254" width="166" height="62" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="228" y="272" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#212529">Amend 变更 (蓝)</text>
+<text x="228" y="290" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">版本/部署/扩缩容与重载</text>
+<text x="228" y="306" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">RCA 时间线辅助对齐根因先后</text>
+<rect x="394" y="254" width="166" height="62" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="402" y="272" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#212529">Anomaly 异常 (黄)</text>
+<text x="402" y="290" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">日/周基线上下越界检测</text>
+<text x="402" y="306" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">带稀疏校验以过滤低流量噪声</text>
+<rect x="568" y="254" width="166" height="62" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="576" y="272" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#212529">Failure 故障 (红)</text>
+<text x="576" y="290" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">无歧义不变量破坏即告警</text>
+<text x="576" y="306" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">如 Pod 崩溃/Kafka 双控制器</text>
+<rect x="742" y="254" width="166" height="62" rx="6" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="750" y="272" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#212529">Error 错误/延迟</text>
+<text x="750" y="290" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">比例错误率与慢性累积</text>
+<text x="750" y="306" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="10.2" fill="#526779">RatioBreach / P99 / 多燃烧率</text>
+<text x="48" y="340" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#526779">双环可视化：外环（Outer ring）= 实体自身直接告警；内环（Inner ring）= 从下属实体向上传播（如 Pod → Service）</text>
+<line x1="480" y1="352" x2="480" y2="364" stroke="#3676b8" stroke-width="2"/>
+<polygon points="475,363 485,363 480,370" fill="#3676b8"/>
+<rect x="36" y="370" width="888" height="126" rx="8" fill="#eef7f1" stroke="#9bc6ab" stroke-width="1.2"/>
+<text x="48" y="390" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#1f5f3b">Layer 3 · 人类与 Agent 的统一消费接口（GA 图上下文 + 模式隔离 + 工程可信边界）</text>
+<rect x="46" y="400" width="280" height="84" rx="6" fill="#ffffff" stroke="#9bc6ab" stroke-width="1"/>
+<text x="56" y="419" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#212529">人类控制台 &amp; RCA Workbench</text>
+<text x="56" y="438" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Entity Catalog 按实体聚合 RED/日志/追踪</text>
+<text x="56" y="455" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">RCA Workbench 在统一时间轴并排实体信号</text>
+<text x="56" y="472" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Instrumentation quality 检查漏采与残缺标签</text>
+<rect x="340" y="400" width="280" height="84" rx="6" fill="#ffffff" stroke="#9bc6ab" stroke-width="1"/>
+<text x="350" y="419" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#212529">Grafana Assistant 模式分层</text>
+<text x="350" y="438" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Knowledge Graph mode：查漏边与改规则</text>
+<text x="350" y="455" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">RCA / Investigation mode：多信号故障定位</text>
+<text x="350" y="472" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">所有配置变更与规则 Diff 仍需人工审核应用</text>
+<rect x="634" y="400" width="280" height="84" rx="6" fill="#ffffff" stroke="#9bc6ab" stroke-width="1"/>
+<text x="644" y="419" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#212529">外部 Agent (gcx + Cypher) 与边界</text>
+<text x="644" y="438" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">Cypher 直接按路径模式检索上下游健康度</text>
+<text x="644" y="455" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">时间窗边界：防把今日拓扑当成昨日故障快照</text>
+<text x="644" y="472" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11" fill="#526779">缺边不等价于无调用（需排除漏采或未支持）</text>
+<text x="36" y="520" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#596775">阅读整理配图 · 基于 Grafana Knowledge Graph 发布博客及官方构图/Insights/Assistant 文档绘制（非原文截图）</text>
+</svg>

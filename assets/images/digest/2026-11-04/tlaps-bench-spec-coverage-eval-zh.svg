@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="TLAPS-Bench 实证评测结果图：12 配置 pass@3 成功率与成本分化、12 规格难度梯度、失效原因与边界" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="32" font-size="16.5" font-weight="700" fill="#0f172a">TLAPS-Bench 实证全景：模型通过率、成本分化与失效分布</text>
+  <text x="24" y="50" font-size="10.1" fill="#475569">依据 arXiv:2611.02849v1（Table 2–5 &amp; A2–A14）：12 规格 70 活跃目标 · pass@3（3 次运行汇总）· 60 分钟/2M 输出限额</text>
+  <line x1="24" y1="60" x2="936" y2="60" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Panel A: Overall pass@3 and Cost -->
+  <rect x="20" y="68" width="452" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="68" width="452" height="25" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="85" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="93" x2="472" y2="93" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="30" y="84.5" font-size="10.4" font-weight="700" fill="#1e3a8a">A. 12 组配置 pass@3 成功率与总成本（Table 3, n=70）</text>
+
+  <line x1="142" y1="100" x2="142" y2="239" stroke="#cbd5e1" stroke-width="0.9"/>
+  <line x1="212" y1="100" x2="212" y2="239" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="3 2"/>
+  <line x1="282" y1="100" x2="282" y2="239" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="3 2"/>
+  <text x="142" y="247" text-anchor="middle" font-size="7.6" fill="#64748b">0%</text>
+  <text x="212" y="247" text-anchor="middle" font-size="7.6" fill="#64748b">25%</text>
+  <text x="282" y="247" text-anchor="middle" font-size="7.6" fill="#64748b">50%</text>
+
+  <text x="136" y="112" text-anchor="end" font-size="8.4" font-weight="700" fill="#1d4ed8">Sol (max)</text>
+  <rect x="142" y="103" width="124.0" height="10.5" rx="2" fill="#1d4ed8"/>
+  <text x="272" y="111.5" font-size="8.2" font-weight="700" fill="#1d4ed8">44.3% (31) · $328.86 · 1,456M in</text>
+
+  <text x="136" y="129" text-anchor="end" font-size="8.4" fill="#334155">Sol (high)</text>
+  <rect x="142" y="120" width="96.0" height="10.5" rx="2" fill="#3b82f6"/>
+  <text x="244" y="128.5" font-size="8.2" fill="#334155">34.3% (24) · $134.75 · 636M in</text>
+
+  <text x="136" y="146" text-anchor="end" font-size="8.4" fill="#334155">Sol (low)</text>
+  <rect x="142" y="137" width="100.0" height="10.5" rx="2" fill="#60a5fa"/>
+  <text x="248" y="145.5" font-size="8.2" fill="#334155">35.7% (25) · $97.75 · 549M in</text>
+
+  <text x="136" y="163" text-anchor="end" font-size="8.4" font-weight="700" fill="#0f172a">Astra (max)</text>
+  <rect x="142" y="154" width="120.1" height="10.5" rx="2" fill="#1e3a8a"/>
+  <text x="268" y="162.5" font-size="8.2" font-weight="600" fill="#0f172a">42.9% (30) · $1,086.44 · 770M in</text>
+
+  <text x="136" y="180" text-anchor="end" font-size="8.4" fill="#334155">Astra (high)</text>
+  <rect x="142" y="171" width="96.0" height="10.5" rx="2" fill="#2563eb"/>
+  <text x="244" y="179.5" font-size="8.2" fill="#334155">34.3% (24) · $486.57 · 353M in</text>
+
+  <text x="136" y="197" text-anchor="end" font-size="8.4" fill="#334155">Astra (low)</text>
+  <rect x="142" y="188" width="96.0" height="10.5" rx="2" fill="#93c5fd"/>
+  <text x="244" y="196.5" font-size="8.2" fill="#334155">34.3% (24) · $373.41 · 273M in</text>
+
+  <text x="136" y="214" text-anchor="end" font-size="8.4" fill="#475569">Terra (max)</text>
+  <rect x="142" y="205" width="59.9" height="10.5" rx="2" fill="#64748b"/>
+  <text x="208" y="213.5" font-size="8.2" fill="#475569">21.4% (15) · $5,602.15 · 56.2M out</text>
+
+  <text x="136" y="231" text-anchor="end" font-size="8.4" fill="#475569">Luna (max)</text>
+  <rect x="142" y="222" width="28.0" height="10.5" rx="2" fill="#94a3b8"/>
+  <text x="176" y="230.5" font-size="8.2" fill="#475569">10.0% (7) · $31.11 · 9.6M out</text>
+
+  <rect x="28" y="252" width="436" height="18" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.8"/>
+  <text x="36" y="264" font-size="8.1" fill="#1e3a8a">Terra/Luna high &amp; low 均为 0%；Sol 耗约 2× 令牌，但美元成本仅为 Astra 的约 1/3.3</text>
+
+  <!-- Panel B: Per-Spec Matrix -->
+  <rect x="484" y="68" width="456" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="484" y="68" width="456" height="25" rx="8" fill="#eff6ff"/>
+  <rect x="484" y="85" width="456" height="8" fill="#eff6ff"/>
+  <line x1="484" y1="93" x2="940" y2="93" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="494" y="84.5" font-size="10.4" font-weight="700" fill="#1e3a8a">B. 12 个系统规格通过靶数分布（Table A2, max effort）</text>
+
+  <text x="494" y="106.5" font-size="8.2" font-weight="700" fill="#334155">规格名称（目标数 / 类型）</text>
+  <text x="720" y="106.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">Sol</text>
+  <text x="774" y="106.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1e3a8a">Astra</text>
+  <text x="828" y="106.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#475569">Terra</text>
+  <text x="884" y="106.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#475569">Luna</text>
+  <line x1="494" y1="111" x2="930" y2="111" stroke="#cbd5e1" stroke-width="0.9"/>
+
+  <rect x="494" y="114" width="436" height="12.2" fill="#f8fafc"/>
+  <text x="498" y="123" font-size="8.1" fill="#0f172a">FLASH 缓存一致性 (15: 7S+8L)</text>
+  <text x="720" y="123" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">15/15</text>
+  <text x="774" y="123" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">15/15</text>
+  <text x="828" y="123" text-anchor="middle" font-size="8.1" fill="#334155">11/15</text>
+  <text x="884" y="123" text-anchor="middle" font-size="8.1" fill="#334155">4/15</text>
+
+  <text x="498" y="135.6" font-size="8.1" fill="#0f172a">OpenAddressing 哈希表 (5 S)</text>
+  <text x="720" y="135.6" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">5/5</text>
+  <text x="774" y="135.6" text-anchor="middle" font-size="8.1" fill="#334155">2/5</text>
+  <text x="828" y="135.6" text-anchor="middle" font-size="8.1" fill="#334155">2/5</text>
+  <text x="884" y="135.6" text-anchor="middle" font-size="8.1" fill="#334155">2/5</text>
+
+  <rect x="494" y="139.2" width="436" height="12.2" fill="#f8fafc"/>
+  <text x="498" y="148.2" font-size="8.1" fill="#0f172a">PirateShip 共识协议 (11 S)</text>
+  <text x="720" y="148.2" text-anchor="middle" font-size="8.1" fill="#334155">5/11</text>
+  <text x="774" y="148.2" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">6/11</text>
+  <text x="828" y="148.2" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/11</text>
+  <text x="884" y="148.2" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/11</text>
+
+  <text x="498" y="160.8" font-size="8.1" fill="#0f172a">etcd Raft 系统规格 (8 S)</text>
+  <text x="720" y="160.8" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">3/8</text>
+  <text x="774" y="160.8" text-anchor="middle" font-size="8.1" fill="#334155">1/8</text>
+  <text x="828" y="160.8" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/8</text>
+  <text x="884" y="160.8" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/8</text>
+
+  <rect x="494" y="164.4" width="436" height="12.2" fill="#f8fafc"/>
+  <text x="498" y="173.4" font-size="8.1" fill="#0f172a">CCF Raft (2 S)</text>
+  <text x="720" y="173.4" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">1/2</text>
+  <text x="774" y="173.4" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">1/2</text>
+  <text x="828" y="173.4" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/2</text>
+  <text x="884" y="173.4" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/2</text>
+
+  <text x="498" y="186.0" font-size="8.1" fill="#0f172a">HashiCorp Raft (6 S)</text>
+  <text x="720" y="186.0" text-anchor="middle" font-size="8.1" fill="#334155">1/6</text>
+  <text x="774" y="186.0" text-anchor="middle" font-size="8.1" fill="#334155">1/6</text>
+  <text x="828" y="186.0" text-anchor="middle" font-size="8.1" fill="#334155">1/6</text>
+  <text x="884" y="186.0" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/6</text>
+
+  <rect x="494" y="189.6" width="436" height="12.2" fill="#f8fafc"/>
+  <text x="498" y="198.6" font-size="8.1" fill="#0f172a">Ivy TLB (2: 1S+1L，仅安全通过)</text>
+  <text x="720" y="198.6" text-anchor="middle" font-size="8.1" fill="#334155">1/2</text>
+  <text x="774" y="198.6" text-anchor="middle" font-size="8.1" fill="#334155">1/2</text>
+  <text x="828" y="198.6" text-anchor="middle" font-size="8.1" fill="#334155">1/2</text>
+  <text x="884" y="198.6" text-anchor="middle" font-size="8.1" fill="#334155">1/2</text>
+
+  <text x="498" y="211.2" font-size="8.1" fill="#0f172a">ZooKeeper 实现规格 (9 S)</text>
+  <text x="720" y="211.2" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/9</text>
+  <text x="774" y="211.2" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">2/9</text>
+  <text x="828" y="211.2" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/9</text>
+  <text x="884" y="211.2" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/9</text>
+
+  <rect x="494" y="214.8" width="436" height="12.2" fill="#f8fafc"/>
+  <text x="498" y="223.8" font-size="8.1" fill="#0f172a">ZooKeeper 协议规格 Zab (9 S)</text>
+  <text x="720" y="223.8" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/9</text>
+  <text x="774" y="223.8" text-anchor="middle" font-size="8.1" font-weight="700" fill="#1d4ed8">1/9</text>
+  <text x="828" y="223.8" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/9</text>
+  <text x="884" y="223.8" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/9</text>
+
+  <text x="498" y="236.4" font-size="8.1" fill="#64748b">Cahill 可串行化快照隔离 (1 S)</text>
+  <text x="720" y="236.4" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="774" y="236.4" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="828" y="236.4" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="884" y="236.4" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+
+  <rect x="494" y="240.0" width="436" height="12.2" fill="#f8fafc"/>
+  <text x="498" y="249.0" font-size="8.1" fill="#64748b">MongoDB 分布式事务 (1 S)</text>
+  <text x="720" y="249.0" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="774" y="249.0" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="828" y="249.0" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="884" y="249.0" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+
+  <text x="498" y="261.6" font-size="8.1" fill="#64748b">Wildfire 内存精化 (1 R)</text>
+  <text x="720" y="261.6" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="774" y="261.6" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="828" y="261.6" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+  <text x="884" y="261.6" text-anchor="middle" font-size="8.1" fill="#94a3b8">0/1</text>
+
+  <!-- Panel C: Failure Breakdown & Effort Table -->
+  <rect x="20" y="284" width="452" height="212" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="284" width="452" height="25" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="301" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="309" x2="472" y2="309" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="30" y="300.5" font-size="10.4" font-weight="700" fill="#1e3a8a">C. 失败归因（Table 5）与推理投入对照（Table 4）</text>
+
+  <rect x="30" y="315" width="432" height="101" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="38" y="328" font-size="8.7" font-weight="700" fill="#0f172a">失败任务尝试分布（pass@3 各运行累计，Table 5）</text>
+
+  <text x="198" y="343" text-anchor="end" font-size="8.0" font-weight="700" fill="#0f172a">未完成证明（缺不变量/引理衔接）</text>
+  <rect x="204" y="335.5" width="206.0" height="8.5" rx="2" fill="#1d4ed8"/>
+  <text x="415" y="343" font-size="8.0" font-weight="700" fill="#1d4ed8">1,455</text>
+
+  <text x="198" y="356" text-anchor="end" font-size="8.0" font-weight="600" fill="#334155">未分解直扔后端（单次 SMT/PTL）</text>
+  <rect x="204" y="348.5" width="76.0" height="8.5" rx="2" fill="#3b82f6"/>
+  <text x="285" y="356" font-size="8.0" font-weight="600" fill="#334155">537</text>
+
+  <text x="198" y="369" text-anchor="end" font-size="8.0" fill="#475569">SANY 语法或语义错</text>
+  <rect x="204" y="361.5" width="5.5" height="8.5" rx="1.5" fill="#94a3b8"/>
+  <text x="214" y="369" font-size="8.0" fill="#475569">31</text>
+
+  <text x="198" y="382" text-anchor="end" font-size="8.0" fill="#475569">验证超时（60 min 上限）</text>
+  <rect x="204" y="374.5" width="4.0" height="8.5" rx="1.5" fill="#94a3b8"/>
+  <text x="213" y="382" font-size="8.0" fill="#475569">21</text>
+
+  <text x="198" y="395" text-anchor="end" font-size="8.0" fill="#475569">任务完整性违规（防作弊拦截）</text>
+  <rect x="204" y="387.5" width="3.0" height="8.5" rx="1.5" fill="#f59e0b"/>
+  <text x="212" y="395" font-size="8.0" fill="#475569">15</text>
+
+  <text x="198" y="408" text-anchor="end" font-size="8.0" fill="#475569">误报反例主张</text>
+  <rect x="204" y="400.5" width="2.2" height="8.5" rx="1.5" fill="#f59e0b"/>
+  <text x="211" y="408" font-size="8.0" fill="#475569">9</text>
+
+  <rect x="30" y="422" width="432" height="66" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="38" y="435" font-size="8.7" font-weight="700" fill="#1e3a8a">GPT-6.1 Sol 推理强度成本分化（Table 4 · 3 次运行合计）</text>
+  <text x="38" y="454" font-size="8.1" fill="#0f172a">• FLASH（15/15）：low $36.96 (1,400 req) → high $24.92 (691) → max $37.27 (788)</text>
+  <text x="38" y="472" font-size="8.1" fill="#334155">• Cahill SSI（0/1）：low $0.81 (72 req) → high $4.32 (196) → max $8.01 (277 req)</text>
+
+  <!-- Panel D: Methodological Boundaries -->
+  <rect x="484" y="284" width="456" height="212" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="484" y="284" width="456" height="25" rx="8" fill="#eff6ff"/>
+  <rect x="484" y="301" width="456" height="8" fill="#eff6ff"/>
+  <line x1="484" y1="309" x2="940" y2="309" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="494" y="300.5" font-size="10.4" font-weight="700" fill="#1e3a8a">D. 实证口径边界、未解热点与工程启示</text>
+
+  <rect x="494" y="316" width="436" height="39" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="501" y="325" width="96" height="20" rx="4" fill="#dbeafe"/>
+  <text x="549" y="338.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#1d4ed8">70 vs 265 分母</text>
+  <text x="605" y="332" font-size="8.2" fill="#0f172a">44.3%（31/70）为 70 活跃题 pass@3，非 265 全集或单次；</text>
+  <text x="605" y="346" font-size="8.2" fill="#475569">Table A1 其余 195 题多因前沿模型已可解而被退役。</text>
+
+  <rect x="494" y="361" width="436" height="39" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="501" y="370" width="96" height="20" rx="4" fill="#dbeafe"/>
+  <text x="549" y="383.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#1d4ed8">规格 vs 实现</text>
+  <text x="605" y="377" font-size="8.2" fill="#0f172a">证明建立形式规格 Spec ⇒ P，不等同生产代码正确；</text>
+  <text x="605" y="391" font-size="8.2" fill="#475569">建库期即在原规格发现 46 处模型/定理缺陷（35 已修）。</text>
+
+  <rect x="494" y="406" width="436" height="39" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="501" y="415" width="96" height="20" rx="4" fill="#dbeafe"/>
+  <text x="549" y="428.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#1d4ed8">四大 0% 瓶颈</text>
+  <text x="605" y="422" font-size="8.2" fill="#0f172a">Cahill SSI、MongoDB、Wildfire 精化及 Ivy TLB 活性全为 0%；</text>
+  <text x="605" y="436" font-size="8.2" fill="#475569">共享多操作、排序历史精化与强公平进度证明仍卡壳。</text>
+
+  <rect x="494" y="451" width="436" height="39" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="501" y="460" width="96" height="20" rx="4" fill="#dbeafe"/>
+  <text x="549" y="473.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#1d4ed8">抽象胜过堆量</text>
+  <text x="605" y="467" font-size="8.2" fill="#0f172a">ZooKeeper 上 Astra 抽象「支持声明」证 3 题，Terra 写</text>
+  <text x="605" y="481" font-size="8.2" fill="#475569">1.3 万行触发 2M 限额全败；主表仅评 4 款 Codex GPT。</text>
+
+  <!-- Footer -->
+  <text x="20" y="512" font-size="8.5" fill="#475569">补充（Table 1）：TILAPIA 另为多款原未形式证明的系统规格首次证毕全目标（OSWALD/SlateDB/Walgit WAL、DiskStateQueue、Disruptor、BufferedRandomAccessFile）。</text>
+  <text x="20" y="527" font-size="8.5" fill="#64748b">硬件条件：Ubuntu 24.04.3 VM（96 vCPU AMD EPYC 9V74, 378 GiB DRAM），每运行分配 8 vCPU Docker；S/L/R 分别指安全性（60）、活性（9）与精化（1）。</text>
+</svg>

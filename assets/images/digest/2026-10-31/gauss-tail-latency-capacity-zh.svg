@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="GAUSS 容量决策机理与 v1 实证边界总览：拐点选点、流量切分与 SRPT、集成 vs 单条 Trace、以及 v1 证据审计" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', 'Lato', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="16.6" font-weight="700" fill="#0f172a">GAUSS 容量决策机理与 v1 实证边界总览</text>
+  <text x="24" y="53" font-size="10.2" fill="#475569">arXiv:2610.37989v1（§1、§3.2、§4.1–4.4）· 解析拐点、切分与 SRPT 机理示意（定性结构关系，非实测数值）</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Panel A: Operating Point Knee & Headroom -->
+  <rect x="20" y="72" width="452" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="72" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="90" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="98" x2="472" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="89.5" font-size="10.8" font-weight="700" fill="#1e3a8a">A. 工作点拐点与可预留余量（§4.1，定性机理）</text>
+
+  <!-- Plot axes -->
+  <text x="36" y="114" font-size="8.8" font-weight="600" fill="#334155">TTFT 分布</text>
+  <line x1="58" y1="118" x2="58" y2="236" stroke="#64748b" stroke-width="1.1"/>
+  <line x1="58" y1="236" x2="314" y2="236" stroke="#64748b" stroke-width="1.1"/>
+
+  <!-- SLO horizontal line -->
+  <line x1="58" y1="176" x2="306" y2="176" stroke="#0f766e" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="64" y="171" font-size="8.4" font-weight="700" fill="#0f766e">SLO 目标</text>
+
+  <!-- Operating point & asymptote -->
+  <line x1="234" y1="122" x2="234" y2="236" stroke="#1d4ed8" stroke-width="1.1" stroke-dasharray="3 3"/>
+  <line x1="296" y1="118" x2="296" y2="236" stroke="#b91c1c" stroke-width="1.1" stroke-dasharray="3 3"/>
+  <text x="296" y="114" text-anchor="middle" font-size="8.6" font-weight="700" fill="#b91c1c">λ* = μ</text>
+
+  <!-- Headroom span -->
+  <line x1="236" y1="132" x2="294" y2="132" stroke="#1d4ed8" stroke-width="1.2" marker-start="url(#arr-blue)" marker-end="url(#arr-blue)"/>
+  <text x="265" y="126" text-anchor="middle" font-size="8.3" font-weight="700" fill="#1d4ed8">余量</text>
+
+  <!-- Mini legend inside plot top-left -->
+  <line x1="68" y1="126" x2="84" y2="126" stroke="#1d4ed8" stroke-width="2.2"/>
+  <text x="89" y="129.5" font-size="8.3" font-weight="700" fill="#1d4ed8">P95 / P99 尾部</text>
+  <line x1="68" y1="141" x2="84" y2="141" stroke="#94a3b8" stroke-width="1.8"/>
+  <text x="89" y="144.5" font-size="8.3" font-weight="600" fill="#64748b">均值 / P50</text>
+
+  <!-- Curves -->
+  <path d="M 64 224 C 145 222, 212 219, 250 210 C 276 203, 288 182, 293 138" fill="none" stroke="#94a3b8" stroke-width="1.8"/>
+  <path d="M 64 212 C 145 208, 204 198, 234 176 C 258 158, 276 138, 286 118" fill="none" stroke="#1d4ed8" stroke-width="2.2"/>
+  <circle cx="234" cy="176" r="4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.2"/>
+
+  <!-- X-axis labels -->
+  <text x="58" y="248" font-size="8.2" fill="#64748b">0</text>
+  <text x="234" y="248" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">拐点工作位</text>
+  <text x="296" y="248" text-anchor="middle" font-size="8.2" font-weight="700" fill="#b91c1c">ρ=1</text>
+  <text x="184" y="266" text-anchor="middle" font-size="8.8" fill="#475569">到达率 λ（相对稳定上限 ρ = λ/μ）</text>
+
+  <!-- Right callout in Panel A -->
+  <rect x="328" y="108" width="134" height="162" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="336" y="124" font-size="9.1" font-weight="700" fill="#1e3a8a">拐点前选点逻辑</text>
+  <text x="336" y="141" font-size="8.4" fill="#334155">• 保留高吞吐利用率</text>
+  <text x="336" y="157" font-size="8.4" fill="#334155">• 尾延迟可控于 SLO</text>
+  <text x="336" y="173" font-size="8.4" fill="#334155">• 距 λ* 间距即为余量</text>
+  <line x1="336" y1="184" x2="454" y2="184" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="336" y="200" font-size="9.1" font-weight="700" fill="#92400e">单 Trace 回放局限</text>
+  <text x="336" y="217" font-size="8.3" fill="#475569">• 无法解析求得 λ*=μ</text>
+  <text x="336" y="233" font-size="8.3" fill="#475569">• 每个 λ 与混流组合</text>
+  <text x="336" y="248" font-size="8.3" fill="#475569">  均须重录或重跑仿真</text>
+
+  <!-- Panel B: HoL Segmentation & SRPT -->
+  <rect x="488" y="72" width="452" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="72" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="90" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="98" x2="940" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="89.5" font-size="10.8" font-weight="700" fill="#1e3a8a">B. 二次阻塞切分与 SRPT 剩余工作量（§4.2–4.3）</text>
+
+  <!-- Sub-block B1: Segmentation -->
+  <rect x="498" y="106" width="212" height="164" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <rect x="505" y="112" width="198" height="22" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="604" y="126.5" text-anchor="middle" font-size="8.9" font-weight="700" fill="#1e3a8a">E[W] = λ·E[S²] / (2(1−ρ))</text>
+
+  <rect x="505" y="142" width="88" height="26" rx="4" fill="#fee2e2" stroke="#f87171" stroke-width="0.9"/>
+  <text x="549" y="158.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#991b1b">长请求 S∝n²</text>
+  <rect x="597" y="142" width="50" height="26" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="622" y="158.5" text-anchor="middle" font-size="8.4" fill="#334155">短请求</text>
+  <rect x="651" y="142" width="52" height="26" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="677" y="158.5" text-anchor="middle" font-size="8.4" fill="#334155">短请求</text>
+  <text x="604" y="182" text-anchor="middle" font-size="8.1" fill="#b91c1c">混合池：长尾放大 E[S²]，造成队头阻塞</text>
+
+  <line x1="604" y1="188" x2="604" y2="203" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+
+  <rect x="505" y="206" width="94" height="36" rx="4" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="552" y="221" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1e3a8a">短上下文池</text>
+  <text x="552" y="234" text-anchor="middle" font-size="8.0" fill="#1d4ed8">池内 ↓ E[S²]</text>
+  <rect x="609" y="206" width="94" height="36" rx="4" fill="#f1f5f9" stroke="#64748b" stroke-width="0.9"/>
+  <text x="656" y="221" text-anchor="middle" font-size="8.5" font-weight="700" fill="#334155">长上下文池</text>
+  <text x="656" y="234" text-anchor="middle" font-size="8.0" fill="#475569">独立资源隔离</text>
+  <text x="604" y="260" text-anchor="middle" font-size="8.1" fill="#334155">解析求 E[S], E[S²] 优化流量切分边界</text>
+
+  <!-- Sub-block B2: SRPT -->
+  <rect x="720" y="106" width="210" height="164" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="728" y="123" font-size="9.4" font-weight="700" fill="#0f172a">SRPT 剩余工作量（§4.3）</text>
+  <rect x="728" y="133" width="84" height="22" rx="3" fill="#cbd5e1" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="770" y="147.5" text-anchor="middle" font-size="8.2" font-weight="600" fill="#334155">已驻留 c′</text>
+  <rect x="814" y="133" width="108" height="22" rx="3" fill="#dbeafe" stroke="#1d4ed8" stroke-width="0.9"/>
+  <text x="868" y="147.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1e3a8a">待处理块 Δ</text>
+  <text x="728" y="173" font-size="8.5" fill="#334155">• 粗略 Token 计数低估高上下文成本</text>
+  <text x="728" y="191" font-size="8.5" fill="#334155">• GAUSS 用剩余块仿射和精确评估</text>
+  <text x="728" y="209" font-size="8.5" fill="#334155">• 已驻留 c′ 直接推高每块计算代价</text>
+  <rect x="728" y="222" width="194" height="40" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="735" y="238" font-size="8.1" font-weight="600" fill="#92400e">边界：Alg. 1 仍采用 FIFO Lindley，</text>
+  <text x="735" y="253" font-size="8.1" font-weight="600" fill="#92400e">v1 未给出 SRPT 队列排队方程</text>
+
+  <!-- Panel C: Ensemble vs Single-Trace Time Average -->
+  <rect x="20" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="316" x2="472" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="307.5" font-size="10.8" font-weight="700" fill="#1e3a8a">C. 集成采样 vs. 单条 Trace 时间平均（§1, §4.4）</text>
+
+  <!-- Row 1: Single trace -->
+  <rect x="32" y="324" width="428" height="74" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <rect x="40" y="332" width="124" height="58" rx="4" fill="#ffffff" stroke="#fde68a" stroke-width="0.9"/>
+  <polyline points="48,368 62,366 72,358 84,367 98,364 110,339 122,366 138,363 154,367" fill="none" stroke="#d97706" stroke-width="1.6"/>
+  <text x="102" y="384" text-anchor="middle" font-size="7.8" fill="#92400e">1 条时间轨迹（尾部稀疏）</text>
+  <text x="174" y="343" font-size="9.6" font-weight="700" fill="#92400e">单条 Trace 回放（时间平均）</text>
+  <text x="174" y="362" font-size="8.6" fill="#334155">• 单次长轨迹下罕见极端突发少，系统低估 P95/P99</text>
+  <text x="174" y="380" font-size="8.6" fill="#334155">• 锁定于已录负载与硬件，逐 λ 扫参仿真代价高</text>
+
+  <!-- Row 2: Ensemble -->
+  <rect x="32" y="406" width="428" height="80" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.1"/>
+  <rect x="40" y="414" width="124" height="64" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="0.9"/>
+  <path d="M 48 450 Q 75 424 95 446 Q 116 458 156 458" fill="none" stroke="#1d4ed8" stroke-width="1.6"/>
+  <path d="M 48 446 Q 72 419 98 440 Q 120 452 156 456" fill="none" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="3 2"/>
+  <line x1="126" y1="421" x2="126" y2="458" stroke="#0f766e" stroke-width="1" stroke-dasharray="2 2"/>
+  <text x="142" y="432" text-anchor="middle" font-size="7.6" font-weight="700" fill="#0f766e">P95/P99</text>
+  <text x="102" y="472" text-anchor="middle" font-size="7.8" fill="#1e3a8a">M/N 独立实现集成分布</text>
+  <text x="174" y="425" font-size="9.6" font-weight="700" fill="#1e3a8a">GAUSS 集成蒙特卡洛（多随机实现）</text>
+  <text x="174" y="444" font-size="8.6" fill="#1e293b">• 同条件多独立实现采样，稳定读出完整分位数曲线</text>
+  <text x="174" y="462" font-size="8.6" fill="#1e293b">• 解析曲面免实机执行，可预演未上线策略与新芯片</text>
+  <text x="174" y="478" font-size="8.3" font-weight="600" fill="#1d4ed8">• 支撑机群余量路由与分位数 SLA 容量规划（§4.4）</text>
+
+  <!-- Panel D: v1 Evidence Audit & Boundaries -->
+  <rect x="488" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="316" x2="940" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="307.5" font-size="10.8" font-weight="700" fill="#1e3a8a">D. arXiv:2610.37989v1 证据审计与工程边界</text>
+
+  <rect x="500" y="322" width="428" height="46" rx="5" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+  <text x="510" y="338" font-size="9.4" font-weight="700" fill="#065f46">1. v1 正文已给出（方法论推导与教程用例）</text>
+  <text x="510" y="357" font-size="8.5" fill="#334155">L_pre(s,c)、d(B,C)、S(s,c)、λ*=1/E[S]、Lindley Wₖ₊₁ 与 Alg. 1 流程</text>
+
+  <rect x="500" y="374" width="428" height="46" rx="5" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+  <text x="510" y="390" font-size="9.4" font-weight="700" fill="#991b1b">2. v1 正文缺失（零数值标定与实测误差验证）</text>
+  <text x="510" y="409" font-size="8.5" fill="#7f1d1d">无实测参数 (a..η)、无 GPU 型号实验、无对比 Vidur / vLLM 误差表格</text>
+
+  <rect x="500" y="426" width="428" height="62" rx="5" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+  <text x="510" y="442" font-size="9.4" font-weight="700" fill="#92400e">3. 生产容量规划前须补齐的边界</text>
+  <text x="510" y="460" font-size="8.4" fill="#78350f">• Poisson 假设低估突发到达 · 单服 FIFO 未建 KV HBM 抢占或 P/D 分离</text>
+  <text x="510" y="477" font-size="8.4" fill="#78350f">• B 二次方程、d̄ 及交错 TBT 通胀表达式在 v1 中仅文字描述，未显式展开</text>
+
+  <text x="20" y="520" font-size="8.9" fill="#64748b">注：A–C 为依据 arXiv:2610.37989v1 §3–§4 解析方程绘制的定性机理示意；v1 报告无任何实机或基准数值，工程应用前必须独立标定并校验尾部误差。</text>
+</svg>

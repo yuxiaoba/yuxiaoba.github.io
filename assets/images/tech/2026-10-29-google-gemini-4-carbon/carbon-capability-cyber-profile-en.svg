@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="37" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">Gemini 4 Carbon: Capability Profile &amp; 3-Stage Cyber Evals</text>
+  <text x="24" y="57" font-size="11" font-weight="400" fill="#475569" text-anchor="start">From Google&#x27;s launch post &amp; evals-methodology PDF: separating leads, lagging rows, and Fairwind unguardrailed scope</text>
+  <line x1="24" y1="67" x2="936" y2="67" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="77" width="446" height="356" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="77" width="446" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="97" width="446" height="10" fill="#dbeafe"/>
+  <text x="36" y="97" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Long-Horizon &amp; General Benchmarks (vs. Argon &amp; Top Peer)</text>
+  <rect x="34" y="115" width="426" height="48" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="134" font-size="11.3" font-weight="700" fill="#0f172a" text-anchor="start">AA Index v5.0 (Tools)</text>
+  <text x="44" y="152" font-size="10" font-weight="400" fill="#475569" text-anchor="start">Argon 50 · Opus 5.5: 58 · Astra 57</text>
+  <rect x="366" y="127" width="86" height="24" rx="5" fill="#1d4ed8"/>
+  <text x="409.0" y="142.8" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">59 (#1)</text>
+  <rect x="34" y="167" width="426" height="48" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="186" font-size="11.3" font-weight="700" fill="#0f172a" text-anchor="start">GraphWalks (256k-1M BFS F1)</text>
+  <text x="44" y="204" font-size="10" font-weight="400" fill="#475569" text-anchor="start">Argon 84.2% · Astra 71.8% (200-item self-run)</text>
+  <rect x="366" y="179" width="86" height="24" rx="5" fill="#1d4ed8"/>
+  <text x="409.0" y="194.8" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">96.2%</text>
+  <rect x="34" y="219" width="426" height="48" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="238" font-size="11.3" font-weight="700" fill="#0f172a" text-anchor="start">Terminal-Bench 4.0 (AA)</text>
+  <text x="44" y="256" font-size="10" font-weight="400" fill="#475569" text-anchor="start">Argon 57.1% · Opus 5.5: 59.6% · Astra 59.1%</text>
+  <rect x="366" y="231" width="86" height="24" rx="5" fill="#1d4ed8"/>
+  <text x="409.0" y="246.8" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">65.2%</text>
+  <rect x="34" y="271" width="426" height="48" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="290" font-size="11.3" font-weight="700" fill="#0f172a" text-anchor="start">WebDev Arena / SWE-sweep</text>
+  <text x="44" y="308" font-size="10" font-weight="400" fill="#475569" text-anchor="start">WebDev +89 Elo · SWE-sweep leads Astra 9.5%</text>
+  <rect x="340" y="283" width="112" height="24" rx="5" fill="#1d4ed8"/>
+  <text x="396.0" y="298.8" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">1768 (#4) / 9.6%</text>
+  <rect x="34" y="323" width="426" height="48" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="44" y="342" font-size="11.3" font-weight="700" fill="#0f172a" text-anchor="start">FrontierSWE 2 (Trailing Row)</text>
+  <text x="44" y="360" font-size="10" font-weight="400" fill="#475569" text-anchor="start">Behind GPT-6 Astra 65.5% &amp; Opus 5.5: 62.3%</text>
+  <rect x="366" y="335" width="86" height="24" rx="5" fill="#b45309"/>
+  <text x="409.0" y="350.8" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">61.2%</text>
+  <rect x="34" y="375" width="426" height="48" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="44" y="394" font-size="11.3" font-weight="700" fill="#0f172a" text-anchor="start">OSWorld-2.1 Offline (Trailing)</text>
+  <text x="44" y="412" font-size="10" font-weight="400" fill="#475569" text-anchor="start">Behind Opus 5.5: 87.2% (82-task offline split)</text>
+  <rect x="366" y="387" width="86" height="24" rx="5" fill="#b45309"/>
+  <text x="409.0" y="402.8" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">81.5%</text>
+  <rect x="490" y="77" width="446" height="356" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="490" y="77" width="446" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="490" y="97" width="446" height="10" fill="#dbeafe"/>
+  <text x="502" y="97" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">3-Stage Cyber Lifecycle (Fairwind Access · No Guardrails)</text>
+  <rect x="502" y="116" width="422" height="92" rx="7" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.1"/>
+  <rect x="512" y="126" width="160" height="22" rx="5" fill="#1e3a8a"/>
+  <text x="592.0" y="140.8" font-size="9.6" font-weight="700" fill="#ffffff" text-anchor="middle">Stage 1 · Vulnerability Discovery</text>
+  <text x="680" y="141" font-size="11.8" font-weight="700" fill="#0f172a" text-anchor="start">SEC-bench Pro</text>
+  <rect x="798" y="125" width="116" height="24" rx="5" fill="#1d4ed8"/>
+  <text x="856.0" y="140.8" font-size="10.1" font-weight="700" fill="#ffffff" text-anchor="middle">88.2% Pass@1</text>
+  <text x="512" y="170" font-size="10.3" font-weight="600" fill="#1e293b" text-anchor="start">vs. Argon 83.4% / GPT-6 Astra 85.4% / Terra 83.3%</text>
+  <text x="512" y="192" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">183 JS engine tasks (May 2026) · 3-run avg · Antigravity</text>
+  <line x1="713" y1="209" x2="713" y2="221" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="502" y="224" width="422" height="92" rx="7" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.1"/>
+  <rect x="512" y="234" width="160" height="22" rx="5" fill="#1e3a8a"/>
+  <text x="592.0" y="248.8" font-size="9.6" font-weight="700" fill="#ffffff" text-anchor="middle">Stage 2 · Exploit Validation</text>
+  <text x="680" y="249" font-size="11.8" font-weight="700" fill="#0f172a" text-anchor="start">ExploitGym</text>
+  <rect x="764" y="233" width="150" height="24" rx="5" fill="#1d4ed8"/>
+  <text x="839.0" y="248.8" font-size="10.1" font-weight="700" fill="#ffffff" text-anchor="middle">54.8% (10h) / 53.5% (6h)</text>
+  <text x="512" y="278" font-size="10.3" font-weight="600" fill="#1e293b" text-anchor="start">vs. Astra 42.4% (no cap) / Argon 42.0% (10h) / Opus 5.5 34.5%</text>
+  <text x="512" y="300" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">Single attempt · Offline · Benchmark mitigations OFF · Flag+judge</text>
+  <line x1="713" y1="317" x2="713" y2="329" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="502" y="332" width="422" height="92" rx="7" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.1"/>
+  <rect x="512" y="342" width="160" height="22" rx="5" fill="#1e3a8a"/>
+  <text x="592.0" y="356.8" font-size="9.6" font-weight="700" fill="#ffffff" text-anchor="middle">Stage 3 · Root-Cause Patching</text>
+  <text x="680" y="357" font-size="11.8" font-weight="700" fill="#0f172a" text-anchor="start">CWE-bench v1</text>
+  <rect x="798" y="341" width="116" height="24" rx="5" fill="#1d4ed8"/>
+  <text x="856.0" y="356.8" font-size="10.1" font-weight="700" fill="#ffffff" text-anchor="middle">71.0% Pass@1</text>
+  <text x="512" y="386" font-size="10.3" font-weight="600" fill="#1e293b" text-anchor="start">vs. Grok 4.7 / Argon / Astra tied 68.0% · Opus 5.5: 67.0%</text>
+  <text x="512" y="408" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">Leaderboard spans mixed harnesses (Antigravity / opencode / Codex / Claude)</text>
+  <rect x="24" y="445" width="912" height="54" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="36" y="467" font-size="11.2" font-weight="700" fill="#166534" text-anchor="start">Provider &amp; partner internal claims (non-public benchmarks; sample sizes / competitor identities omitted in post):</text>
+  <text x="36" y="487" font-size="10.5" font-weight="400" fill="#14532d" text-anchor="start">Internal secure-code generation &gt;2x over Argon  ·  Chrome team &gt;10x vs. unnamed frontier model  ·  Wiz web-pentest lead</text>
+  <text x="24" y="519" font-size="10.2" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram compiled from Google&#x27;s announcement, embedded charts, and Gemini 4 Carbon evals-methodology PDF (not an original figure)</text>
+</svg>

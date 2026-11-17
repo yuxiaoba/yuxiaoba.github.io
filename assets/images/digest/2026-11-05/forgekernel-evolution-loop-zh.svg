@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="ForgeKernel 双闭环架构：架构与编码分离、探针验证硬件知识库及跨轮参考封存自演化" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="32" font-size="16.5" font-weight="700" fill="#0f172a">ForgeKernel：架构/编码分离、探针知识库与跨轮参考自演化闭环</text>
+  <text x="24" y="51" font-size="10.0" fill="#475569">arXiv:2611.04998v1（§3, Fig. 1–2, §4.5）· 将「可重审架构规划」与「独立探针硬件机制库」解耦于单次源码局部调优</text>
+  <line x1="24" y1="60" x2="936" y2="60" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Row 1, Col 1: Reference Kernel -->
+  <rect x="38" y="70" width="196" height="168" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="38" y="70" width="196" height="26" rx="8" fill="#1e3a8a"/>
+  <rect x="38" y="88" width="196" height="8" fill="#1e3a8a"/>
+  <text x="48" y="87" font-size="10.5" font-weight="700" fill="#ffffff">参考内核（黑盒基线）</text>
+  <rect x="46" y="104" width="84" height="18" rx="4" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+  <text x="88" y="116" text-anchor="middle" font-size="9.0" font-weight="700" fill="#0369a1">可测可剖析</text>
+  <text x="46" y="138" font-size="9.0" fill="#1e293b">• 来源：专家库 / 代理 / 上轮封存</text>
+  <text x="46" y="156" font-size="9.0" fill="#1e293b">• 允许：冷 L2 计时、NCU 与时间线</text>
+  <text x="46" y="174" font-size="9.0" fill="#1e293b">• 允许：SASS 反汇编与资源统计</text>
+  <text x="46" y="192" font-size="9.0" font-weight="600" fill="#b45309">• 禁止：Coding Agent 读取源码</text>
+  <text x="46" y="213" font-size="8.3" fill="#475569">（V4.1 单代理特例允许读 gen-0）</text>
+
+  <!-- Arrow Ref -> Arch -->
+  <line x1="234" y1="154" x2="255" y2="154" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <!-- Row 1, Col 2: Architecture Agent -->
+  <rect x="258" y="70" width="404" height="168" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="258" y="70" width="404" height="26" rx="8" fill="#1d4ed8"/>
+  <rect x="258" y="88" width="404" height="8" fill="#1d4ed8"/>
+  <text x="270" y="87" font-size="10.5" font-weight="700" fill="#ffffff">Architecture Agent（Claude Fable 5.1 · 架构规划与反馈重审）</text>
+
+  <rect x="268" y="104" width="186" height="124" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="276" y="111" width="66" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="309" y="122.5" text-anchor="middle" font-size="8.7" font-weight="700" fill="#1d4ed8">参考剖析</text>
+  <text x="348" y="123" font-size="9.7" font-weight="700" fill="#0f172a">架构决策 (§3.2)</text>
+  <text x="276" y="143" font-size="8.6" fill="#334155">• 计算分解、数据流与中间存储</text>
+  <text x="276" y="161" font-size="8.6" fill="#334155">• 分块、线程分工与寄存器预算</text>
+  <text x="276" y="179" font-size="8.6" fill="#334155">• 共享内存布局与硬件映射</text>
+  <text x="276" y="197" font-size="8.6" fill="#334155">• 区分「直接观测」vs「待测假设」</text>
+  <text x="276" y="215" font-size="8.6" font-weight="600" fill="#1d4ed8">• 显式引用 hw_kb；不含源码</text>
+
+  <rect x="466" y="104" width="186" height="124" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="474" y="111" width="66" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="507" y="122.5" text-anchor="middle" font-size="8.7" font-weight="700" fill="#1d4ed8">里程碑序列</text>
+  <text x="546" y="123" font-size="9.7" font-weight="700" fill="#0f172a">M0 → M1 → ... → Mk</text>
+  <text x="474" y="143" font-size="8.6" fill="#334155">• M0：只验核心结构与正确性</text>
+  <text x="474" y="161" font-size="8.6" fill="#334155">• M1..Mk：按依赖做结构内细调</text>
+  <text x="474" y="179" font-size="8.6" fill="#334155">• 每步定接口、成本与机制检验</text>
+  <text x="474" y="197" font-size="8.6" fill="#b45309">• 停滞/受阻 → 触发架构重评估</text>
+  <text x="474" y="215" font-size="8.6" fill="#334155">• 结构改动重开 M0 (无增益回滚)</text>
+
+  <!-- Arrow KB -> Arch -->
+  <line x1="686" y1="154" x2="665" y2="154" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr-teal)"/>
+  <text x="674" y="145" text-anchor="middle" font-size="8.0" font-weight="700" fill="#0f766e">引用</text>
+
+  <!-- Row 1, Col 3: Hardware Knowledge Base -->
+  <rect x="686" y="70" width="252" height="168" rx="8" fill="#ffffff" stroke="#0f766e" stroke-width="1.2"/>
+  <rect x="686" y="70" width="252" height="26" rx="8" fill="#0f766e"/>
+  <rect x="686" y="88" width="252" height="8" fill="#0f766e"/>
+  <text x="696" y="87" font-size="10.5" font-weight="700" fill="#ffffff">硬件机制知识库（hw_kb）</text>
+  <rect x="696" y="104" width="110" height="18" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+  <text x="751" y="116" text-anchor="middle" font-size="8.8" font-weight="700" fill="#166534">独立探针实证准入</text>
+  <text x="696" y="138" font-size="8.9" fill="#1e293b">• 按 GPU 架构组织（如 SM90 集群）</text>
+  <text x="696" y="156" font-size="8.9" fill="#1e293b">• 条目：机制 + 适用条件 + 触发症状</text>
+  <text x="696" y="174" font-size="8.9" fill="#1e293b">  + 最小可运行例 + 已知局限</text>
+  <text x="696" y="194" font-size="8.9" font-weight="600" fill="#0f766e">• 入库须经目标 GPU 独立探针验证</text>
+  <text x="696" y="214" font-size="8.7" font-weight="600" fill="#1d4ed8">• 双向反馈：DSA↔GQA · GEMM↔MHA</text>
+
+  <!-- Corridor Arrows & Pills (y=238..286) -->
+  <line x1="340" y1="238" x2="340" y2="283" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <rect x="272" y="252" width="136" height="18" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="340" y="264" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1e3a8a">M0..Mk 计划（无源码）</text>
+
+  <line x1="510" y1="286" x2="510" y2="241" stroke="#b45309" stroke-width="1.6" marker-end="url(#arr-amber)"/>
+  <rect x="428" y="252" width="164" height="18" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="0.9"/>
+  <text x="510" y="264" text-anchor="middle" font-size="8.5" font-weight="700" fill="#92400e">停滞/失败 → 重评估 (可重开 M0)</text>
+
+  <path d="M 606 286 L 606 261 L 812 261 L 812 241" fill="none" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr-teal)"/>
+  <rect x="634" y="252" width="144" height="18" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="0.9"/>
+  <text x="706" y="264" text-anchor="middle" font-size="8.5" font-weight="700" fill="#166534">探针验证新机制入库 hw_kb</text>
+
+  <!-- Row 2, Col 1: Case Studies -->
+  <rect x="38" y="286" width="196" height="178" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="38" y="286" width="196" height="26" rx="8" fill="#334155"/>
+  <rect x="38" y="304" width="196" height="8" fill="#334155"/>
+  <text x="48" y="303" font-size="10.2" font-weight="700" fill="#ffffff">架构重构案例实证（§4.5）</text>
+
+  <rect x="46" y="320" width="180" height="64" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="53" y="335" font-size="8.8" font-weight="700" fill="#1d4ed8">GQA fwd (16:1) 依赖链重排</text>
+  <text x="53" y="352" font-size="8.4" fill="#334155">1. 持久化 CTA 状态 (+0.8%)</text>
+  <text x="53" y="369" font-size="8.4" fill="#334155">2. 解锁 Q 双缓冲 (+6.1%) → +9.9%</text>
+
+  <rect x="46" y="391" width="180" height="66" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="53" y="406" font-size="8.8" font-weight="700" fill="#1d4ed8">DSA sparse fwd 重开 D0.1</text>
+  <text x="53" y="422" font-size="8.4" fill="#334155">• gen-0 grid=8192 调优触顶</text>
+  <text x="53" y="437" font-size="8.4" fill="#334155">• 拆 store 探针暴露边界空隙 →</text>
+  <text x="53" y="451" font-size="8.3" font-weight="700" fill="#1e3a8a">  持久循环重叠写回/加载 (+7.2%)</text>
+
+  <!-- Row 2, Col 2a: Coding Agent -->
+  <rect x="258" y="286" width="192" height="178" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="258" y="286" width="192" height="26" rx="8" fill="#1e3a8a"/>
+  <rect x="258" y="304" width="192" height="8" fill="#1e3a8a"/>
+  <text x="268" y="303" font-size="10.2" font-weight="700" fill="#ffffff">Coding Agent（Opus 5）</text>
+  <rect x="266" y="320" width="96" height="18" rx="4" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+  <text x="314" y="332" text-anchor="middle" font-size="8.7" font-weight="700" fill="#0369a1">仅按契约实现</text>
+  <text x="266" y="354" font-size="8.7" fill="#1e293b">• 仅见当前里程碑规格与接口</text>
+  <text x="266" y="372" font-size="8.7" fill="#1e293b">• 检索计划引用的 hw_kb 条目</text>
+  <text x="266" y="390" font-size="8.7" fill="#1e293b">• 实现计算、访存与异步同步</text>
+  <text x="266" y="408" font-size="8.7" fill="#1e293b">• 处理编译、调试与局部调优</text>
+  <text x="266" y="426" font-size="8.7" fill="#1e293b">• 无权越权改动架构约束</text>
+  <text x="266" y="446" font-size="8.7" font-weight="600" fill="#b45309">• 默认不可读取参考内核源码</text>
+
+  <!-- Arrow Coding -> Harness -->
+  <line x1="450" y1="375" x2="461" y2="375" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <!-- Row 2, Col 2b: Execution Harness & Gate -->
+  <rect x="464" y="286" width="198" height="178" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="464" y="286" width="198" height="26" rx="8" fill="#1d4ed8"/>
+  <rect x="464" y="304" width="198" height="8" fill="#1d4ed8"/>
+  <text x="474" y="303" font-size="10.2" font-weight="700" fill="#ffffff">执行框架与里程碑闸门</text>
+  <rect x="472" y="320" width="104" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="524" y="332" text-anchor="middle" font-size="8.7" font-weight="700" fill="#1d4ed8">同作业冷 L2 裁决</text>
+  <text x="472" y="353" font-size="8.6" fill="#0f172a">1. 容差校验 + 禁止调用参考</text>
+  <text x="472" y="371" font-size="8.6" fill="#0f172a">2. 同 GPU 作业冷 L2 配对计时</text>
+  <text x="472" y="388" font-size="8.4" fill="#475569">   （增益须超过测量噪底阈值）</text>
+  <text x="472" y="406" font-size="8.6" fill="#0f172a">3. 机制校验：核查 NCU/资源行为</text>
+  <text x="472" y="424" font-size="8.6" font-weight="600" fill="#166534">• 通过 → 推进 Mᵢ₊₁ 或封存交付</text>
+  <text x="472" y="441" font-size="8.5" fill="#334155">• 局部未过 → 退回 Coding 修复</text>
+  <text x="472" y="456" font-size="8.4" font-weight="600" fill="#b45309">• 停滞耗尽 → 上报 Arch 重规划</text>
+
+  <!-- Arrow Harness -> Shipped -->
+  <line x1="662" y1="375" x2="683" y2="375" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr-teal)"/>
+  <text x="673" y="366" text-anchor="middle" font-size="8.0" font-weight="700" fill="#0f766e">通过</text>
+
+  <!-- Row 2, Col 3: Shipped Kernel & Halting -->
+  <rect x="686" y="286" width="252" height="178" rx="8" fill="#ffffff" stroke="#0f766e" stroke-width="1.2"/>
+  <rect x="686" y="286" width="252" height="26" rx="8" fill="#0f766e"/>
+  <rect x="686" y="304" width="252" height="8" fill="#0f766e"/>
+  <text x="696" y="303" font-size="10.2" font-weight="700" fill="#ffffff">封存交付与自演化终止条件</text>
+
+  <rect x="696" y="320" width="232" height="68" rx="5" fill="#ecfdf5" stroke="#16a34a" stroke-width="1"/>
+  <text x="704" y="338" font-size="9.2" font-weight="700" fill="#065f46">通过终态验收 → 封存 (Shipped)</text>
+  <text x="704" y="356" font-size="8.6" fill="#14532d">• 跨轮接力：gen 0 → gen 1 → gen 2</text>
+  <text x="704" y="374" font-size="8.6" fill="#14532d">• 源码对下一轮 Agent 保持封锁</text>
+
+  <rect x="696" y="396" width="232" height="58" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="704" y="413" font-size="9.0" font-weight="700" fill="#334155">跨轮停止判据（§3.4）</text>
+  <text x="704" y="430" font-size="8.5" fill="#475569">• 新一代性能增益 ≤ 测量噪底阈值</text>
+  <text x="704" y="446" font-size="8.5" fill="#475569">• 或时间 / 算力预算耗尽</text>
+
+  <!-- Outer Self-Evolution Loop Path -->
+  <path d="M 812 464 L 812 482 L 22 482 L 22 154 L 35 154" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <rect x="278" y="472" width="404" height="20" rx="5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="480" y="485.5" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1e3a8a">外循环 · 封存内核成为下一轮黑盒参考（不继承源码，可重开架构决策）</text>
+
+  <!-- Legend & Footnote -->
+  <rect x="22" y="502" width="12" height="10" rx="2" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="39" y="511" font-size="8.9" fill="#334155">蓝框：Arch 规划与确定性验收闸门</text>
+  <rect x="218" y="502" width="12" height="10" rx="2" fill="#ecfdf5" stroke="#0f766e" stroke-width="1"/>
+  <text x="235" y="511" font-size="8.9" fill="#334155">青绿：探针实证 hw_kb 与封存产出</text>
+  <rect x="424" y="502" width="12" height="10" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="441" y="511" font-size="8.9" fill="#334155">琥珀：停滞重规划与源码隔离约束</text>
+  <text x="22" y="527" font-size="8.8" fill="#64748b">注：无参考 /goal 基线采用停后独立信道计时；Ascend 依托 CANN-Bench 托管评测；DeepSeek-V4.1 特例采用单代理并允许读 gen-0 源码。</text>
+</svg>

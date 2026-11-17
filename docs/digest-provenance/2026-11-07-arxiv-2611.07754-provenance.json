@@ -1,0 +1,272 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-07-arxiv-2611.07754",
+  "paper_id": "arxiv-2611.07754",
+  "anchor_id": "paper-arxiv-2611.07754",
+  "digest_date": "2026-11-07",
+  "updated_at_utc": "2026-11-17T06:45:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-07.md",
+    "en_target": "_digest/en/daily-2026-11-07.md",
+    "staged_section_zh": "/root/.gemini/antigravity-cli/brain/ac0cf507-9966-4c6e-9cb7-702c996123bb/scratch/d2c1-sections/2611.07754/section_zh.md",
+    "staged_section_en": "/root/.gemini/antigravity-cli/brain/ac0cf507-9966-4c6e-9cb7-702c996123bb/scratch/d2c1-sections/2611.07754/section_en.md",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.07754v1."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.07754",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "No v2 revision or withdrawal notice present in saved arXiv record (v1 submitted Thu, 5 Nov 2026 10:00:39 UTC).",
+    "title": "Uncovering Systematic Blind Spots in Graph Database Testing through Integration and Process-Level Analysis",
+    "authors": [
+      "Tinghan Li",
+      "Aoyang Fang",
+      "Longbin Lai",
+      "Zifan Xie",
+      "Hongbo Zhao",
+      "Yu Shao",
+      "Ying Zhang",
+      "Pinjia He"
+    ],
+    "affiliations": [
+      "The Chinese University of Hong Kong, Shenzhen",
+      "Alibaba Group",
+      "Chongqing University",
+      "Beijing University of Posts and Telecommunications",
+      "Zhejiang Gongshang University"
+    ],
+    "categories": [
+      "cs.SE"
+    ],
+    "submitted_utc": "Thu, 5 Nov 2026 10:00:39 UTC",
+    "submitted_date": "2026-11-05",
+    "pdf_template_note": "Author preprint. Submitted to ACM Transactions on Software Engineering and Methodology; not yet peer reviewed or accepted.",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.07754",
+      "abs_v1": "https://arxiv.org/abs/2611.07754v1",
+      "pdf": "https://arxiv.org/pdf/2611.07754",
+      "html_v1": "https://arxiv.org/html/2611.07754v1",
+      "doi": "https://doi.org/10.48550/arXiv.2611.07754",
+      "graphweave_public_repo_url": null,
+      "tested_target_neug_ref": "https://github.com/alibaba/neug"
+    },
+    "saved_source_artifacts": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c1-sources/2611.07754.abs.html",
+        "bytes": 46249,
+        "sha256": "0a83d18f5e3e91c5911b76ada76e1ca158b15b5d969f3b98d7982c8664bc2acc"
+      },
+      "extracted_text": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c1-sources/2611.07754.txt",
+        "lines": 1263,
+        "sha256": "acad93e63d197ffb60865ca51313600fca0835c04a87c6d3e9be96f349d7cf6e",
+        "bytes": 93283
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "integrated_methods_count": 8,
+    "integrated_methods": {
+      "graph_derived": [
+        "Gamera (2023)",
+        "GSlicer (2025)"
+      ],
+      "statement_metamorphic": [
+        "GDBMeter (2023)",
+        "Gamera (2023)",
+        "GraphGenie (2024)",
+        "GraspDB (2024)",
+        "GRev (2024)",
+        "Dinkel (2026)"
+      ],
+      "differential": [
+        "GDsmith (2023)"
+      ]
+    },
+    "empirical_study_systems": {
+      "Neo4j": "2026.03.1 (DB-Engines Rank 1, 16.8k stars, June 2026 snapshot)",
+      "Memgraph": "3.9.0 (Rank 13, 4.2k stars)",
+      "FalkorDB": "4.16.0 (Rank 22, 4.7k stars)"
+    },
+    "campaign_budget_hours_per_pair": 12,
+    "study_report_funnel": {
+      "total_raw_reports": 4114,
+      "total_false_positives": 3136,
+      "false_positive_rate_pct": 76.2,
+      "gdsmith_joint_raw": 1584,
+      "gdsmith_joint_fp": 1439,
+      "gdsmith_joint_unique_bugs": 2,
+      "graphgenie_falkordb_duplicate_example": "527 raw, 249 FP, 278 remaining point to 1 unique bug",
+      "gamera_memgraph_duplicate_example": "234 raw, 123 FP, 111 remaining point to 1 unique bug"
+    },
+    "semantic_profiles_across_8_cypher_systems_table4": {
+      "distinct_profiles_count": 5,
+      "dimensions": [
+        "legality",
+        "multiplicity",
+        "reset_boundary"
+      ]
+    },
+    "plan_collapse_table5_3seeds_5000pairs": {
+      "GraphGenie_pct": {
+        "Neo4j": 11.29,
+        "Memgraph": 15.34,
+        "FalkorDB": 18.94
+      },
+      "GRev_pct": {
+        "Neo4j": 13.71,
+        "Memgraph": 5.79,
+        "FalkorDB": 19.76
+      },
+      "GraspDB_pct": {
+        "Neo4j": 5.5,
+        "Memgraph": 26.67,
+        "FalkorDB": 33.24
+      },
+      "Dinkel_pct": {
+        "Neo4j": 27.44,
+        "Memgraph": 17.44,
+        "FalkorDB": 34.21
+      },
+      "seed_agreement_max_spread_pp": 1.3,
+      "neo4j_transforms_total": 54,
+      "neo4j_transforms_zero_collapse": 33
+    },
+    "multi_agent_backend": "Claude Code backed by claude-sonnet-4-6 snapshot under default decoding",
+    "neug_eval_target": "NeuG 0.1.1 (118 GitHub stars at June 2026 snapshot, default optimizer enabled)",
+    "neug_batch_workload_reduction_table6": {
+      "batch_1": {
+        "raw": 26,
+        "kept": 13,
+        "clusters": 3,
+        "units": 4,
+        "adapter": 2,
+        "gate": 1,
+        "bugs": 1,
+        "reduction_pct": 84.6
+      },
+      "batch_2": {
+        "raw": 17,
+        "kept": 13,
+        "clusters": 3,
+        "units": 3,
+        "adapter": 1,
+        "gate": 2,
+        "bugs": 0,
+        "reduction_pct": 82.4
+      },
+      "batch_3": {
+        "raw": 12,
+        "kept": 9,
+        "clusters": 3,
+        "units": 4,
+        "adapter": 1,
+        "gate": 2,
+        "bugs": 1,
+        "reduction_pct": 66.7
+      }
+    },
+    "neug_human_audits_table7": {
+      "analyzed_sample_n": 100,
+      "agreement_with_human_verdict": "91/100 (91%)",
+      "real_bug_recall": "29/29 (100%; collapse to 3 unique root-cause bugs)",
+      "false_positive_recall": "62/71 (87.3%; 9 FPs escalated conservatively)",
+      "issue_gate_excluded_sample_n": 100,
+      "issue_gate_duplicate_rate": "100/100 (100%)",
+      "issue_gate_missed_new_bugs": "0/100 (0%)"
+    },
+    "neug_bug_discovery_fig10": {
+      "per_method_unique_bugs": {
+        "Dinkel": 9,
+        "GraspDB": 4,
+        "GraphGenie": 3,
+        "GSlicer": 3,
+        "GDBMeter": 3,
+        "GDsmith": 2,
+        "GRev": 2,
+        "Gamera": 2
+      },
+      "aggregate_unique_bugs": 19,
+      "reported_upstream": 19,
+      "confirmed_genuine": 19,
+      "fixed_upstream": 13
+    }
+  },
+  "explicit_limitations": [
+    "Multi-agent triage serves strictly as decision support rather than an autonomous oracle: two authors independently audit every NeuG report (91% human-LLM agreement, 87.3% FP recall), and dynamic debugging requires a target debug build capable of attaching a source-level debugger.",
+    "19 confirmed bugs on NeuG 0.1.1 under 12-hour saturation campaigns do not establish bug-detection completeness; Section 6 omits a NeuG-specific plan-collapse percentage ablation and omits token/API cost and runtime latency figures for claude-sonnet-4-6.",
+    "Evaluation covers four Cypher systems (Neo4j, Memgraph, FalkorDB, NeuG 0.1.1) and does not directly transfer to multi-option GQL or Gremlin/RDF engines; within-system EXPLAIN plan-hash comparison yields a conservative lower bound on collapse (§7 construct validity) and cannot detect defects residing inside a shared compiled plan.",
+    "Porting reference methods introduces implementation-induced FPs (up to 59.2% in GraphGenie, Table 3); Section 4.3 FP taxonomy is qualitative over single 12-hour runs rather than multi-seed frequency estimates; and no public GraphWeave repository URL appears in the v1 preprint."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "graphweave_svgs": {
+      "graphweave-plan-aware-testing-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-07/graphweave-plan-aware-testing-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-07/graphweave-plan-aware-testing-zh.svg",
+        "bytes": null,
+        "sha256": "dd880ac81f74a50daaaa357e07ca8891224d643f8ec02f164ae57cb0f4c7fce4",
+        "mode_octal": null
+      },
+      "graphweave-plan-aware-testing-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-07/graphweave-plan-aware-testing-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-07/graphweave-plan-aware-testing-en.svg",
+        "bytes": null,
+        "sha256": "dba081a8ba0720cee275896a053b183729734b8a0fc2459b23880b0e48fc187a",
+        "mode_octal": null
+      },
+      "graphweave-neug-bug-triage-eval-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-07/graphweave-neug-bug-triage-eval-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-07/graphweave-neug-bug-triage-eval-zh.svg",
+        "bytes": null,
+        "sha256": "3895373858bc4297e9957849d74b15fdd4360f6182694d6710f58f8361f6b1a0",
+        "mode_octal": null
+      },
+      "graphweave-neug-bug-triage-eval-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-07/graphweave-neug-bug-triage-eval-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-07/graphweave-neug-bug-triage-eval-en.svg",
+        "bytes": null,
+        "sha256": "3df67c7c17b6bc2f46a76894a6e6be9bc993c285b844d5f5be483a7287446639",
+        "mode_octal": null
+      }
+    },
+    "preserved_preexisting_or_sibling_assets": [
+      "rl-boundary.png",
+      "accepted-but-wrong-release-gates.png"
+    ]
+  },
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice",
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-07.md",
+      "file_bytes_before": 19997,
+      "file_sha256_before": "bff184c4e8acd50c48cd39b5fe77e9a53172d1a7e43e5b6ee5e0f146c1fa38b3",
+      "file_bytes_after": 43855,
+      "file_sha256_after": "9e3520c832b2fddb4560f00f4e937deb053ca479662d653d0cc820f92400d49d",
+      "old_section_bytes": 1182,
+      "old_section_sha256": "66c61816efe90e415b0650959212255849cb46b416960e19a1981d19c5d2f250",
+      "new_section_bytes": 25040,
+      "new_section_sha256": "88a22d05fafd2e9711573eed5c53986279176d52bb65ee3fbad05929e566dcf2"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-07.md",
+      "file_bytes_before": 21499,
+      "file_sha256_before": "2b07a4876478104edab91c6180aec9dd9a92ee1ed74c4be43fb5040b190d08d9",
+      "file_bytes_after": 43428,
+      "file_sha256_after": "83cf4509ac5bffa56e74c1d3b736822199561b2cc735a5977e45155c8e398ad4",
+      "old_section_bytes": 1323,
+      "old_section_sha256": "f4858ae1e80fed07b8a305bb075036752c886d77cf2a9281bc920e31fc271257",
+      "new_section_bytes": 23252,
+      "new_section_sha256": "35da415916c9993a3770e296333c3cfb6441c2116b4b6ebd73d4092b73033cd0"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T06:47:26.926281+00:00",
+    "preview_release": "20261117-144636-3d0f9707",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

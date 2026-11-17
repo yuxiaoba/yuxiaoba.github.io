@@ -3,7 +3,7 @@ id: automated-em-search
 title: 2026年11月1日｜自动化红队能否找出训练数据监控的盲区
 date: '2026-11-01'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -19,9 +19,10 @@ long_read: true
 source_url: https://alignment.anthropic.com/2026/automated-em-search/
 permalink: /tech/zh/automated-em-search/
 published_at: '2026-11-01T08:44:13.804154+08:00'
-updated_at: '2026-11-01T08:44:13.804154+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
-
 训练样本逐条看起来无害，经过微调后却可能让模型学到不希望出现的行为。Anthropic 将这个问题变成一场可自动迭代的压力测试：让 Agent 提出数据、查询监控器、微调小型研究模型，再检查下游行为。关键变化是把人工红队的有限尝试，扩展成可积累实验结果的搜索过程。
 
 原文：[Automated Subtle Emergent Misalignment Research](https://alignment.anthropic.com/2026/automated-em-search/) · Oscar Balcells Obeso；Richard Qi, Monte MacDiarmid, Evan Hubinger · Anthropic Alignment Science · 2026 年 10 月。

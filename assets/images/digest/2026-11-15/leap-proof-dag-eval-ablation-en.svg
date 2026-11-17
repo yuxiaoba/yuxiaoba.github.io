@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Lato', 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17" font-weight="700" fill="#0f172a">LEAP Empirical Benchmarks, Ablations &amp; Scope Boundaries (arXiv:2606.03303v3)</text>
+  <text x="24" y="53" font-size="10.2" font-weight="400" fill="#475569">Separating iterative agentic proving (rollout=2) from single-shot generation (Pass@128) across Lean-IMO-Bench, Putnam 2025 &amp; limits</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="73" width="510" height="425" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="73" width="510" height="26" rx="8" fill="#1e3a8a"/>
+  <rect x="24" y="91" width="510" height="8" fill="#1e3a8a"/>
+  <text x="35" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">Lean-IMO-Bench Solve Rate (%): Basic (30) vs Advanced (30)</text>
+  <rect x="35" y="108" width="12" height="10" rx="2" fill="#1d4ed8"/>
+  <text x="52" y="116.5" font-size="9.2" font-weight="600" fill="#1e293b">Basic Set (30 problems)</text>
+  <rect x="200" y="108" width="12" height="10" rx="2" fill="#0f766e"/>
+  <text x="217" y="116.5" font-size="9.2" font-weight="600" fill="#1e293b">Advanced Set (30 problems)</text>
+  <text x="380" y="116.5" font-size="8.6" fill="#64748b">† rollout=2   ⋄ Pass@128</text>
+  <line x1="34" y1="125" x2="524" y2="125" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="32" y="130.0" width="494" height="36" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="39" y="144.0" font-size="9.6" font-weight="700" fill="#1e3a8a">LEAP Full DAG†</text>
+  <text x="39" y="158.0" font-size="8.2" fill="#475569">Gemini-3.1-Pro (main)</text>
+  <rect x="206.0" y="135.0" width="224.9" height="11" rx="2" fill="#1d4ed8"/>
+  <text x="435.9" y="144.0" font-size="8.9" font-weight="700" fill="#1e3a8a">83.3%</text>
+  <rect x="206.0" y="150.0" width="153.1" height="11" rx="2" fill="#0f766e"/>
+  <text x="364.1" y="159.0" font-size="8.9" font-weight="700" fill="#0f766e">56.7%</text>
+  <rect x="32" y="169.0" width="494" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="39" y="183.0" font-size="9.6" font-weight="700" fill="#0f172a">LEAP Naive Tree†</text>
+  <text x="39" y="197.0" font-size="8.2" fill="#475569">w/o global DAG (Table 6)</text>
+  <rect x="206.0" y="174.0" width="197.9" height="11" rx="2" fill="#3b82f6"/>
+  <text x="408.9" y="183.0" font-size="8.9" font-weight="700" fill="#1e3a8a">73.3%</text>
+  <rect x="206.0" y="189.0" width="108.0" height="11" rx="2" fill="#14b8a6"/>
+  <text x="319.0" y="198.0" font-size="8.9" font-weight="700" fill="#0f766e">40.0%</text>
+  <rect x="32" y="208.0" width="494" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="39" y="222.0" font-size="9.6" font-weight="700" fill="#0f172a">Numina (Opus 4.5)†</text>
+  <text x="39" y="236.0" font-size="8.2" fill="#475569">Opus 4.5 + Gemini partner</text>
+  <rect x="206.0" y="213.0" width="207.1" height="11" rx="2" fill="#3b82f6"/>
+  <text x="418.1" y="222.0" font-size="8.9" font-weight="700" fill="#1e3a8a">76.7%</text>
+  <rect x="206.0" y="228.0" width="116.9" height="11" rx="2" fill="#14b8a6"/>
+  <text x="327.9" y="237.0" font-size="8.9" font-weight="700" fill="#0f766e">43.3%</text>
+  <rect x="32" y="247.0" width="494" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="39" y="261.0" font-size="9.6" font-weight="700" fill="#0f172a">Aristotle†</text>
+  <text x="39" y="275.0" font-size="8.2" fill="#475569">Specialized ATP system</text>
+  <rect x="206.0" y="252.0" width="207.1" height="11" rx="2" fill="#3b82f6"/>
+  <text x="418.1" y="261.0" font-size="8.9" font-weight="700" fill="#1e3a8a">76.7%</text>
+  <rect x="206.0" y="267.0" width="54.0" height="11" rx="2" fill="#14b8a6"/>
+  <text x="265.0" y="276.0" font-size="8.9" font-weight="700" fill="#0f766e">20.0%</text>
+  <rect x="32" y="286.0" width="494" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="39" y="300.0" font-size="9.6" font-weight="700" fill="#0f172a">Numina (3.1 Pro)†</text>
+  <text x="39" y="314.0" font-size="8.2" fill="#475569">Single-backbone 3.1 Pro</text>
+  <rect x="206.0" y="291.0" width="116.9" height="11" rx="2" fill="#3b82f6"/>
+  <text x="327.9" y="300.0" font-size="8.9" font-weight="700" fill="#1e3a8a">43.3%</text>
+  <rect x="206.0" y="306.0" width="62.9" height="11" rx="2" fill="#14b8a6"/>
+  <text x="273.9" y="315.0" font-size="8.9" font-weight="700" fill="#0f766e">23.3%</text>
+  <rect x="32" y="325.0" width="494" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="39" y="339.0" font-size="9.6" font-weight="700" fill="#0f172a">Hilbert†</text>
+  <text x="39" y="353.0" font-size="8.2" fill="#475569">Recursive agent (no DAG)</text>
+  <rect x="206.0" y="330.0" width="98.8" height="11" rx="2" fill="#3b82f6"/>
+  <text x="309.8" y="339.0" font-size="8.9" font-weight="700" fill="#1e3a8a">36.6%</text>
+  <rect x="206.0" y="345.0" width="17.8" height="11" rx="2" fill="#14b8a6"/>
+  <text x="228.8" y="354.0" font-size="8.9" font-weight="700" fill="#0f766e">6.6%</text>
+  <rect x="32" y="364.0" width="494" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="39" y="378.0" font-size="9.6" font-weight="700" fill="#0f172a">Gemini-3.1-Pro⋄</text>
+  <text x="39" y="392.0" font-size="8.2" fill="#475569">1-shot Pass@128 (Avg 4.6/0.2)</text>
+  <rect x="206.0" y="369.0" width="54.0" height="11" rx="2" fill="#3b82f6"/>
+  <text x="265.0" y="378.0" font-size="8.9" font-weight="700" fill="#1e3a8a">20.0%</text>
+  <rect x="206.0" y="384.0" width="8.9" height="11" rx="2" fill="#14b8a6"/>
+  <text x="219.9" y="393.0" font-size="8.9" font-weight="700" fill="#0f766e">3.3%</text>
+  <rect x="32" y="403.0" width="494" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="39" y="417.0" font-size="9.6" font-weight="700" fill="#0f172a">Goedel-V2-32B⋄</text>
+  <text x="39" y="431.0" font-size="8.2" fill="#475569">Specialized ATP Pass@128</text>
+  <rect x="206.0" y="408.0" width="27.0" height="11" rx="2" fill="#3b82f6"/>
+  <text x="238.0" y="417.0" font-size="8.9" font-weight="700" fill="#1e3a8a">10.0%</text>
+  <rect x="206.0" y="423.0" width="2.0" height="11" rx="2" fill="#14b8a6"/>
+  <text x="213.0" y="432.0" font-size="8.9" font-weight="700" fill="#0f766e">0.0%</text>
+  <rect x="32" y="447" width="494" height="43" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="41" y="463" font-size="8.7" font-weight="700" fill="#1e3a8a">Metric Clarification &amp; DAG Memoization Gain:</text>
+  <text x="41" y="479" font-size="8.5" fill="#334155">Abstract 70% vs 48% = 60-problem mean under iterative rollout=2; DAG vs Tree adds +10.0 / +16.7 pp</text>
+  <rect x="550" y="73" width="386" height="205" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="550" y="73" width="386" height="26" rx="8" fill="#1e3a8a"/>
+  <rect x="550" y="91" width="386" height="8" fill="#1e3a8a"/>
+  <text x="561" y="90.5" font-size="10.6" font-weight="700" fill="#ffffff">Putnam 2025 (12 Problems) &amp; Reported Cost (Tables 2–3)</text>
+  <text x="562" y="116" font-size="9.0" font-weight="700" fill="#475569">System</text>
+  <text x="716" y="116" font-size="9.0" font-weight="700" fill="#475569">Solved</text>
+  <text x="782" y="116" font-size="9.0" font-weight="700" fill="#475569">Runtime</text>
+  <text x="866" y="116" font-size="9.0" font-weight="700" fill="#475569">Tokens</text>
+  <line x1="560" y1="122" x2="926" y2="122" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="558" y="126.0" width="370" height="19" rx="4" fill="#eff6ff" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="562" y="138.0" font-size="9.0" font-weight="700" fill="#1e3a8a">LEAP† (Gemini-3.1-Pro)</text>
+  <text x="716" y="138.0" font-size="9.0" font-weight="700" fill="#0f766e">12/12</text>
+  <text x="782" y="138.0" font-size="9.0" font-weight="700" fill="#1e293b">822 min</text>
+  <text x="866" y="138.0" font-size="9.0" font-weight="700" fill="#334155">~28M</text>
+  <text x="562" y="160.0" font-size="9.0" font-weight="600" fill="#1e293b">Axiom‡ (reported)</text>
+  <text x="716" y="160.0" font-size="9.0" font-weight="700" fill="#0f766e">12/12</text>
+  <text x="782" y="160.0" font-size="9.0" font-weight="400" fill="#1e293b">2,682 min</text>
+  <text x="866" y="160.0" font-size="9.0" font-weight="400" fill="#334155">105.2M</text>
+  <text x="562" y="182.0" font-size="9.0" font-weight="600" fill="#1e293b">Numina-Lean-Agent‡</text>
+  <text x="716" y="182.0" font-size="9.0" font-weight="700" fill="#0f766e">12/12</text>
+  <text x="782" y="182.0" font-size="9.0" font-weight="400" fill="#1e293b">3,889 min</text>
+  <text x="866" y="182.0" font-size="9.0" font-weight="400" fill="#334155">N/A</text>
+  <text x="562" y="204.0" font-size="9.0" font-weight="600" fill="#1e293b">Aristotle† / Hilbert†</text>
+  <text x="716" y="204.0" font-size="9.0" font-weight="700" fill="#475569">9/12 | 4/12</text>
+  <text x="782" y="204.0" font-size="9.0" font-weight="400" fill="#1e293b">— | ≤7d/rollout</text>
+  <text x="866" y="204.0" font-size="9.0" font-weight="400" fill="#334155">—</text>
+  <text x="562" y="226.0" font-size="9.0" font-weight="600" fill="#1e293b">Gemini-3.1-Pro⋄ / Goedel⋄</text>
+  <text x="716" y="226.0" font-size="9.0" font-weight="700" fill="#475569">0/12 | 0/12</text>
+  <text x="782" y="226.0" font-size="9.0" font-weight="400" fill="#1e293b">Pass@128</text>
+  <text x="866" y="226.0" font-size="9.0" font-weight="400" fill="#334155">—</text>
+  <rect x="558" y="236" width="370" height="34" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="566" y="250" font-size="8.4" fill="#475569">Note: Putnam 2025 median score was 2/120 (top 110); Table 3 runtime/token</text>
+  <text x="566" y="263" font-size="8.4" fill="#475569">totals span differing backbones &amp; accounting—not strictly controlled</text>
+  <rect x="550" y="290" width="386" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="550" y="290" width="386" height="26" rx="8" fill="#1e3a8a"/>
+  <rect x="550" y="308" width="386" height="8" fill="#1e3a8a"/>
+  <text x="561" y="307.5" font-size="10.5" font-weight="700" fill="#ffffff">Reviewer Ablation, Case Studies &amp; Boundaries (§5.3, §6, App. A)</text>
+  <rect x="560" y="324" width="366" height="52" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="569" y="340" font-size="9.4" font-weight="700" fill="#1e3a8a">① LLM Reviewer Ablation (Putnam A5, Fig. 3)</text>
+  <text x="569" y="355" font-size="8.6" fill="#1e293b">With reviewer: solved in 2 rollouts (122m) | Removed: fails &gt;8 rollouts</text>
+  <text x="569" y="369" font-size="8.4" fill="#475569">Cause: Lean accepts unfold-then-refold circular stubs with zero progress</text>
+  <rect x="560" y="382" width="366" height="50" rx="6" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+  <text x="569" y="398" font-size="9.4" font-weight="700" fill="#065f46">② Research-Level Case Studies (§6)</text>
+  <text x="569" y="413" font-size="8.6" fill="#1e293b">• Knuth even-order Cayley Color-2 cycle subproblem: &gt;5,000 Lean 4 lines</text>
+  <text x="569" y="426" font-size="8.6" fill="#334155">• Erdős 457 + all 9 Erdős problems solved by AlphaProof Nexus (not full corpus)</text>
+  <rect x="560" y="438" width="366" height="52" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <text x="569" y="454" font-size="9.4" font-weight="700" fill="#b45309">③ Domain Bottlenecks &amp; Replication Limits (Table 4, App. A)</text>
+  <text x="569" y="469" font-size="8.5" fill="#78350f">• Geometry remains weak: Basic 16.7% (1/6) / Adv 12.5% (1/8); Adv Comb 25%</text>
+  <text x="569" y="483" font-size="8.5" fill="#334155">• Opus 4.5 (90.0%) &amp; Gemini 3.5 Flash (86.6%) are Basic-only single runs</text>
+  <text x="24" y="523" font-size="9.4" fill="#64748b">Bottom line: headline gains rely on iterative tooling, LeanSearch &amp; multi-step compiler repair; Lean geometry &amp; DFS scheduling remain open bottlenecks</text>
+</svg>

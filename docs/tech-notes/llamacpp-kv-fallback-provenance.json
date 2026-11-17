@@ -1,0 +1,90 @@
+{
+  "id": "llamacpp-kv-fallback",
+  "source_url": "https://github.com/ggml-org/llama.cpp/issues/28455",
+  "source_title": "Misc. bug: quantized KV cache (q5_x, q4_x) with -fa on silently fallback CPU attn",
+  "source_authors": [
+    "AhBumm",
+    "@sinanezhadian",
+    "@JohannesGaessler"
+  ],
+  "source_org": "ggml-org/llama.cpp",
+  "source_date": "2026-09-05",
+  "note_date": "2026-11-04",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/t2c-sources/llamacpp-issue-28455-readable.txt",
+      "kind": "extracted_issue_thread"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://github.com/ggml-org/llama.cpp/issues/28455",
+    "https://github.com/ggml-org/llama.cpp/issues/28455#issuecomment-5554868313",
+    "https://github.com/ggml-org/llama.cpp/issues/28455#issuecomment-5558436618",
+    "https://github.com/ggml-org/llama.cpp/blob/master/CONTRIBUTING.md#ai-usage-policy",
+    "https://arxiv.org/abs/2605.19537"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "evidence_notes": "Issue #28455 (opened 2026-09-05, closed 2026-09-06) carries a '(USER WAS BANNED FOR THIS POST)' banner; maintainer @JohannesGaessler banned the reporter under llama.cpp's CONTRIBUTING.md AI usage policy while explicitly confirming 'This is a known issue.' All quantitative llama-bench, llama-server, and top/nvidia-smi figures derive from a single Ubuntu 24.04 RTX 4080 workstation (0.3.0-dev b10791, 27B Q5_K model); @sinanezhadian's proposed llama-perplexity comparison across the two q5_1 binaries was not executed in the thread, and the inconsistent social-post figures noted in the original curation remain excluded.",
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/llamacpp-kv-fallback.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/llamacpp-kv-fallback.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/llamacpp-kv-fallback/ggml-fa-quant-dispatch-fallback-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/llamacpp-kv-fallback/ggml-fa-quant-dispatch-fallback-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/llamacpp-kv-fallback/silent-fallback-diagnostic-gates-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/llamacpp-kv-fallback/silent-fallback-diagnostic-gates-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "f7a56a7c9006d1f285bce7a805ea3b80120baf757ba5ef17a7d14508f4c0e001",
+      "en_md_sha256": "518996c44bc3339adff4c8d801f150e84776c5a288cea89cc8bd59d298594b5a",
+      "svgs": {
+        "/assets/images/tech/llamacpp-kv-fallback/ggml-fa-quant-dispatch-fallback-zh.svg": "abedc09649305bbe90d247f8e95694317c229dad71e9982bf9fdfd4516af8dad",
+        "/assets/images/tech/llamacpp-kv-fallback/ggml-fa-quant-dispatch-fallback-en.svg": "006f5fec944541f626c0c9f3398f43e749fe7c07073f5c367086a3c502cf1f7c",
+        "/assets/images/tech/llamacpp-kv-fallback/silent-fallback-diagnostic-gates-zh.svg": "a599cda4a084f8942756966a51189724818011042388836b9c38c722204d31aa",
+        "/assets/images/tech/llamacpp-kv-fallback/silent-fallback-diagnostic-gates-en.svg": "1ea1626e5d07480d164e42a68bc96cc093926a7fd605d322faca2cece8874497"
+      },
+      "preserved": {}
+    },
+    "playwright_total": 34,
+    "playwright_passed": 34,
+    "playwright_failed": 0
+  }
+}

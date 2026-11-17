@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="GraphWeave 实证评估：4,114 份研究报告漏斗、同计划坍缩率、NeuG 负载降载、人工审计与 19 个确认缺陷">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="14" y="14" width="932" height="512" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" rx="10"/>
+  <text x="30" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="16.5" font-weight="700" fill="#0f172a">GraphWeave 实证审计：报告漏斗、计划坍缩、NeuG 分流与 19 个确认缺陷</text>
+  <text x="30" y="57" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" fill="#475569">arXiv:2611.07754v1 · 3 个成熟系统 (Neo4j / Memgraph / FalkorDB) × 12h + 工业图库 NeuG 0.1.1 端到端评估</text>
+  <line x1="30" y1="66" x2="930" y2="66" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Quadrant A: Study Report Funnel & Plan Collapse -->
+  <rect x="28" y="76" width="442" height="212" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="40" y="95" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">A. 12h 集成研究：报告漏斗与同计划坍缩率 (表 2, 表 5)</text>
+  <rect x="38" y="103" width="422" height="176" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+
+  <rect x="46" y="109" width="406" height="24" rx="4" fill="#dbeafe"/>
+  <text x="249" y="124.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="700" fill="#1d4ed8">8 方法合计：4,114 原始报告 → 3,136 误报 (76.2%)，其余含大量重复</text>
+
+  <!-- Legend -->
+  <text x="48" y="146" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="700" fill="#0f172a">3 种子计划坍缩均值 (n=5,000 对)</text>
+  <rect x="236" y="138" width="9" height="8" rx="2" fill="#1d4ed8"/>
+  <text x="249" y="145.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#334155">Neo4j</text>
+  <rect x="294" y="138" width="9" height="8" rx="2" fill="#3b82f6"/>
+  <text x="307" y="145.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#334155">Memgraph</text>
+  <rect x="372" y="138" width="9" height="8" rx="2" fill="#93c5fd"/>
+  <text x="385" y="145.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#334155">FalkorDB</text>
+
+  <!-- Bars: scale 4.4 px per 1%, x=114 start -->
+  <!-- Dinkel: 27.44 / 17.44 / 34.21 -->
+  <text x="108" y="166" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#0f172a">Dinkel</text>
+  <rect x="114" y="153" width="120.7" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <rect x="114" y="159.5" width="76.7" height="5.5" rx="1.5" fill="#3b82f6"/>
+  <rect x="114" y="166" width="150.5" height="5.5" rx="1.5" fill="#93c5fd"/>
+  <text x="272" y="165.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" font-weight="700" fill="#1d4ed8">27.44% / 17.44% / 34.21%</text>
+
+  <!-- GraspDB: 5.50 / 26.67 / 33.24 -->
+  <text x="108" y="195" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#0f172a">GraspDB</text>
+  <rect x="114" y="182" width="24.2" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <rect x="114" y="188.5" width="117.3" height="5.5" rx="1.5" fill="#3b82f6"/>
+  <rect x="114" y="195" width="146.3" height="5.5" rx="1.5" fill="#93c5fd"/>
+  <text x="272" y="194.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">5.50% / 26.67% / 33.24%</text>
+
+  <!-- GRev: 13.71 / 5.79 / 19.76 -->
+  <text x="108" y="224" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#0f172a">GRev</text>
+  <rect x="114" y="211" width="60.3" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <rect x="114" y="217.5" width="25.5" height="5.5" rx="1.5" fill="#3b82f6"/>
+  <rect x="114" y="224" width="86.9" height="5.5" rx="1.5" fill="#93c5fd"/>
+  <text x="272" y="223.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">13.71% / 5.79% / 19.76%</text>
+
+  <!-- GraphGenie: 11.29 / 15.34 / 18.94 -->
+  <text x="108" y="253" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#0f172a">GraphGenie</text>
+  <rect x="114" y="240" width="49.7" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <rect x="114" y="246.5" width="67.5" height="5.5" rx="1.5" fill="#3b82f6"/>
+  <rect x="114" y="253" width="83.3" height="5.5" rx="1.5" fill="#93c5fd"/>
+  <text x="272" y="252.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">11.29% / 15.34% / 18.94%</text>
+
+  <text x="48" y="272" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#475569">注：Neo4j 共测 54 种等价变换，其中 33 种保持 0% 坍缩；GraspDB 跨库升高因方言拦截偏斜。</text>
+
+  <!-- Quadrant B: NeuG Postprocessing & Human Audits -->
+  <rect x="482" y="76" width="450" height="212" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="494" y="95" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">B. NeuG 0.1.1 后处理降载与百例核验 (表 6, 表 7)</text>
+  <rect x="492" y="103" width="430" height="176" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+
+  <text x="502" y="119" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#0f172a">连续测试代表性批次降载统计 (Table 6)</text>
+  <rect x="502" y="124" width="410" height="18" rx="3" fill="#eff6ff"/>
+  <text x="508" y="136.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">批次</text>
+  <text x="560" y="136.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">Raw → Kept</text>
+  <text x="646" y="136.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">聚类 → 单元</text>
+  <text x="726" y="136.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">产出 (适配/门/Bug)</text>
+  <text x="854" y="136.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">降载率</text>
+
+  <text x="514" y="154" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">#1</text>
+  <text x="564" y="154" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">26 → 13</text>
+  <text x="656" y="154" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">3 → 4</text>
+  <text x="748" y="154" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">2 / 1 / 1</text>
+  <text x="856" y="154" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" font-weight="700" fill="#1d4ed8">84.6%</text>
+
+  <text x="514" y="169" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">#2</text>
+  <text x="564" y="169" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">17 → 13</text>
+  <text x="656" y="169" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">3 → 3</text>
+  <text x="748" y="169" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">1 / 2 / 0</text>
+  <text x="856" y="169" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" font-weight="700" fill="#1d4ed8">82.4%</text>
+
+  <text x="514" y="184" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">#3</text>
+  <text x="564" y="184" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">12 → 9</text>
+  <text x="656" y="184" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">3 → 4</text>
+  <text x="748" y="184" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" fill="#334155">1 / 2 / 1</text>
+  <text x="856" y="184" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.8" font-weight="700" fill="#1d4ed8">66.7%</text>
+
+  <!-- Two Audit Cards -->
+  <rect x="502" y="195" width="201" height="77" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <rect x="508" y="201" width="189" height="17" rx="4" fill="#dbeafe"/>
+  <text x="602.5" y="213" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">Table 7a · 100 条分析抽检</text>
+  <text x="510" y="232" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#334155">• 人工判定一致：91 / 100 (91%)</text>
+  <text x="510" y="247" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" font-weight="700" fill="#1d4ed8">• 真缺陷召回：29 / 29 (100%·3根因)</text>
+  <text x="510" y="262" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#475569">• 误报召回：62 / 71 (87.3% 保守上送)</text>
+
+  <rect x="711" y="195" width="201" height="77" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <rect x="717" y="201" width="189" height="17" rx="4" fill="#dcfce7"/>
+  <text x="811.5" y="213" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#166534">Table 7b · 100 条门控拦截抽检</text>
+  <text x="719" y="232" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" font-weight="700" fill="#166534">• 确认为重复：100 / 100 (100%)</text>
+  <text x="719" y="247" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#334155">• 误杀新缺陷：0 / 100 (0%)</text>
+  <text x="719" y="262" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#475569">• 批间补漏：#1 遗漏缺陷在 #3 捕获</text>
+
+  <!-- Quadrant C: NeuG Bug Discovery -->
+  <rect x="28" y="296" width="442" height="200" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="40" y="315" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">C. NeuG 0.1.1 各方法饱和去重缺陷数 (图 10)</text>
+  <rect x="38" y="323" width="422" height="164" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+
+  <!-- Scale 10.5px per bug, start x=116 -->
+  <text x="110" y="339" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" font-weight="700" fill="#0f172a">Dinkel</text>
+  <rect x="116" y="331" width="94.5" height="9" rx="2" fill="#3b82f6"/>
+  <text x="216" y="339" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" font-weight="700" fill="#1d4ed8">9 (单一方法最高)</text>
+
+  <text x="110" y="354" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">GraspDB</text>
+  <rect x="116" y="346" width="42.0" height="9" rx="2" fill="#60a5fa"/>
+  <text x="164" y="354" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">4</text>
+
+  <text x="110" y="369" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">GraphGenie</text>
+  <rect x="116" y="361" width="31.5" height="9" rx="2" fill="#60a5fa"/>
+  <text x="154" y="369" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">3</text>
+
+  <text x="110" y="384" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">GSlicer</text>
+  <rect x="116" y="376" width="31.5" height="9" rx="2" fill="#60a5fa"/>
+  <text x="154" y="384" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">3</text>
+
+  <text x="110" y="399" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">GDBMeter</text>
+  <rect x="116" y="391" width="31.5" height="9" rx="2" fill="#60a5fa"/>
+  <text x="154" y="399" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">3</text>
+
+  <text x="110" y="414" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">GDsmith</text>
+  <rect x="116" y="406" width="21.0" height="9" rx="2" fill="#93c5fd"/>
+  <text x="143" y="414" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">2</text>
+
+  <text x="110" y="429" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">GRev</text>
+  <rect x="116" y="421" width="21.0" height="9" rx="2" fill="#93c5fd"/>
+  <text x="143" y="429" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">2</text>
+
+  <text x="110" y="444" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">Gamera</text>
+  <rect x="116" y="436" width="21.0" height="9" rx="2" fill="#93c5fd"/>
+  <text x="143" y="444" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">2</text>
+
+  <text x="110" y="460" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" font-weight="700" fill="#1d4ed8">Total 并集</text>
+  <rect x="116" y="451" width="199.5" height="10" rx="2" fill="#1d4ed8"/>
+  <text x="321" y="460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">19 (19 确认, 13 已修复)</text>
+
+  <text x="48" y="479" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#475569">各方法至多覆及 9/19，不同测试家族存在非重叠发现，必须以统一平台整合。</text>
+
+  <!-- Quadrant D: Audit Boundaries & Limitations -->
+  <rect x="482" y="296" width="450" height="200" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="494" y="315" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">D. 科学审校边界与适用限制 (§6–§7)</text>
+  <rect x="492" y="323" width="430" height="164" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+
+  <rect x="500" y="330" width="414" height="34" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="506" y="337" width="114" height="19" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="563" y="350" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#1d4ed8">人工复核兜底</text>
+  <text x="628" y="344" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#334155">Agent 仅作辅助（一致率 91%、误报召回 87.3%），</text>
+  <text x="628" y="357" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#475569">最终每条缺陷均由两位作者独立核验后再上游提报。</text>
+
+  <rect x="500" y="368" width="414" height="34" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="506" y="375" width="114" height="19" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="563" y="388" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#92400e">非完备检出声明</text>
+  <text x="628" y="382" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#334155">12h 饱和发现 19 个缺陷不等于 NeuG 总缺陷上界；</text>
+  <text x="628" y="395" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#475569">正文未单列 NeuG 同计划坍缩率及 Agent API 费用。</text>
+
+  <rect x="500" y="406" width="414" height="34" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="506" y="413" width="114" height="19" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="563" y="426" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#1d4ed8">Cypher 与哈希下界</text>
+  <text x="628" y="420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#334155">验证局限于 4 个 Cypher 系统；库内计划哈希比对</text>
+  <text x="628" y="433" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#475569">偏保守，仍可能低估等价计划占比（§7 构念效度）。</text>
+
+  <rect x="500" y="444" width="414" height="34" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="506" y="451" width="114" height="19" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="0.8"/>
+  <text x="563" y="464" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#991b1b">移植偏差与代码</text>
+  <text x="628" y="458" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#334155">原实现移植存在 Impl. 误报（GraphGenie 占 59.2%）；</text>
+  <text x="628" y="471" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#475569">v1 预印本尚未公开 GraphWeave 独立代码仓库 URL。</text>
+
+  <text x="30" y="512" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.6" fill="#475569">数据来源：arXiv:2611.07754v1 表 2–7、图 10 及正文 §4–§7；Table 5 坍缩率为 3 随机种子 × 5,000 可比查询对均值（极差 ≤1.3 pp）。</text>
+</svg>

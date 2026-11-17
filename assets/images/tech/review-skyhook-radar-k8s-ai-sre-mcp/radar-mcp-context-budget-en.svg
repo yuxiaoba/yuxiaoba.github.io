@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC','PingFang SC','Lato','Microsoft YaHei',sans-serif;">
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="38" font-size="18.5" font-weight="700" fill="#0f172a">Diagnostic Context &amp; Turn Economics: Raw kubectl Loops vs. Radar MCP</text>
+  <text x="24" y="58" font-size="11.5" font-weight="400" fill="#475569">Why unconstrained kubectl drains context windows on unminified YAML and serial discovery, alongside SREGym study metrics</text>
+  <line x1="24" y1="69" x2="936" y2="69" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Left: Raw kubectl -->
+  <rect x="24" y="78" width="446" height="250" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <rect x="24" y="78" width="446" height="30" rx="8" fill="#e2e8f0"/>
+  <rect x="24" y="98" width="446" height="10" fill="#e2e8f0"/>
+  <text x="36" y="98" font-size="12" font-weight="700" fill="#1e293b">Path A · Raw kubectl (Serial Polling &amp; YAML Bloat)</text>
+
+  <rect x="36" y="116" width="422" height="44" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="46" y="134" font-size="11" font-weight="700" fill="#334155">1. Serial hops: get pods -&gt; describe -&gt; get rs -&gt; get deploy</text>
+  <text x="46" y="151" font-size="10.2" fill="#475569">No prebuilt graph; agent burns turns reconstructing OwnerReferences</text>
+
+  <rect x="36" y="167" width="422" height="44" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="46" y="185" font-size="11" font-weight="700" fill="#334155">2. -o yaml pulls server bookkeeping &amp; status boilerplate</text>
+  <text x="46" y="202" font-size="10.2" fill="#475569">Includes managedFields, resourceVersion, last-applied &amp; full status</text>
+
+  <rect x="36" y="218" width="422" height="44" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="46" y="236" font-size="11" font-weight="700" fill="#334155">3. Un-deduped Events &amp; unfiltered container log tails</text>
+  <text x="46" y="253" font-size="10.2" fill="#475569">Repeating warnings and noisy logs accumulate and replay every turn</text>
+
+  <rect x="36" y="269" width="422" height="48" rx="6" fill="#fff1f2" stroke="#fda4af" stroke-width="1"/>
+  <text x="46" y="288" font-size="11" font-weight="700" fill="#9f1239">Measured Overhead (3-Node EKS · Same Agent &amp; Model)</text>
+  <text x="46" y="306" font-size="10.5" fill="#881337">Study 01: 191s mean (60% right in &lt;=2m); Study 02: 249s mean</text>
+
+  <!-- Top Right: Radar MCP -->
+  <rect x="490" y="78" width="446" height="250" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.3"/>
+  <rect x="490" y="78" width="446" height="30" rx="8" fill="#1d4ed8"/>
+  <rect x="490" y="98" width="446" height="10" fill="#1d4ed8"/>
+  <text x="502" y="98" font-size="12" font-weight="700" fill="#ffffff">Path B · Radar /mcp-readonly (Cached Graph + Minified Payloads)</text>
+
+  <rect x="502" y="116" width="422" height="44" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="512" y="134" font-size="11" font-weight="700" fill="#1d4ed8">1. issues / diagnose: enter directly at ranked failures</text>
+  <text x="512" y="151" font-size="10.2" fill="#1e3a8a">Skips cluster-wide scans; returns failing resource &amp; suspect links</text>
+
+  <rect x="502" y="167" width="422" height="44" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="512" y="185" font-size="11" font-weight="700" fill="#1d4ed8">2. get_neighborhood: BFS dependency slice around target</text>
+  <text x="512" y="202" font-size="10.2" fill="#1e3a8a">Exposes local owners, endpoints &amp; health without dumping all YAML</text>
+
+  <rect x="502" y="218" width="422" height="44" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="512" y="236" font-size="11" font-weight="700" fill="#1d4ed8">3. get_changes + get_pod_logs: stripped diffs &amp; filtered logs</text>
+  <text x="512" y="253" font-size="10.2" fill="#1e3a8a">Strips managedFields, dedups events &amp; withholds Secret .data</text>
+
+  <rect x="502" y="269" width="422" height="48" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="512" y="288" font-size="11" font-weight="700" fill="#1e3a8a">Measured Speedup (Mean Time to Submitted Answer, Not MTTR)</text>
+  <text x="512" y="306" font-size="10.5" fill="#1e40af">Study 01: 64s (~3x faster, 86% &lt;=2m); Study 02: 57s mean</text>
+
+  <!-- Bottom Panel: Three SREGym Studies -->
+  <rect x="24" y="340" width="912" height="162" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="340" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="358" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="359" font-size="11.8" font-weight="700" fill="#1e3a8a">Three Author-Run SREGym Studies (3-Node EKS · Claude Opus 5 Judge) — Compare Within a Study Only</text>
+
+  <rect x="36" y="376" width="288" height="90" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="44" y="383" width="272" height="20" rx="4" fill="#1d4ed8"/>
+  <text x="180" y="397" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Study 01 · 50 Faults (Tool Control)</text>
+  <text x="46" y="420" font-size="10" fill="#0f172a">Fixed agent &amp; model; MCP vs kubectl</text>
+  <text x="46" y="438" font-size="10.5" font-weight="700" fill="#1d4ed8">64s vs 191s (~3x) · 86% vs 60%</text>
+  <text x="46" y="456" font-size="9.8" fill="#64748b">Counts wrong submissions too; not repair MTTR</text>
+
+  <rect x="336" y="376" width="288" height="90" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="344" y="383" width="272" height="20" rx="4" fill="#1d4ed8"/>
+  <text x="480" y="397" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Study 02 · 25 Faults (5 MCPs + kubectl)</text>
+  <text x="346" y="420" font-size="10" fill="#0f172a">One agent driving 5 MCPs + raw kubectl</text>
+  <text x="346" y="438" font-size="10.5" font-weight="700" fill="#1d4ed8">Radar 57s vs Flux159 135s (2.3x)</text>
+  <text x="346" y="456" font-size="9.8" fill="#64748b">14 shared passes: 33s vs 58s; EKS MCP 321s</text>
+
+  <rect x="636" y="376" width="288" height="90" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="644" y="383" width="272" height="20" rx="4" fill="#1d4ed8"/>
+  <text x="780" y="397" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Study 03 · 50 Faults (6 AI SRE Tools)</text>
+  <text x="646" y="420" font-size="10" fill="#0f172a">Claude+Radar vs 5 tools (own prompts)</text>
+  <text x="646" y="438" font-size="10.5" font-weight="700" fill="#1d4ed8">44/50 (88%) · 79s · $0.27/fault</text>
+  <text x="646" y="456" font-size="9.8" fill="#64748b">Others: 66%-82%, 123-288s, $0.37-$2.26</text>
+
+  <rect x="36" y="473" width="888" height="22" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="46" y="488" font-size="10.2" font-weight="600" fill="#78350f">Scope Boundary: Faults, dates &amp; load differ across Studies 01-03 (never cross-rank); see Nov 6 note for 90-fault/270-run repair leaderboard</text>
+
+  <text x="24" y="522" font-size="10.2" fill="#64748b">Assistant diagram synthesized from skyhook-io/radar README and radarhq.io/benchmark frozen evidence (not an original figure)</text>
+</svg>

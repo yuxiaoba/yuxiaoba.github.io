@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" style="background:#ffffff;">
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="35" font-size="17.5" font-weight="700" fill="#0f172a" text-anchor="start">模拟测试 vs. 真实 GPU 硬件保真度边界与上线核查矩阵</text>
+  <text x="24" y="54" font-size="11" font-weight="400" fill="#475569" text-anchor="start">区分 CNCF 实验八项通过的控制路径证据、Mock 插件引入的人工生命周期缺口，以及必须由真实显卡与驱动验证的运行时边界</text>
+  <line x1="24" y1="64" x2="936" y2="64" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Section 1 Header -->
+  <rect x="24" y="73" width="912" height="24" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="89" font-size="11.2" font-weight="700" fill="#1e3a8a" text-anchor="start">一 · 实验室八项测试的因果证据边界（正文展示 TC-03/05/06/07/08；TC-01/02/04 包含在总计通过项中）</text>
+
+  <!-- 4 Top Cards (w=219, gap=12) -->
+  <!-- Card 1 -->
+  <rect x="24" y="103" width="219" height="162" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="36" y="112" width="126" height="19" rx="5" fill="#1d4ed8"/>
+  <text x="99" y="125" font-size="9.8" font-weight="700" fill="#ffffff" text-anchor="middle">TC-03 / 05 · 正向打包</text>
+  <text x="36" y="148" font-size="10.8" font-weight="700" fill="#0f172a" text-anchor="start">同卡塞入 3 个分片 Pod</text>
+  <text x="36" y="167" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">每 Pod：20,000 MB + 30%</text>
+  <text x="36" y="185" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">共占：60,000 MB / 90% 算力</text>
+  <text x="36" y="203" font-size="9.5" font-weight="600" fill="#1e40af" text-anchor="start">schedulerName: Hami-scheduler</text>
+  <line x1="36" y1="215" x2="231" y2="215" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="36" y="234" font-size="9.5" font-weight="600" fill="#b45309" text-anchor="start">注意：每轮后手动清节点锁</text>
+  <text x="36" y="252" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">否则后续 Pod 卡死 5 分钟</text>
+
+  <!-- Card 2 -->
+  <rect x="255" y="103" width="219" height="162" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <rect x="267" y="112" width="126" height="19" rx="5" fill="#15803d"/>
+  <text x="330" y="125" font-size="9.8" font-weight="700" fill="#ffffff" text-anchor="middle">TC-06 / 07 · 负向拒批</text>
+  <text x="267" y="148" font-size="10.8" font-weight="700" fill="#0f172a" text-anchor="start">单维超额分别触发拒绝</text>
+  <text x="267" y="167" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">第 4 个 30% Pod → 需 120%</text>
+  <text x="267" y="184" font-size="9.5" font-weight="700" fill="#166534" text-anchor="start">Pending: CardInsufficientCore</text>
+  <text x="267" y="202" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">90,000 MB + 10% (算力可容)</text>
+  <line x1="267" y1="215" x2="462" y2="215" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="267" y="234" font-size="9.4" font-weight="700" fill="#166534" text-anchor="start">Pending: CardInsufficientMemory</text>
+  <text x="267" y="252" font-size="9.1" font-weight="400" fill="#14532d" text-anchor="start">证实显存与算力独立累计判定</text>
+
+  <!-- Card 3 -->
+  <rect x="486" y="103" width="219" height="162" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="498" y="112" width="126" height="19" rx="5" fill="#1d4ed8"/>
+  <text x="561" y="125" font-size="9.8" font-weight="700" fill="#ffffff" text-anchor="middle">TC-08 · 租户可见性</text>
+  <text x="498" y="148" font-size="10.8" font-weight="700" fill="#0f172a" text-anchor="start">双控制面 API 返回隔离</text>
+  <text x="498" y="167" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">tenant-a: 81,920 MB / 100c</text>
+  <text x="498" y="185" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">tenant-b: 49,152 MB / 200c</text>
+  <text x="498" y="203" font-size="9.5" font-weight="400" fill="#1e40af" text-anchor="start">双方只返回自有节点与 Pod</text>
+  <line x1="498" y1="215" x2="693" y2="215" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="498" y="234" font-size="9.5" font-weight="600" fill="#334155" text-anchor="start">覆盖展示配置中的 API 视图</text>
+  <text x="498" y="252" font-size="9.1" font-weight="400" fill="#64748b" text-anchor="start">未测跨节点网络或存储逃逸</text>
+
+  <!-- Card 4 -->
+  <rect x="717" y="103" width="219" height="162" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.1"/>
+  <rect x="729" y="112" width="132" height="19" rx="5" fill="#b91c1c"/>
+  <text x="795" y="125" font-size="9.8" font-weight="700" fill="#ffffff" text-anchor="middle">硬件边界 · 未验证领域</text>
+  <text x="729" y="148" font-size="10.8" font-weight="700" fill="#0f172a" text-anchor="start">Running 不等于运行隔离</text>
+  <text x="729" y="167" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">容器内仅执行 sleep infinity</text>
+  <text x="729" y="185" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">无 NVIDIA 驱动与 CUDA 内核</text>
+  <text x="729" y="203" font-size="9.5" font-weight="400" fill="#991b1b" text-anchor="start">HAMi-core 未拦截显存与算力</text>
+  <line x1="729" y1="215" x2="924" y2="215" stroke="#fecaca" stroke-width="1"/>
+  <text x="729" y="234" font-size="9.5" font-weight="700" fill="#991b1b" text-anchor="start">零性能与多租同卡竞争数据</text>
+  <text x="729" y="252" font-size="9.1" font-weight="400" fill="#7f1d1d" text-anchor="start">未测 noisy-neighbor 尾延迟</text>
+
+  <!-- Section 2: Fidelity Table -->
+  <rect x="24" y="275" width="912" height="192" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="275" width="912" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="24" y="293" width="912" height="10" fill="#1e3a8a"/>
+  <text x="36" y="293" font-size="10.6" font-weight="700" fill="#ffffff" text-anchor="start">平台层级</text>
+  <text x="218" y="293" font-size="10.6" font-weight="700" fill="#ffffff" text-anchor="start">模拟实验路径（CNCF 2026-10-23 博文实操）</text>
+  <text x="556" y="293" font-size="10.6" font-weight="700" fill="#ffffff" text-anchor="start">真实 GPU 集群必需补齐的硬件与生命周期验证</text>
+
+  <!-- Row 1 -->
+  <line x1="24" y1="343" x2="936" y2="343" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="36" y="327" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">1. 设备发现与注册</text>
+  <text x="218" y="327" font-size="9.6" font-weight="400" fill="#92400e" text-anchor="start">禁打 gpu=on 标签；手工 patch 10/20 槽位与注解</text>
+  <text x="556" y="327" font-size="9.6" font-weight="400" fill="#166534" text-anchor="start">真实 device plugin 经 NVML 自动上报卡型号、显存与健康状态</text>
+
+  <!-- Row 2 -->
+  <line x1="24" y1="383" x2="936" y2="383" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="36" y="367" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">2. 绑定锁生命周期</text>
+  <text x="218" y="367" font-size="9.6" font-weight="400" fill="#92400e" text-anchor="start">Mock 跳过 Allocate；人工标 success 并删 mutex.lock</text>
+  <text x="556" y="367" font-size="9.6" font-weight="400" fill="#166534" text-anchor="start">核查高并发创建/驱逐/异常退出后自动解锁与配额回收</text>
+
+  <!-- Row 3 -->
+  <line x1="24" y1="423" x2="936" y2="423" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="36" y="407" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">3. 运行时资源隔离</text>
+  <text x="218" y="407" font-size="9.6" font-weight="400" fill="#991b1b" text-anchor="start">busybox 占位无 CUDA 载荷，算力与显存限制均未执行</text>
+  <text x="556" y="407" font-size="9.6" font-weight="400" fill="#166534" text-anchor="start">真实 CUDA 压测 HAMi-core 显存上限、OOM 与同卡邻居干扰</text>
+
+  <!-- Row 4 -->
+  <text x="36" y="447" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">4. 节点与共享管理域</text>
+  <text x="218" y="447" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">kindest/node 非官方路线；共享管理集群与 kamaji-etcd</text>
+  <text x="556" y="447" font-size="9.6" font-weight="400" fill="#166534" text-anchor="start">改用实机 kubeadm / Cluster API；压测 etcd 容量、HA 与升级</text>
+
+  <!-- Vertical Table Rules -->
+  <line x1="206" y1="303" x2="206" y2="467" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="544" y1="303" x2="544" y2="467" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Bottom Banner -->
+  <rect x="24" y="476" width="912" height="28" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="494" font-size="10.1" font-weight="600" fill="#1e3a8a" text-anchor="start">工程结论：Mock 能在零 GPU 成本下先排除 Webhook、隧道与配额接线故障；生产隔离与性能必须进入真实驱动闭环验证</text>
+
+  <text x="24" y="522" font-size="9.8" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图（非原图）· 依据 Anish Bista CNCF 博文 (2026-10-23) 测试记录与模拟边界声明整理</text>
+</svg>

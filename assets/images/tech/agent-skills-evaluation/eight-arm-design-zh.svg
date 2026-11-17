@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect x="0" y="0" width="960" height="540" fill="#ffffff"/>
+<text x="36" y="37" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="19.5" font-weight="700" fill="#212529">Level 11 预注册八臂对照矩阵：拆解 Hook、词序、长度与失败提炼</text>
+<text x="36" y="59" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" fill="#526779">20 道截止日期后的 Python 真仓任务（12 Bug 修复 + 8 新特性，金补丁 &lt;150 行），约 600 次受控运行与事前判读规则</text>
+<line x1="36" y1="71" x2="924" y2="71" stroke="#d8e4f0" stroke-width="1"/>
+<rect x="36" y="86" width="434" height="72" rx="7" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="46" y="96" width="36" height="22" rx="4" fill="#3676b8"/>
+<text x="64" y="111" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff">P0</text>
+<text x="90" y="112" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">无 Skill 基线（3 次/题）</text>
+<text x="48" y="138" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">暴露模型原本真正会踩的坑；它是编写 P4 真实失败规则的数据源</text>
+<rect x="36" y="168" width="434" height="72" rx="7" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="46" y="178" width="36" height="22" rx="4" fill="#3676b8"/>
+<text x="64" y="193" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff">P1</text>
+<text x="90" y="194" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">完整安装版（正文 + 492 词 Hook）</text>
+<text x="48" y="220" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">保留作者全部 1,475 词 TDD 正文、1,310 词附文与会话 Hook（3 次/题）</text>
+<rect x="36" y="250" width="434" height="72" rx="7" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="46" y="260" width="36" height="22" rx="4" fill="#3676b8"/>
+<text x="64" y="275" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff">P2</text>
+<text x="90" y="276" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">仅 Skill 正文（去 Hook）</text>
+<text x="48" y="302" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">P1 − P2 直接量化会话 Hook 带来的额外开销与强制加载收益</text>
+<rect x="36" y="332" width="434" height="72" rx="7" fill="#f8fbfe" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="46" y="342" width="36" height="22" rx="4" fill="#245c96"/>
+<text x="64" y="357" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff">P3</text>
+<text x="90" y="358" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">先写代码后补测试（反转对照）</text>
+<text x="48" y="384" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">事后补测再回旧代码验红；P1 vs P3 检验核心究竟是先测还是验红</text>
+<rect x="490" y="86" width="434" height="72" rx="7" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="500" y="96" width="36" height="22" rx="4" fill="#3676b8"/>
+<text x="518" y="111" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff">P4</text>
+<text x="544" y="112" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">纯由 P0 失败提炼的新 Skill</text>
+<text x="502" y="138" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">只针对基线高频报错写规则，避免先验教条（如先假定模型不会 Assert）</text>
+<rect x="490" y="168" width="434" height="72" rx="7" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="500" y="178" width="36" height="22" rx="4" fill="#3676b8"/>
+<text x="518" y="193" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff">P5</text>
+<text x="544" y="194" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">单点消融精简后的 P4（10 题子集）</text>
+<text x="502" y="220" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">仅保留删去后会降低 Critical 测试比例的规则，删掉所有无效冗余条款</text>
+<rect x="490" y="250" width="434" height="72" rx="7" fill="#f8fbfe" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="500" y="260" width="36" height="22" rx="4" fill="#3676b8"/>
+<text x="518" y="275" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff">P6</text>
+<text x="544" y="276" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">按需命令行打印（零常驻列表）</text>
+<text x="502" y="302" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">提示里告知查看命令而不占常驻 listing；P6 vs P5 量化列表 Token 税</text>
+<rect x="490" y="332" width="434" height="72" rx="7" fill="#f8fbfe" stroke="#b8cfe5" stroke-width="1"/>
+<rect x="500" y="342" width="36" height="22" rx="4" fill="#245c96"/>
+<text x="518" y="357" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff">P7</text>
+<text x="544" y="358" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">等 Token 无关文本对照（对比 P2）</text>
+<text x="502" y="384" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">塞入等价长度的合理无关文本；若 P1 打不过 P7，则收益仅来自加长上下文</text>
+<rect x="36" y="422" width="888" height="72" rx="8" fill="#eef7f1" stroke="#9bc6ab" stroke-width="1.2"/>
+<text x="50" y="447" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1f5f3b">事前锁定判读准则（先写判据，防止跑完数字后再强行解释）：</text>
+<text x="50" y="472" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#212529">① 低遵循度 → 只怪文本；② P1 胜 P0 但不胜 P7 → 收益是 Token 长度；③ P1 = P3 → 丢掉“先写测试”教条；④ 同时跨第 2 个更便宜模型复跑并设总额上限</text>
+<text x="36" y="520" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#596775">阅读整理配图 · 整理自原文 Level 11 预注册实验方案（原型蓝图，原文未披露该 8 臂实测跑分）</text>
+</svg>

@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-06-arxiv-2611.05590",
+  "paper_id": "arxiv-2611.05590",
+  "anchor_id": "paper-arxiv-2611.05590",
+  "digest_date": "2026-11-06",
+  "updated_at_utc": "2026-11-17T06:43:00Z",
+  "assistant_translated": true,
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice",
+  "verification_status": "VERIFIED",
+  "bilingual_scope": {
+    "zh_staged_section": "/root/.gemini/antigravity-cli/brain/2df5a1a2-2627-449f-b41f-f8ec85d67f05/scratch/d2c1-sections/2611.05590/section_zh.md",
+    "en_staged_section": "/root/.gemini/antigravity-cli/brain/2df5a1a2-2627-449f-b41f-f8ec85d67f05/scratch/d2c1-sections/2611.05590/section_en.md",
+    "zh_target": "_digest/zh/daily-2026-11-06.md",
+    "en_target": "_digest/en/daily-2026-11-06.md",
+    "target_heading_prefix": "<h2 class=\"daily-paper-title\" id=\"paper-arxiv-2611.05590\">11 · ",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English close reading derived directly from primary arXiv:2611.05590v1.",
+    "adjacent_dependency_isolation": "Staged in subagent scratch directory; _digest/{zh,en}/daily-2026-11-06.md and all sibling entries untouched."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.05590",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "Only v1 present in saved arXiv metadata (submitted Tue, 3 Nov 2026 20:20:57 UTC); no v2 revision or withdrawal notice.",
+    "title": "Verified but Vacuous: Three Failure Surfaces of LLM-Driven Verified Code Generation",
+    "authors": [
+      "Aditya Vempaty",
+      "Himaneesh Sompalle",
+      "Manan Tayal",
+      "Mowafak Allaham",
+      "Prasenjit Dey",
+      "Ashish Jagmohan",
+      "Ravi Kokku"
+    ],
+    "affiliation_note": "No explicit affiliation line is printed in the v1 author header; Reference [6] cites Emergence AI for MBPP-Rust ('Released alongside this paper's evaluation artifacts').",
+    "categories": [
+      "cs.AI"
+    ],
+    "submitted_utc": "Tue, 3 Nov 2026 20:20:57 UTC",
+    "submitted_date": "2026-11-03",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.05590",
+      "abs_v1": "https://arxiv.org/abs/2611.05590v1",
+      "pdf": "https://arxiv.org/pdf/2611.05590",
+      "html_v1": "https://arxiv.org/html/2611.05590v1",
+      "doi": "https://doi.org/10.48550/arXiv.2611.05590",
+      "public_code_repo": null
+    },
+    "staged_source_artifacts": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c1-sources/2611.05590.abs.html",
+        "sha256": "d5d1bde34efbcb00791de48d11bcfa8f20894326d250f32f7379599b5a1419d0",
+        "bytes": 42900
+      },
+      "full_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c1-sources/2611.05590.html",
+        "sha256": "bad4bfbb46bda2571b027045b9b1b0734fd3e395911785bbb40483f56414c9af",
+        "bytes": 196789
+      },
+      "extracted_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c1-sources/2611.05590.txt",
+        "sha256": "81e9b08e5d8e8f73030a058d2808e2615df26ef9809be5050d918905fb9eaef0",
+        "bytes": 54314
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "shared_backend": "Anthropic Claude Opus 4.7 via Google Vertex AI (default settings; Vertex rejects temperature parameter for Opus 4.7)",
+    "verifier_stack": "Dafny 4.10 with Z3 4.13",
+    "samples_per_problem_primary": 10,
+    "ensures_binding_gate_runtime_ms_per_component": "<10",
+    "vcg_total_shipped_verified_components": 18008,
+    "vcg_ensures_binding_gate_pass_pct": 100.0,
+    "vcg_prelaunch_internal_audit_python_failure_pct": "~27",
+    "benchmarks": {
+      "HumanEval_HumanEvalPlus": {
+        "problems": 164,
+        "samples_per_problem": 10,
+        "attempted_samples": 1640,
+        "target": "Python"
+      },
+      "LeetCodeDataset": {
+        "problems": 228,
+        "samples_per_problem": 10,
+        "attempted_samples": 2280,
+        "target": "Python"
+      },
+      "LiveCodeBench_v6": {
+        "problems": 1055,
+        "stdin_stdout_wrapped": 611,
+        "function_style_unwrapped": 444,
+        "samples_per_problem": 10,
+        "attempted_samples": 10550,
+        "target": "Python"
+      },
+      "MBPP_Rust": {
+        "problems": 208,
+        "task_id_range": "11-510",
+        "samples_per_problem": 10,
+        "attempted_samples": 2080,
+        "target": "Rust"
+      },
+      "VeriContest_LC_slice": {
+        "problems": 687,
+        "samples_per_problem": 10,
+        "attempted_samples": 6870,
+        "target": "Rust"
+      }
+    },
+    "li_at_opus_table3_and_app_b": {
+      "HumanEval": {
+        "attempted": 1640,
+        "level1_accepted_count": 1625,
+        "level1_accepted_pct": 99.1,
+        "level2_any_ensures_pct": 5.3,
+        "no_ensures_pct": 94.7,
+        "unbound_ensures_pct": 3.4,
+        "level3_binding_gate_pct": 1.9,
+        "a_to_b_gap_ratio": "52x",
+        "base_pass_at_1_pct": 92.6,
+        "base_pass_at_10_pct": 97.0,
+        "base_passed_samples": 1519,
+        "plus_pass_at_1_pct": 77.4,
+        "plus_pass_at_10_pct": 84.8,
+        "plus_passed_samples": 1270
+      },
+      "LeetCodeDataset": {
+        "attempted": 2280,
+        "level1_accepted_count": 2217,
+        "level1_accepted_pct": 97.2,
+        "level2_any_ensures_pct": 9.6,
+        "no_ensures_pct": 90.4,
+        "level3_binding_gate_pct": 2.7,
+        "a_to_b_gap_ratio": "36x",
+        "shimming_exclusions": 9,
+        "test_evaluated_samples": 2208,
+        "pass_at_1_pct": 63.4,
+        "pass_at_10_pct": 79.4,
+        "passed_samples": 1445
+      },
+      "LiveCodeBench_v6": {
+        "attempted": 10550,
+        "level1_accepted_count": 9731,
+        "level1_accepted_pct": 92.2,
+        "level2_shipped_over_accepted_pct": 10.61,
+        "level2_including_exclusions_pct": 10.87,
+        "level2_including_exclusions_count": 1058,
+        "level2_over_test_evaluated_pct": 10.92,
+        "level2_over_test_evaluated_count": 1032,
+        "no_ensures_accepted_pct": 89.4,
+        "no_ensures_test_evaluated_pct": 89.1,
+        "level3_binding_gate_pct": 2.3,
+        "a_to_b_gap_ratio": "40x",
+        "compile_exclusions": 209,
+        "shimming_exclusions": 74,
+        "total_exclusions": 283,
+        "test_evaluated_samples": 9448,
+        "pass_at_1_pct": 55.2,
+        "pass_at_10_pct": 76.5,
+        "passed_samples": 5819
+      }
+    },
+    "vcg_rust_table5_and_post2exe": {
+      "MBPP_Rust": {
+        "total_attempts": 2080,
+        "fully_verified": 1080,
+        "b_to_c_fails": 124,
+        "b_to_c_conditional_failure_pct": 11.48,
+        "unconditional_failure_pct": 5.96
+      },
+      "VeriContest_LC": {
+        "total_attempts": 6870,
+        "fully_verified": 1545,
+        "fully_verified_of_attempts_pct": 22.49,
+        "b_to_c_fails": 229,
+        "b_to_c_conditional_failure_pct": 14.82,
+        "unconditional_failure_pct": 3.33,
+        "verified_and_test_passing_samples": 1316,
+        "post2exe_end2end_pass_count": 535,
+        "post2exe_keep_rate_pct": 40.7,
+        "vcg_end2end_at_1_pct": 7.79,
+        "cited_external_gpt5_5_end2end_pct": 5.51,
+        "cited_external_single_shot_opus4_7_end2end_pct": 1.88,
+        "descriptive_diff_vs_gpt5_5_pp": "+2.3",
+        "descriptive_ratio_vs_single_shot_opus4_7": "4.14x"
+      }
+    },
+    "li_at_opus_table7_pass_rate_by_ensures_presence": {
+      "HumanEval_base": {
+        "with_ensures_pct": 80.2,
+        "with_ensures_n": 86,
+        "without_ensures_pct": 94.2,
+        "without_ensures_n": 1539,
+        "delta_pp": -14.0
+      },
+      "LeetCodeDataset": {
+        "with_ensures_pct": 59.6,
+        "with_ensures_n": 213,
+        "without_ensures_pct": 66.1,
+        "without_ensures_n": 1995,
+        "delta_pp": -6.5
+      },
+      "LiveCodeBench_v6": {
+        "with_ensures_pct": 53.2,
+        "with_ensures_n": 1032,
+        "without_ensures_pct": 62.6,
+        "without_ensures_n": 8416,
+        "delta_pp": -9.4
+      }
+    }
+  },
+  "explicit_limitations": [
+    "Single model family: all primary runs use Claude Opus 4.7 via Vertex AI; generalization to Sonnet 4.7, GPT-5.5, Gemini 3.1 Pro, or open-source models is untested.",
+    "Prompt-convention confounding: Li@Opus reproduces Li et al. (2025) Fig. 6 verbatim (bodyless method {:testEntry} plus runtime expect statements in Main()), which is not experimentally isolated from model capability or task difficulty.",
+    "Architectural scope and blind spots of the ensures-binding gate: built for separated Spec.dfy / Impl.dfy pipelines; rejects meaningful inline postconditions without external symbol refs, and misses vacuous named tautologies like predicate P(x: int) { true } or {:axiom}/{:verify false} bypasses.",
+    "Pre-launch VCG internal draft audit (~27% gate rejection across three Python benchmarks) is a reported structural rate requiring original per-component logs and sampling denominators for independent validation.",
+    "Rust hidden-test B->C proxy (11.48% MBPP-Rust, 14.82% VeriContest LC) relies on trusted-toolchain and correct-oracle assumptions without per-failure disaggregation across transpiler, wrapper, implementation, or benchmark-oracle errors; VeriContest CF slice is left to future work.",
+    "External VeriContest LC contrasts (7.79% VCG at 10 samples/prob vs. 5.51% GPT-5.5 and 1.88% single-shot Opus 4.7) are descriptive only due to unmatched sampling, repair, and harness budgets; Table 7 pass-rate gaps (-6.5 to -14.0 pp) are observational among self-selected outputs and non-causal."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "new_svgs": {
+      "vacuous-three-failure-surfaces-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-06/vacuous-three-failure-surfaces-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-06/vacuous-three-failure-surfaces-zh.svg",
+        "bytes": null,
+        "sha256": "a8357587a5b851750dcb42bccdfd2d7eafadc862bb35ff43b5236f3e760fc282"
+      },
+      "vacuous-three-failure-surfaces-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-06/vacuous-three-failure-surfaces-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-06/vacuous-three-failure-surfaces-en.svg",
+        "bytes": null,
+        "sha256": "642d28742856cfd9e0c6fd0db8cfc4e2a34c429d696319a0de27fc35067a253d"
+      },
+      "vacuous-dafny-rust-audit-eval-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-06/vacuous-dafny-rust-audit-eval-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-06/vacuous-dafny-rust-audit-eval-zh.svg",
+        "bytes": null,
+        "sha256": "785c96256d9ab9621abd7bdabde102d7719baa3dc06aaa008d9049c9a809c5e8"
+      },
+      "vacuous-dafny-rust-audit-eval-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-06/vacuous-dafny-rust-audit-eval-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-06/vacuous-dafny-rust-audit-eval-en.svg",
+        "bytes": null,
+        "sha256": "44b8c1b59cead99d22b184a364bf9f4429fff37dda0402c49a85d3f4961eadf0"
+      }
+    },
+    "preserved_sibling_assets_referenced_in_digest": [
+      "05391.png",
+      "05903.png",
+      "05991.png",
+      "06057.png",
+      "06099.png",
+      "06389.png",
+      "06563.png",
+      "06727.png",
+      "06876.png"
+    ]
+  },
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-06.md",
+      "file_bytes_before": 45450,
+      "file_sha256_before": "07d868fc4c9354674b6c9c7f8b47c69fe139cc7c19974ec1d4fd18ad75706986",
+      "file_bytes_after": 68346,
+      "file_sha256_after": "4fe26a908d20b117e5bbaba312d44054d5042993f8223647a6838f1e9c6b2e25",
+      "old_section_bytes": 1187,
+      "old_section_sha256": "bcc2c1150448d51a62393a3968f2ce4a8fee290a29e3a3234d2a35db15960a1f",
+      "new_section_bytes": 24083,
+      "new_section_sha256": "e028d519c7d432e0aac6df08cc60794a32cd656a3b020c4c6084c80577dd7ee2"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-06.md",
+      "file_bytes_before": 48957,
+      "file_sha256_before": "044a186a6e541c56f1d326c8724ca5d89884fb4a1ab46de21d4d0a626af49193",
+      "file_bytes_after": 69543,
+      "file_sha256_after": "9bd6fbb08f410cc1b2220eb49abbcfc92f13a978524a1ac33d88573b3bdd536d",
+      "old_section_bytes": 1301,
+      "old_section_sha256": "46c6e4a3b07a24de04806144962d23bca193e313d5f699ec4ee8bc6eb28a6476",
+      "new_section_bytes": 21887,
+      "new_section_sha256": "1de62b086f1de377f984e270320e30b095433148119a8f4d96e7b51791faf8db"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T06:47:26.926281+00:00",
+    "preview_release": "20261117-144636-3d0f9707",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

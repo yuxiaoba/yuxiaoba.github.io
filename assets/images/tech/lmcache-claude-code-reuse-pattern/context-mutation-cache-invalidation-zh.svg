@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', sans-serif" style="background:#ffffff;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">上下文变异、缓存失效触发点与非前缀复用边界</text>
+  <text x="24" y="56" font-size="11" font-weight="400" fill="#475569" text-anchor="start">将 Claude Code 轨迹与前缀缓存定价（5 分钟 vs 1 小时 TTL）及因果注意力下的非前缀复用瓶颈逐一对应</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Zone A: Left - Prefix Anatomy & Economics -->
+  <rect x="24" y="76" width="446" height="114" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="36" y="96" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="start">A1 · 前缀缓存收益（Anthropic cache_control / OpenAI &gt;1024）</text>
+  <rect x="36" y="106" width="142" height="24" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="107" y="122" font-size="9.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">系统 + Git (20K+)</text>
+  <rect x="182" y="106" width="84" height="24" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="224" y="122" font-size="9.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">18 工具规范</text>
+  <rect x="270" y="106" width="96" height="24" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="318" y="122" font-size="9.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">计划与历史</text>
+  <rect x="372" y="106" width="86" height="24" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="415" y="122" font-size="9.5" font-weight="700" fill="#92400e" text-anchor="middle">Δ 新追加 (8%)</text>
+  <text x="36" y="150" font-size="9.3" font-weight="600" fill="#1e40af" text-anchor="start">按 Sonnet 4.5 估算：2M 原价 $6.00 → 92% 复用 $1.152（省 $4.85 / 81%）</text>
+  <text x="36" y="170" font-size="9.1" font-weight="400" fill="#475569" text-anchor="start">前提假设：1.84M 重叠 100% 命中 0.1× 读价，0.16M 增量按 1.25× 5m 写价计</text>
+
+  <!-- Zone A: Right - 4 Invalidation Triggers -->
+  <rect x="482" y="76" width="454" height="114" rx="8" fill="#ffffff" stroke="#fca5a5" stroke-width="1.2"/>
+  <text x="494" y="96" font-size="10.8" font-weight="700" fill="#991b1b" text-anchor="start">A2 · 四类真实缓存失效与未命中触发点</text>
+  <text x="494" y="117" font-size="9.3" font-weight="400" fill="#1e293b" text-anchor="start">① 前部变异：若执行期重刷前缀内 Git 状态，token 0 起哈希即失效</text>
+  <text x="494" y="136" font-size="9.3" font-weight="400" fill="#1e293b" text-anchor="start">② 5m TTL 风险：全任务耗时 13 分钟，探索或审批超 5m 即退回写入价</text>
+  <text x="494" y="155" font-size="9.3" font-weight="400" fill="#1e293b" text-anchor="start">③ 角色切换分叉：主控 / Explore / Plan 提示互异，无法共用前缀 KV</text>
+  <text x="494" y="174" font-size="9.3" font-weight="400" fill="#1e293b" text-anchor="start">④ 多副本打散：3× Explore 与并行工具若无粘性或 LMCache 易未命中</text>
+
+  <!-- Zone B: Non-Prefix Limits (Blog Section 5) -->
+  <rect x="24" y="200" width="446" height="174" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="36" y="210" width="152" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="112" y="224" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">非前缀场景 1 · 工具子集</text>
+  <text x="196" y="224" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">10/18 相同工具定义难直接复用</text>
+
+  <rect x="36" y="240" width="158" height="24" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="115" y="256" font-size="9.3" font-weight="600" fill="#1e3a8a" text-anchor="middle">主 Agent 系统提示</text>
+  <rect x="198" y="240" width="256" height="24" rx="4" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="326" y="256" font-size="9.3" font-weight="600" fill="#1d4ed8" text-anchor="middle">完整 18 个工具定义 JSON</text>
+
+  <rect x="36" y="272" width="158" height="24" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="1" stroke-dasharray="4 2"/>
+  <text x="115" y="288" font-size="9.3" font-weight="700" fill="#991b1b" text-anchor="middle">Explore/Plan 提示（不一致）</text>
+  <rect x="198" y="272" width="174" height="24" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="285" y="288" font-size="9.3" font-weight="600" fill="#92400e" text-anchor="middle">10/18 子集（后缀相同却失配）</text>
+
+  <text x="36" y="318" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">• 传统前缀哈希要求从 token 0 完全逐字一致，前导提示一变即失效</text>
+  <text x="36" y="338" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">• 工程对策：将共享系统规范与工具子集前置，把角色专有指令后置</text>
+  <text x="36" y="358" font-size="9.2" font-weight="400" fill="#64748b" text-anchor="start">（否则即便子集定义完全相同，在主/子 Agent 间仍无法走标准 prefix cache）</text>
+
+  <rect x="482" y="200" width="454" height="174" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="494" y="210" width="152" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="570" y="224" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">非前缀场景 2 · 重复文件</text>
+  <text x="654" y="224" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">跨分支重读同一大文件</text>
+
+  <rect x="494" y="240" width="174" height="24" rx="4" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="581" y="256" font-size="9.3" font-weight="600" fill="#1e3a8a" text-anchor="middle">探索路径 A 前文历史</text>
+  <rect x="674" y="240" width="246" height="24" rx="4" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="797" y="256" font-size="9.3" font-weight="700" fill="#166534" text-anchor="middle">Read: utils.py / json.py</text>
+
+  <rect x="494" y="272" width="174" height="24" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="1" stroke-dasharray="4 2"/>
+  <text x="581" y="288" font-size="9.3" font-weight="700" fill="#991b1b" text-anchor="middle">规划/执行不同前文 B</text>
+  <rect x="674" y="272" width="246" height="24" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="797" y="288" font-size="9.3" font-weight="700" fill="#92400e" text-anchor="middle">同文件内容（交叉注意力已变）</text>
+
+  <text x="494" y="318" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">• 标准因果注意力下，KV(文件) 依赖全部前文，不同前缀后不能直接拼接</text>
+  <text x="494" y="338" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">• 对应前沿：CacheBlend 等非前缀方案仅对边界少量 token 选择性重算</text>
+  <text x="494" y="358" font-size="9.2" font-weight="400" fill="#64748b" text-anchor="start">（博文将其列为超越前缀缓存的后续研究方向，未报告本案例实测值）</text>
+
+  <!-- Zone C: 3 Engineering Guardrails -->
+  <rect x="24" y="384" width="912" height="118" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="36" y="405" font-size="11" font-weight="700" fill="#0f172a" text-anchor="start">面向 Agent Harness 与推理服务层的三项工程设计判据</text>
+
+  <rect x="34" y="416" width="290" height="76" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="44" y="434" font-size="10.2" font-weight="700" fill="#1d4ed8" text-anchor="start">1. 规范前缀字节序与断点</text>
+  <text x="44" y="454" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">不可变系统指令与固定排序工具表放最前，</text>
+  <text x="44" y="472" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">动态工作区 diff、时间戳一律后置到尾部</text>
+
+  <rect x="335" y="416" width="290" height="76" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="345" y="434" font-size="10.2" font-weight="700" fill="#1d4ed8" text-anchor="start">2. 匹配 TTL 与跨节点池化</text>
+  <text x="345" y="454" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">长子任务或人工审批间隔超过 5 分钟时评估</text>
+  <text x="345" y="472" font-size="9.3" font-weight="400" fill="#334155" text-anchor="start">1h TTL；多节点下用粘性路由或 LMCache 池</text>
+
+  <rect x="636" y="416" width="290" height="76" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+  <text x="646" y="434" font-size="10.2" font-weight="700" fill="#166534" text-anchor="start">3. 用真实缓存用量字段验收</text>
+  <text x="646" y="454" font-size="9.3" font-weight="400" fill="#14532d" text-anchor="start">核对 API 返回 cache_read / cache_creation</text>
+  <text x="646" y="472" font-size="9.3" font-weight="400" fill="#14532d" text-anchor="start">与实测 TTFT，不拿文本重叠率替代命中率</text>
+
+  <text x="24" y="522" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 结合 LMCache 原文定价规则、第 5 节非前缀讨论与因果注意力 KV 机制整理（非原文原图）</text>
+</svg>

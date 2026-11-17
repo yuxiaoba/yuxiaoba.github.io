@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Lato', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17.0" font-weight="700" fill="#0f172a" text-anchor="start">GenDB-V: Deterministic Targets, Joint Synthesis, and Three-Layer Verification</text>
+  <text x="24" y="53" font-size="10.3" font-weight="400" fill="#475569" text-anchor="start">Based on arXiv:2611.02779v1 (§2–§5): Keep specs &amp; verifier outside agent control; trust only SQLSpec, Verus/Z3, and rustc</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="20" y="73" width="266" height="405" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="73" width="266" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="20" y="93" width="266" height="8" fill="#1e3a8a"/>
+  <text x="32" y="91.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">1. Deterministic Targets (Read-Only)</text>
+  <rect x="29" y="110" width="248" height="86" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="39" y="128" font-size="10.3" font-weight="700" fill="#1e3a8a" text-anchor="start">Input Parsing &amp; Typed AST</text>
+  <text x="39" y="146" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• SQL template / subset · Schema Σ · Keys</text>
+  <text x="39" y="163" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• SQLGlot resolves names/types (PG 18 rules)</text>
+  <text x="39" y="180" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• Deterministic 1-to-1 AST → SQLSpec tree Q</text>
+  <line x1="153" y1="196" x2="153" y2="212" stroke="#1d4ed8" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+  <rect x="29" y="214" width="248" height="118" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.0"/>
+  <text x="39" y="232" font-size="10.3" font-weight="700" fill="#1e3a8a" text-anchor="start">SQLSpec Formal Semantics (Verus)</text>
+  <text x="39" y="250" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• Models NULL, 3VL, duplicates &amp; SqlError(e)</text>
+  <text x="39" y="267" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• Outcome set ⟦Q⟧(D) allows tie orders/limits</text>
+  <text x="39" y="284" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• Fixed-width bounds permit explicit Capacity</text>
+  <text x="39" y="301" font-size="9.2" font-weight="400" fill="#334155" text-anchor="start">• Ships verified Rust ref interpreter (v0)</text>
+  <text x="39" y="318" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">• Rejects: window funcs, recursive queries</text>
+  <line x1="153" y1="332" x2="153" y2="348" stroke="#1d4ed8" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+  <rect x="29" y="350" width="248" height="118" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.4"/>
+  <text x="39" y="368" font-size="10.3" font-weight="700" fill="#1d4ed8" text-anchor="start">Fixed Targets (Eq. 2–5, Immutable)</text>
+  <text x="39" y="387" font-size="9.1" font-weight="400" fill="#0f172a" text-anchor="start" font-family="'Noto Sans Mono CJK SC', ui-monospace, SFMono-Regular, Menlo, monospace">Build: Valid_Σ(D) ⇒ Rep(B(D), D)</text>
+  <text x="39" y="405" font-size="9.1" font-weight="400" fill="#0f172a" text-anchor="start" font-family="'Noto Sans Mono CJK SC', ui-monospace, SFMono-Regular, Menlo, monospace">Lossless: Rep(S,D1)∧Rep(S,D2)⇒D1=D2</text>
+  <text x="39" y="423" font-size="9.1" font-weight="400" fill="#0f172a" text-anchor="start" font-family="'Noto Sans Mono CJK SC', ui-monospace, SFMono-Regular, Menlo, monospace">Template: ∀p∈P, Allowed(D,Q_T(p),E_T)</text>
+  <text x="39" y="441" font-size="9.1" font-weight="400" fill="#0f172a" text-anchor="start" font-family="'Noto Sans Mono CJK SC', ui-monospace, SFMono-Regular, Menlo, monospace">Engine: ∀Q∈Q_Σ, Allowed(D, Q, E(S,Q))</text>
+  <text x="39" y="458" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">Leaves physical layout &amp; algorithm open</text>
+  <line x1="287" y1="275" x2="307" y2="275" stroke="#1d4ed8" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+  <rect x="309" y="73" width="312" height="405" rx="8" fill="#ffffff" stroke="#60a5fa" stroke-width="1.2" stroke-dasharray="5,3"/>
+  <rect x="309" y="73" width="312" height="28" rx="8" fill="#1d4ed8"/>
+  <rect x="309" y="93" width="312" height="8" fill="#1d4ed8"/>
+  <text x="321" y="91.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">2. Joint Agent Search (Untrusted, Perf-First)</text>
+  <rect x="318" y="110" width="294" height="108" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="328" y="128" font-size="10.1" font-weight="700" fill="#1e3a8a" text-anchor="start">Phase A: Performance-First Exploration (--no-verify)</text>
+  <text x="328" y="146" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Co-design: sort, zone maps, dict, single-table idx</text>
+  <text x="328" y="163" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Policy: 1 lossless copy; no mat. joins or cache</text>
+  <text x="328" y="180" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Differential test + profile to select fastest plan</text>
+  <text x="328" y="197" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">• Freeze design → Phase B (proof required to submit)</text>
+  <line x1="465" y1="218" x2="465" y2="234" stroke="#1d4ed8" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+  <rect x="318" y="236" width="294" height="232" rx="6" fill="#f8fafc" stroke="#93c5fd" stroke-width="1.0"/>
+  <text x="328" y="254" font-size="10.1" font-weight="700" fill="#1e3a8a" text-anchor="start">Phase B: Three-Layer Modular Proof Structure</text>
+  <rect x="326" y="263" width="278" height="58" rx="5" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="334" y="280" font-size="9.6" font-weight="700" fill="#1d4ed8" text-anchor="start">Layer 1 · Storage Reader Contracts</text>
+  <text x="334" y="297" font-size="9.0" font-weight="400" fill="#334155" text-anchor="start">requires Rep(S, D) → ensures physical slices</text>
+  <text x="334" y="312" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">decode D[t] rows/cols + expose layout invariants</text>
+  <rect x="326" y="327" width="278" height="66" rx="5" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="334" y="344" font-size="9.6" font-weight="700" fill="#1d4ed8" text-anchor="start">Layer 2 · Physical Loop Contracts &amp; Step Lemmas</text>
+  <text x="334" y="361" font-size="9.0" font-weight="400" fill="#334155" text-anchor="start">invariant ties scan state to prefix fn C(v,k,row)</text>
+  <text x="334" y="376" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">decreases proves termination; step lemma preserves</text>
+  <rect x="326" y="399" width="278" height="62" rx="5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="334" y="416" font-size="9.6" font-weight="700" fill="#1d4ed8" text-anchor="start">Layer 3 · Inductive Bridge Lemmas → SQLSpec</text>
+  <text x="334" y="433" font-size="9.0" font-weight="400" fill="#0f172a" text-anchor="start">Combines L1+L2 to match eval(D, ρ, q) on logical D</text>
+  <text x="334" y="448" font-size="9.0" font-weight="400" fill="#334155" text-anchor="start">Engine inducts by height; fused ops guard+fallback</text>
+  <line x1="622" y1="315" x2="673" y2="315" stroke="#1d4ed8" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+  <text x="648" y="305" font-size="8.4" font-weight="600" fill="#1d4ed8" text-anchor="middle">Submit</text>
+  <line x1="673" y1="175" x2="622" y2="175" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-slate)"/>
+  <text x="648" y="154" font-size="8.4" font-weight="600" fill="#475569" text-anchor="middle">Verifier</text>
+  <text x="648" y="166" font-size="8.4" font-weight="600" fill="#475569" text-anchor="middle">feedback</text>
+  <rect x="675" y="73" width="265" height="405" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="675" y="73" width="265" height="28" rx="8" fill="#0f172a"/>
+  <rect x="675" y="93" width="265" height="8" fill="#0f172a"/>
+  <text x="687" y="91.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">3. Isolated Verification &amp; Compile</text>
+  <rect x="684" y="110" width="247" height="138" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.4"/>
+  <text x="694" y="128" font-size="10.3" font-weight="700" fill="#1d4ed8" text-anchor="start">Isolated Verus + Z3 Pipeline</text>
+  <text x="694" y="147" font-size="9.1" font-weight="400" fill="#0f172a" text-anchor="start">• Read-only entry checks p∈P, Q∈Q_Σ</text>
+  <text x="694" y="164" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Rejects unsafe pointers &amp; external FFI</text>
+  <text x="694" y="181" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Disables assume &amp; admit proof bypasses</text>
+  <text x="694" y="198" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Verus compiles safe Rust+specs to VCs</text>
+  <text x="694" y="215" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Z3 SMT checks full targets Eq. 2–5</text>
+  <text x="694" y="232" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">• Rejects incomplete proofs; returns log</text>
+  <line x1="807" y1="248" x2="807" y2="264" stroke="#1d4ed8" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+  <rect x="684" y="266" width="247" height="98" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.0"/>
+  <text x="694" y="284" font-size="10.3" font-weight="700" fill="#1e3a8a" text-anchor="start">Single Verify-and-Compile Pass</text>
+  <text x="694" y="303" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Once verified, rustc compiles source</text>
+  <text x="694" y="320" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Erases all spec/invariant/proof code</text>
+  <text x="694" y="337" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Emits native shared library (.so)</text>
+  <text x="694" y="354" font-size="9.1" font-weight="700" fill="#1d4ed8" text-anchor="start">• Zero runtime proof-checking cost</text>
+  <line x1="807" y1="364" x2="807" y2="380" stroke="#1d4ed8" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+  <rect x="684" y="382" width="247" height="86" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="694" y="400" font-size="10.3" font-weight="700" fill="#1e3a8a" text-anchor="start">Runtime Verified Guarantees</text>
+  <text x="694" y="419" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Semantics: Eq. 2–5 over valid domain</text>
+  <text x="694" y="436" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Safety: memory, bounds, no silent wrap</text>
+  <text x="694" y="453" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Parallel: race-free fork-join + halts</text>
+  <rect x="20" y="488" width="920" height="36" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.1"/>
+  <text x="32" y="503" font-size="9.4" fill="#0f172a"><tspan font-weight="700" fill="#1e3a8a">Trusted Base (TCB):</tspan> Trusts SQLSpec, SQLGlot-to-SQLSpec translator, Verus, Z3, rustc, OS/hardware, and Valid_Σ(D) on imported data;</text>
+  <text x="32" y="517" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">zero trust in any agent-generated code, Rep, contracts, or proofs (all checked in isolation); termination assumes memory &amp; non-starvation.</text>
+</svg>

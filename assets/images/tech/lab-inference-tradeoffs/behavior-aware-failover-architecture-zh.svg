@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="37" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">行为感知路由与双层验证架构：让模型切换成为受控决策</text>
+  <text x="24" y="57" font-size="11.2" font-weight="400" fill="#475569" text-anchor="start">把「仅改目的地的可达性回退」升级为「任务意图抽象 + 每模型专属提示与验证 + 难例门禁 + 故障演练」</text>
+  <line x1="24" y1="67" x2="936" y2="67" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="76" width="446" height="82" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <rect x="34" y="84" width="186" height="20" rx="5" fill="#b45309"/>
+  <text x="127.0" y="97.8" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="middle">仅保可达性 · 标准回退</text>
+  <text x="228" y="98" font-size="10.8" font-weight="600" fill="#78350f" text-anchor="start">路由器只换 URL / 模型名，提示词原样重发</text>
+  <text x="34" y="122" font-size="10.0" font-weight="400" fill="#92400e" text-anchor="start">• 问题：为 GPT 调优的提示在 Claude 等备选上可能改变格式、工具或升级判断</text>
+  <text x="34" y="142" font-size="10.0" font-weight="400" fill="#92400e" text-anchor="start">• 后果：HTTP 200 与延迟均恢复绿色，值班告警关闭，业务规则却静默破坏</text>
+  <rect x="490" y="76" width="446" height="82" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="500" y="84" width="186" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="593.0" y="97.8" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="middle">行为感知路由 · 受控切换</text>
+  <text x="694" y="98" font-size="10.8" font-weight="600" fill="#1e3a8a" text-anchor="start">每次路由同时绑定策略、提示词与校验规则</text>
+  <text x="500" y="122" font-size="10.0" font-weight="400" fill="#1e40af" text-anchor="start">• 原则：应用只命名任务意图；下层为当前目标模型匹配提示、参数与校验器</text>
+  <text x="500" y="142" font-size="10.0" font-weight="400" fill="#1e40af" text-anchor="start">• 口径：用「按契约完成的合格工作量」衡量可用性，而非成功 API 状态码计数</text>
+  <rect x="24" y="170" width="213" height="192" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="170" width="213" height="30" rx="8" fill="#1e3a8a"/>
+  <rect x="24" y="190" width="213" height="10" fill="#1e3a8a"/>
+  <text x="130.5" y="190" font-size="11.4" font-weight="700" fill="#ffffff" text-anchor="middle">1. 任务意图与策略表</text>
+  <text x="36" y="220" font-size="10.1" font-weight="600" fill="#0f172a" text-anchor="start">声明任务名称与期限</text>
+  <text x="36" y="244" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">区分摘要 / 工具 / 风险判断</text>
+  <text x="36" y="268" font-size="10.1" font-weight="600" fill="#1d4ed8" text-anchor="start">分别写明两种运行策略：</text>
+  <text x="36" y="292" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">• 压力期 (LB / AB / LA)</text>
+  <text x="36" y="316" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">• 常态期 (延迟/成本 vs B)</text>
+  <text x="36" y="340" font-size="10.1" font-weight="600" fill="#0f172a" text-anchor="start">禁止沿用全局默认回退</text>
+  <line x1="239" y1="266" x2="254" y2="266" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="257" y="170" width="213" height="192" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="257" y="170" width="213" height="30" rx="8" fill="#1e3a8a"/>
+  <rect x="257" y="190" width="213" height="10" fill="#1e3a8a"/>
+  <text x="363.5" y="190" font-size="11.4" font-weight="700" fill="#ffffff" text-anchor="middle">2. LAB 路由状态机</text>
+  <text x="269" y="220" font-size="10.1" font-weight="600" fill="#0f172a" text-anchor="start">按工作负载状态选路</text>
+  <text x="269" y="244" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">LB：限时直连，超时熔断</text>
+  <text x="269" y="268" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">AB：排队/重试含过期控制</text>
+  <text x="269" y="292" font-size="10.1" font-weight="600" fill="#1d4ed8" text-anchor="start">LA：只进已过审候选池</text>
+  <text x="269" y="316" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">记录 (厂商, 模型, 时段)</text>
+  <text x="269" y="340" font-size="10.1" font-weight="400" fill="#475569" text-anchor="start">无合格备选时显式降级</text>
+  <line x1="472" y1="266" x2="487" y2="266" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="490" y="170" width="213" height="192" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="490" y="170" width="213" height="30" rx="8" fill="#1e3a8a"/>
+  <rect x="490" y="190" width="213" height="10" fill="#1e3a8a"/>
+  <text x="596.5" y="190" font-size="11.4" font-weight="700" fill="#ffffff" text-anchor="middle">3. 模型专属适配器</text>
+  <text x="502" y="220" font-size="10.1" font-weight="600" fill="#0f172a" text-anchor="start">按目标模型注入执行契约</text>
+  <text x="502" y="244" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">切换专属提示词与参数</text>
+  <text x="502" y="268" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">锁定精确版本，不用 latest</text>
+  <text x="502" y="292" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">对齐服务精度与上下文上限</text>
+  <text x="502" y="316" font-size="10.1" font-weight="600" fill="#1d4ed8" text-anchor="start">生成绑定测试哈希的元组</text>
+  <text x="502" y="340" font-size="10.1" font-weight="400" fill="#475569" text-anchor="start">任何字段变更即失效重测</text>
+  <line x1="705" y1="266" x2="720" y2="266" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="723" y="170" width="213" height="192" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="723" y="170" width="213" height="30" rx="8" fill="#1e3a8a"/>
+  <rect x="723" y="190" width="213" height="10" fill="#1e3a8a"/>
+  <text x="829.5" y="190" font-size="11.4" font-weight="700" fill="#ffffff" text-anchor="middle">4. 在线不变量与升级门控</text>
+  <text x="735" y="220" font-size="10.1" font-weight="600" fill="#0f172a" text-anchor="start">校验响应是否满足规则</text>
+  <text x="735" y="244" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">在线检查：Schema/工具字段</text>
+  <text x="735" y="268" font-size="10.1" font-weight="600" fill="#b45309" text-anchor="start">边界区分（延伸推导）：</text>
+  <text x="735" y="292" font-size="10.1" font-weight="400" fill="#92400e" text-anchor="start">JSON 合法 ≠ 审批授权正确</text>
+  <text x="735" y="316" font-size="10.1" font-weight="600" fill="#1d4ed8" text-anchor="start">高风险/模糊结果转人工升级</text>
+  <text x="735" y="340" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">按规则产出计入可用性</text>
+  <line x1="305" y1="388" x2="305" y2="365" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow-muted)"/>
+  <line x1="655" y1="388" x2="655" y2="365" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow-muted)"/>
+  <text x="480" y="379" font-size="9.8" font-weight="700" fill="#1e3a8a" text-anchor="middle">未达标模型禁止接管该工作负载流量  |  变更触发重测</text>
+  <rect x="24" y="388" width="912" height="114" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="34" y="396" width="438" height="98" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="46" y="415" font-size="10.9" font-weight="700" fill="#1e3a8a" text-anchor="start">上线前固定难例门禁（备选路径与降本小模型路径一视同仁）</text>
+  <text x="46" y="436" font-size="10.0" font-weight="400" fill="#1e293b" text-anchor="start">• 5 类必测难例：模糊输入 · 工具调用 · 拒答边界 · 结构格式 · 人工升级触发</text>
+  <text x="46" y="456" font-size="10.0" font-weight="400" fill="#1e293b" text-anchor="start">• 双维度独立打分：行为忠实度 (Fidelity) 与任务正确性 (Correctness)</text>
+  <text x="46" y="476" font-size="9.9" font-weight="600" fill="#1d4ed8" text-anchor="start">• 准入规则：未通过门槛的模型版本/组合不得加入该工作负载路由池</text>
+  <rect x="488" y="396" width="438" height="98" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="500" y="415" font-size="10.9" font-weight="700" fill="#166534" text-anchor="start">故障注入演练与变更重测（把服务健康与行为正确拆开记账）</text>
+  <text x="500" y="436" font-size="10.0" font-weight="400" fill="#14532d" text-anchor="start">• 4 类模拟故障：限流 (429) · 容量丢失 · 慢响应 · 区域故障</text>
+  <text x="500" y="456" font-size="10.0" font-weight="400" fill="#14532d" text-anchor="start">• 4 项独立指标：按期回答 · 完成工作 · 行为忠实度 · 正确性（拒绝只看 200）</text>
+  <text x="500" y="476" font-size="9.9" font-weight="600" fill="#15803d" text-anchor="start">• 变更重测触发：新模型版本 · 提示词改动 · 服务商或推理配置变更</text>
+  <text x="24" y="522" font-size="10.0" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 基于 Sunil Mallya《Designing for LAB》六项原则绘制，并显式标注在线语法校验与语义授权的工程边界（非原文配图）</text>
+</svg>

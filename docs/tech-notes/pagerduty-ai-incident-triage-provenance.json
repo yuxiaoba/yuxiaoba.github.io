@@ -1,0 +1,103 @@
+{
+  "id": "pagerduty-ai-incident-triage",
+  "source_url": "https://www.pagerduty.com/eng/pagerduty-for-ai-how-the-sre-agent-triages-ai-incidents/",
+  "source_title": "PagerDuty for AI: How the SRE Agent Triages AI Incidents",
+  "source_authors": [
+    "Irena Grabovitch-Zuyev",
+    "Antonio Correia",
+    "Everaldo Aguiar",
+    "Murilo Venturin",
+    "Derek Barnes"
+  ],
+  "source_org": "PagerDuty Engineering",
+  "source_date": "2026-07-21",
+  "note_date": "2026-08-04",
+  "published_at": "2026-10-28T15:48:27.004821+08:00",
+  "updated_at": "2026-11-16T11:57:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": ".preview/research-jobs/runs/20261028-154445-206755ee3a-08de12/work/sources/pagerduty-com-eng-pagerduty-for-ai-how-the-sre-agent-triages-ai-incide.html.txt",
+      "kind": "extracted_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261028-154445-206755ee3a-08de12/work/sources/pagerduty-com-eng-pagerduty-for-ai-how-the-sre-agent-triages-ai-incide.html",
+      "kind": "raw_html"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://www.pagerduty.com/eng/pagerduty-arize-building-end-to-end-observability-for-ai-agents-in-production/",
+    "https://github.com/PagerDuty/claude-code-plugins/blob/main/commands/create-pagerduty-skill.md",
+    "https://support.pagerduty.com/main/docs/connectors-tools-and-skills",
+    "https://cdn.pagerduty.com/wp-content/uploads/2026/07/sre-agent-triage-rundown.mp4",
+    "https://cdn.pagerduty.com/wp-content/uploads/2026/07/sre-agent-code-suggestions.mp4",
+    "https://www.youtube.com/watch?v=12e0pSOBBQk&t=1s"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "companion_differentiation": {
+    "compared_note_id": "2026-11-04-pagerduty-pd-labs-sre-agent",
+    "compared_source_url": "https://www.pagerduty.com/eng/lessons-from-pd-labs-from-experimentation-to-a-production-ready-sre-agent/",
+    "compared_source_date": "2026-11-03",
+    "distinction_note": "pagerduty-ai-incident-triage (original 2026-07-21, curated 2026-08-04) covers post-detection first-pass triage of AI-feature quality drift (LLM-judge alerts, Arize traces, GitHub connectors, runbook skills, and replay-gated prompt edits on Insights Agent without empirical benchmarks); 2026-11-04-pagerduty-pd-labs-sre-agent (original 2026-11-03, curated 2026-11-04) covers PD Labs' infrastructure/service incident architecture (revisable investigation hypotheses in SRE Workbench, cross-repo code/Helm/Terraform topology graphs, and a 17-scenario EKS + Chaos Mesh benchmark)."
+  },
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command intentionally skipped by subagent per caller constraint; SVG-to-PNG visual inspection, file chmod 0644, SHA-256 checksums, preview build, and Playwright DOM/responsive checks remain pending parent verification."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/pagerduty-ai-incident-triage.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/pagerduty-ai-incident-triage.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/pagerduty-ai-incident-triage/triage-loop-architecture-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/pagerduty-ai-incident-triage/triage-loop-architecture-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/pagerduty-ai-incident-triage/evidence-guardrail-boundaries-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/pagerduty-ai-incident-triage/evidence-guardrail-boundaries-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-16T04:09:01.462257+00:00",
+    "preview_release": "20261116-120700-2e64116a",
+    "sha256": {
+      "zh_md_sha256": "d19381752abaf5bdca855f4af0050c95db170cdfa10be838cd56b9ee6556ea37",
+      "en_md_sha256": "feef6ad1332ccfcedbe6136006ba2f16b9e526334ee16b43b56c5106a5fdbb9e",
+      "svgs": {
+        "/assets/images/tech/pagerduty-ai-incident-triage/triage-loop-architecture-zh.svg": "036698e07cf759a2d8305b52e49064922a8f10b975baf305894c9e3b6b95b0e7",
+        "/assets/images/tech/pagerduty-ai-incident-triage/triage-loop-architecture-en.svg": "84fb7065c50d303ed8fc1942646989b1671193f7cb69666c61b22ca2a6113431",
+        "/assets/images/tech/pagerduty-ai-incident-triage/evidence-guardrail-boundaries-zh.svg": "2b6b1730f771fdf289b99c52285a62cc3c4b553cc941047658a3365e6155d4ea",
+        "/assets/images/tech/pagerduty-ai-incident-triage/evidence-guardrail-boundaries-en.svg": "904e8e7fb514a4ccad759be628ea4d63731d9995e4322821d4bb9f560c5c3836"
+      },
+      "preserved": {}
+    },
+    "playwright_total": 34,
+    "playwright_passed": 34,
+    "playwright_failed": 0
+  }
+}

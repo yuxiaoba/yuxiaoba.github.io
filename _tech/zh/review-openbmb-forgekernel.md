@@ -3,7 +3,7 @@ id: review-openbmb-forgekernel
 title: 2026-10-31｜ForgeKernel：参考提升、里程碑与证据缺口
 date: '2026-10-31'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -14,9 +14,11 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/zh/review-openbmb-forgekernel/
 long_read: true
-summary: "ForgeKernel 的架构里程碑、探针知识库与参考提升流程，以及仓库和论文证据的边界。"
+summary: ForgeKernel 的架构里程碑、探针知识库与参考提升流程，以及仓库和论文证据的边界。
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 ## 从已知参考继续优化
 
 ForgeKernel 的仓库工作流从现有 kernel 出发，先运行、计时和 profile，再让架构 agent 提炼优化里程碑。它要解决的是搜索反复碰同样硬件限制、以及只微调参数无法越过架构平台期的问题。源码可见、黑盒参考和无参考生成是不同入口，不能将它们当相同信息预算。

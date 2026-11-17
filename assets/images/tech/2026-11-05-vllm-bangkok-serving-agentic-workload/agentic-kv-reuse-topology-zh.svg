@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">Agent 多轮推理的 KV 复用拓扑与跨节点数据面</text>
+  <text x="24" y="56" font-size="11" font-weight="400" fill="#475569" text-anchor="start">整合 Simon Mo Runtime 2026 演讲与 vLLM × Mooncake（2026-05）机制：为什么单机缓存与 P/D 混部无法承载长前缀</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Column 1: Workload Profile & 3 Pressures -->
+  <rect x="24" y="76" width="282" height="376" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="76" width="282" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="96" width="282" height="10" fill="#dbeafe"/>
+  <text x="36" y="95" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">1 · Agent 会话负载与三项压力</text>
+
+  <rect x="34" y="114" width="262" height="144" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="44" y="122" width="136" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="112" y="136" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">AgentX 编码轨迹特征</text>
+  <text x="44" y="159" font-size="10.5" font-weight="700" fill="#0f172a" text-anchor="start">Turn 1 全量 Prefill → Turn 43 增量</text>
+  <text x="44" y="178" font-size="10" font-weight="400" fill="#334155" text-anchor="start">中位 43 轮 · P50 输入 142K · 输出 444</text>
+  <text x="44" y="197" font-size="10" font-weight="400" fill="#334155" text-anchor="start">理论前缀复用 &gt;95%（AgentX 写 &gt;96%）</text>
+  <text x="44" y="216" font-size="10" font-weight="400" fill="#334155" text-anchor="start">44% 会话并发扇出子 Agent（突发流量）</text>
+  <text x="44" y="237" font-size="9.6" font-weight="400" fill="#475569" text-anchor="start">单次工具返回可达 100K，会话常驻数 GB</text>
+
+  <rect x="34" y="268" width="262" height="174" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="288" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">演讲点名的三类规模化瓶颈</text>
+  <text x="44" y="311" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">① 前缀缓存压力（Prefix Cache）</text>
+  <text x="44" y="327" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">忙实例淘汰长历史，跨轮重算浪费算力</text>
+  <text x="44" y="350" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">② 执行效率预算（Execution）</text>
+  <text x="44" y="366" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">单步处理 token 暴增但延迟预算收紧</text>
+  <text x="44" y="389" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">③ 全局路由两难（Global Routing）</text>
+  <text x="44" y="405" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">粘性路由打爆热节点，均衡路由又 miss</text>
+  <text x="44" y="427" font-size="9.3" font-weight="400" fill="#64748b" text-anchor="start">（混部下重 Prefill 还会卡顿流式输出）</text>
+
+  <!-- Arrow Col 1 -> Col 2 -->
+  <line x1="306" y1="264" x2="322" y2="264" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Column 2: Control Plane & P/D Disaggregation -->
+  <rect x="324" y="76" width="326" height="376" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="324" y="76" width="326" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="324" y="96" width="326" height="10" fill="#dbeafe"/>
+  <text x="336" y="95" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">2 · 统一控制面与 P/D 解耦执行</text>
+
+  <rect x="334" y="114" width="306" height="110" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="344" y="122" width="114" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="401" y="136" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">控制面 · Control</text>
+  <text x="466" y="136" font-size="10.2" font-weight="600" fill="#0f172a" text-anchor="start">按 Token 块哈希跨机寻址</text>
+  <text x="344" y="159" font-size="10" font-weight="400" fill="#334155" text-anchor="start">vLLM Scheduler → Mooncake Master（索引/健康）</text>
+  <text x="344" y="180" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="start">Hybrid KV Manager（Jenga LCM 单一页池）</text>
+  <text x="344" y="201" font-size="9.6" font-weight="400" fill="#475569" text-anchor="start">Full / Sliding / Linear 层混用一池（口述省 2-2.5x）</text>
+
+  <rect x="334" y="234" width="306" height="208" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="344" y="242" width="114" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="401" y="256" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">执行面 · P/D 解耦</text>
+  <text x="466" y="256" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">DistServe 隔离算力与带宽</text>
+
+  <rect x="344" y="270" width="138" height="114" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="353" y="289" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="start">Prefill 实例组</text>
+  <text x="353" y="309" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">算力密集 · 决定 TTFT</text>
+  <text x="353" y="328" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">从共享池拉取旧前缀块</text>
+  <text x="353" y="347" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">仅重算新增工具输出块</text>
+  <text x="353" y="366" font-size="9.5" font-weight="400" fill="#0f172a" text-anchor="start">P/D 传完后移交 Decode</text>
+
+  <rect x="492" y="270" width="138" height="114" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="501" y="289" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="start">Decode 实例组</text>
+  <text x="501" y="309" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">带宽受限 · 决定 TPOT</text>
+  <text x="501" y="328" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">稳定流式生成约 444 词</text>
+  <text x="501" y="347" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">将新生成 KV 写回共享池</text>
+  <text x="501" y="366" font-size="9.5" font-weight="600" fill="#b45309" text-anchor="start">2026-05 版暂不直读池</text>
+
+  <rect x="344" y="392" width="286" height="42" rx="5" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="353" y="409" font-size="9.6" font-weight="600" fill="#78350f" text-anchor="start">MultiConnector 串联 P/D 传输与共享 KV Store；</text>
+  <text x="353" y="425" font-size="9.3" font-weight="400" fill="#92400e" text-anchor="start">多路径并发读取（Prefill + 池直读）在 05-06 版为后续工作</text>
+
+  <!-- Bidirectional Arrow Col 2 <-> Col 3 -->
+  <line x1="650" y1="264" x2="666" y2="264" stroke="#2563eb" stroke-width="1.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+  <!-- Column 3: Distributed KV Pool & Next Steps -->
+  <rect x="668" y="76" width="268" height="376" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="668" y="76" width="268" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="668" y="96" width="268" height="10" fill="#dbeafe"/>
+  <text x="680" y="95" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">3 · 分布式 KV 池与可编程演进</text>
+
+  <rect x="678" y="114" width="248" height="196" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="688" y="122" width="124" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="750" y="136" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">数据面 · GPUDirect</text>
+  <text x="688" y="159" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">Worker 内嵌 Mooncake Client</text>
+  <text x="688" y="178" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">GPU KV 内存预注册为 RDMA 缓冲区</text>
+  <text x="688" y="197" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">后台 I/O 线程备描述符，不堵主 CPU</text>
+  <text x="688" y="216" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">GPUDirect 零拷贝绕过 SM 与 CPU 暂存</text>
+
+  <rect x="688" y="232" width="110" height="68" rx="5" fill="#ffffff" stroke="#2563eb" stroke-width="1.1"/>
+  <text x="743" y="250" font-size="10.2" font-weight="700" fill="#1d4ed8" text-anchor="middle">CPU DRAM</text>
+  <text x="743" y="268" font-size="9.4" font-weight="600" fill="#1e3a8a" text-anchor="middle">2026-05 实测后端</text>
+  <text x="743" y="285" font-size="9.2" font-weight="400" fill="#475569" text-anchor="middle">3.8x 吞吐 / 46x TTFT</text>
+
+  <rect x="806" y="232" width="110" height="68" rx="5" fill="#fffbeb" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4 2"/>
+  <text x="861" y="250" font-size="10.2" font-weight="700" fill="#b45309" text-anchor="middle">NVMe SSD</text>
+  <text x="861" y="268" font-size="9.4" font-weight="600" fill="#92400e" text-anchor="middle">后续追加分层</text>
+  <text x="861" y="285" font-size="9.2" font-weight="400" fill="#78350f" text-anchor="middle">未包含在 05-06 实验</text>
+
+  <rect x="678" y="320" width="248" height="122" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="688" y="340" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">下一步：可编程缓存与特化核</text>
+  <text x="688" y="361" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">• 会话提示：分层 TTL、优先级、预取控制</text>
+  <text x="688" y="381" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">• 停止过早抽象：按模型配专用核与引擎</text>
+  <text x="688" y="401" font-size="9.7" font-weight="400" fill="#334155" text-anchor="start">• TPU v7 Pallas 单核 92 层 + VMEM 预取</text>
+  <text x="688" y="422" font-size="9.3" font-weight="400" fill="#64748b" text-anchor="start">（对照 vLLM Q4 Roadmap #61024）</text>
+
+  <!-- Bottom Banner -->
+  <rect x="24" y="464" width="912" height="38" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="487" font-size="10.6" font-weight="600" fill="#1e3a8a" text-anchor="start">核心工程判据：理论复用率 (&gt;95%) ≠ 驻留命中率；仅当“免重算 Prefill 收益 &gt; GPUDirect 跨机搬运与元数据查询开销”时才适用共享池</text>
+  <text x="24" y="522" font-size="10.2" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 基于 Simon Mo Runtime 2026 演讲及 vLLM × Mooncake / Hybrid KV / Q4 Roadmap 文档绘制（非原演讲幻灯片）</text>
+</svg>

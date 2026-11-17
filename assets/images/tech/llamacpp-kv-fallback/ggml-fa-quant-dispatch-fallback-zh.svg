@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" style="background:#ffffff;">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="38" font-size="18.5" font-weight="700" fill="#0f172a">llama.cpp #28455：量化 KV Cache 与 FlashAttention 静默回退 CPU 调度链</text>
+  <text x="24" y="58" font-size="11.2" fill="#475569">依据 Issue #28455（RTX 4080 / 27B）整理：默认构建缺省核函数导致 CUDA 拒算，ggml 调度器静默改派 CPU 且表显仍为 fa=1</text>
+  <line x1="24" y1="70" x2="936" y2="70" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 1 Left: User Config Surface -->
+  <rect x="24" y="82" width="228" height="170" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="36" y="92" width="132" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="102" y="106" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">请求配置 · 表面参数</text>
+  <text x="36" y="132" font-size="11" font-weight="700" fill="#0f172a">llama-server / llama-bench</text>
+  <text x="36" y="152" font-size="10.2" fill="#334155">• -ngl 99 -fa on（或 -fa 1）</text>
+  <text x="36" y="170" font-size="10.2" fill="#334155">• --cache-type-k q5_1</text>
+  <text x="36" y="188" font-size="10.2" fill="#334155">• --cache-type-v q5_1</text>
+  <line x1="36" y1="201" x2="240" y2="201" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="36" y="220" font-size="10" font-weight="600" fill="#b45309">输出表仍打印 fa=1 q5_1</text>
+  <text x="36" y="238" font-size="10" fill="#64748b">控制台无警告、无报错提示</text>
+
+  <line x1="252" y1="167" x2="278" y2="167" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- Row 1 Middle: CUDA Dispatch Gate -->
+  <rect x="282" y="82" width="318" height="170" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="282" y="82" width="318" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="282" y="100" width="318" height="10" fill="#dbeafe"/>
+  <text x="294" y="101" font-size="11.5" font-weight="700" fill="#1e3a8a">CUDA 核派发门控（fattn.cu）</text>
+
+  <rect x="292" y="118" width="298" height="62" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="302" y="135" font-size="10.5" font-weight="700" fill="#1d4ed8">默认构建（GGML_CUDA_FA_ALL_QUANTS=OFF）</text>
+  <text x="302" y="153" font-size="10" fill="#334155">vec 核仅编译 F16 / BF16 / Q4_0 / Q8_0 同构对</text>
+  <text x="302" y="170" font-size="10" fill="#475569">tile 核仅按 half2 读取 K/V，不支持量化 KV</text>
+
+  <rect x="292" y="186" width="298" height="56" rx="6" fill="#fff1f2" stroke="#fda4af" stroke-width="1"/>
+  <text x="302" y="203" font-size="10.5" font-weight="700" fill="#be123c">q4_1 / q5_0 / q5_1 或混合 K/V 命中拒绝分支</text>
+  <text x="302" y="220" font-size="10" fill="#881337">ggml_cuda_fattn_kv_type_supported() -&gt; false</text>
+  <text x="302" y="235" font-size="10" fill="#881337">get_best_fattn_kernel() -&gt; NONE（CUDA 拒收算子）</text>
+
+  <!-- Branch Arrows to Right Paths -->
+  <line x1="600" y1="138" x2="630" y2="120" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <line x1="600" y1="214" x2="630" y2="214" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow-red)"/>
+
+  <!-- Row 1 Right Top: CUDA GPU Path -->
+  <rect x="634" y="82" width="302" height="76" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.2"/>
+  <rect x="644" y="90" width="136" height="19" rx="5" fill="#15803d"/>
+  <text x="712" y="103" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">CUDA GPU 正常路径</text>
+  <text x="788" y="103" font-size="10" font-weight="600" fill="#166534">命中核 / 重编译 ON</text>
+  <text x="644" y="127" font-size="10.2" fill="#14532d">• q8_0/q8_0：pp512 1511.9 t/s（GPU 不低于 30%）</text>
+  <text x="644" y="145" font-size="10.2" fill="#14532d">• q5_1 重编译：pp512 1509.7 / 3.6K 1162 t/s</text>
+
+  <!-- Row 1 Right Bottom: Silent CPU Fallback -->
+  <rect x="634" y="166" width="302" height="86" rx="8" fill="#fff1f2" stroke="#e11d48" stroke-width="1.2"/>
+  <rect x="644" y="174" width="136" height="19" rx="5" fill="#be123c"/>
+  <text x="712" y="187" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">静默回退 CPU 路径</text>
+  <text x="788" y="187" font-size="10" font-weight="600" fill="#9f1239">每层每步全走 CPU</text>
+  <text x="644" y="210" font-size="10.2" fill="#881337">• 调度器将 GGML_OP_FLASH_ATTN_EXT 派发 CPU</text>
+  <text x="644" y="227" font-size="10.2" fill="#881337">• 遥测：GPU 0%（~62 W），CPU ~930%（9+ 核）</text>
+  <text x="644" y="244" font-size="10.2" fill="#881337">• 3.6K 提示评测：38.4 t/s（TTFT 约 95 s）</text>
+
+  <!-- Row 2 Left: Why -fa 0 cannot escape -->
+  <rect x="24" y="264" width="292" height="162" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="264" width="292" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="282" width="292" height="10" fill="#dbeafe"/>
+  <text x="36" y="283" font-size="11.5" font-weight="700" fill="#1e3a8a">为何关闭 -fa 0 也无法在 GPU 兜底？</text>
+  <text x="36" y="313" font-size="10.5" font-weight="700" fill="#be123c">1. -fa 1（默认 OFF）：静默回退 CPU</text>
+  <text x="48" y="331" font-size="10" fill="#334155">不报错但强行拷贝 KV 到主机内存并由 CPU 计算</text>
+  <text x="36" y="355" font-size="10.5" font-weight="700" fill="#b45309">2. -fa 0 + 量化 V：直接执行失败</text>
+  <text x="48" y="373" font-size="10" fill="#334155">非 FA 路径要求可转置的 f16 V Cache，拒绝运行</text>
+  <line x1="36" y1="382" x2="304" y2="382" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="36" y="400" font-size="10.2" font-weight="700" fill="#1e3a8a">结果：未启用 GGML_CUDA_FA_ALL_QUANTS 时，</text>
+  <text x="36" y="416" font-size="10.2" fill="#1e40af">q5_1 等量化 V 在 GPU 上无任何可用注意力路径</text>
+
+  <!-- Row 2 Right: K/V Isolation Bar Chart -->
+  <rect x="330" y="264" width="606" height="162" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="330" y="264" width="606" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="330" y="282" width="606" height="10" fill="#1e3a8a"/>
+  <text x="342" y="283" font-size="11.5" font-weight="700" fill="#ffffff">llama-bench pp512 K/V 隔离矩阵（RTX 4080 · qwen35 27B Q5_K_XL · -ngl 99 -fa 1 -t 12）</text>
+
+  <!-- Bars: track starts x=440, max w=310 (1511.92 t/s) -->
+  <text x="342" y="313" font-size="10.2" font-weight="700" fill="#0f172a">q8_0 / q8_0</text>
+  <rect x="440" y="302" width="310" height="13" rx="3" fill="#16a34a"/>
+  <text x="760" y="313" font-size="10" font-weight="700" fill="#15803d">1511.92 t/s（1.0x 基线）</text>
+
+  <text x="342" y="333" font-size="10.2" font-weight="600" fill="#334155">q5_1 / f16</text>
+  <rect x="440" y="322" width="99" height="13" rx="3" fill="#f59e0b"/>
+  <text x="760" y="333" font-size="10" fill="#92400e">483.14 t/s（慢 3.1x）</text>
+
+  <text x="342" y="353" font-size="10.2" font-weight="600" fill="#334155">q5_1 / q8_0</text>
+  <rect x="440" y="342" width="88" height="13" rx="3" fill="#f59e0b"/>
+  <text x="760" y="353" font-size="10" fill="#92400e">427.61 t/s（慢 3.5x）</text>
+
+  <text x="342" y="373" font-size="10.2" font-weight="700" fill="#be123c">q8_0 / q5_1</text>
+  <rect x="440" y="362" width="40" height="13" rx="3" fill="#e11d48"/>
+  <text x="760" y="373" font-size="10" font-weight="700" fill="#be123c">197.05 t/s（慢 7.7x）</text>
+
+  <text x="342" y="393" font-size="10.2" font-weight="700" fill="#be123c">q5_1 / q5_1</text>
+  <rect x="440" y="382" width="40" height="13" rx="3" fill="#e11d48"/>
+  <text x="760" y="393" font-size="10" font-weight="700" fill="#be123c">196.62 t/s（慢 7.7x）</text>
+
+  <text x="342" y="413" font-size="10.2" font-weight="700" fill="#be123c">f16 / q5_1</text>
+  <rect x="440" y="402" width="39" height="13" rx="3" fill="#e11d48"/>
+  <text x="760" y="413" font-size="10" font-weight="700" fill="#be123c">190.36 t/s（慢 7.9x）</text>
+
+  <!-- Row 3: Scope & Caveat Box -->
+  <rect x="24" y="438" width="912" height="62" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="34" y="447" width="136" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="102" y="461" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">实测口径与现象边界</text>
+  <text x="180" y="461" font-size="10.8" font-weight="700" fill="#0f172a">只要 V 为 q5_1，pp512 统一跌至 190–197 t/s；3.6K 长上下文下 CPU 成本随 KV 长度放大至 38.4 t/s</text>
+  <text x="34" y="485" font-size="10.2" fill="#475569">注：数据出自单一 RTX 4080（0.3.0-dev b10791）单机复现；关联同源问题 #27109（q4_1）、#20866（混合 K/V）、#27905（RPC FA 致命报错）与 #24485。</text>
+
+  <text x="24" y="519" font-size="10" fill="#64748b">阅读整理配图（非原图）· 依据 GitHub Issue ggml-org/llama.cpp#28455（2026-09-05）报告代码路径与单机测试整理</text>
+</svg>

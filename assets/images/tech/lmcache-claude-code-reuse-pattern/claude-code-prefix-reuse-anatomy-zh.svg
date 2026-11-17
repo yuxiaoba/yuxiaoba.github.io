@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', sans-serif" style="background:#ffffff;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">Claude Code 多角色上下文分支与 92% 前缀复用拆解</text>
+  <text x="24" y="56" font-size="11" font-weight="400" fill="#475569" text-anchor="start">基于 LMCache 对 SWE-bench_Verified 任务 #80 (django/django) 的单次拦截追踪：92+ 次调用与约 2M 输入 token 的隔离结构</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Strip: Sequential Call Flow -->
+  <rect x="24" y="74" width="912" height="58" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="32" y="82" width="136" height="42" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="100" y="99" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">#1–#5 预热与辅助</text>
+  <text x="100" y="115" font-size="9.3" font-weight="400" fill="#475569" text-anchor="middle">47,177 · 0.22% 重叠</text>
+  <line x1="170" y1="103" x2="181" y2="103" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="184" y="82" width="136" height="42" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="252" y="99" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">#6 主 Agent 启动</text>
+  <text x="252" y="115" font-size="9.3" font-weight="400" fill="#1e40af" text-anchor="middle">20K+ 提示 + 18 工具</text>
+  <line x1="322" y1="103" x2="333" y2="103" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="336" y="82" width="136" height="42" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="404" y="99" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">#7–#45 3× Explore</text>
+  <text x="404" y="115" font-size="9.3" font-weight="400" fill="#475569" text-anchor="middle">546,104 · 92.06% 重叠</text>
+  <line x1="474" y1="103" x2="485" y2="103" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="488" y="82" width="136" height="42" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="556" y="99" font-size="10.2" font-weight="700" fill="#92400e" text-anchor="middle">#46 主 Agent 汇总</text>
+  <text x="556" y="115" font-size="9.3" font-weight="400" fill="#78350f" text-anchor="middle">仅收 3 份总结（表漏计）</text>
+  <line x1="626" y1="103" x2="637" y2="103" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="640" y="82" width="136" height="42" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="708" y="99" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">#47–#72 Plan</text>
+  <text x="708" y="115" font-size="9.3" font-weight="400" fill="#475569" text-anchor="middle">528,286 · 93.23% 重叠</text>
+  <line x1="778" y1="103" x2="789" y2="103" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="792" y="82" width="136" height="42" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="860" y="99" font-size="10.2" font-weight="700" fill="#166534" text-anchor="middle">#73–#92 主执行 (+93)</text>
+  <text x="860" y="115" font-size="9.3" font-weight="400" fill="#14532d" text-anchor="middle">827,411 · 97.83% 重叠</text>
+
+  <!-- Column 1: Warm-up & One-shot Aux -->
+  <rect x="24" y="142" width="282" height="298" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="142" width="282" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="162" width="282" height="10" fill="#dbeafe"/>
+  <text x="36" y="161" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">1 · 预热与一次性辅助分支</text>
+
+  <rect x="34" y="182" width="262" height="118" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="44" y="190" width="128" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="108" y="204" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">预热调用 (#2–#4)</text>
+  <text x="44" y="226" font-size="9.8" font-weight="700" fill="#0f172a" text-anchor="start">仅发送纯提示模板，无任务历史</text>
+  <text x="44" y="245" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">• #2 工具列表 · #3 Explore · #4 Plan</text>
+  <text x="44" y="264" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">• 原文解读：预先填充 KV 缓存</text>
+  <text x="44" y="283" font-size="9.2" font-weight="600" fill="#b45309" text-anchor="start">边界：日志无法实证产品动机或省时</text>
+
+  <rect x="34" y="308" width="262" height="122" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="328" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="start">侧栏与安全辅助（各自独立短前缀）</text>
+  <text x="44" y="349" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">• #1 Summary：压缩对话状态摘要</text>
+  <text x="44" y="368" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">• #5 New Topic：判断 2–3 词标题</text>
+  <text x="44" y="387" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">• #93 Extract Bash：提取命令防误删</text>
+  <text x="44" y="406" font-size="9.5" font-weight="400" fill="#334155" text-anchor="start">• Display Content（原图另列单次调用）</text>
+  <text x="44" y="422" font-size="9.2" font-weight="400" fill="#64748b" text-anchor="start">提示互异，#1–#6 重叠仅 0.22%</text>
+
+  <line x1="308" y1="291" x2="321" y2="291" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Column 2: Subagent Isolated Loops -->
+  <rect x="324" y="142" width="306" height="298" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="324" y="142" width="306" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="324" y="162" width="306" height="10" fill="#dbeafe"/>
+  <text x="336" y="161" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">2 · 子 Agent 隔离 ReAct 循环</text>
+
+  <rect x="334" y="182" width="286" height="122" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="344" y="190" width="146" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="417" y="204" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">3× Explore (#7–#45)</text>
+  <text x="498" y="204" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">92.06% 前缀重叠</text>
+  <text x="344" y="226" font-size="9.5" font-weight="700" fill="#0f172a" text-anchor="start">并行查 JSONField / display_for_field / 只读</text>
+  <text x="344" y="245" font-size="9.4" font-weight="400" fill="#334155" text-anchor="start">• #7–#26、#8–#37、#9–#45 各自只追加</text>
+  <text x="344" y="264" font-size="9.4" font-weight="400" fill="#334155" text-anchor="start">• 不继承主上下文；每轮并行 1–3 次工具调用</text>
+  <text x="344" y="283" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">• 仅用 10/18 工具子集（移除编辑与规划工具）</text>
+
+  <rect x="334" y="312" width="286" height="118" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="344" y="320" width="146" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="417" y="334" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Plan 子体 (#47–#72)</text>
+  <text x="498" y="334" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">93.23% 前缀重叠</text>
+  <text x="344" y="356" font-size="9.5" font-weight="700" fill="#0f172a" text-anchor="start">仅载入 Explore 摘要 + 架构师系统提示</text>
+  <text x="344" y="375" font-size="9.4" font-weight="400" fill="#334155" text-anchor="start">• 不含主 Agent 与探索原始工具记录（防膨胀）</text>
+  <text x="344" y="394" font-size="9.4" font-weight="400" fill="#334155" text-anchor="start">• 限 10/18 工具；单程累加 11,552 → 38,819</text>
+  <text x="344" y="413" font-size="9.2" font-weight="400" fill="#64748b" text-anchor="start">上下文卫生代价：不同系统提示分叉 KV 树根</text>
+
+  <line x1="632" y1="291" x2="645" y2="291" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Column 3: Main Agent Spine -->
+  <rect x="648" y="142" width="288" height="298" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="648" y="142" width="288" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="648" y="162" width="288" height="10" fill="#dbeafe"/>
+  <text x="660" y="161" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">3 · 主 Agent 锚点与执行阶段</text>
+
+  <rect x="658" y="182" width="268" height="114" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="668" y="190" width="142" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="739" y="204" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">20K+ 超长静态前缀</text>
+  <text x="668" y="226" font-size="9.6" font-weight="700" fill="#0f172a" text-anchor="start">未入对话已达 20,000+ token</text>
+  <text x="668" y="245" font-size="9.4" font-weight="400" fill="#334155" text-anchor="start">• 完整 Git 历史与状态 + 18 项工具规范</text>
+  <text x="668" y="264" font-size="9.4" font-weight="400" fill="#334155" text-anchor="start">• #46 回合仅追加三路 Explore 总结文本</text>
+  <text x="668" y="283" font-size="9.2" font-weight="400" fill="#475569" text-anchor="start">• 全量 18 工具含 Edit/Write/Task 等</text>
+
+  <rect x="658" y="304" width="268" height="126" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <rect x="668" y="312" width="136" height="20" rx="5" fill="#166534"/>
+  <text x="736" y="326" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">执行阶段 (#73–#92)</text>
+  <text x="812" y="326" font-size="9.6" font-weight="700" fill="#166534" text-anchor="start">97.83% 重叠</text>
+  <text x="668" y="348" font-size="9.4" font-weight="400" fill="#14532d" text-anchor="start">• #73–#76 审阅/写计划并请用户批准</text>
+  <text x="668" y="367" font-size="9.4" font-weight="400" fill="#14532d" text-anchor="start">• #77–#91 按 Markdown TODO 改码跑测</text>
+  <text x="668" y="386" font-size="9.4" font-weight="400" fill="#14532d" text-anchor="start">• 累计输入 827,411 token（#92 收尾）</text>
+  <text x="668" y="405" font-size="9.2" font-weight="600" fill="#166534" text-anchor="start">20K+ 大锚点每轮重送，推高后期重叠率</text>
+
+  <!-- Bottom Banner -->
+  <rect x="24" y="450" width="912" height="52" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="470" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="start">口径核算：4 阶段表累计 1,948,978 token（加权前缀重叠约 92.60%），但遗漏 #46 且正文中段出现辅助调用 #93</text>
+  <text x="36" y="490" font-size="9.8" font-weight="400" fill="#1e40af" text-anchor="start">关键区分：92% 度量的是日志提示文本的结构性前缀重叠，并不等于推理服务端已实测 92% KV 缓存命中或 92% 算力消除</text>
+
+  <text x="24" y="522" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 依据 Kobe &amp; Mengbing (LMCache Blog, 2025-12-23) 博文文本与原文架构图整理（非原文原图）</text>
+</svg>

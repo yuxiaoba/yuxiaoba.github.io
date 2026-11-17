@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-10-31-arxiv-2610.37989",
+  "paper_id": "arxiv-2610.37989",
+  "anchor_id": "paper-arxiv-2610.37989",
+  "digest_date": "2026-10-31",
+  "updated_at_utc": "2026-11-17T02:41:00Z",
+  "assistant_translated": true,
+  "verification_status": "VERIFIED",
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-10-31.md",
+    "en_target": "_digest/en/daily-2026-10-31.md",
+    "zh_staged_section": "/root/.gemini/antigravity-cli/brain/af0268b9-8ec9-41f1-8a7b-01284f5bc7a9/scratch/d2b1-sections/2610.37989/section_zh.md",
+    "en_staged_section": "/root/.gemini/antigravity-cli/brain/af0268b9-8ec9-41f1-8a7b-01284f5bc7a9/scratch/d2b1-sections/2610.37989/section_en.md",
+    "staging_note": "write_file sandbox restricts writes inside /root/.gemini/antigravity-cli/brain/ to this subagent conversation directory (af0268b9-8ec9-41f1-8a7b-01284f5bc7a9); parent splicer should read/copy from zh_staged_section and en_staged_section.",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2610.37989v1."
+  },
+  "primary_source": {
+    "arxiv_id": "2610.37989",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "v1 only in saved arXiv abstract HTML (submitted Tue, 27 Oct 2026 21:36:03 UTC; no v2 revision or withdrawal notice present). Full 6-author list restored from primary abs.html and extracted PDF text after the original 2026-10-31 placeholder omitted authors.",
+    "title": "GAUSS: A Workload-Aware Analytical and Monte-Carlo Simulator for LLM Inference Serving",
+    "authors": [
+      "Srikant Bharadwaj",
+      "Ankur Mallick",
+      "Spyridon Mastorakis",
+      "Anjaly Parayil",
+      "Dhruv Deshmukh",
+      "Victor Ruehle"
+    ],
+    "affiliation": "Microsoft (Technical Report)",
+    "categories": [
+      "cs.AI"
+    ],
+    "submitted_utc": "Tue, 27 Oct 2026 21:36:03 UTC",
+    "submitted_date": "2026-10-27",
+    "pdf_size_note": "261 KB (10 pages)",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2610.37989",
+      "abs_v1": "https://arxiv.org/abs/2610.37989v1",
+      "pdf": "https://arxiv.org/pdf/2610.37989",
+      "doi": "https://doi.org/10.48550/arXiv.2610.37989",
+      "code_repository": null
+    },
+    "local_sources_inspected": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.37989.abs.html",
+        "lines": 595,
+        "sha256": "15a4c39c64b6c1a7b0f5e2d56c0afe2740eee8810dcf9fcb35468b4bffda18a8",
+        "bytes": 41446
+      },
+      "extracted_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.37989.txt",
+        "lines": 453,
+        "sha256": "30d7f7f585bccd1a3ac364674683c00f519e39bdb7889d5243fe5027d974ccea",
+        "bytes": 30161
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "document_type": "10-page analytical methodology and tutorial technical report",
+    "scope": "single-stage, decoder-only LLM serving",
+    "symbolic_formulation": {
+      "workload_buckets": "bucket j = (s_j input tokens, c_j cached prefix tokens, o_j output tokens) with probability weight w_j, sum_j w_j = 1",
+      "arrival_process": "Poisson process of mean rate lambda (inter-arrival A ~ Exp(lambda))",
+      "chunked_prefill": "n = ceil((s - c) / Delta); g_i = c + i*Delta; l_i = a + b*g_i; L_pre(s, c) = a*n + b*sigma where sigma = n*c + Delta*n*(n+1)/2 (quadratic in chunk count n)",
+      "decode_batch_surface": "d(B, C) = p + q*(C/B) + r*B (piecewise across batch-size regimes in practice)",
+      "concurrent_service_time": "S(s, c) = (a*n + b*sigma + n*d_bar) / eta",
+      "capacity_and_service_rate": "E[S] = sum_j w_j * S(s_j, c_j); mu = 1 / E[S]; stability rho = lambda/mu < 1; sustainable ceiling lambda* = mu",
+      "lindley_recurrence": "W_{k+1} = max(0, W_k + S_k - A_k) across k = 1..M into delay sample pool Q",
+      "ttft_and_tbt": "TTFT_i = W + S(s, c); TBT_i = d(B, C)/eta inflated by interleaved prefill chunks averaged over generated tokens o; operating B solved from a closed-form quadratic",
+      "hol_blocking_formula": "E[W] = lambda * E[S^2] / (2*(1 - rho)) (Pollaczek-Khinchin M/G/1 mean wait motivating context-length segmentation)"
+    },
+    "section_4_use_cases": [
+      "4.1 Operating-point selection below the TTFT tail knee and headroom quantification against lambda* = mu",
+      "4.2 Context-length traffic segmentation optimizing candidate boundaries via analytical E[S] and E[S^2]",
+      "4.3 Closed-form remaining chunked-prefill work estimation for SRPT scheduling",
+      "4.4 Ensemble Monte-Carlo estimation vs. single-trace time averaging for fleet headroom routing and hardware/engine what-if analysis"
+    ],
+    "empirical_calibration_parameters_reported_in_v1": 0,
+    "named_gpu_benchmarks_in_v1": 0,
+    "empirical_error_vs_vidur_or_engines_in_v1": 0
+  },
+  "explicit_limitations": [
+    "arXiv:2610.37989v1 contains zero empirical calibration values for (a, b, p, q, r, eta, Delta), zero named GPU/accelerator experiments, and zero measured TTFT/TBT prediction error comparisons against real engines (e.g., vLLM, Sarathi-Serve) or discrete-event simulators (e.g., Vidur).",
+    "Section 1 and Section 2.3 motivate GAUSS with bursty arrivals (citing BurstGPT and Cox processes), whereas Section 3 restricts the baseline formulation to stationary Poisson arrivals (A ~ Exp(lambda)) and static bucket weights w_j, which can underpredict queue tails under clustered bursts (CV^2 > 1).",
+    "Algorithm 1 models admission as a single-server FIFO M/G/1 queue without HBM KV-cache exhaustion/preemption checks, without a modified non-FIFO queueing recurrence for Section 4.3 SRPT scheduling, and without prefill-decode disaggregation, MoE routing, speculative decoding, or multi-node parallelism.",
+    "The v1 text omits closed-form algebraic expressions for the operating batch-size B quadratic (§3.8), load-coupled concurrent decode step d_bar, chunk-TBT inflation term (Algorithm 1 line 325), piecewise d(B, C) breakpoints (§3.3), and Lindley burn-in/autocorrelation controls near rho -> 1."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "gauss_svgs": {
+      "gauss-queueing-montecarlo-arch-zh.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/gauss-queueing-montecarlo-arch-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/gauss-queueing-montecarlo-arch-zh.svg",
+        "sha256": "8f210aee5a6330d083d69bc9723d7db731d4937545da85103b70ba78d0047a41",
+        "geometry_and_xml_checked": true,
+        "bytes": 12867
+      },
+      "gauss-queueing-montecarlo-arch-en.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/gauss-queueing-montecarlo-arch-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/gauss-queueing-montecarlo-arch-en.svg",
+        "sha256": "694fc4ee1a5c36e56ab45adbd25aa4752aec988fcb15799ca08b12d164a048fb",
+        "geometry_and_xml_checked": true,
+        "bytes": 12605
+      },
+      "gauss-tail-latency-capacity-zh.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/gauss-tail-latency-capacity-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/gauss-tail-latency-capacity-zh.svg",
+        "sha256": "2d152e07052ac95298169d9fcbea2cb6570ac9f6cb5186dbcc3abecbd2c14426",
+        "geometry_and_xml_checked": true,
+        "bytes": 13937
+      },
+      "gauss-tail-latency-capacity-en.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/gauss-tail-latency-capacity-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/gauss-tail-latency-capacity-en.svg",
+        "sha256": "c4455fed34b2d2bef9f330061f0997bd09f60a56265960b3ecea9a1eb27581e4",
+        "geometry_and_xml_checked": true,
+        "bytes": 13701
+      }
+    }
+  },
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-10-31.md",
+      "file_bytes_before": 133852,
+      "file_sha256_before": "914b1485853911d6d30321a5715154713ce2027bd0def43c9936becb30db98e7",
+      "file_bytes_after": 133852,
+      "file_sha256_after": "914b1485853911d6d30321a5715154713ce2027bd0def43c9936becb30db98e7",
+      "old_section_bytes": 21411,
+      "old_section_sha256": "72b28df18ec49d4a6f3efcc7a877e8e0b318dff311431484145ae4a5ae47ca4f",
+      "new_section_bytes": 21411,
+      "new_section_sha256": "72b28df18ec49d4a6f3efcc7a877e8e0b318dff311431484145ae4a5ae47ca4f"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-10-31.md",
+      "file_bytes_before": 125711,
+      "file_sha256_before": "503243d78f648c5fb31529a6e7724b76b3506a5c88e3a4263b04b60e2e862806",
+      "file_bytes_after": 125711,
+      "file_sha256_after": "503243d78f648c5fb31529a6e7724b76b3506a5c88e3a4263b04b60e2e862806",
+      "old_section_bytes": 19779,
+      "old_section_sha256": "a75a11e45dcba9e10821a82ee08b0e00872b3bea186bd32e9b30e6d90c9bbd2b",
+      "new_section_bytes": 19779,
+      "new_section_sha256": "a75a11e45dcba9e10821a82ee08b0e00872b3bea186bd32e9b30e6d90c9bbd2b"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:06:58.469964+00:00",
+    "preview_release": "20261117-110636-2781322a",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

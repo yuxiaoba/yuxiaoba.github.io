@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-navy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1e3a8a"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17.0" font-weight="700" fill="#0f172a" text-anchor="start">Pantograph 状态保留搜索（goal–tactic 图）与 Lean4Code 扩展工作流</text>
+  <text x="24" y="53" font-size="10.3" font-weight="400" fill="#475569" text-anchor="start">依据 arXiv:2611.09048v1（图 2、表 1 与附录 A–B）及 BaseProver.search() 状态不变式与回溯逻辑绘制</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="74" width="494" height="424" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="74" width="494" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="24" y="94" width="494" height="8" fill="#1e3a8a"/>
+  <text x="36" y="92.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">1. goal–tactic 搜索图与失败状态保留（图 2）</text>
+  <rect x="34" y="110" width="474" height="226" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <path d="M 88 156 C 72 126, 136 126, 120 156" fill="none" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-amber)"/>
+  <text x="104" y="123" font-size="8.4" font-weight="600" fill="#b45309" text-anchor="middle">rw [Nat.add_comm] · 失败无变化</text>
+  <rect x="44" y="158" width="184" height="46" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="52" y="175" font-size="8.5" font-weight="700" fill="#1e3a8a" text-anchor="start">初始目标（Node 0）</text>
+  <text x="52" y="193" font-size="8.9" font-weight="600" fill="#0f172a" text-anchor="start">⊢ ∀ {p q : Prop}, p ∧ q → q ∧ p</text>
+  <line x1="228" y1="181" x2="294" y2="181" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <text x="261" y="173" font-size="9.0" font-weight="700" fill="#1d4ed8" text-anchor="middle">simp</text>
+  <path d="M 380 156 C 364 126, 428 126, 412 156" fill="none" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-amber)"/>
+  <text x="396" y="123" font-size="8.4" font-weight="600" fill="#b45309" text-anchor="middle">simp · 自环（状态不变）</text>
+  <rect x="296" y="158" width="198" height="46" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="304" y="175" font-size="8.5" font-weight="700" fill="#1e3a8a" text-anchor="start">中间目标（Node 1）</text>
+  <text x="304" y="193" font-size="8.9" font-weight="600" fill="#0f172a" text-anchor="start">⊢ ∀ {p q : Prop}, p → q → q ∧ p</text>
+  <line x1="395" y1="204" x2="365" y2="244" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <text x="390" y="228" font-size="8.9" font-weight="700" fill="#1d4ed8" text-anchor="start">intro p q hp hq</text>
+  <rect x="268" y="246" width="208" height="78" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="278" y="263" font-size="8.4" font-weight="700" fill="#1e3a8a" text-anchor="start">上下文与当前目标（Node 2）</text>
+  <text x="278" y="279" font-size="8.8" font-weight="600" fill="#b45309" text-anchor="start">p q : Prop · hp : p · hq : q</text>
+  <text x="278" y="295" font-size="9.2" font-weight="700" fill="#0f172a" text-anchor="start">⊢ q ∧ p</text>
+  <text x="278" y="313" font-size="8.1" font-weight="400" fill="#475569" text-anchor="start">guidance(): 1 / (len(vars) + 1)</text>
+  <line x1="268" y1="286" x2="188" y2="286" stroke="#0f766e" stroke-width="1.9" marker-end="url(#arr-teal)"/>
+  <text x="228" y="276" font-size="8.8" font-weight="700" fill="#0f766e" text-anchor="middle">exact ⟨hq, hp⟩</text>
+  <rect x="44" y="258" width="142" height="56" rx="6" fill="#ecfdf5" stroke="#0f766e" stroke-width="1.3"/>
+  <text x="54" y="281" font-size="9.4" font-weight="700" fill="#0f766e" text-anchor="start">✓ Goals accomplished!</text>
+  <text x="54" y="300" font-size="8.4" font-weight="400" fill="#0f766e" text-anchor="start">终态：剩余目标 = 0</text>
+  <rect x="34" y="346" width="474" height="140" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="46" y="366" font-size="9.8" font-weight="700" fill="#1e3a8a" text-anchor="start">REPL 状态不变式与回溯恢复（§2.2 &amp; BaseProver.search）</text>
+  <text x="46" y="386" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">1. 不可变状态：Pantograph server.goal_tactic(state, tactic) 成功时返回新 GoalState 入栈。</text>
+  <text x="46" y="405" font-size="8.7" font-weight="600" fill="#b45309" text-anchor="start">2. 失败不污染：捕获 TacticFailure 时原 state 绝不改写，仅记 tactic_feedback 与 failed 边。</text>
+  <text x="46" y="424" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">3. 受限回溯：单目标达 max_trials_per_goal=5 或无候选即弹栈退回父状态（步数上限 100）。</text>
+  <text x="46" y="443" font-size="8.7" font-weight="600" fill="#0f766e" text-anchor="start">4. 最短路重建：抵达终态后用 nx.shortest_path(graph, 0, solved) 剥离自环与死胡同，</text>
+  <text x="46" y="460" font-size="8.7" font-weight="400" fill="#0f766e" text-anchor="start">   只输出从起点到终态步数最少的有效 tactic 序列（例中即 simp → intro → exact）。</text>
+  <text x="46" y="478" font-size="8.3" font-weight="400" fill="#64748b" text-anchor="start">注：论文称 Pantograph 支持 DFS/MCTS，当前 BaseProver.search() 实现为栈式 DFS。</text>
+  <rect x="534" y="74" width="402" height="424" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="534" y="74" width="402" height="28" rx="8" fill="#1d4ed8"/>
+  <rect x="534" y="94" width="402" height="8" fill="#1d4ed8"/>
+  <text x="546" y="92.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">2. Lean4Code VSCodium 原生集成（表 1 &amp; 附录 A）</text>
+  <rect x="544" y="112" width="382" height="82" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="554" y="131" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">① Lean4（修改版，预装于 VSCodium 基座）</text>
+  <text x="554" y="149" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• 禁用 VSCode 默认遥测，保留全量 VSCode 插件市场兼容性</text>
+  <text x="554" y="166" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• 创建 Lean 4 项目时自动注入 LeanDojo-v2 配置目录与环境</text>
+  <text x="554" y="183" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• 局限：Lean 4 主版本不向后兼容，需随发布同步升级扩展</text>
+  <rect x="544" y="204" width="382" height="90" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="554" y="223" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">② LeanDojo 面板（5 项参数 → 一键追踪）</text>
+  <text x="554" y="241" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• 输入：项目名、GitHub URL、Commit、PAT、Lean 版本 + build_deps</text>
+  <text x="554" y="258" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• 自动新建项目文件夹、克隆仓库与 LeanDojo-v2，生成定制 trace.py</text>
+  <text x="554" y="275" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• 单击触发追踪，将 AST / 状态 / 前提产物写入 out/ 目录</text>
+  <rect x="544" y="304" width="382" height="90" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="554" y="323" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">③ LeanCopilot 面板（本地 / 远端双后端补全）</text>
+  <text x="554" y="341" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• 模式 1（本地）：下载轻量 Byte5 检索模型到本地运行推理</text>
+  <text x="554" y="358" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• 模式 2（API）：输入 HF Token 调 DeepSeek-Prover-V2-671B</text>
+  <text x="554" y="375" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• 自动修改项目依赖；编辑时调用 suggest_tactics 在 Infoview 出建议</text>
+  <rect x="544" y="404" width="382" height="82" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="554" y="423" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">④ Agent-TARS 面板（多模态编码终端）</text>
+  <text x="554" y="441" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• 输入 OpenAI Token 启动 Chat Only（禁浏览器）或 Agentic（含规划）</text>
+  <text x="554" y="458" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• 收到首条消息自动开启独立终端并保存 Session ID 维持历史上下文</text>
+  <text x="24" y="520" font-size="9.4" font-weight="400" fill="#64748b" text-anchor="start">阅读配图（arXiv:2611.09048v1）· 左图完整还原原文 Fig. 2 逻辑示例；BaseProver.search() 实测实现基于 search_stack 的 DFS 回溯</text>
+</svg>

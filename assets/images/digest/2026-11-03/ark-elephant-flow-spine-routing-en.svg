@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="ARK: Avoiding KV-Transfer ECMP Collisions via Source-Port Path Reservation">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="10" y="10" width="940" height="520" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" rx="10"/>
+
+  <text x="24" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="16.5" font-weight="700" fill="#0f172a">ARK: Avoiding KV-Transfer ECMP Collisions via Source-Port Reservation</text>
+  <text x="24" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.4" fill="#475569">arXiv:2610.41160v1 (§1–§3, Fig. 1, Algorithm 1) · End-host source-port steering with zero switch edits or receiver reordering</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#bfdbfe" stroke-width="1"/>
+
+  <!-- Left Panel -->
+  <rect x="20" y="72" width="424" height="422" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.1"/>
+  <rect x="20" y="72" width="424" height="26" rx="8" fill="#1e3a8a"/>
+  <rect x="20" y="90" width="424" height="8" fill="#1e3a8a"/>
+  <text x="32" y="89" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" font-weight="700" fill="#ffffff">A. Bottleneck: Stateless ECMP Collisions vs. ARK Steering</text>
+
+  <!-- Sub-card A1: Topology Contrast -->
+  <rect x="30" y="106" width="404" height="196" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="40" y="123" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.1" font-weight="700" fill="#0f172a">2-Tier Spine-Leaf Clos (2:1 Oversubscribed: 800G Leaf Ingress / 400G Up)</text>
+
+  <!-- Mini-panel Left: ECMP Collision -->
+  <rect x="38" y="132" width="188" height="162" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+  <text x="132" y="147" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#991b1b">Stateless ECMP: Hash Collision</text>
+
+  <rect x="48" y="156" width="32" height="20" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="3 2"/>
+  <text x="64" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#64748b">s₁</text>
+  <rect x="92" y="156" width="32" height="20" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="108" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#991b1b">s₂</text>
+  <rect x="136" y="156" width="32" height="20" rx="4" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="152" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#475569">s₃</text>
+  <rect x="180" y="156" width="32" height="20" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="3 2"/>
+  <text x="196" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#64748b">s₄</text>
+
+  <text x="64" y="187" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="7.8" fill="#64748b">Idle</text>
+  <text x="108" y="187" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="7.8" font-weight="700" fill="#dc2626">Hotspot</text>
+  <text x="196" y="187" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="7.8" fill="#64748b">Idle</text>
+
+  <rect x="56" y="214" width="52" height="20" rx="4" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="82" y="227" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="600" fill="#334155">Leaf ℓ₁</text>
+  <rect x="156" y="214" width="52" height="20" rx="4" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="182" y="227" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="600" fill="#334155">Leaf ℓ₂</text>
+
+  <path d="M 76 214 L 103 179" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#arr-red)"/>
+  <path d="M 88 214 L 113 179" fill="none" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 2" marker-end="url(#arr-red)"/>
+  <path d="M 103 176 L 175 212" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#arr-red)"/>
+  <path d="M 113 176 L 187 212" fill="none" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 2" marker-end="url(#arr-red)"/>
+
+  <rect x="48" y="252" width="68" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="82" y="266" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#0f172a">Prefill (f₁,f₂)</text>
+  <rect x="148" y="252" width="68" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="182" y="266" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#0f172a">Decode</text>
+  <line x1="82" y1="252" x2="82" y2="236" stroke="#64748b" stroke-width="1.3"/>
+  <line x1="182" y1="234" x2="182" y2="250" stroke="#64748b" stroke-width="1.3"/>
+  <text x="132" y="287" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="7.8" fill="#991b1b">Flows split 100G s₂; queue + RDMA retry</text>
+
+  <!-- Mini-panel Right: ARK Disjoint -->
+  <rect x="236" y="132" width="188" height="162" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="330" y="147" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">ARK: Disjoint Spine Steering</text>
+
+  <rect x="246" y="156" width="32" height="20" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.4"/>
+  <text x="262" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1e3a8a">s₁</text>
+  <rect x="290" y="156" width="32" height="20" rx="4" fill="#d1fae5" stroke="#0f766e" stroke-width="1.4"/>
+  <text x="306" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#065f46">s₂</text>
+  <rect x="334" y="156" width="32" height="20" rx="4" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="350" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#1d4ed8">s₃</text>
+  <rect x="378" y="156" width="32" height="20" rx="4" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="394" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#1d4ed8">s₄</text>
+
+  <text x="262" y="187" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="7.8" font-weight="700" fill="#1d4ed8">δ₁*</text>
+  <text x="306" y="187" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="7.8" font-weight="700" fill="#0f766e">δ₂*</text>
+
+  <rect x="254" y="214" width="52" height="20" rx="4" fill="#ffffff" stroke="#3b82f6"/>
+  <text x="280" y="227" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="600" fill="#1e3a8a">Leaf ℓ₁</text>
+  <rect x="354" y="214" width="52" height="20" rx="4" fill="#ffffff" stroke="#3b82f6"/>
+  <text x="380" y="227" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="600" fill="#1e3a8a">Leaf ℓ₂</text>
+
+  <path d="M 274 214 L 263 179" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <path d="M 263 176 L 372 212" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <path d="M 286 214 L 304 179" fill="none" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr-teal)"/>
+  <path d="M 307 176 L 385 212" fill="none" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr-teal)"/>
+
+  <rect x="246" y="252" width="68" height="22" rx="4" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="280" y="266" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#0f172a">Prefill (f₁,f₂)</text>
+  <rect x="346" y="252" width="68" height="22" rx="4" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="380" y="266" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#0f172a">Decode</text>
+  <line x1="280" y1="252" x2="280" y2="236" stroke="#1d4ed8" stroke-width="1.3"/>
+  <line x1="380" y1="234" x2="380" y2="250" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="330" y="287" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="7.8" fill="#1e3a8a">1 path/flow, zero reordering, isolated spines</text>
+
+  <!-- Sub-card A2: Why Prior Schemes Fail -->
+  <rect x="30" y="310" width="404" height="174" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="40" y="328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#0f172a">Why Prior Load Balancers Miss KV Mega-Flows (§1–§2)</text>
+
+  <rect x="38" y="338" width="388" height="30" rx="5" fill="#fef2f2" stroke="#fecaca"/>
+  <rect x="44" y="344" width="64" height="18" rx="4" fill="#fee2e2"/>
+  <text x="76" y="356.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.2" font-weight="700" fill="#991b1b">Mega-Flow</text>
+  <text x="114" y="356.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">405B 100K-tok = 48 GB (960ms @400G); 8B avg 1.6 GB (≥128ms)</text>
+
+  <rect x="38" y="374" width="388" height="30" rx="5" fill="#f8fafc" stroke="#cbd5e1"/>
+  <rect x="44" y="380" width="64" height="18" rx="4" fill="#e2e8f0"/>
+  <text x="76" y="392.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.2" font-weight="700" fill="#334155">In-Network</text>
+  <text x="114" y="392.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">CONGA/ConWeave/LetFlow need custom ASICs or CPU reassembly</text>
+
+  <rect x="38" y="410" width="388" height="30" rx="5" fill="#fffbeb" stroke="#fcd34d"/>
+  <rect x="44" y="416" width="64" height="18" rx="4" fill="#fef3c7"/>
+  <text x="76" y="428.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.2" font-weight="700" fill="#92400e">Host PLB</text>
+  <text x="114" y="428.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">Needs M ECN rounds + idle gaps; paced RDMA has no idle gaps</text>
+
+  <rect x="38" y="446" width="388" height="30" rx="5" fill="#eff6ff" stroke="#3b82f6"/>
+  <rect x="44" y="452" width="64" height="18" rx="4" fill="#dbeafe"/>
+  <text x="76" y="464.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.2" font-weight="700" fill="#1d4ed8">ARK Key</text>
+  <text x="114" y="464.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" font-weight="600" fill="#1e3a8a">Dst + bytes known at admission; ms sync amortizes &lt;1% of flow life</text>
+
+  <!-- Right Panel -->
+  <rect x="456" y="72" width="484" height="422" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.1"/>
+  <rect x="456" y="72" width="484" height="26" rx="8" fill="#1d4ed8"/>
+  <rect x="456" y="90" width="484" height="8" fill="#1d4ed8"/>
+  <text x="468" y="89" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" font-weight="700" fill="#ffffff">B. ARK Host Controller &amp; Control/Data Plane Split (Fig. 1b–c, Alg. 1)</text>
+
+  <!-- Stage 1: Boot Precompute -->
+  <rect x="466" y="106" width="464" height="64" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="474" y="113" width="70" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="509" y="125.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" font-weight="700" fill="#1d4ed8">Boot Once</text>
+  <text x="552" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#1e3a8a">Initialize: Precompute Src-Port-to-Path Buckets (~326 ms / peer)</text>
+  <text x="474" y="146" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">• Fixed well-known dstPort; scan δ ∈ [0, 2¹⁶]: k = H(q^δ) mod K → bucket M_hj[p_k]</text>
+  <text x="474" y="161" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#64748b">• Runtime bucket read is O(1) static array deref; multi-tier Clos inverts H(·) per hop</text>
+
+  <line x1="698" y1="170" x2="698" y2="180" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <!-- Stage 2: Runtime Admission + Control/Data Split -->
+  <rect x="466" y="182" width="464" height="196" rx="7" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="474" y="189" width="70" height="18" rx="4" fill="#1d4ed8"/>
+  <text x="509" y="201.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" font-weight="700" fill="#ffffff">Admission</text>
+  <text x="552" y="202" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#0f172a">OnFlowArrival &amp; OnRemoteUpdate: Arbiter-Free Path Selection</text>
+
+  <!-- 3 workflow boxes -->
+  <rect x="474" y="214" width="142" height="90" rx="6" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="545" y="229" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1e3a8a">1. Scan Local Table R</text>
+  <text x="481" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#334155">• If |R| &lt; K: min free k*</text>
+  <text x="481" y="261" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#334155">• Pick δ* ∈ M_dst[p_k*]</text>
+  <text x="481" y="277" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#334155">• Set R[p_k*] ← (t_i, id)</text>
+  <text x="481" y="293" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.0" fill="#1d4ed8">• |R|=K: random k fallback</text>
+
+  <line x1="616" y1="259" x2="626" y2="259" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="628" y="214" width="142" height="90" rx="6" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="699" y="229" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#065f46">2. Peer Synchronization</text>
+  <text x="635" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#334155">• Broadcast RESERVE(t_i,id)</text>
+  <text x="635" y="261" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#334155">• Peers update replica R</text>
+  <text x="635" y="277" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#334155">• OnFlowCompletion:</text>
+  <text x="635" y="293" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.0" fill="#0f766e">• Drop p_k* &amp; send RELEASE</text>
+
+  <line x1="770" y1="259" x2="780" y2="259" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+
+  <rect x="782" y="214" width="140" height="90" rx="6" fill="#fffbeb" stroke="#f59e0b"/>
+  <text x="852" y="229" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#92400e">3. Race Tie-Breaking</text>
+  <text x="789" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#334155">• Simultaneous p_k claim</text>
+  <text x="789" y="261" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#334155">• Compare key (t_p, id_p)</text>
+  <text x="789" y="277" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#334155">• Smaller timestamp wins</text>
+  <text x="789" y="293" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.0" fill="#b45309">• Loser re-runs OnFlowArrival</text>
+
+  <!-- Control & Data Plane strips -->
+  <rect x="474" y="312" width="448" height="28" rx="5" fill="#ecfdf5" stroke="#6ee7b7"/>
+  <rect x="480" y="317" width="84" height="18" rx="4" fill="#d1fae5"/>
+  <text x="522" y="329" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" font-weight="700" fill="#065f46">Control Plane</text>
+  <text x="572" y="329" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#065f46">Dedicated mgmt/low-BW link isolates tiny broadcasts from elephant queueing</text>
+
+  <rect x="474" y="344" width="448" height="28" rx="5" fill="#eff6ff" stroke="#93c5fd"/>
+  <rect x="480" y="349" width="84" height="18" rx="4" fill="#dbeafe"/>
+  <text x="522" y="361" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" font-weight="700" fill="#1d4ed8">Data Plane</text>
+  <text x="572" y="361" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#1e3a8a">Creates RDMA QP with srcPort = δ*; standard 5-tuple ECMP routes KV flow</text>
+
+  <line x1="698" y1="378" x2="698" y2="388" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <!-- Stage 3: Properties & Overhead -->
+  <rect x="466" y="390" width="464" height="94" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="476" y="408" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#0f172a">Deployment Guarantees &amp; Single-Core Controller Overhead (Table 1)</text>
+
+  <rect x="476" y="416" width="140" height="58" rx="5" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="546" y="434" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.0" font-weight="700" fill="#1d4ed8">0 Switch Edits</text>
+  <text x="546" y="450" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#334155">User-space host code</text>
+  <text x="546" y="464" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.2" fill="#64748b">Commodity ECMP intact</text>
+
+  <rect x="628" y="416" width="140" height="58" rx="5" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="698" y="434" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.0" font-weight="700" fill="#1d4ed8">0 Reordering</text>
+  <text x="698" y="450" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#334155">1 fixed spine per flow</text>
+  <text x="698" y="464" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.2" fill="#64748b">No RNIC loss misreads</text>
+
+  <rect x="780" y="416" width="140" height="58" rx="5" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="850" y="434" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.0" font-weight="700" fill="#1e3a8a">≤ 3.48 µs (K=4)</text>
+  <text x="850" y="450" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#334155">4 × 0.87 µs table scan</text>
+  <text x="850" y="464" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.2" font-weight="600" fill="#1d4ed8">≈0.0025% of 137 ms KV</text>
+
+  <!-- Footer Note -->
+  <text x="20" y="514" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#64748b">Assumptions &amp; scope: Requires known switch hash H(·), single dstPort (or per-(peer, dport) table), and sub-broadcast-delay PTP sync; Alg. 1 omits crash lease TTL &amp; loss tests.</text>
+</svg>

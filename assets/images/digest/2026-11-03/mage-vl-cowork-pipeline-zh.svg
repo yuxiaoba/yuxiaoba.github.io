@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Mage-VL-Cowork：从演化 Harness 到五阶段混合桌面智能体配方">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="14" y="14" width="932" height="512" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" rx="10"/>
+  <text x="30" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="17.5" font-weight="700" fill="#0f172a">Mage-VL-Cowork：从演化 Harness 到五阶段混合桌面智能体配方</text>
+  <text x="30" y="59" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11.2" fill="#475569">arXiv:2610.40747v1 (Microsoft Mage Team) · 单一 4B 策略统一 GUI [0,999] 与终端代码执行</text>
+  <line x1="30" y1="68" x2="930" y2="68" stroke="#bfdbfe" stroke-width="1"/>
+
+<rect x="28" y="78" width="432" height="416" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+<text x="42" y="99" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">A. 教师 Harness 演化与 Mage-CUA-Forge 合成管线</text>
+<rect x="40" y="110" width="408" height="114" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+<rect x="49" y="119" width="88" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/><text x="93.0" y="132.2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.2" font-weight="700" fill="#1d4ed8">演化路径 α→ε</text>
+<text x="145" y="132.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11.8" font-weight="700" fill="#0f172a">Teacher Harness H=(F,T,P,E) 与工具裁剪</text>
+<text x="50" y="158" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.0" fill="#334155">• α(GUI 75.6%/32.2步) → β₁(+Code 92.0%/25.0) → ε₁(93.2%/23.2)</text>
+<text x="50" y="179" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.0" fill="#334155">• 主动裁剪冗余通道：移除 xdotool 与 AX 树 β₂，降低小模型歧义</text>
+<text x="50" y="200" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.0" fill="#334155">• 双通道互补：GUI 感知渲染界面与运行态；终端直接读写文件并校验</text>
+<line x1="244" y1="225" x2="244" y2="236" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+<rect x="40" y="238" width="408" height="114" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+<rect x="49" y="247" width="76" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/><text x="87.0" y="260.2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.2" font-weight="700" fill="#1d4ed8">Forge 引擎</text>
+<text x="133" y="260.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11.8" font-weight="700" fill="#0f172a">技能驱动工作流与 WebHarbor 沙盒</text>
+<text x="50" y="286" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.0" fill="#334155">• 技能树 S：6,915 项原子技能（3 轮评估反馈扩增）索引工作流 W</text>
+<text x="50" y="307" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.0" fill="#334155">• 可复用应用 Preparer（工作簿/邮件）+ 文件/包门控生成三元组</text>
+<text x="50" y="328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.0" fill="#334155">• WebHarbor + InfiniteWeb (17,542 任务)：只读 SQLite D₀ 每轮重置</text>
+<line x1="244" y1="353" x2="244" y2="364" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+<rect x="40" y="366" width="408" height="114" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+<rect x="49" y="375" width="76" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/><text x="87.0" y="388.2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.2" font-weight="700" fill="#1d4ed8">规模与成本</text>
+<text x="133" y="388.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11.8" font-weight="700" fill="#0f172a">合成规模与重复生成成本边界</text>
+<text x="50" y="414" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.0" fill="#334155">• 293,806 任务（61.76% 单应用 / 38.24% 跨应用，9 类应用）</text>
+<text x="50" y="435" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.0" fill="#334155">• 877,608 文件引用；318,837 保留混合轨迹（68.19% GUI / 31.81% 终端）</text>
+<text x="50" y="456" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.0" fill="#334155">• 重复生成（gpt-5.6-terra）：$0.906 → $0.158/任务 (-82.6%，85K tok)*</text>
+<path d="M 448 423 L 463 423 L 463 292 L 474 292" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<rect x="478" y="78" width="454" height="416" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+<text x="492" y="99" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">B. 五阶段渐进训练配方与异步 RaaS 强化学习</text>
+<rect x="490" y="110" width="430" height="54" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+<rect x="498" y="116" width="54" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/><text x="525.0" y="129.2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.2" font-weight="700" fill="#1d4ed8">Stage 1</text>
+<text x="559" y="129.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11.6" font-weight="700" fill="#0f172a">GUI 中训练</text>
+<text x="912" y="129.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.6" fill="#1d4ed8">751K seq · 24.6B tok/ep · 1.18Z</text>
+<text x="498" y="151" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.8" fill="#334155">提示解耦 + 同图目标去重 + &lt;think&gt; 选择性掩码 → OSWorld-G 30.6%→56.9%</text>
+<line x1="705" y1="164" x2="705" y2="172" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arrow-blue)"/>
+<rect x="490" y="173" width="430" height="54" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+<rect x="498" y="179" width="54" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/><text x="525.0" y="192.2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.2" font-weight="700" fill="#1d4ed8">Stage 2</text>
+<text x="559" y="192.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11.6" font-weight="700" fill="#0f172a">纯 GUI SFT</text>
+<text x="912" y="192.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.6" fill="#1d4ed8">156.7K traj · 32.2B/ep · 1.55Z</text>
+<text x="498" y="214" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.8" fill="#334155">纯 GUI 桌面轨迹建立交互基础 → OSWorld-Verified 45.56%（均 25.36 步）</text>
+<line x1="705" y1="227" x2="705" y2="235" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arrow-blue)"/>
+<rect x="490" y="236" width="430" height="54" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+<rect x="498" y="242" width="54" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/><text x="525.0" y="255.2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.2" font-weight="700" fill="#1d4ed8">Stage 3</text>
+<text x="559" y="255.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11.6" font-weight="700" fill="#0f172a">代码/终端 SFT</text>
+<text x="912" y="255.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.6" fill="#1d4ed8">563.7K traj · 5.7B/ep · 0.27Z</text>
+<text x="498" y="277" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.8" fill="#334155">Terminal-Bench/SWE + 同批桌面纯终端轨迹，补齐脚本与文档读写</text>
+<line x1="705" y1="290" x2="705" y2="298" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arrow-blue)"/>
+<rect x="490" y="299" width="430" height="54" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+<rect x="498" y="305" width="54" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/><text x="525.0" y="318.2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.2" font-weight="700" fill="#1d4ed8">Stage 4</text>
+<text x="559" y="318.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11.6" font-weight="700" fill="#0f172a">混合 CUA SFT</text>
+<text x="912" y="318.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.6" fill="#1d4ed8">318.8K traj · 45.1B/ep · 2.17Z</text>
+<text x="498" y="340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.8" fill="#334155">32K 序列 + 演化混合轨迹 → OSWorld 55.84% (+10.28) / WebVoyager 58.6%</text>
+<line x1="705" y1="353" x2="705" y2="361" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arrow-blue)"/>
+<rect x="490" y="362" width="430" height="54" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.4"/>
+<rect x="498" y="368" width="54" height="19" rx="5" fill="#1d4ed8" stroke="#93c5fd" stroke-width="0.9"/><text x="525.0" y="381.2" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.2" font-weight="700" fill="#ffffff">Stage 5</text>
+<text x="559" y="381.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11.6" font-weight="700" fill="#0f172a">在线混合 RL</text>
+<text x="912" y="381.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.6" fill="#1d4ed8">1,988 任务 · GRPO+TIS · 2.62Z</text>
+<text x="498" y="403" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.8" fill="#334155">vanilla TIS (clip 2.0)，50 步预算 → OSWorld-Verified 66.0%（均 18.77 步）</text>
+<rect x="490" y="426" width="430" height="58" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="499" y="442" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11.0" font-weight="700" fill="#1d4ed8">不对称滑动上下文 &amp; 异步 RaaS 集群</text>
+<text x="499" y="458.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.7" fill="#334155">• 上下文：保留最近 3 帧截图，将 1..t-4 折叠为单行 Action 摘要抑制重复</text>
+<text x="499" y="475" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9.7" fill="#334155">• 基础设施：32× B200 (24训/8推) + 70 台 D64d_v5 VM (1,120槽)，滞后 ≤3 轮</text>
+<text x="30" y="513" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10.1" fill="#475569">* 7.79 ZFLOPs 仅计名义 LM 算力；82.6% 降幅仅统计重复任务生成，不含 workflow 编写调试、教师标注与 RL/VM 开销。</text>
+</svg>

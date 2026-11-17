@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">Why Static Assumptions Fail: Data Skew, Strategy Flips &amp; Benchmark Bounds</text>
+  <text x="24" y="56" font-size="11" font-weight="400" fill="#475569" text-anchor="start">Failure counterexamples (App. C.1/C.3) &amp; controlled benchmark scope (Sec. 5) from Together Compiler report</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="76" width="448" height="196" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="76" width="448" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="94" width="448" height="10" fill="#dbeafe"/>
+  <text x="36" y="95" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">1. Why Random-Data Microbenchmarks Mislead (App. C.1)</text>
+  <rect x="34" y="112" width="208" height="150" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="44" y="130" font-size="10.5" font-weight="700" fill="#92400e" text-anchor="start">Sparse Top-k (GLM-5.3, MI355X)</text>
+  <text x="44" y="148.0" font-size="9.4" font-weight="400" fill="#78350f" text-anchor="start">• Random scores spread across 2048 bins:</text>
+  <text x="44" y="166.5" font-size="9.4" font-weight="400" fill="#78350f" text-anchor="start">  stays flat at 16–20 µs (4K–64K)</text>
+  <text x="44" y="185.0" font-size="9.4" font-weight="400" fill="#78350f" text-anchor="start">• Real scores pack ReLU zeros in 1 bin:</text>
+  <text x="44" y="203.5" font-size="9.4" font-weight="400" fill="#78350f" text-anchor="start">  triggers O(cntT^2) threshold tie-scan</text>
+  <text x="44" y="222.0" font-size="9.4" font-weight="400" fill="#78350f" text-anchor="start">• Blows up 291 µs (4K) -&gt; 62 ms (64K):</text>
+  <text x="44" y="240.5" font-size="9.4" font-weight="400" fill="#78350f" text-anchor="start">  causes 1.3x end-to-end engine slowdown</text>
+  <rect x="254" y="112" width="208" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="264" y="130" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="start">MoE Skew (DSV4.1, GB300)</text>
+  <text x="264" y="148.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">• Random data activates 13–38% more</text>
+  <text x="264" y="166.5" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">  experts than real traffic (Fig 13a)</text>
+  <text x="264" y="185.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">• Cursor MoK megakernel wins +9.7%</text>
+  <text x="264" y="203.5" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">  over copy engines when balanced</text>
+  <text x="264" y="222.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">• Under real skewed traffic MoK loses</text>
+  <text x="264" y="240.5" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">  6–15%; copy engines beat MoK by 6.9%</text>
+  <rect x="488" y="76" width="448" height="196" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="488" y="76" width="448" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="488" y="94" width="448" height="10" fill="#dbeafe"/>
+  <text x="500" y="95" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">2. Concurrency, Collectives &amp; Chip Path Flips (§4.3 / §5.2 / C.3)</text>
+  <rect x="498" y="110" width="428" height="48" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="124" font-size="9.8" font-weight="700" fill="#1d4ed8" text-anchor="start">Parallelism Crossover (Fig. 4 &amp; 8)</text>
+  <text x="506" y="138" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Spec-only models pick EP64 by ignoring per-call collective latency</text>
+  <text x="506" y="152" font-size="9.1" font-weight="400" fill="#0f172a" text-anchor="start">• Tighter TPS SLA flips to MoE-TP64 + higher TP (MiniMax B200: 1,111 vs 633)</text>
+  <rect x="498" y="163" width="428" height="48" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="177" font-size="9.8" font-weight="700" fill="#1d4ed8" text-anchor="start">Kernel Flips &amp; Baseline Collapse (§5.2)</text>
+  <text x="506" y="191" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Kimi K3 persistent MoE down-proj: +2.8–5% at conc 22–78, -6.6% at conc 8</text>
+  <text x="506" y="205" font-size="9.1" font-weight="400" fill="#0f172a" text-anchor="start">• InferenceX MiniMax hits ceiling on prod replay: 10–40x tail TTFT, 17% fail</text>
+  <rect x="498" y="216" width="428" height="48" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="230" font-size="9.8" font-weight="700" fill="#1d4ed8" text-anchor="start">GPU vs. Trainium2 Fusion Divergence (App. C.3)</text>
+  <text x="506" y="244" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• GPU grid barrier (1.5–3.5 µs) loses to PDL kernel boundary (0.5–1 µs; AMD +0.22%)</text>
+  <text x="506" y="258" font-size="9.1" font-weight="400" fill="#0f172a" text-anchor="start">• Trainium2 flips this: NKI fuses full layer; NVIDIA PDL cuts fixed cost 9.7%</text>
+  <rect x="24" y="282" width="912" height="222" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="282" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="300" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="301" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">3. Verified Measurements, Kernel Findings &amp; Evidence Boundaries (24h Compile · &lt;=2 Nodes · No Quant)</text>
+  <rect x="34" y="318" width="214" height="176" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="336" font-size="10.3" font-weight="700" fill="#1e3a8a" text-anchor="start">Bench A · Llama-3.2-1B (BS=1)</text>
+  <text x="44" y="356.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• H100/B200, ISL 32, OSL 256–65,536</text>
+  <text x="44" y="375.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• Up to 1.7x vs Megakernels (Hazy/Mirage)</text>
+  <text x="44" y="395.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• B200 OSL 256: 2,118 vs 1,649 (Hazy MK)</text>
+  <text x="44" y="414.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• B200 OSL 64K: 1,482 vs 598 (Hazy MK)</text>
+  <text x="44" y="434.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• Key: PDL + CUDA graphs + L2 prefetch</text>
+  <text x="44" y="453.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• Fine-grained paging only adds 3.1%</text>
+  <rect x="260" y="318" width="214" height="176" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="270" y="336" font-size="10.3" font-weight="700" fill="#1e3a8a" text-anchor="start">Bench B · InferenceX / AgentX</text>
+  <text x="270" y="356.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• 393 coding traces (AIPerf), up to 2.6x</text>
+  <text x="270" y="375.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• Concurrency-1 P90/P50 vs InferenceX:</text>
+  <text x="270" y="395.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">  M3.1 B200: 1,111 / 1,299 (vs 633)</text>
+  <text x="270" y="414.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">  DSV4.1 GB300: 1,205 / 1,266 (vs 943)</text>
+  <text x="270" y="434.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">  GLM-5.3 B200: 417 / 495 (vs 329)</text>
+  <text x="270" y="453.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• Footnote: Trainium2 uses 65.8K synth</text>
+  <rect x="486" y="318" width="214" height="176" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="496" y="336" font-size="10.3" font-weight="700" fill="#166534" text-anchor="start">Cross-Domain &amp; Kernel Wins (B / C.3)</text>
+  <text x="496" y="356.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• 8 sci-ML models 1.5x–6.4x (bit-exact)</text>
+  <text x="496" y="375.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• AIFS/Aurora 4-&gt;13/14 samples cuts RMSE</text>
+  <text x="496" y="395.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• NVIDIA Lamport all-reduce (~2x NCCL)</text>
+  <text x="496" y="414.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• Cut FlashMLA 16-&gt;64 head padding (4x)</text>
+  <text x="496" y="434.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• Blackwell tcgen05 NVFP4: 23.7 vs 34.1 µs</text>
+  <text x="496" y="453.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• Dead ends: vendor GEMM at 78–100% BW;</text>
+  <text x="496" y="473.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">  comm/compute overlap 3–4x slower</text>
+  <rect x="712" y="318" width="214" height="176" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="722" y="336" font-size="10.3" font-weight="700" fill="#92400e" text-anchor="start">Unverified Claims &amp; Open Gaps</text>
+  <text x="722" y="356.0" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• &#x27;Up to 50% faster customer&#x27; lacks logs</text>
+  <text x="722" y="375.5" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• &#x27;80% OpenRouter 3-mo&#x27; is external</text>
+  <text x="722" y="395.0" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• &#x27;Trillions tok/day&#x27; lacks fleet cost</text>
+  <text x="722" y="414.5" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• LLM parity &amp; KV-isolation bounds private</text>
+  <text x="722" y="434.0" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• Live drift trigger &amp; hysteresis private</text>
+  <text x="722" y="453.5" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• 2-node x 24h compile amortization omitted</text>
+  <text x="722" y="473.0" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• AMD 8-XCD unsynced timers fail profile</text>
+  <text x="24" y="522" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram grounded in Together Compiler paper &amp; blog (2026-11-04), separating controlled benchmarks from undisclosed internals (not an original figure)</text>
+</svg>

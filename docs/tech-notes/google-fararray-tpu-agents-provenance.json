@@ -1,0 +1,128 @@
+{
+  "id": "google-fararray-tpu-agents",
+  "source_url": "https://antigravity.google/blog/gemini-4-argon-trillion-edge-graphs-and-tpu-kernels",
+  "source_title": "How Gemini 4 Argon Upleveled Agents on Antigravity: Trillion-Edge Graphs and Custom TPU Kernels",
+  "source_author": "The Antigravity & Google Research Team",
+  "source_contributors": [
+    "Brandon Mayer",
+    "Kuba Lacki",
+    "Laxman Dhulipala",
+    "Michael Galkin",
+    "Simon Meierhans",
+    "Ben Finkelshtein",
+    "Yogesh Tewari",
+    "Mathieu Guillame-Bert",
+    "Bryan Perozzi",
+    "Vahab Mirrokni"
+  ],
+  "source_org": "Google Antigravity & Google Research",
+  "source_date": "2026-10-26",
+  "note_date": "2026-10-30",
+  "published_at": "2026-10-30T10:31:20.339125+08:00",
+  "updated_at": "2026-11-16T12:05:00+08:00",
+  "frozen_primary_html": {
+    "path": ".preview/research-jobs/runs/20261030-102752-c32151752a-a87732/work/sources/google-antigravity-gemini-4-argon-graphs-tpu-kernels.html",
+    "sha256": "pending_parent_shell_verification"
+  },
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification_status": "VERIFIED",
+  "pending_parent_checks": [
+    "Render 4 SVGs to PNGs via headless Chromium and visually inspect for zero clipping/overlap",
+    "Run chmod 0755 on assets/images/tech/google-fararray-tpu-agents and chmod 0644 on markdowns, SVGs, and provenance JSON",
+    "Compute and backfill exact SHA-256 digests for frozen_primary_html, zh_markdown, en_markdown, and 4 SVGs",
+    "Run serialized preview build and container-safe Playwright checks at 1440x900 and 390x844"
+  ],
+  "quotes_and_metrics_mapping": [
+    {
+      "claim": "Compressing an estimated one-year distributed systems roadmap into a 5-hour gated engineering sprint",
+      "source_section": "Introduction",
+      "scope_note": "Vendor-reported project estimate atop internal Distributed Graph Flow (DGF) stack; not a controlled ablation"
+    },
+    {
+      "claim": "Humans defined system interfaces, memory layouts, and zero-mock verification harnesses; independent auditor enforced 'Zero-Facade' gate across functional, scale, stress, and failure-recovery tiers",
+      "source_section": "How Gemini 4 Argon Upleveled Teamwork / The Teamwork Sprint: Building FarArray in Hours",
+      "scope_note": "Five-milestone FarArray pipeline: Transport Abstraction -> Core Pinned Arena -> Batched Doorbells -> Distributed Algorithms -> Live Audit"
+    },
+    {
+      "claim": "Thread-local Lowest Common Ancestor (LCA) early-exit pruning resolves 97%-99.9% of redundant graph edges in local worker RAM before touching the network; hardware telemetry tuning cut maximum read latency spikes by 89%",
+      "source_section": "The Teamwork Sprint / Planet-Scale Results",
+      "scope_note": "FarArray supports Symmetric PGAS and Dedicated Worker/Server topologies over SmartNIC RDMA, Linux io_uring, and POSIX SHM; RDMA path uses PCIe MMIO doorbells and PCIe AtomicOps 64-bit CAS with zero remote CPU interrupts while TCP KV servers saturate at 100%"
+    },
+    {
+      "claim": "Connected Components (ClueWeb12 & HyperLink 2012, up to 3.56B vertices, 113.6B-128.7B edges): 60x and 90x higher throughput, 40x (ClueWeb12) and 180x (HyperLink 2012) faster wall-clock time, 6x-22x less RAM vs TCP key-value baselines; >100x less DRAM vs distributed shuffle (28.5 GB vs 4.0 TB); 100% exact partition parity vs single-machine GBBS",
+      "source_section": "Planet-Scale Results table",
+      "scope_note": "Distinct baselines (TCP KV vs distributed shuffle vs GBBS) reported per comparison"
+    },
+    {
+      "claim": "Planet-Scale Connected Components (18.0B vertices, 1.14T unique / 2.27T symmetric edges): 148 GB total pinned DRAM across 64 targets (2.31 GB/node), 0 OOMs where >1 TiB TCP KV and >20 TB shuffle baselines are infeasible",
+      "source_section": "Planet-Scale Results table",
+      "scope_note": "Feasibility result rather than direct speedup ratio against failing baselines"
+    },
+    {
+      "claim": "Distributed InstantEmbedding (Personalized PageRank, 955M-3.56B vertices, up to 98.0B directed edges): peak concurrent RAM reduced 8.7-13.9x (caption: 8.69x ClueWeb12, 13.85x Hyperlink 2012), cumulative memory up to 55.9x (55.87x), per-hop latency 12.90x-30.26x, 8-hop iteration wall time 11.3-26.5x (11.29x-26.46x) vs MapReduce + Remote KV",
+      "source_section": "Planet-Scale Results table & InstantEmbedding figure captions",
+      "scope_note": "Exact caption precision included alongside rounded summary figures"
+    },
+    {
+      "claim": "Pallas TPU v6e sparse SpMM kernel (50K nodes, 256D features, 214K to 20.97M edges; GIN SUM/MEAN and 1-/4-layer GCN): streams 4,096-edge COO blocks via SMEM, expands XLA scoped VMEM from 16 MiB to 122 MiB, uses (8, 128) 3D VREG tiling with 4-way unrolling and store-to-load register forwarding, and zero-float-residual custom_vjp; HLO temp HBM 111.5 MiB flat vs 20.2 GiB native JAX (up to 185.8x / 185.78x reduction at 20.97M edges); forward 10.5x-14.7x (10.45x-14.66x) and backward/forward+backward 8x-12x (7.96x-11.98x) with strict floating-point numerical parity",
+      "source_section": "2. Speed: Breaking the TPU Memory Wall for Sparse GNNs & Pallas figure captions",
+      "scope_note": "Source code, dtype (bf16 vs fp32), parity tolerance, and >50K-node VMEM spill behavior are not detailed in the post"
+    }
+  ],
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/google-fararray-tpu-agents.md",
+      "sha256": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/google-fararray-tpu-agents.md",
+      "sha256": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/google-fararray-tpu-agents/fararray-tpu-architecture-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/google-fararray-tpu-agents/fararray-tpu-architecture-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/google-fararray-tpu-agents/argon-verification-boundaries-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/google-fararray-tpu-agents/argon-verification-boundaries-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-16T04:09:01.462257+00:00",
+    "preview_release": "20261116-120700-2e64116a",
+    "sha256": {
+      "zh_md_sha256": "5baa9c3e2fdd97a6fda220f472536e5fc90e350af2d66616b3d5eaec6b8656e8",
+      "en_md_sha256": "1117c7fbc6b93a9425f5f9fdb14e0cfe1c671320b1678acce94fbab1a5086fb0",
+      "svgs": {
+        "/assets/images/tech/google-fararray-tpu-agents/fararray-tpu-architecture-zh.svg": "e7ecb631752407157f238c40a581488b118d8e255252d23f7ebd1817234cc15c",
+        "/assets/images/tech/google-fararray-tpu-agents/fararray-tpu-architecture-en.svg": "0f85b9be0d84cc19f947770181f85ee34f166d67cb07b27fbdc9b6335e783769",
+        "/assets/images/tech/google-fararray-tpu-agents/argon-verification-boundaries-zh.svg": "415b9e0496d971181cf2f5eabd0e2121e35d244b160301a210ca5571d000a130",
+        "/assets/images/tech/google-fararray-tpu-agents/argon-verification-boundaries-en.svg": "cc6b96881f058ce3b2aec38fd8cf1f3f0376fa7d020258b0868e8fb6c9330c3e"
+      },
+      "preserved": {}
+    },
+    "playwright_total": 34,
+    "playwright_passed": 34,
+    "playwright_failed": 0
+  }
+}

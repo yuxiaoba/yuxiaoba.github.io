@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="PDScope 实证证据图：打破 Prefill-Decode 跷跷板、291B 多批次扩展与逐模块消融收益" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', 'Lato', sans-serif;">
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="22" y="33" font-size="16.4" font-weight="700" fill="#0f172a">实证证据：打破「Prefill-Decode 跷跷板」、291B 扩展与分步消融 (§5)</text>
+  <text x="22" y="52" font-size="10.0" fill="#475569">整理自 arXiv:2610.39216v1（§2.2 图 3、§3.3 表 1–2、§5.2–5.5 图 9–13 表 5）· 24 GB 显存上限，10 次运行均值</text>
+  <line x1="22" y1="61" x2="938" y2="61" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Panel A: Top-Left -->
+  <rect x="20" y="70" width="452" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="70" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="88" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="96" x2="472" y2="96" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="87.5" font-size="10.6" font-weight="700" fill="#1e3a8a">A. 跷跷板微观根因：阶段瓶颈反转与系统税 (Fig. 3, Table 1–2)</text>
+
+  <!-- Stacked Breakdown Legend -->
+  <rect x="30" y="103" width="10" height="8" rx="1.5" fill="#1d4ed8"/>
+  <text x="44" y="110.5" font-size="8.2" fill="#334155">CPU 计算</text>
+  <rect x="102" y="103" width="10" height="8" rx="1.5" fill="#d97706"/>
+  <text x="116" y="110.5" font-size="8.2" fill="#334155">PCIe 传输</text>
+  <rect x="176" y="103" width="10" height="8" rx="1.5" fill="#0f766e"/>
+  <text x="190" y="110.5" font-size="8.2" fill="#334155">GPU 计算</text>
+  <text x="256" y="110.5" font-size="8.1" fill="#64748b">(HybriMoE Mixtral-8x7B @ A100 占比)</text>
+
+  <text x="30" y="128" font-size="8.8" font-weight="700" fill="#0f172a">Prefill (1024t)</text>
+  <rect x="132" y="118" width="159" height="12" rx="2" fill="#1d4ed8"/>
+  <rect x="292" y="118" width="144" height="12" rx="2" fill="#d97706"/>
+  <rect x="437" y="118" width="19" height="12" rx="2" fill="#0f766e"/>
+  <text x="132" y="143" font-size="8.1" fill="#334155">CPU 2,557ms (49.5%) · PCIe 2,321ms (44.9%) · GPU 292ms (5.6%)</text>
+
+  <text x="30" y="160" font-size="8.8" font-weight="700" fill="#0f172a">Decode (1 tok)</text>
+  <rect x="132" y="150" width="257" height="12" rx="2" fill="#d97706"/>
+  <rect x="390" y="150" width="47" height="12" rx="2" fill="#1d4ed8"/>
+  <rect x="438" y="150" width="18" height="12" rx="2" fill="#0f766e"/>
+  <text x="132" y="175" font-size="8.1" fill="#b45309" font-weight="600">PCIe 1,449ms (79.5% 主瓶颈) · CPU 264ms (14.5%) · GPU 109ms (6.0%)</text>
+
+  <line x1="30" y1="184" x2="462" y2="184" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="30" y="199" font-size="8.8" font-weight="700" fill="#0f172a">1. Prefill CPU 争用放大 PCIe 延迟，AsyncIO 逆转 (PCIe 4.0×16, Table 1 &amp; 3)：</text>
+  <text x="38" y="215" font-size="8.4" fill="#334155">DeepSeek 1.95→2.78ms (+43%)→AsyncIO 0.76ms · Mixtral 33.5→51.1ms→13.98ms</text>
+  <text x="30" y="236" font-size="8.8" font-weight="700" fill="#0f172a">2. Decode 低并行无法掩蔽动态调度与缓存税 (Table 2, 单专家单 token)：</text>
+  <text x="38" y="252" font-size="8.4" fill="#334155">Mixtral Intel CPU 算 2.88 vs 总耗时 4.25ms (+48%) · Qwen 3090 算 0.13 vs 0.24ms</text>
+  <text x="38" y="268" font-size="8.2" fill="#1d4ed8" font-weight="600">→ 任何动态轮询开销直接暴露于 Decode 关键路径，必须靠静态图消除</text>
+
+  <!-- Panel B: Top-Right -->
+  <rect x="488" y="70" width="452" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="70" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="88" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="96" x2="940" y2="96" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="87.5" font-size="10.6" font-weight="700" fill="#1e3a8a">B. 单批次四模型最高吞吐倍率 vs 五大基线 (§5.2.1–5.2.2)</text>
+
+  <rect x="500" y="103" width="11" height="8" rx="1.5" fill="#1d4ed8"/>
+  <text x="515" y="110.5" font-size="8.4" fill="#334155">Prefill 最高倍率 (2.5–10.3×)</text>
+  <rect x="664" y="103" width="11" height="8" rx="1.5" fill="#0f766e"/>
+  <text x="679" y="110.5" font-size="8.4" fill="#334155">Decode 最高倍率 (2.1–6.1×)</text>
+
+  <!-- Gridlines: x=612 (0x) to x=898 (11x), 26.0px per 1x -->
+  <line x1="612" y1="118" x2="612" y2="233" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="612" y="244" text-anchor="middle" font-size="8.0" fill="#64748b">0×</text>
+  <line x1="664" y1="118" x2="664" y2="233" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="664" y="244" text-anchor="middle" font-size="8.0" fill="#64748b">2×</text>
+  <line x1="716" y1="118" x2="716" y2="233" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="716" y="244" text-anchor="middle" font-size="8.0" fill="#64748b">4×</text>
+  <line x1="768" y1="118" x2="768" y2="233" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="768" y="244" text-anchor="middle" font-size="8.0" fill="#64748b">6×</text>
+  <line x1="820" y1="118" x2="820" y2="233" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="820" y="244" text-anchor="middle" font-size="8.0" fill="#64748b">8×</text>
+  <line x1="872" y1="118" x2="872" y2="233" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="872" y="244" text-anchor="middle" font-size="8.0" fill="#64748b">10×</text>
+
+  <text x="605" y="133" text-anchor="end" font-size="8.7" font-weight="700" fill="#0f172a">vs Fate</text>
+  <rect x="612" y="121" width="267.8" height="7.2" rx="1.5" fill="#1d4ed8"/>
+  <text x="884" y="127.5" font-size="8.1" font-weight="700" fill="#1d4ed8">10.3×</text>
+  <rect x="612" y="130" width="158.6" height="7.2" rx="1.5" fill="#0f766e"/>
+  <text x="775" y="136.5" font-size="8.1" font-weight="700" fill="#0f766e">6.1×</text>
+
+  <text x="605" y="156" text-anchor="end" font-size="8.7" font-weight="700" fill="#0f172a">vs KTransformers</text>
+  <rect x="612" y="144" width="223.6" height="7.2" rx="1.5" fill="#1d4ed8"/>
+  <text x="840" y="150.5" font-size="8.1" font-weight="700" fill="#1d4ed8">8.6×</text>
+  <rect x="612" y="153" width="75.4" height="7.2" rx="1.5" fill="#0f766e"/>
+  <text x="692" y="159.5" font-size="8.1" font-weight="700" fill="#0f766e">2.9×</text>
+
+  <text x="605" y="179" text-anchor="end" font-size="8.7" font-weight="700" fill="#0f172a">vs Fiddler</text>
+  <rect x="612" y="167" width="150.8" height="7.2" rx="1.5" fill="#1d4ed8"/>
+  <text x="767" y="173.5" font-size="8.1" font-weight="700" fill="#1d4ed8">5.8×</text>
+  <rect x="612" y="176" width="75.4" height="7.2" rx="1.5" fill="#0f766e"/>
+  <text x="692" y="182.5" font-size="8.1" font-weight="700" fill="#0f766e">2.9×</text>
+
+  <text x="605" y="202" text-anchor="end" font-size="8.7" font-weight="700" fill="#0f172a">vs HybriMoE</text>
+  <rect x="612" y="190" width="114.4" height="7.2" rx="1.5" fill="#1d4ed8"/>
+  <text x="731" y="196.5" font-size="8.1" font-weight="700" fill="#1d4ed8">4.4×</text>
+  <rect x="612" y="199" width="54.6" height="7.2" rx="1.5" fill="#0f766e"/>
+  <text x="671" y="205.5" font-size="8.1" font-weight="700" fill="#0f766e">2.1×</text>
+
+  <text x="605" y="225" text-anchor="end" font-size="8.7" font-weight="700" fill="#0f172a">vs MoE-APEX</text>
+  <rect x="612" y="213" width="65.0" height="7.2" rx="1.5" fill="#1d4ed8"/>
+  <text x="681" y="219.5" font-size="8.1" font-weight="700" fill="#1d4ed8">2.5×</text>
+  <rect x="612" y="222" width="54.6" height="7.2" rx="1.5" fill="#0f766e"/>
+  <text x="671" y="228.5" font-size="8.1" font-weight="700" fill="#0f766e">2.1×</text>
+
+  <rect x="498" y="251" width="432" height="20" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="506" y="264" font-size="8.1" fill="#334155">A100/3090 几何均值比：PDScope 1.88×(P) / 1.38×(D) vs KTransformers 3.23× / 2.86× (依赖 AVX-512)</text>
+
+  <!-- Panel C: Bottom-Left -->
+  <rect x="20" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="316" x2="472" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="307.5" font-size="10.6" font-weight="700" fill="#1e3a8a">C. 291B DeepSeek-V4-Flash 扩展：单批次 vs 多批次 (§5.3)</text>
+
+  <text x="30" y="332" font-size="8.4" fill="#475569">A100 (24GB VRAM + 512GB DRAM) · INT8 291B · 多批次开启 chunk=256 分块 Prefill</text>
+
+  <rect x="30" y="341" width="212" height="104" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="40" y="357" font-size="9.3" font-weight="700" fill="#1e3a8a">单批次 (bs = 1)</text>
+  <text x="40" y="375" font-size="8.5" font-weight="700" fill="#1d4ed8">Prefill 倍率：</text>
+  <text x="40" y="390" font-size="8.3" fill="#0f172a">vs Fate 2.82× · Fiddler 3.06×</text>
+  <text x="40" y="405" font-size="8.3" fill="#0f172a">vs HybriMoE 2.69× · APEX 5.03×</text>
+  <text x="40" y="423" font-size="8.5" font-weight="700" fill="#0f766e">Decode 倍率：</text>
+  <text x="40" y="438" font-size="8.3" fill="#0f172a">1.35× / 1.90× / 1.26× / 1.97×</text>
+
+  <rect x="250" y="341" width="212" height="104" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="260" y="357" font-size="9.3" font-weight="700" fill="#1e3a8a">多批次 (bs = 32, chunk = 256)</text>
+  <text x="260" y="375" font-size="8.5" font-weight="700" fill="#1d4ed8">Prefill 倍率：</text>
+  <text x="260" y="390" font-size="8.3" fill="#0f172a">vs Fate 2.42× · Fiddler 2.61×</text>
+  <text x="260" y="405" font-size="8.3" fill="#0f172a">vs HybriMoE 2.35× · APEX 5.37×</text>
+  <text x="260" y="423" font-size="8.5" font-weight="700" fill="#0f766e">Decode 倍率 (Mode d)：</text>
+  <text x="260" y="438" font-size="8.3" fill="#0f172a">3.16× / 3.17× / 3.14× / 5.65×</text>
+
+  <rect x="30" y="452" width="432" height="36" rx="5" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <text x="38" y="466" font-size="8.2" fill="#78350f">• KTransformers 不支持该模型；MoE-APEX 双副本超 512GB DRAM 被迫禁用 Pinned I/O</text>
+  <text x="38" y="481" font-size="8.2" fill="#78350f">• bs=16→32 时 Prefill 仅增 5.2% (2k) / 0.7% (4k)，bs=16 已饱和单卡与 PCIe</text>
+
+  <!-- Panel D: Bottom-Right -->
+  <rect x="488" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="316" x2="940" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="307.5" font-size="10.6" font-weight="700" fill="#1e3a8a">D. 增量消融（相对 Fiddler）与 PhasePer 预测稳健性 (§5.4–5.5)</text>
+
+  <!-- Ablation rows -->
+  <text x="500" y="333" font-size="8.2" font-weight="700" fill="#475569">增量组件 (A100)</text>
+  <text x="642" y="333" font-size="8.0" fill="#64748b">Prefill 区间 (蓝) / Decode 区间 (青)</text>
+  <text x="802" y="333" font-size="8.0" font-weight="700" fill="#1d4ed8">Prefill</text>
+  <text x="872" y="333" font-size="8.0" font-weight="700" fill="#0f766e">Decode</text>
+
+  <!-- Scale: x=642 (1.0x) to x=786 (2.4x) -> 102.8px per 1x -->
+  <line x1="642" y1="338" x2="642" y2="412" stroke="#cbd5e1" stroke-width="0.9"/>
+
+  <text x="500" y="349" font-size="8.4" font-weight="700" fill="#0f172a">+h 热专家表</text>
+  <rect x="658" y="340" width="24" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <rect x="657" y="347" width="32" height="5.5" rx="1.5" fill="#0f766e"/>
+  <text x="802" y="349" font-size="8.1" font-weight="600" fill="#1d4ed8">1.16–1.39×</text>
+  <text x="872" y="349" font-size="8.1" font-weight="600" fill="#0f766e">1.15–1.46×</text>
+
+  <text x="500" y="368" font-size="8.4" font-weight="700" fill="#0f172a">+i AsyncIO</text>
+  <rect x="711" y="359" width="22" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <rect x="677" y="366" width="93" height="5.5" rx="1.5" fill="#0f766e"/>
+  <text x="802" y="368" font-size="8.1" font-weight="600" fill="#1d4ed8">1.67–1.88×</text>
+  <text x="872" y="368" font-size="8.1" font-weight="600" fill="#0f766e">1.34–2.24×</text>
+
+  <text x="500" y="387" font-size="8.4" font-weight="700" fill="#0f172a">+p+a 预测+调度</text>
+  <rect x="682" y="378" width="69" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <rect x="659" y="385" width="22" height="5.5" rx="1.5" fill="#0f766e"/>
+  <text x="802" y="387" font-size="8.1" font-weight="600" fill="#1d4ed8">1.39–2.06×</text>
+  <text x="872" y="387" font-size="8.1" font-weight="600" fill="#0f766e">1.17–1.38×</text>
+
+  <text x="500" y="406" font-size="8.4" font-weight="700" fill="#0f172a">+g+c 静态图+缓存</text>
+  <rect x="652" y="397" width="11" height="5.5" rx="1.5" fill="#1d4ed8"/>
+  <rect x="655" y="404" width="27" height="5.5" rx="1.5" fill="#0f766e"/>
+  <text x="802" y="406" font-size="8.1" font-weight="600" fill="#1d4ed8">1.10–1.20×</text>
+  <text x="872" y="406" font-size="8.1" font-weight="600" fill="#0f766e">1.13–1.39×</text>
+
+  <!-- Bottom 2 callouts -->
+  <rect x="498" y="418" width="212" height="70" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="433" font-size="8.7" font-weight="700" fill="#1e3a8a">PhasePer Top-6 ±2 命中率 (Table 5)</text>
+  <text x="506" y="449" font-size="8.2" fill="#0f172a">ShareGPT 域内：96%–100%</text>
+  <text x="506" y="464" font-size="8.2" fill="#0f172a">跨域 DPO 92–99% · LLaVA 90–99%</text>
+  <text x="506" y="479" font-size="8.0" fill="#475569">比 Fate 原始精度高 +15%–68.4%</text>
+
+  <rect x="718" y="418" width="212" height="70" rx="5" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+  <text x="726" y="433" font-size="8.7" font-weight="700" fill="#065f46">容错、前瞻深度与紧内存边界</text>
+  <text x="726" y="449" font-size="8.1" fill="#0f172a">降级 Fate 预测 (45–70%)：P 仅降 6.4–11.3%</text>
+  <text x="726" y="464" font-size="8.1" fill="#0f172a">1 层 vs 2 层前瞻差：1.1–2.3%(P)/0.8–5.4%(D)</text>
+  <text x="726" y="479" font-size="8.0" fill="#334155">关闭热表 (-h)：P 仅损 1.8% · D 损 8.2%</text>
+
+  <text x="20" y="518" font-size="8.9" fill="#64748b">注：Prefill (2.5–10.3×) 与 Decode (2.1–6.1×) 为独立分相最高倍率且对应不同基线，不可相乘；整请求加速比取决于提示/生成长度比、PCIe 代数与 CPU。</text>
+</svg>

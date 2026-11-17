@@ -3,7 +3,7 @@ id: 2026-11-03-nvidia-kubernetes-ai-ready-vera-rubin
 title: 2026年11月3日｜技术阅读：Making Kubernetes AI-Ready for NVIDIA Vera Rubin on Day One
 date: '2026-11-03'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -15,9 +15,11 @@ authoring_source: assistant
 translation_source: assistant
 permalink: /tech/zh/2026-11-03-nvidia-kubernetes-ai-ready-vera-rubin/
 long_read: true
-summary: "Vera Rubin 配方中的驱动与 IMEX 所有权、分层验证，以及硬件和插件故障的不同归因。"
+summary: Vera Rubin 配方中的驱动与 IMEX 所有权、分层验证，以及硬件和插件故障的不同归因。
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 ## 新硬件适配是一组版本与所有权约束
 
 NVIDIA 的 Vera Rubin NVL72 实践把驱动、容器运行时、IMEX、网络与调度写进 AICR recipe。测试组合使用宿主预装 R615.23 驱动，GPU Operator 不再安装驱动但仍管理 toolkit；整个 GPU 分配继续走 device plugin，DRA ComputeDomains 管理跨节点 IMEX。这些职责不能因都涉及 GPU 而混为一套分配机制。

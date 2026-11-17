@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="34" font-size="18" font-weight="700" fill="#0f172a">Modeled Tradeoffs &amp; Scenario Sensitivity: Knee, Energy Share &amp; Prefill Rescues</text>
+  <text x="24" y="53" font-size="10.8" fill="#475569">Values reflect Gimlet's model &amp; single-parameter perturbations (ISL=4096, OSL=512, 0% prefix cache, fractional chips)—not vendor hardware rankings</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Panel 1: Interactivity Curve & Verification Knee -->
+  <rect x="24" y="72" width="448" height="210" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="72" width="448" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="90" width="448" height="10" fill="#dbeafe"/>
+  <text x="36" y="90" font-size="11.2" font-weight="700" fill="#1e3a8a">1 · Interactivity Curve &amp; Verify Knee (8 vs. 1.5 ms/tok)</text>
+
+  <!-- Schematic Interactivity Plot -->
+  <line x1="72" y1="114" x2="72" y2="246" stroke="#475569" stroke-width="1.2"/>
+  <line x1="72" y1="246" x2="306" y2="246" stroke="#475569" stroke-width="1.2"/>
+  <text x="66" y="122" font-size="8.8" font-weight="600" fill="#475569" text-anchor="end">137</text>
+  <text x="66" y="186" font-size="8.8" font-weight="600" fill="#475569" text-anchor="end">~61</text>
+  <text x="66" y="246" font-size="8.8" font-weight="600" fill="#475569" text-anchor="end">0</text>
+  <text x="36" y="180" font-size="8.8" fill="#64748b" text-anchor="middle" transform="rotate(-90 36 180)">Output tok/s/req</text>
+
+  <!-- Knee Dashed Line at D=15 -->
+  <line x1="214" y1="114" x2="214" y2="246" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="214" y="261" font-size="8.8" font-weight="700" fill="#1d4ed8" text-anchor="middle">D=15 knee</text>
+  <text x="148" y="261" font-size="8.8" fill="#475569" text-anchor="middle">D=8</text>
+  <text x="284" y="261" font-size="8.8" fill="#64748b" text-anchor="middle">Draft length →</text>
+
+  <!-- Accelerator / Split Curve (Overlapping) -->
+  <path d="M 84 218 C 118 164, 168 122, 214 122 C 248 122, 276 132, 298 144" fill="none" stroke="#7c3aed" stroke-width="2.4"/>
+  <path d="M 84 218 C 118 164, 168 122, 214 122 C 248 122, 276 132, 298 144" fill="none" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="214" cy="122" r="4" fill="#7c3aed"/>
+
+  <!-- GPU Curve -->
+  <path d="M 84 224 C 110 198, 130 185, 148 185 C 180 185, 240 205, 298 226" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+  <circle cx="148" cy="185" r="4" fill="#2563eb"/>
+
+  <!-- Callouts inside Panel 1 -->
+  <rect x="318" y="112" width="142" height="156" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="326" y="131" font-size="9.8" font-weight="700" fill="#1e3a8a">System Model Key Shifts</text>
+  <text x="326" y="150" font-size="9.4" fill="#0f172a">• Peak: 61 → 137 (2.25×)</text>
+  <text x="326" y="168" font-size="9.4" fill="#0f172a">• Best D: 8 → 15</text>
+  <text x="326" y="186" font-size="9.2" font-weight="600" fill="#166534">• Split overlaps Accel</text>
+  <line x1="326" y1="196" x2="452" y2="196" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="326" y="213" font-size="9" fill="#334155">Verify knee at D=15:</text>
+  <text x="326" y="228" font-size="9" fill="#334155">2.5×(15+1) = 40 ms floor</text>
+  <text x="326" y="245" font-size="8.8" fill="#64748b">Note: Intro fig uses</text>
+  <text x="326" y="259" font-size="8.8" fill="#64748b">5→1 ms (D*: 9 → 15)</text>
+
+  <!-- Panel 2: Energy Share Shift at D=10 -->
+  <rect x="488" y="72" width="448" height="210" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="488" y="72" width="448" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="488" y="90" width="448" height="10" fill="#dbeafe"/>
+  <text x="500" y="90" font-size="11.2" font-weight="700" fill="#1e3a8a">2 · Forward Energy Share Shift (Draft Length D = 10)</text>
+
+  <text x="502" y="117" font-size="10" font-weight="700" fill="#1e293b">GPU Drafter (30 mJ/tok): Draft Decode = ~5.8% of forward energy</text>
+  <rect x="502" y="123" width="214" height="24" rx="3" fill="#3b82f6"/>
+  <text x="609" y="139" font-size="9" font-weight="600" fill="#ffffff" text-anchor="middle">Target Prefill 250 J</text>
+  <rect x="717" y="123" width="17" height="24" fill="#93c5fd"/>
+  <rect x="735" y="123" width="73" height="24" fill="#60a5fa"/>
+  <text x="771" y="139" font-size="8.5" font-weight="600" fill="#ffffff" text-anchor="middle">Verify</text>
+  <rect x="809" y="123" width="21" height="24" rx="3" fill="#f59e0b"/>
+  <text x="836" y="139" font-size="9.5" font-weight="700" fill="#b45309">5.8%</text>
+
+  <text x="502" y="168" font-size="10" font-weight="700" fill="#1e293b">Accel. Drafter (150 mJ/tok): Draft Decode rises to ~22.4% share</text>
+  <rect x="502" y="174" width="214" height="24" rx="3" fill="#3b82f6"/>
+  <text x="609" y="190" font-size="9" font-weight="600" fill="#ffffff" text-anchor="middle">Target Prefill 250 J</text>
+  <rect x="717" y="174" width="34" height="24" fill="#93c5fd"/>
+  <text x="734" y="190" font-size="8" font-weight="600" fill="#1e3a8a" text-anchor="middle">40J</text>
+  <rect x="752" y="174" width="73" height="24" fill="#60a5fa"/>
+  <text x="788" y="190" font-size="8.5" font-weight="600" fill="#ffffff" text-anchor="middle">Verify</text>
+  <rect x="826" y="174" width="94" height="24" rx="3" fill="#ef4444"/>
+  <text x="873" y="190" font-size="9.2" font-weight="700" fill="#ffffff" text-anchor="middle">Decode 22.4%</text>
+
+  <!-- Mini Legend Row -->
+  <rect x="502" y="206" width="10" height="10" rx="2" fill="#3b82f6"/>
+  <text x="516" y="215" font-size="8.6" fill="#475569">Target Prefill</text>
+  <rect x="582" y="206" width="10" height="10" rx="2" fill="#93c5fd"/>
+  <text x="596" y="215" font-size="8.6" fill="#475569">Draft Prefill (20J/40J)</text>
+  <rect x="698" y="206" width="10" height="10" rx="2" fill="#60a5fa"/>
+  <text x="712" y="215" font-size="8.6" fill="#475569">Target Verify</text>
+  <rect x="778" y="206" width="10" height="10" rx="2" fill="#ef4444"/>
+  <text x="792" y="215" font-size="8.6" fill="#475569">Draft Decode</text>
+
+  <!-- Caveat -->
+  <rect x="502" y="226" width="420" height="46" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="512" y="244" font-size="9.6" font-weight="700" fill="#92400e">Tradeoff: 5× higher per-draft-token energy lowers system throughput/kW</text>
+  <text x="512" y="261" font-size="9.2" fill="#78350f">Prefix-cached multi-turn traffic shrinks Target Prefill, magnifying decode share</text>
+
+  <!-- Panel 3: Scenario A Slow Prefill TTFT -->
+  <rect x="24" y="294" width="448" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="294" width="448" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="312" width="448" height="10" fill="#dbeafe"/>
+  <text x="36" y="312" font-size="11.2" font-weight="700" fill="#1e3a8a">3 · Scenario A: Slow-Prefill TTFT Rescue (D = 15)</text>
+
+  <rect x="36" y="330" width="424" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="46" y="346" font-size="9.5" font-weight="600" fill="#1e3a8a">Single-param stress: Accel Draft Prefill 10 ms → 150 ms (others at baseline)</text>
+
+  <text x="36" y="376" font-size="9.8" font-weight="600" fill="#7f1d1d">Unsplit Drafter (Draft Prefill on Accelerator = 150 ms)</text>
+  <rect x="36" y="382" width="320" height="24" rx="5" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+  <text x="364" y="398" font-size="10.2" font-weight="700" fill="#b91c1c">212.5 ms TTFT</text>
+
+  <text x="36" y="427" font-size="9.8" font-weight="600" fill="#14532d">Split Drafter (Draft Prefill on GPU = 20 ms · matches GPU-only)</text>
+  <rect x="36" y="433" width="286" height="24" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="330" y="449" font-size="10.2" font-weight="700" fill="#166534">190.0 ms (-22.5 ms)</text>
+
+  <text x="36" y="478" font-size="9.4" fill="#334155">Critical path: 20 ms GPU draft prefill overlaps 150 ms target prefill,</text>
+  <text x="36" y="493" font-size="9.4" fill="#334155">retaining full 137 tok/s interactivity from 1.5 ms accelerator decode.</text>
+
+  <!-- Panel 4: Scenario B High-Energy Prefill -->
+  <rect x="488" y="294" width="448" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="488" y="294" width="448" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="488" y="312" width="448" height="10" fill="#dbeafe"/>
+  <text x="500" y="312" font-size="11.2" font-weight="700" fill="#1e3a8a">4 · Scenario B: High-Energy-Prefill Efficiency Rescue</text>
+
+  <rect x="500" y="330" width="424" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="510" y="346" font-size="9.5" font-weight="600" fill="#1e3a8a">Single-param stress: Accel Prefill 40,000 → 100,000 mJ (GPU: 20,000 mJ)</text>
+
+  <text x="500" y="376" font-size="9.8" font-weight="600" fill="#7f1d1d">Unsplit Drafter (Draft Prefill on Accel = 100,000 mJ/prompt)</text>
+  <rect x="500" y="382" width="230" height="24" rx="5" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+  <text x="738" y="398" font-size="10.2" font-weight="700" fill="#b91c1c">1.00× unsplit ref</text>
+
+  <text x="500" y="427" font-size="9.8" font-weight="600" fill="#14532d">Split Drafter (Draft Prefill on GPU = 20,000 mJ/prompt)</text>
+  <rect x="500" y="433" width="271" height="24" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="779" y="449" font-size="10.2" font-weight="700" fill="#166534">+17.7% (~17% prose)</text>
+
+  <text x="500" y="478" font-size="9.4" fill="#334155">Scope caveat: Scenarios A and B alter separate parameters—not simultaneous</text>
+  <text x="500" y="493" font-size="9.4" fill="#334155">measured gains in one deployment; interactivity stays unchanged in both.</text>
+
+  <text x="24" y="520" font-size="10" fill="#64748b">Assistant diagram (not an original figure) · Curves &amp; figures from Gimlet Labs (2026-11-10) Figs. 5–12 &amp; appendix (Fig. 12 alt: 17.7%; prose: ~17%)</text>
+</svg>

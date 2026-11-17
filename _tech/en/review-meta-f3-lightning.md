@@ -1,10 +1,9 @@
 ---
 id: review-meta-f3-lightning
-title: '2026-11-04 | F3 Lightning: How Meta Accelerates Ads ML Features to Production
-  at Scale'
+title: '2026-11-04 | F3 Lightning: How Meta Accelerates Ads ML Features to Production at Scale'
 date: '2026-11-04'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,9 +17,11 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/en/review-meta-f3-lightning/
 long_read: true
-summary: "How stable computation IDs, a shared plan and memory layout preserve efficiency while features ship independently."
+summary: How stable computation IDs, a shared plan and memory layout preserve efficiency while features ship independently.
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 ## Why the shared graph delayed releases
 
 F3 extracts features for ads ranking; one request can require more than 20,000 features. Seven-day click and impression counts can share event reads and time filters, while click-through rate reuses both counts. The original compiler merged every feature into one DAG so common nodes ran once per request. That graph was also the release unit: one invalid definition blocked valid features, and expensive model tests for an existing feature held up new ones.

@@ -1,0 +1,400 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-05-arxiv-2611.05139",
+  "paper_id": "arxiv-2611.05139",
+  "anchor_id": "paper-arxiv-2611.05139",
+  "digest_date": "2026-11-05",
+  "updated_at_utc": "2026-11-17T02:59:30Z",
+  "assistant_translated": true,
+  "verification_status": "VERIFIED",
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-05.md",
+    "en_target": "_digest/en/daily-2026-11-05.md",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/c755a5db-bc2f-4855-83cd-58c07d64e3e5/scratch/d2a-sections/2611.05139/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/c755a5db-bc2f-4855-83cd-58c07d64e3e5/scratch/d2a-sections/2611.05139/section_en.md",
+    "staging_path_note": "write_file enforces writes under /root/.gemini/antigravity-cli/brain/ to match the subagent conversation ID (c755a5db-bc2f-4855-83cd-58c07d64e3e5); writing directly to parent conversation path 151be13a-2bae-44cf-a94b-71b25706bafd was rejected by tool guard.",
+    "translation_provenance": "Assistant-authored Chinese technical close reading and paired English technical close reading derived directly from primary arXiv:2611.05139v1 and Appendices A–I."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.05139",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "Frozen snapshot shows v1 only (Tue, 3 Nov 2026 16:19:21 UTC); no v2 revision or withdrawal notice present in frozen archive.",
+    "title": "Meta²: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents",
+    "title_abs_source": "Meta$^2$: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents",
+    "authors": [
+      "Lingzhi Yuan",
+      "Yiguang Cai",
+      "Weize Liu",
+      "Siqi Yang",
+      "Feijiang Han",
+      "Yongkyun Lee",
+      "Udari Madhushani Sehwag",
+      "Furong Huang"
+    ],
+    "affiliation": "University of Maryland; University of Washington; University of Illinois at Urbana-Champaign; Scale AI; All Purpose AI",
+    "categories": [
+      "cs.AI"
+    ],
+    "submitted_utc": "Tue, 3 Nov 2026 16:19:21 UTC",
+    "submitted_date": "2026-11-03",
+    "pdf_template_note": "Preprint (arXiv:2611.05139v1 [cs.AI] 3 Nov 2026)",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.05139",
+      "abs_v1": "https://arxiv.org/abs/2611.05139v1",
+      "pdf": "https://arxiv.org/pdf/2611.05139",
+      "html_v1": "https://arxiv.org/html/2611.05139v1",
+      "project_cited_in_pdf": "https://meta-square.github.io/"
+    },
+    "project_url_check_note": "Web search for site:meta-square.github.io found no active indexed GitHub Pages site or public code repository at verification time.",
+    "frozen_and_extracted_sources": {
+      "frozen_abstract_txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.05139.txt",
+        "sha256": "3d8ee5112337009c2188c0fb9ef76ca5de1fad8e38a4184e0bcaaeca2cadf847",
+        "sha256_note": "Pending parent computation (run_command disabled for subagent).",
+        "bytes": 2187
+      },
+      "frozen_abs_html": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.05139.html",
+        "sha256": "d69fcbf5bd0541f1ea9f6699603ebed97564293d2685e993ddc85ab9295dae27",
+        "sha256_note": "Pending parent computation (run_command disabled for subagent).",
+        "bytes": 43696
+      },
+      "extracted_full_paper_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sources/2611.05139.txt",
+        "lines_read": 2730,
+        "sha256": "a87d967a55fc83e0a0ab52c5d3152afcc61ebef72e862ef81555f54602a3aff2",
+        "sha256_note": "Pending parent computation (run_command disabled for subagent).",
+        "bytes": 200556
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "seed_harness": "NexAU (v0.4.1)",
+    "execution_sandbox": "E2B cloud sandboxes",
+    "cost_accounting": "Single LiteLLM proxy, per-call response headers in USD",
+    "benchmarks_and_splits_table4": {
+      "terminal_bench_2_1": {
+        "total_tasks": 89,
+        "train_tasks": 29,
+        "test_tasks": 60,
+        "runs_per_test_task": 5,
+        "total_test_runs_per_method": 300,
+        "metric": "mean@5"
+      },
+      "deepswe_1_1": {
+        "total_tasks": 113,
+        "open_source_repos": 91,
+        "languages": [
+          "TypeScript",
+          "Go",
+          "Python",
+          "JavaScript",
+          "Rust"
+        ],
+        "train_tasks": 38,
+        "test_tasks": 75,
+        "runs_per_test_task": 3,
+        "total_test_runs_per_method": 225,
+        "metric": "mean@3"
+      }
+    },
+    "online_checkpoint_and_channel_limits": {
+      "first_checkpoint_step": 1,
+      "regular_checkpoint_interval_L": 5,
+      "trace_delta_truncation_chars": 1500,
+      "repeated_procedure_threshold": 3,
+      "notice_cap_per_checkpoint": 1,
+      "notice_cap_while_working": 2,
+      "terminal_sendback_cap": 2,
+      "channels_count": 8,
+      "channels": [
+        "notice",
+        "append_worker_prompt / rewrite_worker_prompt",
+        "register_check (Python stdlib)",
+        "register_probe (bash)",
+        "add_tool",
+        "add_skill",
+        "add_middleware",
+        "rollback"
+      ]
+    },
+    "learned_meta_skill_counts_appendix_i2": {
+      "terminal_bench_2_1_total": 14,
+      "terminal_bench_2_1_breakdown": {
+        "act": 9,
+        "hold": 2,
+        "avoid": 3
+      },
+      "deepswe_1_1_total": 9,
+      "deepswe_1_1_breakdown": {
+        "act": 7,
+        "hold": 2,
+        "avoid": 0
+      },
+      "aggregate_min_distinct_tasks": 2,
+      "max_examples_per_entry": 3
+    },
+    "gpt_5_6_terra_results_tables_1_and_5": {
+      "NexAU_Seed": {
+        "tb_pct": "66.33 ± 2.17",
+        "tb_cost_usd": {
+          "offline": null,
+          "online": 34.09,
+          "full": 34.09
+        },
+        "swe_pct": "34.67 ± 1.33",
+        "swe_cost_usd": {
+          "offline": null,
+          "online": 62.67,
+          "full": 62.67
+        }
+      },
+      "Codex_CLI": {
+        "tb_pct": "68.33 ± 5.14",
+        "tb_full_usd": 56.59,
+        "swe_pct": "31.11 ± 3.08",
+        "swe_full_usd": 136.53
+      },
+      "mini_swe_agent": {
+        "tb_pct": "67.33 ± 4.18",
+        "tb_full_usd": 41.08,
+        "swe_pct": "29.33 ± 3.53",
+        "swe_full_usd": 68.87
+      },
+      "Pi_agent": {
+        "tb_pct": "69.00 ± 4.94",
+        "tb_full_usd": 37.98,
+        "swe_pct": "39.11 ± 6.71",
+        "swe_full_usd": 82.5
+      },
+      "DeepSeek_Harness": {
+        "tb_pct": "68.00 ± 3.42",
+        "tb_full_usd": 31.9,
+        "swe_pct": "34.22 ± 4.68",
+        "swe_full_usd": 41.37
+      },
+      "ReasoningBank": {
+        "tb_pct": "68.00 ± 3.61",
+        "tb_cost_usd": {
+          "offline": 16.04,
+          "online": 55.6,
+          "full": 71.64
+        },
+        "swe_pct": "33.33 ± 2.31",
+        "swe_cost_usd": {
+          "offline": 55.87,
+          "online": 85.64,
+          "full": 141.51
+        }
+      },
+      "ACE": {
+        "tb_pct": "71.33 ± 2.74",
+        "tb_cost_usd": {
+          "offline": 81.55,
+          "online": 64.09,
+          "full": 145.64
+        },
+        "swe_pct": "32.00 ± 4.62",
+        "swe_cost_usd": {
+          "offline": 238.1,
+          "online": 82.29,
+          "full": 320.39
+        }
+      },
+      "TF_GRPO": {
+        "tb_pct": "74.67 ± 4.62",
+        "tb_cost_usd": {
+          "offline": 92.55,
+          "online": 42.62,
+          "full": 135.17
+        },
+        "swe_pct": "36.44 ± 5.39",
+        "swe_cost_usd": {
+          "offline": 322.5,
+          "online": 86.16,
+          "full": 408.66
+        }
+      },
+      "AHE": {
+        "tb_pct": "70.67 ± 4.65",
+        "tb_cost_usd": {
+          "offline": 209.44,
+          "online": 38.91,
+          "full": 248.35
+        },
+        "swe_pct": "34.67 ± 4.62",
+        "swe_cost_usd": {
+          "offline": 793.48,
+          "online": 69.41,
+          "full": 862.89
+        }
+      },
+      "Meta_Harness": {
+        "tb_pct": "73.33 ± 4.41",
+        "tb_cost_usd": {
+          "offline": 160.51,
+          "online": 38.34,
+          "full": 198.85
+        },
+        "swe_pct": "37.33 ± 2.67",
+        "swe_cost_usd": {
+          "offline": 781.56,
+          "online": 89.19,
+          "full": 870.75
+        }
+      },
+      "Continual_Harness": {
+        "tb_pct": "72.67 ± 4.65",
+        "tb_cost_usd": {
+          "offline": 28.75,
+          "online": 83.48,
+          "full": 112.23
+        },
+        "swe_pct": "33.78 ± 5.05",
+        "swe_cost_usd": {
+          "offline": 46.11,
+          "online": 155.61,
+          "full": 201.72
+        }
+      },
+      "Meta2": {
+        "tb_pct": "81.00 ± 0.91",
+        "tb_cost_usd": {
+          "offline": 110.19,
+          "online": 64.72,
+          "full": 174.91
+        },
+        "swe_pct": "44.44 ± 0.77",
+        "swe_cost_usd": {
+          "offline": 238.52,
+          "online": 129.34,
+          "full": 367.86
+        }
+      }
+    },
+    "deepseek_v4_flash_0731_tb_results_tables_2_and_5": {
+      "NexAU_Seed": "70.00 ± 2.64 (full $16.83)",
+      "ReasoningBank": "69.33 ± 3.03 (off $8.08, on $21.21, full $29.29)",
+      "ACE": "65.00 ± 2.64 (off $58.30, on $21.56, full $79.86)",
+      "TF_GRPO": "66.33 ± 4.31 (off $37.15, on $19.86, full $57.01)",
+      "AHE": "71.33 ± 3.98 (off $123.51, on $20.28, full $143.79)",
+      "Meta_Harness": "71.00 ± 2.53 (off $99.55, on $19.49, full $119.04)",
+      "Continual_Harness": "74.67 ± 4.62 (off $2.84, on $35.98, full $38.82)",
+      "Meta2": "77.67 ± 3.84 (off $81.90, on $33.51, full $115.41)"
+    },
+    "checkpoint_interval_sensitivity_fig3": {
+      "L_1": {
+        "tb_pct": 79.0,
+        "online_usd": 83.41
+      },
+      "L_3": {
+        "tb_pct": 80.33,
+        "online_usd": 74.22
+      },
+      "L_5": {
+        "tb_pct": 81.0,
+        "online_usd": 64.72
+      },
+      "L_11": {
+        "tb_pct": null,
+        "tb_pct_note": "Not numerically printed in prose; plotted lower than L=5 in Fig. 3 while still above all baselines",
+        "online_usd": 59.1
+      }
+    },
+    "component_ablations_fig4": {
+      "task_agent_alone": {
+        "tb_pct": 66.33,
+        "swe_pct": 34.67
+      },
+      "plus_online_evolver_no_meta_skill": {
+        "tb_pct": 74.67,
+        "swe_pct": 36.44
+      },
+      "plus_self_distilled_meta_skill": {
+        "tb_pct": 77.0,
+        "swe_pct": 35.56
+      },
+      "plus_contrastive_meta_skill_meta2": {
+        "tb_pct": 81.0,
+        "swe_pct": 44.44
+      },
+      "plus_retaining_online_edits_across_tasks": {
+        "tb_pct": 78.33,
+        "swe_pct": 39.11
+      }
+    }
+  },
+  "explicit_limitations": [
+    "A/B/C rollouts are independent samples that can diverge before checkpoint interventions, providing run-level directional guidance rather than checkpoint-level causal effect estimates (§3.2, §F.1).",
+    "Arm A executes unsegmented with a simpler prompt ('your only tool') and no check/probe middleware, whereas Arms B and C execute segmented with middleware; REFLECT relies on prompt instructions rather than a segmented-without-evolver baseline to discount this difference (Appendix H.3).",
+    "DeepSeek-V4-Flash-0731 builds its own separate Meta-Skill rather than testing zero-shot transfer of GPT-5.6-Terra's Meta-Skill, and DeepSeek is not evaluated on DeepSWE 1.1 or against the five human harnesses (§4.2, Table 2).",
+    "Offline precomputation cost ($110.19 TB Terra, $238.52 DeepSWE Terra, $81.90 TB DeepSeek) exceeds Continual Harness on single-evaluation full cost ($115.41 vs. $38.82 on DeepSeek TB; $174.91 vs. $112.23 on Terra TB), amortizing only across repeated downstream reuse (§4.3).",
+    "Training batch count R, batch size, per-arm training rollout counts, and checkpoint wall-clock latency overhead are omitted from the manuscript; the cited project page https://meta-square.github.io/ had no indexed active repository in search.",
+    "Evaluated benchmarks are limited to containerized CLI and single-repo code tasks with inspectable artifacts and automated verifiers (§F.1)."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "meta2_svgs": {
+      "meta2-contrastive-harness-evolution-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/meta2-contrastive-harness-evolution-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/meta2-contrastive-harness-evolution-zh.svg",
+        "sha256": "de083c9d37b4e291b0b6b9781178999b079e53fd70e0b2f3e2c77665af5b6be7",
+        "sha256_note": "Pending parent computation (run_command disabled for subagent).",
+        "bytes": 14465
+      },
+      "meta2-contrastive-harness-evolution-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/meta2-contrastive-harness-evolution-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/meta2-contrastive-harness-evolution-en.svg",
+        "sha256": "88813c0625ca8115e100cc006ac2c51cee3597396022c8ec4ace1b95c1d88f17",
+        "sha256_note": "Pending parent computation (run_command disabled for subagent).",
+        "bytes": 14035
+      },
+      "meta2-benchmark-ablation-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/meta2-benchmark-ablation-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/meta2-benchmark-ablation-zh.svg",
+        "sha256": "e61555bf552d2b1a061152344f7e6fa31c056432a2b2269f7687193e29c3f29b",
+        "sha256_note": "Pending parent computation (run_command disabled for subagent).",
+        "bytes": 18309
+      },
+      "meta2-benchmark-ablation-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/meta2-benchmark-ablation-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/meta2-benchmark-ablation-en.svg",
+        "sha256": "af15d3f5071f54e365e8bc047768cc707d99ea6bfb499a0f3bc5b3f05cfcf030",
+        "sha256_note": "Pending parent computation (run_command disabled for subagent).",
+        "bytes": 17910
+      }
+    }
+  },
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-05.md",
+      "file_bytes_before": 46498,
+      "file_sha256_before": "a57afb9010f0516ba9d15d89c96ef1b07029938279a9d9c03e5902f04f3b8762",
+      "file_bytes_after": 258981,
+      "file_sha256_after": "0c569250568c0975f5704c11bbdfcfff48ddadc7366026be70dc954ece1ce395",
+      "old_section_bytes": 867,
+      "old_section_sha256": "54106b69f5cc43901bff31dd183242023f5c70769316bc4f79126585fb175a41",
+      "new_section_bytes": 25683,
+      "new_section_sha256": "8369f63522234003743db55cdea215f151337ea541612d7f9764999ec6185b5f"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-05.md",
+      "file_bytes_before": 49237,
+      "file_sha256_before": "d5c507de897b4e0644651175c569f11bfe5df1cfa94b53b4227ec9422a1d0e06",
+      "file_bytes_after": 247387,
+      "file_sha256_after": "00dc837b0349415fa884dbc628828870d27be980bb81f30127ddd5602addd7a0",
+      "old_section_bytes": 988,
+      "old_section_sha256": "1ca4ee5d46f05128f132ce0f34f1578774655b86dca861db348b4e40ee09f9b8",
+      "new_section_bytes": 24908,
+      "new_section_sha256": "eaaf16760b039f31280d61cdb18359d6bbfa851fc95775edbe0fb8618bf693d3"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:08:32.604936+00:00",
+    "preview_release": "20261117-110758-45bc53b9",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

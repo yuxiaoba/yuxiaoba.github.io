@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="IntentOS 实证评测四象限图：规划准确率、三类应用收益、跨内核兼容性与 JIT 缓存消融" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="33" font-size="16.2" font-weight="700" fill="#0f172a">IntentOS 实证评测：规划准确率、应用收益、跨版本兼容与缓存消融</text>
+  <text x="24" y="51" font-size="9.8" fill="#475569">依据 arXiv:2611.00002v1（§6, Fig. 9–14, Table 4）· Intel Xeon Platinum 8468V (192 核, 1024 GB DDR5) · Linux 6.18.6</text>
+  <line x1="24" y1="60" x2="936" y2="60" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Panel A: Top-Left -->
+  <rect x="20" y="70" width="452" height="204" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="70" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="88" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="96" x2="472" y2="96" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="31" y="87.5" font-size="10.4" font-weight="700" fill="#1e3a8a">A. 规划准确率（31 意图 × 4 模型）与跨内核兼容（§6.3, §6.6）</text>
+
+  <text x="31" y="114" font-size="8.7" font-weight="700" fill="#0f172a">IntentOS（微系统调用序列）</text>
+  <rect x="196" y="104" width="216.4" height="14" rx="3" fill="#1d4ed8"/>
+  <text x="418" y="114.5" font-size="9.1" font-weight="700" fill="#1d4ed8">98.38%</text>
+
+  <text x="31" y="138" font-size="8.7" font-weight="600" fill="#475569">Oracle（源码直生 syscall）</text>
+  <rect x="196" y="128" width="146.8" height="14" rx="3" fill="#94a3b8"/>
+  <text x="349" y="138.5" font-size="9.1" font-weight="700" fill="#475569">66.74%</text>
+
+  <text x="31" y="159" font-size="8.3" fill="#334155">FS / MEM / COMM 3 域 × 4 模型（Qwen3.6-Plus / DeepSeek-V4-Pro / Gemini-3.1-Pro / GPT-5.4）</text>
+  <text x="31" y="174" font-size="8.3" font-weight="600" fill="#1d4ed8">相比 Oracle 均高 +31.64 个百分点，且无需重新编译内核（Fig. 9）</text>
+
+  <rect x="31" y="184" width="430" height="80" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="41" y="200" font-size="8.9" font-weight="700" fill="#1e3a8a">4 个 Linux 版本跨内核兼容性（QEMU-10.2.0-KVM · 相同意图提示 · Fig. 13）</text>
+
+  <rect x="41" y="210" width="96" height="22" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="89" y="224.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1e3a8a">Linux 3.18</text>
+  <rect x="145" y="210" width="96" height="22" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="193" y="224.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1e3a8a">Linux 4.19</text>
+  <rect x="249" y="210" width="96" height="22" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="297" y="224.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1e3a8a">Linux 5.15</text>
+  <rect x="353" y="210" width="96" height="22" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="401" y="224.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1e3a8a">Linux 6.18</text>
+
+  <text x="41" y="251" font-size="8.3" fill="#334155">fork+exec 与 batchunlink 在内核内部接口演进下均稳定合成并持续胜出基线</text>
+
+  <!-- Panel B: Top-Right -->
+  <rect x="488" y="70" width="452" height="204" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="70" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="88" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="96" x2="940" y2="96" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="499" y="87.5" font-size="10.4" font-weight="700" fill="#1e3a8a">B. 微基准极限 vs 真实应用端到端收益（严分口径，§6.4–§6.5）</text>
+
+  <!-- Case 1 -->
+  <rect x="499" y="104" width="430" height="50" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="509" y="120" font-size="9.1" font-weight="700" fill="#0f172a">1. fork + exec（免 78.89% copy_mm 与 70.281% vfork 等待）</text>
+  <rect x="509" y="127" width="200" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="609" y="139.5" text-anchor="middle" font-size="8.2" font-weight="600" fill="#1e3a8a">微基准最高 -69.83% 延迟 (Fig. 10a)</text>
+  <line x1="714" y1="136.5" x2="728" y2="136.5" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="732" y="127" width="187" height="19" rx="4" fill="#1d4ed8"/>
+  <text x="825.5" y="139.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#ffffff">Busybox-ash 最高 -17.55% 延迟</text>
+
+  <!-- Case 2 -->
+  <rect x="499" y="160" width="430" height="50" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="509" y="176" font-size="9.1" font-weight="700" fill="#0f172a">2. batchunlink（单次父目录 inode 锁 + 批量元数据提交）</text>
+  <rect x="509" y="183" width="200" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="609" y="195.5" text-anchor="middle" font-size="8.2" font-weight="600" fill="#1e3a8a">微基准 50 文件最高 -20.69% (Fig. 11a)</text>
+  <line x1="714" y1="192.5" x2="728" y2="192.5" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="732" y="183" width="187" height="19" rx="4" fill="#1d4ed8"/>
+  <text x="825.5" y="195.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#ffffff">Unix rm (src/) +6.97% 性能增益</text>
+
+  <!-- Case 3 -->
+  <rect x="499" y="216" width="430" height="50" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="509" y="232" font-size="9.1" font-weight="700" fill="#0f172a">3. slidingmmap（16 MB 滑窗 + Direct I/O，5 GB 内存约束）</text>
+  <rect x="509" y="239" width="200" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="609" y="251.5" text-anchor="middle" font-size="8.0" font-weight="600" fill="#1e3a8a">页缓存 -94.49%（访问开销 ≤10.89%）</text>
+  <line x1="714" y1="248.5" x2="728" y2="248.5" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="732" y="239" width="187" height="19" rx="4" fill="#1d4ed8"/>
+  <text x="825.5" y="251.5" text-anchor="middle" font-size="8.3" font-weight="700" fill="#ffffff">前端 Nginx 降损最高 75.52%</text>
+
+  <!-- Panel C: Bottom-Left -->
+  <rect x="20" y="286" width="452" height="202" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="286" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="304" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="312" x2="472" y2="312" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="31" y="303.5" font-size="10.4" font-weight="700" fill="#1e3a8a">C. JIT 计划缓存消融与命中路径开销（§6.7, Table 4, Fig. 14）</text>
+
+  <!-- Ablation mini-table -->
+  <rect x="31" y="320" width="430" height="22" rx="3" fill="#eff6ff"/>
+  <text x="41" y="334" font-size="8.6" font-weight="700" fill="#1e3a8a">测试场景</text>
+  <text x="165" y="334" font-size="8.6" font-weight="700" fill="#475569">w/o plan（临界推理）</text>
+  <text x="292" y="334" font-size="8.6" font-weight="700" fill="#1d4ed8">with plan（命中）</text>
+  <text x="404" y="334" font-size="8.6" font-weight="700" fill="#0f172a">加速比</text>
+
+  <line x1="31" y1="364" x2="461" y2="364" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="41" y="357" font-size="8.8" font-weight="600" fill="#0f172a">fork + exec</text>
+  <text x="165" y="357" font-size="8.8" fill="#475569">56,340 ms</text>
+  <text x="292" y="357" font-size="8.8" font-weight="700" fill="#1d4ed8">4.56 ms</text>
+  <text x="404" y="357" font-size="8.8" font-weight="700" fill="#0f172a">12,378×</text>
+
+  <line x1="31" y1="386" x2="461" y2="386" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="41" y="379" font-size="8.8" font-weight="600" fill="#0f172a">batch unlink</text>
+  <text x="165" y="379" font-size="8.8" fill="#475569">26,477 ms</text>
+  <text x="292" y="379" font-size="8.8" font-weight="700" fill="#1d4ed8">4.40 ms</text>
+  <text x="404" y="379" font-size="8.8" font-weight="700" fill="#0f172a">6,020×</text>
+
+  <line x1="31" y1="408" x2="461" y2="408" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="41" y="401" font-size="8.8" font-weight="600" fill="#0f172a">sliding mmap</text>
+  <text x="165" y="401" font-size="8.8" fill="#475569">28,816 ms</text>
+  <text x="292" y="401" font-size="8.8" font-weight="700" fill="#1d4ed8">8,742 ms*</text>
+  <text x="404" y="401" font-size="8.8" font-weight="700" fill="#0f172a">3.30×</text>
+
+  <text x="31" y="422" font-size="7.9" fill="#64748b">* sliding mmap 的 8,742 ms 主因是大内存缺页/映射配置开销，缓存仍省去约 20 s 推理。</text>
+
+  <rect x="31" y="430" width="430" height="48" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="41" y="445" font-size="8.6" font-weight="700" fill="#1e3a8a">Fig. 14 命中路径耗时占比（框架查找、索引解析、指针访问）：</text>
+  <rect x="41" y="452" width="356" height="11" rx="2" fill="#1d4ed8"/>
+  <rect x="398" y="452" width="28" height="11" rx="2" fill="#93c5fd"/>
+  <rect x="427" y="452" width="24" height="11" rx="2" fill="#94a3b8"/>
+  <text x="41" y="473" font-size="8.0" fill="#334155">深蓝：Tools 主体执行 · 浅蓝：Framework 框架开销 ≤ 6.714% · 灰：Others 切换</text>
+
+  <!-- Panel D: Bottom-Right -->
+  <rect x="488" y="286" width="452" height="202" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="286" width="452" height="26" rx="8" fill="#0f172a"/>
+  <rect x="488" y="304" width="452" height="8" fill="#0f172a"/>
+  <text x="499" y="303.5" font-size="10.4" font-weight="700" fill="#ffffff">D. 科学边界、适用条件与文献核验备注</text>
+
+  <rect x="499" y="321" width="60" height="17" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="0.8"/>
+  <text x="529" y="332.5" text-anchor="middle" font-size="8.0" font-weight="700" fill="#92400e">覆盖规模</text>
+  <text x="566" y="333" font-size="8.4" fill="#0f172a">仅测 FS/MEM/COMM 3 域 31 个意图与 4 版内核；未形式化</text>
+  <text x="566" y="346" font-size="8.4" fill="#334155">证明任意跨句柄序列在复杂并发状态下的全局安全性。</text>
+
+  <rect x="499" y="357" width="60" height="17" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="0.8"/>
+  <text x="529" y="368.5" text-anchor="middle" font-size="8.0" font-weight="700" fill="#991b1b">冷路径错率</text>
+  <text x="566" y="369" font-size="8.4" fill="#0f172a">缓存未命中仍耗 26.5–56.3 s；98.38% 均值表示未见意图仍有</text>
+  <text x="566" y="382" font-size="8.4" fill="#334155">概率误规划，需依赖 dry_run 审查、回滚与 Layer-1 保底。</text>
+
+  <rect x="499" y="393" width="60" height="17" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="529" y="404.5" text-anchor="middle" font-size="8.0" font-weight="700" fill="#1d4ed8">数据/代码</text>
+  <text x="566" y="405" font-size="8.4" fill="#0f172a">Fig. 9–13 为聚合或归一化图，未单列各模型原始表；论文称</text>
+  <text x="566" y="418" font-size="8.4" fill="#334155">IntentOS 将开源，但截至核验未附公开仓库 URL，待复现。</text>
+
+  <rect x="499" y="429" width="60" height="17" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="0.8"/>
+  <text x="529" y="440.5" text-anchor="middle" font-size="8.0" font-weight="700" fill="#334155">日期异常</text>
+  <text x="566" y="441" font-size="8.4" fill="#0f172a">arXiv 摘要页与 PDF 边注均标 2026-08-02，与 arXiv:2611.00002</text>
+  <text x="566" y="454" font-size="8.4" fill="#334155">（2026-11 序列）冲突；仅存 v1，不据此推定首次发布日。</text>
+
+  <!-- Footnote -->
+  <text x="20" y="505" font-size="8.7" fill="#334155"><tspan font-weight="700" fill="#1e3a8a">口径纪律：</tspan>微基准极值（如 69.83% 进程创建降延、94.49% 缓存减负）不可与完整应用端到端收益（17.55%、6.97%、75.52%）混用；</text>
+  <text x="20" y="520" font-size="8.5" fill="#64748b">论文 §7 明确 IntentOS 旨在互补而非取代 posix_spawn、vfork、io_uring、madvise 或 eBPF，适用于高频重复意图且组合空间较大的场景。</text>
+</svg>

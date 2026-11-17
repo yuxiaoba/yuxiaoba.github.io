@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="近零非共享词嵌入引发的梯度倍增、FP32 静默清零链与批触发漏斗" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="33" font-size="16.5" font-weight="700" fill="#0f172a">近零非共享词嵌入引发的梯度倍增与 FP32 静默清零链</text>
+  <text x="24" y="52" font-size="10.0" fill="#475569">arXiv:2611.04449v1（§§2–4，图 1–5，表 1、表 4–7）· 291 仓库普查 → 门控归零与 Pre-RMSNorm 倍增 → 1.84×10¹⁹ 溢出清零</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Panel 1: Weight-Decay Origin & 291-Repo Census -->
+  <rect x="20" y="72" width="318" height="214" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="72" width="318" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="90" width="318" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="98" x2="338" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="30" y="89.5" font-size="10.8" font-weight="700" fill="#1e3a8a">1. 开源模型普查与非共享权重衰减成因</text>
+  <text x="30" y="114" font-size="8.8" fill="#475569">291 仓库（280 独立词表）：可达近零行 ‖e_v‖₂ &lt; 10⁻⁶ 占比</text>
+
+  <text x="112" y="135" text-anchor="end" font-size="8.8" fill="#334155">共享 Transf.</text>
+  <rect x="118" y="127" width="3" height="10" rx="2" fill="#94a3b8"/>
+  <text x="126" y="135.5" font-size="8.6" font-weight="600" fill="#334155">0% (0/80)</text>
+
+  <text x="112" y="156" text-anchor="end" font-size="8.8" fill="#334155">共享门控</text>
+  <rect x="118" y="148" width="3" height="10" rx="2" fill="#94a3b8"/>
+  <text x="126" y="156.5" font-size="8.6" font-weight="600" fill="#334155">0% (0/21)</text>
+
+  <text x="112" y="177" text-anchor="end" font-size="8.8" fill="#1e3a8a">非共享 Transf.</text>
+  <rect x="118" y="169" width="55.6" height="10" rx="2" fill="#3b82f6"/>
+  <text x="179" y="177.5" font-size="8.5" font-weight="600" fill="#1d4ed8">30.9% (47/152) · t&gt;0 安全</text>
+
+  <text x="112" y="198" text-anchor="end" font-size="8.8" font-weight="700" fill="#991b1b">非共享门控</text>
+  <rect x="118" y="190" width="94.7" height="10" rx="2" fill="#dc2626"/>
+  <text x="218" y="198.5" font-size="8.6" font-weight="700" fill="#991b1b">52.6% (20/38) · 易停滞</text>
+
+  <rect x="28" y="214" width="302" height="64" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="36" y="229" font-size="8.5" font-weight="700" fill="#0f172a">成因：E_in ≠ E_out 时，未见词元 E_in 梯度恒 0</text>
+  <text x="36" y="244" font-size="8.4" fill="#334155">• AdamW 衰减 (1−ηλ)^T 将行范数缩至 10⁻⁶~10⁻³⁶</text>
+  <text x="36" y="259" font-size="8.4" fill="#334155">• OLMoE 核验：251 近零行在 3.64 亿词 0 次出现</text>
+  <text x="36" y="272" font-size="8.2" fill="#475569">• 92% (901/979) 对应 E_out 仍 ≥0.3× 中位数（不报错）</text>
+
+  <!-- Panel 2: Transformer Recovery vs Gated Blowup -->
+  <rect x="350" y="72" width="590" height="214" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="350" y="72" width="590" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="350" y="90" width="590" height="8" fill="#eff6ff"/>
+  <line x1="350" y1="98" x2="940" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="362" y="89.5" font-size="10.8" font-weight="700" fill="#1e3a8a">2. 前向/反向信号对比：Transformer 单层恢复 vs 门控模型多层放大（t &gt; 0，r ≪ √(εd)）</text>
+
+  <!-- Sub-row A: Transformer -->
+  <rect x="360" y="106" width="570" height="48" rx="6" fill="#f8fafc" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="368" y="114" width="102" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="419" y="127" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1d4ed8">Transformer (K=0)</text>
+  <text x="419" y="146" text-anchor="middle" font-size="8.0" fill="#475569">Llama-3.1 / Falcon3</text>
+
+  <rect x="480" y="113" width="64" height="34" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="512" y="128" text-anchor="middle" font-size="8.6" font-weight="700" fill="#0f172a">e_t ≈ 0</text>
+  <text x="512" y="141" text-anchor="middle" font-size="7.9" fill="#475569">输入行近零</text>
+  <line x1="544" y1="130" x2="558" y2="130" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+
+  <rect x="560" y="113" width="84" height="34" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="602" y="128" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1e3a8a">Pre-RMSNorm</text>
+  <text x="602" y="141" text-anchor="middle" font-size="7.9" fill="#475569">第 0 层归一化</text>
+  <line x1="644" y1="130" x2="658" y2="130" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+
+  <rect x="660" y="113" width="122" height="34" rx="4" fill="#eff6ff" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="721" y="128" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1e3a8a">Softmax Attn 读前文</text>
+  <text x="721" y="141" text-anchor="middle" font-size="7.9" fill="#334155">聚合同列正常值向量 V_&lt;t</text>
+  <line x1="782" y1="130" x2="796" y2="130" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+
+  <rect x="798" y="113" width="124" height="34" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="860" y="128" text-anchor="middle" font-size="8.6" font-weight="700" fill="#166534">h₁ 恢复 Θ(√d)</text>
+  <text x="860" y="141" text-anchor="middle" font-size="8.0" font-weight="600" fill="#15803d">梯度保持 56–98 (安全)</text>
+
+  <!-- Sub-row B: Gated / Hybrid -->
+  <rect x="360" y="160" width="570" height="82" rx="6" fill="#ffffff" stroke="#fca5a5" stroke-width="1.1"/>
+  <rect x="368" y="168" width="102" height="19" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+  <text x="419" y="181" text-anchor="middle" font-size="8.8" font-weight="700" fill="#991b1b">门控 / 混合 (K 层)</text>
+  <text x="368" y="201" font-size="8.0" fill="#334155">• Mamba / DeltaNet:</text>
+  <text x="374" y="213" font-size="7.9" fill="#475569">φ(h̃) = SiLU(Wz h̃) = 0</text>
+  <text x="368" y="226" font-size="8.0" fill="#334155">• xLSTM (σ 门仍炸):</text>
+  <text x="374" y="237" font-size="7.9" fill="#475569">线性查询 q_t = W_q h̃ = 0</text>
+
+  <rect x="480" y="168" width="64" height="44" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="0.9"/>
+  <text x="512" y="186" text-anchor="middle" font-size="8.6" font-weight="700" fill="#991b1b">e_t ≈ 0</text>
+  <text x="512" y="201" text-anchor="middle" font-size="7.9" fill="#7f1d1d">r ≪ √(εd)</text>
+  <line x1="544" y1="190" x2="558" y2="190" stroke="#b91c1c" stroke-width="1.4" marker-end="url(#arr-red)"/>
+
+  <rect x="560" y="168" width="104" height="44" rx="4" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="612" y="184" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1e3a8a">Pre-RMSNorm</text>
+  <text x="612" y="197" text-anchor="middle" font-size="7.9" fill="#1d4ed8">分母卡在 √ε</text>
+  <text x="612" y="208" text-anchor="middle" font-size="7.8" font-weight="700" fill="#b91c1c">反向 ×316~1000/层</text>
+  <line x1="664" y1="190" x2="678" y2="190" stroke="#b91c1c" stroke-width="1.4" marker-end="url(#arr-red)"/>
+
+  <rect x="680" y="168" width="118" height="44" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="739" y="184" text-anchor="middle" font-size="8.5" font-weight="700" fill="#92400e">φ(0)=0 抹除 s_{t-1}</text>
+  <text x="739" y="197" text-anchor="middle" font-size="7.9" fill="#78350f">历史读出缩成 O(r)</text>
+  <text x="739" y="208" text-anchor="middle" font-size="7.8" fill="#92400e">残差仍 ≪ √(εd)</text>
+  <line x1="798" y1="190" x2="812" y2="190" stroke="#b91c1c" stroke-width="1.4" marker-end="url(#arr-red)"/>
+
+  <rect x="814" y="168" width="108" height="66" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.1"/>
+  <text x="868" y="183" text-anchor="middle" font-size="8.4" font-weight="700" fill="#991b1b">连乘 K 层增益</text>
+  <text x="868" y="197" text-anchor="middle" font-size="8.0" font-weight="700" fill="#b91c1c">Nemotron-4B: 2.1e35</text>
+  <text x="868" y="211" text-anchor="middle" font-size="8.0" fill="#7f1d1d">xLSTM-7B: 1.0e32</text>
+  <text x="868" y="225" text-anchor="middle" font-size="7.9" fill="#7f1d1d">Falcon-H1: 4.8e6</text>
+
+  <path d="M 739 212 L 739 228 L 612 228 L 612 214" fill="none" stroke="#b91c1c" stroke-width="1.2" marker-end="url(#arr-red)"/>
+  <text x="676" y="238" text-anchor="middle" font-size="7.8" font-weight="600" fill="#991b1b">式(4): min(√(εd)/r, G_K) 逐层复利</text>
+
+  <!-- Causal patching strip -->
+  <rect x="360" y="248" width="570" height="30" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="370" y="266.5" font-size="8.7" font-weight="600" fill="#1e3a8a">因果门控干预（表 4 · Nemotron-4B）：仅切 L0 反向仍 1.74×10³¹ (inf)；直通仅开 L0 前向降至 6.71（降 34 数量级）</text>
+
+  <!-- Panel 3: FP32 Clip Overflow & Post-AdamW Decomposition -->
+  <rect x="20" y="298" width="452" height="198" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="298" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="316" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="324" x2="472" y2="324" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="315.5" font-size="10.8" font-weight="700" fill="#1e3a8a">3. FP32 全局范数溢出与 AdamW 参数更新拆解（§4.1，表 7）</text>
+
+  <rect x="30" y="331" width="432" height="53" rx="5" fill="#fee2e2" stroke="#fca5a5" stroke-width="1"/>
+  <text x="40" y="346" font-size="8.9" font-weight="700" fill="#991b1b">溢出阈值：|g_i| &gt; √FLT_MAX = 1.84 × 10¹⁹（PyTorch / HF / FSDP2）</text>
+  <text x="40" y="361" font-size="8.5" fill="#7f1d1d">• g_i² → +∞ → G = inf → α_eff = 1.0/∞ = 0.0 → 全模型当前批梯度静默归零</text>
+  <text x="40" y="376" font-size="8.2" fill="#991b1b">• 全程无 NaN、不抛异常（Megatron-Core 开 check_for_nan_in_grad 则报错中断）</text>
+
+  <rect x="30" y="391" width="432" height="19" rx="3" fill="#eff6ff"/>
+  <text x="36" y="404" font-size="8.4" font-weight="700" fill="#1e3a8a">模型与步态（表 7）</text>
+  <text x="166" y="404" font-size="8.4" font-weight="700" fill="#1e3a8a">总步长 ‖∆θ‖₂</text>
+  <text x="248" y="404" font-size="8.4" font-weight="700" fill="#1e3a8a">鲜批位移 ‖δθ_batch‖₂</text>
+  <text x="364" y="404" font-size="8.4" font-weight="700" fill="#1e3a8a">命中近零行归宿</text>
+
+  <text x="36" y="423" font-size="8.3" fill="#334155">Nemotron 正常步 (247)</text>
+  <text x="166" y="423" font-size="8.3" fill="#334155">0.263</text>
+  <text x="248" y="423" font-size="8.3" fill="#15803d">0.114 (42.6% · 99.9%)</text>
+  <text x="364" y="423" font-size="8.3" fill="#334155">正常更新</text>
+
+  <text x="36" y="441" font-size="8.3" fill="#334155">Falcon-H1 早期 (~10⁶)</text>
+  <text x="166" y="441" font-size="8.3" fill="#334155">3.49e-2</text>
+  <text x="248" y="441" font-size="8.3" fill="#b45309">2.42e-4 (0.55% · −335×)</text>
+  <text x="364" y="441" font-size="8.3" fill="#334155">尺度不变自愈</text>
+
+  <rect x="30" y="448" width="432" height="19" rx="3" fill="#fef2f2"/>
+  <text x="36" y="461" font-size="8.3" font-weight="700" fill="#991b1b">Nemotron inf 步 (48)</text>
+  <text x="166" y="461" font-size="8.3" font-weight="700" fill="#991b1b">0.245 (伪动量!)</text>
+  <text x="248" y="461" font-size="8.3" font-weight="700" fill="#b91c1c">0.000 (0.0% · 0/35.6亿)</text>
+  <text x="364" y="461" font-size="8.3" font-weight="700" fill="#991b1b">29行冻死6.58e-36</text>
+
+  <text x="32" y="484" font-size="8.1" fill="#475569">注：仅把全局范数改 FP64 虽消 inf，但首次命中 α_eff~10⁻³¹ 低于 ε_Adam 仍使 18 步主干鲜批清零。</text>
+
+  <!-- Panel 4: Batch Trigger Audit & Workflow Funnel -->
+  <rect x="488" y="298" width="452" height="198" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="298" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="316" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="324" x2="940" y2="324" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="315.5" font-size="10.8" font-weight="700" fill="#1e3a8a">4. 语料批触发率估算（128 序列批，图 5b）与实测漏斗（表 6）</text>
+
+  <text x="642" y="344" text-anchor="end" font-size="8.5" fill="#334155">En. Web / Code / Math</text>
+  <rect x="650" y="336" width="3" height="9" rx="2" fill="#94a3b8"/>
+  <text x="658" y="344" font-size="8.4" fill="#475569">0.0%（英评未暴露）</text>
+
+  <text x="642" y="361" text-anchor="end" font-size="8.5" fill="#334155">Aya SFT (Nemotron-4B)</text>
+  <rect x="650" y="353" width="19.1" height="9" rx="2" fill="#60a5fa"/>
+  <text x="675" y="361" font-size="8.4" fill="#1e3a8a">10.6%</text>
+
+  <text x="642" y="378" text-anchor="end" font-size="8.5" fill="#334155">Thai CPT (Falcon-H1-1.5B)</text>
+  <rect x="650" y="370" width="126.9" height="9" rx="2" fill="#2563eb"/>
+  <text x="783" y="378" font-size="8.4" font-weight="600" fill="#1d4ed8">70.5%（最高 97.4%）</text>
+
+  <text x="642" y="395" text-anchor="end" font-size="8.5" font-weight="700" fill="#991b1b">Telugu CPT (Nemotron-4B)</text>
+  <rect x="650" y="387" width="171.7" height="9" rx="2" fill="#dc2626"/>
+  <text x="828" y="395" font-size="8.4" font-weight="700" fill="#991b1b">95.4%</text>
+
+  <text x="642" y="412" text-anchor="end" font-size="8.5" font-weight="700" fill="#991b1b">Mongolian / Chat SFT</text>
+  <rect x="650" y="404" width="180.0" height="9" rx="2" fill="#991b1b"/>
+  <text x="836" y="412" font-size="8.4" font-weight="700" fill="#991b1b">100%（Kimi t=0）</text>
+
+  <rect x="498" y="424" width="432" height="38" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="506" y="439" font-size="8.4" font-weight="700" fill="#0f172a">Nemotron-4B Telugu 1,000 步异常漏斗（16,384 tok/步，3 种子均值，表 6）：</text>
+  <text x="506" y="454" font-size="8.4" font-weight="700" fill="#1d4ed8">62 近零行 (0.047% 词表) → 32.3 ppm → 22.5% 命中批 → 19.8% 全批 inf 清零</text>
+
+  <rect x="498" y="468" width="432" height="21" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="506" y="481.5" font-size="8.2" fill="#334155">豁免项：LoRA 冻结 E_in（0/9 溢出）· 在线 RL 采样经 E_out（0/16,384）；全参 RL 含模板标签仍触发</text>
+
+  <text x="20" y="517" font-size="8.9" fill="#475569">注：前向激活全程保持有限（区别于 Mamba-2 #529）；仅当模型含非共享 E_in、零点归零门控且训练更新 E_in 时触发该静默停滞链。</text>
+</svg>

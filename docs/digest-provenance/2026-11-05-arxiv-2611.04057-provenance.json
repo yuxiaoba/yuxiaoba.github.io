@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-05-arxiv-2611.04057",
+  "paper_id": "arxiv-2611.04057",
+  "anchor_id": "paper-arxiv-2611.04057",
+  "digest_date": "2026-11-05",
+  "updated_at_utc": "2026-11-17T02:55:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-05.md",
+    "en_target": "_digest/en/daily-2026-11-05.md",
+    "staged_sections_redirect_note": "Parent prompt requested /root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sections/2611.04057/, which is blocked by subagent write_file sandbox enforcement (requires subagent brain dir 2caeaa38-9449-4fed-b98e-daae1da8ec90) while run_command is forbidden; sections were staged in the subagent scratch directory below.",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/2caeaa38-9449-4fed-b98e-daae1da8ec90/scratch/d2a-sections/2611.04057/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/2caeaa38-9449-4fed-b98e-daae1da8ec90/scratch/d2a-sections/2611.04057/section_en.md",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.04057v1.",
+    "adjacent_dependency_isolation": "Self-contained entry #12; parent orchestrator performs atomic flock splice into daily-2026-11-05.md without touching sibling papers or pre-existing PNGs."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.04057",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "v1 only in frozen snapshot (submitted Mon, 2 Nov 2026 23:02:14 UTC; PDF date reads November 4, 2026; no v2 revision or withdrawal notice present).",
+    "title": "Look Before You Launch: Learned Throughput Prediction for Hardware Selection in a Production Training Fleet",
+    "authors": [
+      "Hossein Askari",
+      "Wei Sun",
+      "Chenguang Zhu",
+      "Bin Zan",
+      "Sreen Tallam",
+      "Keyu Man"
+    ],
+    "affiliation": "Meta (Wei Sun and Sreen Tallam note: Work done at Meta)",
+    "correspondence": "haskari@meta.com",
+    "categories": [
+      "cs.AI"
+    ],
+    "acm_classes": "C.4; D.4.8; I.2.6",
+    "submitted_utc": "Mon, 2 Nov 2026 23:02:14 UTC",
+    "submitted_date": "2026-11-02",
+    "pdf_date_note": "November 4, 2026 (16 pages, 8 figures, 4 tables)",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.04057",
+      "abs_v1": "https://arxiv.org/abs/2611.04057v1",
+      "pdf": "https://arxiv.org/pdf/2611.04057",
+      "html_v1": "https://arxiv.org/html/2611.04057v1",
+      "doi": "https://doi.org/10.48550/arXiv.2611.04057"
+    },
+    "public_code_or_dataset": null,
+    "frozen_and_local_artifacts": {
+      "frozen_page_txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.04057.txt",
+        "sha256": "457a557b82b9d8e11db63776d49cffed53faf51584300041caf599394946d8cb",
+        "sha256_note": "Not computed in subagent (run_command prohibited).",
+        "bytes": 1526
+      },
+      "frozen_page_html": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.04057.html",
+        "sha256": "4e30bbc7f9784a2f2e3cfd8a38d7a83a31bfe8d52c8e41d5ea9e577fccc8b548",
+        "sha256_note": "Not computed in subagent (run_command prohibited).",
+        "bytes": 42030
+      },
+      "extracted_full_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sources/2611.04057.txt",
+        "lines_read": 941,
+        "sha256": "c004d1791f306e67de30d0de183ea2f0844fa442cfc974599fae66f3f7c93753",
+        "sha256_note": "Not computed in subagent (run_command prohibited).",
+        "bytes": 71617
+      },
+      "batch_input_yaml": {
+        "file": "2026-11-05.r002.yaml",
+        "sha256": "01da9513ed9a3bee172a42944e6ac79bc2465d224496a3e1b23c2a557ca7c609"
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "fleet_scale": {
+      "daily_attempts_avg": 25000,
+      "model_types_approx": 660,
+      "hardware_types_min": 20,
+      "fungible_share_of_fleet_cost_and_gpuh": "roughly half",
+      "long_tail_fig1": {
+        "top_19_share_pct": 37,
+        "top_100_share_pct": 78,
+        "bottom_560_share_pct": 22
+      }
+    },
+    "model_architecture": {
+      "features_total": 73,
+      "numeric_features": 56,
+      "categorical_features": 17,
+      "hardware_specs_numeric": 12,
+      "hardware_vendor_id": 1,
+      "architecture_summary_features": 44,
+      "history_snapshot_max_families": 250000,
+      "zero_effect_columns_count": 18,
+      "permutation_importance_group_pct": {
+        "job_scale_parallelism": 33.2,
+        "job_history": 29.8,
+        "model_architecture": 21.1,
+        "config_package": 10.2,
+        "hardware": 5.8
+      },
+      "top_individual_permutation_drops_pts": {
+        "hist_prior_log_qps_mean": 36.7,
+        "args_num_trainers": 30.2,
+        "args_batch_size": 27.6,
+        "hist_prior_log_qps": 25.3,
+        "cfg_n_float_total": 13.9
+      },
+      "cascade": {
+        "target": "y = ln q",
+        "loss": "pinball at tau = 0.5",
+        "bins_k": 13,
+        "em_max_iters": 3,
+        "em_early_stop_pct": 2,
+        "max_regressor_fits_per_night": 52,
+        "hist_gbdt_params": "up to 3000 trees, 255 leaves, lr = 0.03",
+        "retrain_window_days": 30,
+        "retrain_window_attempts_approx": 750000
+      }
+    },
+    "headline_production_metrics": {
+      "thirty_night_retrains_window": "08-25 to 09-23",
+      "w20_median_pct": 77.0,
+      "w20_range_pct": [
+        73.5,
+        80.6
+      ],
+      "eligible_gpuh_ranked_1h_2026_growth_pct": [
+        58,
+        95
+      ],
+      "eligible_gpuh_ranked_1h_2026_total": "77 million GPU-hours",
+      "estimated_fleet_compute_cost_savings_pct": 3,
+      "aug_6_day_slice_jobs_approx": 200000,
+      "aug_6_day_top1_placed_share_pct": {
+        "jobs": 19.9,
+        "gpu_hours": 30.0,
+        "cost_weighted_usage": 26.2
+      }
+    },
+    "table1_rule_engine_vs_leap": {
+      "day_total_jobs": 7131,
+      "day_model_types": 276,
+      "rule_covered_jobs": 946,
+      "rule_coverage_pct": 13.3,
+      "missing_model_types_pct": 93,
+      "key_p10_p90_gt_1_5x_pct": 56,
+      "rule_engine": {
+        "w10": 33.4,
+        "w15": 45.0,
+        "w20": 53.2,
+        "ratio": 1.11
+      },
+      "leap": {
+        "w10": 72.1,
+        "w15": 80.6,
+        "w20": 85.1,
+        "ratio": 1.0
+      }
+    },
+    "table2_ablations_and_alternatives": {
+      "aug_fixed_day_incremental_w20": {
+        "gbdt_baseline": 72.3,
+        "plus_job_history": 74.8,
+        "plus_throughput_ratio": 76.6,
+        "plus_architecture": 80.7,
+        "plus_deeper_hist_gbdt": 82.8,
+        "plus_binned_cascade": 83.3
+      },
+      "aug_fixed_day_unadopted_w20": {
+        "lightgbm": 69.4,
+        "tabpfn_v2": 79.1,
+        "gemma_3_27b_lora": 69.0,
+        "llama_4_scout_lora_80k": 50.8
+      },
+      "dnnperf_3_days_10_seeds_w20": {
+        "baseline_cascade": 77.4,
+        "dnnperf_job_features_only": 77.1,
+        "dnnperf_with_graph": 77.4,
+        "graph_delta_pp": 0.25,
+        "graph_delta_95_ci": [
+          -0.21,
+          0.71
+        ],
+        "graph_cache_size_gb_approx": 400
+      }
+    },
+    "table3_text_encoders_same_day": {
+      "gbdt_cascade": {
+        "w5": 42.9,
+        "w10": 68.9,
+        "w20": 77.3,
+        "mdape": 6.9
+      },
+      "qwen3_emb_0_6b_frozen": {
+        "w5": 30.4,
+        "w10": 52.4,
+        "w20": 68.1,
+        "mdape": 11.5
+      },
+      "qwen3_emb_0_6b_lora": {
+        "w5": 26.1,
+        "w10": 45.2,
+        "w20": 73.6,
+        "mdape": 9.3
+      },
+      "qwen3_emb_0_6b_lora_large_head": {
+        "w5": 28.6,
+        "w10": 48.1,
+        "w20": 72.7,
+        "mdape": 10.5
+      },
+      "qwen3_emb_4b_lora": {
+        "w5": 26.6,
+        "w10": 48.4,
+        "w20": 70.7,
+        "mdape": 10.5
+      },
+      "gbdt_plus_embedding": {
+        "w5": 30.2,
+        "w10": 50.3,
+        "w20": 72.4,
+        "mdape": 9.9
+      }
+    },
+    "table4_ood_holdout_delta_w20": {
+      "3_hardware_types_graph_based": -37.0,
+      "random_rows_same_size_graph_based": -1.7,
+      "3_model_families_graph_based": -22.2,
+      "1_model_family_312_attempts_cascade": -49.7,
+      "1_model_family_312_attempts_graph_based": -37.0
+    }
+  },
+  "explicit_limitations": [
+    "No zero-shot extrapolation to unseen hardware types (-37.0 pp even when specs lie inside the training range) or unfamiliar model families (-49.7 pp for cascade, -37.0 pp for graph-based); new hardware requires live or bootstrap jobs before nightly inclusion.",
+    "w20 weights every job attempt equally rather than by GPU-hours (Eq. 6), reflecting numerous small jobs more than rare giant training jobs.",
+    "Serving path currently omits some parallelism and scaling arguments used by offline training (Section 6 Future Work), creating potential online-offline feature skew.",
+    "In-window internal evaluation previously overstated accuracy by >20 percentage points, and night-to-night w20 swings ~7 points (73.5%-80.6%), invalidating single-day 1-2 pp comparisons.",
+    "Scheduler treats preference lists softly under capacity constraints (19.9% jobs / 30.0% GPU-h on #1 ranked in Aug 6-day slice); ~3% fleet compute cost reduction is an observational production estimate rather than a randomized A/B test, and the irreducible label-noise ceiling remains unmeasured.",
+    "Proprietary Meta production system with no open-source code or dataset; figures reported directly from arXiv:2611.04057v1 without independent execution."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "leap_svgs": {
+      "leap-fleet-throughput-routing-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/leap-fleet-throughput-routing-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/leap-fleet-throughput-routing-zh.svg",
+        "sha256": "cfcde0f4f13589c561f55c15f88849a049e6ee7711c29fe90a8340a6229b3743",
+        "sha256_note": "Pending parent computation (run_command prohibited in subagent).",
+        "bytes": 13616
+      },
+      "leap-fleet-throughput-routing-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/leap-fleet-throughput-routing-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/leap-fleet-throughput-routing-en.svg",
+        "sha256": "52d1c60770ddd1e14413a6c9a8f657b2ff78c746006ef2b51bfb0ee239024a59",
+        "sha256_note": "Pending parent computation (run_command prohibited in subagent).",
+        "bytes": 13255
+      },
+      "leap-fleet-accuracy-drivers-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/leap-fleet-accuracy-drivers-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/leap-fleet-accuracy-drivers-zh.svg",
+        "sha256": "20df29d0da30615fb3ba22b392ff3893db6fbe439351bc99734beb4396f41975",
+        "sha256_note": "Pending parent computation (run_command prohibited in subagent).",
+        "bytes": 13141
+      },
+      "leap-fleet-accuracy-drivers-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/leap-fleet-accuracy-drivers-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/leap-fleet-accuracy-drivers-en.svg",
+        "sha256": "aaaa1f7ab67cdf028afc11a2e7ecf4c997e6f1bed4c04bae7da1931cdc8680e8",
+        "sha256_note": "Pending parent computation (run_command prohibited in subagent).",
+        "bytes": 12895
+      }
+    },
+    "preserved_preexisting_assets": [
+      "badc.png",
+      "gated-workflow.png",
+      "insight-hpc.png",
+      "instrument-errors.png",
+      "leansparse-architecture.png",
+      "policy-wording.png",
+      "raglog.png",
+      "signals.png",
+      "warpline.png"
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-05.md",
+      "file_bytes_before": 46498,
+      "file_sha256_before": "a57afb9010f0516ba9d15d89c96ef1b07029938279a9d9c03e5902f04f3b8762",
+      "file_bytes_after": 258981,
+      "file_sha256_after": "0c569250568c0975f5704c11bbdfcfff48ddadc7366026be70dc954ece1ce395",
+      "old_section_bytes": 795,
+      "old_section_sha256": "3ba089d260413c243f1c9f5cffe9c3c1177af5b79704e1a689275f8baefacba1",
+      "new_section_bytes": 22484,
+      "new_section_sha256": "db3cf0c0803d1955ae385c4968f43c1f001f8d7aa17d5641d061a4d36a9ff505"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-05.md",
+      "file_bytes_before": 49237,
+      "file_sha256_before": "d5c507de897b4e0644651175c569f11bfe5df1cfa94b53b4227ec9422a1d0e06",
+      "file_bytes_after": 247387,
+      "file_sha256_after": "00dc837b0349415fa884dbc628828870d27be980bb81f30127ddd5602addd7a0",
+      "old_section_bytes": 926,
+      "old_section_sha256": "c45dbefa6a2e23bcddfd266aec929cc1e5dc9f999c12ccfdfef22d80a6deab55",
+      "new_section_bytes": 21417,
+      "new_section_sha256": "85abb822f2337eaf47e9605cbad780201b3a6982fa4ac06e40f57190a3009981"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:08:32.604936+00:00",
+    "preview_release": "20261117-110758-45bc53b9",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

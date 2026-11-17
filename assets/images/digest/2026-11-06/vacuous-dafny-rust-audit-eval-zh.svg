@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Verified but Vacuous 定量实证：Li@Opus 的 A 到 B 断崖、VCG Rust 的 B 到 C 渗漏、非因果后置条件率与审校边界">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="14" y="14" width="932" height="512" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" rx="10"/>
+  <text x="30" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="16.5" font-weight="700" fill="#0f172a">定量实证：Li@Opus 绑定断崖（A→B）vs. VCG Rust 语义渗漏（B→C）</text>
+  <text x="30" y="59" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" fill="#475569">Claude Opus 4.7 (Vertex AI) · Dafny 4.10 / Z3 4.13 · 每题 10 采样 · Python 三基准（14,470 次）与 Rust 两基准（8,950 次）</text>
+  <line x1="30" y1="68" x2="930" y2="68" stroke="#bfdbfe" stroke-width="1"/>
+
+  <!-- Panel A: Top-Left (Li@Opus A -> B) -->
+  <rect x="28" y="76" width="444" height="208" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="40" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">A. Li@Opus (Python)：36–52× 规约绑定断崖（表 3）</text>
+  <rect x="38" y="103" width="424" height="173" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+
+  <rect x="48" y="111" width="9" height="8" rx="2" fill="#1d4ed8"/>
+  <text x="61" y="118.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">L1 验证器通过 (A)</text>
+  <rect x="172" y="111" width="9" height="8" rx="2" fill="#60a5fa"/>
+  <text x="185" y="118.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">L2 含任意 ensures</text>
+  <rect x="296" y="111" width="9" height="8" rx="2" fill="#dc2626"/>
+  <text x="309" y="118.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" font-weight="700" fill="#b91c1c">L3 绑定门槛通过 (B)</text>
+
+  <!-- HumanEval: 100% = 180px from x=138 -->
+  <text x="132" y="144" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="700" fill="#0f172a">HumanEval</text>
+  <text x="132" y="156" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.2" fill="#64748b">1,640 采样</text>
+  <rect x="138" y="130" width="178.4" height="7" rx="2" fill="#1d4ed8"/>
+  <text x="322" y="137" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="700" fill="#1d4ed8">99.1% (1,625)</text>
+  <rect x="138" y="139.5" width="9.5" height="7" rx="2" fill="#60a5fa"/>
+  <text x="154" y="146.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.5" fill="#334155">5.3% (94.7% 无 ensures)</text>
+  <rect x="138" y="149" width="4.0" height="7" rx="1.5" fill="#dc2626"/>
+  <text x="148" y="156" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="700" fill="#b91c1c">1.9% (52× 断崖)</text>
+
+  <!-- LeetCodeDataset -->
+  <text x="132" y="184" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="700" fill="#0f172a">LeetCodeDataset</text>
+  <text x="132" y="196" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.2" fill="#64748b">2,280 采样</text>
+  <rect x="138" y="170" width="175.0" height="7" rx="2" fill="#1d4ed8"/>
+  <text x="319" y="177" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="700" fill="#1d4ed8">97.2% (2,217)</text>
+  <rect x="138" y="179.5" width="17.3" height="7" rx="2" fill="#60a5fa"/>
+  <text x="161" y="186.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.5" fill="#334155">9.6% (90.4% 无 ensures)</text>
+  <rect x="138" y="189" width="4.9" height="7" rx="1.5" fill="#dc2626"/>
+  <text x="149" y="196" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="700" fill="#b91c1c">2.7% (36× 断崖)</text>
+
+  <!-- LiveCodeBench v6 -->
+  <text x="132" y="224" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="700" fill="#0f172a">LCB v6</text>
+  <text x="132" y="236" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.2" fill="#64748b">10,550 采样</text>
+  <rect x="138" y="210" width="166.0" height="7" rx="2" fill="#1d4ed8"/>
+  <text x="310" y="217" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="700" fill="#1d4ed8">92.2% (9,731)</text>
+  <rect x="138" y="219.5" width="19.1" height="7" rx="2" fill="#60a5fa"/>
+  <text x="163" y="226.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.5" fill="#334155">10.61% (可测集 10.92%)</text>
+  <rect x="138" y="229" width="4.2" height="7" rx="1.5" fill="#dc2626"/>
+  <text x="148" y="236" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="700" fill="#b91c1c">2.3% (40× 断崖)</text>
+
+  <rect x="46" y="246" width="408" height="23" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="53" y="261" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#1e3a8a">随题目变难 L2 翻倍（5.3%→10.61%），但新增为内联约束；L3 始终锁在 1.9–2.7%。</text>
+
+  <!-- Panel B: Top-Right (VCG Rust B -> C + Cascade Fig 1) -->
+  <rect x="484" y="76" width="448" height="208" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="496" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">B. VCG (Rust)：结构绑定下的 B→C 渗漏（表 5 与图 1）</text>
+  <rect x="494" y="103" width="428" height="173" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+
+  <rect x="502" y="110" width="412" height="19" rx="3" fill="#eff6ff"/>
+  <text x="506" y="123" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" font-weight="700" fill="#1d4ed8">Rust 基准 (总尝试)</text>
+  <text x="626" y="123" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" font-weight="700" fill="#1d4ed8">全组件过门(B=100%)</text>
+  <text x="728" y="123" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" font-weight="700" fill="#1d4ed8">隐藏失败(占全量)</text>
+  <text x="832" y="123" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" font-weight="700" fill="#b91c1c">B→C 失效率</text>
+
+  <text x="506" y="143" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#0f172a">MBPP-Rust (2,080)</text>
+  <text x="626" y="143" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">1,080</text>
+  <text x="728" y="143" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" fill="#334155">124 (5.96%)</text>
+  <rect x="832" y="131.5" width="76" height="16" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+  <text x="870" y="143" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="700" fill="#92400e">11.48%</text>
+
+  <line x1="504" y1="152" x2="912" y2="152" stroke="#e2e8f0" stroke-width="0.8"/>
+  <text x="506" y="167" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#0f172a">VeriContest LC (6,870)</text>
+  <text x="626" y="167" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.7" fill="#334155">1,545 (22.49%)</text>
+  <text x="728" y="167" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" fill="#334155">229 (3.33%)</text>
+  <rect x="832" y="155.5" width="76" height="16" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+  <text x="870" y="167" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.0" font-weight="700" fill="#991b1b">14.82%</text>
+
+  <!-- Cascade visual comparing Li@Opus vs VCG (Fig 1) -->
+  <rect x="502" y="180" width="412" height="88" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="510" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" font-weight="700" fill="#0f172a">级联淘汰对比（占全部尝试比例，附录 A 图 1）：两流水线在不同界面崩塌</text>
+
+  <text x="510" y="213" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" font-weight="700" fill="#334155">Li@Opus HumanEval</text>
+  <rect x="610" y="204" width="95" height="11" rx="2" fill="#1d4ed8"/>
+  <text x="710" y="213" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.3" fill="#1d4ed8">A:99.1%</text>
+  <text x="752" y="213" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" font-weight="700" fill="#dc2626">→ B:1.9% (约50×) → C:n/a</text>
+
+  <text x="510" y="233" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" font-weight="700" fill="#334155">VCG VeriContest LC</text>
+  <rect x="610" y="224" width="22" height="11" rx="2" fill="#1d4ed8"/>
+  <text x="637" y="233" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.3" fill="#1d4ed8">A:22.49% → B:22.49% (100%)</text>
+  <text x="794" y="233" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.3" font-weight="700" fill="#dc2626">→ C:7.79%</text>
+
+  <text x="510" y="252" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#334155">1,316 个过验证且过隐藏测试样本跑 Post2Exe，仅 <tspan font-weight="700" fill="#1d4ed8">535 个 (40.7%)</tspan> 通过全项端到端校验</text>
+  <text x="510" y="264" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#475569">（precond 等价、Post2Exe、CodeGen、ProofGen），End2End @1 = 7.79% (535/6,870)。</text>
+
+  <!-- Panel C: Bottom-Left (Table 7 + External Contrast) -->
+  <rect x="28" y="294" width="444" height="200" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="40" y="314" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">C. 后置条件存在性与测试通过率（表 7）及 LC 外部参照</text>
+  <rect x="38" y="321" width="424" height="165" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+
+  <rect x="46" y="326" width="408" height="18" rx="3" fill="#eff6ff"/>
+  <text x="52" y="338" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">Li@Opus 测试集</text>
+  <text x="166" y="338" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">带 ensures 通过率</text>
+  <text x="278" y="338" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">无 ensures 通过率</text>
+  <text x="394" y="338" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">观察差值</text>
+
+  <text x="52" y="357" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#334155">HumanEval (base)</text>
+  <text x="166" y="357" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" fill="#334155">80.2% (n=86)</text>
+  <text x="278" y="357" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" fill="#334155">94.2% (n=1,539)</text>
+  <text x="394" y="357" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="700" fill="#b45309">-14.0 pp</text>
+
+  <text x="52" y="373" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#334155">LeetCodeDataset</text>
+  <text x="166" y="373" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" fill="#334155">59.6% (n=213)</text>
+  <text x="278" y="373" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" fill="#334155">66.1% (n=1,995)</text>
+  <text x="394" y="373" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="700" fill="#b45309">-6.5 pp</text>
+
+  <text x="52" y="389" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#334155">LCB v6 (9,448可测)</text>
+  <text x="166" y="389" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" fill="#334155">53.2% (n=1,032)</text>
+  <text x="278" y="389" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" fill="#334155">62.6% (n=8,416)</text>
+  <text x="394" y="389" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="700" fill="#b45309">-9.4 pp</text>
+
+  <rect x="46" y="396" width="408" height="19" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+  <text x="52" y="409" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" font-weight="700" fill="#92400e">注意：非因果观察关联——自选输出未控制题目难度与修复轮次，不可解读为“写规约降通过率”。</text>
+
+  <text x="52" y="431" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="700" fill="#0f172a">VeriContest LC End2End @1 描述性外部参照（§6 · 预算与修复流程未对齐）：</text>
+  <!-- scale: 10% = 180px from x=188 -->
+  <text x="182" y="447" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" font-weight="700" fill="#1d4ed8">VCG (10 采样/题)</text>
+  <rect x="188" y="438.5" width="140.2" height="9" rx="2" fill="#1d4ed8"/>
+  <text x="334" y="447" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.5" font-weight="700" fill="#1d4ed8">7.79% (535/6,870)</text>
+
+  <text x="182" y="462" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#334155">GPT-5.5 (引用 Xie et al.)</text>
+  <rect x="188" y="453.5" width="99.2" height="9" rx="2" fill="#60a5fa"/>
+  <text x="293" y="462" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.5" fill="#475569">5.51% (差 +2.3 pp)</text>
+
+  <text x="182" y="477" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#334155">Opus 4.7 (引用单次采样)</text>
+  <rect x="188" y="468.5" width="33.8" height="9" rx="2" fill="#93c5fd"/>
+  <text x="228" y="477" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.5" fill="#475569">1.88% (4.14× 参照比)</text>
+
+  <!-- Panel D: Bottom-Right (Boundaries & Methodological Ask) -->
+  <rect x="484" y="294" width="448" height="200" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="496" y="314" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">D. 科学审校边界与方法论倡议（§9）</text>
+  <rect x="494" y="321" width="428" height="165" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+
+  <rect x="502" y="328" width="412" height="34" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="508" y="335" width="110" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="563" y="348" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.4" font-weight="700" fill="#1d4ed8">构型依赖与盲点</text>
+  <text x="626" y="342" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#334155">门槛假定 Spec/Impl 分离：会拒收有效内联 ensures，</text>
+  <text x="626" y="355" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#475569">且无法识破 P(x){true} 恒真谓词或 {:axiom} 绕过。</text>
+
+  <rect x="502" y="366" width="412" height="34" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="508" y="373" width="110" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="563" y="386" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.4" font-weight="700" fill="#1d4ed8">单模型与提示混杂</text>
+  <text x="626" y="380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#334155">全部主实验仅基于 Opus 4.7；Li@Opus 沿用</text>
+  <text x="626" y="393" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#475569">{:testEntry}+Main() expect 夹具提示，未隔离模型泛化。</text>
+
+  <rect x="502" y="404" width="412" height="34" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="508" y="411" width="110" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="563" y="424" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.4" font-weight="700" fill="#1d4ed8">代理假设与非对齐</text>
+  <text x="626" y="418" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#334155">Rust 11.48%/14.82% 败率聚合了转译/包装/Oracle 误差；</text>
+  <text x="626" y="431" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#475569">4.14× 对照未对齐采样与修复预算，CF 切片尚未评测。</text>
+
+  <rect x="502" y="442" width="412" height="34" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <rect x="508" y="449" width="110" height="19" rx="5" fill="#1d4ed8"/>
+  <text x="563" y="462" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.4" font-weight="700" fill="#ffffff">核心方法论倡议</text>
+  <text x="626" y="456" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1e3a8a">任何交付证明证书的流水线，除面 A 通过率外，</text>
+  <text x="626" y="469" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#1e3a8a">应至少并报面 B 或面 C（理想情况应同时报告两者）。</text>
+
+  <text x="30" y="514" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" fill="#475569">来源：arXiv:2611.05590v1 §§4–9、表 3–7 与附录 A–E；LCB v6 的 L2 口径按 9,731 过审样本为 10.61%（含编译排除为 10.87%，按 9,448 可测子集为 10.92%）。</text>
+</svg>

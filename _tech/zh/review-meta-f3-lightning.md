@@ -3,7 +3,7 @@ id: review-meta-f3-lightning
 title: 2026-11-04｜F3 Lightning：独立发布与共享执行
 date: '2026-11-04'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,9 +17,11 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/zh/review-meta-f3-lightning/
 long_read: true
-summary: "F3 Lightning 如何通过稳定计算标识、共享计划与内存布局保留效率，同时让特征独立发布。"
+summary: F3 Lightning 如何通过稳定计算标识、共享计划与内存布局保留效率，同时让特征独立发布。
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 ## 为什么共享图拖慢发布
 
 F3 为广告排序提取特征，一次请求可能需要两万多个特征。七天点击数和展示数可以共享事件读取、时间过滤，点击率又复用两者。旧编译器把所有特征合成一个 DAG，公共节点每次请求只执行一次；代价是整个图也成为发布单位。一个定义错误会挡住其他有效特征，已上线特征需要的昂贵模型测试也让新特征一起等待。

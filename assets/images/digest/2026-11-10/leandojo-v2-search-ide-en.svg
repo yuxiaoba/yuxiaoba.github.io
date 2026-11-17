@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-navy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1e3a8a"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17.0" font-weight="700" fill="#0f172a" text-anchor="start">State-Preserving REPL Search (Goal–Tactic Graph) &amp; Lean4Code Extensions</text>
+  <text x="24" y="53" font-size="10.3" font-weight="400" fill="#475569" text-anchor="start">From arXiv:2611.09048v1 (Fig. 2, Table 1, Appendices A–B) and BaseProver.search() invariants</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="74" width="494" height="424" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="74" width="494" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="24" y="94" width="494" height="8" fill="#1e3a8a"/>
+  <text x="36" y="92.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">1. Goal–Tactic Graph &amp; State Preservation (Fig. 2)</text>
+  <rect x="34" y="110" width="474" height="226" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <path d="M 88 156 C 72 126, 136 126, 120 156" fill="none" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-amber)"/>
+  <text x="104" y="123" font-size="8.4" font-weight="600" fill="#b45309" text-anchor="middle">rw [Nat.add_comm] · no progress</text>
+  <rect x="44" y="158" width="184" height="46" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="52" y="175" font-size="8.5" font-weight="700" fill="#1e3a8a" text-anchor="start">Initial Goal (Node 0)</text>
+  <text x="52" y="193" font-size="8.9" font-weight="600" fill="#0f172a" text-anchor="start">⊢ ∀ {p q : Prop}, p ∧ q → q ∧ p</text>
+  <line x1="228" y1="181" x2="294" y2="181" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <text x="261" y="173" font-size="9.0" font-weight="700" fill="#1d4ed8" text-anchor="middle">simp</text>
+  <path d="M 380 156 C 364 126, 428 126, 412 156" fill="none" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-amber)"/>
+  <text x="396" y="123" font-size="8.4" font-weight="600" fill="#b45309" text-anchor="middle">simp · self-loop (unchanged)</text>
+  <rect x="296" y="158" width="198" height="46" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="304" y="175" font-size="8.5" font-weight="700" fill="#1e3a8a" text-anchor="start">Intermediate Goal (Node 1)</text>
+  <text x="304" y="193" font-size="8.9" font-weight="600" fill="#0f172a" text-anchor="start">⊢ ∀ {p q : Prop}, p → q → q ∧ p</text>
+  <line x1="395" y1="204" x2="365" y2="244" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <text x="390" y="228" font-size="8.9" font-weight="700" fill="#1d4ed8" text-anchor="start">intro p q hp hq</text>
+  <rect x="268" y="246" width="208" height="78" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="278" y="263" font-size="8.4" font-weight="700" fill="#1e3a8a" text-anchor="start">Context &amp; Subgoal (Node 2)</text>
+  <text x="278" y="279" font-size="8.8" font-weight="600" fill="#b45309" text-anchor="start">p q : Prop · hp : p · hq : q</text>
+  <text x="278" y="295" font-size="9.2" font-weight="700" fill="#0f172a" text-anchor="start">⊢ q ∧ p</text>
+  <text x="278" y="313" font-size="8.1" font-weight="400" fill="#475569" text-anchor="start">guidance(): 1 / (len(vars) + 1)</text>
+  <line x1="268" y1="286" x2="188" y2="286" stroke="#0f766e" stroke-width="1.9" marker-end="url(#arr-teal)"/>
+  <text x="228" y="276" font-size="8.8" font-weight="700" fill="#0f766e" text-anchor="middle">exact ⟨hq, hp⟩</text>
+  <rect x="44" y="258" width="142" height="56" rx="6" fill="#ecfdf5" stroke="#0f766e" stroke-width="1.3"/>
+  <text x="54" y="281" font-size="9.4" font-weight="700" fill="#0f766e" text-anchor="start">✓ Goals accomplished!</text>
+  <text x="54" y="300" font-size="8.4" font-weight="400" fill="#0f766e" text-anchor="start">Terminal: 0 goals left</text>
+  <rect x="34" y="346" width="474" height="140" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="46" y="366" font-size="9.8" font-weight="700" fill="#1e3a8a" text-anchor="start">REPL State Invariants &amp; Backtracking (§2.2 &amp; BaseProver.search)</text>
+  <text x="46" y="386" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">1. Immutable handles: Pantograph goal_tactic(state, tactic) yields a fresh GoalState on success.</text>
+  <text x="46" y="405" font-size="8.7" font-weight="600" fill="#b45309" text-anchor="start">2. Safe failure: TacticFailure leaves prior state unchanged; logs tactic_feedback &amp; failed edge.</text>
+  <text x="46" y="424" font-size="8.7" font-weight="400" fill="#334155" text-anchor="start">3. Bounded search: Pops search_stack after max_trials_per_goal=5 or empty tactic (cap 100 steps).</text>
+  <text x="46" y="443" font-size="8.7" font-weight="600" fill="#0f766e" text-anchor="start">4. Minimal-length recovery: nx.shortest_path(graph, 0, solved) strips self-loops &amp; dead ends</text>
+  <text x="46" y="460" font-size="8.7" font-weight="400" fill="#0f766e" text-anchor="start">   to return only the shortest proof path (here: simp → intro p q hp hq → exact ⟨hq, hp⟩).</text>
+  <text x="46" y="478" font-size="8.3" font-weight="400" fill="#64748b" text-anchor="start">Note: Paper notes Pantograph supports DFS/MCTS; BaseProver.search() implements stack DFS.</text>
+  <rect x="534" y="74" width="402" height="424" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="534" y="74" width="402" height="28" rx="8" fill="#1d4ed8"/>
+  <rect x="534" y="94" width="402" height="8" fill="#1d4ed8"/>
+  <text x="546" y="92.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">2. Lean4Code VSCodium Integration (Table 1 &amp; App. A)</text>
+  <rect x="544" y="112" width="382" height="82" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="554" y="131" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">① Lean4 (modified, bundled in VSCodium)</text>
+  <text x="554" y="149" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• Strips VSCode telemetry while keeping full marketplace access</text>
+  <text x="554" y="166" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• Auto-injects LeanDojo-v2 config folder into new Lean projects</text>
+  <text x="554" y="183" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• Caveat: Lean 4 breaks backward compat; bundled ext tracks releases</text>
+  <rect x="544" y="204" width="382" height="90" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="554" y="223" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">② LeanDojo Panel (5 inputs → 1-click trace)</text>
+  <text x="554" y="241" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• Inputs: Project Name, Repo URL, Commit, PAT, Lean ver + build_deps</text>
+  <text x="554" y="258" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• Scaffolds repo/, tmp/, custom trace/trace.py, and output dir</text>
+  <text x="554" y="275" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• One click runs trace.py and writes traced artifacts into out/</text>
+  <rect x="544" y="304" width="382" height="90" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="554" y="323" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">③ LeanCopilot Panel (Local or Hosted Backend)</text>
+  <text x="554" y="341" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• Option 1 (Local): downloads Byte5 retriever model locally</text>
+  <text x="554" y="358" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• Option 2 (API): uses HF Token to call DeepSeek-Prover-V2-671B</text>
+  <text x="554" y="375" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• Auto-edits project config; suggest_tactics shows hints in Infoview</text>
+  <rect x="544" y="404" width="382" height="82" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="554" y="423" font-size="9.6" font-weight="700" fill="#1e3a8a" text-anchor="start">④ Agent-TARS Panel (Multimodal AI Terminal)</text>
+  <text x="554" y="441" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• OpenAI token boots Chat Only (no browser) or Agentic (thinking/plan)</text>
+  <text x="554" y="458" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• First message spawns a terminal and persists Session ID context</text>
+  <text x="24" y="520" font-size="9.4" font-weight="400" fill="#64748b" text-anchor="start">Diagram (arXiv:2611.09048v1) · Left restores Fig. 2's proof graph; BaseProver.search() implements stack-based DFS backtracking</text>
+</svg>

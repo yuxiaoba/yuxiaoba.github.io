@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Noto Sans CJK SC',sans-serif;">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="34" font-size="18" font-weight="700" fill="#0f172a">草稿模型再解耦：异构硬件适配与三阶段部署拓扑演化</text>
+  <text x="24" y="53" font-size="11" fill="#475569">依据 Gimlet Labs (2026-11-10)：将算力饱和型 Draft Prefill 留回 GPU，仅把权重带宽受限型 Draft Decode 放到高速加速器</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Row: Hardware Roofline Asymmetry -->
+  <rect x="24" y="72" width="448" height="102" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="36" y="81" width="142" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="107" y="95" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">GPU · 高算力 / 大显存</text>
+  <text x="188" y="95" font-size="11" font-weight="700" fill="#1e3a8a">擅长高并行计算（Target + Prefill）</text>
+  <text x="36" y="121" font-size="10.2" fill="#1e293b">• Prefill 并行处理多 token，算术强度高、可打满芯片算力</text>
+  <text x="36" y="140" font-size="10.2" fill="#1e293b">• Target Verify 耗时 max(40, 2.5×(D+1)) ms：D≤15 受显存带宽约束</text>
+  <text x="36" y="159" font-size="9.8" fill="#475569">• 小批量 Decode 落入权重加载带宽瓶颈（Roofline 引自 Wang et al.）</text>
+
+  <rect x="488" y="72" width="448" height="102" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.1"/>
+  <rect x="500" y="81" width="154" height="20" rx="5" fill="#0369a1"/>
+  <text x="577" y="95" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">高带宽加速器（如 SRAM）</text>
+  <text x="664" y="95" font-size="11" font-weight="700" fill="#0c4a6e">极速解码 · 预填充表现分化</text>
+  <text x="500" y="121" font-size="10.2" fill="#0f172a">• 极高权重读取带宽加速 Draft Decode（模型设 8 ms → 1.5 ms）</text>
+  <text x="500" y="140" font-size="10.2" fill="#0f172a">• 单片内存容量较 GPU 小，需更多芯片 → 解码能耗上升（30→150 mJ）</text>
+  <text x="500" y="159" font-size="9.8" fill="#0369a1">• Gimlet Cloud 实测各加速器 Draft Prefill 延迟与能耗分化明显</text>
+
+  <!-- Middle Row: 3 Topology Columns -->
+  <!-- Column 1: All-GPU Baseline -->
+  <rect x="24" y="186" width="278" height="236" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="186" width="278" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="206" width="278" height="10" fill="#dbeafe"/>
+  <text x="36" y="205" font-size="11.5" font-weight="700" fill="#1e3a8a">方案 A：全 GPU 同构基线</text>
+
+  <rect x="36" y="226" width="254" height="72" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="46" y="245" font-size="10.8" font-weight="700" fill="#1d4ed8">GPU 统一承载全部 4 阶段</text>
+  <text x="46" y="265" font-size="9.8" fill="#334155">• Target Prefill: 150 ms · 250,000 mJ</text>
+  <text x="46" y="284" font-size="9.8" fill="#334155">• Draft Prefill: 20 ms · 20,000 mJ</text>
+
+  <rect x="36" y="306" width="254" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="46" y="325" font-size="10.5" font-weight="700" fill="#0f172a">单卡解码受制于权重带宽</text>
+  <text x="46" y="344" font-size="9.8" fill="#334155">• Draft Decode: 8 ms/tok · 30 mJ/tok</text>
+  <text x="46" y="362" font-size="9.8" fill="#334155">• Target Verify: 40 ms 下限 (D≤15)</text>
+
+  <rect x="36" y="382" width="254" height="30" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="163" y="401" font-size="10" font-weight="700" fill="#334155" text-anchor="middle">峰值 ~61 tok/s (D*=8) · 能效最高</text>
+
+  <line x1="303" y1="304" x2="316" y2="304" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- Column 2: Full Drafter on Accelerator -->
+  <rect x="319" y="186" width="286" height="236" rx="8" fill="#ffffff" stroke="#f59e0b" stroke-width="1.2"/>
+  <rect x="319" y="186" width="286" height="30" rx="8" fill="#fef3c7"/>
+  <rect x="319" y="206" width="286" height="10" fill="#fef3c7"/>
+  <text x="331" y="205" font-size="11.5" font-weight="700" fill="#92400e">方案 B：完整草稿模型迁至加速器</text>
+
+  <rect x="331" y="226" width="262" height="72" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="341" y="245" font-size="10.8" font-weight="700" fill="#1d4ed8">Target 留 GPU · Draft 整包迁走</text>
+  <text x="341" y="265" font-size="9.8" fill="#334155">• GPU 仅负责 Target Prefill &amp; Verify</text>
+  <text x="341" y="284" font-size="9.8" fill="#334155">• 加速器跑 Draft 预填充 + 解码 (1.5 ms)</text>
+
+  <rect x="331" y="306" width="262" height="66" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+  <text x="341" y="325" font-size="10.5" font-weight="700" fill="#b91c1c">云端实测暴露两类 Prefill 短板</text>
+  <text x="341" y="344" font-size="9.8" fill="#7f1d1d">• 情景 A 慢预填充：150 ms 拖慢 TTFT</text>
+  <text x="341" y="362" font-size="9.8" fill="#7f1d1d">• 情景 B 高耗预填充：100 J 拉低 tok/kW</text>
+
+  <rect x="331" y="382" width="262" height="30" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="462" y="401" font-size="10" font-weight="700" fill="#92400e" text-anchor="middle">峰值 137 tok/s (D*=15)，受累于 Prefill</text>
+
+  <line x1="606" y1="304" x2="619" y2="304" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- Column 3: Split Drafter (Gimlet Cloud) -->
+  <rect x="622" y="186" width="314" height="236" rx="8" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.6"/>
+  <rect x="622" y="186" width="314" height="30" rx="8" fill="#1d4ed8"/>
+  <rect x="622" y="206" width="314" height="10" fill="#1d4ed8"/>
+  <text x="634" y="205" font-size="11.5" font-weight="700" fill="#ffffff">方案 C：草稿模型 PD 再解耦（Gimlet）</text>
+
+  <rect x="634" y="224" width="290" height="80" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.1"/>
+  <text x="644" y="242" font-size="10.6" font-weight="700" fill="#1e3a8a">GPU 池：Target 全阶段 + Draft Prefill</text>
+  <text x="644" y="261" font-size="9.7" fill="#1e293b">• 150 ms Target Prefill 掩蔽 20 ms Draft Prefill</text>
+  <text x="644" y="279" font-size="9.7" fill="#1e293b">• Target Verify 校验候选序列，回传已接受 token</text>
+  <text x="644" y="296" font-size="9.5" fill="#475569">• 专注优化 GPU 预填充算子，无需改造加速器预填充</text>
+
+  <line x1="664" y1="304" x2="664" y2="326" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+  <text x="674" y="319" font-size="9.2" font-weight="600" fill="#1d4ed8">Draft KV 传输（大部分与计算重叠）</text>
+
+  <rect x="634" y="328" width="290" height="46" rx="6" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1.1"/>
+  <text x="644" y="346" font-size="10.6" font-weight="700" fill="#5b21b6">加速器池：仅执行 Draft Decode (1.5 ms/tok)</text>
+  <text x="644" y="364" font-size="9.6" fill="#4c1d95">专攻高速解码内核；未来若加速器 prefill 追平可再迁回</text>
+
+  <rect x="634" y="382" width="290" height="30" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+  <text x="779" y="401" font-size="10" font-weight="700" fill="#166534" text-anchor="middle">保住 137 tok/s，并挽回 TTFT 与峰值能效</text>
+
+  <!-- Bottom Row: Out-of-Model System Costs & Extensions -->
+  <rect x="24" y="432" width="912" height="68" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="36" y="441" width="150" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="111" y="455" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">模型外成本与非线形扩展</text>
+  <text x="196" y="455" font-size="10.6" font-weight="700" fill="#0f172a">基准模型计零传输耗时能耗、固定批量与小数设备比——落地需核对三项约束</text>
+  <text x="36" y="476" font-size="9.8" fill="#334155">① KV 传输未能完全掩蔽的尾延迟可达预填充约 10%（影响 TTFT），传输能耗约 1 J（仅占目标预填充 250 J 约 0.4%）；② 小规模整卡取整会产生闲置浪费；</text>
+  <text x="36" y="493" font-size="9.8" fill="#475569">③ 树状 SpecInfer 可借快解码加宽或加深路径；DSpark 需在目标与草稿间传 hidden state，会对异构解耦带来不同于 KV 传输的带宽约束。</text>
+
+  <text x="24" y="520" font-size="10" fill="#64748b">阅读整理配图（非原图）· 依据 Gimlet Labs《Disaggregating the Disaggregated Model》(2026-11-10) 正文与附录架构整理</text>
+</svg>

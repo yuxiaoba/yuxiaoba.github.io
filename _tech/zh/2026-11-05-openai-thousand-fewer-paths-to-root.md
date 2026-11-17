@@ -3,7 +3,7 @@ id: 2026-11-05-openai-thousand-fewer-paths-to-root
 title: 2026年11月5日｜技术阅读：A thousand fewer paths to root
 date: '2026-11-05'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -16,8 +16,10 @@ translation_source: assistant
 permalink: /tech/zh/2026-11-05-openai-thousand-fewer-paths-to-root/
 long_read: true
 summary: 区分候选、动态复现、提权验证与补丁审查，理解自动化内核漏洞研究的证据链。
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 自动扫描能快速产生大量候选，真正限制修复速度的却是判断哪些问题可复现、会跨越什么权限边界，以及补丁是否适合合入。OpenAI 的 [Linux 内核研究报告](https://openai.com/index/a-thousand-fewer-paths-to-root/)把这几步分开记录。
 
 ## 从代码发现到动态证据

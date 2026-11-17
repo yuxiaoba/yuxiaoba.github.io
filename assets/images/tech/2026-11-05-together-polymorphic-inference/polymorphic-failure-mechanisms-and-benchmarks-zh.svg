@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">静态假设为何失效：数据依赖偏差、策略翻转与受控基准边界</text>
+  <text x="24" y="56" font-size="11" font-weight="400" fill="#475569" text-anchor="start">汇总 Together Compiler 论文附录 C.1 / C.3 故障反例与 Section 5 基准对照（2026-11-04）</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="76" width="448" height="196" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="76" width="448" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="94" width="448" height="10" fill="#dbeafe"/>
+  <text x="36" y="95" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">1. 随机数据微基准为何误导架构决策 (Appendix C.1)</text>
+  <rect x="34" y="112" width="208" height="150" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="44" y="130" font-size="10.5" font-weight="700" fill="#92400e" text-anchor="start">Sparse Top-k (GLM-5.3, MI355X)</text>
+  <text x="44" y="148.0" font-size="9.4" font-weight="400" fill="#78350f" text-anchor="start">• 随机输入均匀落入 2048 桶：</text>
+  <text x="44" y="166.5" font-size="9.4" font-weight="400" fill="#78350f" text-anchor="start">  4K–64K 耗时仅 16–20 µs</text>
+  <text x="44" y="185.0" font-size="9.4" font-weight="400" fill="#78350f" text-anchor="start">• 真实得分含大量 ReLU 零值：</text>
+  <text x="44" y="203.5" font-size="9.4" font-weight="400" fill="#78350f" text-anchor="start">  全挤入阈值桶，触发 O(cntT²) 扫描</text>
+  <text x="44" y="222.0" font-size="9.4" font-weight="400" fill="#78350f" text-anchor="start">• 实测从 291 µs (4K) 暴涨至 62 ms</text>
+  <text x="44" y="240.5" font-size="9.4" font-weight="400" fill="#78350f" text-anchor="start">  (64K/70K)，端到端反慢 1.3×</text>
+  <rect x="254" y="112" width="208" height="150" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="264" y="130" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="start">MoE 偏斜路由 (DSV4.1, GB300)</text>
+  <text x="264" y="148.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">• 随机输入比真实流量多激活</text>
+  <text x="264" y="166.5" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">  13–38% 专家 (222–256 vs 148–214)</text>
+  <text x="264" y="185.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">• Cursor MoK 大核在均衡负载</text>
+  <text x="264" y="203.5" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">  比 Copy 引擎快 +9.7%</text>
+  <text x="264" y="222.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">• 真实偏斜流量下 MoK 慢 6–15%：</text>
+  <text x="264" y="240.5" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">  Copy 引擎反超 MoK 约 6.9%</text>
+  <rect x="488" y="76" width="448" height="196" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="488" y="76" width="448" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="488" y="94" width="448" height="10" fill="#dbeafe"/>
+  <text x="500" y="95" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">2. 并发阈值、集合通信与芯片路径翻转 (§4.3 / §5.2 / C.3)</text>
+  <rect x="498" y="110" width="428" height="48" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="124" font-size="9.8" font-weight="700" fill="#1d4ed8" text-anchor="start">并行策略翻转（Fig. 4 &amp; 8）</text>
+  <text x="506" y="138" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• 仅看硬件规格忽略通信调用固定开销，会错误坚持 EP64</text>
+  <text x="506" y="152" font-size="9.1" font-weight="400" fill="#0f172a" text-anchor="start">• 高 Decode TPS SLA 切 MoE-TP64 + 高 TP（MiniMax B200: TP8 1,111 vs TP4 633）</text>
+  <rect x="498" y="163" width="428" height="48" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="177" font-size="9.8" font-weight="700" fill="#1d4ed8" text-anchor="start">算子收益随并发翻转（§5.2）</text>
+  <text x="506" y="191" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• Kimi K3 持久 MoE 降维算子：在并发 22–78 提速 +2.8–5%</text>
+  <text x="506" y="205" font-size="9.1" font-weight="400" fill="#0f172a" text-anchor="start">• 并发 8 反慢 6.6%；InferenceX 原生镜像高压下尾 TTFT 恶化 10–40×、17% 失败</text>
+  <rect x="498" y="216" width="428" height="48" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="230" font-size="9.8" font-weight="700" fill="#1d4ed8" text-anchor="start">GPU vs Trainium2 融合结论相反（C.3）</text>
+  <text x="506" y="244" font-size="9.1" font-weight="400" fill="#334155" text-anchor="start">• GPU 持久大核栅栏 1.5–3.5 µs &gt; PDL 边界 0.5–1 µs（AMD 大核仅 +0.22%）</text>
+  <text x="506" y="258" font-size="9.1" font-weight="400" fill="#0f172a" text-anchor="start">• Trainium2 例外：NKI 整层融为单 kernel，而 GPU 靠 PDL 省 9.7% 固定开销</text>
+  <rect x="24" y="282" width="912" height="222" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="282" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="300" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="301" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">3. 报告实测数字、硬件细节与必须隔离的证据边界（24h 编译 · 每模型 ≤2 节点 · 禁改量化）</text>
+  <rect x="34" y="318" width="214" height="176" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="336" font-size="10.3" font-weight="700" fill="#1e3a8a" text-anchor="start">工作负载 A · Llama-3.2-1B (BS=1)</text>
+  <text x="44" y="356.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• H100/B200, ISL 32, OSL 256–64K</text>
+  <text x="44" y="375.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• 最高 1.7× 于手写 Megakernel</text>
+  <text x="44" y="395.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• B200 OSL 256: 2,118 vs Hazy MK 1,649</text>
+  <text x="44" y="414.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• B200 OSL 64K: 1,482 vs Hazy MK 598</text>
+  <text x="44" y="434.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• 归因：PDL+CUDA 图+L2 预取足够</text>
+  <text x="44" y="453.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• 细粒度内存分页仅贡献 3.1%</text>
+  <rect x="260" y="318" width="214" height="176" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="270" y="336" font-size="10.3" font-weight="700" fill="#1e3a8a" text-anchor="start">工作负载 B · InferenceX / AgentX</text>
+  <text x="270" y="356.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• 393 条轨迹 (AIPerf 1.0.12)，最高 2.6×</text>
+  <text x="270" y="375.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• BS=1 P90/P50 TPS (vs InferenceX):</text>
+  <text x="270" y="395.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">  M3.1 B200: 1,111 / 1,299 (vs 633)</text>
+  <text x="270" y="414.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">  DSV4.1 GB300: 1,205 / 1,266 (vs 943)</text>
+  <text x="270" y="434.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">  GLM-5.3 B200: 417 / 495 (vs 329)</text>
+  <text x="270" y="453.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• Trainium2 用 65.8K 合成多轮集</text>
+  <rect x="486" y="318" width="214" height="176" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="496" y="336" font-size="10.3" font-weight="700" fill="#166534" text-anchor="start">跨领域与实得硬件手法 (App. B/C.3)</text>
+  <text x="496" y="356.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• 8 个科学模型 1.5×–6.4× (逐比特一致)</text>
+  <text x="496" y="375.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• AIFS/Aurora 采样 4→13/14 降 RMSE</text>
+  <text x="496" y="395.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• NVIDIA Lamport 融合 (~2× NCCL)</text>
+  <text x="496" y="414.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• 去 FlashMLA 16→64 填充 (4×)</text>
+  <text x="496" y="434.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• Blackwell tcgen05 NVFP4: 23.7 vs 34.1 µs</text>
+  <text x="496" y="453.5" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">• 失效：厂商 GEMM 已达 78–100% BW；</text>
+  <text x="496" y="473.0" font-size="9.1" font-weight="400" fill="#1e293b" text-anchor="start">  通信计算重叠慢 3–4×；AMD 掩码无效</text>
+  <rect x="712" y="318" width="214" height="176" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="722" y="336" font-size="10.3" font-weight="700" fill="#92400e" text-anchor="start">未控宣称与未披露边界（必查）</text>
+  <text x="722" y="356.0" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• “客户负载快至 50%”缺对照日志</text>
+  <text x="722" y="375.5" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• “80% 流量近三月模型”属平台口径</text>
+  <text x="722" y="395.0" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• “日服务数万亿 token”未附集群成本账</text>
+  <text x="722" y="414.5" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• LLM 数值误差与 KV 隔离阈值未公开</text>
+  <text x="722" y="434.0" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• 线上漂移触发阈值与防抖机制未披露</text>
+  <text x="722" y="453.5" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• 2 节点×24h 编译算力摊销周期未算</text>
+  <text x="722" y="473.0" font-size="9.1" font-weight="400" fill="#78350f" text-anchor="start">• AMD 8-XCD 异步时钟导致计时失效</text>
+  <text x="24" y="522" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 数据核对自 Together Compiler 论文与博客（2026-11-04），区分受控实验与未披露生产细节（非原文配图）</text>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">Kimi K3.1 Pro Post-Training Stack &amp; human-atlas Diagnostic Case</text>
+  <text x="24" y="56" font-size="11.2" font-weight="400" fill="#475569" text-anchor="start">From Moonshot AI&#x27;s tech blog: separating reported gains, single diagnostic trace, and undisclosed internals</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="76" width="912" height="52" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="34" y="86" width="194" height="32" rx="5" fill="#1d4ed8"/>
+  <text x="131.0" y="106.0" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">K3 → K3.1 Pro · 3T / 1M Ctx</text>
+  <text x="240" y="98" font-size="11.2" font-weight="600" fill="#0f172a" text-anchor="start">Scales post-training RL compute across hundreds of domains (Highspeed 2–3x announced separately)</text>
+  <text x="240" y="118" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">Disclosure boundary: reports scores and product rollout, not reproducible cluster or scheduler specs</text>
+  <rect x="24" y="138" width="446" height="186" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="138" width="446" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="156" width="446" height="10" fill="#dbeafe"/>
+  <text x="36" y="157" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Six Named RL Stack Layers (Internals Undisclosed)</text>
+  <rect x="34" y="175" width="136" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="42" y="192" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">RL Framework</text>
+  <text x="42" y="208" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">Post-training optimization</text>
+  <rect x="178" y="175" width="136" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="186" y="192" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">Long-Ctx Inference</text>
+  <text x="186" y="208" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">1M-token context support</text>
+  <rect x="322" y="175" width="136" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="330" y="192" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">Training Efficiency</text>
+  <text x="330" y="208" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">Compute-to-return scaling</text>
+  <rect x="34" y="225" width="136" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="42" y="242" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">Sandbox Infra</text>
+  <text x="42" y="258" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">Isolated code execution</text>
+  <rect x="178" y="225" width="136" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="186" y="242" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">Rollout Scheduling</text>
+  <text x="186" y="258" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">Multi-step rollout control</text>
+  <rect x="322" y="225" width="136" height="42" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="330" y="242" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="start">Env Quality Checks</text>
+  <text x="330" y="258" font-size="9.4" font-weight="400" fill="#475569" text-anchor="start">Shared platform verification</text>
+  <rect x="34" y="279" width="426" height="36" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="44" y="295" font-size="9.8" font-weight="600" fill="#92400e" text-anchor="start">Undisclosed: rollout scheduling algorithm, staleness bounds, sandbox quotas,</text>
+  <text x="44" y="309" font-size="9.8" font-weight="400" fill="#78350f" text-anchor="start">reward verifier design, and per-domain ablation curves (cannot be reconstructed)</text>
+  <rect x="490" y="138" width="446" height="186" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="490" y="138" width="446" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="490" y="156" width="446" height="10" fill="#dbeafe"/>
+  <text x="502" y="157" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Cross-Domain Reported Results (at max Reasoning Effort)</text>
+  <rect x="500" y="172" width="426" height="33" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="506" y="178" width="86" height="21" rx="5" fill="#1e40af"/>
+  <text x="549.0" y="192.5" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Coding &amp; Agent</text>
+  <text x="600" y="186" font-size="9.6" font-weight="600" fill="#0f172a" text-anchor="start">Terminal-Bench 4.0: 65.7% · SWE Marathon: 51.7%</text>
+  <text x="600" y="199" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">Kimi Code Bench 3.0 Long-horizon: 61.2% (vs. K3: 55.95%)</text>
+  <rect x="500" y="209" width="426" height="33" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="506" y="215" width="86" height="21" rx="5" fill="#1e40af"/>
+  <text x="549.0" y="229.5" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">3D &amp; CAD</text>
+  <text x="600" y="223" font-size="9.6" font-weight="600" fill="#0f172a" text-anchor="start">BenchCAD (1k subset): 92.7% w/ tools vs. 72.8% w/o</text>
+  <text x="600" y="236" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">Scripts Blender, FreeCAD, Unity &amp; Godot without MCP</text>
+  <rect x="500" y="246" width="426" height="33" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="506" y="252" width="86" height="21" rx="5" fill="#1e40af"/>
+  <text x="549.0" y="266.5" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Finance</text>
+  <text x="600" y="260" font-size="9.6" font-weight="600" fill="#0f172a" text-anchor="start">OfficeQA Pro v2: 64.4 · Frontier Finance: 58.6</text>
+  <text x="600" y="273" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">Internal Modeling +7.2, Research +11.6, Biz Ops ~4.2x vs K3</text>
+  <rect x="500" y="283" width="426" height="33" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="506" y="289" width="86" height="21" rx="5" fill="#1e40af"/>
+  <text x="549.0" y="303.5" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Hallu Test</text>
+  <text x="600" y="297" font-size="9.6" font-weight="600" fill="#0f172a" text-anchor="start">Hallu Bench Hard: 23.4% → 8.3% (42.4% of K3 error rate)</text>
+  <text x="600" y="310" font-size="9.0" font-weight="400" fill="#475569" text-anchor="start">Caveat: adversarial stress test, not everyday error rate</text>
+  <rect x="24" y="334" width="912" height="168" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="334" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="352" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="353" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Long-Horizon Case: human-atlas Walking Simulator (167 Missions · 420 Independent Reviews)</text>
+  <rect x="36" y="374" width="204" height="114" rx="7" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="46" y="396" font-size="11.2" font-weight="700" fill="#1e3a8a" text-anchor="start">1. Anatomical Baseline</text>
+  <text x="46" y="420" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">human-atlas: 296 skeletal</text>
+  <text x="46" y="439" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">parts + 402 muscles</text>
+  <line x1="46" y1="452" x2="230" y2="452" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="46" y="471" font-size="9.9" font-weight="600" fill="#1e3a8a" text-anchor="start">Initial controller collapses fast</text>
+  <line x1="242" y1="431" x2="256" y2="431" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="260" y="374" width="204" height="114" rx="7" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="270" y="396" font-size="11.2" font-weight="700" fill="#92400e" text-anchor="start">2. Reward Shaping Stalls</text>
+  <text x="270" y="420" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">Reward tuning failed to</text>
+  <text x="270" y="439" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">improve arm motion</text>
+  <line x1="270" y1="452" x2="454" y2="452" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="270" y="471" font-size="9.9" font-weight="600" fill="#92400e" text-anchor="start">Naive loop stays stuck on weights</text>
+  <line x1="466" y1="431" x2="480" y2="431" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="484" y="374" width="204" height="114" rx="7" fill="#eff6ff" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="494" y="396" font-size="11.2" font-weight="700" fill="#1d4ed8" text-anchor="start">3. Open-Loop Probe</text>
+  <text x="494" y="420" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">Shifted focus from reward</text>
+  <text x="494" y="439" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">to simulator dynamics</text>
+  <line x1="494" y1="452" x2="678" y2="452" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="494" y="471" font-size="9.9" font-weight="600" fill="#1d4ed8" text-anchor="start">Found 36 shoulder moment-arm bugs</text>
+  <line x1="690" y1="431" x2="704" y2="431" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="708" y="374" width="204" height="114" rx="7" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.2"/>
+  <text x="718" y="396" font-size="11.2" font-weight="700" fill="#166534" text-anchor="start">4. Retrain &amp; Scope Caveat</text>
+  <text x="718" y="420" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">Retrained walking controller:</text>
+  <text x="718" y="439" font-size="10.3" font-weight="400" fill="#1e293b" text-anchor="start">11.2s continuous alternating gait</text>
+  <line x1="718" y1="452" x2="902" y2="452" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="718" y="471" font-size="9.9" font-weight="600" fill="#166534" text-anchor="start">Caveat: single case, not universal</text>
+  <text x="24" y="522" font-size="10.2" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram (not an original figure) · All metrics and traces drawn from Kimi K3.1 Pro Tech Blog (2026-11-04)</text>
+</svg>

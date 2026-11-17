@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">Together Compiler (TKCC) 持续编译闭环：分层常驻引擎与代价模型</text>
+  <text x="24" y="56" font-size="11" font-weight="400" fill="#475569" text-anchor="start">依据 Polymorphic Inference、Together Compiler 博客与论文（2026-11-04）绘制的闭环架构与安全边界整理图</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="76" width="232" height="376" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="76" width="232" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="94" width="232" height="10" fill="#dbeafe"/>
+  <text x="36" y="95" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">1. 流量漂移与代价模型</text>
+  <rect x="32" y="112" width="216" height="144" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="42" y="130" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">生产流量漂移维度（论文 §3）</text>
+  <text x="42" y="150" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">• 区域行为：~97K vs ~70K ISL (1.4×)</text>
+  <text x="42" y="171" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">• 两周迁移：10K→18K，缓存 +8pp</text>
+  <text x="42" y="192" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">• 模型发布后两周：Prompt 增 +80%</text>
+  <text x="42" y="213" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">• 3 天突发：P90 18K→33K，缓存 -4pp</text>
+  <text x="42" y="234" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">• 一周平均 OSL 700→1.7K；思考 2×</text>
+  <rect x="32" y="264" width="216" height="178" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="282" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">三层并行代价模型（§4.3 / 附录 D）</text>
+  <text x="42" y="302" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• 搜索空间：N≤4096（TP/EP/CP/DP）</text>
+  <text x="42" y="324" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• SLA 剪枝：1.5s TTFT · 40 TPS</text>
+  <text x="42" y="346" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• 公式：C=min(C_mem, C_spd) → TPM</text>
+  <text x="42" y="368" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• 三层实测：规格→微基准→实测前向</text>
+  <text x="42" y="390" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• 注入真实分布：MoE π_e 拖尾 + MTP</text>
+  <text x="42" y="412" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• Kimi K3 实效：TPS +24% / TPM +18%</text>
+  <line x1="256" y1="264" x2="269" y2="264" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="272" y="76" width="428" height="376" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="272" y="76" width="428" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="272" y="94" width="428" height="10" fill="#dbeafe"/>
+  <text x="284" y="95" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">2. 并行智能体与分层常驻热加载引擎</text>
+  <rect x="282" y="112" width="408" height="86" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="292" y="130" font-size="11" font-weight="700" fill="#1e3a8a" text-anchor="start">并行智能体直接改写推理源码 tkcc_forward.py（去固定 IR 与知识库）</text>
+  <text x="292" y="150" font-size="9.7" font-weight="400" fill="#1e293b" text-anchor="start">• 消息板高频通信提速 2.3×–4.7×；直改源码可重写 MLA 元数据规划 (1.7–2.5×)</text>
+  <text x="292" y="169" font-size="9.7" font-weight="400" fill="#1e293b" text-anchor="start">• 去除专家知识库反高 25–31%；极简提示组合 6.2× 胜出专家策略组合 4.9×</text>
+  <text x="292" y="188" font-size="9.7" font-weight="400" fill="#475569" text-anchor="start">• 纯 Markdown 笔记开销 &lt;0.5%（对比结构化 CLI 日志图占 8% / 12.6s 每次调用）</text>
+  <line x1="486" y1="198" x2="486" y2="220" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="326" y="201" width="320" height="16" rx="4" fill="#dbeafe" stroke="#60a5fa" stroke-width="0.8"/>
+  <text x="486" y="213" font-size="9.3" font-weight="700" fill="#1e3a8a" text-anchor="middle">RPC hot_reload 替换前向指针并重捕 CUDA 图 (9.0s vs 467s)</text>
+  <rect x="282" y="222" width="408" height="174" rx="6" fill="#f8fafc" stroke="#60a5fa" stroke-width="1.1"/>
+  <text x="486" y="239" font-size="9.6" font-weight="600" fill="#1d4ed8" text-anchor="middle">内存常驻权重与 KV Cache · 前缀缓存复用降时延 2.6× · Prefill/Decode 拆测方差 6.6%→2.7%</text>
+  <rect x="290" y="248" width="186" height="140" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="290" y="248" width="186" height="22" rx="6" fill="#eff6ff"/>
+  <text x="383" y="263" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">Fast Tier 快速筛选层</text>
+  <text x="298" y="286" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">• 12 层子集 · 3 分钟冷启</text>
+  <text x="298" y="307" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">• 热加载 17s · 中位耗时 28s</text>
+  <text x="298" y="328" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">• 测量方差 0.05% + CUPTI</text>
+  <text x="298" y="349" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">• 隔离 3.9/千次 IMA/卡死</text>
+  <text x="298" y="370" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">• 高吞吐淘汰劣质/崩溃候选</text>
+  <line x1="476" y1="318" x2="493" y2="318" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="496" y="248" width="186" height="140" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="496" y="248" width="186" height="22" rx="6" fill="#dbeafe"/>
+  <text x="589" y="263" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">Slow Tier 真实分布层</text>
+  <text x="504" y="286" font-size="9.6" font-weight="400" fill="#0f172a" text-anchor="start">• 60 全层 · 11 分钟冷启</text>
+  <text x="504" y="307" font-size="9.6" font-weight="400" fill="#0f172a" text-anchor="start">• 热加载 45s · 中位耗时 64s</text>
+  <text x="504" y="328" font-size="9.6" font-weight="400" fill="#0f172a" text-anchor="start">• 测量方差 0.14% · 0 崩溃/千次</text>
+  <text x="504" y="349" font-size="9.6" font-weight="400" fill="#0f172a" text-anchor="start">• 真实 MoE 偏斜与长尾索引</text>
+  <text x="504" y="370" font-size="9.6" font-weight="400" fill="#0f172a" text-anchor="start">• 验证端到端吞吐是否真实兑现</text>
+  <rect x="282" y="404" width="408" height="40" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="486" y="420" font-size="10" font-weight="700" fill="#1e3a8a" text-anchor="middle">实验吞吐 252× · 等待空闲降 11×（对比整引擎重启系统）</text>
+  <text x="486" y="436" font-size="9.5" font-weight="400" fill="#1e40af" text-anchor="middle">10h B200 GLM-5.3：双层评估 1,354 候选 vs 单慢层 168（8.1×），最终快 +7.2%</text>
+  <line x1="700" y1="264" x2="713" y2="264" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="716" y="76" width="220" height="376" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="716" y="76" width="220" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="716" y="94" width="220" height="10" fill="#dbeafe"/>
+  <text x="728" y="95" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">3. 验收门控与运行边界</text>
+  <rect x="724" y="112" width="204" height="104" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="734" y="130" font-size="10.8" font-weight="700" fill="#166534" text-anchor="start">上线前正确性验收</text>
+  <text x="734" y="149" font-size="9.4" font-weight="400" fill="#14532d" text-anchor="start">• KV Cache 污染与输出质量测试</text>
+  <text x="734" y="168" font-size="9.4" font-weight="400" fill="#14532d" text-anchor="start">• 8 个科学模型强制逐比特 + RNG 一致</text>
+  <text x="734" y="187" font-size="9.4" font-weight="400" fill="#14532d" text-anchor="start">• AgentX 优化禁止改动量化精度</text>
+  <text x="734" y="206" font-size="9.4" font-weight="400" fill="#14532d" text-anchor="start">• 仍未披露：LLM 数值误差/KL 阈值</text>
+  <rect x="724" y="224" width="204" height="96" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="734" y="242" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="start">按并发分档下发 fwd.py</text>
+  <text x="734" y="261.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">• 集成最佳配置与 tkcc_forward.py</text>
+  <text x="734" y="278.5" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">• Kimi K3 持久 MoE 降维案例：</text>
+  <text x="734" y="296.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">  并发 22–78 提速 +2.8–5%</text>
+  <text x="734" y="313.5" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">  并发 8 慢 6.6%，运行时自动关闭</text>
+  <rect x="724" y="328" width="204" height="114" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="734" y="346" font-size="10.8" font-weight="700" fill="#92400e" text-anchor="start">实测故障与算力瓶颈</text>
+  <text x="734" y="364.0" font-size="9.3" font-weight="400" fill="#78350f" text-anchor="start">• GLM-5.3 触发 9 次 Xid 154 重置</text>
+  <text x="734" y="381.5" font-size="9.3" font-weight="400" fill="#78350f" text-anchor="start">  (2 台物理机被迫移出集群)</text>
+  <text x="734" y="399.0" font-size="9.3" font-weight="400" fill="#78350f" text-anchor="start">• 闭源模型安全拦截阻断图级重写</text>
+  <text x="734" y="416.5" font-size="9.3" font-weight="400" fill="#78350f" text-anchor="start">• Agent 52.7–57.0% 时间在等门控</text>
+  <text x="734" y="434.0" font-size="9.3" font-weight="400" fill="#78350f" text-anchor="start">• 漂移重编译触发与回滚阈值未公开</text>
+  <rect x="24" y="462" width="912" height="40" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="486" y="480" font-size="10.5" font-weight="600" fill="#1e3a8a" text-anchor="middle">持续重编译触发闭环：流量分布、并发特征或硬件 SKU 发生显著偏移 → 重新跑代价模型并编译（≤24 小时，每模型最多 2 节点）</text>
+  <text x="486" y="495" font-size="9.2" font-weight="400" fill="#475569" text-anchor="middle">注：761s 冷启动与 Fast/Slow 层统计来自论文 Table 1 (TensorRT-LLM MiniMax-M3.1-Flash)；467s vs 9.0s 来自 Together Compiler 官方博客 Table 1</text>
+  <text x="24" y="522" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 综合 Together AI《Polymorphic Inference》与《Together Compiler》博客及论文绘制（非原文配图）</text>
+</svg>

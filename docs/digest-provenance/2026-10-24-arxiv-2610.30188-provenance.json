@@ -1,0 +1,311 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-10-24-arxiv-2610.30188",
+  "paper_id": "arxiv-2610.30188",
+  "anchor_id": "paper-arxiv-2610.30188",
+  "digest_date": "2026-10-24",
+  "updated_at_utc": "2026-11-17T06:43:00Z",
+  "assistant_translated": true,
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice",
+  "verification_status": "VERIFIED",
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-10-24.md",
+    "en_target": "_digest/en/daily-2026-10-24.md",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/d82efd19-bbc7-4020-a0fc-411d7f0660e6/scratch/d2c1-sections/2610.30188/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/d82efd19-bbc7-4020-a0fc-411d7f0660e6/scratch/d2c1-sections/2610.30188/section_en.md",
+    "translation_provenance": "Assistant-authored Chinese technical close reading and paired English technical close reading derived directly from primary arXiv:2610.30188v1 and Appendices A-D."
+  },
+  "primary_source": {
+    "arxiv_id": "2610.30188",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "No v2 revision or withdrawal notice present in the saved arXiv abs HTML snapshot.",
+    "title": "Agentic Verified Optimization of Real-World Software",
+    "authors": [
+      "Zhe Ye",
+      "Udaya Ghai",
+      "Zhizhen Qin",
+      "Dawn Song",
+      "Soonho Kong"
+    ],
+    "affiliations": [
+      "University of California, Berkeley",
+      "Amazon Web Services"
+    ],
+    "author_note": "Zhe Ye: work done during internship at Amazon Web Services.",
+    "categories": [
+      "cs.SE",
+      "cs.AI",
+      "cs.LG",
+      "cs.LO",
+      "cs.PL"
+    ],
+    "submitted_utc": "Tue, 20 Oct 2026 17:33:22 UTC",
+    "submitted_date": "2026-10-20",
+    "doi": "https://doi.org/10.48550/arXiv.2610.30188",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2610.30188",
+      "abs_v1": "https://arxiv.org/abs/2610.30188v1",
+      "pdf": "https://arxiv.org/pdf/2610.30188",
+      "html_v1": "https://arxiv.org/html/2610.30188v1"
+    },
+    "local_source_snapshots": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c1-sources/2610.30188.abs.html",
+        "sha256": "222080bc2708f1bb5e2804149701d15d0fe5086aae19b584f1de8e55c7a343ff",
+        "bytes": 42745
+      },
+      "extracted_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2c1-sources/2610.30188.txt",
+        "sha256": "1fcd9fc739c9a156aa0b9bcb986864ebdb30d026a8c90ddb3f71ed59f9c44473",
+        "bytes": 110299
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "agent_and_runtime_setup": {
+      "coding_agent": "Codex with GPT-5.6 Sol (xhigh reasoning)",
+      "lean_version": "4.18.0",
+      "cpu_hardware": "AMD EPYC 9654 pinned to one logical CPU",
+      "timing_protocol": "Warm-up and iteration calibration followed by 9 alternating paired trials requiring matching outputs; speedup = baseline median pass time / candidate median pass time",
+      "kernel_acceptance_checks_appendix_a": [
+        "Fresh repository copy; existing declarations byte-identical; @[csimp] integration rebuild of R'",
+        "Axioms restricted to subset of {propext, Quot.sound, Classical.choice}; sorryAx forbidden",
+        "Computable definitions only; partial, unsafe, @[implemented_by], @[extern] forbidden",
+        "Kernel-only checking; native_decide and equality-altering typeclass instances forbidden"
+      ]
+    },
+    "prior_failure_statistics_cited": {
+      "jitskit_apparent_speedup_exploit": "6x",
+      "gpu_kernel_audit_correctness_failure_pct": 39.5,
+      "pie_identical_binary_timing_noise": {
+        "mean_apparent_speedup": "1.12x",
+        "top_5_pct_apparent_speedup": "1.91x",
+        "binary_pairs_tested": 500
+      },
+      "llm_vectorizer_alive2_acceptance_pct": 38.2,
+      "t_llm_false_acceptance_pct": 33.8
+    },
+    "verina_function_level_table1": {
+      "total_targets": 189,
+      "basic_targets": 108,
+      "advanced_targets": 81,
+      "timing_corpus_cases": 49620,
+      "fresh_retry_pool": 54,
+      "fresh_retry_improved": 21,
+      "basic_improved": 93,
+      "basic_geomean": "1.959x",
+      "basic_median": "1.109x",
+      "advanced_improved": 63,
+      "advanced_geomean": "1.716x",
+      "advanced_median": "1.163x",
+      "all_improved": 156,
+      "all_improved_pct": 82.5,
+      "all_geomean": "1.851x",
+      "all_median": "1.117x",
+      "aggregate_convention": "Includes target reference at max(1, s_f)",
+      "vfast_1_25_pct": 37.6,
+      "vfast_1_25_count": 71,
+      "vfast_2_pct": 20.1,
+      "vfast_2_count": 38,
+      "case_studies": {
+        "closed_form_polynomial_max_speedup": "128,292x",
+        "verina_advanced_33_lis_dp": {
+          "speedup": "4,467.871x",
+          "corpus_inputs": 261,
+          "median_before_sec": 1.424,
+          "median_after_us": 318.653,
+          "proof_lines_appendix_d1": 31
+        },
+        "nthUglyNumber_array_speedup": "124.90x",
+        "SquareRoot_mathlib_nat_sqrt_speedup": "21.16x",
+        "isPerfectSquare_speedup": "17.97x",
+        "majorityElement_early_exit_speedup": "3.74x"
+      }
+    },
+    "repository_level_table2": {
+      "migrated_repos_evaluated": 17,
+      "application_scenarios": 51,
+      "scenarios_per_repo": 3,
+      "proved_rewrites": 92,
+      "max_function_speedup_vs_migrated": "18.53x",
+      "repos_faster_by_geomean": "17/17",
+      "optimized_lean_vs_migrated_lean": {
+        "function_faster": "92/92",
+        "function_geomean": "1.864x",
+        "function_median": "1.402x",
+        "app_faster": "47/51",
+        "app_geomean": "1.120x",
+        "app_median": "1.077x"
+      },
+      "optimized_lean_vs_original": {
+        "function_faster": "15/92",
+        "function_geomean": "0.235x",
+        "function_median": "0.217x",
+        "app_faster": "3/51",
+        "app_geomean": "0.148x",
+        "app_median": "0.160x"
+      },
+      "migrated_lean_vs_original": {
+        "function_faster": "12/92",
+        "function_geomean": "0.126x",
+        "function_median": "0.120x",
+        "app_faster": "3/51",
+        "app_geomean": "0.132x",
+        "app_median": "0.158x"
+      },
+      "appendix_d3_native_beating_cases": {
+        "Cheat_findConsolidated": {
+          "vs_migrated_lean": "5.46x",
+          "vs_go": "20.36x"
+        },
+        "Cheat_consolidatedSheets": {
+          "vs_migrated_lean": "1.46x",
+          "vs_go": "6.65x"
+        },
+        "Cheat_filterSheets": {
+          "vs_migrated_lean": "5.45x",
+          "vs_go_before": "0.37x",
+          "vs_go_after": "2.01x"
+        },
+        "Gron_validIdentifier": {
+          "vs_migrated_lean": "1.96x",
+          "vs_go": "2.10x"
+        },
+        "Code_Minimap_pow10": {
+          "vs_migrated_lean": "9.29x",
+          "vs_rust": "1.37x"
+        }
+      }
+    },
+    "aqueduct_migration_appendix_b_c_d2": {
+      "programbench_repos_sampled": 40,
+      "source_loc_range": "258 to 1,524,580",
+      "declared_hidden_tests": 39857,
+      "original_supported_hidden_tests": 18642,
+      "generated_behavioral_tests": 33671,
+      "full_pipeline_passed": 16345,
+      "full_pipeline_recovery_pct": 87.68,
+      "single_agent_passed": 12709,
+      "single_agent_recovery_pct": 68.17,
+      "recovery_gain_pp_reported": 19.5,
+      "recovery_net_tests_gain": 3636,
+      "candidate_strategy_selection_counts": {
+        "strategy_1_breadth_first": 18,
+        "strategy_2_fixture_first": 20,
+        "strategy_3_ledger_guided": 2
+      },
+      "ablations_fig6_recovery_pct": {
+        "one_repair_round": 79.22,
+        "no_coverage_guidance": 77.88,
+        "no_mutation_feedback": 77.63,
+        "no_candidate_portfolio": 72.96,
+        "fixed_phased_pipeline": 53.32
+      },
+      "mutation_audit_table3_paired_9_repos_36_mutants": {
+        "generated_killed": 28,
+        "generated_kill_pct": 77.8,
+        "programbench_killed": 17,
+        "programbench_kill_pct": 47.2,
+        "both_killed": 16,
+        "generated_only": 12,
+        "programbench_only": 1,
+        "neither": 7,
+        "exact_paired_binomial_p": 0.0034
+      },
+      "mutation_audit_table4_full_25_repos_190_mutants": {
+        "compiled_mutants": 190,
+        "killed": 101,
+        "score_pct": 53.2,
+        "median_per_repo_pct": 50.0,
+        "ci_95_bootstrap_pct": "39.1 to 67.0"
+      },
+      "case_study_7zip_appendix_d2": {
+        "loc": 252968,
+        "original_supported_tests": 883,
+        "aqueduct_passed": 554,
+        "aqueduct_recovery_pct": 62.74,
+        "baseline_recovery_pct": 28.77,
+        "generated_tests_passed": "541/579",
+        "remaining_open_ledger_obligations": 938
+      }
+    }
+  },
+  "explicit_limitations": [
+    "Equivalence proofs certify Lean rewrite f' against migrated Lean reference f only; migration faithfulness against original C/C++/Go/Rust code rests on differential testing, fuzzing, and mutation testing (87.68% hidden-test recovery across 40 repos; 62.74% with 938 open items on 7zip; 53.2% interface-level mutant kill rate).",
+    "Application-level speedups shrink sharply relative to function-level gains (1.864x vs 1.120x over migrated Lean, with 4 of 51 scenarios not improving) and remain far slower than original native programs (0.235x at function level with 15/92 faster; 0.148x at application level with 3/51 faster) due to unchanged callers/IO and Lean's reference-counted runtime.",
+    "Kernel equality excludes opaque effects (file/network IO, FFI, concurrency) and approximate tolerances (e.g., floating-point error bounds), and proofs establish functional equality only without certifying asymptotic complexity or wall-clock speed.",
+    "Lean 4.18.0 compiler, standard library, and reference-counted runtime remain in the trusted computing base (TCB).",
+    "Optimization evaluation covers 17 of 40 migrated repositories under withheld workloads (workload specialization via guarded predicate P and profile-guided vs module-level target selection are left to future work; agent token/search cost totals are not reported).",
+    "Close-reading verification did not locally execute Lean 4.18.0, Codex/GPT-5.6 Sol, or AQUEDUCT."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "preserved_official_png": {
+      "2610.30188.png": {
+        "site_path": "/assets/images/digest/2026-10-24/2610.30188.png",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-24/2610.30188.png",
+        "bytes": null,
+        "sha256": "da9cd76769365b197db7c6e40fab4ec48dfd6769cb8ead158338428e2fc71a5a",
+        "preserved_untouched": true
+      }
+    },
+    "new_svgs": {
+      "avo-aqueduct-lean-equivalence-zh.svg": {
+        "site_path": "/assets/images/digest/2026-10-24/avo-aqueduct-lean-equivalence-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-24/avo-aqueduct-lean-equivalence-zh.svg",
+        "bytes": null,
+        "sha256": "e79f13a514264fef026fecb13d045b0c5d1e0934c963a5e84bacfdb7308b9833"
+      },
+      "avo-aqueduct-lean-equivalence-en.svg": {
+        "site_path": "/assets/images/digest/2026-10-24/avo-aqueduct-lean-equivalence-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-24/avo-aqueduct-lean-equivalence-en.svg",
+        "bytes": null,
+        "sha256": "175d8f136fb3c3d4d27eeef6bc2533a8e9fcc9d192393c920a897b62f955c129"
+      },
+      "avo-verina-app-speedup-eval-zh.svg": {
+        "site_path": "/assets/images/digest/2026-10-24/avo-verina-app-speedup-eval-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-24/avo-verina-app-speedup-eval-zh.svg",
+        "bytes": null,
+        "sha256": "587c786e6526ececb2bfd4449843412839ab93e61eb2e4d8cc33010fb7964c0c"
+      },
+      "avo-verina-app-speedup-eval-en.svg": {
+        "site_path": "/assets/images/digest/2026-10-24/avo-verina-app-speedup-eval-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-24/avo-verina-app-speedup-eval-en.svg",
+        "bytes": null,
+        "sha256": "af1f8718cb48bbda62da208d5d05d7afd1adaeb3c6f98c35879cb686715a4d89"
+      }
+    }
+  },
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-10-24.md",
+      "file_bytes_before": 38430,
+      "file_sha256_before": "73080e928d9da2144caf337d0aa5cc532b8948494501b14a7fb4f4edd4b38cee",
+      "file_bytes_after": 61952,
+      "file_sha256_after": "1425fbae7b1f81ec47eb9631bf73893ddd2621b6cae39ca48a0114e4451939eb",
+      "old_section_bytes": 1637,
+      "old_section_sha256": "e2a6015df445dbfd0a94e6aaeab083eb23840e068e9ba43b57f8fa1e66aa069e",
+      "new_section_bytes": 25159,
+      "new_section_sha256": "b6f72dfa70a723bf3bbba9cb73bd30033e2aed52d6a97624d6cd7bd8daa4ea7d"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-10-24.md",
+      "file_bytes_before": 40828,
+      "file_sha256_before": "ec5ff7f8b225e025ac242cbe9c79ae28d50e22df5285002556bc2940a375f963",
+      "file_bytes_after": 63042,
+      "file_sha256_after": "7bc1ce83a197ced9177c904a402722b14f4d36d50e4ca300e2d60f585b912e4b",
+      "old_section_bytes": 1743,
+      "old_section_sha256": "55eb056ff1b9804f432ae0cdfa10732483c880d48a27691e88cad3aa750605bf",
+      "new_section_bytes": 23957,
+      "new_section_sha256": "42393d7830d21266e959411fcf2716ccd1b48e7b6dd4edf0cf49bc829ce90df1"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T06:47:26.926281+00:00",
+    "preview_release": "20261117-144636-3d0f9707",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

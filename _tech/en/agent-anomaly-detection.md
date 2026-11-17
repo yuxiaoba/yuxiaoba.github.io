@@ -3,7 +3,7 @@ id: agent-anomaly-detection
 title: '2026-10-25 | Agent Anomaly Detection: Asynchronous Auditing of Session Behavior'
 date: '2026-10-25'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -11,15 +11,16 @@ tags:
 - agent-reliability
 - anomaly-detection
 - observability
-summary: 'Google Cloud expands its preview to GKE and Cloud Run: layered analysis,
-  telemetry prerequisites, and the boundary between findings and blocking.'
+summary: 'Google Cloud expands its preview to GKE and Cloud Run: layered analysis, telemetry prerequisites, and the boundary between findings and blocking.'
 translation_source: assistant
 authorship: assistant
 long_read: true
 source_url: https://docs.cloud.google.com/gemini-enterprise-agent-platform/agent-anomalies-overview
 permalink: /tech/en/agent-anomaly-detection/
 published_at: '2026-10-25T08:48:16.922011+08:00'
-updated_at: '2026-10-25T08:48:16.922011+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 An agent can return no errors while scraping data, crossing an authorization boundary, or consuming resources repeatedly. Google Cloud's Agent Anomaly Detection extends monitoring to tool use and execution behavior across a session, screening candidates before asynchronous reasoning. Its October 22 preview update adds GKE and Cloud Run support, bringing that audit path to additional deployment environments.
 

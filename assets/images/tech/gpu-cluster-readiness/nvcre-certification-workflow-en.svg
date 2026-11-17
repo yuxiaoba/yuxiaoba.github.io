@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-sky" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284c7"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- Header -->
+  <text x="24" y="38" font-size="18.5" font-weight="700" fill="#0f172a">NVCRE Layered API: Certification, Workflow, Job &amp; DSX OS Roles</text>
+  <text x="24" y="58" font-size="11.2" fill="#475569">Downward orchestration &amp; upward node attribution via nvcre.nvidia.com/v1alpha1, paired with AICR and NVSentinel</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Left Panel: Layered API -->
+  <rect x="24" y="78" width="446" height="360" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="78" width="446" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="96" width="446" height="10" fill="#dbeafe"/>
+  <text x="36" y="97" font-size="12" font-weight="700" fill="#1e3a8a">1. Layered CRD Control Plane (nvcre.nvidia.com/v1alpha1)</text>
+
+  <!-- Tier 1: Certification -->
+  <rect x="36" y="114" width="422" height="76" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="46" y="122" width="110" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="101" y="136" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">1. Certification</text>
+  <text x="166" y="136" font-size="11" font-weight="700" fill="#1e3a8a">User declares targets &amp; categories</text>
+  <text x="46" y="158" font-size="10.1" fill="#334155">Sets nodeSelector + categories (communication / DCGM / training)</text>
+  <text x="46" y="177" font-size="10.1" fill="#475569">Rolls up category pass counts, node reasons &amp; PASSED / FAILED</text>
+
+  <!-- Connectors A <-> B -->
+  <line x1="138" y1="192" x2="138" y2="213" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+  <text x="146" y="206" font-size="9.6" fill="#1d4ed8">1 Workflow per category</text>
+  <line x1="354" y1="214" x2="354" y2="193" stroke="#0284c7" stroke-width="1.6" marker-end="url(#arrow-sky)"/>
+  <text x="346" y="206" font-size="9.6" fill="#0369a1" text-anchor="end">Category status</text>
+
+  <!-- Tier 2: Workflow -->
+  <rect x="36" y="216" width="422" height="80" rx="6" fill="#f8fafc" stroke="#64748b" stroke-width="1.1"/>
+  <rect x="46" y="224" width="96" height="20" rx="5" fill="#0284c7"/>
+  <text x="94" y="238" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">2. Workflow</text>
+  <text x="152" y="238" font-size="11" font-weight="700" fill="#0f172a">Per-category overrides &amp; orchestration</text>
+  <text x="46" y="260" font-size="10.1" fill="#334155">Detects GPU/cloud; sets iterations &amp; testScale group split</text>
+  <text x="46" y="279" font-size="10.1" fill="#475569">Evaluates custom CEL criteria; misses mark ValidationFailed</text>
+
+  <!-- Connectors B <-> C -->
+  <line x1="138" y1="298" x2="138" y2="319" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+  <text x="146" y="312" font-size="9.6" fill="#1d4ed8">Creates child Job</text>
+  <line x1="354" y1="320" x2="354" y2="299" stroke="#0284c7" stroke-width="1.6" marker-end="url(#arrow-sky)"/>
+  <text x="346" y="312" font-size="9.6" fill="#0369a1" text-anchor="end">Failed nodes &amp; reasons</text>
+
+  <!-- Tier 3: Job & WorkloadRun -->
+  <rect x="36" y="322" width="422" height="104" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.1"/>
+  <rect x="46" y="330" width="146" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="119" y="344" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">3. Job → WorkloadRun</text>
+  <text x="202" y="344" font-size="11" font-weight="700" fill="#1e3a8a">Standalone execution primitive</text>
+  <text x="46" y="366" font-size="10.1" fill="#334155">Supports torch (torchrun), mpi (mpirun), or exec workloads</text>
+  <text x="46" y="385" font-size="10.1" fill="#334155">Builds Kubeflow TrainingRuntime, SHM volume &amp; NVLink config</text>
+  <text x="46" y="404" font-size="10.1" fill="#0f172a">Optional gangScheduler (e.g. KAI) avoids partial deadlocks</text>
+
+  <!-- Right Panel Top: Catalog, CEL & Requirements -->
+  <rect x="484" y="78" width="452" height="172" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="484" y="78" width="452" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="484" y="96" width="452" height="10" fill="#dbeafe"/>
+  <text x="496" y="97" font-size="12" font-weight="700" fill="#1e3a8a">2. Built-in Catalog, CEL Examples &amp; Prerequisites</text>
+
+  <rect x="496" y="114" width="428" height="44" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="504" y="125" width="76" height="22" rx="4" fill="#e0f2fe"/>
+  <text x="542" y="140" font-size="10" font-weight="700" fill="#075985" text-anchor="middle">3 Domains</text>
+  <text x="588" y="132" font-size="10" fill="#0f172a">communication: 5 NCCL tests (incl. NVSwitch)</text>
+  <text x="588" y="148" font-size="10" fill="#475569">DCGM L4 (standalone) · NeMo Nemotron-5 8B/56B</text>
+
+  <rect x="496" y="164" width="428" height="44" rx="5" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <rect x="504" y="175" width="76" height="22" rx="4" fill="#fef3c7"/>
+  <text x="542" y="190" font-size="10" font-weight="700" fill="#92400e" text-anchor="middle">CEL Gates</text>
+  <text x="588" y="182" font-size="10" fill="#78350f">GB200 NVL72 examples: BusBW ≥ 900 · Goodput ≥ 0.9</text>
+  <text x="588" y="198" font-size="10" fill="#92400e">avgTFLOPs ≥ 800 · Threshold vs. HW fault</text>
+
+  <rect x="496" y="214" width="428" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="232" font-size="9.8" fill="#334155">Reqs: K8s ≥ 1.29, GPU Operator, Helm 3; GB200/300 need DRA ComputeDomain</text>
+
+  <!-- Right Panel Bottom: DSX OS Trio -->
+  <rect x="484" y="262" width="452" height="176" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="484" y="262" width="452" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="484" y="280" width="452" height="10" fill="#dbeafe"/>
+  <text x="496" y="281" font-size="12" font-weight="700" fill="#1e3a8a">3. NVIDIA DSX OS Trio (Sequential Roles, Zero Conflict)</text>
+
+  <rect x="496" y="298" width="428" height="40" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="504" y="307" width="86" height="22" rx="4" fill="#e0f2fe"/>
+  <text x="547" y="322" font-size="10" font-weight="700" fill="#075985" text-anchor="middle">AICR · Config</text>
+  <text x="598" y="316" font-size="10" fill="#0f172a">Version-locked driver, kernel &amp; OS recipes</text>
+  <text x="598" y="331" font-size="9.6" fill="#475569">Validates live state &amp; detects drift ("configured right?")</text>
+
+  <rect x="496" y="344" width="428" height="40" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="504" y="353" width="86" height="22" rx="4" fill="#1d4ed8"/>
+  <text x="547" y="368" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">NVCRE · Active</text>
+  <text x="598" y="362" font-size="10" font-weight="600" fill="#1e3a8a">Drives real load to catch silent lags (8% ex.)</text>
+  <text x="598" y="377" font-size="9.6" fill="#1e40af">Names failing nodes; never cordons or taints</text>
+
+  <rect x="496" y="390" width="428" height="40" rx="5" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <rect x="504" y="399" width="86" height="22" rx="4" fill="#dcfce7"/>
+  <text x="547" y="414" font-size="10" font-weight="700" fill="#166534" text-anchor="middle">NVSentinel</text>
+  <text x="598" y="408" font-size="10" fill="#0f172a">0-GPU continuous DCGM, Xid &amp; log telemetry</text>
+  <text x="598" y="423" font-size="9.6" fill="#166534">Cert Monitor drives cordon, drain &amp; recovery</text>
+
+  <!-- Bottom Sequential Handoff Banner -->
+  <rect x="24" y="448" width="912" height="52" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="38" y="469" font-size="11.4" font-weight="700" fill="#1e3a8a">Operational Boundary: NVCRE owns scoped load measurement &amp; attribution; NVSentinel owns quarantine &amp; remediation</text>
+  <text x="38" y="488" font-size="10.2" fill="#334155">Flow: Failed Certification → NVSentinel Certification Monitor event → Cordon / Drain / Fix → Passing retest clears failure &amp; taint</text>
+
+  <!-- Footer -->
+  <text x="24" y="521" font-size="10" fill="#64748b">Assistant diagram synthesized from NVIDIA Technical Blog (2026-09-23) &amp; Figure 1 (validation.webp); metrics shown are blog examples</text>
+</svg>

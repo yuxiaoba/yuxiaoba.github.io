@@ -1,0 +1,437 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-10-31-arxiv-2610.39216",
+  "paper_id": "arxiv-2610.39216",
+  "anchor_id": "paper-arxiv-2610.39216",
+  "digest_date": "2026-10-31",
+  "updated_at_utc": "2026-11-17T02:40:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-10-31.md",
+    "en_target": "_digest/en/daily-2026-10-31.md",
+    "staged_section_zh": "/root/.gemini/antigravity-cli/brain/e8a15433-2e33-4d38-b34e-bc091d531fc7/scratch/d2b1-sections/2610.39216/section_zh.md",
+    "staged_section_en": "/root/.gemini/antigravity-cli/brain/e8a15433-2e33-4d38-b34e-bc091d531fc7/scratch/d2b1-sections/2610.39216/section_en.md",
+    "staged_path_note": "Subagent write_file enforces brain/<conversation-id> sandbox boundary (e8a15433-2e33-4d38-b34e-bc091d531fc7), preventing direct writes into parent 151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sections/2610.39216/.",
+    "translation_provenance": "Assistant-authored bilingual close reading (Chinese and paired English) derived directly from primary arXiv:2610.39216v1 PDF, LaTeXML HTML, and abstract metadata.",
+    "adjacent_dependency_isolation": "Self-contained entry #12 (#paper-arxiv-2610.39216); daily-2026-10-31.md files untouched by this subagent pending parent flock splice."
+  },
+  "primary_source": {
+    "arxiv_id": "2610.39216",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "v1 only at verification time (no v2 revision or withdrawal notice present in saved abs.html; Comments field reads accepted by PPoPP'27).",
+    "title": "PDScope: Breaking the Prefill-Decode Seesaw for Memory-Bound MoE Inference",
+    "authors": [
+      "Enda Yu",
+      "Dezun Dong",
+      "Zhaoning Zhang",
+      "Xiaojian Yang",
+      "Weiling Yang",
+      "Shaonan Ma",
+      "Dongsheng Li",
+      "Yongwei Wu",
+      "Xiangke Liao"
+    ],
+    "corresponding_authors": [
+      "Dezun Dong",
+      "Zhaoning Zhang"
+    ],
+    "affiliation": "National University of Defense Technology (Changsha and Beijing, China); Qiyuan Laboratory (Beijing, China)",
+    "categories": [
+      "cs.DC"
+    ],
+    "submitted_utc": "Thu, 29 Oct 2026 02:37:09 UTC",
+    "submitted_date": "2026-10-29",
+    "comments": "accepted by PPoPP'27",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2610.39216",
+      "abs_v1": "https://arxiv.org/abs/2610.39216v1",
+      "pdf": "https://arxiv.org/pdf/2610.39216",
+      "html_v1": "https://arxiv.org/html/2610.39216v1",
+      "doi": "https://doi.org/10.48550/arXiv.2610.39216",
+      "github_footnote_1_placeholder": "https://github.com/nezha-Anonymous/PDScope"
+    },
+    "github_verification_note": "Footnote 1 lists https://github.com/nezha-Anonymous/PDScope, an anonymized double-blind placeholder URL not publicly indexed on github.com via web search at verification time.",
+    "local_sources": {
+      "abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.39216.abs.html",
+        "sha256": "6d5e471d7cb6c6aa63dbd2596b6f42804bc6bc49a6109cf9b1d572dc9cfec504",
+        "sha256_status": "pending_parent_computation_no_shell_in_subagent",
+        "bytes": 42259
+      },
+      "full_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.39216.html",
+        "sha256": "d2866f102d95e3ec0673ec79c3a6119cb417d6260a4bb7eb1201e1e00a3cca23",
+        "sha256_status": "pending_parent_computation_no_shell_in_subagent",
+        "bytes": 308659
+      },
+      "pdf": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.39216.pdf",
+        "sha256": "ed502f2ca51a4eb2b6078e4444574ad897bd30adf8ab3e2dc4450acde9b34cf9",
+        "sha256_status": "pending_parent_computation_no_shell_in_subagent",
+        "bytes": 4556014
+      },
+      "extracted_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b1-sources/2610.39216.txt",
+        "lines": 1153,
+        "sha256": "a7474024695cb8ddc75bdfb2d618987922f1567ffdb098d9e2f9f892f2b40ab1",
+        "sha256_status": "pending_parent_computation_no_shell_in_subagent",
+        "bytes": 128529
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "platforms": {
+      "primary_a100": "NVIDIA A100 GPU + dual-socket Intel Xeon Gold 6230R CPUs (AVX-512, no AMX), PCIe 4.0 x16",
+      "primary_rtx3090": "NVIDIA RTX 3090 GPU + AMD EPYC 7452 CPU (16 cores/GPU, no AVX-512), PCIe 4.0 x16",
+      "auxiliary_v100": "NVIDIA V100 GPU + Intel Xeon Gold 6230R CPU, PCIe 3.0 x16 (Appendix §8.5; KTransformers excluded)"
+    },
+    "vram_cap_gb": 24,
+    "expert_resident_vram_gb": "5.8-8.7",
+    "runs_averaged": 10,
+    "baseline_warmup_rounds": 3,
+    "models_evaluated": {
+      "Mixtral-8x7B": {
+        "precision": "BF16",
+        "layers": 32,
+        "routed_experts": 8,
+        "activated_experts": 2,
+        "expert_memory_mb": 336
+      },
+      "Qwen3-30B-A3B": {
+        "precision": "BF16",
+        "layers": 48,
+        "routed_experts": 128,
+        "activated_experts": 8,
+        "expert_memory_mb": 9
+      },
+      "DeepSeek-V2-Lite": {
+        "precision": "BF16",
+        "layers": 26,
+        "routed_experts": 64,
+        "activated_experts": 6,
+        "expert_memory_mb": 16.5
+      },
+      "Moonlight-16B-A3B": {
+        "precision": "BF16",
+        "layers": 26,
+        "routed_experts": 64,
+        "activated_experts": 6,
+        "expert_memory_mb": 16.5
+      },
+      "DeepSeek-V4-Flash": {
+        "precision": "INT8",
+        "total_params": "291B",
+        "host_dram_gb": 512,
+        "chunk_size_multibatch": 256
+      }
+    },
+    "fig3_hybrimoe_mixtral_a100_ms": {
+      "prefill_1024_tokens": {
+        "cpu_ms": 2557,
+        "pcie_ms": 2321,
+        "gpu_ms": 292
+      },
+      "decode_1_token": {
+        "cpu_ms": 264,
+        "pcie_ms": 1449,
+        "gpu_ms": 109
+      }
+    },
+    "table1_pcie4_single_expert_latency_ms": {
+      "DeepSeek": {
+        "benchmark": 1.95,
+        "prefill": 2.78,
+        "decode": 2.06,
+        "theoretical": 0.53
+      },
+      "Qwen": {
+        "benchmark": 1.34,
+        "prefill": 1.88,
+        "decode": 1.38,
+        "theoretical": 0.29
+      },
+      "Mixtral": {
+        "benchmark": 33.5,
+        "prefill": 51.1,
+        "decode": 33.8,
+        "theoretical": 10.67
+      }
+    },
+    "table2_single_expert_1tok_ms": {
+      "DeepSeek": {
+        "intel_comp": 0.21,
+        "intel_run": 0.43,
+        "amd_comp": 1.5,
+        "amd_run": 2.1,
+        "rtx3090_comp": 0.17,
+        "rtx3090_run": 0.29
+      },
+      "Qwen": {
+        "intel_comp": 0.16,
+        "intel_run": 0.34,
+        "amd_comp": 1.2,
+        "amd_run": 1.64,
+        "rtx3090_comp": 0.13,
+        "rtx3090_run": 0.24
+      },
+      "Mixtral": {
+        "intel_comp": 2.88,
+        "intel_run": 4.25,
+        "amd_comp": 9.8,
+        "amd_run": 11.2,
+        "rtx3090_comp": 0.33,
+        "rtx3090_run": 0.44
+      }
+    },
+    "table3_asyncio_prefill": {
+      "PCIe_3_x16": {
+        "DeepSeek": {
+          "cost_ms": 1.39,
+          "bw_util": "76%"
+        },
+        "Qwen": {
+          "cost_ms": 0.79,
+          "bw_util": "72%"
+        },
+        "Mixtral": {
+          "cost_ms": 26.7,
+          "bw_util": "80%"
+        }
+      },
+      "PCIe_4_x16": {
+        "DeepSeek": {
+          "cost_ms": 0.76,
+          "bw_util": "70%"
+        },
+        "Qwen": {
+          "cost_ms": 0.44,
+          "bw_util": "66%"
+        },
+        "Mixtral": {
+          "cost_ms": 13.98,
+          "bw_util": "76%"
+        }
+      }
+    },
+    "headline_peak_speedups_vs_baselines": {
+      "prefill_range": "2.5x-10.3x",
+      "decode_range": "2.1x-6.1x",
+      "by_baseline": {
+        "Fate": {
+          "prefill_max": "10.3x",
+          "decode_max": "6.1x",
+          "a100_3090_geomean_p": 1.67,
+          "a100_3090_geomean_d": 1.71
+        },
+        "KTransformers_v0.3.2": {
+          "prefill_max": "8.6x",
+          "decode_max": "2.9x",
+          "a100_3090_geomean_p": 3.23,
+          "a100_3090_geomean_d": 2.86
+        },
+        "Fiddler": {
+          "prefill_max": "5.8x",
+          "decode_max": "2.9x",
+          "a100_3090_geomean_p": 1.92,
+          "a100_3090_geomean_d": 1.69
+        },
+        "HybriMoE": {
+          "prefill_max": "4.4x",
+          "decode_max": "2.1x",
+          "a100_3090_geomean_p": 1.85,
+          "a100_3090_geomean_d": 1.68
+        },
+        "MoE-APEX": {
+          "prefill_max": "2.5x",
+          "decode_max": "2.1x",
+          "a100_3090_geomean_p": 1.72,
+          "a100_3090_geomean_d": 1.49
+        }
+      },
+      "pdscope_a100_3090_geomean": {
+        "prefill": 1.88,
+        "decode": 1.38
+      }
+    },
+    "scalability_deepseek_v4_flash_291b": {
+      "bs1_prefill_vs": {
+        "Fate": "2.82x",
+        "Fiddler": "3.06x",
+        "HybriMoE": "2.69x",
+        "MoE-APEX": "5.03x"
+      },
+      "bs1_decode_vs": {
+        "Fate": "1.35x",
+        "Fiddler": "1.90x",
+        "HybriMoE": "1.26x",
+        "MoE-APEX": "1.97x"
+      },
+      "bs32_prefill_vs": {
+        "Fate": "2.42x",
+        "Fiddler": "2.61x",
+        "HybriMoE": "2.35x",
+        "MoE-APEX": "5.37x"
+      },
+      "bs32_decode_vs": {
+        "Fate": "3.16x",
+        "Fiddler": "3.17x",
+        "HybriMoE": "3.14x",
+        "MoE-APEX": "5.65x"
+      },
+      "bs16_to_bs32_prefill_delta": {
+        "2048_tok": "+5.2%",
+        "4096_tok": "+0.7%"
+      }
+    },
+    "ablation_incremental_over_fiddler_a100": {
+      "hot_expert_table_h": {
+        "prefill": "1.16x-1.39x",
+        "decode": "1.15x-1.46x"
+      },
+      "asyncio_i": {
+        "prefill": "1.67x-1.88x",
+        "decode": "1.34x-2.24x"
+      },
+      "phaseper_adaptsched_pa": {
+        "prefill": "1.39x-2.06x",
+        "decode": "1.17x-1.38x"
+      },
+      "static_graph_cache_gc": {
+        "prefill": "1.10x-1.20x",
+        "decode": "1.13x-1.39x"
+      },
+      "disable_hot_table_loss_avg": {
+        "prefill": "-1.8%",
+        "decode": "-8.2%"
+      }
+    },
+    "phaseper_table5_top6_plus_minus_2": {
+      "ShareGPT": {
+        "DeepSeek": "96%",
+        "Mixtral": "100%",
+        "Qwen": "97%",
+        "Moonlight": "99%"
+      },
+      "DPO": {
+        "DeepSeek": "92%",
+        "Mixtral": "99%",
+        "Qwen": "94%",
+        "Moonlight": "95%"
+      },
+      "LLaVA": {
+        "DeepSeek": "90%",
+        "Mixtral": "99%",
+        "Qwen": "92%",
+        "Moonlight": "92%"
+      },
+      "memory_mb": {
+        "DeepSeek": "1.6-4.0",
+        "Mixtral": "1.2-3.8",
+        "Qwen": "1.7-4.2",
+        "Moonlight": "1.6-4.0"
+      },
+      "forward_ms": {
+        "DeepSeek": 0.48,
+        "Mixtral": 0.15,
+        "Qwen": 0.12,
+        "Moonlight": 0.48
+      },
+      "online_ft_trigger_ms": 2.1,
+      "online_ft_window_tokens": 16,
+      "online_ft_error_threshold_pct": 25,
+      "online_ft_interval_steps": {
+        "prefill": ">500",
+        "decode": ">1000"
+      }
+    },
+    "trace_and_robustness": {
+      "qwen3_prefill_trace_experts_gpu_cpu": {
+        "PDScope": "49/32",
+        "HybriMoE": "38/43"
+      },
+      "qwen3_prefill_sort_overlap_ms": 8.1,
+      "degraded_fate_predictor_throughput_drop": {
+        "input_output_groups": "6.4%-11.3%",
+        "middle_group": "0.9%-2.4%"
+      },
+      "one_vs_two_layer_lookahead_diff": {
+        "prefill": "1.1%-2.3%",
+        "decode": "0.8%-5.4%"
+      },
+      "offline_profiling_time_a100": "<30 min"
+    }
+  },
+  "explicit_limitations": [
+    "Prefill (2.5-10.3x) and decode (2.1-6.1x) speedups are measured independently per phase against different baseline maxima and cannot be multiplied into end-to-end request speedup; request-level speedup depends on prompt/output token ratio, PCIe generation, CPU vector units, and expert granularity.",
+    "PDScope does not support concurrent distributed prefill/decode overlap (§6) because prefill already saturates CPU and PCIe under single-node memory constraints; multi-batch support uses phase-consolidated batching (chunk=256) and saturates by bs=16 on A100.",
+    "Offline profiling requires <30 min per model on A100 using 128 ShareGPT traces and assumes sufficient host DRAM/pinned-memory headroom (512 GB DRAM constrained dual-copy baselines on 291B DeepSeek-V4-Flash).",
+    "Evaluation covers system throughput, latency traces, and Top-6 routing hit rate rather than perplexity/downstream task quality (exact BF16/INT8 weights preserved by true-gate layer recompilation), and omits speculative decoding or quantized KV-cache hybrids.",
+    "v1 primary source notes: footnote 1 cites anonymized GitHub placeholder nezha-Anonymous/PDScope (not publicly verified), pages 5 and 11 contain two unresolved 'Appendix §??' references (pointing to §8.7 and §8.3), and Step 3 / Eq. (6) print '|f|' where ceiling ceil(f) is semantically intended."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "svgs": {
+      "pdscope-phase-aware-moe-pipeline-zh.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/pdscope-phase-aware-moe-pipeline-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/pdscope-phase-aware-moe-pipeline-zh.svg",
+        "sha256": "9efbb9505e8c79753c119fc59fbf7c584e8803ca46d5edb12991ab660ad52ac0",
+        "sha256_status": "pending_parent_computation_and_png_render",
+        "bytes": 14664
+      },
+      "pdscope-phase-aware-moe-pipeline-en.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/pdscope-phase-aware-moe-pipeline-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/pdscope-phase-aware-moe-pipeline-en.svg",
+        "sha256": "4d0890d66d966765948b49f4bf1dae688fc579ac6fff8e288e72c665c88af9a7",
+        "sha256_status": "pending_parent_computation_and_png_render",
+        "bytes": 14399
+      },
+      "pdscope-seesaw-throughput-gains-zh.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/pdscope-seesaw-throughput-gains-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/pdscope-seesaw-throughput-gains-zh.svg",
+        "sha256": "9f11f378a677e0dc2200e720de49483b577c6170a73bdc0ba94c9f16e282e9ec",
+        "sha256_status": "pending_parent_computation_and_png_render",
+        "bytes": 14838
+      },
+      "pdscope-seesaw-throughput-gains-en.svg": {
+        "site_path": "/assets/images/digest/2026-10-31/pdscope-seesaw-throughput-gains-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-10-31/pdscope-seesaw-throughput-gains-en.svg",
+        "sha256": "6cd75233e11a4778d4e65ef6d2ea257ae119031c8708e8ae55e3c7b2f5899600",
+        "sha256_status": "pending_parent_computation_and_png_render",
+        "bytes": 14531
+      }
+    }
+  },
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-10-31.md",
+      "file_bytes_before": 133852,
+      "file_sha256_before": "914b1485853911d6d30321a5715154713ce2027bd0def43c9936becb30db98e7",
+      "file_bytes_after": 133852,
+      "file_sha256_after": "914b1485853911d6d30321a5715154713ce2027bd0def43c9936becb30db98e7",
+      "old_section_bytes": 25665,
+      "old_section_sha256": "3c041becfa499c6e8584c073e7ae85f2d5927d2972c43bfdc07a0eb5f29c3b35",
+      "new_section_bytes": 25665,
+      "new_section_sha256": "3c041becfa499c6e8584c073e7ae85f2d5927d2972c43bfdc07a0eb5f29c3b35"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-10-31.md",
+      "file_bytes_before": 125711,
+      "file_sha256_before": "503243d78f648c5fb31529a6e7724b76b3506a5c88e3a4263b04b60e2e862806",
+      "file_bytes_after": 125711,
+      "file_sha256_after": "503243d78f648c5fb31529a6e7724b76b3506a5c88e3a4263b04b60e2e862806",
+      "old_section_bytes": 23359,
+      "old_section_sha256": "57a6ea38fc2db23a578491de6b25e74d922f47e4336f9a47fe88f18d5f2e9caa",
+      "new_section_bytes": 23359,
+      "new_section_sha256": "57a6ea38fc2db23a578491de6b25e74d922f47e4336f9a47fe88f18d5f2e9caa"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:06:58.469964+00:00",
+    "preview_release": "20261117-110636-2781322a",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

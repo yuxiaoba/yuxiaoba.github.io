@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="ROCm InferaSim 架构图：核定义与可迁移配置二分、缩并实测还原律与 DES 代理搜索" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+  </defs>
+
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="22" y="34" font-size="16.8" font-weight="700" fill="#0f172a">ROCm InferaSim：核集合锚点、缩并—实测—还原与双模式搜索架构</text>
+  <text x="22" y="53" font-size="10.2" fill="#475569">arXiv:2611.04032v1（§3–§4, 图 3–4, 表 1, 表 4）· 区分「改变 GPU Kernel (†)」与「仅改变单卡工作量」的两类服务配置</text>
+  <line x1="22" y1="62" x2="938" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Column 1: Config Space Split -->
+  <rect x="20" y="72" width="286" height="422" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="72" width="286" height="28" rx="9" fill="#1e3a8a"/>
+  <rect x="20" y="92" width="286" height="8" fill="#1e3a8a"/>
+  <text x="32" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">1. 服务配置空间二分法（表 4）</text>
+
+  <rect x="30" y="109" width="266" height="172" rx="7" fill="#fffbeb" stroke="#d97706" stroke-width="1.1"/>
+  <rect x="38" y="117" width="84" height="18" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="80" y="129.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#b45309">核定义 †</text>
+  <text x="130" y="130" font-size="10.6" font-weight="700" fill="#92400e">改变执行内核（须独立锚点）</text>
+  <text x="38" y="153" font-size="9.2" fill="#334155">• 模型权重与量化精度（BF16 / FP8 / FP4）</text>
+  <text x="38" y="173" font-size="9.2" fill="#334155">• 注意力 / MoE 后端（aiter, Triton, CK）</text>
+  <text x="38" y="193" font-size="9.2" fill="#334155">• Graph Capture（无 / 分段 / 全图）</text>
+  <text x="38" y="213" font-size="9.2" fill="#334155">• 投机方法（MTP / EAGLE-3）与 DCP</text>
+  <text x="38" y="233" font-size="9.2" fill="#334155">• 服务引擎镜像版本与 GPU 型号</text>
+  <rect x="38" y="246" width="250" height="25" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+  <text x="163" y="262" text-anchor="middle" font-size="9.0" font-weight="600" fill="#92400e">跨引擎或换 GPU 拒绝复用，须重采锚点</text>
+
+  <rect x="30" y="292" width="266" height="191" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="38" y="300" width="84" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="80" y="312.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">可迁移</text>
+  <text x="130" y="313" font-size="10.6" font-weight="700" fill="#1e3a8a">仅改工作量（解析公式推算）</text>
+  <text x="38" y="336" font-size="9.2" fill="#1e293b">• Batch 大小、并发数 C 与 Prompt 长度</text>
+  <text x="38" y="356" font-size="9.2" fill="#1e293b">• TP(1–8)、EP、注意力 DP 与跨节点 PP</text>
+  <text x="38" y="376" font-size="9.2" fill="#1e293b">• 副本数、到达过程与 P/D 分离池配比</text>
+  <text x="38" y="396" font-size="9.2" fill="#1e293b">• 主机 DRAM KV 卸载（HiCache / MoRI）</text>
+  <text x="38" y="416" font-size="9.2" fill="#1e293b">• 调度器上限（token budget / chunk）</text>
+  <text x="38" y="436" font-size="9.2" fill="#1e293b">• 投机草稿深度（0–8）与集合通信算法</text>
+  <rect x="38" y="449" width="250" height="25" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="163" y="465" text-anchor="middle" font-size="9.0" font-weight="600" fill="#1e3a8a">共享核集即直接推导，0 GPU 试错开销</text>
+
+  <!-- Arrow Col 1 -> Col 2 -->
+  <line x1="306" y1="200" x2="322" y2="200" stroke="#b45309" stroke-width="1.8" marker-end="url(#arr-amber)"/>
+  <line x1="306" y1="388" x2="322" y2="388" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+  <!-- Column 2: Reduce Measure Restore -->
+  <rect x="324" y="72" width="326" height="422" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="324" y="72" width="326" height="28" rx="9" fill="#1d4ed8"/>
+  <rect x="324" y="92" width="326" height="8" fill="#1d4ed8"/>
+  <text x="336" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">2. 缩并—实测—还原与步长模型（§3.1–3.2）</text>
+
+  <rect x="334" y="109" width="306" height="62" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="342" y="116" width="68" height="17" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="376" y="128" text-anchor="middle" font-size="9.0" font-weight="700" fill="#334155">缩并 Reduce</text>
+  <text x="418" y="128" font-size="10.2" font-weight="700" fill="#0f172a">压回 ≤1 节点等效配置</text>
+  <text x="342" y="147" font-size="8.9" fill="#334155">• 剥离多节点 PP 级数、P/D 分离池与主机 KV 卸载</text>
+  <text x="342" y="162" font-size="8.9" fill="#475569">• 收窄 EP 与 TP 至单副本共置（保留相同 Kernel 集合）</text>
+
+  <line x1="410" y1="171" x2="410" y2="186" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <line x1="564" y1="171" x2="564" y2="186" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+
+  <rect x="334" y="188" width="152" height="114" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="342" y="204" font-size="9.6" font-weight="700" fill="#1e3a8a">锚点模式（Anchored）</text>
+  <text x="342" y="220" font-size="8.5" fill="#1e293b">• 单波次 Decode 阶梯查表</text>
+  <text x="342" y="235" font-size="8.5" fill="#1e293b">• Prefill 5 长度拟合:</text>
+  <text x="346" y="249" font-size="8.5" font-weight="600" fill="#1d4ed8">T(n)=F + c₁n + c₂n²</text>
+  <text x="342" y="264" font-size="8.4" fill="#334155">• 关 Prefix Cache，实测权重</text>
+  <text x="342" y="279" font-size="8.4" fill="#334155">• 仅需 75 缓存锚点覆盖全集</text>
+  <text x="342" y="294" font-size="8.3" font-weight="600" fill="#1e3a8a">跨引擎、跨并发绝对高精度</text>
+
+  <rect x="494" y="188" width="146" height="114" rx="7" fill="#ecfdf5" stroke="#0f766e" stroke-width="1.1"/>
+  <text x="502" y="204" font-size="9.6" font-weight="700" fill="#065f46">模拟模式（Simulate）</text>
+  <text x="502" y="220" font-size="8.5" fill="#334155">• 0 GPU 测量，解析重建算子</text>
+  <text x="502" y="236" font-size="8.5" fill="#334155">• Origami 估算 GEMM 耗时</text>
+  <text x="502" y="252" font-size="8.5" fill="#334155">• 注意力/通信/PP 模型定价</text>
+  <text x="502" y="268" font-size="8.5" fill="#334155">• 单次 kernel 至少计 4.98 µs</text>
+  <text x="502" y="284" font-size="8.4" font-weight="600" fill="#0f766e">仅限单引擎内部排序</text>
+  <text x="502" y="297" font-size="8.2" fill="#475569">（287 组 0 GPU-h 排序）</text>
+
+  <line x1="410" y1="302" x2="410" y2="316" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <line x1="564" y1="302" x2="564" y2="316" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+
+  <rect x="334" y="318" width="306" height="165" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="342" y="325" width="76" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="380" y="337" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1d4ed8">还原 Restore</text>
+  <text x="426" y="337.5" font-size="10.2" font-weight="700" fill="#1e3a8a">步长模型 + 机制律（§3.1.2, 附录 B）</text>
+  <text x="342" y="357" font-size="8.9" fill="#0f172a">• TP Decode (Eq. 1): s_w'(b) = f + (s_w(b) - f)·ρ</text>
+  <text x="350" y="372" font-size="8.4" fill="#475569">保留固定步开销 f，仅缩放可切分工作；TP4→8 误差 0.9%</text>
+  <text x="342" y="391" font-size="8.9" fill="#0f172a">• EP 专家负载: 锚点/目标双端算 I_n, I_d + 少专家带宽折损</text>
+  <text x="342" y="410" font-size="8.9" fill="#0f172a">• 跨节点 PP (Eq. 4): s(C/p) + p(t_p2p + 970µs) + p·H(C/p)</text>
+  <text x="342" y="429" font-size="8.9" fill="#0f172a">• 通信模型 (α + m/B): xGMI(600 GB/s) 与 Pollara NIC 分层</text>
+  <text x="342" y="448" font-size="8.9" fill="#0f172a">• 全解析 HBM 模型: 按 KV 字节/token 锁死最大可行并发</text>
+  <text x="342" y="469" font-size="8.8" font-weight="700" fill="#1d4ed8">单锚点预测 24 卡分离部署成本 = 预测单卡成本</text>
+
+  <!-- Arrow Col 2 -> Col 3 -->
+  <line x1="650" y1="220" x2="666" y2="220" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <line x1="650" y1="395" x2="666" y2="395" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+  <!-- Column 3: DES & Agent -->
+  <rect x="668" y="72" width="272" height="422" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="668" y="72" width="272" height="28" rx="9" fill="#1e3a8a"/>
+  <rect x="668" y="92" width="272" height="8" fill="#1e3a8a"/>
+  <text x="680" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">3. 离散事件仿真与代理搜索（§3.4–4）</text>
+
+  <rect x="678" y="109" width="252" height="172" rx="7" fill="#ffffff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="686" y="117" width="68" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="720" y="129.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">DES 仿真器</text>
+  <text x="762" y="130" font-size="10.4" font-weight="700" fill="#1e3a8a">逐请求排队与缓存回放</text>
+  <text x="686" y="153" font-size="9.0" fill="#1e293b">• 模拟各引擎调度器（chunked / 混合步）</text>
+  <text x="686" y="173" font-size="9.0" fill="#1e293b">• 叶优先 LRU 基数前缀树（90.6% vs 0%）</text>
+  <text x="686" y="193" font-size="9.0" fill="#1e293b">• DRAM 卸载队列 + P/D KV 交接（MoRI/NIXL）</text>
+  <text x="686" y="213" font-size="9.0" fill="#1e293b">• 多轮 Agent 思考间隔与依赖阻塞建模</text>
+  <text x="686" y="233" font-size="9.0" fill="#1e293b">• 实机主机 CPU 耗时按比例计入 TTFT</text>
+  <rect x="686" y="246" width="236" height="25" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.8"/>
+  <text x="804" y="262" text-anchor="middle" font-size="8.9" font-weight="600" fill="#1d4ed8">输出全分布延迟 (p50/p99) 与每卡吞吐</text>
+
+  <line x1="804" y1="281" x2="804" y2="294" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="678" y="296" width="252" height="187" rx="7" fill="#f8fafc" stroke="#1e3a8a" stroke-width="1.1"/>
+  <rect x="686" y="304" width="68" height="18" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="720" y="316.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#334155">调优代理</text>
+  <text x="762" y="317" font-size="10.4" font-weight="700" fill="#0f172a">双阶段搜索与混部规划</text>
+  <text x="686" y="340" font-size="9.0" fill="#334155">• 36 个调节杆 × 24 个优化目标（0.17–0.48 s）</text>
+  <text x="686" y="360" font-size="9.0" fill="#334155">• 阶段 1 确定性种子单杆扫描 + 阶段 2 DSPy</text>
+  <text x="686" y="380" font-size="9.0" fill="#334155">• ReAct 读最近 40 条账本提 5–8 个组合方案</text>
+  <text x="686" y="400" font-size="9.0" fill="#334155">• 强门控: ≤90% HBM + SLO（LLM 绝不估分）</text>
+  <text x="686" y="420" font-size="9.0" fill="#334155">• Mix Planner 强制 TTFT ≤ 0.5× 阈值保安全余量</text>
+  <rect x="686" y="434" width="236" height="38" rx="4" fill="#1e3a8a"/>
+  <text x="804" y="450" text-anchor="middle" font-size="9.1" font-weight="700" fill="#ffffff">输出 Top-5 候选短表 + 6 项核融合建议</text>
+  <text x="804" y="464" text-anchor="middle" font-size="8.6" fill="#dbeafe">→ 最终交由集群实测确认后上线（22/23 逼近最优）</text>
+
+  <!-- Legend & Footnote -->
+  <rect x="20" y="502" width="12" height="10" rx="2" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+  <text x="37" y="511" font-size="9.0" fill="#334155">琥珀：核定义决策 †</text>
+  <rect x="155" y="502" width="12" height="10" rx="2" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="172" y="511" font-size="9.0" fill="#334155">蓝框：锚点校准与解析还原/DES</text>
+  <rect x="355" y="502" width="12" height="10" rx="2" fill="#ecfdf5" stroke="#0f766e" stroke-width="1"/>
+  <text x="372" y="511" font-size="9.0" fill="#334155">青框：零 GPU Simulate 引擎内排序</text>
+  <text x="20" y="527" font-size="8.9" fill="#64748b">注：5 项采锚校验（附录 E）强制记录 Prompt 长度、真实权重、关 Prefix Cache、非序列化探针与 ≤1 次 TP 倍增 / ≤4× 并发范围，否则拒绝或标为外推。</text>
+</svg>

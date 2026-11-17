@@ -1,0 +1,125 @@
+{
+  "id": "nvidia-ai-agents-ai-factory-operations",
+  "source_url": "https://developer.nvidia.com/blog/how-nvidia-uses-ai-agents-to-streamline-ai-factory-operations/",
+  "source_title": "How NVIDIA Uses AI Agents to Streamline AI Factory Operations",
+  "source_authors": [
+    "Kavya G Y",
+    "Rohan Adwankar"
+  ],
+  "source_org": "NVIDIA Technical Blog",
+  "source_date": "2026-11-04",
+  "note_date": "2026-11-05",
+  "published_at": "2026-11-05T08:55:14.344660+08:00",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": ".preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/nvidia-ai-agents-ai-factory-operations.txt",
+      "kind": "extracted_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/nvidia-ai-agents-ai-factory-operations.html",
+      "kind": "raw_html"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/nvidia-factory-operations-blueprint-agents.txt",
+      "kind": "companion_extracted_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/nvidia-factory-operations-blueprint-agents.html",
+      "kind": "companion_raw_html"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://developer.nvidia.com/blog/how-nvidia-uses-ai-agents-to-streamline-ai-factory-operations/",
+    "https://build.nvidia.com/nvidia/operate-ai-factories-with-agents/examplecard",
+    "https://github.com/NVIDIA/AI-Factory-Operations-Agent",
+    "https://build.nvidia.com/nvidia/nemoclaw-for-openclaw/nemoclawcard",
+    "https://www.nvidia.com/en-in/ai/openshell/",
+    "https://docs.nvidia.com/openshell/latest/about/overview",
+    "https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/",
+    "https://www.nvidia.com/en-us/data-center/dgx-superpod/",
+    "https://www.nvidia.com/en-us/data-center/mission-control/",
+    "https://www.nvidia.com/en-us/data-center/base-command-manager/",
+    "https://www.nvidia.com/en-us/products/workstations/",
+    "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+    "https://developer.nvidia.com/blog/how-nvidia-factory-operations-blueprint-coordinates-ai-agents-to-investigate-production-issues/",
+    "https://docs.nvidia.com/nemo/agent-toolkit/latest/index.html"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "companion_differentiation": {
+    "compared_source_id": "nvidia-factory-operations-blueprint-agents",
+    "compared_source_url": "https://developer.nvidia.com/blog/how-nvidia-factory-operations-blueprint-coordinates-ai-agents-to-investigate-production-issues/",
+    "compared_source_date": "2026-11-04",
+    "distinction_note": "Primary subject nvidia-ai-agents-ai-factory-operations covers GPU-cluster AIOps on DGX H100/B200/GB300 SuperPODs (NemoClaw, OpenClaw gateway, MCP tools, OpenShell credential-less sandboxes, server-side read-only run_kubectl RBAC, six cluster sub-agents, zero published MTTR/RCA benchmarks, injected-fault demo Video 1). Same-day companion FOX Blueprint (Samuel Ochoa & Carlos Garcia-Sierra, unpublished draft in repo) shares NemoClaw + OpenShell + Nemotron + HITL patterns but targets physical PCB/SMT manufacturing lines (Cosmos, Isaac Sim/ROS 2, Kumo Anomaly, Elasticsearch) and cites Siemens production-planning/virtual-AOI figures (up to 20% cost savings, up to 40% TTM reduction) that must never be conflated with GPU cluster AIOps."
+  },
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/nvidia-ai-agents-ai-factory-operations.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/nvidia-ai-agents-ai-factory-operations.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/nvidia-ai-agents-ai-factory-operations/architecture.webp",
+        "origin": "primary_source_preserved",
+        "preserved_untouched": true,
+        "source": "https://developer.nvidia.com/blog/how-nvidia-uses-ai-agents-to-streamline-ai-factory-operations/",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/nvidia-ai-agents-ai-factory-operations/ai-factory-multiagent-ops-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/nvidia-ai-agents-ai-factory-operations/ai-factory-multiagent-ops-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/nvidia-ai-agents-ai-factory-operations/factory-hitl-remediation-gates-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/nvidia-ai-agents-ai-factory-operations/factory-hitl-remediation-gates-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "40c703750c837f2377a72f585b01f57f9c46e34f752b189db07a85b98174f3e4",
+      "en_md_sha256": "795fcd5886967c615a6ae7e80857446ceee268f3226c6afeafb232cdcf81a234",
+      "svgs": {
+        "/assets/images/tech/nvidia-ai-agents-ai-factory-operations/ai-factory-multiagent-ops-zh.svg": "d9cd78f53e6671503d7e06a2abbc15bd2c4df4d715a32bac0edf060062e3608d",
+        "/assets/images/tech/nvidia-ai-agents-ai-factory-operations/ai-factory-multiagent-ops-en.svg": "ca170938e48e670017b19f07c7fab08bb919e77f75daa1fb487c40e7c6393ca3",
+        "/assets/images/tech/nvidia-ai-agents-ai-factory-operations/factory-hitl-remediation-gates-zh.svg": "1954c86e07e1a4cd73d1f353bac934a5ce073cb020f489d436add54ec618d4e8",
+        "/assets/images/tech/nvidia-ai-agents-ai-factory-operations/factory-hitl-remediation-gates-en.svg": "001c46451a5d0eefeae3ddae379a21f0313f7f790978af63e0d540dffc3d0fd2"
+      },
+      "preserved": {
+        "architecture.webp": "2769ace3dee3fe0bf6fba63d9d84eaf07bc974c9bd4646f46ccc31c702f6e9d4"
+      }
+    },
+    "playwright_total": 35,
+    "playwright_passed": 35,
+    "playwright_failed": 0
+  }
+}

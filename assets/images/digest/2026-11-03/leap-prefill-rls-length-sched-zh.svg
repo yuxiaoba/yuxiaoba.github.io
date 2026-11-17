@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="LEAP：Prefill 线性读出、CPU 在线 RLS 与异步重叠调度架构图">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#15803d"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="14" y="14" width="932" height="512" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" rx="10"/>
+  <text x="30" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="17" font-weight="700" fill="#0f172a">LEAP：Prefill 线性读出、CPU 在线 RLS 与异步重叠调度</text>
+  <text x="30" y="59" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.2" fill="#475569">arXiv:2610.41359v1 · 单层隐状态读出（4,097 参数 / 16.39 KB）+ 无梯度 Completion RLS + 异步重叠</text>
+  <line x1="30" y1="68" x2="930" y2="68" stroke="#bfdbfe" stroke-width="1"/>
+
+  <!-- Section A: Top Timeline -->
+  <rect x="28" y="78" width="904" height="150" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="42" y="99" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12.5" font-weight="700" fill="#1d4ed8">A. 异步 D2H 特征传输与 GPU Prefill 重叠流水（Qwen3-8B Block 30 · 图 1 / 图 4 / 图 8）</text>
+
+  <!-- Track Labels -->
+  <rect x="40" y="114" width="44" height="34" rx="5" fill="#1d4ed8"/>
+  <text x="62" y="135" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">GPU</text>
+  <rect x="40" y="176" width="44" height="36" rx="5" fill="#e0f2fe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="62" y="198" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#1d4ed8">CPU</text>
+
+  <!-- GPU Blocks -->
+  <rect x="94" y="112" width="114" height="38" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="151" y="128" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#0f172a">请求到达</text>
+  <text x="151" y="143" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#475569">初始默认 L̂ᵢ = M</text>
+  <line x1="208" y1="131" x2="218" y2="131" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <rect x="220" y="112" width="136" height="38" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="288" y="128" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#0f172a">Prefill (层 0..30)</text>
+  <text x="288" y="143" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#475569">提取末 Token 隐状态 hᵢ</text>
+  <line x1="356" y1="131" x2="366" y2="131" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- Overlap dashed container -->
+  <rect x="366" y="106" width="320" height="114" rx="7" fill="none" stroke="#3b82f6" stroke-width="1.1" stroke-dasharray="4 3"/>
+  <rect x="368" y="112" width="316" height="38" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="526" y="128" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#1d4ed8">剩余 GPU Prefill 重叠窗口 (层 31..36 + Final RMSNorm)</text>
+  <text x="526" y="143" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#334155">计算与 CPU 预测完全并行 · Probe 检查置于 RMSNorm 前</text>
+  <line x1="684" y1="131" x2="696" y2="131" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <rect x="698" y="112" width="222" height="38" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="809" y="128" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#0f172a">Decode 调度 (64 槽 / 512 常驻)</text>
+  <text x="809" y="143" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#475569">按 sᵢ(t) 推进；完成输出反馈 CPU</text>
+
+  <!-- D2H Arrow -->
+  <path d="M 332 150 L 332 194 L 368 194" fill="none" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <text x="234" y="191" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.4" font-weight="600" fill="#1d4ed8">仅传 1 次 hᵢ (16 KiB FP32)</text>
+
+  <!-- CPU Overlap Sub-steps -->
+  <rect x="372" y="176" width="96" height="36" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="420" y="191" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">Async D2H</text>
+  <text x="420" y="205" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#475569">FP32 / FP16</text>
+  <line x1="468" y1="194" x2="476" y2="194" stroke="#1d4ed8" stroke-width="1.3" marker-end="url(#arrow-blue)"/>
+
+  <rect x="478" y="176" width="104" height="36" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="530" y="191" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">预测与批排序</text>
+  <text x="530" y="205" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#475569">缓存 uᵢ 至 C[i]</text>
+  <line x1="582" y1="194" x2="590" y2="194" stroke="#1d4ed8" stroke-width="1.3" marker-end="url(#arrow-blue)"/>
+
+  <rect x="592" y="176" width="88" height="36" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="636" y="191" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">发布分数</text>
+  <text x="636" y="205" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#475569">(req_id, ver)</text>
+
+  <!-- Arrow from Publish up to Decode -->
+  <path d="M 680 194 L 708 194 L 708 153" fill="none" stroke="#15803d" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Readiness Pill -->
+  <rect x="722" y="176" width="198" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="1"/>
+  <text x="821" y="191" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#166534">Prefill 重叠实测 (图 8)</text>
+  <text x="821" y="205" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" fill="#15803d">异步 144/144 就绪 · 对照 0/72</text>
+
+  <!-- Section B: Bottom-Left Linear Readout -->
+  <rect x="28" y="238" width="444" height="258" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="42" y="259" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12.3" font-weight="700" fill="#1d4ed8">B. 平方根目标线性读出与倒计时优先级 (§3.2 / 式 5 &amp; 15)</text>
+
+  <rect x="40" y="270" width="420" height="50" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="49" y="279" width="70" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="84" y="292" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">1. 标准化</text>
+  <text x="128" y="292" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" font-weight="700" fill="#0f172a">冻结源域均值/尺度：xᵢ = (hᵢ − μ) / s</text>
+  <text x="49" y="311" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" fill="#334155">4,097 参数 (16.39 KB FP32) 驻留 CPU 核私有 L2 缓存，无需重编文本</text>
+  <line x1="250" y1="320" x2="250" y2="328" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arrow-blue)"/>
+
+  <rect x="40" y="330" width="420" height="50" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="49" y="339" width="70" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="84" y="352" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">2. 读出反演</text>
+  <text x="128" y="352" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" font-weight="700" fill="#0f172a">L̂(x) = [ clip(uᵀ θ_pub, 1, √M) ]²</text>
+  <text x="49" y="371" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" fill="#334155">平方前先裁剪至 [1, √M] (M=2,048)，防止大负值平方变为虚假长预测</text>
+  <line x1="250" y1="380" x2="250" y2="388" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arrow-blue)"/>
+
+  <rect x="40" y="390" width="420" height="48" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="49" y="398" width="70" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="84" y="411" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">3. 调度排序</text>
+  <text x="128" y="411" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" font-weight="700" fill="#0f172a">sᵢ(t) = max{1, L̂ᵢ(t) − aᵢ(t)} + 防饥饿保护</text>
+  <text x="49" y="429" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" fill="#334155">在线引擎采用 128 步等待保护；仿真对照采用 Aging (γ=0.9, τ=30 s)</text>
+
+  <rect x="40" y="446" width="420" height="39" rx="6" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+  <text x="50" y="462" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">为何选择 g(L) = √L 目标映射？</text>
+  <text x="50" y="478" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.4" fill="#1e3a8a">误差权重按 1/L 衰减：比 log L (1/L²) 更能区分长请求，又避开原始 L 尾噪放大</text>
+
+  <!-- Section C: Bottom-Right RLS Thread -->
+  <rect x="486" y="238" width="446" height="258" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="259" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12.3" font-weight="700" fill="#1d4ed8">C. 独立 CPU 线程在线 RLS 自适应（无梯度 / 无回放，§3.3）</text>
+
+  <rect x="498" y="270" width="202" height="50" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="508" y="288" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.4" font-weight="700" fill="#0f172a">完成请求按 ID 匹配入队</text>
+  <text x="508" y="303" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">(C[i], √Lᵢ) 凑满 q=8 触发批更新</text>
+  <text x="508" y="315" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#475569">并从活跃缓存 C 删除已完结请求</text>
+
+  <rect x="712" y="270" width="208" height="50" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="722" y="288" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.4" font-weight="700" fill="#0f172a">源域锚定先验 (离线计算)</text>
+  <text x="722" y="303" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">A₀ = UₛᵀUₛ + λ_p D,  P₀ = A₀⁻¹</text>
+  <text x="722" y="315" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#475569">d=4096 时 P 占 ~64 MiB FP32</text>
+
+  <line x1="599" y1="320" x2="599" y2="328" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arrow-blue)"/>
+  <line x1="816" y1="320" x2="816" y2="328" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arrow-blue)"/>
+
+  <rect x="498" y="330" width="422" height="58" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="508" y="348" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.6" font-weight="700" fill="#1d4ed8">Woodbury 增量精确解（FP64 求解 8×8 小线性系统）</text>
+  <text x="508" y="365" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.3" fill="#0f172a">V = PUᵀ,  G = V(I_q + UV)⁻¹  |  θ⁺ = θ + G(y − Uθ),  P⁺ = P − GVᵀ</text>
+  <text x="508" y="381" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" fill="#475569">精确算术等价于全量锚定 Ridge 重拟合；Aya 跨域 Spearman ρ 0.498 → 0.820</text>
+  <line x1="709" y1="388" x2="709" y2="396" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arrow-blue)"/>
+
+  <rect x="498" y="398" width="422" height="40" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="508" y="415" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#0f172a">无锁交付快照 θ_pub → 后台重评分活跃请求缓存 C</text>
+  <text x="508" y="431" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">不阻塞初始读出队列，也无需对已入队请求重跑 GPU Prefill（复用 uᵢ）</text>
+
+  <rect x="498" y="446" width="422" height="39" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="508" y="462" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.7" font-weight="700" fill="#92400e">设计边界提示（附录 A.2 &amp; §7）</text>
+  <text x="508" y="478" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#78350f">所有完成样本等权重无遗忘因子；关闭时不足 8 条的残余批丢弃；受限截断按 ≤M 更新</text>
+
+  <text x="30" y="514" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.1" fill="#475569">注：原型集成于 vLLM 0.8.5.post1 (V0 eager 模式)；在有效分数尚未就绪时，无保护候选请求回退至 FCFS。</text>
+</svg>

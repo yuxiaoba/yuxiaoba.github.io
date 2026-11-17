@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect x="0" y="0" width="960" height="540" fill="#ffffff"/>
+<text x="36" y="37" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="19.5" font-weight="700" fill="#212529">Agent Skills Evaluation Loop: Separating Adherence from Real Effect</text>
+<text x="36" y="59" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" fill="#526779">From Makarevych Levels 5–10: state a measurable objective, then separate obedience from outcome quality</text>
+<line x1="36" y1="71" x2="924" y2="71" stroke="#d8e4f0" stroke-width="1"/>
+<rect x="36" y="84" width="888" height="60" rx="8" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="50" y="108" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#212529">Levels 5–6 Prep: 1-Sentence Measurable Objective -&gt; Core Behavioral Hypotheses (C1–C7) + Isolate Hooks</text>
+<text x="50" y="130" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">Evidence ranking: Observed baseline failures (e.g., arXiv:2510.04618) &gt; Published studies &gt; Unverified Doctrine</text>
+<line x1="250" y1="144" x2="250" y2="158" stroke="#3676b8" stroke-width="2"/>
+<polygon points="245,157 255,157 250,164" fill="#3676b8"/>
+<line x1="710" y1="144" x2="710" y2="158" stroke="#3676b8" stroke-width="2"/>
+<polygon points="705,157 715,157 710,164" fill="#3676b8"/>
+<rect x="36" y="164" width="434" height="196" rx="8" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="50" y="189" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#245c96">Family A · Adherence (Level 7)</text>
+<text x="50" y="218" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">• Input: headless harness stream (edits, commands, exits)</text>
+<text x="50" y="242" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">• Deterministic code graders: 1 rule per point (not feel)</text>
+<text x="50" y="266" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">• Checks edit order, right red failure, &amp; old-code red check (C4)</text>
+<text x="50" y="290" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">• Tracks explicit loaded-or-not flag; unloaded runs score 0</text>
+<rect x="48" y="314" width="410" height="34" rx="6" fill="#ffffff" stroke="#c8daec" stroke-width="1"/>
+<text x="253" y="335" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#526779">High score proves wording worked—not that the idea helped</text>
+<rect x="490" y="164" width="434" height="196" rx="8" fill="#edf4fc" stroke="#b8cfe5" stroke-width="1"/>
+<text x="504" y="189" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#245c96">Family B · Effect &amp; Cost (Level 8)</text>
+<text x="504" y="218" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">• Gate 1: Hidden unseen benchmark tests must pass first</text>
+<text x="504" y="242" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">• Gate 2: Run each generated test on pre-fix code + planted faults</text>
+<text x="504" y="266" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">• Judge labels 5 tiers: Critical / Useful / Nitpick / Useless / Harmful</text>
+<text x="504" y="290" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12" fill="#212529">• Tracks honesty, cost (turns/tokens/$), &amp; multi-run spread</text>
+<rect x="502" y="314" width="410" height="34" rx="6" fill="#ffffff" stroke="#c8daec" stroke-width="1"/>
+<text x="707" y="335" text-anchor="middle" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#526779">Headline = behaviors with Critical tests (not raw test volume)</text>
+<line x1="480" y1="360" x2="480" y2="374" stroke="#3676b8" stroke-width="2"/>
+<polygon points="475,373 485,373 480,380" fill="#3676b8"/>
+<rect x="36" y="380" width="280" height="114" rx="8" fill="#f8fbfe" stroke="#b8cfe5" stroke-width="1.2"/>
+<text x="48" y="406" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#245c96">Low Adherence -&gt; Fix Text</text>
+<text x="48" y="434" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#212529">Shorten text, put trigger on line 1,</text>
+<text x="48" y="456" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">match repo tools; re-test adherence.</text>
+<rect x="340" y="380" width="280" height="114" rx="8" fill="#f8fbfe" stroke="#b8cfe5" stroke-width="1.2"/>
+<text x="352" y="406" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#245c96">High Adherence, Flat -&gt; Ablate</text>
+<text x="352" y="434" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#212529">Drop one rule at a time against Effect;</text>
+<text x="352" y="456" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">keep only Critical-test movers.</text>
+<rect x="644" y="380" width="280" height="114" rx="8" fill="#eef7f1" stroke="#9bc6ab" stroke-width="1.2"/>
+<text x="656" y="406" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1f5f3b">Beats Baseline + Length -&gt; Ship 4-Pack</text>
+<text x="656" y="434" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#212529">Ship text, points, evals &amp; dated scores;</text>
+<text x="656" y="456" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#526779">re-run on drift (95% -&gt; 65%/month).</text>
+<text x="36" y="520" font-family="Noto Sans CJK SC, Noto Sans, Arial, sans-serif" font-size="11.5" fill="#596775">Assistant-drawn explanatory diagram of Makarevych Levels 5–10 (not an original figure)</text>
+</svg>

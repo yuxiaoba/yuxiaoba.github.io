@@ -3,7 +3,7 @@ id: nvidia-mission-control-2-5-autonomous-recovery
 title: 2026年10月27日｜GPU 作业先恢复，故障节点再修复
 date: '2026-10-27'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -14,10 +14,11 @@ summary: 解读 Mission Control 2.5 的 Kubernetes 恢复闭环：作业、硬�
 long_read: true
 source_url: https://developer.nvidia.com/blog/how-nvidia-mission-control-2-5-brings-autonomous-recovery-to-kubernetes/
 permalink: /tech/zh/nvidia-mission-control-2-5-autonomous-recovery/
-translation_source: assistant-authored Chinese and English; English translation by
-  assistant
+translation_source: assistant-authored Chinese and English; English translation by assistant
 published_at: '2026-10-27T08:49:56.503057+08:00'
-updated_at: '2026-10-27T08:49:56.503057+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 分布式训练中，一块 GPU 异常可能让整个作业停住，但作业恢复与硬件修复并不需要在同一时刻完成。NVIDIA Mission Control 2.5 将自主恢复能力扩展到由 NVIDIA Run:ai 管理的 Kubernetes 工作负载，最值得关注的是职责划分：先让作业找到可用容量继续执行，同时把疑似故障节点移出调度池，再完成诊断与修复。这篇文章提供了恢复流程的工程说明，没有给出受控对照的 MTTR 或训练吞吐提升数据。
 

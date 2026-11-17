@@ -1,0 +1,72 @@
+{
+  "id": "2026-11-04-mercor-apex-swe-observability",
+  "review_code": "T1-21",
+  "source_url": "https://www.mercor.com/apex/apex-swe-leaderboard/observability-swe/",
+  "source_parent_url": "https://www.mercor.com/apex/apex-swe-leaderboard/",
+  "source_paper_url": "https://arxiv.org/pdf/2601.08806",
+  "source_paper_abs_url": "https://arxiv.org/abs/2601.08806",
+  "source_x_context_url": "https://x.com/laduramvishnoi/status/2117733057184911567",
+  "source_title": "APEX-SWE (arXiv:2601.08806v3) & AI Observability & Debugging Leaderboard: APEX-SWE | Mercor",
+  "source_author": "Abhi Kottamasu et al. (Mercor & Cognition)",
+  "source_org": "Mercor / Cognition",
+  "source_date": "2026-03-23 (paper v3); 2026-11-03 (leaderboard)",
+  "note_date": "2026-11-04",
+  "updated_at": "2026-11-15T19:51:00+08:00",
+  "frozen_primary_html": {
+    "path": ".preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/mercor-leaderboard.html",
+    "sha256": "b7351553d1b6b453740ba52e875b51a38d6db465016dc67ed3d8d01946840c8f"
+  },
+  "frozen_x_post_json": {
+    "path": ".preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/x_exports/2117733057184911567/post.json",
+    "sha256": "685ec50e3130b7bd774c2ddf7bc9e103f952df817ad596743134b19342d31743"
+  },
+  "arxiv_2601_08806_pdf": {
+    "url": "https://arxiv.org/pdf/2601.08806",
+    "staged_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/t21-stage/2601.08806.pdf",
+    "sha256": "f0188398c7c89d38d1c4ec6b5d05f585155b919978f782fc95a4e52b9b6733cb"
+  },
+  "observability_swe_snapshot_html": {
+    "url": "https://www.mercor.com/apex/apex-swe-leaderboard/observability-swe/",
+    "staged_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/t21-stage/mercor-observability-swe.html",
+    "fetched_at": "2026-11-15T19:37:00+08:00",
+    "sha256": "ab1a38c42cca993e22558a697cdce7f509fdeb984fd2479b7b271c9e3e3f2e61"
+  },
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/2026-11-04-mercor-apex-swe-observability.md",
+      "sha256": "254175934152f84163124b46c2dc8e512e47d620108e549ffe5ea6f1ddbfdb0d"
+    },
+    "en_markdown": {
+      "path": "_tech/en/2026-11-04-mercor-apex-swe-observability.md",
+      "sha256": "3c009adef3825175dc35d466a744161edd9e44d350336d41aaeca295af08e460"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/2026-11-04-mercor-apex-swe-observability/apex-swe-observability-pipeline-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://synthesized-from-arxiv-2601-08806-and-mercor-leaderboard",
+        "sha256": "557329f1fa1d0310b382edb0b1262c6709f3d047507ecdc656662d3622c60224"
+      },
+      {
+        "path": "assets/images/tech/2026-11-04-mercor-apex-swe-observability/apex-swe-observability-pipeline-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://synthesized-from-arxiv-2601-08806-and-mercor-leaderboard",
+        "sha256": "ac18205b6f47a6c5be50161b4a431dd246160a288135aa688b56d44a3be969a9"
+      },
+      {
+        "path": "assets/images/tech/2026-11-04-mercor-apex-swe-observability/observability-failure-boundaries-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://synthesized-from-arxiv-2601-08806-and-mercor-leaderboard",
+        "sha256": "7795c57f54004b33b8f4ad273f50269c5431b26bbc0654b899b17260fb0a9c98"
+      },
+      {
+        "path": "assets/images/tech/2026-11-04-mercor-apex-swe-observability/observability-failure-boundaries-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://synthesized-from-arxiv-2601-08806-and-mercor-leaderboard",
+        "sha256": "bccfedd1b6eb9d71dd0c5555c4712e10d929406399ae11c4bf461bfba96e56ae"
+      }
+    ]
+  }
+}

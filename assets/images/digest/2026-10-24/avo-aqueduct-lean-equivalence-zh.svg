@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Agentic Verified Optimization 与 AQUEDUCT 系统架构图：左侧展示多策略候选迁移、差分/模糊/变异测试与交替修复管线；右侧展示参考函数固定下的代码改写与等价证明联合搜索及四重内核验收闸门">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="14" y="14" width="932" height="512" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" rx="10"/>
+
+  <!-- Header -->
+  <text x="30" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="16.5" font-weight="700" fill="#0f172a">Agentic Verified Optimization 与 AQUEDUCT：软件迁移 + 内核等价校验架构</text>
+  <text x="30" y="57" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#475569">arXiv:2610.30188v1 (§3–§4, 附录 A–B) · Codex + GPT-5.6 Sol (xhigh) · Lean 4.18.0 引用计数原生运行时</text>
+  <line x1="30" y1="67" x2="930" y2="67" stroke="#bfdbfe" stroke-width="1"/>
+
+  <!-- Left Panel: AQUEDUCT Migration -->
+  <rect x="28" y="76" width="424" height="420" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="40" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">A. AQUEDUCT：现有软件迁为原生 Lean 4 参考</text>
+
+  <!-- A1: Source Repo + Oracle -->
+  <rect x="38" y="104" width="404" height="52" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="46" y="111" width="84" height="18" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="88" y="123.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="700" fill="#1d4ed8">源码与神谕</text>
+  <text x="138" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" font-weight="700" fill="#0f172a">40 个 ProgramBench 仓库 (C / C++ / Go / Rust)</text>
+  <text x="46" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">258–152 万行源码 · 原程序作神谕 (原机支持 18,642 / 39,857 隐藏测试)</text>
+
+  <line x1="135" y1="156" x2="135" y2="166" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <line x1="345" y1="156" x2="345" y2="166" stroke="#475569" stroke-width="1.3" stroke-dasharray="3 2" marker-end="url(#arrow-slate)"/>
+
+  <!-- A2 Left: 3 Candidate Strategies -->
+  <rect x="38" y="168" width="194" height="96" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="46" y="175" width="102" height="18" rx="5" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.9"/>
+  <text x="97" y="187.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#0369a1">三路候选迁移</text>
+  <text x="46" y="208" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">• A: 广度优先 (选中 18 次)</text>
+  <text x="46" y="224" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">• B: 夹具优先 (选中 20 次)</text>
+  <text x="46" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">• C: 台账驱动 (选中 2 次)</text>
+  <text x="46" y="255" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#1d4ed8">仅限原生 Lean；自测保持隔离</text>
+
+  <!-- Arrow from frozen candidates to test agents -->
+  <line x1="232" y1="216" x2="246" y2="216" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- A2 Right: 3 Test-Design Agents -->
+  <rect x="248" y="168" width="194" height="96" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="256" y="175" width="108" height="18" rx="5" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.9"/>
+  <text x="310" y="187.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#0369a1">三路测试设计 (T)</text>
+  <text x="256" y="208" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">• 差分执行 + 极小反例收缩</text>
+  <text x="256" y="224" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">• 覆盖率引导模糊测试</text>
+  <text x="256" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">• 源码变异存活点定向补测</text>
+  <text x="256" y="255" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#1d4ed8">共生成 33,671 条行为测试</text>
+
+  <line x1="135" y1="264" x2="135" y2="275" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <line x1="345" y1="264" x2="345" y2="275" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- A3: Deterministic Controller + Repair + Audit -->
+  <rect x="38" y="277" width="404" height="110" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="46" y="285" width="112" height="18" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="102" y="297.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">控制器与审计</text>
+  <text x="166" y="298" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.6" font-weight="700" fill="#0f172a">没有任何 Agent 自行裁判通过</text>
+  <text x="46" y="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#334155">1. 按行为族加权一致率在共享语料 T 上择优选出主迁移体</text>
+  <text x="46" y="338" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#334155">2. 修复与增测交替迭代；仅当留出验证集不回退时保留补丁</text>
+  <text x="46" y="356" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#334155">3. 终审禁用调用原程序的 FFI/子进程及硬编码作弊输出</text>
+  <text x="46" y="374" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#1d4ed8">4. 一次性隐藏测 Thidden：恢复率 87.68% vs 单智能体 68.17%</text>
+
+  <line x1="240" y1="387" x2="240" y2="399" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- A4: Frozen Reference Output -->
+  <rect x="38" y="401" width="404" height="84" rx="7" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="46" y="409" width="112" height="18" rx="5" fill="#dcfce7" stroke="#86efac" stroke-width="0.9"/>
+  <text x="102" y="421.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#15803d">迁移参考实现 f</text>
+  <text x="166" y="422" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.6" font-weight="700" fill="#0f172a">冻结为 Lean 仓库 R 中的行为规约</text>
+  <text x="46" y="443" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">17 个应用仓库 (51 场景) 与 189 个 Verina 函数保持字节冻结</text>
+  <rect x="46" y="453" width="388" height="23" rx="5" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.9"/>
+  <text x="240" y="468" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" font-weight="600" fill="#b45309">边界：迁移忠实度靠测试支撑 (7zip 62.74%，余 938 项待证)，非形式证明</text>
+
+  <!-- Connector across gutter from Panel A4 to Panel B1 -->
+  <path d="M 442 443 L 465 443 L 465 142 L 486 142" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- Right Panel: Agentic Verified Optimization & Kernel Gate -->
+  <rect x="478" y="76" width="454" height="420" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="490" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">B. 可验证优化：改写与证明联合搜索 + 四重内核验收</text>
+
+  <!-- B1: Objective & Scope -->
+  <rect x="488" y="104" width="434" height="76" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="498" y="111" width="96" height="18" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="546" y="123.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">目标与范围</text>
+  <text x="602" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.6" font-weight="700" fill="#0f172a">用现成参考实现 f 替代手工形式规约</text>
+  <rect x="498" y="133" width="414" height="21" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="705" y="147" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.2" font-weight="700" fill="#1d4ed8">minimize_{f', π} t_B(f')   s.t.   π : f = f'   (式 1; 对 Agent 隐藏负载 B)</text>
+  <text x="498" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#334155">涵盖纯函数、Id/StateM/Except 单子及 RC 原地数组更新；排除不透明 IO 与外部调用</text>
+
+  <line x1="705" y1="180" x2="705" y2="192" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- B2: Joint Implementation + Proof Search -->
+  <rect x="488" y="194" width="434" height="114" rx="7" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="498" y="201" width="108" height="18" rx="5" fill="#1d4ed8"/>
+  <text x="552" y="213.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#ffffff">联合搜索闭环</text>
+  <text x="614" y="214" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.6" font-weight="700" fill="#0f172a">编码智能体协同演进更快实现 f' 与证明 π</text>
+
+  <rect x="498" y="226" width="194" height="52" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="595" y="242" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">更快替换实现 f'</text>
+  <text x="595" y="256" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#334155">算法替换 · 表示变换 · 求值序</text>
+  <text x="595" y="269" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#475569">如指数递归 2^n → O(n^2) 动态规划</text>
+
+  <line x1="692" y1="252" x2="716" y2="252" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <rect x="718" y="226" width="194" height="52" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="815" y="242" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">全输入等价证明 π</text>
+  <text x="815" y="256" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#334155">∀x, f(x) = f'(x) 及辅助引理</text>
+  <text x="815" y="269" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#475569">引理可跨改写复用 (如 Gron 字符引理)</text>
+
+  <rect x="498" y="284" width="414" height="17" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="705" y="295.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#1e40af">Lean 报错与证明目标同时驱动改写或修证；任务可扩展为带谓词守卫特化 ∀x, P(x)→f(x)=g(x)</text>
+
+  <line x1="705" y1="308" x2="705" y2="320" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- B3: Four-Check Kernel Gate -->
+  <rect x="488" y="322" width="434" height="163" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="498" y="329" width="116" height="18" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="556" y="341.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">内核验收 (附录 A)</text>
+  <text x="622" y="342" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.6" font-weight="700" fill="#0f172a">在独立干净副本中阻止作弊</text>
+
+  <rect x="498" y="352" width="414" height="23" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="502" y="355" width="118" height="17" rx="4" fill="#dbeafe"/>
+  <text x="561" y="366.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">1. 构建与 @[csimp]</text>
+  <text x="628" y="366.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">原 f 与调用方字节不变；注入 @[csimp] 重编 R'</text>
+
+  <rect x="498" y="379" width="414" height="23" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="502" y="382" width="118" height="17" rx="4" fill="#e0f2fe"/>
+  <text x="561" y="393.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#0369a1">2. 公理白名单</text>
+  <text x="628" y="393.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">仅许 {propext, Quot.sound, Classical.choice}；禁 sorryAx</text>
+
+  <rect x="498" y="406" width="414" height="23" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="502" y="409" width="118" height="17" rx="4" fill="#dcfce7"/>
+  <text x="561" y="420.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#15803d">3. 纯可计算限制</text>
+  <text x="628" y="420.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">禁用 partial / unsafe / @[implemented_by] / @[extern]</text>
+
+  <rect x="498" y="433" width="414" height="23" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="502" y="436" width="118" height="17" rx="4" fill="#fee2e2"/>
+  <text x="561" y="447.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#b91c1c">4. 仅内核检查</text>
+  <text x="628" y="447.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">禁用 native_decide 及篡改相等性的自定义类型类实例</text>
+
+  <text x="705" y="474" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" font-weight="700" fill="#1d4ed8">性能实测 (EPYC 9654 单核 9 轮配对)：微基准测 f vs f' · 宏基准测 R vs R'</text>
+
+  <!-- Footer -->
+  <text x="30" y="513" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.6" fill="#475569">* 信任边界：Lean 4.18.0 编译器/运行时及测试验证的 AQUEDUCT 迁移结果属于可信基；证明 π 仅保证 Lean 改写相对 Lean 参考实现在全输入上等价。</text>
+</svg>

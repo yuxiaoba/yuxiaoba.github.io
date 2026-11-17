@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="ForgeKernel dual-loop architecture: arch-vs-coding separation, probe-certified hardware KB, and cross-run reference sealing" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="32" font-size="16.5" font-weight="700" fill="#0f172a">ForgeKernel: Arch-vs-Coding Split, Probe-Certified KB &amp; Self-Evolution Loop</text>
+  <text x="24" y="51" font-size="10.0" fill="#475569">arXiv:2611.04998v1 (§3, Figs. 1–2, §4.5) · Decoupling Re-openable Architecture &amp; Hardware Mechanisms from Local Source Edits</text>
+  <line x1="24" y1="60" x2="936" y2="60" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Row 1, Col 1: Reference Kernel -->
+  <rect x="38" y="70" width="196" height="168" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="38" y="70" width="196" height="26" rx="8" fill="#1e3a8a"/>
+  <rect x="38" y="88" width="196" height="8" fill="#1e3a8a"/>
+  <text x="48" y="87" font-size="10.2" font-weight="700" fill="#ffffff">Reference Kernel (Black Box)</text>
+  <rect x="46" y="104" width="96" height="18" rx="4" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+  <text x="94" y="116" text-anchor="middle" font-size="8.8" font-weight="700" fill="#0369a1">Measurable Box</text>
+  <text x="46" y="138" font-size="8.8" fill="#1e293b">• Inputs: expert lib / prev gen</text>
+  <text x="46" y="156" font-size="8.8" fill="#1e293b">• Allowed: cold-L2, NCU, probes</text>
+  <text x="46" y="174" font-size="8.8" fill="#1e293b">• Allowed: SASS &amp; resource usage</text>
+  <text x="46" y="192" font-size="8.8" font-weight="600" fill="#b45309">• Blocked: source code to coder</text>
+  <text x="46" y="213" font-size="8.2" fill="#475569">(V4.1 case allows gen-0 source)</text>
+
+  <!-- Arrow Ref -> Arch -->
+  <line x1="234" y1="154" x2="255" y2="154" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <!-- Row 1, Col 2: Architecture Agent -->
+  <rect x="258" y="70" width="404" height="168" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="258" y="70" width="404" height="26" rx="8" fill="#1d4ed8"/>
+  <rect x="258" y="88" width="404" height="8" fill="#1d4ed8"/>
+  <text x="270" y="87" font-size="10.2" font-weight="700" fill="#ffffff">Architecture Agent (Claude Fable 5.1 · Design &amp; Plan Revision)</text>
+
+  <rect x="268" y="104" width="186" height="124" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="276" y="111" width="56" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="304" y="122.5" text-anchor="middle" font-size="8.4" font-weight="700" fill="#1d4ed8">Ref Probe</text>
+  <text x="339" y="123" font-size="9.3" font-weight="700" fill="#0f172a">Arch Plan (§3.2)</text>
+  <text x="276" y="143" font-size="8.5" fill="#334155">• Decomp., dataflow &amp; storage</text>
+  <text x="276" y="161" font-size="8.5" fill="#334155">• Tiling, warp roles &amp; reg budget</text>
+  <text x="276" y="179" font-size="8.5" fill="#334155">• Shared-memory layout &amp; map</text>
+  <text x="276" y="197" font-size="8.5" fill="#334155">• Split direct obs vs. hypotheses</text>
+  <text x="276" y="215" font-size="8.5" font-weight="600" fill="#1d4ed8">• Cite hw_kb entries; no code</text>
+
+  <rect x="466" y="104" width="186" height="124" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="474" y="111" width="66" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="507" y="122.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1d4ed8">Milestones</text>
+  <text x="546" y="123" font-size="9.5" font-weight="700" fill="#0f172a">M0 → M1 → ... → Mk</text>
+  <text x="474" y="143" font-size="8.5" fill="#334155">• M0: core struct &amp; correctness</text>
+  <text x="474" y="161" font-size="8.5" fill="#334155">• M1..Mk: local tuning by deps</text>
+  <text x="474" y="179" font-size="8.5" fill="#334155">• Set contracts &amp; mech. checks</text>
+  <text x="474" y="197" font-size="8.5" fill="#b45309">• Stall → trigger arch revision</text>
+  <text x="474" y="215" font-size="8.5" fill="#334155">• Dataflow edits restart from M0</text>
+
+  <!-- Arrow KB -> Arch -->
+  <line x1="686" y1="154" x2="665" y2="154" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr-teal)"/>
+  <text x="674" y="145" text-anchor="middle" font-size="8.0" font-weight="700" fill="#0f766e">cite</text>
+
+  <!-- Row 1, Col 3: Hardware Knowledge Base -->
+  <rect x="686" y="70" width="252" height="168" rx="8" fill="#ffffff" stroke="#0f766e" stroke-width="1.2"/>
+  <rect x="686" y="70" width="252" height="26" rx="8" fill="#0f766e"/>
+  <rect x="686" y="88" width="252" height="8" fill="#0f766e"/>
+  <text x="696" y="87" font-size="10.2" font-weight="700" fill="#ffffff">Hardware Knowledge Base (hw_kb)</text>
+  <rect x="696" y="104" width="116" height="18" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+  <text x="754" y="116" text-anchor="middle" font-size="8.6" font-weight="700" fill="#166534">Probe-Certified Gate</text>
+  <text x="696" y="138" font-size="8.7" fill="#1e293b">• Indexed by GPU arch (e.g., SM90)</text>
+  <text x="696" y="156" font-size="8.7" fill="#1e293b">• Entry: mechanism, trigger, min repro</text>
+  <text x="696" y="174" font-size="8.7" fill="#1e293b">  applicability rules &amp; known limits</text>
+  <text x="696" y="194" font-size="8.7" font-weight="600" fill="#0f766e">• Admitted after standalone GPU probe</text>
+  <text x="696" y="214" font-size="8.5" font-weight="600" fill="#1d4ed8">• Reciprocal: DSA↔GQA · GEMM↔MHA</text>
+
+  <!-- Corridor Arrows & Pills (y=238..286) -->
+  <line x1="340" y1="238" x2="340" y2="283" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <rect x="270" y="252" width="140" height="18" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="340" y="264" text-anchor="middle" font-size="8.4" font-weight="700" fill="#1e3a8a">M0..Mk Plan (No Source)</text>
+
+  <line x1="510" y1="286" x2="510" y2="241" stroke="#b45309" stroke-width="1.6" marker-end="url(#arr-amber)"/>
+  <rect x="424" y="252" width="172" height="18" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="0.9"/>
+  <text x="510" y="264" text-anchor="middle" font-size="8.4" font-weight="700" fill="#92400e">Plateau → Re-plan (Can Reopen M0)</text>
+
+  <path d="M 606 286 L 606 261 L 812 261 L 812 241" fill="none" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr-teal)"/>
+  <rect x="626" y="252" width="160" height="18" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="0.9"/>
+  <text x="706" y="264" text-anchor="middle" font-size="8.4" font-weight="700" fill="#166534">Harvest Probe-Certified Entry</text>
+
+  <!-- Row 2, Col 1: Case Studies -->
+  <rect x="38" y="286" width="196" height="178" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="38" y="286" width="196" height="26" rx="8" fill="#334155"/>
+  <rect x="38" y="304" width="196" height="8" fill="#334155"/>
+  <text x="48" y="303" font-size="10.0" font-weight="700" fill="#ffffff">Arch Replanning Cases (§4.5)</text>
+
+  <rect x="46" y="320" width="180" height="64" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="53" y="335" font-size="8.6" font-weight="700" fill="#1d4ed8">GQA fwd (16:1) Staged Plan</text>
+  <text x="53" y="352" font-size="8.3" fill="#334155">1. Persistent CTA loop (+0.8%)</text>
+  <text x="53" y="369" font-size="8.3" fill="#334155">2. Q double-buffer (+6.1%) → +9.9%</text>
+
+  <rect x="46" y="391" width="180" height="66" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="53" y="406" font-size="8.6" font-weight="700" fill="#1d4ed8">DSA sparse fwd Reopens D0.1</text>
+  <text x="53" y="422" font-size="8.3" fill="#334155">• gen-0 grid=8192 plateaus (~4.5%)</text>
+  <text x="53" y="437" font-size="8.3" fill="#334155">• Store probe isolates gaps →</text>
+  <text x="53" y="451" font-size="8.2" font-weight="700" fill="#1e3a8a">  Persistent #SMs overlap (+7.2%)</text>
+
+  <!-- Row 2, Col 2a: Coding Agent -->
+  <rect x="258" y="286" width="192" height="178" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="258" y="286" width="192" height="26" rx="8" fill="#1e3a8a"/>
+  <rect x="258" y="304" width="192" height="8" fill="#1e3a8a"/>
+  <text x="268" y="303" font-size="10.0" font-weight="700" fill="#ffffff">Coding Agent (Opus 5)</text>
+  <rect x="266" y="320" width="96" height="18" rx="4" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+  <text x="314" y="332" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0369a1">Contract-Bound</text>
+  <text x="266" y="354" font-size="8.5" fill="#1e293b">• Reads milestone spec &amp; contracts</text>
+  <text x="266" y="372" font-size="8.5" fill="#1e293b">• Consults cited hw_kb entries</text>
+  <text x="266" y="390" font-size="8.5" fill="#1e293b">• Writes compute, data &amp; sync</text>
+  <text x="266" y="408" font-size="8.5" fill="#1e293b">• Handles compile, debug &amp; tuning</text>
+  <text x="266" y="426" font-size="8.5" fill="#1e293b">• Cannot alter arch constraints</text>
+  <text x="266" y="446" font-size="8.5" font-weight="600" fill="#b45309">• No reference source access</text>
+
+  <!-- Arrow Coding -> Harness -->
+  <line x1="450" y1="375" x2="461" y2="375" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <!-- Row 2, Col 2b: Execution Harness & Gate -->
+  <rect x="464" y="286" width="198" height="178" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="464" y="286" width="198" height="26" rx="8" fill="#1d4ed8"/>
+  <rect x="464" y="304" width="198" height="8" fill="#1d4ed8"/>
+  <text x="474" y="303" font-size="10.0" font-weight="700" fill="#ffffff">Harness &amp; Milestone Gate</text>
+  <rect x="472" y="320" width="104" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="524" y="332" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1d4ed8">Paired GPU Gate</text>
+  <text x="472" y="353" font-size="8.4" fill="#0f172a">1. Tolerance check; block ref calls</text>
+  <text x="472" y="371" font-size="8.4" fill="#0f172a">2. Paired cold-L2 timing in 1 job</text>
+  <text x="472" y="388" font-size="8.2" fill="#475569">   (must clear measurement noise)</text>
+  <text x="472" y="406" font-size="8.4" fill="#0f172a">3. Mech. check: NCU / resource fit</text>
+  <text x="472" y="424" font-size="8.4" font-weight="600" fill="#166534">• Pass → advance Mᵢ₊₁ or ship</text>
+  <text x="472" y="441" font-size="8.3" fill="#334155">• Local fail → retry Coding Agent</text>
+  <text x="472" y="456" font-size="8.2" font-weight="600" fill="#b45309">• Stagnant → escalate to Arch</text>
+
+  <!-- Arrow Harness -> Shipped -->
+  <line x1="662" y1="375" x2="683" y2="375" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr-teal)"/>
+  <text x="673" y="366" text-anchor="middle" font-size="8.0" font-weight="700" fill="#0f766e">pass</text>
+
+  <!-- Row 2, Col 3: Shipped Kernel & Halting -->
+  <rect x="686" y="286" width="252" height="178" rx="8" fill="#ffffff" stroke="#0f766e" stroke-width="1.2"/>
+  <rect x="686" y="286" width="252" height="26" rx="8" fill="#0f766e"/>
+  <rect x="686" y="304" width="252" height="8" fill="#0f766e"/>
+  <text x="696" y="303" font-size="10.0" font-weight="700" fill="#ffffff">Shipped Kernel &amp; Halting Rules</text>
+
+  <rect x="696" y="320" width="232" height="68" rx="5" fill="#ecfdf5" stroke="#16a34a" stroke-width="1"/>
+  <text x="704" y="338" font-size="9.0" font-weight="700" fill="#065f46">Passed Final Gate → Sealed Kernel</text>
+  <text x="704" y="356" font-size="8.4" fill="#14532d">• Cross-run chain: gen 0 → gen 1 → gen 2</text>
+  <text x="704" y="374" font-size="8.4" fill="#14532d">• Source remains hidden from next agents</text>
+
+  <rect x="696" y="396" width="232" height="58" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="704" y="413" font-size="8.8" font-weight="700" fill="#334155">Cross-Run Halting Rules (§3.4)</text>
+  <text x="704" y="430" font-size="8.3" fill="#475569">• Next-gen gain ≤ noise floor threshold</text>
+  <text x="704" y="446" font-size="8.3" fill="#475569">• Or runtime / compute budget exhausted</text>
+
+  <!-- Outer Self-Evolution Loop Path -->
+  <path d="M 812 464 L 812 482 L 22 482 L 22 154 L 35 154" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <rect x="262" y="472" width="436" height="20" rx="5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="480" y="485.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1e3a8a">Outer Loop · Seal Shipped Kernel as Black-Box Reference (Reopen Arch Without Inheriting Source)</text>
+
+  <!-- Legend & Footnote -->
+  <rect x="22" y="502" width="12" height="10" rx="2" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="39" y="511" font-size="8.8" fill="#334155">Blue: Arch Agent &amp; deterministic gates</text>
+  <rect x="236" y="502" width="12" height="10" rx="2" fill="#ecfdf5" stroke="#0f766e" stroke-width="1"/>
+  <text x="253" y="511" font-size="8.8" fill="#334155">Teal: Probe-certified hw_kb &amp; sealed ref</text>
+  <rect x="468" y="502" width="12" height="10" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="485" y="511" font-size="8.8" fill="#334155">Amber: Revision / source-hiding boundary</text>
+  <text x="22" y="527" font-size="8.7" fill="#64748b">Note: Reference-free /goal arms use post-stop confirmation; Ascend uses hosted CANN-Bench; DeepSeek-V4.1 uses 1 coder reading gen-0 source.</text>
+</svg>

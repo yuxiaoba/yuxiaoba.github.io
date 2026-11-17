@@ -1,0 +1,57 @@
+{
+  "id": "lab-inference-tradeoffs",
+  "review_code": "T1-17",
+  "source_url": "https://x.com/sunilmallya/status/2113775305555116527",
+  "source_title": "The LAB Problem: A CAP-Like Tradeoff in LLM Inference",
+  "source_author": "Sunil Mallya (@sunilmallya)",
+  "source_org": "X Article",
+  "source_date": "2026-10-23",
+  "note_date": "2026-10-25",
+  "updated_at": "2026-11-15T19:26:00+08:00",
+  "frozen_primary_json": {
+    "path": ".preview/research-jobs/runs/20261025-083001-94da20398c-62f3d8/work/sources/x_exports/2113775305555116527/post.json",
+    "sha256": "8833ce99ef2211fc503b315722cf80d0c274eb716f057ae870fbc83dfd24e850"
+  },
+  "frozen_primary_html": {
+    "path": ".preview/research-jobs/runs/20261025-083001-94da20398c-62f3d8/work/sources/downloads/x-sunilmallya-2113775305555116527-lab-problem-main.html",
+    "sha256": "f9f8cf7a1ff80e5f8994c87e76214ae3026c0a857344990b59baffe8c237baf6"
+  },
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/lab-inference-tradeoffs.md",
+      "sha256": "f6895f0ab10f1ddecf8324d6f77e72bf47ce04d6e568a0b9859654bba1d6adac"
+    },
+    "en_markdown": {
+      "path": "_tech/en/lab-inference-tradeoffs.md",
+      "sha256": "1cd68d6ee3ea3d76899111929c1dcbf8b14844bae8e625d88fd94548e2e5e1ec"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/lab-inference-tradeoffs/lab-tradeoff-positions-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "80590cb049c3c8ea1bc312d57616491347d825cd0f09021fa342bb2b4eb0170d"
+      },
+      {
+        "path": "assets/images/tech/lab-inference-tradeoffs/lab-tradeoff-positions-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "a650aef28d4b824127914b96a77c439ed4cac181f65a99c8345d3de612e0645f"
+      },
+      {
+        "path": "assets/images/tech/lab-inference-tradeoffs/behavior-aware-failover-architecture-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "63c6a8d972d0a06a5357286f9513d5a16c0ed4947631ba782a7668f098b4b2f0"
+      },
+      {
+        "path": "assets/images/tech/lab-inference-tradeoffs/behavior-aware-failover-architecture-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "9e1e4f216b4af0d1e6b094e70551c226be1fd60e0469edeaa791de3ab700a50b"
+      }
+    ]
+  }
+}

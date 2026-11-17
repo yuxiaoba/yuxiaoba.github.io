@@ -1,0 +1,62 @@
+{
+  "id": "2026-10-29-google-gemini-4-carbon",
+  "review_code": "T1-19",
+  "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+  "source_post_url": "https://x.com/GoogleDeepMind/status/2115489356437651654",
+  "source_title": "Gemini 4 Carbon: our next frontier model",
+  "source_author": "Koray Kavukcuoglu",
+  "source_org": "Google DeepMind / Google",
+  "source_date": "2026-10-28",
+  "note_date": "2026-10-29",
+  "updated_at": "2026-11-15T19:40:00+08:00",
+  "frozen_primary_html": {
+    "path": ".preview/research-jobs/runs/20261029-083002-3f7968d112-1da080/work/sources/fetched/google-gemini-4-carbon.html",
+    "sha256": "2913693db2a160d1bb81aa4ac5bbc7bd40db98cbf7adb1bf3259b9c4639a07e5"
+  },
+  "frozen_depth_repair_html": {
+    "path": ".preview/research-jobs/depth-repair-2026-11-05/work/evidence/2026-10-29-google-gemini-4-carbon.html",
+    "sha256": "b2d06cc600678fd35b8185e5ce063070816142d8c2e68c725ead2c0b20d87fe7"
+  },
+  "frozen_primary_json": {
+    "path": ".preview/research-jobs/runs/20261029-083002-3f7968d112-1da080/work/sources/x_exports/2115489356437651654/post.json",
+    "sha256": "f68a729a9c5684ca0e3530131ef37cfe0ff27d2b1d507991a803f9845dc1804f"
+  },
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/2026-10-29-google-gemini-4-carbon.md",
+      "sha256": "e042ea46c6f329bcdc4f62686f96617db46ab64b9e546ae94cbd16ac9fe2ef74"
+    },
+    "en_markdown": {
+      "path": "_tech/en/2026-10-29-google-gemini-4-carbon.md",
+      "sha256": "4ca77dd36c219ed93cbdfd653ca4afcd670bc479d5d8923747462c1ba849c9a3"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/2026-10-29-google-gemini-4-carbon/carbon-capability-cyber-profile-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "fc53c9587638200a889b5d3a10ccb9e4b6acd4d2db31f764bc25af8cc53e863f"
+      },
+      {
+        "path": "assets/images/tech/2026-10-29-google-gemini-4-carbon/carbon-safety-rollout-stack-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "d9274ddaf8f077a4e467c24aa6e909cc9ea542b69289e5fef09da51e83b82b46"
+      },
+      {
+        "path": "assets/images/tech/2026-10-29-google-gemini-4-carbon/carbon-capability-cyber-profile-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "27c41c8527e0b78772e2906ba5fe775ece8ec7170cd841db09d17d435c329248"
+      },
+      {
+        "path": "assets/images/tech/2026-10-29-google-gemini-4-carbon/carbon-safety-rollout-stack-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "17c7bcb4ccae3383354880ee0390ab5e69e57aec53dd2e4c5c499d955d47c1a9"
+      }
+    ]
+  }
+}

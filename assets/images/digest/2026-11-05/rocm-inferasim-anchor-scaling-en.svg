@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="ROCm InferaSim architecture: kernel-defining vs transferable choices, reduce-measure-restore laws, and DES/agent search" style="background:#ffffff;font-family:'Lato', 'Noto Sans', 'DejaVu Sans', -apple-system, BlinkMacSystemFont, sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+  </defs>
+
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="22" y="34" font-size="16.4" font-weight="700" fill="#0f172a">ROCm InferaSim: Kernel-Set Anchors, Reduce–Measure–Restore &amp; Dual-Mode Search</text>
+  <text x="22" y="53" font-size="10.0" fill="#475569">arXiv:2611.04032v1 (§3–§4, Figs. 3–4, Tables 1 &amp; 4) · Separating kernel-changing choices (†) from transferable work-scaling choices</text>
+  <line x1="22" y1="62" x2="938" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Column 1: Config Space Split -->
+  <rect x="20" y="72" width="286" height="422" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="72" width="286" height="28" rx="9" fill="#1e3a8a"/>
+  <rect x="20" y="92" width="286" height="8" fill="#1e3a8a"/>
+  <text x="32" y="90.5" font-size="10.6" font-weight="700" fill="#ffffff">1. Serving Config Space Split (Table 4)</text>
+
+  <rect x="30" y="109" width="266" height="172" rx="7" fill="#fffbeb" stroke="#d97706" stroke-width="1.1"/>
+  <rect x="38" y="117" width="90" height="18" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="83" y="129.5" text-anchor="middle" font-size="8.9" font-weight="700" fill="#b45309">Anchor-Defining†</text>
+  <text x="135" y="130" font-size="10.1" font-weight="700" fill="#92400e">Alters GPU Kernels</text>
+  <text x="38" y="153" font-size="8.9" fill="#334155">• Checkpoint &amp; dtypes (BF16 / FP8 / FP4)</text>
+  <text x="38" y="173" font-size="8.9" fill="#334155">• Attention / MoE backends (aiter, Triton, CK)</text>
+  <text x="38" y="193" font-size="8.9" fill="#334155">• Graph capture mode (none / piecewise / full)</text>
+  <text x="38" y="213" font-size="8.9" fill="#334155">• Speculative method (MTP / EAGLE-3) &amp; DCP</text>
+  <text x="38" y="233" font-size="8.9" fill="#334155">• Serving engine image build &amp; GPU type</text>
+  <rect x="38" y="246" width="250" height="25" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+  <text x="163" y="262" text-anchor="middle" font-size="8.7" font-weight="600" fill="#92400e">Cross-engine/GPU reuse refused; needs own anchor</text>
+
+  <rect x="30" y="292" width="266" height="191" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="38" y="300" width="90" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="83" y="312.5" text-anchor="middle" font-size="8.9" font-weight="700" fill="#1d4ed8">Transferable</text>
+  <text x="135" y="313" font-size="10.1" font-weight="700" fill="#1e3a8a">Scales Work / Scheduling</text>
+  <text x="38" y="336" font-size="8.9" fill="#1e293b">• Batch size, concurrency C &amp; prompt length</text>
+  <text x="38" y="356" font-size="8.9" fill="#1e293b">• TP (1–8), EP, attention DP &amp; cross-node PP</text>
+  <text x="38" y="376" font-size="8.9" fill="#1e293b">• Replica count, arrivals &amp; P/D split pools</text>
+  <text x="38" y="396" font-size="8.9" fill="#1e293b">• Host DRAM KV tier (HiCache / LMCache / MoRI)</text>
+  <text x="38" y="416" font-size="8.9" fill="#1e293b">• Scheduler caps (running cap, token budget)</text>
+  <text x="38" y="436" font-size="8.9" fill="#1e293b">• Speculative draft depth (0–8) &amp; collectives</text>
+  <rect x="38" y="449" width="250" height="25" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="163" y="465" text-anchor="middle" font-size="8.7" font-weight="600" fill="#1e3a8a">Derived analytically on CPU at 0 GPU-hours</text>
+
+  <!-- Arrow Col 1 -> Col 2 -->
+  <line x1="306" y1="200" x2="322" y2="200" stroke="#b45309" stroke-width="1.8" marker-end="url(#arr-amber)"/>
+  <line x1="306" y1="388" x2="322" y2="388" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+  <!-- Column 2: Reduce Measure Restore -->
+  <rect x="324" y="72" width="326" height="422" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="324" y="72" width="326" height="28" rx="9" fill="#1d4ed8"/>
+  <rect x="324" y="92" width="326" height="8" fill="#1d4ed8"/>
+  <text x="336" y="90.5" font-size="10.6" font-weight="700" fill="#ffffff">2. Reduce–Measure–Restore &amp; Step Model (§3.1–3.2)</text>
+
+  <rect x="334" y="109" width="306" height="62" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="342" y="116" width="60" height="17" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="372" y="128" text-anchor="middle" font-size="8.8" font-weight="700" fill="#334155">Reduce</text>
+  <text x="410" y="128" font-size="10.0" font-weight="700" fill="#0f172a">Shrink Target to ≤1 Node</text>
+  <text x="342" y="147" font-size="8.6" fill="#334155">• Drop cross-node PP stages, P/D splits &amp; host KV tier</text>
+  <text x="342" y="162" font-size="8.6" fill="#475569">• Narrow EP &amp; TP to 1 colocated replica holding stage kernels</text>
+
+  <line x1="410" y1="171" x2="410" y2="186" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <line x1="564" y1="171" x2="564" y2="186" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+
+  <rect x="334" y="188" width="152" height="114" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="342" y="204" font-size="9.5" font-weight="700" fill="#1e3a8a">Anchored Mode (≤1 Node)</text>
+  <text x="342" y="220" font-size="8.3" fill="#1e293b">• Single-wave decode staircase</text>
+  <text x="342" y="235" font-size="8.3" fill="#1e293b">• 5-len prefill fit (cache OFF):</text>
+  <text x="346" y="249" font-size="8.4" font-weight="600" fill="#1d4ed8">T(n) = F + c₁n + c₂n²</text>
+  <text x="342" y="264" font-size="8.3" fill="#334155">• Real weights (router skew)</text>
+  <text x="342" y="279" font-size="8.3" fill="#334155">• 75 cached anchors total</text>
+  <text x="342" y="294" font-size="8.2" font-weight="600" fill="#1e3a8a">Absolute error &amp; cross-engine</text>
+
+  <rect x="494" y="188" width="146" height="114" rx="7" fill="#ecfdf5" stroke="#0f766e" stroke-width="1.1"/>
+  <text x="502" y="204" font-size="9.5" font-weight="700" fill="#065f46">Simulate Mode (0 GPU)</text>
+  <text x="502" y="220" font-size="8.3" fill="#334155">• Rebuilds ops from code</text>
+  <text x="502" y="236" font-size="8.3" fill="#334155">• Origami GEMM latency</text>
+  <text x="502" y="252" font-size="8.3" fill="#334155">• Analytical attn/comm/PP</text>
+  <text x="502" y="268" font-size="8.3" fill="#334155">• 4.98 µs floor / kernel</text>
+  <text x="502" y="284" font-size="8.2" font-weight="600" fill="#0f766e">Intra-engine rank only</text>
+  <text x="502" y="297" font-size="8.0" fill="#475569">(287 cfgs @ 0 GPU-h)</text>
+
+  <line x1="410" y1="302" x2="410" y2="316" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <line x1="564" y1="302" x2="564" y2="316" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+
+  <rect x="334" y="318" width="306" height="165" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="342" y="325" width="60" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="372" y="337" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1d4ed8">Restore</text>
+  <text x="410" y="337.5" font-size="10.0" font-weight="700" fill="#1e3a8a">Step Cost Model &amp; Scaling Laws (App. B)</text>
+  <text x="342" y="357" font-size="8.7" fill="#0f172a">• TP Decode (Eq. 1): s_w'(b) = f + (s_w(b) - f)·ρ</text>
+  <text x="350" y="372" font-size="8.2" fill="#475569">Keeps unsharded floor f; cuts TP4→8 median error 44.1% → 0.9%</text>
+  <text x="342" y="391" font-size="8.7" fill="#0f172a">• EP Skew: eval I_n, I_d at both EPs + few-expert HBM penalty</text>
+  <text x="342" y="410" font-size="8.7" fill="#0f172a">• Multi-Node PP (Eq. 4): s(C/p) + p(t_p2p + 970µs) + p·H(C/p)</text>
+  <text x="342" y="429" font-size="8.7" fill="#0f172a">• Collectives (α + m/B): xGMI mesh (600 GB/s) + Pollara NICs</text>
+  <text x="342" y="448" font-size="8.7" fill="#0f172a">• Analytical HBM cap: bounds max sustainable concurrency</text>
+  <text x="342" y="469" font-size="8.6" font-weight="700" fill="#1d4ed8">Predicting a 24-GPU split costs no more than predicting 1 GPU</text>
+
+  <!-- Arrow Col 2 -> Col 3 -->
+  <line x1="650" y1="220" x2="666" y2="220" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+  <line x1="650" y1="395" x2="666" y2="395" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+  <!-- Column 3: DES & Agent -->
+  <rect x="668" y="72" width="272" height="422" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="668" y="72" width="272" height="28" rx="9" fill="#1e3a8a"/>
+  <rect x="668" y="92" width="272" height="8" fill="#1e3a8a"/>
+  <text x="680" y="90.5" font-size="10.6" font-weight="700" fill="#ffffff">3. DES Replay &amp; Agent Search (§3.4–4)</text>
+
+  <rect x="678" y="109" width="252" height="172" rx="7" fill="#ffffff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="686" y="117" width="60" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="716" y="129.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1d4ed8">DES Engine</text>
+  <text x="754" y="130" font-size="10.0" font-weight="700" fill="#1e3a8a">Queueing &amp; Cache Replay</text>
+  <text x="686" y="153" font-size="8.7" fill="#1e293b">• Engine scheduler (chunked / mixed / ATOM)</text>
+  <text x="686" y="173" font-size="8.7" fill="#1e293b">• Leaf-first LRU radix cache (90.6% vs 0%)</text>
+  <text x="686" y="193" font-size="8.7" fill="#1e293b">• Host DRAM tier + P/D KV link (MoRI/NIXL)</text>
+  <text x="686" y="213" font-size="8.7" fill="#1e293b">• Multi-turn think times &amp; turn dependencies</text>
+  <text x="686" y="233" font-size="8.7" fill="#1e293b">• Per-engine host CPU time billed to TTFT</text>
+  <rect x="686" y="246" width="236" height="25" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.8"/>
+  <text x="804" y="262" text-anchor="middle" font-size="8.6" font-weight="600" fill="#1d4ed8">Outputs TTFT/TPOT/ITL tails &amp; tok/s/GPU</text>
+
+  <line x1="804" y1="281" x2="804" y2="294" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="678" y="296" width="252" height="187" rx="7" fill="#f8fafc" stroke="#1e3a8a" stroke-width="1.1"/>
+  <rect x="686" y="304" width="60" height="18" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="716" y="316.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#334155">Agent</text>
+  <text x="754" y="317" font-size="10.0" font-weight="700" fill="#0f172a">Two-Phase Search &amp; Mix</text>
+  <text x="686" y="340" font-size="8.7" fill="#334155">• 36 levers × 24 objectives (0.17–0.48 s/eval)</text>
+  <text x="686" y="360" font-size="8.7" fill="#334155">• Phase 1: 1-lever seeds · Phase 2: DSPy ReAct</text>
+  <text x="686" y="380" font-size="8.7" fill="#334155">• Reads last 40 ledger rows; proposes 5–8 cfgs</text>
+  <text x="686" y="400" font-size="8.7" fill="#334155">• Gates: 90% HBM + SLO (LLM never scores)</text>
+  <text x="686" y="420" font-size="8.7" fill="#334155">• Mix planner enforces TTFT ≤ 0.5× tier limit</text>
+  <rect x="686" y="434" width="236" height="38" rx="4" fill="#1e3a8a"/>
+  <text x="804" y="450" text-anchor="middle" font-size="8.8" font-weight="700" fill="#ffffff">Top-5 Shortlist + 6 Fusion Candidates</text>
+  <text x="804" y="464" text-anchor="middle" font-size="8.3" fill="#dbeafe">→ Confirm on GPUs (22/23 within 12% of best)</text>
+
+  <!-- Legend & Footnote -->
+  <rect x="20" y="502" width="12" height="10" rx="2" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+  <text x="37" y="511" font-size="8.9" fill="#334155">Amber: Kernel-defining†</text>
+  <rect x="160" y="502" width="12" height="10" rx="2" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="177" y="511" font-size="8.9" fill="#334155">Blue: Anchored scaling &amp; DES</text>
+  <rect x="335" y="502" width="12" height="10" rx="2" fill="#ecfdf5" stroke="#0f766e" stroke-width="1"/>
+  <text x="352" y="511" font-size="8.9" fill="#334155">Teal: Zero-GPU simulate (rank within 1 engine)</text>
+  <text x="20" y="527" font-size="8.7" fill="#64748b">Note: Five harvest checks (App. E) verify prompt length, real weights, prefix caching OFF, non-serialized probes, and ≤1 TP doubling / ≤4× concurrency coverage.</text>
+</svg>

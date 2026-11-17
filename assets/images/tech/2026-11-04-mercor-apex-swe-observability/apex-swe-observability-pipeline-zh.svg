@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="38" font-size="19" font-weight="700" fill="#0f172a" text-anchor="start">APEX-SWE Observability：容器化遥测环境与双轨评分管线</text>
+  <text x="24" y="58" font-size="11.3" font-weight="400" fill="#475569" text-anchor="start">对照 arXiv:2601.08806v3（Inspect, n=100）与 Mercor 2026-11 榜单（Terminus-2 / op-geth #553 示例）</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="312" y1="248" x2="333" y2="248" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="630" y1="248" x2="651" y2="248" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="24" y="82" width="286" height="336" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="82" width="286" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="102" width="286" height="12" fill="#dbeafe"/>
+  <text x="36" y="103" font-size="12.5" font-weight="700" fill="#1e3a8a" text-anchor="start">1. 任务来源与五语种分布</text>
+  <rect x="36" y="124" width="262" height="76" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="143" font-size="11.3" font-weight="700" fill="#1d4ed8" text-anchor="start">真实 GitHub Issue-PR 筛选</text>
+  <text x="44" y="162" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">仓库 &gt;=350 stars；&gt;=100 行代码、&gt;=3 文件</text>
+  <text x="44" y="180" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start">3+ 年经验工程师转制并查测试脆弱性</text>
+  <rect x="36" y="208" width="262" height="92" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="44" y="227" font-size="11.3" font-weight="700" fill="#1e3a8a" text-anchor="start">Held-Out 五语种配比 (n=100)</text>
+  <rect x="44" y="238" width="109.19999999999999" height="10" rx="3" fill="#2563eb"/>
+  <text x="159.2" y="247" font-size="9.8" font-weight="600" fill="#1e293b" text-anchor="start">Go 30%</text>
+  <rect x="44" y="252" width="91.0" height="10" rx="3" fill="#2563eb"/>
+  <text x="141.0" y="261" font-size="9.8" font-weight="600" fill="#1e293b" text-anchor="start">Python 25%</text>
+  <rect x="44" y="266" width="91.0" height="10" rx="3" fill="#2563eb"/>
+  <text x="141.0" y="275" font-size="9.8" font-weight="600" fill="#1e293b" text-anchor="start">TS 25%</text>
+  <rect x="44" y="280" width="72.8" height="10" rx="3" fill="#2563eb"/>
+  <text x="122.8" y="289" font-size="9.8" font-weight="600" fill="#1e293b" text-anchor="start">Java+C++ 20% (各10%)</text>
+  <rect x="36" y="308" width="262" height="98" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="44" y="327" font-size="11.3" font-weight="700" fill="#0f172a" text-anchor="start">公开示例任务 · op-geth #553 (Go)</text>
+  <text x="44" y="346" font-size="10.3" font-weight="400" fill="#334155" text-anchor="start">问题：txpool 余额检查漏算 operator fee</text>
+  <text x="44" y="364" font-size="10.3" font-weight="400" fill="#334155" text-anchor="start">关键入口：legacypool/list.go:list.Add</text>
+  <text x="44" y="382" font-size="10.3" font-weight="400" fill="#475569" text-anchor="start">约束：Isthmus 时间戳、重算及防溢出</text>
+  <rect x="336" y="82" width="292" height="336" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="336" y="82" width="292" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="336" y="102" width="292" height="12" fill="#dbeafe"/>
+  <text x="348" y="103" font-size="12.5" font-weight="700" fill="#1e3a8a" text-anchor="start">2. 五服务 Docker 沙箱与认知闭环</text>
+  <rect x="348" y="124" width="268" height="80" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="356" y="143" font-size="11.3" font-weight="700" fill="#1e3a8a" text-anchor="start">无预设失败单测，必须从遥测自证</text>
+  <text x="356" y="162" font-size="10.3" font-weight="400" fill="#1e40af" text-anchor="start">Agent 通过 tmux Bash + 文件工具 + MCP 交互</text>
+  <text x="356" y="180" font-size="10.3" font-weight="400" fill="#1e40af" text-anchor="start">示例明令禁用 2&gt;/dev/null 掩盖 MCP 报错</text>
+  <rect x="348" y="212" width="268" height="60" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="356" y="230" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">Loki + Promtail + Grafana</text>
+  <text x="356" y="247" font-size="10" font-weight="400" fill="#334155" text-anchor="start">500–1,000 行正常日志混入 10–20 行故障</text>
+  <text x="356" y="263" font-size="10" font-weight="400" fill="#0f172a" text-anchor="start">成功者逐级窄化（15,729 -&gt; 2,354 -&gt; 264 字符）</text>
+  <rect x="348" y="278" width="268" height="60" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="356" y="296" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">Plane + Mattermost (MCP)</text>
+  <text x="356" y="313" font-size="10" font-weight="400" fill="#334155" text-anchor="start">暴露开发者疑点讨论与原本设计意图</text>
+  <text x="356" y="329" font-size="10" font-weight="400" fill="#0f172a" text-anchor="start">100% 抽样通过轨迹调用了 Loki 外的 MCP</text>
+  <rect x="348" y="344" width="268" height="60" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="356" y="362" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">Client Repo (/app/repo)</text>
+  <text x="356" y="379" font-size="10" font-weight="400" fill="#334155" text-anchor="start">含 interface.md、compose 与黄金/测试补丁隔离</text>
+  <text x="356" y="395" font-size="10" font-weight="400" fill="#0f172a" text-anchor="start">成功轨迹平均先读 11.3 个文件再写补丁</text>
+  <rect x="654" y="82" width="282" height="336" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="654" y="82" width="282" height="32" rx="8" fill="#dbeafe"/>
+  <rect x="654" y="102" width="282" height="12" fill="#dbeafe"/>
+  <text x="666" y="103" font-size="12.5" font-weight="700" fill="#1e3a8a" text-anchor="start">3. 双轨判定与榜单口径差异</text>
+  <rect x="666" y="124" width="258" height="90" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <rect x="674" y="133" width="106" height="20" rx="5" fill="#15803d"/>
+  <text x="727.0" y="147.0" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">榜单主指标 · Pass@1</text>
+  <text x="786" y="147" font-size="10.2" font-weight="600" fill="#166534" text-anchor="start">3 轮均分 · F2P/P2P</text>
+  <text x="674" y="171" font-size="10.3" font-weight="400" fill="#14532d" text-anchor="start">仅以注入 test.patch 后的单测全过为准</text>
+  <text x="674" y="190" font-size="10.3" font-weight="400" fill="#14532d" text-anchor="start">论文 §5 明确：榜单排位不用 Rubric 评分</text>
+  <rect x="666" y="222" width="258" height="92" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="674" y="231" width="106" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="727.0" y="245.0" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">质量细则 · Rubric</text>
+  <text x="786" y="245" font-size="10.2" font-weight="600" fill="#1e3a8a" text-anchor="start">Gemini 3 Pro (T=0.1)</text>
+  <text x="674" y="269" font-size="10.3" font-weight="400" fill="#1e40af" text-anchor="start">50% 功能 · 30% 稳健 · 20% 代码规范</text>
+  <text x="674" y="288" font-size="10.3" font-weight="400" fill="#1e40af" text-anchor="start">op-geth #553 示例：583 单测 + 13 条 Rubric</text>
+  <rect x="666" y="322" width="258" height="84" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="674" y="341" font-size="11" font-weight="700" fill="#92400e" text-anchor="start">2026-11 榜单页面展示落差</text>
+  <text x="674" y="360" font-size="10.1" font-weight="400" fill="#78350f" text-anchor="start">Opus 5.5 Max (Terminus-2) 显示无 Rubric</text>
+  <text x="674" y="378" font-size="10.1" font-weight="400" fill="#78350f" text-anchor="start">且样例结果指向 bbot 任务而非 op-geth</text>
+  <rect x="24" y="430" width="912" height="72" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="36" y="441" width="146" height="22" rx="5" fill="#1e3a8a"/>
+  <text x="109.0" y="456.0" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">关键基线与环境偏移</text>
+  <text x="194" y="456" font-size="10.8" font-weight="600" fill="#0f172a" text-anchor="start">全榜 Held-Out (n=200) 均分 27.9% vs 开源 Dev 子集 (n=50) 均分 40.7%（小样本虚高 +12.8 个百分点，论文表 6）</text>
+  <text x="36" y="484" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">同模型跨配置波动巨大：Opus 5.5 (Terminus-2) Max 69.8% vs Med 48.0% (-21.8 pp)；Opus 5 Max Terminus-2 63.5% vs Inspect 44.0%；DeepSeek-V3.2 Inspect 20.0% vs Terminus-2 9.2%</text>
+  <text x="24" y="522" font-size="10.3" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 综合 arXiv:2601.08806v3（图 5/表 6）与 Mercor observability-swe 快照数据绘制（非原文配图）</text>
+</svg>

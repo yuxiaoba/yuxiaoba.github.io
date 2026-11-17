@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-sky" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284c7"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- Header -->
+  <text x="24" y="38" font-size="18.5" font-weight="700" fill="#0f172a">NVCRE 分层控制面：Certification → Workflow → Job 与 DSX OS 协作</text>
+  <text x="24" y="58" font-size="11.2" fill="#475569">基于 nvcre.nvidia.com/v1alpha1 的向下编排、向上归因、WorkloadRun 执行原语与三层顺序协同</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Left Panel: Layered API -->
+  <rect x="24" y="78" width="446" height="360" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="78" width="446" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="96" width="446" height="10" fill="#dbeafe"/>
+  <text x="36" y="97" font-size="12" font-weight="700" fill="#1e3a8a">1. 分级 CRD 编排与向上归因（nvcre.nvidia.com/v1alpha1）</text>
+
+  <!-- Tier 1: Certification -->
+  <rect x="36" y="114" width="422" height="76" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="46" y="122" width="110" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="101" y="136" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">1. Certification</text>
+  <text x="166" y="136" font-size="11" font-weight="700" fill="#1e3a8a">用户声明目标节点与验证类别</text>
+  <text x="46" y="158" font-size="10.2" fill="#334155">spec.target.nodeSelector 匹配集群节点，配置 domain + variant</text>
+  <text x="46" y="177" font-size="10.2" fill="#475569">向上汇总：按类别统计通过率，输出 PASSED / FAILED 与失败节点列表</text>
+
+  <!-- Connectors A <-> B -->
+  <line x1="138" y1="192" x2="138" y2="213" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+  <text x="146" y="206" font-size="9.6" fill="#1d4ed8">每类别生成 1 个 Workflow</text>
+  <line x1="354" y1="214" x2="354" y2="193" stroke="#0284c7" stroke-width="1.6" marker-end="url(#arrow-sky)"/>
+  <text x="346" y="206" font-size="9.6" fill="#0369a1" text-anchor="end">上报类别汇总</text>
+
+  <!-- Tier 2: Workflow -->
+  <rect x="36" y="216" width="422" height="80" rx="6" fill="#f8fafc" stroke="#64748b" stroke-width="1.1"/>
+  <rect x="46" y="224" width="96" height="20" rx="5" fill="#0284c7"/>
+  <text x="94" y="238" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">2. Workflow</text>
+  <text x="152" y="238" font-size="11" font-weight="700" fill="#0f172a">单类别控制器：目录与平台覆写</text>
+  <text x="46" y="260" font-size="10.2" fill="#334155">识别 GPU 架构与云平台，注入 NCCL/网络参数并管理迭代与编排规模</text>
+  <text x="46" y="279" font-size="10.2" fill="#475569">按 CEL 表达式判据评估实测指标（默认无阈值），未达标记为 ValidationFailed</text>
+
+  <!-- Connectors B <-> C -->
+  <line x1="138" y1="298" x2="138" y2="319" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+  <text x="146" y="312" font-size="9.6" fill="#1d4ed8">派发子 Job 执行</text>
+  <line x1="354" y1="320" x2="354" y2="299" stroke="#0284c7" stroke-width="1.6" marker-end="url(#arrow-sky)"/>
+  <text x="346" y="312" font-size="9.6" fill="#0369a1" text-anchor="end">节点故障与归因</text>
+
+  <!-- Tier 3: Job & WorkloadRun -->
+  <rect x="36" y="322" width="422" height="104" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.1"/>
+  <rect x="46" y="330" width="146" height="20" rx="5" fill="#1e3a8a"/>
+  <text x="119" y="344" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">3. Job → WorkloadRun</text>
+  <text x="202" y="344" font-size="11" font-weight="700" fill="#1e3a8a">可独立调用的负载原语</text>
+  <text x="46" y="366" font-size="10.2" fill="#334155">框架三选一：torch（torchrun）· mpi（mpirun）· exec（任意命令）</text>
+  <text x="46" y="385" font-size="10.2" fill="#334155">生成 Kubeflow TrainingRuntime，挂载大共享内存卷与 NVLink 网络</text>
+  <text x="46" y="404" font-size="10.2" fill="#0f172a">可选 spec.gangScheduler（如 KAI）防高负载集群部分调度引发死锁</text>
+
+  <!-- Right Panel Top: Catalog, CEL & Requirements -->
+  <rect x="484" y="78" width="452" height="172" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="484" y="78" width="452" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="484" y="96" width="452" height="10" fill="#dbeafe"/>
+  <text x="496" y="97" font-size="12" font-weight="700" fill="#1e3a8a">2. 内置目录、CEL 示例判据与环境依赖</text>
+
+  <rect x="496" y="114" width="428" height="44" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="504" y="125" width="84" height="22" rx="4" fill="#e0f2fe"/>
+  <text x="546" y="140" font-size="10" font-weight="700" fill="#075985" text-anchor="middle">内置 3 大域</text>
+  <text x="598" y="132" font-size="10" fill="#0f172a">communication：5 类 NCCL 集合通信（含 NVSwitch loopback）</text>
+  <text x="598" y="148" font-size="10" fill="#475569">DCGM Level-4（需独立服务）· NeMo Nemotron-5 8B / 56B 预训练</text>
+
+  <rect x="496" y="164" width="428" height="44" rx="5" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <rect x="504" y="175" width="84" height="22" rx="4" fill="#fef3c7"/>
+  <text x="546" y="190" font-size="10" font-weight="700" fill="#92400e" text-anchor="middle">CEL 判据</text>
+  <text x="598" y="182" font-size="10" fill="#78350f">GB200 NVL72 示例：BusBW ≥ 900 GB/s · Goodput ≥ 0.9</text>
+  <text x="598" y="198" font-size="10" fill="#92400e">avgTFLOPsPerGPU ≥ 800 · 区分 ThresholdViolation 与硬件异常</text>
+
+  <rect x="496" y="214" width="428" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="232" font-size="9.8" fill="#334155">依赖：K8s ≥ 1.29 + GPU Operator + Helm 3；GB200/GB300 需 DRA ComputeDomain</text>
+
+  <!-- Right Panel Bottom: DSX OS Trio -->
+  <rect x="484" y="262" width="452" height="176" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="484" y="262" width="452" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="484" y="280" width="452" height="10" fill="#dbeafe"/>
+  <text x="496" y="281" font-size="12" font-weight="700" fill="#1e3a8a">3. NVIDIA DSX OS 三层角色分工（按顺序协同，不并行抢权）</text>
+
+  <rect x="496" y="298" width="428" height="40" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="504" y="307" width="96" height="22" rx="4" fill="#e0f2fe"/>
+  <text x="552" y="322" font-size="10" font-weight="700" fill="#075985" text-anchor="middle">AICR · 配置层</text>
+  <text x="610" y="316" font-size="10" fill="#0f172a">以版本锁定配方统一驱动、算子、内核与系统设置</text>
+  <text x="610" y="331" font-size="9.6" fill="#475569">校验实时状态并发现配置漂移（回答“是否配对”）</text>
+
+  <rect x="496" y="344" width="428" height="40" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <rect x="504" y="353" width="96" height="22" rx="4" fill="#1d4ed8"/>
+  <text x="552" y="368" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">NVCRE · 主动</text>
+  <text x="610" y="362" font-size="10" font-weight="600" fill="#1e3a8a">主动注入分布式负载暴露无遥测静默慢卡（如示例慢 8%）</text>
+  <text x="610" y="377" font-size="9.6" fill="#1e40af">仅归因并记录失败节点与原因，故意不直接 cordon / taint</text>
+
+  <rect x="496" y="390" width="428" height="40" rx="5" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <rect x="504" y="399" width="96" height="22" rx="4" fill="#dcfce7"/>
+  <text x="552" y="414" font-size="10" font-weight="700" fill="#166534" text-anchor="middle">NVSentinel</text>
+  <text x="610" y="408" font-size="10" fill="#0f172a">零 GPU 消耗持续监听 DCGM、Xid、系统日志与云事件</text>
+  <text x="610" y="423" font-size="9.6" fill="#166534">经 Certification Monitor 接管故障信号，执行隔离排空与恢复</text>
+
+  <!-- Bottom Sequential Handoff Banner -->
+  <rect x="24" y="448" width="912" height="52" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="38" y="469" font-size="11.4" font-weight="700" fill="#1e3a8a">职责边界与顺序闭环：NVCRE 专责“有限作用域下的测量与归因”，NVSentinel 专责“生产节点隔离与处置”</text>
+  <text x="38" y="488" font-size="10.2" fill="#334155">执行链：Certification 失败 → NVSentinel Certification Monitor 转为健康事件 → 策略执行 Cordon/Drain/修复 → 后续复测通过清除污点</text>
+
+  <!-- Footer -->
+  <text x="24" y="521" font-size="10" fill="#64748b">阅读整理配图 · 基于 NVIDIA 技术博客原文（2026-09-23）与官方图 1（validation.webp）机制整理绘制，图中数值为原文示例配置</text>
+</svg>

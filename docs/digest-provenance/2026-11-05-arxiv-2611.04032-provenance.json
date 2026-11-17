@@ -1,0 +1,308 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-05-arxiv-2611.04032",
+  "paper_id": "arxiv-2611.04032",
+  "anchor_id": "paper-arxiv-2611.04032",
+  "digest_date": "2026-11-05",
+  "updated_at_utc": "2026-11-17T02:46:00Z",
+  "assistant_translated": true,
+  "verification_status": "VERIFIED",
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-05.md",
+    "en_target": "_digest/en/daily-2026-11-05.md",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/f8b0bc31-8177-4045-ae46-589c55fd6287/scratch/d2a-sections/2611.04032/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/f8b0bc31-8177-4045-ae46-589c55fd6287/scratch/d2a-sections/2611.04032/section_en.md",
+    "staging_directory_note": "write_file sandbox restricts writes under /brain/ to the active conversation directory (f8b0bc31-8177-4045-ae46-589c55fd6287) rather than parent directory 151be13a-2bae-44cf-a94b-71b25706bafd; staged files are written under f8b0bc31-8177-4045-ae46-589c55fd6287/scratch/d2a-sections/2611.04032/ for parent splice.",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.04032v1.",
+    "adjacent_dependency_isolation": "Staged standalone section #paper-arxiv-2611.04032 only; _digest/{zh,en}/daily-2026-11-05.md left untouched for atomic parent flock splice."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.04032",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "Only v1 observed in frozen abstract and PDF (arXiv:2611.04032v1 [cs.AI] 2 Nov 2026); Appendix I JSON schema noted as uploaded separately and anchors/corpora/scripts slated for camera-ready release (Appendix K).",
+    "title": "ROCm InferaSim: Cut LLM Serving Trial Costs and Deploy the Best Configuration",
+    "authors": [
+      "Anshu Raina",
+      "Yao Fu",
+      "Zhang Jiejing",
+      "Peyman Razaghi",
+      "Shiksha Patel",
+      "Ravi Gupta",
+      "Deval Shah",
+      "Adeem Jassani",
+      "Subhajit Dutta Chowdhury",
+      "Lorri Rao",
+      "Kailash Gogineni",
+      "Zhenyu Gu",
+      "Onil Gunawardana",
+      "Emad Barsoum"
+    ],
+    "affiliation": "Advanced Micro Devices Inc. (AMD)",
+    "correspondence_email": "anshu.raina@amd.com",
+    "categories": [
+      "cs.AI"
+    ],
+    "submitted_date": "2026-11-02",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.04032",
+      "pdf": "https://arxiv.org/pdf/2611.04032",
+      "code_release_note": "Not yet published in v1; Appendix K states anchors, measured corpora, and reproduction scripts will be released with camera-ready version."
+    },
+    "frozen_and_local_artifacts": {
+      "frozen_abstract_txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.04032.txt",
+        "sha256": "0e9072235eca3a25d28c1926e7b7fca1d840fd878d403b0a1e36b516dcc006de",
+        "bytes": 1901
+      },
+      "extracted_full_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sources/2611.04032.txt",
+        "lines": 2160,
+        "sha256": "5d48c383dac5adaf901e40626b65edf7c2d0ad1caf062ace41950a95e3c8f5ab",
+        "bytes": 164549
+      },
+      "full_pdf": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sources/2611.04032.pdf",
+        "pages": 37,
+        "sha256": "da73178b3f94e2b9047c56e4651b1009888d2b81e191709026f17156cf1bea22",
+        "bytes": 853711
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "hardware_and_engines": "8-GPU AMD Instinct MI355X (288 GB HBM3E/GPU, Infinity Fabric, ROCm 7, 400 Gb/s Pollara NICs); vLLM, SGLang, and ATOM",
+    "cached_anchors_total": 75,
+    "fixed_length_benchmark": {
+      "measured_configs_total": 226,
+      "measured_runs_total": 671,
+      "exhaustive_gpu_hours": 204,
+      "anchors_count": 11,
+      "anchors_gpu_hours": 9.1,
+      "scored_configs_after_filters": 172,
+      "median_error_tpot_pct": 8.1,
+      "median_error_throughput_pct": 8.8,
+      "median_error_ttft_pct": 13.6,
+      "within_20_pct": {
+        "tpot": 93,
+        "throughput": 88
+      },
+      "isl_8k_osl_1k_errors_pct": {
+        "ttft": 6.3,
+        "tpot": 6.4,
+        "throughput": 6.9
+      },
+      "p99_tail_median_errors_88_runs_pct": {
+        "tpot": 10.7,
+        "e2e_latency": 9.8,
+        "itl": 13.8,
+        "repeat_run_variance_pct": "1-4%"
+      }
+    },
+    "narrower_anchors_tp4_to_tp8_table14": {
+      "configs_count": 90,
+      "throughput_median_err_pct": 9.7,
+      "tpot_median_err_pct": 9.3,
+      "ttft_median_err_pct": 16.5,
+      "log_pearson_r": 0.994,
+      "same_width_82_configs_err_pct": {
+        "throughput": 6.1,
+        "tpot": 5.5,
+        "ttft": 11.0
+      }
+    },
+    "tp4_to_tp8_decode_ablation_table18": {
+      "model": "DeepSeek-V4-Pro",
+      "batches": "1-64",
+      "eq1_floor_kept_median_err_pct": 0.9,
+      "eq1_max_err_pct": 3.5,
+      "simulate_drop_subtract_err_pct": 18.5,
+      "naive_halving_err_pct": 44.1
+    },
+    "pipelines_and_multi_node": {
+      "sglang_pp_1_to_8_table7_tpot_err_pct": {
+        "Llama-3.1-8B": {
+          "serial": 18.1,
+          "eq4": 7.2
+        },
+        "Qwen3-14B-FP8": {
+          "serial": 14.9,
+          "eq4": 2.3
+        },
+        "Qwen3.6-35B-A3B": {
+          "serial": 26.1,
+          "eq4": 9.2
+        }
+      },
+      "two_node_pipelines_table8": {
+        "configs": 24,
+        "gpus_range": "2-16",
+        "median_tpot_err_pct": 11.6,
+        "median_throughput_err_pct": 11.6,
+        "tp8_pp2_outlier_err_pct": {
+          "tpot": 21.7,
+          "throughput": 33.8
+        }
+      }
+    },
+    "agentic_agentx_replay": {
+      "total_configs": 184,
+      "anchors_count": 28,
+      "covered_held_out_configs": 95,
+      "error_factors_geometric_mean": {
+        "throughput": 1.08,
+        "itl": 1.14,
+        "ttft": 1.23
+      },
+      "host_tier_added_5_runs": {
+        "throughput": 1.06,
+        "itl": 1.17,
+        "ttft": 1.42
+      },
+      "dcp_held_out_9_runs": {
+        "throughput_pct": 8,
+        "itl_pct": 12
+      },
+      "outlier_deepseek_v4_pro_sglang_fp4_n4": {
+        "throughput": 1.35,
+        "itl": 2.01
+      },
+      "leaf_first_lru_hit_pct_vs_flat_lru": {
+        "leaf_first_lru": 90.6,
+        "flat_lru": 0.0,
+        "published_trace_reuse_approx": 92.0
+      }
+    },
+    "disaggregated_serving": {
+      "inferencex_splits_count": 159,
+      "colocated_anchors_used": 16,
+      "disaggregated_anchors_used": 0,
+      "median_err_pct": {
+        "throughput_per_gpu": 5.5,
+        "interactivity": 5.3,
+        "ttft": 16.9
+      },
+      "agentic_13_splits_error_factors": {
+        "throughput": 1.08,
+        "itl": 1.12
+      },
+      "tier_right_call_table3": {
+        "1k_1k": "19/21",
+        "8k_1k": "23/27"
+      }
+    },
+    "ranking_pareto_and_search": {
+      "fixed_ranking_42_sets_table11": {
+        "anchored_throughput_pair_acc_pct": 93.4,
+        "anchored_tpot_pair_acc_pct": 85.4,
+        "anchored_top1_pct": 73,
+        "anchored_tput_regret_p50_p90_pct": "0.0/0.2",
+        "simulate_throughput_pair_acc_pct": 89.0,
+        "simulate_tpot_pair_acc_pct": 84.3
+      },
+      "pareto_25_charts_529_points_table13": {
+        "throughput_per_gpu_err_pct": 7.0,
+        "interactivity_err_pct": 6.5,
+        "spearman_rho": 0.99,
+        "frontier_hit": "170/206 (83%)"
+      },
+      "mix_planner_23_feasible_slots_table15": {
+        "top1_best": 14,
+        "top1_within_12_pct": 16,
+        "top1_tier_misses": 2,
+        "shortlist5_best": 21,
+        "shortlist5_within_12_pct": 22,
+        "shortlist5_tier_misses": 0
+      },
+      "seed_searches_192": {
+        "candidates_scored": 56328,
+        "cpu_hours": "3-8",
+        "exhaustive_gpu_hours_est": 25000,
+        "single_prediction_cpu_sec": "0.17-0.48"
+      },
+      "simulate_mode_unmeasured_ranking_configs": {
+        "configs_ranked": 287,
+        "equivalent_measure_gpu_hours": 248
+      }
+    },
+    "vidur_mi355x_comparison_30_runs": {
+      "vidur_median_err_pct": {
+        "ttft": 34,
+        "tpot": 40,
+        "throughput": 40
+      },
+      "inferasim_median_err_pct": {
+        "ttft": 14,
+        "tpot": 7.2,
+        "throughput": 7.4
+      }
+    }
+  },
+  "explicit_limitations": [
+    "Hardware lock-in in v1 evaluation: all measurements ran solely on AMD Instinct MI355X (ROCm 7, Pollara NICs) with pinned container images; NVIDIA GPU validation is explicitly future work (§7).",
+    "Strict anchor-coverage bounds: anchored accuracy applies only within matching engine build/kernels, ≤4x anchor concurrency, and at most one TP doubling (GLM-5.2 prefill scaling slows from 1.80x TP2->4 to 1.32x TP4->8).",
+    "Unmeasured modeled features: EAGLE-3, DSpark, and n-gram speculative drafters (§5.9) plus all six named kernel fusions (§4, Table 21) are predicted/modeled only without MI355X empirical validation in v1; simulate mode supports intra-engine ranking only.",
+    "High TTFT variance and high-error outliers: TTFT errors (13.6% fixed, 16.9% disaggregated, 1.23x agentic) substantially exceed TPOT errors; AgentX DeepSeek-V4-Pro SGLang FP4 reaches 2.01x ITL factor (Table 17), TP8xPP2 reaches 33.8% throughput error (Table 8), and shortlist GPU confirmation remains mandatory.",
+    "Artifact release & audit boundary: Appendix I schema was uploaded separately and anchors/corpora/scripts are slated for camera-ready release (Appendix K); this close reading audited the v1 PDF/text without locally running MI355X benchmarks."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "rocm_inferasim_svgs": {
+      "rocm-inferasim-anchor-scaling-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/rocm-inferasim-anchor-scaling-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/rocm-inferasim-anchor-scaling-zh.svg",
+        "sha256": "c426d19bf2df4dbd0d0c99b35e2684b86dadd6543758b740030efbb85db640a8",
+        "bytes": 13775
+      },
+      "rocm-inferasim-anchor-scaling-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/rocm-inferasim-anchor-scaling-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/rocm-inferasim-anchor-scaling-en.svg",
+        "sha256": "70c1d40d8ddc05118f8eb6b18449419278b9ef15e614f1df86640fcccef1e0e5",
+        "bytes": 13439
+      },
+      "rocm-inferasim-accuracy-cost-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/rocm-inferasim-accuracy-cost-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/rocm-inferasim-accuracy-cost-zh.svg",
+        "sha256": "bda49567509970a193494f6f521428de8f84d3e02075b3ad51de70e353ba397a",
+        "bytes": 13554
+      },
+      "rocm-inferasim-accuracy-cost-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/rocm-inferasim-accuracy-cost-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/rocm-inferasim-accuracy-cost-en.svg",
+        "sha256": "25ebe9c5ba9c265e7b0223fdbc36da1cafadf50324271d5dfe1ef263c3a98624",
+        "bytes": 13099
+      }
+    },
+    "preexisting_assets_untouched_note": "No pre-existing .png or sibling files in assets/images/digest/2026-11-05/ were modified or deleted."
+  },
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-05.md",
+      "file_bytes_before": 46498,
+      "file_sha256_before": "a57afb9010f0516ba9d15d89c96ef1b07029938279a9d9c03e5902f04f3b8762",
+      "file_bytes_after": 258981,
+      "file_sha256_after": "0c569250568c0975f5704c11bbdfcfff48ddadc7366026be70dc954ece1ce395",
+      "old_section_bytes": 935,
+      "old_section_sha256": "9ff939a57deb740053e72e803339819e46b06b3867acc576b48cc5bfd9342c17",
+      "new_section_bytes": 25861,
+      "new_section_sha256": "44d2b8dd168f42cbde88f2db36f42d90a6f394633ecfe74a8579b86549ea56d5"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-05.md",
+      "file_bytes_before": 49237,
+      "file_sha256_before": "d5c507de897b4e0644651175c569f11bfe5df1cfa94b53b4227ec9422a1d0e06",
+      "file_bytes_after": 247387,
+      "file_sha256_after": "00dc837b0349415fa884dbc628828870d27be980bb81f30127ddd5602addd7a0",
+      "old_section_bytes": 1037,
+      "old_section_sha256": "0447e863b3c1d5ec56e82117aaca7feece6eeea43de3475872b4f4273414f497",
+      "new_section_bytes": 23914,
+      "new_section_sha256": "0903d4a26bfad1a1470bf72d3f87bc7915646d555d606681c373d6fda04a0998"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:08:32.604936+00:00",
+    "preview_release": "20261117-110758-45bc53b9",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

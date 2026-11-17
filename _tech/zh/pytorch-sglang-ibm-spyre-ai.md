@@ -3,7 +3,7 @@ id: pytorch-sglang-ibm-spyre-ai
 title: 2026年11月13日｜Spyre 接入 SGLang：AI 编码为何能受益于清晰接口
 date: '2026-11-13'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,7 +18,9 @@ translation_source: assistant
 authorship: assistant
 source_published_at: '2026-11-12'
 published_at: '2026-11-13T08:46:43.062448+08:00'
-updated_at: '2026-11-13T08:46:43.062448+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 Gal Bloch, Itay Etelis, Raghu Ganti, Mudhakar Srivatsa, Alex Nails · 2026-11-12  
 原文：[Integrating SGLang into Spyre in Under a Week with AI](https://pytorch.org/blog/integrating-sglang-into-spyre-in-under-a-week-with-ai/)

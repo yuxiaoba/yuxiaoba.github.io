@@ -1,0 +1,396 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-04-arxiv-2611.02849",
+  "paper_id": "arxiv-2611.02849",
+  "anchor_id": "paper-arxiv-2611.02849",
+  "digest_date": "2026-11-04",
+  "updated_at_utc": "2026-11-17T03:21:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-04.md",
+    "en_target": "_digest/en/daily-2026-11-04.md",
+    "staged_zh_section": "/root/.gemini/antigravity-cli/brain/e647aace-106a-43d7-8597-271e5691aed5/scratch/d2b2-sections/2611.02849/section_zh.md",
+    "staged_en_section": "/root/.gemini/antigravity-cli/brain/e647aace-106a-43d7-8597-271e5691aed5/scratch/d2b2-sections/2611.02849/section_en.md",
+    "translation_provenance": "Assistant-authored Chinese technical close reading and paired English technical close reading grounded strictly in primary arXiv:2611.02849v1 PDF, extracted text, and abstract HTML."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.02849",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "No v2 revision or withdrawal notice present on arXiv as of 2026-11-17 (v1 only).",
+    "title": "TLAPS-Bench: Formally Proving Correctness of Real-World System Specifications with TLA+ Proof System",
+    "authors": [
+      "Qian Cheng",
+      "Ruize Tang",
+      "Saad Mohammad Rafid Pial",
+      "Zhizhen Cathy Cai",
+      "Yiming Su",
+      "Jackson Clark",
+      "Munim Thahmid",
+      "Mahdiya Rahman Sukanya",
+      "Chris Newcombe",
+      "Igor Konnov",
+      "Stephan Merz",
+      "Xudong Sun",
+      "Murat Demirbas",
+      "Yu Huang",
+      "Markus Alexander Kuppe",
+      "Tianyin Xu"
+    ],
+    "affiliation": "Nanjing University (Qian Cheng, Yu Huang [corresponding: yuhuang@nju.edu.cn]); Microsoft (Ruize Tang); University of Illinois at Urbana-Champaign (Saad Mohammad Rafid Pial, Zhizhen Cathy Cai, Yiming Su, Jackson Clark, Tianyin Xu); Bangladesh University of Engineering and Technology (Munim Thahmid); IIT, University of Dhaka (Mahdiya Rahman Sukanya); Oracle (Chris Newcombe); Independent (Igor Konnov, Markus Alexander Kuppe); University of Lorraine, CNRS, Inria, Nancy, France (Stephan Merz); University of Toronto (Xudong Sun); MongoDB (Murat Demirbas); University of California, Berkeley (Tianyin Xu)",
+    "categories": [
+      "cs.AI",
+      "cs.DC",
+      "cs.LO",
+      "cs.SE"
+    ],
+    "submitted_utc": "Mon, 2 Nov 2026 09:51:18 UTC",
+    "submitted_date": "2026-11-02",
+    "page_and_artifact_note": "35 pages (10-page main text, references, and appendix), 7 figures, 20 tables",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.02849",
+      "abs_v1": "https://arxiv.org/abs/2611.02849v1",
+      "pdf": "https://arxiv.org/pdf/2611.02849",
+      "html_v1": "https://arxiv.org/html/2611.02849v1",
+      "github": "https://github.com/specula-org/TLAPS-Bench"
+    },
+    "github_verification_note": "Confirmed indexed on GitHub via search_web query for specula-org/TLAPS-Bench on 2026-11-17.",
+    "local_and_frozen_sources": {
+      "frozen_fetch_index_entry": {
+        "index_path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/fetch-index.json",
+        "page_html_path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261104-120003-ac33ec3f64-4e0e48/work/sources/online/arxiv-2611.02849/page.html",
+        "sha256": "300fd27eaa9ea1d4b438b5d4d341aa1aaf5e477bcb21bc4cd9afb49af21a96cf"
+      },
+      "staged_abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2611.02849.abs.html",
+        "lines": 604,
+        "sha256": "300fd27eaa9ea1d4b438b5d4d341aa1aaf5e477bcb21bc4cd9afb49af21a96cf",
+        "bytes": 43728
+      },
+      "staged_pdf": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2611.02849.pdf",
+        "pages": 35,
+        "sha256": "52ff51b0209f5f43e63c9197de04c3696f17c116e544fea7ec82d87d9ae130f7",
+        "bytes": 432968
+      },
+      "staged_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2b2-sources/2611.02849.txt",
+        "lines": 2191,
+        "sha256": "aae809ae16dc17de1f41a2abf978b513ce7e1799f6af17b2c00de53b64181e5b",
+        "bytes": 165425
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "full_collection": {
+      "specifications": 95,
+      "total_targets": 265,
+      "retired_targets_table_a1": 195,
+      "active_eval_specifications_table_2": 12,
+      "active_eval_targets_table_2": 70,
+      "active_eval_target_kinds": {
+        "safety": 60,
+        "liveness": 9,
+        "refinement": 1
+      }
+    },
+    "previously_unproved_specs_proved_via_tilapia_table_1": {
+      "Bosco_Byzantine_consensus": {
+        "targets": 5,
+        "prior_proof": "Pen-and-paper"
+      },
+      "Sailfish_BFT_consensus": {
+        "targets": 3,
+        "prior_proof": "Rocq"
+      },
+      "German_protocol": {
+        "targets": 7,
+        "prior_proof": "Isabelle"
+      },
+      "OSWALD_WAL": {
+        "targets": 3,
+        "prior_proof": "None"
+      },
+      "SlateDB_WAL": {
+        "targets": 4,
+        "prior_proof": "None"
+      },
+      "Walgit_WAL": {
+        "targets": 7,
+        "prior_proof": "None"
+      },
+      "TLC_DiskStateQueue": {
+        "targets": 1,
+        "prior_proof": "None"
+      },
+      "Disruptor_MPMC": {
+        "targets": 2,
+        "prior_proof": "None"
+      },
+      "Disruptor_SPMC": {
+        "targets": 2,
+        "prior_proof": "None"
+      },
+      "BufferedRandomAccessFile": {
+        "targets": 14,
+        "prior_proof": "None"
+      }
+    },
+    "spec_defects_uncovered_during_curation": {
+      "total_found": 46,
+      "fixed_count": 35,
+      "representative_cases": [
+        "MongoDB vars omitted 5 of 25 state variables and allowed cross-router SnapshotIsolation violation missed by single-router TLC",
+        "etcd Raft LeaderCompletenessInv compared entry creation term instead of commit term (47-transition counterexample)",
+        "SlateDB WAL GC + delayed-writer fence skipped on replay (58-transition TLC counterexample found by GPT-6 Astra; fixed via ValidateEpochAfterReplay)"
+      ]
+    },
+    "harness_and_eval_environment": {
+      "host_vm": "Ubuntu 24.04.3, 96 vCPUs (AMD EPYC 9V74), 378 GiB DRAM",
+      "container_quota": "8 vCPUs per Docker container",
+      "tlaps_module_timeout_min": 60,
+      "output_token_cap_per_spec": 2000000,
+      "smt_budget_cap": "SMTT(\"r30\")",
+      "backends": [
+        "Z3 (SMTT)",
+        "Isabelle/TLA+ (Isa)",
+        "LS4 (PTL)"
+      ],
+      "anti_cheating_pillars": [
+        "Context integrity (read-only Model/Defs + SANY semantic whitelist)",
+        "Dependency tracking (transitive lemma graph via SANY)",
+        "Clean-room grading (fresh container copying only submitted Task.tla)"
+      ]
+    },
+    "table_3_overall_pass_at_3": {
+      "GPT-6.1_Sol_max": {
+        "pass_pct": 44.3,
+        "solved": "31/70",
+        "proof_loc": 15619,
+        "loc_per_target": 503.8,
+        "input_m": 1456.14,
+        "output_m": 7.73,
+        "cost_usd": 328.86,
+        "time_min": 5917.4
+      },
+      "GPT-6.1_Sol_high": {
+        "pass_pct": 34.3,
+        "solved": "24/70",
+        "proof_loc": 5967,
+        "loc_per_target": 248.6,
+        "input_m": 635.57,
+        "output_m": 3.312,
+        "cost_usd": 134.75,
+        "time_min": 2725.0
+      },
+      "GPT-6.1_Sol_low": {
+        "pass_pct": 35.7,
+        "solved": "25/70",
+        "proof_loc": 8834,
+        "loc_per_target": 353.4,
+        "input_m": 549.23,
+        "output_m": 2.238,
+        "cost_usd": 97.75,
+        "time_min": 1795.6
+      },
+      "GPT-6_Astra_max": {
+        "pass_pct": 42.9,
+        "solved": "30/70",
+        "proof_loc": 13725,
+        "loc_per_target": 457.5,
+        "input_m": 770.22,
+        "output_m": 4.27,
+        "cost_usd": 1086.44,
+        "time_min": 3992.5
+      },
+      "GPT-6_Astra_high": {
+        "pass_pct": 34.3,
+        "solved": "24/70",
+        "proof_loc": 5503,
+        "loc_per_target": 229.3,
+        "input_m": 353.11,
+        "output_m": 1.663,
+        "cost_usd": 486.57,
+        "time_min": 1575.7
+      },
+      "GPT-6_Astra_low": {
+        "pass_pct": 34.3,
+        "solved": "24/70",
+        "proof_loc": 7175,
+        "loc_per_target": 299.0,
+        "input_m": 272.83,
+        "output_m": 1.162,
+        "cost_usd": 373.41,
+        "time_min": 1262.5
+      },
+      "GPT-5.6_Terra_max": {
+        "pass_pct": 21.4,
+        "solved": "15/70",
+        "proof_loc": 15448,
+        "loc_per_target": 1029.9,
+        "input_m": 21475.87,
+        "output_m": 56.232,
+        "cost_usd": 5602.15,
+        "time_min": 52481
+      },
+      "GPT-5.6_Terra_high": {
+        "pass_pct": 0.0,
+        "solved": "0/70",
+        "input_m": 126.85,
+        "output_m": 0.635,
+        "cost_usd": 42.0,
+        "time_min": 528.6
+      },
+      "GPT-5.6_Terra_low": {
+        "pass_pct": 0.0,
+        "solved": "0/70",
+        "input_m": 35.45,
+        "output_m": 0.243,
+        "cost_usd": 14.78,
+        "time_min": 215.2
+      },
+      "GPT-6_Luna_max": {
+        "pass_pct": 10.0,
+        "solved": "7/70",
+        "proof_loc": 11497,
+        "loc_per_target": 1642.4,
+        "input_m": 2338.15,
+        "output_m": 9.586,
+        "cost_usd": 31.11,
+        "time_min": 5285.4
+      },
+      "GPT-6_Luna_high": {
+        "pass_pct": 0.0,
+        "solved": "0/70",
+        "input_m": 33.98,
+        "output_m": 0.284,
+        "cost_usd": 0.69,
+        "time_min": 200.3
+      },
+      "GPT-6_Luna_low": {
+        "pass_pct": 0.0,
+        "solved": "0/70",
+        "input_m": 13.81,
+        "output_m": 0.07,
+        "cost_usd": 0.3,
+        "time_min": 45.6
+      }
+    },
+    "table_4_sol_effort_contrast": {
+      "Cahill_SSI_0_of_1": {
+        "low": {
+          "requests": 72,
+          "mean_reasoning_tokens": 207,
+          "cost_usd": 0.81
+        },
+        "high": {
+          "requests": 196,
+          "mean_reasoning_tokens": 442,
+          "cost_usd": 4.32
+        },
+        "max": {
+          "requests": 277,
+          "mean_reasoning_tokens": 727,
+          "cost_usd": 8.01
+        }
+      },
+      "FLASH_15_of_15": {
+        "low": {
+          "requests": 1400,
+          "mean_reasoning_tokens": 389,
+          "cost_usd": 36.96
+        },
+        "high": {
+          "requests": 691,
+          "mean_reasoning_tokens": 499,
+          "cost_usd": 24.92
+        },
+        "max": {
+          "requests": 788,
+          "mean_reasoning_tokens": 630,
+          "cost_usd": 37.27
+        }
+      }
+    },
+    "table_5_failure_categories": {
+      "incorrect_counterexample_claims": 9,
+      "sany_syntax_or_semantic_errors": 31,
+      "task_preservation_violations": 15,
+      "verification_timeout": 21,
+      "undecomposed_proof_attempts": 537,
+      "incomplete_proofs": 1455
+    }
+  },
+  "explicit_limitations": [
+    "Headline 44.3% (31/70) is pass@3 across 3 runs on the active 70-target / 12-spec challenge subset, not single-run pass@1 across all 265 targets (195 retired targets in Table A1 are excluded from Table 3 denominators).",
+    "Proving Spec => P establishes correctness only of the formalized TLA+ specification (under extracted .cfg assumptions, Ivy-to-TLA+ translations, and recursive-LET rewrites), not that production Go/Rust/C++ code implements the specification without defects.",
+    "Soundness remains relative to the trusted computing base (SANY, TLAPS, Z3, Isabelle/TLA+, and LS4), which itself required strict-mode patches and bug fixes during benchmark development.",
+    "Evaluation in Table 3 covers only four GPT models running inside Codex; Cahill SSI, MongoDB transactions, Wildfire refinement, and Ivy TLB NonStarvation liveness remain at 0% across all 12 configurations."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "svgs": [
+      {
+        "filename": "tlaps-bench-proof-harness-arch-zh.svg",
+        "lang": "zh",
+        "site_path": "/assets/images/digest/2026-11-04/tlaps-bench-proof-harness-arch-zh.svg",
+        "disk_path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/tlaps-bench-proof-harness-arch-zh.svg",
+        "sha256": "pending_parent_sha256_verification"
+      },
+      {
+        "filename": "tlaps-bench-proof-harness-arch-en.svg",
+        "lang": "en",
+        "site_path": "/assets/images/digest/2026-11-04/tlaps-bench-proof-harness-arch-en.svg",
+        "disk_path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/tlaps-bench-proof-harness-arch-en.svg",
+        "sha256": "pending_parent_sha256_verification"
+      },
+      {
+        "filename": "tlaps-bench-spec-coverage-eval-zh.svg",
+        "lang": "zh",
+        "site_path": "/assets/images/digest/2026-11-04/tlaps-bench-spec-coverage-eval-zh.svg",
+        "disk_path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/tlaps-bench-spec-coverage-eval-zh.svg",
+        "sha256": "pending_parent_sha256_verification"
+      },
+      {
+        "filename": "tlaps-bench-spec-coverage-eval-en.svg",
+        "lang": "en",
+        "site_path": "/assets/images/digest/2026-11-04/tlaps-bench-spec-coverage-eval-en.svg",
+        "disk_path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-04/tlaps-bench-spec-coverage-eval-en.svg",
+        "sha256": "pending_parent_sha256_verification"
+      }
+    ]
+  },
+  "staged_sections_note": "Written inside subagent artifact scratch dir for parent glob splice; SHA-256 checksums for newly generated SVGs and local source artifacts are marked pending_parent_sha256_verification because subagent shell execution is disabled.",
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-04.md",
+      "file_bytes_before": 53442,
+      "file_sha256_before": "132b70ae1ad474b08aa54ab243a19a13e4d2797e1dbf32b242362a019cc102a9",
+      "file_bytes_after": 166485,
+      "file_sha256_after": "bc3019fc459a0e12dc3392816c65be08d07d8002da8a5d85eb63158c017b01bf",
+      "old_section_bytes": 1038,
+      "old_section_sha256": "b8d6b8a638f0d81e0ae63dd9528d993195df68341f9b8b4dd775f058797f6472",
+      "new_section_bytes": 22236,
+      "new_section_sha256": "8f00df8462d4da2f794cf19c2fd754d4f7ace8584f93e81038a9d39aca66acef"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-04.md",
+      "file_bytes_before": 54712,
+      "file_sha256_before": "aa4c111dc2d577b2573c359a62b1c36267c196b199577ee2313b886b2871fb3e",
+      "file_bytes_after": 161910,
+      "file_sha256_after": "f0a8f9219f714a9ead0d423aa19133cc30d2d20fbaec91dec0385f7380cb73aa",
+      "old_section_bytes": 922,
+      "old_section_sha256": "e750e36ddcea24a4e1af3764f2f028ad803fdbce8b3e0c32a124b6e1f43be805",
+      "new_section_bytes": 22186,
+      "new_section_sha256": "4c8a381aa4464c8f674bf5b0af1c3f23c8974ec7a6b2808f4e20e348428a0899"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:24:25.665611+00:00",
+    "preview_release": "20261117-112344-dd9778fd",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

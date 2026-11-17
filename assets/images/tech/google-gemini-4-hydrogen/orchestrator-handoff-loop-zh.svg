@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Gemini 4 Hydrogen 与 Orchestrator 轨迹内双向交接架构图">
+  <title>Gemini 4 Hydrogen 与 Orchestrator 轨迹内双向交接架构图</title>
+  <desc>对照一次性静态路由、/swarm 并行与 Carbon &lt;-&gt; Hydrogen 轨迹内双向重规划</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc"/>
+  <rect x="14" y="14" width="932" height="512" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="32" y="46" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">Gemini 4 Hydrogen：轨迹内 Orchestrator 交接与静态 / 并行调度对比</text>
+<text x="32" y="68" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start">对照一次性静态路由、/swarm 并行与 Carbon &lt;-&gt; Hydrogen 轨迹内双向重规划</text>
+<line x1="32" y1="80" x2="928" y2="80" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="30" y="92" width="286" height="330" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="44" y="114" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">对照方案：单次前置路由与多智能体并行</text>
+<rect x="42" y="126" width="262" height="136" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+<text x="54" y="148" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="start">1. 静态提示词路由器（起手锁定）</text>
+<text x="54" y="172" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• 仅凭初始提示词预测任务复杂度</text>
+<text x="54" y="193" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• 为整条推理/编码轨迹锁定单一模型</text>
+<text x="54" y="214" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• 遇隐藏依赖或中途测试失败时易失效</text>
+<text x="54" y="235" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• 全程改用 Carbon 则慢且高耗配额</text>
+<rect x="42" y="274" width="262" height="136" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+<text x="54" y="296" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="start">2. 并行 /swarm 与 SDK 静态分工</text>
+<text x="54" y="320" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• /swarm：Carbon 协调多工作树，</text>
+<text x="54" y="341" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">  Hydrogen 并行承担工人与验证角色</text>
+<text x="54" y="362" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• Antigravity SDK 示例：Hydrogen 负责</text>
+<text x="54" y="383" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">  工单分诊与 PR 迭代；Carbon 管重构/安全</text>
+<rect x="330" y="92" width="600" height="330" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.3"/>
+<text x="346" y="114" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">Orchestrator：轨迹内 Carbon &lt;-&gt; Hydrogen 双向交接（官方案例）</text>
+<rect x="346" y="128" width="234" height="136" rx="9" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.6"/>
+<rect x="358" y="138" width="112" height="20" rx="10" fill="#dbeafe"/>
+<text x="414" y="152" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#1e3a8a" text-anchor="middle">阶段 A · 规划方</text>
+<text x="358" y="178" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#0f172a" text-anchor="start">Carbon：只读探索与规划</text>
+<text x="358" y="201" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• 只读检索代码与跨文件依赖</text>
+<text x="358" y="221" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• 澄清需求边界与上下文歧义</text>
+<text x="358" y="241" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• 生成可执行计划及显式重规划触发点</text>
+<line x1="582" y1="196" x2="678" y2="196" stroke="#1d4ed8" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+<rect x="590" y="171" width="80" height="18" rx="4" fill="#eff6ff"/>
+<text x="630" y="184" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#1d4ed8" text-anchor="middle">移交计划</text>
+<rect x="682" y="128" width="234" height="136" rx="9" fill="#ffffff" stroke="#0284c7" stroke-width="1.6"/>
+<rect x="694" y="138" width="112" height="20" rx="10" fill="#dbeafe"/>
+<text x="750" y="152" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">阶段 B · 执行方</text>
+<text x="694" y="178" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#0f172a" text-anchor="start">Hydrogen：高速执行循环</text>
+<text x="694" y="201" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• 编写编辑、升级依赖包并运行测试</text>
+<text x="694" y="221" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• 原生并行批量调用文件读取与搜索</text>
+<text x="694" y="241" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• T-Bench 4.1 默认 high 提速 2.5 倍</text>
+<line x1="792" y1="266" x2="792" y2="306" stroke="#1d4ed8" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+<rect x="800" y="274" width="108" height="20" rx="4" fill="#eff6ff"/>
+<text x="806" y="288" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="start">受阻回交</text>
+<rect x="466" y="310" width="450" height="100" rx="9" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.4"/>
+<rect x="478" y="320" width="120" height="20" rx="10" fill="#dbeafe"/>
+<text x="538" y="334" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#1e3a8a" text-anchor="middle">阶段 C · 遇阻回退</text>
+<text x="608" y="335" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#0f172a" text-anchor="start">交回 Carbon：检查状态并局部重规划</text>
+<text x="478" y="362" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">当 Hydrogen 执行受阻或命中重规划触发点时，控制权交回 Carbon：</text>
+<text x="478" y="382" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">检查当前代码与测试状态、修复计划并下发下一轮执行（而非推倒重来）。</text>
+<path d="M 464 360 L 404 360 L 404 268" fill="none" stroke="#1d4ed8" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+<rect x="342" y="280" width="122" height="20" rx="4" fill="#eff6ff"/>
+<text x="403" y="294" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">更新计划后继续</text>
+<rect x="30" y="434" width="900" height="78" rx="9" fill="#f1f5f9" stroke="#475569" stroke-width="1.2" stroke-dasharray="6,4"/>
+<text x="46" y="456" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#0f172a" text-anchor="start">未公开工程边界（2026-11-12 主博客、Antigravity 博客与推文均未披露）</text>
+<text x="46" y="478" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">• 重规划触发谓词、受阻判定阈值与最大重试 / 升级次数上限</text>
+<text x="46" y="498" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">• 上下文与 KV 状态序列化、回滚语义，及 Orchestrator(Argon) 与 (Carbon) 策略差异</text>
+</svg>

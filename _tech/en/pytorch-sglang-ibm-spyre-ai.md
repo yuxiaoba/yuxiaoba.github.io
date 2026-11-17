@@ -3,15 +3,14 @@ id: pytorch-sglang-ibm-spyre-ai
 title: 2026-11-13 | Why clear interfaces helped AI-assisted Spyre integration
 date: '2026-11-13'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
 tags:
 - inference-serving
 - coding-agents
-summary: Existing compilers, operators and a reference backend made the integration
-  tractable; the contribution is a concrete reuse path.
+summary: Existing compilers, operators and a reference backend made the integration tractable; the contribution is a concrete reuse path.
 long_read: true
 source_url: https://pytorch.org/blog/integrating-sglang-into-spyre-in-under-a-week-with-ai/
 permalink: /tech/en/pytorch-sglang-ibm-spyre-ai/
@@ -19,7 +18,9 @@ translation_source: assistant
 authorship: assistant
 source_published_at: '2026-11-12'
 published_at: '2026-11-13T08:46:43.062448+08:00'
-updated_at: '2026-11-13T08:46:43.062448+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 Gal Bloch, Itay Etelis, Raghu Ganti, Mudhakar Srivatsa, Alex Nails · 2026-11-12  
 Original: [Integrating SGLang into Spyre in Under a Week with AI](https://pytorch.org/blog/integrating-sglang-into-spyre-in-under-a-week-with-ai/)

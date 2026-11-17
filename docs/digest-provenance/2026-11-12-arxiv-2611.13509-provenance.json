@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-12-arxiv-2611.13509",
+  "paper_id": "arxiv-2611.13509",
+  "anchor_id": "paper-arxiv-2611.13509",
+  "digest_date": "2026-11-12",
+  "updated_at_utc": "2026-11-15T13:05:30Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-12.md",
+    "en_target": "_digest/en/daily-2026-11-12.md",
+    "translation_provenance": "Assistant-authored bilingual close reading (Chinese and paired English) derived directly from primary arXiv:2611.13509v1.",
+    "adjacent_dependency_isolation": "Self-contained #paper-arxiv-2611.13509 rewrite preserving #paper-arxiv-2611.13627 (TopoVerus) and #paper-arxiv-2611.13378 (Looped CED) byte-for-byte."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.13509",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "v1 only at verification time (no v2 revision or withdrawal notice on arXiv as of 2026-11-15; PDF header reads October, 2026).",
+    "title": "Mobile AI Factory: Building Specialized Language Models for Your Mobile Device",
+    "authors": [
+      "Evan Li",
+      "Krishna Deshpande",
+      "Wen Cheng",
+      "Shyamnath Gollakota"
+    ],
+    "co_primary_authors": [
+      "Evan Li",
+      "Krishna Deshpande",
+      "Wen Cheng"
+    ],
+    "affiliation": "Paul G. Allen School of Computer Science and Engineering, University of Washington",
+    "categories": [
+      "cs.CL"
+    ],
+    "submitted_utc": "Tue, 10 Nov 2026 03:29:29 UTC",
+    "submitted_date": "2026-11-10",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.13509",
+      "abs_v1": "https://arxiv.org/abs/2611.13509v1",
+      "pdf": "https://arxiv.org/pdf/2611.13509",
+      "github": "https://github.com/evanly-gh/SLM_Factory"
+    },
+    "frozen_manifest_hashes": {
+      "full.html": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261112-083004-ff7108eff3-bb92bc/work/sources/arxiv-2611.13509/full.html",
+        "bytes": 441456,
+        "sha256": "df734e605e33bf7d16d78c4f83871f42becb8532c412f6d47eae43b1e9ca5e19"
+      },
+      "full.txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261112-083004-ff7108eff3-bb92bc/work/sources/arxiv-2611.13509/full.txt",
+        "bytes": 92205,
+        "sha256": "6ee7413c3190e3ceca221897dea36cf2c153990194ec431730d9e126fccd437f"
+      },
+      "main.txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261112-083004-ff7108eff3-bb92bc/work/sources/arxiv-2611.13509/main.txt",
+        "bytes": 74119,
+        "sha256": "970e980289d70e9ed98b852a0edeca837186824f6f5067ac81b58f1373373a06"
+      },
+      "page.html": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261112-083004-ff7108eff3-bb92bc/work/sources/arxiv-2611.13509/page.html",
+        "bytes": 41723,
+        "sha256": "8d28de770a24e5e3da793c14efabf062767cb11a4f0380433ad7c4afaf8f988d"
+      },
+      "page.txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261112-083004-ff7108eff3-bb92bc/work/sources/arxiv-2611.13509/page.txt",
+        "bytes": 4621,
+        "sha256": "61feb9197d82784109433ef216d2a08599cd6dea9b91adefed84abd6546a875e"
+      },
+      "pdf.pdf": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261112-083004-ff7108eff3-bb92bc/work/sources/arxiv-2611.13509/pdf.pdf",
+        "bytes": 1007268,
+        "sha256": "e0a6839ef3a3e792d89edc3b0fc3c4641e8b6a7b47664e31de5b8084d508efcb"
+      },
+      "pdf.txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261112-083004-ff7108eff3-bb92bc/work/sources/arxiv-2611.13509/pdf.txt",
+        "bytes": 96186,
+        "sha256": "2c5e4073d349e2a2c3821f3101b3a1357f9016330968b26f7d226c1ac7086e7a"
+      }
+    },
+    "live_fetch_hashes": {
+      "abs_html": {
+        "url": "https://arxiv.org/abs/2611.13509",
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/mobile-ai-factory-stage/arxiv_abs.html",
+        "bytes": 41723,
+        "sha256": "8d28de770a24e5e3da793c14efabf062767cb11a4f0380433ad7c4afaf8f988d",
+        "matches_frozen_page_html": true
+      },
+      "pdf": {
+        "url": "https://arxiv.org/pdf/2611.13509",
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/mobile-ai-factory-stage/arxiv_2611.13509.pdf",
+        "bytes": 1007268,
+        "sha256": "e0a6839ef3a3e792d89edc3b0fc3c4641e8b6a7b47664e31de5b8084d508efcb",
+        "matches_frozen_pdf_pdf": true
+      }
+    }
+  },
+  "surgical_patch_integrity": {
+    "lock_file": "/tmp/digest-daily-edit.lock",
+    "start_marker": "<h2 class=\"daily-paper-title\" id=\"paper-arxiv-2611.13509\">",
+    "end_marker_exclusive": "<h2 class=\"daily-paper-title\" id=\"paper-arxiv-2611.13378\">",
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-12.md",
+      "file_sha256_before": "adea0ca635a9172e6cb102457945c432da7e18bf03254bdfcc3d92ede8adae53",
+      "file_bytes_after": 86759,
+      "file_sha256_after": "8748ecb62cca96f3b9573ce27727dc08a0ef20500a8d28387400a8a09fa9c688",
+      "prefix_sha256_before": "771d34500fa33abbdf5ebbb43bf6b8f38c6d09994d4158b253d1c9a3ddffc854",
+      "prefix_sha256_after": "771d34500fa33abbdf5ebbb43bf6b8f38c6d09994d4158b253d1c9a3ddffc854",
+      "prefix_unchanged": true,
+      "suffix_sha256_before": "abbaa8ac4121bef798abf4e74fcf36622dab6ee37be56d3987617a0300e6704b",
+      "suffix_sha256_after": "abbaa8ac4121bef798abf4e74fcf36622dab6ee37be56d3987617a0300e6704b",
+      "suffix_unchanged": true,
+      "old_section_bytes": 1250,
+      "new_section_bytes": 24322,
+      "new_section_sha256": "4c255f71403c3682926861e6eb5d2bf86a2c8617ea419ad564d9b67d83a0f7e9",
+      "line_range": "461-544",
+      "mode_octal": "0o644"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-12.md",
+      "file_sha256_before": "85bc920e2028ad1ac28f104e01a0648f6a9186b844b70497b82762a79a53234d",
+      "file_bytes_after": 87372,
+      "file_sha256_after": "a1bff7f76d9e9a19e057ab7541cebd83f31debd5973c665937f469b2629227c5",
+      "prefix_sha256_before": "9ac479c7d695f475971d26c32ce9324184e33aa8610743fba00df0bd7d94c6d9",
+      "prefix_sha256_after": "9ac479c7d695f475971d26c32ce9324184e33aa8610743fba00df0bd7d94c6d9",
+      "prefix_unchanged": true,
+      "suffix_sha256_before": "d0e6390059dd10f5a6c020e94deb515a6a7bd74a094f4bed9f986abb49c9cd16",
+      "suffix_sha256_after": "d0e6390059dd10f5a6c020e94deb515a6a7bd74a094f4bed9f986abb49c9cd16",
+      "suffix_unchanged": true,
+      "old_section_bytes": 1332,
+      "new_section_bytes": 22708,
+      "new_section_sha256": "1e2028bf074ff7ee9ac851286d937fcf26820b817bd615c49cc384025158e273",
+      "line_range": "462-545",
+      "mode_octal": "0o644"
+    }
+  },
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "mobile_ai_factory_svgs": {
+      "mobile-ai-factory-architecture-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-12/mobile-ai-factory-architecture-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-12/mobile-ai-factory-architecture-zh.svg",
+        "bytes": 10897,
+        "sha256": "cb0c6f45c68cc48de913c0eacf24121fcac68559cbba3011be1cb73bd70130eb",
+        "mode_octal": "0o644"
+      },
+      "mobile-ai-factory-architecture-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-12/mobile-ai-factory-architecture-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-12/mobile-ai-factory-architecture-en.svg",
+        "bytes": 10632,
+        "sha256": "0fc38fe313c103de01d53df8fe0d0fb81b7f3479e79f6fe34630ca107e446978",
+        "mode_octal": "0o644"
+      },
+      "mobile-ai-factory-evidence-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-12/mobile-ai-factory-evidence-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-12/mobile-ai-factory-evidence-zh.svg",
+        "bytes": 12171,
+        "sha256": "3ce0e18b437cc330284a3c300636ae0689c7a80ca677f73d95475c8b56f8dfb9",
+        "mode_octal": "0o644"
+      },
+      "mobile-ai-factory-evidence-en.svg": {
+        "site_path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-12/mobile-ai-factory-evidence-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-12/mobile-ai-factory-evidence-en.svg",
+        "bytes": 12084,
+        "sha256": "f8df87aaf563cdea47856c5f8fafa72ebcccd3939e30f079744d17573306e8d0",
+        "mode_octal": "0o644"
+      }
+    },
+    "preserved_preexisting_or_sibling_assets": [
+      "bursts.png",
+      "plumbline.png",
+      "rsi-tax.png",
+      "topoverus-curriculum-pipeline-en.svg",
+      "topoverus-curriculum-pipeline-zh.svg",
+      "topoverus-eval-mechanisms-en.svg",
+      "topoverus-eval-mechanisms-zh.svg",
+      "trajectory.png",
+      "wikitrace.png"
+    ]
+  }
+}

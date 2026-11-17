@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Lato', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="35" font-size="18" font-weight="700" fill="#0f172a">Grafana Adaptive Telemetry：三大信号自动化控制闭环与成熟度边界</text>
+  <text x="24" y="54" font-size="11" fill="#475569">综合 2026-10-20 博文与 4 篇官方文档：拆解 Trace 尾采样、Log 边缘裁剪/归档、Metric Auto-Apply 与各自回退界限</text>
+  <line x1="24" y1="64" x2="936" y2="64" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Lane 1: Adaptive Traces -->
+  <rect x="24" y="72" width="912" height="142" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="72" width="912" height="24" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="88" width="912" height="8" fill="#dbeafe"/>
+  <text x="36" y="88" font-size="11.5" font-weight="700" fill="#1e3a8a">1 · Adaptive Traces：服务端尾采样与分层保留闭环</text>
+  <rect x="822" y="75" width="102" height="18" rx="4" fill="#15803d"/>
+  <text x="873" y="88" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">GA 已全面可用</text>
+
+  <rect x="34" y="102" width="196" height="104" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="120" font-size="10.8" font-weight="700" fill="#1d4ed8">前置过滤与入口条件</text>
+  <text x="44" y="139" font-size="9.8" fill="#334155">• Drop 策略优先剔除无效流量</text>
+  <text x="44" y="156" font-size="9.8" fill="#334155">• 其余 Trace 进入云端尾采样</text>
+  <text x="44" y="173" font-size="9.8" fill="#334155">• 无需用户自建采样流水线</text>
+  <text x="44" y="191" font-size="9.3" fill="#475569">停用须原地改回 probabilistic</text>
+
+  <line x1="230" y1="154" x2="246" y2="154" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="248" y="102" width="246" height="104" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="258" y="120" font-size="10.8" font-weight="700" fill="#1d4ed8">Volumetric + Diversity 联合裁决</text>
+  <text x="258" y="139" font-size="9.8" fill="#334155">• Volumetric：每 ~15s 重算各组采样率</text>
+  <text x="258" y="156" font-size="9.8" fill="#334155">  目标为字节比例（每租户限 1 条策略）</text>
+  <text x="258" y="173" font-size="9.8" fill="#334155">• Diversity：9 属性指纹每 15 分钟</text>
+  <text x="258" y="191" font-size="9.3" fill="#475569">  至少保留 1 条代表样本（不计入互斥降幅）</text>
+
+  <line x1="494" y1="154" x2="510" y2="154" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="512" y="102" width="198" height="104" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="522" y="120" font-size="10.8" font-weight="700" fill="#166534">命中保留路径 → Tempo</text>
+  <text x="522" y="139" font-size="9.8" fill="#1e293b">• 写入 Tempo 长期保存</text>
+  <text x="522" y="156" font-size="9.8" fill="#1e293b">• 支持 TraceQL 条件与聚合检索</text>
+  <text x="522" y="173" font-size="9.8" fill="#334155">• 低流量服务不被健康检查挤出</text>
+  <text x="522" y="191" font-size="9.3" fill="#475569">叠加专属规则时总量不线性下降</text>
+
+  <line x1="719" y1="104" x2="719" y2="204" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <rect x="728" y="102" width="198" height="104" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="738" y="120" font-size="10.8" font-weight="700" fill="#b45309">未命中丢弃 → 24h ID 找回</text>
+  <text x="738" y="139" font-size="9.8" fill="#78350f">• 仅凭已知 trace ID 在 24h 内查回</text>
+  <text x="738" y="156" font-size="9.8" fill="#78350f">• 首次找回写入 Tempo 并打标恢复</text>
+  <text x="738" y="173" font-size="9.8" fill="#92400e">• TraceQL 搜索仅尽力提供（不可靠）</text>
+  <text x="738" y="191" font-size="9.3" fill="#92400e">超时永久丢弃；超大链路可能截断</text>
+
+  <!-- Lane 2: Adaptive Logs -->
+  <rect x="24" y="222" width="912" height="118" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="222" width="912" height="24" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="238" width="912" height="8" fill="#dbeafe"/>
+  <text x="36" y="238" font-size="11.5" font-weight="700" fill="#1e3a8a">2 · Adaptive Logs：采集端过滤与低成本对象存储归档</text>
+  <rect x="752" y="225" width="172" height="18" rx="4" fill="#b45309"/>
+  <text x="838" y="238" font-size="9.3" font-weight="700" fill="#ffffff" text-anchor="middle">Public Preview / Replay 待上线</text>
+
+  <rect x="34" y="252" width="196" height="80" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="269" font-size="10.6" font-weight="700" fill="#1d4ed8">云端模式识别与规则生成</text>
+  <text x="44" y="287" font-size="9.7" fill="#334155">• 统计无人查询的日志模式</text>
+  <text x="44" y="304" font-size="9.7" fill="#334155">• 沿用既有丢弃规则与豁免清单</text>
+  <text x="44" y="321" font-size="9.3" fill="#475569">其余日志继续留在云端生成建议</text>
+
+  <line x1="230" y1="292" x2="246" y2="292" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="248" y="252" width="246" height="80" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1"/>
+  <text x="258" y="269" font-size="10.6" font-weight="700" fill="#0369a1">Fleet 托管采集端同步（公测）</text>
+  <text x="258" y="287" font-size="9.7" fill="#0f172a">• 通过 Fleet Management 下发过滤</text>
+  <text x="258" y="304" font-size="9.7" fill="#334155">• 自动同步采集器管道，免手写配置</text>
+  <text x="258" y="321" font-size="9.3" fill="#0369a1">在日志离开用户环境前完成拦截</text>
+
+  <line x1="494" y1="292" x2="510" y2="292" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="512" y="252" width="198" height="80" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="522" y="269" font-size="10.6" font-weight="700" fill="#0f172a">节省出站流量与索引成本</text>
+  <text x="522" y="287" font-size="9.7" fill="#334155">• 在存储之外省下 Egress/网络开销</text>
+  <text x="522" y="304" font-size="9.7" fill="#334155">• 未命中丢弃规则的日志继续入库</text>
+  <text x="522" y="321" font-size="9.3" fill="#475569">或分流至低成本对象存储归档</text>
+
+  <line x1="719" y1="254" x2="719" y2="330" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <rect x="728" y="252" width="198" height="80" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="738" y="269" font-size="10.6" font-weight="700" fill="#b45309">Archive 与 Replay 成熟度落差</text>
+  <text x="738" y="287" font-size="9.7" fill="#78350f">• Archive 公测：存用户自有对象存储</text>
+  <text x="738" y="304" font-size="9.7" fill="#92400e">• Replay 尚未正式推出（私人预览）</text>
+  <text x="738" y="321" font-size="9.3" fill="#92400e">已归档不等于现成可按需回放工作流</text>
+
+  <!-- Lane 3: Adaptive Metrics -->
+  <rect x="24" y="348" width="912" height="118" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="348" width="912" height="24" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="364" width="912" height="8" fill="#dbeafe"/>
+  <text x="36" y="364" font-size="11.5" font-weight="700" fill="#1e3a8a">3 · Adaptive Metrics Auto-Apply：按查询使用情况自动执行聚合建议</text>
+  <rect x="822" y="351" width="102" height="18" rx="4" fill="#15803d"/>
+  <text x="873" y="364" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">GA 已全面可用</text>
+
+  <rect x="34" y="378" width="196" height="80" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="395" font-size="10.6" font-weight="700" fill="#1d4ed8">使用行为分析（Usage Audit）</text>
+  <text x="44" y="413" font-size="9.7" fill="#334155">• 扫描看板、告警、记录规则与查询</text>
+  <text x="44" y="430" font-size="9.7" fill="#334155">• 识别无人使用的精细高基数标签</text>
+  <text x="44" y="447" font-size="9.3" fill="#475569">按分段输出低基数聚合建议</text>
+
+  <line x1="230" y1="418" x2="246" y2="418" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="248" y="378" width="246" height="80" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="258" y="395" font-size="10.6" font-weight="700" fill="#1d4ed8">分段门控（UI / API / Terraform）</text>
+  <text x="258" y="413" font-size="9.7" fill="#334155">• 按 default 或自定义 Segment 启用</text>
+  <text x="258" y="430" font-size="9.7" fill="#334155">• 缺省为 unbounded（Coverage-first）</text>
+  <text x="258" y="447" font-size="9.3" fill="#475569">需显式设为 no-increase（Cost-first）</text>
+
+  <line x1="494" y1="418" x2="510" y2="418" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="512" y="378" width="198" height="80" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="522" y="395" font-size="10.6" font-weight="700" fill="#166534">规则自动生效与作用域</text>
+  <text x="522" y="413" font-size="9.7" fill="#1e293b">• 可移除或替换精确匹配聚合规则</text>
+  <text x="522" y="430" font-size="9.7" fill="#1e293b">• 不改动前后缀规则与 Drop 规则</text>
+  <text x="522" y="447" font-size="9.3" fill="#475569">受分段聚合规则数量上限约束</text>
+
+  <line x1="719" y1="380" x2="719" y2="456" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <rect x="728" y="378" width="198" height="80" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="738" y="395" font-size="10.6" font-weight="700" fill="#b45309">豁免前置与非硬性保证</text>
+  <text x="738" y="413" font-size="9.7" fill="#78350f">• 启用前必须先建关键指标豁免</text>
+  <text x="738" y="430" font-size="9.7" fill="#92400e">• Cost-first 依赖上轮估算非实时比对</text>
+  <text x="738" y="447" font-size="9.3" fill="#92400e">近期未被查询 ≠ 未来事故用不到</text>
+
+  <!-- Bottom Takeaway Bar -->
+  <rect x="24" y="474" width="912" height="32" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="36" y="494" font-size="10.2" font-weight="600" fill="#1e3a8a">设计要点：将遥测证据拆分为“长期可检索（Tempo/Loki/Mimir）· 24h 按 ID 找回 · 离线对象存储归档”三层，各自承担不同时延与成本边界</text>
+
+  <text x="24" y="524" font-size="10" fill="#64748b">阅读整理配图（非原图）· 依据 Grafana Labs 2026-10-20 博文及 4 篇 Adaptive Traces / Metrics 官方文档绘制，已标注 GA 与预览功能边界</text>
+</svg>

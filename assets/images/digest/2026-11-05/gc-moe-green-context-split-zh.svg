@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="svg-gc-arch-zh-title svg-gc-arch-zh-desc">
+  <title id="svg-gc-arch-zh-title">GC-MoE CUDA Green Context SM 分区、三节点 CUDA Graph 与对称内存流水线架构图</title>
+  <desc id="svg-gc-arch-zh-desc">上部对比 DeepGEMM Mega MoE 在 148 个 SM 上全卡共享 CTA 预算及跨 rank tag-2 尾屏障与 GC-MoE 拆分 20 SM 通信分区和 128 SM 计算分区并移除 tag-2 屏障的执行时间线；下部展示三节点 CUDA Graph（role1 分发、role2 分组 GEMM 与 role3 归约释放）如何通过对称内存令牌环、64 位 l2_full_mask 与奇偶双缓冲计数实现无主机干预的跨重放流水线。</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-sky" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#0284c7"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#16a34a"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc"/>
+
+  <!-- Header -->
+  <text x="28" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="18" font-weight="700" fill="#0f172a">GC-MoE：Green Context SM 硬分区、令牌环握手与无尾屏障流水线</text>
+  <text x="28" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" fill="#475569">基于 arXiv:2611.04222v1 Fig. 1–2、Table 1 与 §4.1–4.6 整理（以 Blackwell SM103 8×B300 148 SM 默认切分为例）</text>
+
+  <rect x="722" y="18" width="210" height="32" rx="16" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="827" y="38" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">B300 默认对齐：20 + 128 SMs</text>
+
+  <!-- Top Panel: Timeline Contrast -->
+  <rect x="28" y="68" width="904" height="158" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="42" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#1e293b">一、单层执行时间线对比：SM 内共享竞争 vs. 驱动级 SM 分区隔离</text>
+
+  <!-- Left Subcard: Baseline -->
+  <rect x="42" y="94" width="424" height="122" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="52" y="101" width="404" height="20" rx="4" fill="#fee2e2"/>
+  <text x="60" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11" font-weight="700" fill="#991b1b">(a) DeepGEMM Mega MoE：单常驻核占满 148 SM，各角色共享 CTA</text>
+
+  <text x="52" y="144" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#475569">全部 148</text>
+  <text x="52" y="158" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#475569">SM 共享</text>
+
+  <rect x="114" y="128" width="62" height="38" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="145" y="145" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#334155">计数 +</text>
+  <text x="145" y="158" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#334155">tag-1</text>
+
+  <rect x="180" y="128" width="170" height="18" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="265" y="141" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#92400e">4 通信 warp/SM：拉取 token</text>
+
+  <rect x="180" y="148" width="170" height="18" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="265" y="161" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#1e40af">TMA/MMA + 8 尾流/归约 warp</text>
+
+  <rect x="354" y="128" width="46" height="38" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+  <text x="377" y="145" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#334155">清空</text>
+  <text x="377" y="158" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#334155">缓冲</text>
+
+  <rect x="404" y="128" width="52" height="38" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+  <text x="430" y="145" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="700" fill="#991b1b">tag-2</text>
+  <text x="430" y="158" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#991b1b">尾屏障</text>
+
+  <text x="52" y="185" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#475569">单 CTA 共享 64,512 寄存器与 227 KB SMEM · 全卡 148 SM 网格同步</text>
+  <text x="52" y="204" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#334155">T_mega = t_pro + max(T_pull, T_gemm) + max(T_comb, t_clean + t_tag2)</text>
+
+  <!-- Right Subcard: GC-MoE -->
+  <rect x="480" y="94" width="438" height="122" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.3"/>
+  <rect x="490" y="101" width="418" height="20" rx="4" fill="#dbeafe"/>
+  <text x="498" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">(b) GC-MoE：两个 Green Context 正交硬切 SM，去掉跨 rank tag-2 屏障</text>
+
+  <text x="490" y="141" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="700" fill="#0369a1">通信 20</text>
+  <rect x="538" y="128" width="56" height="18" rx="3" fill="#e0f2fe" stroke="#0284c7" stroke-width="1"/>
+  <text x="566" y="141" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#0c4a6e">tag-1</text>
+
+  <rect x="598" y="128" width="160" height="18" rx="3" fill="#bae6fd" stroke="#0284c7" stroke-width="1"/>
+  <text x="678" y="141" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#0c4a6e">role1：独立 SM 拉取 token</text>
+
+  <text x="490" y="163" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="700" fill="#1d4ed8">计算 128</text>
+  <line x1="624" y1="146" x2="624" y2="150" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <rect x="624" y="150" width="148" height="18" rx="3" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="698" y="163" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#1e3a8a">role2：GEMM (无通信 warp)</text>
+
+  <rect x="776" y="150" width="60" height="18" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="806" y="163" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="600" fill="#166534">role3 归约</text>
+
+  <rect x="840" y="128" width="68" height="40" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="874" y="145" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="700" fill="#15803d">省去尾屏障</text>
+  <text x="874" y="159" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" fill="#166534">直进重放 N+1</text>
+
+  <text x="490" y="185" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">首个令牌环块满即触发 role2 · 平衡队列避免隐式串行 · 奇偶计数跨代复用</text>
+  <text x="490" y="204" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="700" fill="#1d4ed8">T_gc = t_pro + max(T_pull^ded, T_gemm) + T_combine (消除 tag-2 往返)</text>
+
+  <!-- Bottom Panel: 3-Node Child CUDA Graph + Symmetric Memory -->
+  <rect x="28" y="236" width="904" height="288" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="42" y="254" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#1e293b">二、三节点子 CUDA Graph 调度与设备常驻对称内存工作区（SM90 融合共享专家时增为四节点 role4）</text>
+
+  <!-- Overhead DAG dependency rail to role3 -->
+  <polyline points="178,274 178,263 782,263 782,272" fill="none" stroke="#475569" stroke-width="1.3" marker-end="url(#arrow-slate)"/>
+  <line x1="478" y1="274" x2="478" y2="263" stroke="#475569" stroke-width="1.3"/>
+  <rect x="614" y="256" width="128" height="14" rx="7" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="678" y="266" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="600" fill="#334155">role3 依赖双根节点</text>
+
+  <!-- Role 1 Card -->
+  <rect x="42" y="274" width="272" height="122" rx="8" fill="#f8fafc" stroke="#0284c7" stroke-width="1.4"/>
+  <text x="54" y="294" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="13" font-weight="700" fill="#0c4a6e">role1 · 令牌分发 (并发根 1)</text>
+  <rect x="54" y="301" width="248" height="18" rx="4" fill="#e0f2fe"/>
+  <text x="178" y="314" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#0369a1">通信绿上下文 (20 SMs / SM90 默认 4)</text>
+  <text x="54" y="335" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">1. (1&lt;&lt;32)|count 打包原子计数发布对端</text>
+  <text x="54" y="352" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">2. 持久相位 tag-1 NVLink 屏障 (3600s 超时)</text>
+  <text x="54" y="369" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">3. 游标拉取对端 FP8 激活与缩放至环块</text>
+  <text x="54" y="386" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#0369a1">4. 按代释放 l1_full_count[b] 唤醒 GEMM</text>
+
+  <!-- Concurrent Roots Connector -->
+  <rect x="319" y="316" width="22" height="36" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="330" y="339" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">∥</text>
+  <text x="330" y="366" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="600" fill="#1d4ed8">并发</text>
+
+  <!-- Role 2 Card -->
+  <rect x="346" y="274" width="276" height="122" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="358" y="294" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="13" font-weight="700" fill="#1e3a8a">role2 · 分组 GEMM (并发根 2)</text>
+  <rect x="358" y="301" width="252" height="18" rx="4" fill="#dbeafe"/>
+  <text x="484" y="314" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#1d4ed8">计算绿上下文 (128 SMs · (2,1,1) Cluster)</text>
+  <text x="358" y="335" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e293b">1. acquire l1_full_count[b] 随到随算</text>
+  <text x="358" y="352" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e293b">2. W1 融合 SwiGLU·路由权重·FP8 重量化</text>
+  <text x="358" y="369" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e293b">3. 64 位 l2_full_mask 触发 W2 (I ≤ 4096)</text>
+  <text x="358" y="386" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#1d4ed8">4. 16B 直散写 BF16 偏和至源 rank 归约槽</text>
+
+  <!-- Role 3 Card -->
+  <rect x="646" y="274" width="272" height="122" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.4"/>
+  <text x="658" y="294" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="13" font-weight="700" fill="#14532d">role3 · 归约与重置 (双路并行)</text>
+  <rect x="658" y="301" width="248" height="18" rx="4" fill="#dcfce7"/>
+  <text x="782" y="314" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#15803d">计算绿上下文 (≤64 或全计算 SM 网格)</text>
+  <text x="658" y="335" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e293b">• 前 4 warp 记账：release 归约就绪信号</text>
+  <text x="658" y="352" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e293b">• 消费本代计数并翻转 recv_parity 奇偶位</text>
+  <text x="658" y="369" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e293b">• 重置环信号/位图（与等待对端并发隐藏）</text>
+  <text x="658" y="386" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="600" fill="#15803d">• 其余 warp 按 top-k 槽顺序 FP32 累加输出</text>
+
+  <!-- Vertical Connectors to Symmetric Memory -->
+  <line x1="178" y1="396" x2="178" y2="414" stroke="#0284c7" stroke-width="1.5" marker-end="url(#arrow-sky)"/>
+  <line x1="484" y1="396" x2="484" y2="414" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <line x1="782" y1="396" x2="782" y2="414" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Symmetric Memory Workspace -->
+  <rect x="42" y="416" width="876" height="96" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2"/>
+  <text x="54" y="433" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11" font-weight="700" fill="#0f172a">单一对称内存工作区（PyTorch Symmetric Memory，592B 按值传递基址 + 72 偏移量，NVLink 对端直访 P−1 卡）</text>
+
+  <rect x="54" y="441" width="162" height="50" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="135" y="461" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">激活与缩放表</text>
+  <text x="135" y="479" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#475569">FP8 + UE8M0 / 共享复用</text>
+
+  <rect x="226" y="441" width="164" height="50" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="308" y="461" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">路由与源索引区</text>
+  <text x="308" y="479" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#475569">topk_idx · 权重 · 源槽位</text>
+
+  <rect x="400" y="441" width="166" height="50" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="483" y="461" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#1d4ed8">全局复用令牌环</text>
+  <text x="483" y="479" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#1e40af">l1/l2 full/empty + 64b 位图</text>
+
+  <rect x="576" y="441" width="164" height="50" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.1"/>
+  <text x="658" y="461" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#166534">Combine 偏和缓冲</text>
+  <text x="658" y="479" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#15803d">k+1 槽位 · role2 直接远端写入</text>
+
+  <rect x="750" y="441" width="156" height="50" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-width="1.1"/>
+  <text x="828" y="461" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#854d0e">奇偶双缓冲计数</text>
+  <text x="828" y="479" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#713f12">第 N mod 2 代 · 免主机重置</text>
+
+  <text x="480" y="505" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#64748b">所有同步对象（tag-1 相位、环代号、recv_parity、归约就绪标志）全部设备常驻，连续重放无需主机清零 · 单工作区需串行调用</text>
+</svg>

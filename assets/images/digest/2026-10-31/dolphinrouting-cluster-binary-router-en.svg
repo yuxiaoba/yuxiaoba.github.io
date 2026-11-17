@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="DolphinRouting architecture: offline K=8 clustering and saturated-load policy search paired with online 4-feature extraction and 1-bit table lookup">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <g style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+    <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+    <text x="24" y="33" font-size="16.5" font-weight="700" fill="#0f172a">DolphinRouting: Offline Policy Search &amp; Online Table-Lookup Architecture</text>
+    <text x="24" y="52" font-size="10.0" fill="#475569">arXiv:2610.40292v1 (§3.2–§3.6, Fig. 2, Alg. 1–3) · Learning a K-cluster binary routing table from SLO feedback under a fixed P/D allocation</text>
+    <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+    <!-- Left Column: Offline Policy Search -->
+    <rect x="20" y="72" width="448" height="420" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+    <rect x="20" y="72" width="448" height="28" rx="9" fill="#1e3a8a"/>
+    <rect x="20" y="92" width="448" height="8" fill="#1e3a8a"/>
+    <text x="32" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">Stage 1 · Offline Clustering &amp; Policy Search (Disjoint 20% Trace)</text>
+
+    <!-- Box 1A: Alg 1 Clustering -->
+    <rect x="32" y="109" width="424" height="106" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="42" y="117" width="84" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="84" y="129.5" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1d4ed8">Alg. 1 Cluster</text>
+    <text x="134" y="130" font-size="10.6" font-weight="700" fill="#0f172a">4-Feature Extraction &amp; K=8 Cluster Profiles</text>
+    <text x="42" y="151" font-size="9.1" fill="#334155">• Parallel extract ℓ_raw, ℓ_P, ℓ_D &amp; ground-truth OSL L (offline trace)</text>
+    <text x="42" y="169" font-size="9.1" fill="#334155">• Transform skewed lengths via log(1+x) + ZScore standardization</text>
+    <text x="42" y="187" font-size="9.1" fill="#334155">• Fit k-means (beats GMM 7/8 on mixed/real) to form profiles P_c</text>
+    <text x="42" y="205" font-size="8.4" fill="#64748b">Note: Alg. 1 lists Span(P_c) &gt; τ marking check left undefined in paper prose</text>
+
+    <line x1="244" y1="215" x2="244" y2="229" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+    <!-- Box 1B: Alg 2 Initialization -->
+    <rect x="32" y="231" width="424" height="106" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+    <rect x="42" y="239" width="84" height="18" rx="4" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+    <text x="84" y="251.5" text-anchor="middle" font-size="9.0" font-weight="700" fill="#0369a1">Alg. 2 Init Scan</text>
+    <text x="134" y="252" font-size="10.6" font-weight="700" fill="#1e3a8a">Per-Cluster Saturated Scan (2K = 16 Runs)</text>
+    <text x="42" y="273" font-size="9.1" fill="#1e293b">• Fix other clusters {a_c′}; route cluster c via path 0 then 1 for window T</text>
+    <text x="42" y="291" font-size="9.1" fill="#1e293b">• Measure end-to-end SLO attainment R_agg(c) &amp; R_disagg(c)</text>
+    <text x="42" y="309" font-size="9.1" fill="#1e293b">• Seed initial a_c = argmax R and initialize counts n_c(0) = n_c(1) = 1</text>
+    <text x="42" y="327" font-size="8.6" font-weight="600" fill="#1d4ed8">Ablation (Table 3): skipping scan delays conv. 25.8→39.6 rounds, TPOT 0.80→0.91</text>
+
+    <line x1="244" y1="337" x2="244" y2="351" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+    <!-- Box 1C: Alg 3 Optimization -->
+    <rect x="32" y="353" width="424" height="129" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+    <rect x="42" y="361" width="84" height="18" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+    <text x="84" y="373.5" text-anchor="middle" font-size="9.0" font-weight="700" fill="#166534">Alg. 3 Refine</text>
+    <text x="134" y="374" font-size="10.6" font-weight="700" fill="#1e3a8a">Joint ε-Greedy Search Over Shared P/D Pool</text>
+    <rect x="42" y="385" width="404" height="24" rx="4" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+    <text x="244" y="400.5" text-anchor="middle" font-size="8.4" font-weight="700" fill="#1d4ed8">R_c = (1/|R_c|) Σ I[TTFT_r+(L_r−1)·TPOT_r ≤ SLO_r]   |   ε_t = 0.01+0.49·exp(−t/K)</text>
+    <text x="42" y="426" font-size="9.0" fill="#0f172a">• Per round, sample {a_c} via ε_t random / greedy argmax R̂_c(a)</text>
+    <text x="42" y="444" font-size="9.0" fill="#0f172a">• Execute joint table on saturated cluster; incremental-mean update R̂_c(a_c)</text>
+    <text x="42" y="462" font-size="9.0" font-weight="600" fill="#1d4ed8">• Decay constant K scales horizon; emits 1 K-bit table per P/D setup</text>
+
+    <!-- Connector Offline -> Online Table -->
+    <path d="M 456 418 L 478 418 L 478 286 L 500 286" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+    <!-- Right Column: Online Lookup & Routing -->
+    <rect x="490" y="72" width="450" height="420" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+    <rect x="490" y="72" width="450" height="28" rx="9" fill="#1d4ed8"/>
+    <rect x="490" y="92" width="450" height="8" fill="#1d4ed8"/>
+    <text x="502" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">Stage 2 · Online Feature Extraction, Assignment &amp; 1-Bit Lookup</text>
+
+    <!-- Box 2A: Feature Extraction -->
+    <rect x="502" y="109" width="426" height="128" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="512" y="117" width="76" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="550" y="129.5" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1d4ed8">Admission</text>
+    <text x="596" y="130" font-size="10.6" font-weight="700" fill="#0f172a">Parallel 4-Feature Extraction (No Cost Model)</text>
+
+    <rect x="512" y="143" width="198" height="39" rx="5" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="520" y="158" font-size="9.1" font-weight="700" fill="#0f172a">ℓ_raw · Raw Prompt Length</text>
+    <text x="520" y="174" font-size="8.3" fill="#475569">Prompt tokens before cache subtraction</text>
+
+    <rect x="720" y="143" width="198" height="39" rx="5" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="728" y="158" font-size="9.1" font-weight="700" fill="#1d4ed8">ℓ_P = ℓ_raw − Hit_P · P-Side ISL</text>
+    <text x="728" y="174" font-size="8.3" fill="#475569">Prefill work remaining on P worker</text>
+
+    <rect x="512" y="189" width="198" height="39" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+    <text x="520" y="204" font-size="9.1" font-weight="700" fill="#1e3a8a">ℓ_D = ℓ_raw − Hit_D · D-Side ISL</text>
+    <text x="520" y="220" font-size="8.2" fill="#334155">Local work on D GPU (cache asymmetry)</text>
+
+    <rect x="720" y="189" width="198" height="39" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="728" y="204" font-size="9.1" font-weight="700" fill="#b45309">L̂ · Clairvoyant OSL Proxy</text>
+    <text x="728" y="220" font-size="8.2" fill="#78350f">CPU XGBoost, 19 feats (0.029 ms rep.)</text>
+
+    <line x1="715" y1="237" x2="715" y2="250" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+    <!-- Box 2B: Cluster Assignment & Lookup -->
+    <rect x="502" y="252" width="426" height="72" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+    <rect x="512" y="260" width="76" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="550" y="272.5" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1d4ed8">O(1) Lookup</text>
+    <text x="596" y="273" font-size="10.6" font-weight="700" fill="#1e3a8a">Cluster Mapping ϕ(x) → c ∈ {1..K} &amp; 1-Bit Table</text>
+    <text x="512" y="294" font-size="8.9" fill="#1e293b">• Scale with offline stats, match nearest centroid, read a_c ∈ {0, 1}</text>
+    <text x="512" y="312" font-size="8.6" fill="#475569">• Selects phase path only; vLLM + Mooncake handle instance &amp; KV execution</text>
+
+    <!-- Branch arrows -->
+    <path d="M 650 324 L 650 338 L 605 338 L 605 349" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+    <path d="M 780 324 L 780 338 L 825 338 L 825 349" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arr-slate)"/>
+
+    <!-- Path 0 Card -->
+    <rect x="502" y="351" width="206" height="131" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+    <rect x="512" y="359" width="102" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="563" y="371.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1d4ed8">a_c = 0 · Aggregated</text>
+    <text x="512" y="395" font-size="10.2" font-weight="700" fill="#1e3a8a">Local Prefill on Decode</text>
+    <text x="512" y="414" font-size="8.9" fill="#1e293b">• Prefill + decode share D GPU</text>
+    <text x="512" y="432" font-size="8.9" fill="#1e293b">• Avoids remote KV transfer cost</text>
+    <text x="512" y="450" font-size="8.9" fill="#1e293b">• Fits small ℓ_D or high D-cache hit</text>
+    <text x="512" y="470" font-size="8.3" fill="#475569">Trade-off: large ℓ_D stalls active decode</text>
+
+    <!-- Path 1 Card -->
+    <rect x="722" y="351" width="206" height="131" rx="7" fill="#ffffff" stroke="#3b82f6" stroke-width="1.1"/>
+    <rect x="732" y="359" width="112" height="18" rx="4" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+    <text x="788" y="371.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#0369a1">a_c = 1 · Disaggregated</text>
+    <text x="732" y="395" font-size="10.2" font-weight="700" fill="#0f172a">Remote Prefill + KV Xfer</text>
+    <text x="732" y="414" font-size="8.9" fill="#334155">• Prefill worker computes ℓ_P</text>
+    <text x="732" y="432" font-size="8.9" fill="#334155">• Mooncake transfers KV to D node</text>
+    <text x="732" y="450" font-size="8.9" fill="#334155">• Fits large ℓ_D or tight TPOT SLO</text>
+    <text x="732" y="470" font-size="8.3" fill="#475569">Trade-off: adds KV transfer &amp; P queueing</text>
+
+    <!-- Bottom Legend & Caveat -->
+    <rect x="20" y="501" width="12" height="10" rx="2" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+    <text x="37" y="510" font-size="9.0" fill="#334155">Blue: Clustering &amp; routing core</text>
+    <rect x="202" y="501" width="12" height="10" rx="2" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="219" y="510" font-size="9.0" fill="#334155">Amber: Online OSL proxy (Clairvoyant)</text>
+    <rect x="428" y="501" width="12" height="10" rx="2" fill="#dcfce7" stroke="#86efac" stroke-width="1"/>
+    <text x="445" y="510" font-size="9.0" fill="#334155">Green: Saturated-load SLO feedback loop</text>
+    <text x="20" y="527" font-size="8.7" fill="#64748b">Boundary note: Offline clustering uses ground-truth L while online uses 3-class proxy L̂; no L̂-vs-L ablation or drift re-clustering is tested.</text>
+  </g>
+</svg>

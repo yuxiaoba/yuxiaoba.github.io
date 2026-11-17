@@ -1,6 +1,6 @@
 ---
 date: '2026-11-12'
-published: true
+published: false
 layout: article
 maintenance: daily-research
 translation_source: assistant
@@ -16,7 +16,9 @@ tags:
 summary: 从 torch.export 到 WGSL 的运行路径，以及 M1 Pro 上浏览器 GPU 与 Wasm CPU 对比的实际条件。
 permalink: /tech/zh/pytorch-executorch-webgpu/
 published_at: '2026-11-12T08:58:59.941917+08:00'
-updated_at: '2026-11-12T08:58:59.941917+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 [ExecuTorch WebGPU: PyTorch Models on the GPU, in the Browser](https://pytorch.org/blog/executorch-webgpu-pytorch-models-on-the-gpu-in-the-browser/)  
 Julian Ng-Thow-Hing, Siddartha Pothapragada, Stephen Jia, Digant Desai, Bilgin Cagatay · 2026-11-10

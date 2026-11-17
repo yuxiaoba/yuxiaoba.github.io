@@ -3,22 +3,23 @@ id: localpay
 title: '2026-10-21 | LocalPay: Making Payment Failures Repeatable Locally'
 date: '2026-10-21'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
 tags:
 - systems-reliability
 - observability
-summary: How state machines, an event log, an injectable clock, and webhook faults
-  work together, with the limits of compatibility not yet validated against real recordings.
+summary: How state machines, an event log, an injectable clock, and webhook faults work together, with the limits of compatibility not yet validated against real recordings.
 long_read: true
 source_url: https://github.com/karthikrshet/localpay
 permalink: /tech/en/localpay/
 authorship: assistant
 translation_source: assistant
-published_at: "2026-10-21T13:08:08.256303+08:00"
-updated_at: "2026-10-21T13:08:08.256303+08:00"
+published_at: '2026-10-21T13:08:08.256303+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 Karthik Rajesh Shet (karthikrshet) · Repository created 2026-10-19; author announcement 2026-10-20  
 Primary source: [LocalPay](https://github.com/karthikrshet/localpay) · [Compatibility matrix](https://github.com/karthikrshet/localpay/blob/main/docs/compat.md)

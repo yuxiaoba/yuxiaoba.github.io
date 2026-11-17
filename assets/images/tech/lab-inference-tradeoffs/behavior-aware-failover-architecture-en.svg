@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="37" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">Behavior-Aware Routing &amp; Dual-Layer Verification Architecture</text>
+  <text x="24" y="57" font-size="11.2" font-weight="400" fill="#475569" text-anchor="start">Upgrading reachability-only fallback to intent abstraction, per-model prompt/validator adapters, hard-case gates &amp; drills</text>
+  <line x1="24" y1="67" x2="936" y2="67" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="76" width="446" height="82" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <rect x="34" y="84" width="186" height="20" rx="5" fill="#b45309"/>
+  <text x="127.0" y="97.8" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="middle">Standard Fallback · Reachability</text>
+  <text x="228" y="98" font-size="10.8" font-weight="600" fill="#78350f" text-anchor="start">Router swaps endpoint only; reuses same prompt</text>
+  <text x="34" y="122" font-size="10.0" font-weight="400" fill="#92400e" text-anchor="start">• Hazard: a prompt tuned for GPT may shift format, tool calls, or escalations on Claude</text>
+  <text x="34" y="142" font-size="10.0" font-weight="400" fill="#92400e" text-anchor="start">• Outcome: HTTP 200 &amp; latency look green while behavioral contracts silently break</text>
+  <rect x="490" y="76" width="446" height="82" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="500" y="84" width="186" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="593.0" y="97.8" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="middle">Behavior-Aware · Qualified Switch</text>
+  <text x="694" y="98" font-size="10.8" font-weight="600" fill="#1e3a8a" text-anchor="start">Route binds policy, model prompt &amp; validator</text>
+  <text x="500" y="122" font-size="10.0" font-weight="400" fill="#1e40af" text-anchor="start">• Principle: app declares task intent; lower layer selects model-specific prompt &amp; rules</text>
+  <text x="500" y="142" font-size="10.0" font-weight="400" fill="#1e40af" text-anchor="start">• Metric: measure Availability by acceptable work completed, not raw 200 OK API calls</text>
+  <rect x="24" y="170" width="213" height="192" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="170" width="213" height="30" rx="8" fill="#1e3a8a"/>
+  <rect x="24" y="190" width="213" height="10" fill="#1e3a8a"/>
+  <text x="130.5" y="190" font-size="11.4" font-weight="700" fill="#ffffff" text-anchor="middle">1. Intent &amp; Policy Table</text>
+  <text x="36" y="220" font-size="10.1" font-weight="600" fill="#0f172a" text-anchor="start">Declare task &amp; deadline</text>
+  <text x="36" y="244" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">Split summary / tools / risk</text>
+  <text x="36" y="268" font-size="10.1" font-weight="600" fill="#1d4ed8" text-anchor="start">Write explicit dual policy:</text>
+  <text x="36" y="292" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">• Stress mode (LB / AB / LA)</text>
+  <text x="36" y="316" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">• Normal mode (L/cost vs B)</text>
+  <text x="36" y="340" font-size="10.1" font-weight="600" fill="#0f172a" text-anchor="start">Reject shared default route</text>
+  <line x1="239" y1="266" x2="254" y2="266" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="257" y="170" width="213" height="192" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="257" y="170" width="213" height="30" rx="8" fill="#1e3a8a"/>
+  <rect x="257" y="190" width="213" height="10" fill="#1e3a8a"/>
+  <text x="363.5" y="190" font-size="11.4" font-weight="700" fill="#ffffff" text-anchor="middle">2. LAB Policy Router</text>
+  <text x="269" y="220" font-size="10.1" font-weight="600" fill="#0f172a" text-anchor="start">Route by workload stance</text>
+  <text x="269" y="244" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">LB: bounded timeout, fail-closed</text>
+  <text x="269" y="268" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">AB: capped queue + TTL expiry</text>
+  <text x="269" y="292" font-size="10.1" font-weight="600" fill="#1d4ed8" text-anchor="start">LA: qualified pairs ONLY</text>
+  <text x="269" y="316" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">Key: (provider, model, time)</text>
+  <text x="269" y="340" font-size="10.1" font-weight="400" fill="#475569" text-anchor="start">Explicit degrade if none ready</text>
+  <line x1="472" y1="266" x2="487" y2="266" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="490" y="170" width="213" height="192" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="490" y="170" width="213" height="30" rx="8" fill="#1e3a8a"/>
+  <rect x="490" y="190" width="213" height="10" fill="#1e3a8a"/>
+  <text x="596.5" y="190" font-size="11.4" font-weight="700" fill="#ffffff" text-anchor="middle">3. Per-Model Adapter</text>
+  <text x="502" y="220" font-size="10.1" font-weight="600" fill="#0f172a" text-anchor="start">Bind target model contract</text>
+  <text x="502" y="244" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">Swap prompt template &amp; params</text>
+  <text x="502" y="268" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">Pin version (no &quot;latest&quot; alias)</text>
+  <text x="502" y="292" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">Match precision &amp; ctx limits</text>
+  <text x="502" y="316" font-size="10.1" font-weight="600" fill="#1d4ed8" text-anchor="start">Emit versioned tuple hash</text>
+  <text x="502" y="340" font-size="10.1" font-weight="400" fill="#475569" text-anchor="start">Any change invalidates pass</text>
+  <line x1="705" y1="266" x2="720" y2="266" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="723" y="170" width="213" height="192" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="723" y="170" width="213" height="30" rx="8" fill="#1e3a8a"/>
+  <rect x="723" y="190" width="213" height="10" fill="#1e3a8a"/>
+  <text x="829.5" y="190" font-size="11.4" font-weight="700" fill="#ffffff" text-anchor="middle">4. Invariant &amp; Escalation Gate</text>
+  <text x="735" y="220" font-size="10.1" font-weight="600" fill="#0f172a" text-anchor="start">Verify response meets rules</text>
+  <text x="735" y="244" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">Online: schema, enums, tool args</text>
+  <text x="735" y="268" font-size="10.1" font-weight="600" fill="#b45309" text-anchor="start">Limit (Engineering Note):</text>
+  <text x="735" y="292" font-size="10.1" font-weight="400" fill="#92400e" text-anchor="start">Valid JSON ≠ valid refund auth</text>
+  <text x="735" y="316" font-size="10.1" font-weight="600" fill="#1d4ed8" text-anchor="start">Escalate uncertain high-risk ops</text>
+  <text x="735" y="340" font-size="10.1" font-weight="400" fill="#334155" text-anchor="start">Measure A by compliant work</text>
+  <line x1="305" y1="388" x2="305" y2="365" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow-muted)"/>
+  <line x1="655" y1="388" x2="655" y2="365" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow-muted)"/>
+  <text x="480" y="379" font-size="9.8" font-weight="700" fill="#1e3a8a" text-anchor="middle">Block traffic below bar  |  Retest on every change</text>
+  <rect x="24" y="388" width="912" height="114" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="34" y="396" width="438" height="98" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="46" y="415" font-size="10.9" font-weight="700" fill="#1e3a8a" text-anchor="start">Pre-Traffic Fixed Hard-Case Gate (Backups &amp; Cost-Saving Routes Alike)</text>
+  <text x="46" y="436" font-size="10.0" font-weight="400" fill="#1e293b" text-anchor="start">• 5 Required Probe Sets: ambiguity · tool calls · refusals · formats · escalations</text>
+  <text x="46" y="456" font-size="10.0" font-weight="400" fill="#1e293b" text-anchor="start">• Score Two Axes Separately: behavioral fidelity vs. task correctness</text>
+  <text x="46" y="476" font-size="9.9" font-weight="600" fill="#1d4ed8" text-anchor="start">• Gate Rule: models missing the workload bar cannot take production traffic</text>
+  <rect x="488" y="396" width="438" height="98" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="500" y="415" font-size="10.9" font-weight="700" fill="#166534" text-anchor="start">Failure-Injection Drills &amp; Change-Triggered Retesting</text>
+  <text x="500" y="436" font-size="10.0" font-weight="400" fill="#14532d" text-anchor="start">• 4 Drill Scenarios: rate limits · lost capacity · slowdowns · regional outages</text>
+  <text x="500" y="456" font-size="10.0" font-weight="400" fill="#14532d" text-anchor="start">• 4 Separate Counters: on-time answers · completed work · fidelity · correctness</text>
+  <text x="500" y="476" font-size="9.9" font-weight="600" fill="#15803d" text-anchor="start">• Retest Triggers: new model version · prompt edit · provider or serving change</text>
+  <text x="24" y="522" font-size="10.0" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram synthesized from Mallya&#x27;s &quot;Designing for LAB&quot; (not an original figure; marks online syntax vs. semantic gate limits)</text>
+</svg>

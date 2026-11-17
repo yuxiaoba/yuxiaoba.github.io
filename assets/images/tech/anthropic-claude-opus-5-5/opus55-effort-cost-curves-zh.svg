@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24.0" y="36.0" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">Claude Opus 5.5：计价拆分与自适应推理成本曲线（官方内嵌数据）</text>
+  <text x="24.0" y="56.0" font-size="11.2" font-weight="400" fill="#475569" text-anchor="start">依据 Anthropic 官方发布页及 6 组内嵌 CSV 数据：区分单价降幅、token 收缩与非单调 effort 拐点</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="74" width="554" height="66" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="34" y="83" width="118" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="93.0" y="97.0" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">标准 API 计价</text>
+  <text x="162.0" y="97.0" font-size="11.2" font-weight="700" fill="#1e3a8a" text-anchor="start">输入 $4 (-20%) · 输出 $20 (-20%) · 缓存写 $5 (-20%) · 缓存读 $0.20 (-60%)</text>
+  <text x="34.0" y="124.0" font-size="10.2" font-weight="400" fill="#1e40af" text-anchor="start">单价 per 1M tokens（对比 Opus 5）；默认典型任务费用 -40% 来自“降单价 × 省 token”，输出速度 &gt;30% faster</text>
+  <rect x="590" y="74" width="346" height="66" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2"/>
+  <rect x="600" y="83" width="126" height="20" rx="5" fill="#b45309"/>
+  <text x="663.0" y="97.0" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Fast Mode 独立档</text>
+  <text x="734.0" y="97.0" font-size="11.2" font-weight="700" fill="#78350f" text-anchor="start">输入 $8 / 1M · 输出 $40 / 1M</text>
+  <text x="600.0" y="124.0" font-size="10.2" font-weight="400" fill="#92400e" text-anchor="start">标准单价 2×，宣称最高 2.5× 速度（切勿与 $4/$20 混算）</text>
+  <rect x="24" y="150" width="294" height="268" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="150" width="294" height="40" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="180" width="294" height="10" fill="#dbeafe"/>
+  <text x="36.0" y="167.0" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">1. FrontierCode v1.1 (main set)</text>
+  <text x="36.0" y="183.0" font-size="9.8" font-weight="600" fill="#1d4ed8" text-anchor="start">默认 Med 即峰值 · 非单调下降</text>
+  <text x="36.0" y="204.0" font-size="9.0" font-weight="600" fill="#475569" text-anchor="start">虚线: GPT-6 Astra (Max 53.3%) · 点线: Opus 5</text>
+  <line x1="62.0" y1="360.0" x2="302.0" y2="360.0" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="57.0" y="363.5" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">35%</text>
+  <line x1="62.0" y1="330.0" x2="302.0" y2="330.0" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="57.0" y="333.5" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">40%</text>
+  <line x1="62.0" y1="300.0" x2="302.0" y2="300.0" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="57.0" y="303.5" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">45%</text>
+  <line x1="62.0" y1="270.0" x2="302.0" y2="270.0" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="57.0" y="273.5" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">50%</text>
+  <line x1="62.0" y1="240.0" x2="302.0" y2="240.0" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="57.0" y="243.5" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">55%</text>
+  <line x1="87.7" y1="216.0" x2="87.7" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="87.7" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$0.5</text>
+  <line x1="130.6" y1="216.0" x2="130.6" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="130.6" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$1</text>
+  <line x1="173.4" y1="216.0" x2="173.4" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="173.4" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$2</text>
+  <line x1="230.1" y1="216.0" x2="230.1" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="230.1" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$5</text>
+  <line x1="272.9" y1="216.0" x2="272.9" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="272.9" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$10</text>
+  <line x1="62.0" y1="216.0" x2="62.0" y2="366.0" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="62.0" y1="366.0" x2="302.0" y2="366.0" stroke="#94a3b8" stroke-width="1"/>
+  <polyline points="159.3,298.4 181.6,277.0 195.3,264.4 200.4,266.3 221.7,250.4" fill="none" stroke="#64748b" stroke-width="1.6" stroke-dasharray="4,3"/>
+  <circle cx="159.3" cy="298.4" r="2.5" fill="#64748b"/>
+  <circle cx="181.6" cy="277.0" r="2.5" fill="#64748b"/>
+  <circle cx="195.3" cy="264.4" r="2.5" fill="#64748b"/>
+  <circle cx="200.4" cy="266.3" r="2.5" fill="#64748b"/>
+  <circle cx="221.7" cy="250.4" r="2.5" fill="#64748b"/>
+  <polyline points="190.6,318.3 225.0,249.7 256.1,282.1 266.3,308.1 285.6,281.8" fill="none" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="2,2"/>
+  <circle cx="190.6" cy="318.3" r="2.5" fill="#94a3b8"/>
+  <circle cx="225.0" cy="249.7" r="2.5" fill="#94a3b8"/>
+  <circle cx="256.1" cy="282.1" r="2.5" fill="#94a3b8"/>
+  <circle cx="266.3" cy="308.1" r="2.5" fill="#94a3b8"/>
+  <circle cx="285.6" cy="281.8" r="2.5" fill="#94a3b8"/>
+  <polyline points="74.4,286.2 116.9,242.2 135.9,246.1 180.8,261.5 243.3,243.4" fill="none" stroke="#1d4ed8" stroke-width="2.4"/>
+  <circle cx="74.4" cy="286.2" r="3.4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+  <text x="68.4" y="277.2" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="middle">L</text>
+  <circle cx="116.9" cy="242.2" r="5.5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="116.9" cy="242.2" r="2.8" fill="#1d4ed8"/>
+  <text x="118.9" y="232.2" font-size="9.2" font-weight="700" fill="#1e3a8a" text-anchor="start">Med 54.6%</text>
+  <circle cx="135.9" cy="246.1" r="3.4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+  <text x="145.9" y="257.1" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="start">H</text>
+  <circle cx="180.8" cy="261.5" r="3.4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+  <text x="174.8" y="274.5" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="middle">Xh</text>
+  <circle cx="243.3" cy="243.4" r="3.4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+  <text x="243.3" y="234.4" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="middle">Max</text>
+  <rect x="34" y="389" width="274" height="21" rx="4" fill="#eff6ff"/>
+  <text x="171.0" y="403.0" font-size="9.5" font-weight="600" fill="#1e3a8a" text-anchor="middle">Med ($0.80) 比 Max ($6.19) 省 7.7× 且更高</text>
+  <rect x="333" y="150" width="294" height="268" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="333" y="150" width="294" height="40" rx="8" fill="#dbeafe"/>
+  <rect x="333" y="180" width="294" height="10" fill="#dbeafe"/>
+  <text x="345.0" y="167.0" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">2. Terminal-Bench 4.0</text>
+  <text x="345.0" y="183.0" font-size="9.8" font-weight="600" fill="#1d4ed8" text-anchor="start">峰值在 Xhigh · Max 加价反降</text>
+  <text x="345.0" y="204.0" font-size="9.0" font-weight="600" fill="#475569" text-anchor="start">SE ±2.6；Med ($2.94) ≈ Astra High ($7.21) 40% 费</text>
+  <line x1="371.0" y1="357.7" x2="611.0" y2="357.7" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="366.0" y="361.2" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">25%</text>
+  <line x1="371.0" y1="329.9" x2="611.0" y2="329.9" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="366.0" y="333.4" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">35%</text>
+  <line x1="371.0" y1="302.1" x2="611.0" y2="302.1" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="366.0" y="305.6" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">45%</text>
+  <line x1="371.0" y1="274.3" x2="611.0" y2="274.3" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="366.0" y="277.8" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">55%</text>
+  <line x1="371.0" y1="246.6" x2="611.0" y2="246.6" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="366.0" y="250.1" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">65%</text>
+  <line x1="371.0" y1="216.0" x2="371.0" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="371.0" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$1</text>
+  <line x1="424.8" y1="216.0" x2="424.8" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="424.8" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$2</text>
+  <line x1="496.0" y1="216.0" x2="496.0" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="496.0" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$5</text>
+  <line x1="549.8" y1="216.0" x2="549.8" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="549.8" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$10</text>
+  <line x1="603.6" y1="216.0" x2="603.6" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="603.6" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$20</text>
+  <line x1="371.0" y1="216.0" x2="371.0" y2="366.0" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="371.0" y1="366.0" x2="611.0" y2="366.0" stroke="#94a3b8" stroke-width="1"/>
+  <polyline points="495.2,289.1 512.0,277.4 524.4,266.3 527.2,267.1 552.5,269.6" fill="none" stroke="#64748b" stroke-width="1.6" stroke-dasharray="4,3"/>
+  <circle cx="495.2" cy="289.1" r="2.5" fill="#64748b"/>
+  <circle cx="512.0" cy="277.4" r="2.5" fill="#64748b"/>
+  <circle cx="524.4" cy="266.3" r="2.5" fill="#64748b"/>
+  <circle cx="527.2" cy="267.1" r="2.5" fill="#64748b"/>
+  <circle cx="552.5" cy="269.6" r="2.5" fill="#64748b"/>
+  <polyline points="483.3,347.9 522.1,312.7 554.6,296.6 573.0,286.6 585.4,281.8" fill="none" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="2,2"/>
+  <circle cx="483.3" cy="347.9" r="2.5" fill="#94a3b8"/>
+  <circle cx="522.1" cy="312.7" r="2.5" fill="#94a3b8"/>
+  <circle cx="554.6" cy="296.6" r="2.5" fill="#94a3b8"/>
+  <circle cx="573.0" cy="286.6" r="2.5" fill="#94a3b8"/>
+  <circle cx="585.4" cy="281.8" r="2.5" fill="#94a3b8"/>
+  <polyline points="390.8,320.2 454.7,267.1 476.3,248.8 525.9,242.7 558.9,247.1" fill="none" stroke="#1d4ed8" stroke-width="2.4"/>
+  <circle cx="390.8" cy="320.2" r="3.4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+  <text x="398.8" y="313.2" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="start">L</text>
+  <circle cx="454.7" cy="267.1" r="3.4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+  <text x="450.7" y="257.1" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="end">Med 57.6%</text>
+  <circle cx="476.3" cy="248.8" r="3.4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+  <text x="468.3" y="240.8" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="end">H</text>
+  <circle cx="525.9" cy="242.7" r="5.5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="525.9" cy="242.7" r="2.8" fill="#1d4ed8"/>
+  <text x="523.9" y="231.7" font-size="9.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">Xh 66.4%</text>
+  <circle cx="558.9" cy="247.1" r="3.4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+  <text x="566.9" y="259.1" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="start">Max 64.8</text>
+  <rect x="343" y="389" width="274" height="21" rx="4" fill="#fffbeb"/>
+  <text x="480.0" y="403.0" font-size="9.5" font-weight="600" fill="#92400e" text-anchor="middle">Xhigh ($7.35) 最高；Max ($11.24) +53% 费用降 1.6 分</text>
+  <rect x="642" y="150" width="294" height="268" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="642" y="150" width="294" height="40" rx="8" fill="#dbeafe"/>
+  <rect x="642" y="180" width="294" height="10" fill="#dbeafe"/>
+  <text x="654.0" y="167.0" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">3. WANDR (980k 离线预算)</text>
+  <text x="654.0" y="183.0" font-size="9.8" font-weight="600" fill="#1d4ed8" text-anchor="start">档位跨度 31.6× · 非原设口径</text>
+  <text x="654.0" y="204.0" font-size="9.0" font-weight="600" fill="#475569" text-anchor="start">青虚线: Fable 5.1 · 灰点线: Opus 5（同条件重测）</text>
+  <line x1="680.0" y1="353.3" x2="920.0" y2="353.3" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="675.0" y="356.8" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">30%</text>
+  <line x1="680.0" y1="327.9" x2="920.0" y2="327.9" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="675.0" y="331.4" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">40%</text>
+  <line x1="680.0" y1="302.4" x2="920.0" y2="302.4" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="675.0" y="305.9" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">50%</text>
+  <line x1="680.0" y1="277.0" x2="920.0" y2="277.0" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="675.0" y="280.5" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">60%</text>
+  <line x1="680.0" y1="251.6" x2="920.0" y2="251.6" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="675.0" y="255.1" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">70%</text>
+  <line x1="680.0" y1="226.2" x2="920.0" y2="226.2" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="675.0" y="229.7" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="end">80%</text>
+  <line x1="682.8" y1="216.0" x2="682.8" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="682.8" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$1</text>
+  <line x1="720.9" y1="216.0" x2="720.9" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="720.9" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$2</text>
+  <line x1="771.2" y1="216.0" x2="771.2" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="771.2" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$5</text>
+  <line x1="809.3" y1="216.0" x2="809.3" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="809.3" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$10</text>
+  <line x1="847.4" y1="216.0" x2="847.4" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="847.4" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$20</text>
+  <line x1="897.7" y1="216.0" x2="897.7" y2="366.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <text x="897.7" y="379.0" font-size="9.0" font-weight="400" fill="#64748b" text-anchor="middle">$50</text>
+  <line x1="680.0" y1="216.0" x2="680.0" y2="366.0" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="680.0" y1="366.0" x2="920.0" y2="366.0" stroke="#94a3b8" stroke-width="1"/>
+  <polyline points="855.7,268.6 864.7,265.6 875.9,260.0 889.2,257.4 896.6,254.9" fill="none" stroke="#0ea5e9" stroke-width="1.6" stroke-dasharray="4,3"/>
+  <circle cx="855.7" cy="268.6" r="2.5" fill="#0ea5e9"/>
+  <circle cx="864.7" cy="265.6" r="2.5" fill="#0ea5e9"/>
+  <circle cx="875.9" cy="260.0" r="2.5" fill="#0ea5e9"/>
+  <circle cx="889.2" cy="257.4" r="2.5" fill="#0ea5e9"/>
+  <circle cx="896.6" cy="254.9" r="2.5" fill="#0ea5e9"/>
+  <polyline points="812.8,301.2 857.3,281.8 890.1,265.3 901.8,259.2 909.2,258.7" fill="none" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="2,2"/>
+  <circle cx="812.8" cy="301.2" r="2.5" fill="#94a3b8"/>
+  <circle cx="857.3" cy="281.8" r="2.5" fill="#94a3b8"/>
+  <circle cx="890.1" cy="265.3" r="2.5" fill="#94a3b8"/>
+  <circle cx="901.8" cy="259.2" r="2.5" fill="#94a3b8"/>
+  <circle cx="909.2" cy="258.7" r="2.5" fill="#94a3b8"/>
+  <polyline points="692.8,350.2 815.5,269.9 838.1,258.5 867.9,248.3 882.5,245.7" fill="none" stroke="#1d4ed8" stroke-width="2.4"/>
+  <circle cx="692.8" cy="350.2" r="3.4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+  <text x="702.8" y="352.2" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="start">L $1.2</text>
+  <circle cx="815.5" cy="269.9" r="3.4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+  <text x="809.5" y="260.9" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="end">Med $11.2</text>
+  <circle cx="838.1" cy="258.5" r="3.4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+  <text x="830.1" y="250.5" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="end">H</text>
+  <circle cx="867.9" cy="248.3" r="3.4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+  <text x="857.9" y="238.3" font-size="9.2" font-weight="600" fill="#1d4ed8" text-anchor="end">Xh</text>
+  <circle cx="882.5" cy="245.7" r="5.5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="882.5" cy="245.7" r="2.8" fill="#1d4ed8"/>
+  <text x="884.5" y="234.7" font-size="9.2" font-weight="700" fill="#1e3a8a" text-anchor="middle">Max 72.3%</text>
+  <rect x="652" y="389" width="274" height="21" rx="4" fill="#eff6ff"/>
+  <text x="789.0" y="403.0" font-size="9.5" font-weight="600" fill="#1e3a8a" text-anchor="middle">Low→Med 费用跳涨 9.3×；使用离线搜索+980k预算</text>
+  <rect x="24" y="428" width="912" height="72" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <text x="36.0" y="448.0" font-size="11.2" font-weight="700" fill="#0f172a" text-anchor="start">其余 3 组发布曲线同呈“默认 Med 与主表 Max 分层”特征（切勿把 Med 费用与 Max/Xhigh 高分拼成同一配置）：</text>
+  <text x="36.0" y="469.0" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• CursorBench 4.0：Med $2.90 (52.5%) → Max $13.43 (57.8%)  |  • GDPval-AA v2.1 (44 职业)：Med $0.86 (1576 Elo) → Max $8.92 (1846 Elo)</text>
+  <text x="36.0" y="488.0" font-size="10.5" font-weight="400" fill="#1e40af" text-anchor="start">• AutomationBench (Zapier)：Med $0.64 (28.6%) → Max $1.37 (40.0%)，且全程无回退模型、安全干预直接判失败（对比 GPT-6 Astra Max $1.77 / 41.4%）</text>
+  <text x="24.0" y="522.0" font-size="10.2" font-weight="400" fill="#64748b" text-anchor="start">阅读整理配图 · 基于《Introducing Claude Opus 5.5》冻存 HTML 内嵌原始图表 CSV 数据绘制（非原文截图），蓝实线=Opus 5.5</text>
+</svg>

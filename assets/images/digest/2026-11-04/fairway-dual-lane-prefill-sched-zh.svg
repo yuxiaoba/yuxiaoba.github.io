@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Fairway 自适应前缀复用调度：双虚拟通道与工作量记账合并" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="32" font-size="16.5" font-weight="700" fill="#0f172a">Fairway 自适应前缀复用调度：双虚拟通道与工作量记账合并</text>
+  <text x="24" y="51" font-size="10.0" fill="#475569">依据 arXiv:2611.02082v1（§4, Fig. 5–6, Algorithm 1, Appendix A）：每步重排 vLLM 等待队列，全局冻结参数 w=4、倍数 3、下限 1s</text>
+  <line x1="24" y1="61" x2="936" y2="61" stroke="#cbd5e1" stroke-width="1"/>
+
+  <rect x="20" y="70" width="286" height="270" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="70" width="286" height="26" rx="8" fill="#1e3a8a"/>
+  <rect x="20" y="88" width="286" height="8" fill="#1e3a8a"/>
+  <text x="32" y="87.5" font-size="10.6" font-weight="700" fill="#ffffff">1. 等待队列特征与 Fast 通道打分</text>
+
+  <rect x="30" y="104" width="266" height="66" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="40" y="121" font-size="10.0" font-weight="700" fill="#1e3a8a">分级 KV 复用与工作量（70–250× 差异）</text>
+  <text x="40" y="139" font-size="9.0" fill="#334155">• 缓存前缀长度 h_r ← KV 管理器（16-token 块）</text>
+  <text x="40" y="156" font-size="9.0" fill="#0f172a">• 未缓存工作量 c_r = max(1, len_r − h_r)</text>
+
+  <rect x="30" y="177" width="266" height="74" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.0"/>
+  <text x="40" y="194" font-size="10.0" font-weight="700" fill="#1e3a8a">相对等待与请求耐心（R2，§4.3）</text>
+  <text x="40" y="212" font-size="9.2" font-weight="700" fill="#0f172a">SLO_r = max(1 s, 3 · est(len_r))</text>
+  <text x="40" y="229" font-size="8.7" fill="#334155">• est(len_r) 取全提示长空载实测耗时（固定，非 c_r）</text>
+  <text x="40" y="244" font-size="8.7" fill="#475569">• 1 s 下限防止常态亚秒排队压过 KV 复用优先级</text>
+
+  <rect x="30" y="258" width="266" height="74" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="40" y="275" font-size="10.0" font-weight="700" fill="#1d4ed8">Fast 通道无量纲得分 s_r</text>
+  <text x="40" y="294" font-size="10.4" font-weight="700" fill="#0f172a">s_r = h_r / c_r + wait_r / SLO_r</text>
+  <text x="40" y="311" font-size="8.6" fill="#334155">• 短队列（wait_r 小）由 KV 复用比率主导（R1）</text>
+  <text x="40" y="325" font-size="8.6" fill="#1e3a8a">• wait_r = 3·est 时，纯 miss 等效 50% 命中新请求</text>
+
+  <line x1="307" y1="205" x2="322" y2="205" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+  <rect x="324" y="70" width="314" height="270" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="324" y="70" width="314" height="26" rx="8" fill="#1d4ed8"/>
+  <rect x="324" y="88" width="314" height="8" fill="#1d4ed8"/>
+  <text x="336" y="87.5" font-size="10.6" font-weight="700" fill="#ffffff">2. 双虚拟通道与步幅记账合并（Algorithm 1）</text>
+
+  <rect x="334" y="104" width="294" height="44" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.0"/>
+  <rect x="342" y="111" width="66" height="17" rx="4" fill="#1d4ed8"/>
+  <text x="375" y="122.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#ffffff">Fast 通道</text>
+  <text x="416" y="123" font-size="9.4" font-weight="700" fill="#1e3a8a">按 s_r 降序排列 Q（同分早到先）</text>
+  <text x="342" y="140" font-size="8.6" fill="#334155">初始工作账 A = w · c_Fast[1]，每次推进 +w·c_r（w = 4）</text>
+
+  <rect x="334" y="155" width="294" height="44" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.0"/>
+  <rect x="342" y="162" width="66" height="17" rx="4" fill="#475569"/>
+  <text x="375" y="173.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#ffffff">Fair 通道</text>
+  <text x="416" y="174" font-size="9.4" font-weight="700" fill="#0f172a">按到达顺序排列 Q（最老请求 o 居首）</text>
+  <text x="342" y="191" font-size="8.6" fill="#334155">初始工作账 F = c_Fair[1] = c_o，每次推进 +c_r</text>
+
+  <rect x="334" y="206" width="294" height="126" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.1"/>
+  <text x="344" y="223" font-size="9.7" font-weight="700" fill="#1e3a8a">交替合并循环（自动跳过另一通道已放置请求）</text>
+  <text x="344" y="241" font-size="8.9" fill="#0f172a">• 若 A ≤ F：从 Fast 取下一未放 r，A ← A + 4·c_r</text>
+  <text x="344" y="257" font-size="8.9" fill="#0f172a">• 否则（A &gt; F）：从 Fair 取下一未放 r，F ← F + c_r</text>
+  <text x="344" y="273" font-size="8.7" fill="#475569">• 平局优先 Fast；构造完整 order 避免步内预算浪费</text>
+
+  <rect x="342" y="284" width="278" height="40" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="350" y="299" font-size="8.7" font-weight="700" fill="#92400e">核心约束：A 与 F 在每个调度步开始时完全重置</text>
+  <text x="350" y="314" font-size="8.3" fill="#78350f">跨步累计会强制 80% FCFS 配额并退化失去中位延迟加速</text>
+
+  <line x1="639" y1="205" x2="654" y2="205" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+  <rect x="656" y="70" width="284" height="270" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="656" y="70" width="284" height="26" rx="8" fill="#0f172a"/>
+  <rect x="656" y="88" width="284" height="8" fill="#0f172a"/>
+  <text x="668" y="87.5" font-size="10.6" font-weight="700" fill="#ffffff">3. 步预算准入与形式边界（App. A）</text>
+
+  <rect x="666" y="104" width="264" height="79" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="676" y="121" font-size="9.8" font-weight="700" fill="#1e3a8a">vLLM 调度器正交接入（Fig. 5）</text>
+  <text x="676" y="138" font-size="8.7" fill="#334155">• 先续跑 running 请求，剩余预算 B 依 order 准入</text>
+  <text x="676" y="154" font-size="8.7" fill="#334155">• 保留分块 prefill (B=2,048) 与 PEEK 淘汰策略</text>
+  <text x="676" y="170" font-size="8.7" fill="#334155">• 每步重排：即时感知上一步新写入的前缀块</text>
+
+  <rect x="666" y="191" width="264" height="141" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="676" y="208" font-size="9.8" font-weight="700" fill="#1d4ed8">Lemma 1 &amp; Corollary 1（工作量上界）</text>
+  <text x="676" y="226" font-size="9.6" font-weight="700" fill="#0f172a">W ≤ c_o / w + c_{a_k} − c_{a_1}</text>
+  <text x="676" y="244" font-size="8.6" fill="#334155">• 无论多少高命中新请求插队，排在最老请求 o</text>
+  <text x="676" y="258" font-size="8.6" fill="#334155">  之前的总工作量至多为 c_o / 4 + 1 个请求（R3）</text>
+  <text x="676" y="275" font-size="8.6" fill="#0f172a">• 只要剩余预算与 KV 余量足够，o 必在本步启动</text>
+  <text x="676" y="289" font-size="8.6" fill="#0f172a">  首块（步内直接覆盖 c_o ≤ ~w·B = 8k token）</text>
+  <text x="676" y="307" font-size="8.5" font-weight="700" fill="#b45309">• 超 ~8k 请求靠 relative wait 持续升温防饥饿</text>
+  <text x="676" y="322" font-size="8.5" fill="#475569">• 全部评测（含 16k 提示）最坏等待 ≤ 2.3× p99</text>
+
+  <rect x="20" y="352" width="920" height="174" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="352" width="920" height="24" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="368" width="920" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="376" x2="940" y2="376" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="368" font-size="10.0" font-weight="700" fill="#1e3a8a">Fig. 6 单步走查实例（w = 4，预算 B = 2,048）：最老未命中 M（6,000 token）对 6 个后到高命中 H1–H6（各 300 token）</text>
+
+  <rect x="32" y="384" width="286" height="40" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="42" y="399" font-size="8.8" font-weight="700" fill="#334155">到达等待队列（由老到新）：</text>
+  <rect x="42" y="405" width="76" height="15" rx="3" fill="#fee2e2" stroke="#dc2626" stroke-width="0.8"/>
+  <text x="80" y="415.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#991b1b">M (6,000)</text>
+  <rect x="124" y="405" width="182" height="15" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="215" y="415.5" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1e3a8a">H1  H2  H3  H4  H5  H6（各 300）</text>
+
+  <rect x="328" y="384" width="302" height="40" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="338" y="399" font-size="8.8" font-weight="700" fill="#1d4ed8">Fast 排序：H1 H2 H3 H4 H5 H6 → M（+1,200/次）</text>
+  <text x="338" y="415" font-size="8.8" font-weight="700" fill="#334155">Fair 排序：M → H1 H2 H3 H4 H5 H6（F 保持 6,000）</text>
+
+  <rect x="640" y="384" width="288" height="40" rx="5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="650" y="399" font-size="8.8" font-weight="700" fill="#1e3a8a">步幅比拼：6,000 ÷ (4 × 300) = 5 次命中</text>
+  <text x="650" y="415" font-size="8.6" fill="#334155">M 前最多置入 1,500 token（恰好为 M 的 1/4）</text>
+
+  <rect x="32" y="432" width="896" height="84" rx="6" fill="#f8fafc" stroke="#bfdbfe" stroke-width="1.0"/>
+  <rect x="44" y="442" width="82" height="34" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="85" y="456" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1e3a8a">1. H1 (300)</text>
+  <text x="85" y="469" text-anchor="middle" font-size="8.0" fill="#334155">A=1,200≤F</text>
+
+  <rect x="134" y="442" width="82" height="34" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="175" y="456" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1e3a8a">2. H2 (300)</text>
+  <text x="175" y="469" text-anchor="middle" font-size="8.0" fill="#334155">A=2,400≤F</text>
+
+  <rect x="224" y="442" width="82" height="34" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="265" y="456" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1e3a8a">3. H3 (300)</text>
+  <text x="265" y="469" text-anchor="middle" font-size="8.0" fill="#334155">A=3,600≤F</text>
+
+  <rect x="314" y="442" width="82" height="34" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="355" y="456" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1e3a8a">4. H4 (300)</text>
+  <text x="355" y="469" text-anchor="middle" font-size="8.0" fill="#334155">A=4,800≤F</text>
+
+  <rect x="404" y="442" width="82" height="34" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.0"/>
+  <text x="445" y="456" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1e3a8a">5. H5 (300)</text>
+  <text x="445" y="469" text-anchor="middle" font-size="8.0" fill="#334155">A=6,000≤F</text>
+
+  <rect x="502" y="442" width="190" height="34" rx="4" fill="#dcfce7" stroke="#15803d" stroke-width="1.4"/>
+  <text x="597" y="456" text-anchor="middle" font-size="9.4" font-weight="700" fill="#166534">6. M 首块 548 tok 准入</text>
+  <text x="597" y="469" text-anchor="middle" font-size="8.1" fill="#14532d">下轮 A=7,200 &gt; F=6,000 → Fair</text>
+
+  <line x1="702" y1="436" x2="702" y2="510" stroke="#1d4ed8" stroke-width="1.4" stroke-dasharray="4,3"/>
+
+  <rect x="714" y="442" width="200" height="34" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.0" stroke-dasharray="3,2"/>
+  <text x="814" y="456" text-anchor="middle" font-size="9.2" font-weight="700" fill="#475569">7. H6 (300 tok) 顺延下步</text>
+  <text x="814" y="469" text-anchor="middle" font-size="8.0" fill="#64748b">B = 2,048 已用尽（1,500 + 548）</text>
+
+  <line x1="44" y1="483" x2="486" y2="483" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="265" y="497" text-anchor="middle" font-size="8.6" font-weight="600" fill="#1e3a8a">Fast 通道前置 5 个廉价命中 = 1,500 token（本步全部完成）</text>
+  <text x="597" y="497" text-anchor="middle" font-size="8.6" font-weight="600" fill="#166534">M 启动后入 running，后续步优先续跑</text>
+  <text x="814" y="497" text-anchor="middle" font-size="8.5" fill="#475569">下步队列清空 M 后立即服务 H6</text>
+</svg>

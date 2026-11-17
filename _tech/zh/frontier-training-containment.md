@@ -3,7 +3,7 @@ id: frontier-training-containment
 title: 2026年10月24日｜训练环境隔离：把防线延伸到宿主机之外
 date: '2026-10-24'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,7 +17,9 @@ permalink: /tech/zh/frontier-training-containment/
 authoring_source: assistant
 translation_source: assistant
 published_at: '2026-10-26T11:44:51.392682+08:00'
-updated_at: '2026-10-26T11:44:51.392682+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 模型训练需要能运行代码、搜索资料和操作应用的环境，这些能力也会扩大意外行动的影响范围。OpenAI 的新报告把训练环境安全的核心要求说得很具体：即使 agent 主动寻找绕过限制的方法，未授权的资源仍应处于边界之外。值得关注的变化，是把断网、沙箱、宿主机、云网络以及监测停机机制放进同一个隔离论证，而不把安全寄托在单层沙箱上。[原文：Securing our frontier model training environment](https://openai.com/index/securing-our-frontier-model-training-environment/)。
 

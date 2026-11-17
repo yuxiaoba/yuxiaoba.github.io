@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" style="background:#ffffff;">
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17" font-weight="700" fill="#0f172a">llm-d 1.0 六组公开性能声明的基线边界与双视图卸载对账</text>
+  <text x="24" y="53" font-size="10.6" font-weight="400" fill="#475569">按 Google Cloud 1.0 原文及 5 篇实测源文核对基线条件，并梳理路由器索引与引擎计数器的 4 类失配指纹</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Evidence Table -->
+  <rect x="24" y="72" width="912" height="274" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="72" width="912" height="26" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="88" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="89" font-size="10.2" font-weight="700" fill="#1e3a8a">公开测试 / 生产案例</text>
+  <text x="228" y="89" font-size="10.2" font-weight="700" fill="#1e3a8a">披露结果数字</text>
+  <text x="414" y="89" font-size="10.2" font-weight="700" fill="#1e3a8a">对照基线与硬件配置</text>
+  <text x="668" y="89" font-size="10.2" font-weight="700" fill="#1e3a8a">不可外推边界（未披露项 / 前提限制）</text>
+
+  <!-- Row 1 -->
+  <rect x="25" y="99" width="910" height="40" fill="#ffffff"/>
+  <text x="36" y="116" font-size="9.8" font-weight="700" fill="#0f172a">Ironwood TPU (TPU 7x)</text>
+  <text x="36" y="131" font-size="8.9" fill="#475569">源文: Qwen3-Coder-480B</text>
+  <text x="228" y="116" font-size="9.8" font-weight="700" fill="#1d4ed8">中位 TTFT 降 &gt;85%</text>
+  <text x="228" y="131" font-size="9" fill="#334155">总吞吐提升 2.4×</text>
+  <text x="414" y="116" font-size="9.4" fill="#0f172a">基线: 普通 Kubernetes Service 轮询</text>
+  <text x="414" y="131" font-size="8.9" fill="#475569">前缀感知路由 + 主机内存卸载组合</text>
+  <text x="668" y="116" font-size="9.2" fill="#92400e">公告未单列并发与提示分布；</text>
+  <text x="668" y="131" font-size="8.9" fill="#78350f">属组合优化对比，无法单独拆出路由 vs 卸载</text>
+  <line x1="25" y1="139" x2="935" y2="139" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 2 -->
+  <rect x="25" y="140" width="910" height="40" fill="#f8fafc"/>
+  <text x="36" y="157" font-size="9.8" font-weight="700" fill="#0f172a">A3 Mega 70B + Lustre</text>
+  <text x="36" y="172" font-size="8.9" fill="#475569">源文: 6 节点 Llama-3.3-70B</text>
+  <text x="228" y="157" font-size="9.8" font-weight="700" fill="#1d4ed8">TTFT 改 ~40% · E2E -30%</text>
+  <text x="228" y="172" font-size="9" fill="#334155">GPU-hour 需求减近 60%</text>
+  <text x="414" y="157" font-size="9.4" fill="#0f172a">基线: 仅 CPU RAM 卸载 (50k 提示)</text>
+  <text x="414" y="172" font-size="8.9" fill="#475569">CPU RAM + Managed Lustre 多连接器</text>
+  <text x="668" y="157" font-size="9.2" fill="#92400e">源文前提为 95% 缓存命中与 50k 长文本；</text>
+  <text x="668" y="172" font-size="8.9" fill="#78350f">低复用下外部存储拉取反而可能拖慢 TTFT</text>
+  <line x1="25" y1="180" x2="935" y2="180" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 3 -->
+  <rect x="25" y="181" width="910" height="40" fill="#ffffff"/>
+  <text x="36" y="198" font-size="9.8" font-weight="700" fill="#0f172a">17,000 节点跨洲 MoE</text>
+  <text x="36" y="213" font-size="8.9" fill="#475569">US + EU (源文: SGLang)</text>
+  <text x="228" y="198" font-size="9.8" font-weight="700" fill="#1d4ed8">3 集群吞吐扩展 2.9×</text>
+  <text x="228" y="213" font-size="9" fill="#334155">成功率 99.9% · 路由开销 &lt;1%</text>
+  <text x="414" y="198" font-size="9.4" fill="#0f172a">多集群 GKE Inference Gateway + EPP</text>
+  <text x="414" y="213" font-size="8.9" fill="#475569">吞吐达本地集群直连的 99.5%（源文）</text>
+  <text x="668" y="198" font-size="9.2" fill="#92400e">测的是跨集群路由扩展与极低代理开销；</text>
+  <text x="668" y="213" font-size="8.9" fill="#78350f">未单拆跨区网络代价与不同 P/D 尾延迟</text>
+  <line x1="25" y1="221" x2="935" y2="221" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 4 -->
+  <rect x="25" y="222" width="910" height="40" fill="#f8fafc"/>
+  <text x="36" y="239" font-size="9.8" font-weight="700" fill="#0f172a">Gemini 平台 (原 Vertex AI)</text>
+  <text x="36" y="254" font-size="8.9" fill="#475569">线上真实生产流量</text>
+  <text x="228" y="239" font-size="9.8" font-weight="700" fill="#1d4ed8">缓存命中 35% → 70%</text>
+  <text x="228" y="254" font-size="9" fill="#334155">TTFT 降 &gt;35% · P95 降 &gt;50%</text>
+  <text x="414" y="239" font-size="9.4" fill="#0f172a">GKE Inference Gateway（负载 + 前缀）</text>
+  <text x="414" y="254" font-size="8.9" fill="#475569">分别覆盖编码 Agent 与突发聊天流量</text>
+  <text x="668" y="239" font-size="9.2" fill="#92400e">未公开集群规模、总 QPS 与具体模型版本；</text>
+  <text x="668" y="254" font-size="8.9" fill="#78350f">不能直接充当任意外部集群的硬性性能承诺</text>
+  <line x1="25" y1="262" x2="935" y2="262" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 5 -->
+  <rect x="25" y="263" width="910" height="40" fill="#ffffff"/>
+  <text x="36" y="280" font-size="9.8" font-weight="700" fill="#0f172a">RL 协同时间片切换</text>
+  <text x="36" y="295" font-size="8.9" fill="#475569">llm-d-rl-time-slicing</text>
+  <text x="228" y="280" font-size="9.8" font-weight="700" fill="#1d4ed8">占空比 ~40% → &gt;70%</text>
+  <text x="228" y="295" font-size="9" fill="#334155">源文称不损主训收敛精度</text>
+  <text x="414" y="280" font-size="9.4" fill="#0f172a">插缝利用 rollout/权重的 40–60% 空闲</text>
+  <text x="414" y="295" font-size="8.9" fill="#475569">acquire/yield + 主机 DRAM 交换 (&lt;1s)</text>
+  <text x="668" y="280" font-size="9.2" fill="#92400e">依赖充裕主机内存暂存 ~50GB 训练状态；</text>
+  <text x="668" y="295" font-size="8.9" fill="#78350f">若让渡过于频繁，上下文切换会吞噬收益</text>
+  <line x1="25" y1="303" x2="935" y2="303" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 6 -->
+  <rect x="25" y="304" width="910" height="41" rx="8" fill="#f8fafc"/>
+  <text x="36" y="321" font-size="9.8" font-weight="700" fill="#0f172a">Snap · ZenteiQ · Mistral</text>
+  <text x="36" y="336" font-size="8.9" fill="#475569">公告引用合作方自述</text>
+  <text x="228" y="321" font-size="9.8" font-weight="700" fill="#1d4ed8">75–80% 命中 · 4× 吞吐</text>
+  <text x="228" y="336" font-size="9" fill="#334155">ZenteiQ: 1.47B → 5.97B tok/1k</text>
+  <text x="414" y="321" font-size="9.4" fill="#0f172a">Envoy Mesh / 1,000 TPU v6e / SLA 档位</text>
+  <text x="414" y="336" font-size="8.9" fill="#475569">Mistral 用流控 + P/D 隔离保付费 SLA</text>
+  <text x="668" y="321" font-size="9.2" fill="#92400e">属合作方各自业务证言，非统一受控基准；</text>
+  <text x="668" y="336" font-size="8.9" fill="#78350f">须用 Prism + inference-perf 复测己方流量</text>
+
+  <!-- Bottom Left: Router vs Engine Reconciliation -->
+  <rect x="24" y="356" width="452" height="152" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="24" y="356" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="24" y="372" width="452" height="10" fill="#eff6ff"/>
+  <text x="36" y="373" font-size="10.4" font-weight="700" fill="#1e3a8a">路由器索引 vs 引擎实态：4 类卸载故障指纹</text>
+  <text x="36" y="398" font-size="9.3" fill="#0f172a">① 路由索引命中高、引擎命中近 0：lruCapacityPerServer 大于实际 cpu_bytes_to_use</text>
+  <text x="36" y="423" font-size="9.3" fill="#334155">② store 持续增长、load 为 0：前缀复用少或 CPU 缓存过小，纯付拷贝税</text>
+  <text x="36" y="448" font-size="9.3" fill="#334155">③ 卸载 TTFT 反劣于 HBM 基线：回迁带宽或存储读延迟高于直接重算 Prefill</text>
+  <text x="36" y="473" font-size="9.3" fill="#334155">④ 持续分配失败：kv_offload_cpu_cache_usage_perc ≈ 1.0（在途拷贝占满块）</text>
+  <text x="36" y="497" font-size="8.9" font-weight="600" fill="#b45309">注：vLLM 该指标仅统计在途传输锁定占比而非总占用；内置告警暂未覆盖卸载</text>
+
+  <!-- Bottom Right: Incremental Rollout Sequence -->
+  <rect x="490" y="356" width="446" height="152" rx="8" fill="#ffffff" stroke="#22c55e" stroke-width="1.2"/>
+  <rect x="490" y="356" width="446" height="26" rx="8" fill="#f0fdf4"/>
+  <rect x="490" y="372" width="446" height="10" fill="#f0fdf4"/>
+  <text x="502" y="373" font-size="10.4" font-weight="700" fill="#166534">分阶段验证与上线顺序（同负载逐层累加对比）</text>
+  <text x="502" y="398" font-size="9.3" fill="#0f172a">Step 1 · 缓存感知路由：接 EPP，借 Prism + inference-perf 测真实命中率</text>
+  <text x="502" y="423" font-size="9.3" fill="#334155">Step 2 · 优先级与异步流控：配 reserved/overflow 车道，排队等待计入 E2E</text>
+  <text x="502" y="448" font-size="9.3" fill="#334155">Step 3 · 分层 KV 卸载：对齐 lruCapacityPerServer、/dev/shm 限额与 direct_io</text>
+  <text x="502" y="473" font-size="9.3" fill="#334155">Step 4 · NIXL P/D + DisaggregatedSet：单副本必设 maxUnavailable: 0 护栏</text>
+  <text x="502" y="497" font-size="8.9" font-weight="600" fill="#166534">核查前提：不把未调优轮询基线倍率当绝对增益，跨节点共享池须配统一哈希种子</text>
+
+  <text x="24" y="525" font-size="9.6" fill="#64748b">阅读整理配图（非原图）· 核对自 Google Cloud llm-d 1.0 公告、5 篇关联实测源文及 tiered-prefix-cache 运维文档</text>
+</svg>

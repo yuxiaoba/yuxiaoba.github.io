@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18.5" font-weight="700" fill="#0f172a">Startup Strategy Tradeoffs, K8s/CRI/OCI Stack &amp; Compatibility Traps</text>
+  <text x="24" y="56" font-size="11.2" fill="#475569">Match engine paths to the lifecycle boundary to bridge, while auditing runtime standardization gaps and documented incompatibilities</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Band 1: 4 Scenario Columns (y=76..256, h=180) -->
+  <!-- Col 1: x=24 w=221 -->
+  <rect x="24" y="76" width="221" height="180" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="76" width="221" height="36" rx="8" fill="#1e3a8a"/>
+  <rect x="24" y="102" width="221" height="10" fill="#1e3a8a"/>
+  <text x="34" y="99" font-size="11.2" font-weight="700" fill="#ffffff">Case A · Same-Node Restart</text>
+  <text x="34" y="130" font-size="10.2" font-weight="700" fill="#1d4ed8">vLLM preload · SGLang daemon</text>
+  <text x="34" y="150" font-size="9.8" fill="#334155">How: CUDA IPC shares GPU weights</text>
+  <text x="34" y="168" font-size="9.8" fill="#166534">Gain: Skips read &amp; tensor transform</text>
+  <line x1="34" y1="178" x2="235" y2="178" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="34" y="196" font-size="9.4" fill="#475569">• CUDA IPC is strictly node-local</text>
+  <text x="34" y="213" font-size="9.4" fill="#475569">• Zero-copy needs live daemon</text>
+  <text x="34" y="230" font-size="9.4" fill="#475569">• Still rebuilds comms &amp; graphs</text>
+  <text x="34" y="247" font-size="9.4" fill="#64748b">• Falls back on config mismatch</text>
+
+  <!-- Col 2: x=254 w=221 -->
+  <rect x="254" y="76" width="221" height="180" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="254" y="76" width="221" height="36" rx="8" fill="#1e3a8a"/>
+  <rect x="254" y="102" width="221" height="10" fill="#1e3a8a"/>
+  <text x="264" y="99" font-size="11.2" font-weight="700" fill="#ffffff">Case B · Idle GPU Multiplexing</text>
+  <text x="264" y="130" font-size="10.2" font-weight="700" fill="#1d4ed8">vLLM sleep · SGLang · FMA</text>
+  <text x="264" y="150" font-size="9.8" fill="#334155">How: Live proc frees/restores GPU</text>
+  <text x="264" y="168" font-size="9.8" fill="#166534">Gain: Keeps process/imports warm</text>
+  <line x1="264" y1="178" x2="465" y2="178" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="264" y="196" font-size="9.4" fill="#475569">• FMA hot path needs GPU match</text>
+  <text x="264" y="213" font-size="9.4" fill="#475569">• Or pre-imported Python launcher</text>
+  <text x="264" y="230" font-size="9.4" fill="#475569">• CPU backup policy sets restore</text>
+  <text x="264" y="247" font-size="9.4" fill="#b45309">• Zero-copy restricts sleep offload</text>
+
+  <!-- Col 3: x=484 w=221 -->
+  <rect x="484" y="76" width="221" height="180" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="484" y="76" width="221" height="36" rx="8" fill="#1e3a8a"/>
+  <rect x="484" y="102" width="221" height="10" fill="#1e3a8a"/>
+  <text x="494" y="99" font-size="11.2" font-weight="700" fill="#ffffff">Case C · Replica Scale-Out</text>
+  <text x="494" y="130" font-size="10" font-weight="700" fill="#1d4ed8">vLLM/SGLang · Snapshot · GKE</text>
+  <text x="494" y="150" font-size="9.8" fill="#334155">How: CRIU+CUDA or gVisor ckpt</text>
+  <text x="494" y="168" font-size="9.8" fill="#166534">Gain: Skips init, compile &amp; graph</text>
+  <line x1="494" y1="178" x2="695" y2="178" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="494" y="196" font-size="9.4" fill="#475569">• Same host/env, 1 GPU, TP=1 scope</text>
+  <text x="494" y="213" font-size="9.4" fill="#475569">• Clears KV; reloads external files</text>
+  <text x="494" y="230" font-size="9.4" fill="#475569">• Shared PVC (object store future)</text>
+  <text x="494" y="247" font-size="9.4" fill="#64748b">• Validates recorded generation</text>
+
+  <!-- Col 4: x=714 w=222 -->
+  <rect x="714" y="76" width="222" height="180" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="714" y="76" width="222" height="36" rx="8" fill="#1e3a8a"/>
+  <rect x="714" y="102" width="222" height="10" fill="#1e3a8a"/>
+  <text x="724" y="99" font-size="11.2" font-weight="700" fill="#ffffff">Case D · Cluster Weight P2P</text>
+  <text x="724" y="130" font-size="10.2" font-weight="700" fill="#1d4ed8">llm-d ModelExpress (NIXL)</text>
+  <text x="724" y="150" font-size="9.8" fill="#334155">How: Seed replica RDMA transfer</text>
+  <text x="724" y="168" font-size="9.8" fill="#166534">Gain: Cuts shared-storage fan-out</text>
+  <line x1="724" y1="178" x2="926" y2="178" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="724" y="196" font-size="9.4" fill="#475569">• Needs compatible NIXL / RDMA</text>
+  <text x="724" y="213" font-size="9.4" fill="#475569">• Transfers weights only; cold init</text>
+  <text x="724" y="230" font-size="9.4" fill="#475569">• Pair w/ compile/autotune cache</text>
+  <text x="724" y="247" font-size="9.4" fill="#64748b">• Does not replace snapshots</text>
+
+  <!-- Band 2: Platform & Runtime Standardization Stack (y=268..396, h=128) -->
+  <rect x="24" y="268" width="912" height="128" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="36" y="288" font-size="11.2" font-weight="700" fill="#1e3a8a">Platform &amp; Runtime Standardization Stack (CNCF 2026-11-06 Audit: Merged CRI APIs != Cross-Node GPU Restore)</text>
+
+  <rect x="36" y="298" width="216" height="88" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.1"/>
+  <rect x="44" y="306" width="122" height="18" rx="4" fill="#dcfce7"/>
+  <text x="105" y="319" font-size="9.3" font-weight="700" fill="#166534" text-anchor="middle">KEP-2008 Beta (v1.30)</text>
+  <text x="44" y="340" font-size="10.2" font-weight="700" fill="#0f172a">Kubernetes API (KEPs)</text>
+  <text x="44" y="357" font-size="9.3" fill="#334155">KEP-5823 Pod: v1.38 alpha target</text>
+  <text x="44" y="374" font-size="9" fill="#64748b">No device/cross-node; KEP-6274 open</text>
+
+  <rect x="260" y="298" width="216" height="88" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.1"/>
+  <rect x="268" y="306" width="136" height="18" rx="4" fill="#dbeafe"/>
+  <text x="336" y="319" font-size="9.3" font-weight="700" fill="#1e3a8a" text-anchor="middle">CRI Merged (2026-07-22)</text>
+  <text x="268" y="340" font-size="10.2" font-weight="700" fill="#0f172a">CRI Boundary (#140366)</text>
+  <text x="268" y="357" font-size="9.3" fill="#334155">Adds CheckpointPod / RestorePod</text>
+  <text x="268" y="374" font-size="9" fill="#64748b">K8s &amp; containerd open; CRI-O draft</text>
+
+  <rect x="484" y="298" width="216" height="88" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.1"/>
+  <rect x="492" y="306" width="128" height="18" rx="4" fill="#fef3c7"/>
+  <text x="556" y="319" font-size="9.3" font-weight="700" fill="#92400e" text-anchor="middle">Open RFCs &amp; Hooks</text>
+  <text x="492" y="340" font-size="10.2" font-weight="700" fill="#0f172a">Engine-Orchestrator Split</text>
+  <text x="492" y="357" font-size="9.3" fill="#334155">vLLM #60422 · SGLang #44523</text>
+  <text x="492" y="374" font-size="9" fill="#64748b">Snapshot #411: no shared spec yet</text>
+
+  <rect x="708" y="298" width="216" height="88" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.1"/>
+  <rect x="716" y="306" width="124" height="18" rx="4" fill="#fef3c7"/>
+  <text x="778" y="319" font-size="9.3" font-weight="700" fill="#92400e" text-anchor="middle">OCI #962 Still Open</text>
+  <text x="716" y="340" font-size="10.2" font-weight="700" fill="#0f172a">OCI Artifact &amp; Registry</text>
+  <text x="716" y="357" font-size="9.3" fill="#334155">Podman / checkpointctl / ctr types</text>
+  <text x="716" y="374" font-size="9" fill="#64748b">Registry push != driver/GPU portable</text>
+
+  <!-- Band 3: Explicit Incompatibilities & Traps (y=406..502, h=96) -->
+  <rect x="24" y="406" width="912" height="96" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.2"/>
+  <text x="36" y="426" font-size="11" font-weight="700" fill="#991b1b">Four Explicit Compatibility &amp; Composition Traps Highlighted in CNCF (Separate Features != Supported Combination)</text>
+
+  <rect x="36" y="434" width="216" height="58" rx="6" fill="#ffffff" stroke="#fecaca" stroke-width="1"/>
+  <text x="45" y="451" font-size="10" font-weight="700" fill="#991b1b">1. Dynamo v1.4.0 Disabled</text>
+  <text x="45" y="467" font-size="9.3" fill="#334155">GPU Memory Service + Snapshot</text>
+  <text x="45" y="482" font-size="9.3" fill="#7f1d1d">Explicitly unsupported for prod</text>
+
+  <rect x="260" y="434" width="216" height="58" rx="6" fill="#ffffff" stroke="#fecaca" stroke-width="1"/>
+  <text x="269" y="451" font-size="10" font-weight="700" fill="#991b1b">2. vLLM preload x sleep</text>
+  <text x="269" y="467" font-size="9.3" fill="#334155">Zero-copy daemon allocation</text>
+  <text x="269" y="482" font-size="9.3" fill="#7f1d1d">Restricts sleep weight offloading</text>
+
+  <rect x="484" y="434" width="216" height="58" rx="6" fill="#ffffff" stroke="#fecaca" stroke-width="1"/>
+  <text x="493" y="451" font-size="10" font-weight="700" fill="#991b1b">3. Version-Pinned Entrypoints</text>
+  <text x="493" y="467" font-size="9.3" fill="#334155">Snapshot vLLM integration guide</text>
+  <text x="493" y="482" font-size="9.3" fill="#7f1d1d">Validated v0.27.1; fails v0.28</text>
+
+  <rect x="708" y="434" width="216" height="58" rx="6" fill="#ffffff" stroke="#fecaca" stroke-width="1"/>
+  <text x="717" y="451" font-size="10" font-weight="700" fill="#991b1b">4. Non-Interchangeable State</text>
+  <text x="717" y="467" font-size="9.3" fill="#334155">GKE gVisor != CRIU format</text>
+  <text x="717" y="482" font-size="9.3" fill="#7f1d1d">SGLang snapshot is still open RFC</text>
+
+  <!-- Footer -->
+  <text x="24" y="522" font-size="10" fill="#64748b">Assistant diagram synthesized from Baofa Fan / CNCF (2026-11-06) &amp; upstream status links (not an original figure; zero unmeasured claims)</text>
+</svg>

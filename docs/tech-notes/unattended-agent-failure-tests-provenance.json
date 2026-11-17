@@ -1,0 +1,54 @@
+{
+  "id": "unattended-agent-failure-tests",
+  "review_code": "T1-12",
+  "source_url": "https://x.com/i/article/2112230476458930176",
+  "source_post_url": "https://x.com/themahis/status/2112235354585497922",
+  "source_title": "Before You Let Your AI Agent Run Unattended, Make It Pass These 7 Tests",
+  "source_author": "MASA (@themahis)",
+  "source_org": "X Article",
+  "source_date": "2026-10-19",
+  "note_date": "2026-10-20",
+  "updated_at": "2026-11-15T19:00:00+08:00",
+  "frozen_primary_html": {
+    "path": ".preview/research-jobs/x-tech-2026-10-20/sources/x-themahis-4585497922-page.html",
+    "sha256": "bfe31aab396230ca5a347f2aee0db1b37a5d78732ced742485e6a8517f535d3c"
+  },
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/unattended-agent-failure-tests.md",
+      "sha256": "1e9854f03d9371d9f4f0ce6aed80c325776b17d800693e7369dc38df0730a8f5"
+    },
+    "en_markdown": {
+      "path": "_tech/en/unattended-agent-failure-tests.md",
+      "sha256": "e05bbcaf71abbde7bd75a1c52964be1aada826bfcbd112274e3c7c51506c1656"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/unattended-agent-failure-tests/seven-tests-architecture-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "44624cd31e61d4dc428557a9b0e5f1f55f3bce488aa812c1966909113fb11624"
+      },
+      {
+        "path": "assets/images/tech/unattended-agent-failure-tests/seven-tests-architecture-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "ba834a48164052bb34cf7b9d30d0a29a5b4e647aeed2ebc41f0501d1c5fab947"
+      },
+      {
+        "path": "assets/images/tech/unattended-agent-failure-tests/crash-approval-stop-timeline-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "12c320a340817088b917351417571785efefbde56632b16bf367382e1cef0db2"
+      },
+      {
+        "path": "assets/images/tech/unattended-agent-failure-tests/crash-approval-stop-timeline-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "22b149d34b8d949f1f37bec0f0d1e631a2ec12e4c1353603ff16a4ff03839277"
+      }
+    ]
+  }
+}

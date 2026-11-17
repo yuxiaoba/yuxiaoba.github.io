@@ -3,25 +3,23 @@ id: vllm-mistral-large-4
 title: 2026-10-30 | How vLLM supports sparse attention and cross-layer KV sharing
 date: '2026-10-30'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
 tags:
 - inference-serving
 - systems-reliability
-summary: 'vLLM''s Mistral Large 4 support shows how model structure and serving infrastructure
-  jointly affect long-context performance: sparse indexing reduces attention reads,
-  cross-layer sharing avoids cache writes, and the runtime must handle parallelism,
-  graph execution and disaggregated transfers.'
+summary: 'vLLM''s Mistral Large 4 support shows how model structure and serving infrastructure jointly affect long-context performance: sparse indexing reduces attention reads, cross-layer sharing avoids cache writes, and the runtime must handle parallelism, graph execution and disaggregated transfers.'
 long_read: true
 source_url: https://vllm.ai/blog/2026-10-29-mistral-large-4
 permalink: /tech/en/vllm-mistral-large-4/
 translation_source: assistant-authored paired Chinese/English reading notes
 published_at: '2026-10-30T10:31:20.339125+08:00'
-updated_at: '2026-10-30T10:31:20.339125+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
-
 vLLM's Mistral Large 4 support shows how model structure and serving infrastructure jointly affect long-context performance: sparse indexing reduces attention reads, cross-layer sharing avoids cache writes, and the runtime must handle parallelism, graph execution and disaggregated transfers.
 
 **Source:** vLLM, [Day 0 support for Mistral Large 4 on vLLM](https://vllm.ai/blog/2026-10-29-mistral-large-4), October 29, 2026.

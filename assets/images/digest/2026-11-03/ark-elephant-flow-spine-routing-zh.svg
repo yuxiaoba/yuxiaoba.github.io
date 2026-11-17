@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="ARK：分离式 LLM 推理 KV 缓存传输的 ECMP 碰撞问题与分布式源端口预留架构">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="10" y="10" width="940" height="520" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" rx="10"/>
+
+  <text x="24" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="16.5" font-weight="700" fill="#0f172a">ARK：分离式推理 KV 传输路由冲突与分布式源端口预留架构</text>
+  <text x="24" y="53" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.4" fill="#475569">arXiv:2610.41160v1（§1–§3, Fig. 1, Algorithm 1）· 主机用户态协调源端口哈希，零交换机改动且无接收端乱序</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#bfdbfe" stroke-width="1"/>
+
+  <!-- Left Panel -->
+  <rect x="20" y="72" width="424" height="422" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.1"/>
+  <rect x="20" y="72" width="424" height="26" rx="8" fill="#1e3a8a"/>
+  <rect x="20" y="90" width="424" height="8" fill="#1e3a8a"/>
+  <text x="32" y="89" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" font-weight="700" fill="#ffffff">A. 问题机理：无状态 ECMP 碰撞 vs. ARK 源端口避碰</text>
+
+  <!-- Sub-card A1: Topology Contrast -->
+  <rect x="30" y="106" width="404" height="196" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="40" y="123" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#0f172a">两层 Spine-Leaf Clos 拓扑（2:1 超订：单 Leaf 入向 800G / 上行 400G）</text>
+
+  <!-- Mini-panel Left: ECMP Collision -->
+  <rect x="38" y="132" width="188" height="162" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+  <text x="132" y="147" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="700" fill="#991b1b">无状态 ECMP：同模碰撞</text>
+
+  <rect x="48" y="156" width="32" height="20" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="3 2"/>
+  <text x="64" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#64748b">s₁</text>
+  <rect x="92" y="156" width="32" height="20" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="108" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#991b1b">s₂</text>
+  <rect x="136" y="156" width="32" height="20" rx="4" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="152" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#475569">s₃</text>
+  <rect x="180" y="156" width="32" height="20" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="3 2"/>
+  <text x="196" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#64748b">s₄</text>
+
+  <text x="64" y="187" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="7.8" fill="#64748b">空闲</text>
+  <text x="108" y="187" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="7.8" font-weight="700" fill="#dc2626">过载</text>
+  <text x="196" y="187" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="7.8" fill="#64748b">空闲</text>
+
+  <rect x="56" y="214" width="52" height="20" rx="4" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="82" y="227" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="600" fill="#334155">Leaf ℓ₁</text>
+  <rect x="156" y="214" width="52" height="20" rx="4" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="182" y="227" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="600" fill="#334155">Leaf ℓ₂</text>
+
+  <!-- Colliding paths onto s2 -->
+  <path d="M 76 214 L 103 179" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#arr-red)"/>
+  <path d="M 88 214 L 113 179" fill="none" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 2" marker-end="url(#arr-red)"/>
+  <path d="M 103 176 L 175 212" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#arr-red)"/>
+  <path d="M 113 176 L 187 212" fill="none" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 2" marker-end="url(#arr-red)"/>
+
+  <rect x="48" y="252" width="68" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="82" y="266" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#0f172a">Prefill (f₁,f₂)</text>
+  <rect x="148" y="252" width="68" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="182" y="266" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#0f172a">Decode</text>
+  <line x1="82" y1="252" x2="82" y2="236" stroke="#64748b" stroke-width="1.3"/>
+  <line x1="182" y1="234" x2="182" y2="250" stroke="#64748b" stroke-width="1.3"/>
+  <text x="132" y="287" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#991b1b">大象流均落 s₂ 共享 100G 并重传</text>
+
+  <!-- Mini-panel Right: ARK Disjoint -->
+  <rect x="236" y="132" width="188" height="162" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="330" y="147" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="700" fill="#1d4ed8">ARK：源端口正交选路</text>
+
+  <rect x="246" y="156" width="32" height="20" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.4"/>
+  <text x="262" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1e3a8a">s₁</text>
+  <rect x="290" y="156" width="32" height="20" rx="4" fill="#d1fae5" stroke="#0f766e" stroke-width="1.4"/>
+  <text x="306" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#065f46">s₂</text>
+  <rect x="334" y="156" width="32" height="20" rx="4" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="350" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#1d4ed8">s₃</text>
+  <rect x="378" y="156" width="32" height="20" rx="4" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="394" y="169" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#1d4ed8">s₄</text>
+
+  <text x="262" y="187" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="7.8" font-weight="700" fill="#1d4ed8">δ₁*</text>
+  <text x="306" y="187" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="7.8" font-weight="700" fill="#0f766e">δ₂*</text>
+
+  <rect x="254" y="214" width="52" height="20" rx="4" fill="#ffffff" stroke="#3b82f6"/>
+  <text x="280" y="227" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="600" fill="#1e3a8a">Leaf ℓ₁</text>
+  <rect x="354" y="214" width="52" height="20" rx="4" fill="#ffffff" stroke="#3b82f6"/>
+  <text x="380" y="227" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="600" fill="#1e3a8a">Leaf ℓ₂</text>
+
+  <!-- Disjoint paths onto s1 and s2 -->
+  <path d="M 274 214 L 263 179" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <path d="M 263 176 L 372 212" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <path d="M 286 214 L 304 179" fill="none" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr-teal)"/>
+  <path d="M 307 176 L 385 212" fill="none" stroke="#0f766e" stroke-width="1.6" marker-end="url(#arr-teal)"/>
+
+  <rect x="246" y="252" width="68" height="22" rx="4" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="280" y="266" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#0f172a">Prefill (f₁,f₂)</text>
+  <rect x="346" y="252" width="68" height="22" rx="4" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="380" y="266" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#0f172a">Decode</text>
+  <line x1="280" y1="252" x2="280" y2="236" stroke="#1d4ed8" stroke-width="1.3"/>
+  <line x1="380" y1="234" x2="380" y2="250" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="330" y="287" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#1e3a8a">单路径独占不同 Spine，零接收端重排</text>
+
+  <!-- Sub-card A2: Why Prior Schemes Fail -->
+  <rect x="30" y="310" width="404" height="174" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="40" y="328" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#0f172a">为什么现有负载均衡机制不适配 KV 超大象流（§1–§2）</text>
+
+  <rect x="38" y="338" width="388" height="30" rx="5" fill="#fef2f2" stroke="#fecaca"/>
+  <rect x="44" y="344" width="64" height="18" rx="4" fill="#fee2e2"/>
+  <text x="76" y="356.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" font-weight="700" fill="#991b1b">超大流尺度</text>
+  <text x="114" y="356.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#334155">405B 100K tok 达 48 GB (960ms @400G)；8B 均 1.6 GB (≥128ms)</text>
+
+  <rect x="38" y="374" width="388" height="30" rx="5" fill="#f8fafc" stroke="#cbd5e1"/>
+  <rect x="44" y="380" width="64" height="18" rx="4" fill="#e2e8f0"/>
+  <text x="76" y="392.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" font-weight="700" fill="#334155">网内改硬件</text>
+  <text x="114" y="392.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#334155">CONGA/ConWeave/LetFlow 需定制 ASIC、ToR 缓存或包喷射重排</text>
+
+  <rect x="38" y="410" width="388" height="30" rx="5" fill="#fffbeb" stroke="#fcd34d"/>
+  <rect x="44" y="416" width="64" height="18" rx="4" fill="#fef3c7"/>
+  <text x="76" y="428.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" font-weight="700" fill="#92400e">主机被动PLB</text>
+  <text x="114" y="428.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#334155">需连续 ECN 且等连接空闲才切路；RDMA 限速流几乎无空闲隙</text>
+
+  <rect x="38" y="446" width="388" height="30" rx="5" fill="#eff6ff" stroke="#3b82f6"/>
+  <rect x="44" y="452" width="64" height="18" rx="4" fill="#dbeafe"/>
+  <text x="76" y="464.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" font-weight="700" fill="#1d4ed8">ARK 切入点</text>
+  <text x="114" y="464.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" font-weight="600" fill="#1e3a8a">Prefill 完成即知大小与目的；ms 级准入协调平摊在长流中 &lt;1%</text>
+
+  <!-- Right Panel -->
+  <rect x="456" y="72" width="484" height="422" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.1"/>
+  <rect x="456" y="72" width="484" height="26" rx="8" fill="#1d4ed8"/>
+  <rect x="456" y="90" width="484" height="8" fill="#1d4ed8"/>
+  <text x="468" y="89" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" font-weight="700" fill="#ffffff">B. ARK 主机控制器与控制/数据平面解耦（Fig. 1b–c, Algorithm 1）</text>
+
+  <!-- Stage 1: Boot Precompute -->
+  <rect x="466" y="106" width="464" height="64" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="474" y="113" width="70" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="509" y="125.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" font-weight="700" fill="#1d4ed8">开机一次</text>
+  <text x="552" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.4" font-weight="700" fill="#1e3a8a">Initialize：按对端预计算源端口-路径逆向映射（~326 ms / 对端）</text>
+  <text x="474" y="146" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#334155">• 固定 well-known dstPort，枚举 δ ∈ [0, 2¹⁶]：计算 k = H(q^δ) mod K 并归入桶 M_hj[p_k]</text>
+  <text x="474" y="161" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#64748b">• 运行时读取 M 为 O(1) 静态数组解引用；多级 Clos 可逐跳逆推各层 ECMP 哈希</text>
+
+  <line x1="698" y1="170" x2="698" y2="180" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <!-- Stage 2: Runtime Admission + Control/Data Split -->
+  <rect x="466" y="182" width="464" height="196" rx="7" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="474" y="189" width="70" height="18" rx="4" fill="#1d4ed8"/>
+  <text x="509" y="201.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" font-weight="700" fill="#ffffff">流准入期</text>
+  <text x="552" y="202" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.4" font-weight="700" fill="#0f172a">OnFlowArrival &amp; OnRemoteUpdate：无中心仲裁的分布式选路</text>
+
+  <!-- 3 workflow boxes -->
+  <rect x="474" y="214" width="142" height="90" rx="6" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="545" y="229" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.4" font-weight="700" fill="#1e3a8a">1. 查本地预留表 R</text>
+  <text x="481" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">• |R| &lt; K：扫描未占 k*</text>
+  <text x="481" y="261" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">• 查桶取 δ* ∈ M[p_k*]</text>
+  <text x="481" y="277" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">• 写表 R[p_k*] ← (t_i, id)</text>
+  <text x="481" y="293" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#1d4ed8">• |R|=K 时随机回退 ECMP</text>
+
+  <line x1="616" y1="259" x2="626" y2="259" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="628" y="214" width="142" height="90" rx="6" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="699" y="229" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.4" font-weight="700" fill="#065f46">2. 控制面全网同步</text>
+  <text x="635" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">• 广播 (p_k*, RESERVE, t_i, id)</text>
+  <text x="635" y="261" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">• 各主机异步更新本地 R</text>
+  <text x="635" y="277" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">• 流完触发 OnFlowCompletion</text>
+  <text x="635" y="293" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#0f766e">• 删表项并广播 RELEASE</text>
+
+  <line x1="770" y1="259" x2="780" y2="259" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+
+  <rect x="782" y="214" width="140" height="90" rx="6" fill="#fffbeb" stroke="#f59e0b"/>
+  <text x="852" y="229" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.4" font-weight="700" fill="#92400e">3. 并发竞争消解</text>
+  <text x="789" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">• 广播延迟窗内撞同一 p_k</text>
+  <text x="789" y="261" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">• 比较字典序键 (t_p, id_p)</text>
+  <text x="789" y="277" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#334155">• 较小时间戳胜出占用 p_k</text>
+  <text x="789" y="293" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.1" fill="#b45309">• 败方调 OnFlowArrival 重选</text>
+
+  <!-- Control & Data Plane strips -->
+  <rect x="474" y="312" width="448" height="28" rx="5" fill="#ecfdf5" stroke="#6ee7b7"/>
+  <rect x="480" y="317" width="84" height="18" rx="4" fill="#d1fae5"/>
+  <text x="522" y="329" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" font-weight="700" fill="#065f46">控制面 Control</text>
+  <text x="572" y="329" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#065f46">独立低带宽/管理网广播极小预留包，时延受传播而非大象流排队支配</text>
+
+  <rect x="474" y="344" width="448" height="28" rx="5" fill="#eff6ff" stroke="#93c5fd"/>
+  <rect x="480" y="349" width="84" height="18" rx="4" fill="#dbeafe"/>
+  <text x="522" y="361" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" font-weight="700" fill="#1d4ed8">数据面 Data</text>
+  <text x="572" y="361" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#1e3a8a">以源端口 δ* 创建 RDMA QP，走商用交换机标准 5 元组 ECMP</text>
+
+  <line x1="698" y1="378" x2="698" y2="388" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <!-- Stage 3: Properties & Overhead -->
+  <rect x="466" y="390" width="464" height="94" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="476" y="408" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#0f172a">系统部署收益与单核控制器开销基准（Table 1）</text>
+
+  <rect x="476" y="416" width="140" height="58" rx="5" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="546" y="434" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.2" font-weight="700" fill="#1d4ed8">0 交换机改动</text>
+  <text x="546" y="450" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#334155">纯主机用户态软件</text>
+  <text x="546" y="464" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#64748b">保持商用 ECMP 转发</text>
+
+  <rect x="628" y="416" width="140" height="58" rx="5" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="698" y="434" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.2" font-weight="700" fill="#1d4ed8">0 接收端乱序</text>
+  <text x="698" y="450" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#334155">单流绑定固定单 Spine</text>
+  <text x="698" y="464" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" fill="#64748b">避免 RoCEv2 误判丢包</text>
+
+  <rect x="780" y="416" width="140" height="58" rx="5" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="850" y="434" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.2" font-weight="700" fill="#1e3a8a">≤ 3.48 µs (K=4)</text>
+  <text x="850" y="450" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#334155">4 × 0.87 µs 查表开销</text>
+  <text x="850" y="464" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.3" font-weight="600" fill="#1d4ed8">仅占 137 ms 流 ≈0.0025%</text>
+
+  <!-- Footer Note -->
+  <text x="20" y="514" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#64748b">前提与边界：假设已知交换机哈希 H(·)、统一目的端口（可扩展为 peer+dport 表）与广播延迟内时钟同步（PTP/Sundial）；Alg. 1 未含宕机租约超时与控制面丢包实验。</text>
+</svg>

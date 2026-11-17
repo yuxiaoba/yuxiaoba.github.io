@@ -1,0 +1,104 @@
+{
+  "id": "gimlet-draft-model-disaggregation",
+  "review_code": "T2C-20",
+  "source_url": "https://gimletlabs.ai/blog/draft-model-disaggregation",
+  "source_title": "Disaggregating the Disaggregated Model",
+  "source_authors": [
+    "Phillip Kuznetsov",
+    "Omid Azizi"
+  ],
+  "source_org": "Gimlet Labs",
+  "source_date": "2026-11-10",
+  "note_date": "2026-11-13",
+  "published_at": "2026-11-13T08:46:43.062448+08:00",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": ".preview/research-jobs/runs/20261113-083004-2e17ddd193-b40adf/work/sources/gimlet-draft-model-disaggregation/text.txt",
+      "kind": "extracted_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261113-083004-2e17ddd193-b40adf/work/sources/gimlet-draft-model-disaggregation/source.html",
+      "kind": "raw_html"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://gimletlabs.ai/blog/low-latency-spec-decode-corsair",
+    "https://gimletlabs.ai/blog/sram-centric-chips",
+    "https://gimletlabs.ai/blog/cerebras-announcement",
+    "https://arxiv.org/pdf/2512.01644v1",
+    "https://arxiv.org/abs/2305.09781",
+    "https://arxiv.org/abs/2607.05147"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/gimlet-draft-model-disaggregation.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/gimlet-draft-model-disaggregation.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/gimlet-draft-model-disaggregation/figure.png",
+        "origin": "primary_source_preserved",
+        "preserved_untouched": true,
+        "source": "https://gimletlabs.ai/blog/draft-model-disaggregation",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/gimlet-draft-model-disaggregation/gimlet-draft-disagg-topology-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/gimlet-draft-model-disaggregation/gimlet-draft-disagg-topology-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/gimlet-draft-model-disaggregation/speculative-disagg-tradeoffs-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/gimlet-draft-model-disaggregation/speculative-disagg-tradeoffs-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "905de2f86f24121ed55839a1da1732178990835f46bea5c978d0759578ac2995",
+      "en_md_sha256": "d339cc834d07ce934604681e4d790664a2671a19b25854f2b6630465cfacada9",
+      "svgs": {
+        "/assets/images/tech/gimlet-draft-model-disaggregation/gimlet-draft-disagg-topology-zh.svg": "f1dec547afcaa04ce8a722bbfc3fe8d0038e41ff980685f074222f4e296bec73",
+        "/assets/images/tech/gimlet-draft-model-disaggregation/gimlet-draft-disagg-topology-en.svg": "1a07d74f9d1bc976236d5149d2249a250f1cb63ab7268a98731215463e30f541",
+        "/assets/images/tech/gimlet-draft-model-disaggregation/speculative-disagg-tradeoffs-zh.svg": "bec00fdf651ad1ddcb8a191ca4907668e55360c8cc983853ca3ca43422e14b1f",
+        "/assets/images/tech/gimlet-draft-model-disaggregation/speculative-disagg-tradeoffs-en.svg": "428da04913a8f5d1424befae374205bab92b5b9e72cc58022b15f48b6aa39326"
+      },
+      "preserved": {
+        "figure.png": "b9b4c46eaf81f5addffcc844b470bcf26c6332432aafd933620433d60ee2a276"
+      }
+    },
+    "playwright_total": 35,
+    "playwright_passed": 35,
+    "playwright_failed": 0
+  }
+}

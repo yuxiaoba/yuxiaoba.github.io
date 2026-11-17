@@ -3,7 +3,7 @@ id: rum-synthetic-slos
 title: 2026年10月20日｜用户旅程的 SLO：把探测可用性与真实体验分开衡量
 date: '2026-10-20'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,7 +17,9 @@ permalink: /tech/zh/rum-synthetic-slos/
 authorship: assistant
 translation_source: assistant-authored bilingual analysis and translation
 published_at: '2026-10-23T12:22:02.560508+08:00'
-updated_at: '2026-10-23T12:22:02.560508+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 服务端请求成功，不一定意味着用户完成了操作。页面脚本出错、弱网下的等待，以及提交后没有收到确认，都可能落在后端可用率之外。Datadog 这篇文章值得关注的变化，是把可靠性目标放到完整用户旅程中，再用真实用户监控（RUM）和合成测试分别观察。判断它的价值，关键在于指标是否忠实表达用户遭遇，而不是界面上汇集了多少个绿色状态。
 

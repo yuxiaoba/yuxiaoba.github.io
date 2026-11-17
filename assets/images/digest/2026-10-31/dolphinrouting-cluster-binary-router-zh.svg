@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="DolphinRouting 系统架构：离线 K=8 聚类与饱和负载两阶段策略搜索，线上四维特征提取与 1-bit 查表路由">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <g style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+    <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+    <text x="24" y="33" font-size="16.5" font-weight="700" fill="#0f172a">DolphinRouting：面向 PD 分离的离线策略搜索与线上查表架构</text>
+    <text x="24" y="52" font-size="10.0" fill="#475569">arXiv:2610.40292v1 (§3.2–§3.6, Fig. 2, Alg. 1–3) · 给定 P/D 资源配比，以端到端 SLO 达成率学习 K 簇二值路由表</text>
+    <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+    <!-- Left Column: Offline Policy Search -->
+    <rect x="20" y="72" width="448" height="420" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+    <rect x="20" y="72" width="448" height="28" rx="9" fill="#1e3a8a"/>
+    <rect x="20" y="92" width="448" height="8" fill="#1e3a8a"/>
+    <text x="32" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">阶段一 · 离线聚类与两阶段策略搜索（非重叠 20% 历史轨迹）</text>
+
+    <!-- Box 1A: Alg 1 Clustering -->
+    <rect x="32" y="109" width="424" height="106" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="42" y="117" width="76" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="80" y="129.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">Alg. 1 聚类</text>
+    <text x="126" y="130" font-size="10.8" font-weight="700" fill="#0f172a">四维特征提取、归一化与 K=8 簇画像构建</text>
+    <text x="42" y="151" font-size="9.2" fill="#334155">• 并行提取 ℓ_raw、ℓ_P、ℓ_D 与历史真实输出长度 L（离线使用真值）</text>
+    <text x="42" y="169" font-size="9.2" fill="#334155">• 长度特征经 log(1+x) + ZScore 标准化，压缩跨量级长尾分布</text>
+    <text x="42" y="187" font-size="9.2" fill="#334155">• k-means（在混合与真实轨迹 7/8 项优于 GMM）聚类生成画像 P_c</text>
+    <text x="42" y="205" font-size="8.5" fill="#64748b">注：Alg. 1 伪代码列有 Span(P_c) &gt; τ 标记，正文未定义阈值或展开使用</text>
+
+    <line x1="244" y1="215" x2="244" y2="229" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+    <!-- Box 1B: Alg 2 Initialization -->
+    <rect x="32" y="231" width="424" height="106" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+    <rect x="42" y="239" width="76" height="18" rx="4" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+    <text x="80" y="251.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#0369a1">Alg. 2 初始化</text>
+    <text x="126" y="252" font-size="10.8" font-weight="700" fill="#1e3a8a">饱和负载下逐簇扫描（共 2K = 16 次扫描）</text>
+    <text x="42" y="273" font-size="9.2" fill="#1e293b">• 固定其余簇决策 {a_c′}，对簇 c 分别以路径 0 与 1 运行时长 T</text>
+    <text x="42" y="291" font-size="9.2" fill="#1e293b">• 实测端到端 SLO 达成率 R_agg(c) 与 R_disagg(c)</text>
+    <text x="42" y="309" font-size="9.2" fill="#1e293b">• 选较高者初始化 a_c，并置计数 n_c(0) = n_c(1) = 1 为后续搜索赋初值</text>
+    <text x="42" y="327" font-size="8.7" font-weight="600" fill="#1d4ed8">消融（表 3）：省去扫描会使收敛从 25.8 拖延至 39.6 轮，TPOT 0.80→0.91</text>
+
+    <line x1="244" y1="337" x2="244" y2="351" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+    <!-- Box 1C: Alg 3 Optimization -->
+    <rect x="32" y="353" width="424" height="129" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+    <rect x="42" y="361" width="76" height="18" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+    <text x="80" y="373.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#166534">Alg. 3 优化</text>
+    <text x="126" y="374" font-size="10.8" font-weight="700" fill="#1e3a8a">饱和负载下联合 ε-greedy 搜索（Eq. 2–3）</text>
+    <rect x="42" y="385" width="404" height="24" rx="4" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+    <text x="244" y="400.5" text-anchor="middle" font-size="8.4" font-weight="700" fill="#1d4ed8">R_c = (1/|R_c|) Σ I[TTFT_r+(L_r−1)·TPOT_r ≤ SLO_r]   |   ε_t = 0.01+0.49·exp(−t/K)</text>
+    <text x="42" y="426" font-size="9.1" fill="#0f172a">• 每轮各簇以 ε_t 随机探索或 1−ε_t 贪心选定动作，构成联合策略 {a_c}</text>
+    <text x="42" y="444" font-size="9.1" fill="#0f172a">• 在真实 P/D 集群联合运行观测 R_c，对实执行动作做增量均值更新 R̂_c</text>
+    <text x="42" y="462" font-size="9.1" font-weight="600" fill="#1d4ed8">• 探索衰减常数随 K 放大；按 P/D 配比（P3D1 / P2D2）各自产出 K-bit 决策表</text>
+
+    <!-- Connector Offline -> Online Table -->
+    <path d="M 456 418 L 478 418 L 478 286 L 500 286" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+
+    <!-- Right Column: Online Lookup & Routing -->
+    <rect x="490" y="72" width="450" height="420" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+    <rect x="490" y="72" width="450" height="28" rx="9" fill="#1d4ed8"/>
+    <rect x="490" y="92" width="450" height="8" fill="#1d4ed8"/>
+    <text x="502" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">阶段二 · 线上实时特征提取、簇映射与 1-bit 查表路由</text>
+
+    <!-- Box 2A: Feature Extraction -->
+    <rect x="502" y="109" width="426" height="128" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="512" y="117" width="70" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="547" y="129.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">请求到达</text>
+    <text x="590" y="130" font-size="10.8" font-weight="700" fill="#0f172a">并行提取四维特征（无请求级开销预测模型）</text>
+
+    <rect x="512" y="143" width="198" height="39" rx="5" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="520" y="158" font-size="9.1" font-weight="700" fill="#0f172a">ℓ_raw · 原始提示长度</text>
+    <text x="520" y="174" font-size="8.4" fill="#475569">扣减任何缓存前缀前的总 token</text>
+
+    <rect x="720" y="143" width="198" height="39" rx="5" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="728" y="158" font-size="9.1" font-weight="700" fill="#1d4ed8">ℓ_P = ℓ_raw − Hit_P · P 端有效</text>
+    <text x="728" y="174" font-size="8.4" fill="#475569">分离路径下 P 节点实际待算量</text>
+
+    <rect x="512" y="189" width="198" height="39" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+    <text x="520" y="204" font-size="9.1" font-weight="700" fill="#1e3a8a">ℓ_D = ℓ_raw − Hit_D · D 端有效</text>
+    <text x="520" y="220" font-size="8.4" fill="#334155">聚合路径下 D 节点本地算量（双池不对称）</text>
+
+    <rect x="720" y="189" width="198" height="39" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="728" y="204" font-size="9.1" font-weight="700" fill="#b45309">L̂ · Clairvoyant 三档输出代理</text>
+    <text x="728" y="220" font-size="8.2" fill="#78350f">CPU XGBoost 19 词法特征 (报 0.029 ms)</text>
+
+    <line x1="715" y1="237" x2="715" y2="250" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+    <!-- Box 2B: Cluster Assignment & Lookup -->
+    <rect x="502" y="252" width="426" height="72" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+    <rect x="512" y="260" width="76" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="550" y="272.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">O(1) 查表</text>
+    <text x="596" y="273" font-size="10.8" font-weight="700" fill="#1e3a8a">标准化映射 ϕ(x) → 簇 ID c 与 1-bit 决策表</text>
+    <text x="512" y="294" font-size="9.0" fill="#1e293b">• 按离线标定统计量归一化后匹配最近簇中心，查表输出 a_c ∈ {0, 1}</text>
+    <text x="512" y="312" font-size="8.7" fill="#475569">• 仅决策 prefill 执行位置；池内实例调度与 KV 传输仍由 vLLM + Mooncake 负责</text>
+
+    <!-- Branch arrows -->
+    <path d="M 650 324 L 650 338 L 605 338 L 605 349" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+    <path d="M 780 324 L 780 338 L 825 338 L 825 349" fill="none" stroke="#475569" stroke-width="1.6" marker-end="url(#arr-slate)"/>
+
+    <!-- Path 0 Card -->
+    <rect x="502" y="351" width="206" height="131" rx="7" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+    <rect x="512" y="359" width="96" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+    <text x="560" y="371.5" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1d4ed8">a_c = 0 · 聚合路径</text>
+    <text x="512" y="395" font-size="10.4" font-weight="700" fill="#1e3a8a">Decode Worker 本地 Prefill</text>
+    <text x="512" y="414" font-size="9.0" fill="#1e293b">• Prefill 与 Decode 同机同卡</text>
+    <text x="512" y="432" font-size="9.0" fill="#1e293b">• 免去跨节点 KV 传输延迟</text>
+    <text x="512" y="450" font-size="9.0" fill="#1e293b">• 适于 ℓ_D 小或 D 端前缀命中高</text>
+    <text x="512" y="470" font-size="8.4" fill="#475569">权衡：若 ℓ_D 过大将拖慢同卡 Decode</text>
+
+    <!-- Path 1 Card -->
+    <rect x="722" y="351" width="206" height="131" rx="7" fill="#ffffff" stroke="#3b82f6" stroke-width="1.1"/>
+    <rect x="732" y="359" width="96" height="18" rx="4" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+    <text x="780" y="371.5" text-anchor="middle" font-size="9.0" font-weight="700" fill="#0369a1">a_c = 1 · 分离路径</text>
+    <text x="732" y="395" font-size="10.4" font-weight="700" fill="#0f172a">Prefill 算后传 KV 至 Decode</text>
+    <text x="732" y="414" font-size="9.0" fill="#334155">• Prefill Worker 计算剩余 ℓ_P</text>
+    <text x="732" y="432" font-size="9.0" fill="#334155">• 经 Mooncake 传送 KV 状态</text>
+    <text x="732" y="450" font-size="9.0" fill="#334155">• 适于长冷输入或紧 TPOT 约束</text>
+    <text x="732" y="470" font-size="8.4" fill="#475569">权衡：需承担 KV 传输与 P 端排队开销</text>
+
+    <!-- Bottom Legend & Caveat -->
+    <rect x="20" y="501" width="12" height="10" rx="2" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+    <text x="37" y="510" font-size="9.0" fill="#334155">蓝色：核心聚类与路由流</text>
+    <rect x="168" y="501" width="12" height="10" rx="2" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="185" y="510" font-size="9.0" fill="#334155">琥珀：线上输出长度预测代理（Clairvoyant）</text>
+    <rect x="428" y="501" width="12" height="10" rx="2" fill="#dcfce7" stroke="#86efac" stroke-width="1"/>
+    <text x="445" y="510" font-size="9.0" fill="#334155">绿色：饱和负载真实 SLO 闭环更新</text>
+    <text x="20" y="527" font-size="8.8" fill="#64748b">边界提示：离线聚簇用真实 OSL L，线上用 3 档预测 L̂，原文未给出二者误差对比消融，也未设计分布漂移时的在线重聚类机制。</text>
+  </g>
+</svg>

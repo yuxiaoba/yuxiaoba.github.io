@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="38" font-size="19" font-weight="700" fill="#0f172a" text-anchor="start">Three Critical State-Divergence Windows: Approval, Crash &amp; Stop</text>
+  <text x="24" y="58" font-size="11.5" font-weight="400" fill="#475569" text-anchor="start">Exact timing fractures where local agent bookkeeping diverges from receiving services or downstream workers (Tests 5–7)</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="80" width="912" height="114" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="34" y="94" width="114" height="86" rx="6" fill="#1e3a8a"/>
+  <text x="91" y="128" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Test 5</text>
+  <text x="91" y="152" font-size="11.5" font-weight="600" fill="#bfdbfe" text-anchor="middle">Approval Gate</text>
+  <rect x="164" y="92" width="238" height="90" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="174" y="114" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">1. Approve Exact Payload</text>
+  <text x="174" y="138" font-size="10.5" font-weight="400" fill="#1e293b" text-anchor="start">Send email · Recipient A</text>
+  <text x="174" y="162" font-size="10.2" font-weight="400" fill="#475569" text-anchor="start">report-v1.pdf + immutable digest</text>
+  <line x1="404" y1="137" x2="421" y2="137" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="424" y="92" width="238" height="90" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1.1"/>
+  <text x="434" y="114" font-size="11.5" font-weight="700" fill="#991b1b" text-anchor="start">2. 6 Mutation Probes</text>
+  <text x="434" y="138" font-size="10.5" font-weight="400" fill="#1e293b" text-anchor="start">Mutate recipient / file / action</text>
+  <text x="434" y="162" font-size="10.2" font-weight="400" fill="#475569" text-anchor="start">Replay / expired / handoff sticky auth</text>
+  <line x1="664" y1="137" x2="681" y2="137" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="684" y="92" width="238" height="90" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="694" y="114" font-size="11.5" font-weight="700" fill="#166534" text-anchor="start">3. Trusted Execution Rejects</text>
+  <text x="694" y="138" font-size="10.5" font-weight="400" fill="#1e293b" text-anchor="start">Verify stored immutable request &amp; TTL</text>
+  <text x="694" y="162" font-size="10.2" font-weight="400" fill="#475569" text-anchor="start">All 6 blocked: 0 emails accepted</text>
+  <rect x="24" y="208" width="912" height="114" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="34" y="222" width="114" height="86" rx="6" fill="#1e3a8a"/>
+  <text x="91" y="256" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Test 6</text>
+  <text x="91" y="280" font-size="11.5" font-weight="600" fill="#bfdbfe" text-anchor="middle">Crash Window</text>
+  <rect x="164" y="220" width="238" height="90" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="174" y="242" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">1. Email API Commits #1</text>
+  <text x="174" y="266" font-size="10.5" font-weight="400" fill="#1e293b" text-anchor="start">Mock API stores message copy #1</text>
+  <text x="174" y="290" font-size="10.2" font-weight="400" fill="#475569" text-anchor="start">External side effect already occurred</text>
+  <line x1="404" y1="265" x2="421" y2="265" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="424" y="220" width="238" height="90" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1.1"/>
+  <text x="434" y="242" font-size="11.5" font-weight="700" fill="#991b1b" text-anchor="start">2. CRASH Before Commit</text>
+  <text x="434" y="266" font-size="10.5" font-weight="400" fill="#1e293b" text-anchor="start">Process killed; memory state wiped</text>
+  <text x="434" y="290" font-size="10.2" font-weight="400" fill="#475569" text-anchor="start">Restart sees send step unfinished</text>
+  <line x1="664" y1="265" x2="681" y2="265" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="684" y="220" width="238" height="90" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="694" y="242" font-size="11.5" font-weight="700" fill="#166534" text-anchor="start">3. Ledger &amp; Reconcile (Total = 1)</text>
+  <text x="694" y="266" font-size="10.5" font-weight="400" fill="#1e293b" text-anchor="start">Op ID + idempotency (Stripe &gt;=24h prune)</text>
+  <text x="694" y="290" font-size="10.2" font-weight="400" fill="#475569" text-anchor="start">Reconcile external API before any retry</text>
+  <rect x="24" y="336" width="912" height="114" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="34" y="350" width="114" height="86" rx="6" fill="#1e3a8a"/>
+  <text x="91" y="384" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Test 7</text>
+  <text x="91" y="408" font-size="11.5" font-weight="600" fill="#bfdbfe" text-anchor="middle">Global Stop</text>
+  <rect x="164" y="348" width="238" height="90" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="174" y="370" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">1. Emergency STOP Triggered</text>
+  <text x="174" y="394" font-size="10.5" font-weight="400" fill="#1e293b" text-anchor="start">Write shared persistent stop flag</text>
+  <text x="174" y="418" font-size="10.2" font-weight="400" fill="#475569" text-anchor="start">Revoke scoped credentials &amp; cancel cron</text>
+  <line x1="404" y1="393" x2="421" y2="393" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="424" y="348" width="238" height="90" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="434" y="370" font-size="11.5" font-weight="700" fill="#78350f" text-anchor="start">2. Past vs. Future Boundary</text>
+  <text x="434" y="394" font-size="10.5" font-weight="400" fill="#1e293b" text-anchor="start">Delivered email / settled tx irreversible</text>
+  <text x="434" y="418" font-size="10.2" font-weight="400" fill="#475569" text-anchor="start">Log timestamp &amp; separate reversal work</text>
+  <line x1="664" y1="393" x2="681" y2="393" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="684" y="348" width="238" height="90" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="694" y="370" font-size="11.5" font-weight="700" fill="#166534" text-anchor="start">3. 5 Surfaces + Restart Stay 0</text>
+  <text x="694" y="394" font-size="10.5" font-weight="400" fill="#1e293b" text-anchor="start">Pending, queue, cron, workers halt</text>
+  <text x="694" y="418" font-size="10.2" font-weight="400" fill="#475569" text-anchor="start">Restart stays stopped + logs redacted</text>
+  <rect x="24" y="462" width="912" height="38" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="485" font-size="11" font-weight="600" fill="#1e3a8a" text-anchor="start">Required 7-Field Audit Tuple: Test ID · Expected Result · Actual Result · Environment State · Trace/Evidence · Pass/Fail · Fix Required</text>
+  <text x="24" y="522" font-size="10.5" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram synthesized from MASA Tests 5–7 (LangGraph persistence, Stripe &gt;=24h prune &amp; OpenAI SDK notes; not an original figure)</text>
+</svg>

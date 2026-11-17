@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Hybrid Computer Use 三通道统一接口、可组合 AX 与跨通道动作守卫架构图" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-sky" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0284c7"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="12" y="12" width="936" height="516" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" rx="10"/>
+
+  <text x="28" y="38" font-size="16.2" font-weight="700" fill="#0f172a">Hybrid Computer Use（HCU）：三通道统一接口、可组合 AX 与跨通道守卫</text>
+  <text x="28" y="56" font-size="10.2" fill="#475569">arXiv:2610.41432v1 · 模型自主路由（无外置规划器/子智能体）· MCP/CLI/SDK 共享 Go 服务 + 原生平台后端</text>
+  <line x1="28" y1="65" x2="932" y2="65" stroke="#bfdbfe" stroke-width="1"/>
+
+  <!-- Column A -->
+  <rect x="24" y="74" width="292" height="420" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="36" y="94" font-size="11.8" font-weight="700" fill="#1d4ed8">A. 智能体上下文与三互补通道</text>
+
+  <rect x="34" y="104" width="272" height="76" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="42" y="112" width="70" height="17" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="77" y="123.8" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1d4ed8">自主路由</text>
+  <text x="118" y="124.2" font-size="10.6" font-weight="700" fill="#0f172a">通用智能体 + HCU Skill</text>
+  <text x="42" y="145" font-size="9.0" fill="#334155">• 嵌入原有 Harness 循环（不重训模型）</text>
+  <text x="42" y="163" font-size="9.0" fill="#1d4ed8">• Skill 引导路由与参数：畸形调用 17.4%→1.4%</text>
+
+  <!-- Branching bus from A0 to A1/A2/A3 -->
+  <line x1="39" y1="180" x2="39" y2="437" stroke="#64748b" stroke-width="1.3"/>
+  <line x1="39" y1="231" x2="46" y2="231" stroke="#475569" stroke-width="1.3" marker-end="url(#arr-slate)"/>
+  <line x1="39" y1="332" x2="46" y2="332" stroke="#1d4ed8" stroke-width="1.3" marker-end="url(#arr-blue)"/>
+  <line x1="39" y1="437" x2="46" y2="437" stroke="#0284c7" stroke-width="1.3" marker-end="url(#arr-sky)"/>
+
+  <rect x="48" y="190" width="258" height="82" rx="7" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <rect x="56" y="197" width="66" height="17" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="89" y="208.8" text-anchor="middle" font-size="9.0" font-weight="700" fill="#334155">编程通道</text>
+  <text x="128" y="209.2" font-size="10.4" font-weight="700" fill="#0f172a">Code / CLI / 文件工具</text>
+  <text x="56" y="229" font-size="8.9" fill="#334155">• 留驻 Harness，直接读写未打开文件</text>
+  <text x="56" y="246" font-size="8.9" fill="#334155">• 跨平台启动：setsid -f / open -a</text>
+  <text x="56" y="263" font-size="8.6" fill="#475569">• 禁用外部脚本注入 UI，保 AX 鲜度</text>
+
+  <rect x="48" y="280" width="258" height="104" rx="7" fill="#ffffff" stroke="#3b82f6" stroke-width="1.4"/>
+  <rect x="56" y="287" width="66" height="17" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="89" y="298.8" text-anchor="middle" font-size="9.0" font-weight="700" fill="#1d4ed8">语义 AX</text>
+  <text x="128" y="299.2" font-size="10.4" font-weight="700" fill="#1d4ed8">MCP AX 工具（核心增量）</text>
+  <text x="56" y="319" font-size="8.9" fill="#0f172a">• apps / observe / find / act（wN, rN）</text>
+  <text x="56" y="336" font-size="8.9" fill="#0f172a">• 精简视图降 12.6%–44.1% Token</text>
+  <text x="56" y="353" font-size="8.9" fill="#0f172a">• 64 步批量 + wait/settle + AX diff</text>
+  <text x="56" y="370" font-size="8.7" font-weight="600" fill="#1d4ed8">• Obsidian：原 XML 30.5K → 1,237 tok</text>
+
+  <rect x="48" y="392" width="258" height="90" rx="7" fill="#ffffff" stroke="#0284c7" stroke-width="1.1"/>
+  <rect x="56" y="399" width="66" height="17" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="0.8"/>
+  <text x="89" y="410.8" text-anchor="middle" font-size="9.0" font-weight="700" fill="#0369a1">视觉 GUI</text>
+  <text x="128" y="411.2" font-size="10.4" font-weight="700" fill="#0369a1">MCP GUI 工具（视觉兜底）</text>
+  <text x="56" y="431" font-size="8.9" fill="#334155">• screenshot / zoom / 64 步键鼠批量</text>
+  <text x="56" y="448" font-size="8.9" fill="#334155">• 专攻画布、拖拽与 AX 未暴露控件</text>
+  <text x="56" y="465" font-size="8.6" fill="#475569">• 跨通道互补：GUI 截图 → AX 执行</text>
+
+  <!-- Column B -->
+  <rect x="326" y="74" width="342" height="420" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="338" y="94" font-size="11.8" font-weight="700" fill="#1d4ed8">B. 可组合 AX 流水线与跨通道守卫</text>
+
+  <rect x="336" y="104" width="322" height="154" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <text x="346" y="121" font-size="10.4" font-weight="700" fill="#0f172a">1. 单次调用闭环：绑定 → 批量执行 → 差异反馈</text>
+
+  <rect x="344" y="130" width="94" height="76" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="391" y="145" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">前绑定 + 裁剪</text>
+  <text x="391" y="162" text-anchor="middle" font-size="8.3" fill="#334155">先绑 aN/wN/rN</text>
+  <text x="391" y="176" text-anchor="middle" font-size="8.3" fill="#334155">再删空容器合并</text>
+  <text x="391" y="191" text-anchor="middle" font-size="8.1" fill="#475569">find 可查完整树</text>
+
+  <line x1="438" y1="168" x2="448" y2="168" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+
+  <rect x="450" y="130" width="94" height="76" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="497" y="145" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">批量 + 等待步</text>
+  <text x="497" y="162" text-anchor="middle" font-size="8.3" fill="#0f172a">单窗有序执行</text>
+  <text x="497" y="176" text-anchor="middle" font-size="8.3" fill="#0f172a">wait / settle</text>
+  <text x="497" y="191" text-anchor="middle" font-size="8.1" fill="#1d4ed8">首错即停报已完</text>
+
+  <line x1="544" y1="168" x2="554" y2="168" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+
+  <rect x="556" y="130" width="94" height="76" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="603" y="145" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">差异 + 证据行</text>
+  <text x="603" y="162" text-anchor="middle" font-size="8.3" fill="#334155">effect / windows</text>
+  <text x="603" y="176" text-anchor="middle" font-size="8.3" fill="#334155">相对末次树 diff</text>
+  <text x="603" y="191" text-anchor="middle" font-size="8.1" fill="#475569">87% 省额外读取</text>
+
+  <rect x="344" y="214" width="306" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="352" y="229" font-size="8.5" fill="#0f172a">JSON 证据前缀：明确 input_emitted 与 retry_same_request</text>
+  <text x="352" y="243" font-size="8.3" fill="#475569">严格区分未投递(stale_ref)、效果未知(effect_unknown)与超时</text>
+
+  <rect x="336" y="268" width="322" height="214" rx="7" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="346" y="285" font-size="10.4" font-weight="700" fill="#1e3a8a">2. 跨通道动作守卫（Algorithm 1 · 防陈旧误触）</text>
+
+  <rect x="344" y="294" width="306" height="84" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="352" y="301" width="84" height="17" rx="4" fill="#1d4ed8"/>
+  <text x="394" y="312.8" text-anchor="middle" font-size="8.8" font-weight="700" fill="#ffffff">AX 目标守卫</text>
+  <text x="444" y="313.2" font-size="9.5" font-weight="700" fill="#0f172a">发送前实时解析 LiveTarget(a.ref)</text>
+  <text x="352" y="334" font-size="8.7" fill="#0f172a">• 核验活体身份 t ≠ ⊥ 且满足 CanExecute(a, t)</text>
+  <text x="352" y="351" font-size="8.7" fill="#0f172a">• 若已替换/缺失/歧义：拒收 stale_ref，禁同名猜</text>
+  <text x="352" y="368" font-size="8.4" fill="#1d4ed8">• 批量内每一步独立复核，阻断半途陈旧输入</text>
+
+  <rect x="344" y="386" width="306" height="88" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <rect x="352" y="393" width="84" height="17" rx="4" fill="#b45309"/>
+  <text x="394" y="404.8" text-anchor="middle" font-size="8.8" font-weight="700" fill="#ffffff">GUI 布局守卫</text>
+  <text x="444" y="405.2" font-size="9.5" font-weight="700" fill="#78350f">点击前核验 LiveLayout() == 租约</text>
+  <text x="352" y="426" font-size="8.7" fill="#78350f">• 比对桌面边界、顶层窗口、堆叠序、焦点与坐标</text>
+  <text x="352" y="443" font-size="8.7" fill="#78350f">• 错配报 gui_frame_stale（0 发射）并附新截图</text>
+  <text x="352" y="460" font-size="8.4" font-weight="700" fill="#991b1b">• 若焦点/指针准备态不确定：立即停机防重复触发</text>
+
+  <!-- Arrows A -> B -->
+  <line x1="306" y1="332" x2="334" y2="332" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <line x1="306" y1="437" x2="334" y2="437" stroke="#0284c7" stroke-width="1.6" marker-end="url(#arr-sky)"/>
+
+  <!-- Column C -->
+  <rect x="678" y="74" width="258" height="420" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="690" y="94" font-size="11.8" font-weight="700" fill="#1d4ed8">C. 共享 Go 状态与原生后端</text>
+
+  <rect x="688" y="104" width="238" height="156" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <text x="698" y="121" font-size="10.2" font-weight="700" fill="#1e3a8a">跨通道失效与保留账本 (Fig. 17)</text>
+
+  <rect x="696" y="129" width="222" height="54" rx="5" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.9"/>
+  <text x="704" y="143" font-size="8.8" font-weight="700" fill="#991b1b">GUI 变更时立即失效：</text>
+  <text x="704" y="158" font-size="8.4" fill="#7f1d1d">• AX 工作快照与隐藏元素缓存</text>
+  <text x="704" y="172" font-size="8.4" fill="#7f1d1d">• find 续查游标（防读到过期节点）</text>
+
+  <rect x="696" y="189" width="222" height="62" rx="5" fill="#dcfce7" stroke="#86efac" stroke-width="0.9"/>
+  <text x="704" y="203" font-size="8.8" font-weight="700" fill="#166534">跨操作持久保留：</text>
+  <text x="704" y="218" font-size="8.4" fill="#14532d">• aN/wN/rN 引用表、已交付树账本</text>
+  <text x="704" y="233" font-size="8.4" fill="#14532d">• diff 基准快照；全帧注册布局租约</text>
+
+  <rect x="688" y="270" width="238" height="116" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <text x="698" y="287" font-size="10.2" font-weight="700" fill="#1e3a8a">平台 Provider（私有协议 / 择一编译）</text>
+  <rect x="696" y="297" width="222" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="704" y="312.5" font-size="8.6" fill="#0f172a">Linux：AT-SPI + X11（自启会话总线）</text>
+  <rect x="696" y="325" width="222" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="704" y="340.5" font-size="8.6" fill="#0f172a">macOS：AXUIElement + ScreenCaptureKit</text>
+  <rect x="696" y="353" width="222" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="704" y="368.5" font-size="8.6" fill="#0f172a">Windows：UIA3 + Win32 原生接口</text>
+
+  <line x1="807" y1="386" x2="807" y2="396" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="688" y="398" width="238" height="84" rx="7" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="698" y="416" font-size="10.4" font-weight="700" fill="#1e3a8a">单一共享桌面与真实应用</text>
+  <text x="698" y="435" font-size="8.8" fill="#0f172a">• 代码 / AX / GUI 共同作用同一会话</text>
+  <text x="698" y="452" font-size="8.8" fill="#0f172a">• LibreOffice / GIMP / Chrome / VS Code</text>
+  <text x="698" y="469" font-size="8.5" font-weight="600" fill="#1d4ed8">• 评测 Runner 外置隔离，不暴露给模型</text>
+
+  <!-- Arrows B -> C -->
+  <line x1="658" y1="180" x2="686" y2="180" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <line x1="658" y1="336" x2="686" y2="336" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+
+  <text x="24" y="514" font-size="9.2" fill="#475569">注：评估版（主实验与消融）批量上限 32 步并含 assert_ax；发布版（附录 A/E/F）统一为有序 wait/settle、上限 64 步并输出 JSON 证据前缀。</text>
+</svg>

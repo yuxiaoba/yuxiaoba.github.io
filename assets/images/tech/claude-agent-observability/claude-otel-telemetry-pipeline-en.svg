@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Platform Dual-Path OTel Collection and Cross-Trace Correlation</title>
+  <desc id="desc">Architecture diagram contrasting SDK client spans vs Console API server spans, showing Messages API and Managed Agents span hierarchies, session/thread join keys, and GenAI semantic convention OTLP export targets.</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc"/>
+
+  <!-- Top Header -->
+  <rect x="20" y="14" width="920" height="50" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="36" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="16" font-weight="700" fill="#0f172a">Claude Platform Dual-Path OTel Collection &amp; Cross-Trace Correlation</text>
+  <text x="36" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" fill="#475569">Joining client SDK spans and server API spans over OpenTelemetry GenAI semantic conventions to OTLP backends</text>
+  <rect x="766" y="25" width="158" height="26" rx="13" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+  <text x="845" y="42" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11" font-weight="600" fill="#1e3a8a">Public Beta · OTLP</text>
+
+  <!-- Column 1 -->
+  <rect x="20" y="76" width="272" height="338" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <path d="M 20 86 Q 20 76 30 76 L 282 76 Q 292 76 292 86 L 292 110 L 20 110 Z" fill="#eff6ff"/>
+  <line x1="20" y1="110" x2="292" y2="110" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="34" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="13" font-weight="700" fill="#1e3a8a">1. Dual Collection Paths</text>
+
+  <!-- Subcard A -->
+  <rect x="32" y="120" width="248" height="126" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="42" y="129" width="124" height="20" rx="5" fill="#dbeafe"/>
+  <text x="104" y="143" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="700" fill="#1e3a8a">SDK Tracing (CLIENT)</text>
+  <text x="270" y="143" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" fill="#475569">No Perm · Any Cloud</text>
+  <text x="42" y="166" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">• Register SDK TracerProvider</text>
+  <text x="42" y="183" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">• Emits messages.tool_runner spans</text>
+  <text x="42" y="200" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">• Emits client &amp; sandbox tool runs</text>
+  <text x="42" y="217" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">• Emits file-upload &amp; other API calls</text>
+  <text x="42" y="236" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#991b1b">Gap: misses server tools &amp; model runs</text>
+
+  <!-- Subcard B -->
+  <rect x="32" y="256" width="248" height="146" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.2"/>
+  <rect x="42" y="265" width="124" height="20" rx="5" fill="#e0f2fe"/>
+  <text x="104" y="279" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" font-weight="700" fill="#0c4a6e">API Tracing (SERVER)</text>
+  <text x="270" y="279" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" fill="#475569">Admin · Claude/AWS</text>
+  <text x="42" y="302" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">• Console destination, any client</text>
+  <text x="42" y="319" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">• Exposes each model_request span</text>
+  <text x="42" y="336" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">• Exposes server tools (web_search/bash)</text>
+  <text x="42" y="353" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">• Exposes Managed Agents turns &amp; evals</text>
+  <text x="42" y="372" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="600" fill="#991b1b">Gap: misses client-side tool_runner</text>
+  <text x="42" y="391" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" font-weight="700" fill="#1d4ed8">→ Enable both to link via traceparent</text>
+
+  <line x1="292" y1="183" x2="314" y2="183" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+  <line x1="292" y1="329" x2="314" y2="329" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+
+  <!-- Column 2 -->
+  <rect x="318" y="76" width="366" height="338" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <path d="M 318 86 Q 318 76 328 76 L 674 76 Q 684 76 684 86 L 684 110 L 318 110 Z" fill="#eff6ff"/>
+  <line x1="318" y1="110" x2="684" y2="110" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="332" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="13" font-weight="700" fill="#1e3a8a">2. Unified Span Tree &amp; Async Turn Lifecycle</text>
+
+  <!-- Top Half -->
+  <rect x="330" y="120" width="342" height="126" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="342" y="138" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Messages API + tool_runner (Single Trace)</text>
+
+  <rect x="342" y="148" width="42" height="14" rx="3" fill="#64748b"/>
+  <text x="363" y="158" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9" font-weight="700" fill="#ffffff">APP</text>
+  <text x="390" y="159" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">answer_question → tool_runner</text>
+
+  <rect x="354" y="166" width="42" height="14" rx="3" fill="#2563eb"/>
+  <text x="375" y="176" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9" font-weight="700" fill="#ffffff">SDK</text>
+  <text x="402" y="177" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e3a8a">messages.create #1 (CLIENT)</text>
+
+  <rect x="366" y="184" width="42" height="14" rx="3" fill="#0284c7"/>
+  <text x="387" y="194" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9" font-weight="700" fill="#ffffff">API</text>
+  <text x="414" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#0c4a6e">model_req → web_search → model_req</text>
+
+  <rect x="354" y="202" width="42" height="14" rx="3" fill="#2563eb"/>
+  <text x="375" y="212" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9" font-weight="700" fill="#ffffff">SDK</text>
+  <text x="402" y="213" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e3a8a">custom_tool_use get_weather (local)</text>
+
+  <rect x="354" y="220" width="42" height="14" rx="3" fill="#0284c7"/>
+  <text x="375" y="230" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9" font-weight="700" fill="#ffffff">BOTH</text>
+  <text x="402" y="231" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">messages.create #2 → model_req (final)</text>
+
+  <!-- Bottom Half -->
+  <rect x="330" y="256" width="342" height="146" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="342" y="274" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Managed Agents Session (Multi-Trace / Multi-Thread)</text>
+
+  <rect x="342" y="283" width="42" height="14" rx="3" fill="#64748b"/>
+  <text x="363" y="293" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9" font-weight="700" fill="#ffffff">APP</text>
+  <text x="390" y="294" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">POST /chat → events.stream/list/send</text>
+
+  <rect x="354" y="301" width="42" height="14" rx="3" fill="#0284c7"/>
+  <text x="375" y="311" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9" font-weight="700" fill="#ffffff">API</text>
+  <text x="402" y="312" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#0c4a6e">session.turn #1 (outlives parent send)</text>
+
+  <rect x="366" y="319" width="42" height="14" rx="3" fill="#0284c7"/>
+  <text x="387" y="329" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9" font-weight="700" fill="#ffffff">API</text>
+  <text x="414" y="330" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#0c4a6e">model_req + bash + sub-thread turn</text>
+
+  <rect x="354" y="337" width="42" height="14" rx="3" fill="#2563eb"/>
+  <text x="375" y="347" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9" font-weight="700" fill="#ffffff">SDK</text>
+  <text x="402" y="348" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#1e3a8a">requires_action → tool list_issues</text>
+
+  <rect x="354" y="355" width="42" height="14" rx="3" fill="#0284c7"/>
+  <text x="375" y="365" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9" font-weight="700" fill="#ffffff">BOTH</text>
+  <text x="402" y="366" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">events.send → turn #2 (new root trace)</text>
+
+  <rect x="342" y="375" width="318" height="20" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="1"/>
+  <text x="501" y="389" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="600" fill="#78350f">Thread: gen_ai.conversation.id | Session: anthropic.session.id</text>
+
+  <line x1="684" y1="245" x2="706" y2="245" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+
+  <!-- Column 3 -->
+  <rect x="710" y="76" width="230" height="338" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <path d="M 710 86 Q 710 76 720 76 L 930 76 Q 940 76 940 86 L 940 110 L 710 110 Z" fill="#eff6ff"/>
+  <line x1="710" y1="110" x2="940" y2="110" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="724" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="13" font-weight="700" fill="#1e3a8a">3. GenAI Schema &amp; Targets</text>
+
+  <rect x="722" y="120" width="206" height="94" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="732" y="138" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">GenAI Semantic Attributes</text>
+  <text x="732" y="156" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">• gen_ai.system_instructions</text>
+  <text x="732" y="172" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">• gen_ai.input/output.messages</text>
+  <text x="732" y="188" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">• gen_ai.tool.name / arguments</text>
+  <text x="732" y="204" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">• gen_ai.usage.input_tokens</text>
+
+  <rect x="722" y="220" width="206" height="108" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="732" y="237" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">12 Named OTLP Partners</text>
+  <text x="732" y="254" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">Stack: Grafana, Honeycomb,</text>
+  <text x="732" y="269" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">  Sentry, Splunk</text>
+  <text x="732" y="286" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">Evals: Arize, Braintrust,</text>
+  <text x="732" y="301" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">  Datadog, Langfuse, LangSmith,</text>
+  <text x="732" y="316" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">  New Relic, PostHog</text>
+
+  <rect x="722" y="334" width="206" height="68" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="732" y="351" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#1e3a8a">Governance &amp; Unified Stack</text>
+  <text x="732" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">• Databricks Unity Gateway</text>
+  <text x="732" y="384" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">• Joins Claude Code, Cowork,</text>
+  <text x="732" y="397" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10" fill="#334155">  other models &amp; DBs on 1 trace</text>
+
+  <!-- Bottom Strip -->
+  <rect x="20" y="426" width="920" height="98" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <rect x="32" y="437" width="290" height="76" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="44" y="456" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Setup &amp; Context Propagation</text>
+  <text x="44" y="474" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">SDK auto-export still requires registering</text>
+  <text x="44" y="492" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">a TracerProvider and verifying real linkage.</text>
+
+  <rect x="335" y="437" width="290" height="76" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="347" y="456" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Time Proximity ≠ Causality</text>
+  <text x="347" y="474" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">Later session calls spawn new root traces;</text>
+  <text x="347" y="492" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#334155">stitch via conversation.id &amp; session.id.</text>
+
+  <rect x="638" y="437" width="290" height="76" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="1"/>
+  <text x="650" y="456" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.5" font-weight="700" fill="#78350f">Remaining Visibility Gaps</text>
+  <text x="650" y="474" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#78350f">Images &amp; docs emit type only (no raw bytes);</text>
+  <text x="650" y="492" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#78350f">best-effort OTLP cannot replace Usage API.</text>
+</svg>

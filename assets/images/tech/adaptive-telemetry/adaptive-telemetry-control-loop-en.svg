@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Lato', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="35" font-size="18" font-weight="700" fill="#0f172a">Grafana Adaptive Telemetry: Control Loops &amp; Maturity Boundaries</text>
+  <text x="24" y="54" font-size="11" fill="#475569">Synthesized from Grafana Labs' Oct 20, 2026 update &amp; four official docs: trace tail sampling, log edge filtering/archival, and metric auto-apply</text>
+  <line x1="24" y1="64" x2="936" y2="64" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Lane 1: Adaptive Traces -->
+  <rect x="24" y="72" width="912" height="142" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="72" width="912" height="24" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="88" width="912" height="8" fill="#dbeafe"/>
+  <text x="36" y="88" font-size="11.5" font-weight="700" fill="#1e3a8a">1 · Adaptive Traces: Managed Tail Sampling &amp; Recovery Funnel</text>
+  <rect x="802" y="75" width="122" height="18" rx="4" fill="#15803d"/>
+  <text x="863" y="88" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">Generally Available</text>
+
+  <rect x="34" y="102" width="196" height="104" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="120" font-size="10.8" font-weight="700" fill="#1d4ed8">Pre-Filter &amp; Entry Rules</text>
+  <text x="44" y="139" font-size="9.5" fill="#334155">• Drop rules filter first on ingest</text>
+  <text x="44" y="156" font-size="9.5" fill="#334155">• Rest enter managed tail sampler</text>
+  <text x="44" y="173" font-size="9.5" fill="#334155">• No self-run collector pipeline</text>
+  <text x="44" y="191" font-size="9" fill="#475569">Edit in place to disable (no delete)</text>
+
+  <line x1="230" y1="154" x2="246" y2="154" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="248" y="102" width="246" height="104" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="258" y="120" font-size="10.8" font-weight="700" fill="#1d4ed8">Volumetric + Diversity Decision</text>
+  <text x="258" y="139" font-size="9.7" fill="#334155">• Volumetric: ~15s group rate update</text>
+  <text x="258" y="156" font-size="9.7" fill="#334155">  Targets bytes % (max 1 per tenant)</text>
+  <text x="258" y="173" font-size="9.7" fill="#334155">• Diversity: 1 trace / 15m / 9-key hash</text>
+  <text x="258" y="191" font-size="9.2" fill="#475569">Pinned &amp; diversity rules bypass % cap</text>
+
+  <line x1="494" y1="154" x2="510" y2="154" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="512" y="102" width="198" height="104" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="522" y="120" font-size="10.8" font-weight="700" fill="#166534">Kept Traces → Tempo</text>
+  <text x="522" y="139" font-size="9.7" fill="#1e293b">• Stored long-term in Tempo</text>
+  <text x="522" y="156" font-size="9.7" fill="#1e293b">• Searchable via TraceQL queries</text>
+  <text x="522" y="173" font-size="9.7" fill="#334155">• Low-traffic paths avoid crowding</text>
+  <text x="522" y="191" font-size="9.2" fill="#475569">Volume cuts are not strictly linear</text>
+
+  <line x1="719" y1="104" x2="719" y2="204" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <rect x="728" y="102" width="198" height="104" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="738" y="120" font-size="10.8" font-weight="700" fill="#b45309">Dropped → 24h ID Lookup</text>
+  <text x="738" y="139" font-size="9.5" fill="#78350f">• Query by trace ID for 24h</text>
+  <text x="738" y="156" font-size="9.5" fill="#78350f">• 1st lookup promotes to Tempo</text>
+  <text x="738" y="173" font-size="9.5" fill="#92400e">• TraceQL search is best-effort</text>
+  <text x="738" y="191" font-size="9" fill="#92400e">Purged at 24h; big traces truncate</text>
+
+  <!-- Lane 2: Adaptive Logs -->
+  <rect x="24" y="222" width="912" height="118" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="222" width="912" height="24" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="238" width="912" height="8" fill="#dbeafe"/>
+  <text x="36" y="238" font-size="11.5" font-weight="700" fill="#1e3a8a">2 · Adaptive Logs: Edge Collector Filtering &amp; Object-Storage Archival</text>
+  <rect x="724" y="225" width="200" height="18" rx="4" fill="#b45309"/>
+  <text x="824" y="238" font-size="9.2" font-weight="700" fill="#ffffff" text-anchor="middle">Public Preview / Replay Coming Soon</text>
+
+  <rect x="34" y="252" width="196" height="80" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="269" font-size="10.6" font-weight="700" fill="#1d4ed8">Cloud Usage Pattern Scan</text>
+  <text x="44" y="287" font-size="9.6" fill="#334155">• Spots unqueried log patterns</text>
+  <text x="44" y="304" font-size="9.6" fill="#334155">• Reuses drop rules &amp; exemptions</text>
+  <text x="44" y="321" font-size="9.2" fill="#475569">Remaining logs still analyzed in cloud</text>
+
+  <line x1="230" y1="292" x2="246" y2="292" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="248" y="252" width="246" height="80" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1"/>
+  <text x="258" y="269" font-size="10.6" font-weight="700" fill="#0369a1">Fleet Collector Sync (Preview)</text>
+  <text x="258" y="287" font-size="9.6" fill="#0f172a">• Fleet Management pushes rules</text>
+  <text x="258" y="304" font-size="9.6" fill="#334155">• Keeps edge pipelines in sync</text>
+  <text x="258" y="321" font-size="9.2" fill="#0369a1">Drops matching logs before egress</text>
+
+  <line x1="494" y1="292" x2="510" y2="292" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="512" y="252" width="198" height="80" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="522" y="269" font-size="10.6" font-weight="700" fill="#0f172a">Egress &amp; Indexing Savings</text>
+  <text x="522" y="287" font-size="9.6" fill="#334155">• Saves network &amp; storage spend</text>
+  <text x="522" y="304" font-size="9.6" fill="#334155">• Non-dropped logs index normally</text>
+  <text x="522" y="321" font-size="9.2" fill="#475569">Or route to cold object storage</text>
+
+  <line x1="719" y1="254" x2="719" y2="330" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <rect x="728" y="252" width="198" height="80" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="738" y="269" font-size="10.6" font-weight="700" fill="#b45309">Archive vs. Replay Gap</text>
+  <text x="738" y="287" font-size="9.5" fill="#78350f">• Archive (Preview): own bucket</text>
+  <text x="738" y="304" font-size="9.5" fill="#92400e">• Replay: coming soon (preview)</text>
+  <text x="738" y="321" font-size="9" fill="#92400e">Archival != shipped replay flow</text>
+
+  <!-- Lane 3: Adaptive Metrics -->
+  <rect x="24" y="348" width="912" height="118" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="348" width="912" height="24" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="364" width="912" height="8" fill="#dbeafe"/>
+  <text x="36" y="364" font-size="11.5" font-weight="700" fill="#1e3a8a">3 · Adaptive Metrics Auto-Apply: Usage-Driven Aggregation Rules</text>
+  <rect x="802" y="351" width="122" height="18" rx="4" fill="#15803d"/>
+  <text x="863" y="364" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">Generally Available</text>
+
+  <rect x="34" y="378" width="196" height="80" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="395" font-size="10.6" font-weight="700" fill="#1d4ed8">Observed Usage Analysis</text>
+  <text x="44" y="413" font-size="9.6" fill="#334155">• Audits dashboards, alerts &amp; queries</text>
+  <text x="44" y="430" font-size="9.6" fill="#334155">• Audits recording rules per segment</text>
+  <text x="44" y="447" font-size="9.2" fill="#475569">Aggregates unused high-card labels</text>
+
+  <line x1="230" y1="418" x2="246" y2="418" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="248" y="378" width="246" height="80" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="258" y="395" font-size="10.6" font-weight="700" fill="#1d4ed8">Segment Gate (UI / API / TF)</text>
+  <text x="258" y="413" font-size="9.6" fill="#334155">• Set per default or {selector} segment</text>
+  <text x="258" y="430" font-size="9.6" fill="#334155">• Default: unbounded (Coverage-first)</text>
+  <text x="258" y="447" font-size="9.2" fill="#475569">Explicit no-increase = Cost-first</text>
+
+  <line x1="494" y1="418" x2="510" y2="418" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="512" y="378" width="198" height="80" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="522" y="395" font-size="10.6" font-weight="700" fill="#166534">Rule Mutation Scope</text>
+  <text x="522" y="413" font-size="9.5" fill="#1e293b">• Mutates/drops exact-match rules</text>
+  <text x="522" y="430" font-size="9.5" fill="#1e293b">• Preserves affix &amp; drop rules</text>
+  <text x="522" y="447" font-size="9" fill="#475569">Skips if near segment rule cap</text>
+
+  <line x1="719" y1="380" x2="719" y2="456" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <rect x="728" y="378" width="198" height="80" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="738" y="395" font-size="10.6" font-weight="700" fill="#b45309">Exemption &amp; Budget Guardrail</text>
+  <text x="738" y="413" font-size="9.5" fill="#78350f">• Add exemptions BEFORE enabling</text>
+  <text x="738" y="430" font-size="9.5" fill="#92400e">• Cost-first uses prior-cycle est.</text>
+  <text x="738" y="447" font-size="9" fill="#92400e">Not a live series-count hard cap</text>
+
+  <!-- Bottom Takeaway Bar -->
+  <rect x="24" y="474" width="912" height="32" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="36" y="494" font-size="10.2" font-weight="600" fill="#1e3a8a">Key Split: Searchable Retention (Tempo/Loki/Mimir) vs. 24h ID Lookup vs. Cold Object Storage—each trades query latency for cost</text>
+
+  <text x="24" y="524" font-size="10" fill="#64748b">Assistant diagram (not an original figure) synthesized from Grafana Labs (2026-10-20) &amp; 4 official docs, explicitly distinguishing GA vs. preview states</text>
+</svg>

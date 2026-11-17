@@ -3,7 +3,7 @@ id: grafana-autonomous
 title: 2026年10月23日｜Grafana AI：从持续观察走到可审查补丁
 date: '2026-10-23'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -18,7 +18,9 @@ permalink: /tech/zh/grafana-autonomous/
 translation_source: assistant
 authorship: assistant
 published_at: '2026-10-23T08:58:47.180720+08:00'
-updated_at: '2026-10-23T08:58:47.180720+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 发布后服务没有宕机，却有部分请求逐渐变慢，是最容易消耗团队注意力的场景之一。有人盯仪表盘，有人判断异常是否重要，有人查调用链，最后开发者还要重新理解问题才能改代码。Grafana 这次把持续观察、事故调查和代码修改提案放进同一条流程，关注的是这些步骤之间反复丢失的上下文。
 

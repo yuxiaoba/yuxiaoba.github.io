@@ -3,7 +3,7 @@ id: review-github-open-flapping-airplanes
 title: '2026-11-04 | open-flapping-airplanes: reproducing the flapping airplanes megakernel'
 date: '2026-11-04'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -17,9 +17,11 @@ tags:
 translation_source: assistant-created bilingual notes
 permalink: /tech/en/review-github-open-flapping-airplanes/
 long_read: true
-summary: "How persistent GPU task queues and static SM partitions work, and why a CUDA Graph baseline can remain faster."
+summary: How persistent GPU task queues and static SM partitions work, and why a CUDA Graph baseline can remain faster.
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 ## How one persistent kernel runs three jobs
 
 open-flapping-airplanes independently reconstructs a public demonstration: one persistent GPU kernel trains a language model, serves its changing weights and runs Doom. It does not use the original code, and the original model and training settings are unpublished, so it is an independent implementation rather than a reproduction of the original performance.

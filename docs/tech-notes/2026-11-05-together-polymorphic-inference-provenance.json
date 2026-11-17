@@ -1,0 +1,116 @@
+{
+  "id": "2026-11-05-together-polymorphic-inference",
+  "review_code": "T1-22",
+  "source_url": "https://www.together.ai/blog/polymorphic-inference",
+  "companion_blog_url": "https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference",
+  "source_paper_pdf_url": "https://www.alphaxiv.org/abs/2611.together-compiler-continual-ai-inference.pdf",
+  "source_paper_abs_url": "https://www.alphaxiv.org/abs/2611.together-compiler-continual-ai-inference",
+  "source_x_context_urls": [
+    "https://x.com/simran_s_arora",
+    "https://x.com/togethercompute"
+  ],
+  "source_title": "Polymorphic Inference & Together Compiler: Continual Compilation for AI Inference",
+  "source_author": "Simran Arora, Dan Fu, Reyna Abhyankar, Dylan Lim, et al.",
+  "source_org": "Together AI Research",
+  "source_date": "2026-11-04",
+  "note_date": "2026-11-05",
+  "updated_at": "2026-11-15T19:54:17+08:00",
+  "frozen_primary_sources": {
+    "primary_blog_html_2026_11_05": {
+      "path": ".preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/together-polymorphic-inference.html",
+      "sha256": "55fef2970d0a509f94a38bd59968541881068a8a495fbd9d4a48bc552c32460c"
+    },
+    "primary_blog_txt_2026_11_05": {
+      "path": ".preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/together-polymorphic-inference.txt",
+      "sha256": "cfa4b8fd6066f0022bcdbc7178b265b5e86ae3571dcf0dd7073b1dcc5721da39"
+    },
+    "owner_alignment_blog_txt": {
+      "path": ".preview/research-jobs/owner-alignment-2026-11-05/work/evidence/together-polymorphic-inference-0.txt",
+      "sha256": "d80e12839bc01384ff13fce4b338c925e2c6c26d392851d66621831f6774b11e"
+    },
+    "owner_alignment_simran_x_txt": {
+      "path": ".preview/research-jobs/owner-alignment-2026-11-05/work/evidence/together-polymorphic-inference-1.txt",
+      "sha256": "cfd3294a6b068e7af10e9212365d0cc04dccea6f949f0dcff19444830f0e3340"
+    },
+    "owner_alignment_together_x_txt": {
+      "path": ".preview/research-jobs/owner-alignment-2026-11-05/work/evidence/together-polymorphic-inference-2.txt",
+      "sha256": "bbe20e21952271aac30fa26008d644d9bf6475903d330d851e4a8a4be5624ee1"
+    },
+    "primary_blog_html_2026_11_09": {
+      "path": ".preview/research-jobs/runs/20261109-083004-fa3011ada6-2c39df/work/sources/polymorphic.html",
+      "sha256": "3b8336fbde43fd2efe4e582e39cbee243408cb18da77c5b3e1b058162df2a909"
+    }
+  },
+  "staged_companion_and_report_sources": {
+    "companion_blog_html": {
+      "url": "https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference",
+      "staged_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/t22-stage/together-compiler-continual-compilation-for-ai-inference.html",
+      "sha256": "24938f401a4dde32112e715846025e811794a6cfb155602e571d97e9d860b3d2"
+    },
+    "companion_blog_txt": {
+      "url": "https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference",
+      "staged_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/t22-stage/together-compiler-continual-compilation-for-ai-inference.txt",
+      "sha256": "c21d57ca48c7810bea64f4b9b624d1f5c547dd9b749191a41a37f17a319d1f2a"
+    },
+    "technical_report_pdf": {
+      "url": "https://www.alphaxiv.org/abs/2611.together-compiler-continual-ai-inference.pdf",
+      "staged_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/t22-stage/together-compiler-paper.pdf",
+      "sha256": "c1ce4a8a7a3772f31d7135626ad443ae2d1bce844f8fab25213403097698a3ef"
+    },
+    "technical_report_html": {
+      "url": "https://www.alphaxiv.org/abs/2611.together-compiler-continual-ai-inference",
+      "staged_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/t22-stage/together-compiler-paper.html",
+      "sha256": "f7bce2e53dea9ec9840e2330460fd8ac15498ca19860204584c3820727f5f54b"
+    },
+    "technical_report_txt": {
+      "url": "https://www.alphaxiv.org/abs/2611.together-compiler-continual-ai-inference.pdf",
+      "staged_path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/t22-stage/together-compiler-paper.txt",
+      "sha256": "852da57f83906f5d454c6b2620520c5b057d5ca913bc680eec0ac419f40e9818"
+    }
+  },
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "preserved_existing_assets": [
+    {
+      "path": "assets/images/tech/2026-11-05-together-polymorphic-inference/official-figure.png",
+      "origin": "official_blog_preserved_on_disk",
+      "sha256": "aa635ef427b5cd509147b46522632ffda757f57ea029ba88724603f2c7c75075"
+    }
+  ],
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/2026-11-05-together-polymorphic-inference.md",
+      "sha256": "085dd6dcb6d8712ee1665af17ac66c34cac6df0a92a7d43e410f8191763f71f8"
+    },
+    "en_markdown": {
+      "path": "_tech/en/2026-11-05-together-polymorphic-inference.md",
+      "sha256": "9a92f9773a68e8ad959b3f1a7650560e00332582f91816fa7c6462ffad9088e5"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/2026-11-05-together-polymorphic-inference/tkcc-continual-loop-architecture-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://synthesized-from-together-polymorphic-inference-and-tkcc-report",
+        "sha256": "cafdf783da980abb9648905f2d902ff61e120d7bb0325351260517b0980f5333"
+      },
+      {
+        "path": "assets/images/tech/2026-11-05-together-polymorphic-inference/tkcc-continual-loop-architecture-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://synthesized-from-together-polymorphic-inference-and-tkcc-report",
+        "sha256": "9aeece53bcad2c9b22e803dc9cd0fc592925801b53180e7aec9e8b0e37b47941"
+      },
+      {
+        "path": "assets/images/tech/2026-11-05-together-polymorphic-inference/polymorphic-failure-mechanisms-and-benchmarks-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://synthesized-from-together-polymorphic-inference-and-tkcc-report",
+        "sha256": "fa37f13dd252999ab1a8050df94bc3a78b7c0b27bcfd7ca8cc79904004d2c800"
+      },
+      {
+        "path": "assets/images/tech/2026-11-05-together-polymorphic-inference/polymorphic-failure-mechanisms-and-benchmarks-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://synthesized-from-together-polymorphic-inference-and-tkcc-report",
+        "sha256": "5a931b306a14abee9c38b4f222daf0de49abd87de83263406afc45e116c8118d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC','PingFang SC','Lato','Microsoft YaHei',sans-serif;">
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="38" font-size="18.5" font-weight="700" fill="#0f172a">AI 事故分诊边界、故障分流与两篇 PagerDuty 博文定位对照</text>
+  <text x="24" y="57" font-size="11" fill="#475569">区分“原文已落地实践”与“后续演进方向”，并对照可逆配置切换、需重放代码改动及 11 月 PD Labs 篇目</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Section Header -->
+  <rect x="24" y="78" width="912" height="26" rx="6" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="95" font-size="11.5" font-weight="700" fill="#1e3a8a">故障分型与处置边界：为什么 LLM 裁判低分不能一律触发同类自动修复</text>
+
+  <!-- 4 Cards (w=219, gap=12, x=24, 255, 486, 717) -->
+  <!-- Card 1 -->
+  <rect x="24" y="112" width="219" height="164" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="36" y="122" width="120" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="96" y="136" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">上游服务故障</text>
+  <text x="36" y="160" font-size="11" font-weight="700" fill="#0f172a">AI 能力并未真退化</text>
+  <text x="36" y="180" font-size="10.2" fill="#334155">诱因：上游 API / DB 报错</text>
+  <text x="36" y="198" font-size="10.2" fill="#334155">间接拉高 AI 低相关性告警</text>
+  <line x1="36" y1="212" x2="231" y2="212" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="36" y="233" font-size="10.2" font-weight="600" fill="#1e3a8a">处置：按传统故障优先恢复</text>
+  <text x="36" y="255" font-size="9.8" fill="#475569">定位：当前跨栈信号聚合</text>
+
+  <!-- Card 2 -->
+  <rect x="255" y="112" width="219" height="164" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <rect x="267" y="122" width="120" height="20" rx="5" fill="#15803d"/>
+  <text x="327" y="136" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">模型延迟异常</text>
+  <text x="267" y="160" font-size="11" font-weight="700" fill="#0f172a">边界清晰且可即时回退</text>
+  <text x="267" y="180" font-size="10.2" fill="#334155">诱因：主用模型推理延迟飙升</text>
+  <text x="267" y="198" font-size="10.2" fill="#334155">不改语义逻辑即可临时缓解</text>
+  <line x1="267" y1="212" x2="462" y2="212" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="267" y="233" font-size="10.2" font-weight="600" fill="#166534">处置：切预批备选 Fallback</text>
+  <text x="267" y="255" font-size="9.8" fill="#475569">定位：后续按类自动路由方向</text>
+
+  <!-- Card 3 -->
+  <rect x="486" y="112" width="219" height="164" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <rect x="498" y="122" width="136" height="20" rx="5" fill="#b45309"/>
+  <text x="566" y="136" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">工具 / 幻觉质量退化</text>
+  <text x="498" y="160" font-size="11" font-weight="700" fill="#0f172a">不宜凌晨 2 点盲目热修</text>
+  <text x="498" y="180" font-size="10.2" fill="#334155">诱因：Prompt / 检索 / 模型</text>
+  <text x="498" y="198" font-size="10.2" fill="#334155">例：Insights 工具选择率跌</text>
+  <line x1="498" y1="212" x2="693" y2="212" stroke="#fde68a" stroke-width="1"/>
+  <text x="498" y="233" font-size="10.2" font-weight="600" fill="#92400e">处置：建工单 + 重放回归后改</text>
+  <text x="498" y="255" font-size="9.8" fill="#475569">门控：受限代码建议 Skill</text>
+
+  <!-- Card 4 -->
+  <rect x="717" y="112" width="219" height="164" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.1"/>
+  <rect x="729" y="122" width="136" height="20" rx="5" fill="#475569"/>
+  <text x="797" y="136" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">LLM 裁判噪声样本</text>
+  <text x="729" y="160" font-size="11" font-weight="700" fill="#0f172a">小样本评分易产生误报</text>
+  <text x="729" y="180" font-size="10.2" fill="#334155">诱因：裁判本身波动或低样本</text>
+  <text x="729" y="198" font-size="10.2" fill="#334155">可能无需值班介入即恢复</text>
+  <line x1="729" y1="212" x2="924" y2="212" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="729" y="233" font-size="10.2" font-weight="600" fill="#334155">处置：查恢复态或自动复查</text>
+  <text x="729" y="255" font-size="9.8" fill="#475569">定位：后续入站抑噪方向</text>
+
+  <!-- Bottom Left Panel: Maturity Split -->
+  <rect x="24" y="290" width="446" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="290" width="446" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="310" width="446" height="10" fill="#dbeafe"/>
+  <text x="36" y="310" font-size="11.8" font-weight="700" fill="#1e3a8a">能力成熟度边界：当前已展示 vs. 未验证路线图</text>
+
+  <rect x="36" y="332" width="422" height="74" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="48" y="352" font-size="11" font-weight="700" fill="#1d4ed8">已展示工作流（2026-07 博文实例）</text>
+  <text x="48" y="372" font-size="10.2" fill="#1e293b">• Arize + GitHub 连接器拉取状态、轨迹、解释与源码差异</text>
+  <text x="48" y="392" font-size="10.2" fill="#334155">• Runbook Skill 辅助分诊 + 受限系统 Prompt 建议（需重放）</text>
+
+  <rect x="36" y="414" width="422" height="74" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="48" y="434" font-size="11" font-weight="700" fill="#b45309">后续方向（原文未验证能力，勿当已实测）</text>
+  <text x="48" y="454" font-size="10.2" fill="#78350f">• 自动复查噪声 LLM 评分 · 按故障类型路由自动切模型</text>
+  <text x="48" y="474" font-size="10.2" fill="#92400e">• 多观测工具接入 · 轻量事件工作流 · Autonomous Operations</text>
+
+  <!-- Bottom Right Panel: Post Split -->
+  <rect x="490" y="290" width="446" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="490" y="290" width="446" height="30" rx="8" fill="#1e3a8a"/>
+  <rect x="490" y="310" width="446" height="10" fill="#1e3a8a"/>
+  <text x="502" y="310" font-size="11.8" font-weight="700" fill="#ffffff">跨篇定位区分：7 月 AI 质量分诊 vs. 11 月 PD Labs</text>
+
+  <rect x="502" y="332" width="422" height="74" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="514" y="352" font-size="11" font-weight="700" fill="#1d4ed8">本篇（原发 07-21 / 收录 08-04）：AI 质量事故分诊</text>
+  <text x="514" y="372" font-size="10.2" fill="#1e293b">• 对象：AI Feature 质量漂移（Insights Agent 工具选择下降）</text>
+  <text x="514" y="392" font-size="10.2" fill="#334155">• 方法：Arize 轨迹 + GitHub + Skill 联动；定性案例无评测分</text>
+
+  <rect x="502" y="414" width="422" height="74" rx="6" fill="#f8fafc" stroke="#64748b" stroke-width="1"/>
+  <text x="514" y="434" font-size="11" font-weight="700" fill="#0f172a">11 月关联篇（原发 11-03 / 收录 11-04）：PD Labs 评测</text>
+  <text x="514" y="454" font-size="10.2" fill="#1e293b">• 对象：基础设施与微服务故障（SRE Workbench 可修订假设）</text>
+  <text x="514" y="474" font-size="10.2" fill="#334155">• 方法：源码/Helm/Terraform 拓扑 + 17 场景 EKS 自建基准</text>
+
+  <text x="24" y="518" font-size="10.2" fill="#64748b">阅读整理配图（非原图）· 综合 PagerDuty 2026-07-21 分诊架构博文与 2026-11-03 PD Labs 篇目边界整理，未添加原文之外的实测指标</text>
+</svg>

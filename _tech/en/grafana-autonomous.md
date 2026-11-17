@@ -3,7 +3,7 @@ id: grafana-autonomous
 title: '2026-10-23 | Grafana AI: From Continuous Observation to Reviewable Patches'
 date: '2026-10-23'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -11,15 +11,16 @@ tags:
 - observability
 - agent-reliability
 - coding-agents
-summary: Watchers, Investigations, and Managed Sandboxes connect observation, investigation,
-  and proposed fixes while preserving evidence and release decisions.
+summary: Watchers, Investigations, and Managed Sandboxes connect observation, investigation, and proposed fixes while preserving evidence and release decisions.
 long_read: true
 source_url: https://grafana.com/blog/grafana-ai-autonomous-operations/
 permalink: /tech/en/grafana-autonomous/
 translation_source: assistant
 authorship: assistant
 published_at: '2026-10-23T08:58:47.180720+08:00'
-updated_at: '2026-10-23T08:58:47.180720+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 A service can remain available after deployment while a subset of requests becomes progressively slower. Someone watches dashboards, someone decides whether the change matters, another investigates traces, and a developer reconstructs the problem before changing code. Grafana connects continuous observation, incident investigation, and proposed code changes to reduce context loss between those steps.
 

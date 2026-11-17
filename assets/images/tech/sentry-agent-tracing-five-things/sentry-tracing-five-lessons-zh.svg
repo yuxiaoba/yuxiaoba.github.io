@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', sans-serif" style="background:#ffffff;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- Header -->
+  <text x="24" y="37" font-size="18" font-weight="700" fill="#0f172a">Sentry Agent Tracing 五条工作流全景：数据底座、五路应用与证据边界</text>
+  <text x="24" y="57" font-size="11" fill="#475569">整合 X 长文与四篇官方 Cookbook：从 SDK / OTel 采集出发，分别驱动评测、日常分诊、成本归因与双模告警</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 1: Shared Telemetry Spine -->
+  <rect x="24" y="76" width="420" height="58" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="34" y="84" width="128" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="98" y="98" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">路径 A · 原生 SDK</text>
+  <text x="170" y="98" font-size="11" font-weight="700" fill="#1e3a8a">@sentry/nextjs v11+ / Vercel AI SDK</text>
+  <text x="34" y="121" font-size="10" fill="#1e40af">设 tracesSampleRate + setConversationId() + telemetry.functionId</text>
+
+  <text x="456" y="109" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">或</text>
+
+  <rect x="468" y="76" width="468" height="58" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.1"/>
+  <rect x="478" y="84" width="144" height="20" rx="5" fill="#0369a1"/>
+  <text x="550" y="98" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">工作流 5 · 复用 OTel</text>
+  <text x="630" y="98" font-size="11" font-weight="700" fill="#0c4a6e">保留 @vercel/otel + 新增 OTLP 出口</text>
+  <text x="478" y="121" font-size="10" fill="#075985">enableOpenTelemetrySetup: false + openTelemetryIntegration + OTLP 出口</text>
+
+  <!-- Bus Connectors -->
+  <line x1="234" y1="134" x2="234" y2="143" stroke="#2563eb" stroke-width="1.5"/>
+  <line x1="702" y1="134" x2="702" y2="143" stroke="#2563eb" stroke-width="1.5"/>
+  <line x1="133" y1="143" x2="826" y2="143" stroke="#2563eb" stroke-width="1.5"/>
+  <line x1="133" y1="143" x2="133" y2="152" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="364" y1="143" x2="364" y2="152" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="595" y1="143" x2="595" y2="152" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="826" y1="143" x2="826" y2="152" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Row 2: 4 Workflow Cards (w=219, x=24, 255, 486, 717) -->
+  <!-- Card 1 -->
+  <rect x="24" y="154" width="219" height="222" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="154" width="219" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="174" width="219" height="10" fill="#dbeafe"/>
+  <text x="34" y="174" font-size="11.2" font-weight="700" fill="#1e3a8a">1. 生产对话导出评测</text>
+  <text x="34" y="202" font-size="10.2" font-weight="700" fill="#1d4ed8">CLI ≥ 0.44 三段流水线</text>
+  <text x="34" y="221" font-size="9.8" fill="#334155">• list --period 30d --limit 1000</text>
+  <text x="34" y="238" font-size="9.8" fill="#334155">• 滤除 null 与 test-；按 token 降序</text>
+  <text x="34" y="255" font-size="9.8" fill="#334155">• 先 passthrough 测线上原回复</text>
+  <text x="34" y="272" font-size="9.8" fill="#334155">• 代码查事实/效率；LLM 只评主观</text>
+  <text x="34" y="289" font-size="9.8" fill="#334155">• 接入 Braintrust / Langfuse 等</text>
+  <rect x="34" y="302" width="199" height="64" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="42" y="319" font-size="9.8" font-weight="700" fill="#92400e">坑：勿将末答当标准答案</text>
+  <text x="42" y="336" font-size="9.5" fill="#78350f">勿手工累加 invoke_agent 父 Span</text>
+  <text x="42" y="352" font-size="9.5" fill="#78350f">（否则 Token 与费用会双倍计算）</text>
+
+  <!-- Card 2 -->
+  <rect x="255" y="154" width="219" height="222" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="255" y="154" width="219" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="255" y="174" width="219" height="10" fill="#dbeafe"/>
+  <text x="265" y="174" font-size="11.2" font-weight="700" fill="#1e3a8a">2. 每日自动分诊与建单</text>
+  <text x="265" y="202" font-size="10.2" font-weight="700" fill="#1d4ed8">Claude Routine + Sentry MCP</text>
+  <text x="265" y="221" font-size="9.8" fill="#334155">• 先拉 24h 聚合（400–800 会话）</text>
+  <text x="265" y="238" font-size="9.8" fill="#334155">• 抽样几十条：报错 + 成功样本</text>
+  <text x="265" y="255" font-size="9.8" fill="#334155">• 抓坏工具/猜参数/长挂起/循环</text>
+  <text x="265" y="272" font-size="9.8" fill="#334155">• 先查 Linear 去重再建新工单</text>
+  <text x="265" y="289" font-size="9.8" fill="#334155">• 示例：Seer 83/400 含可自愈重试</text>
+  <rect x="265" y="302" width="199" height="64" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="273" y="319" font-size="9.8" font-weight="700" fill="#92400e">关键：为何抽查“成功”会话</text>
+  <text x="273" y="336" font-size="9.5" fill="#78350f">0 工具报错仍可能推理与结论脱节</text>
+  <text x="273" y="352" font-size="9.5" fill="#78350f">或掩盖 21% 重试与 30–56s 挂起</text>
+
+  <!-- Card 3 -->
+  <rect x="486" y="154" width="219" height="222" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="486" y="154" width="219" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="486" y="174" width="219" height="10" fill="#dbeafe"/>
+  <text x="496" y="174" font-size="11.2" font-weight="700" fill="#1e3a8a">3. 单调用与会话成本归因</text>
+  <text x="496" y="202" font-size="10.2" font-weight="700" fill="#1d4ed8">Next.js + AI SDK 自动归因</text>
+  <text x="496" y="221" font-size="9.8" fill="#334155">• 按模型/会话/单次调用拆解成本</text>
+  <text x="496" y="238" font-size="9.8" fill="#334155">• 区分输入/缓存/输出/推理 Token</text>
+  <text x="496" y="255" font-size="9.8" fill="#334155">• 从高费会话跳转查慢工具与重试</text>
+  <text x="496" y="272" font-size="9.8" fill="#334155">• 定位文档例 10x 费用突增原因</text>
+  <text x="496" y="289" font-size="9.8" fill="#334155">• 无需业务代码手动上报美元金额</text>
+  <rect x="496" y="302" width="199" height="64" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="504" y="319" font-size="9.8" font-weight="700" fill="#1e3a8a">边界：估算诊断值 ≠ 供应商账单</text>
+  <text x="504" y="336" font-size="9.5" fill="#1e40af">受采样率、缺省字段与定价影响</text>
+  <text x="504" y="352" font-size="9.5" fill="#1e40af">用于定位开销拐点，不替代对账</text>
+
+  <!-- Card 4 -->
+  <rect x="717" y="154" width="219" height="222" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="717" y="154" width="219" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="717" y="174" width="219" height="10" fill="#dbeafe"/>
+  <text x="727" y="174" font-size="11.2" font-weight="700" fill="#1e3a8a">4. 支出看板与双模告警</text>
+  <text x="727" y="202" font-size="10.2" font-weight="700" fill="#1d4ed8">CLI 建 "LLM Spend per User"</text>
+  <text x="727" y="221" font-size="9.8" fill="#334155">• 8 个 Widget：花费/用户/模型</text>
+  <text x="727" y="238" font-size="9.8" fill="#334155">• 告警 1：每小时静态预算阈值</text>
+  <text x="727" y="255" font-size="9.8" fill="#334155">• 告警 2：偏离历史常态异常检测</text>
+  <text x="727" y="272" font-size="9.8" fill="#334155">• 严格按 ai_client 子 Span 聚合</text>
+  <text x="727" y="289" font-size="9.8" fill="#334155">• 结合会话轨迹排查突增根因</text>
+  <rect x="727" y="302" width="199" height="64" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+  <text x="735" y="319" font-size="9.8" font-weight="700" fill="#991b1b">歧义：告警不等于单一根因</text>
+  <text x="735" y="336" font-size="9.5" fill="#7f1d1d">无法单独区分自然流量增长、</text>
+  <text x="735" y="352" font-size="9.5" fill="#7f1d1d">换模型、缓存失效或失控死循环</text>
+
+  <!-- Row 3: Evidence & Validation Boundaries -->
+  <rect x="24" y="388" width="912" height="108" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="36" y="398" width="154" height="22" rx="5" fill="#1e3a8a"/>
+  <text x="113" y="413" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">实证边界与工程清单</text>
+  <text x="200" y="413" font-size="11.5" font-weight="700" fill="#0f172a">本文呈现的是一线观测工作流与 Recipe，而非受控基准评测报告</text>
+  <text x="36" y="439" font-size="10.2" fill="#334155">① 无定量实验：未报告分诊召回率/误报率、MTTR 降幅、SDK 性能开销，或各评测平台横向对比数据。</text>
+  <text x="36" y="460" font-size="10.2" fill="#334155">② 样例与内部数字边界：文档毫秒/费用与 Seer 83/400 重试属于示意与内部局部样本；Search Query Assistant 属定性排障实录。</text>
+  <text x="36" y="481" font-size="10.2" fill="#1e40af">③ 落地转化前提：关联日志 ≠ 因果解释，模型裁判 ≠ 真实正确性；须绑定任务规范、工具副作用核验与人工确认。</text>
+
+  <!-- Footer -->
+  <text x="24" y="518" font-size="10" fill="#64748b">阅读整理配图（非原图）· 整合 Sentry X 长文、Agent Tracing 文档与四篇官方 Cookbook 的工作流与边界对照</text>
+</svg>

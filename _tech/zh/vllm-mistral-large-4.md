@@ -3,7 +3,7 @@ id: vllm-mistral-large-4
 title: 2026年10月30日｜vLLM 如何支持稀疏注意力与跨层 KV 共享
 date: '2026-10-30'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -16,9 +16,10 @@ source_url: https://vllm.ai/blog/2026-10-29-mistral-large-4
 permalink: /tech/zh/vllm-mistral-large-4/
 translation_source: assistant-authored paired Chinese/English reading notes
 published_at: '2026-10-30T10:31:20.339125+08:00'
-updated_at: '2026-10-30T10:31:20.339125+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
-
 Mistral Large 4 的 vLLM 支持展示了模型结构与服务系统如何共同决定长上下文性能：稀疏索引减少注意力读取，跨层共享减少缓存写入，服务端还要处理并行、图执行和分离式传输。
 
 **来源：** vLLM，[Day 0 support for Mistral Large 4 on vLLM](https://vllm.ai/blog/2026-10-29-mistral-large-4)，2026 年 10 月 29 日。

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC','PingFang SC','Lato','Microsoft YaHei',sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18" font-weight="700" fill="#0f172a">Dual Systems Datapaths: FarArray RDMA PGAS &amp; Pallas TPU SpMM</text>
+  <text x="24" y="56" font-size="11.5" fill="#475569">From Google Antigravity blog: bypassing host KV tax (RDMA PGAS) and HBM edge intermediates (TPU v6e)</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Track 1: FarArray -->
+  <rect x="24" y="78" width="912" height="202" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="78" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="96" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="97" font-size="12" font-weight="700" fill="#1e3a8a">Track 1 · FarArray PGAS over RDMA (1.14T unique edges in 148 GB pinned DRAM / 64 targets)</text>
+
+  <!-- 1A Baseline -->
+  <rect x="45" y="114" width="198" height="156" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="55" y="134" font-size="10.8" font-weight="700" fill="#92400e">Baseline: TCP KV &amp; Shuffle</text>
+  <text x="55" y="158" font-size="9.6" fill="#78350f">Per-key metadata &amp; hash framing</text>
+  <text x="55" y="180" font-size="9.6" fill="#78350f">Kernel IRQs + RPC serialization</text>
+  <text x="55" y="202" font-size="9.6" fill="#78350f">Server CPUs saturate at 100%</text>
+  <text x="55" y="224" font-size="9.6" font-weight="700" fill="#b45309">Shuffle RAM: 4.0 TB (ClueWeb)</text>
+  <text x="55" y="246" font-size="9.6" fill="#78350f">1.14T OOMs (&gt;1 TiB / &gt;20 TB)</text>
+
+  <rect x="244" y="181" width="24" height="20" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="256" y="195" font-size="10" font-weight="700" fill="#92400e" text-anchor="middle">vs</text>
+
+  <!-- 1B Pruning -->
+  <rect x="269" y="114" width="198" height="156" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="279" y="134" font-size="10.8" font-weight="700" fill="#1d4ed8">1. Worker Local LCA Pruning</text>
+  <text x="279" y="158" font-size="9.6" fill="#334155">Symmetric or Worker/Server</text>
+  <text x="279" y="180" font-size="9.6" fill="#334155">Thread-local LCA early-exit</text>
+  <text x="279" y="202" font-size="9.6" font-weight="700" fill="#1e3a8a">Filters 97%–99.9% edges locally</text>
+  <text x="279" y="224" font-size="9.6" fill="#334155">Only cross-cuts hit network</text>
+  <text x="279" y="246" font-size="9.6" fill="#475569">RDMA NIC / io_uring / SHM</text>
+
+  <line x1="469" y1="192" x2="490" y2="192" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- 1C RDMA NIC -->
+  <rect x="493" y="114" width="198" height="156" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="503" y="134" font-size="10.8" font-weight="700" fill="#1d4ed8">2. Batched Doorbells &amp; NIC</text>
+  <text x="503" y="158" font-size="9.6" fill="#334155">Threads post WQEs via MMIO</text>
+  <text x="503" y="180" font-size="9.6" fill="#334155">Batched WQEs bypass OS kernel</text>
+  <text x="503" y="202" font-size="9.6" fill="#334155">NIC issues one-sided DMA ops</text>
+  <text x="503" y="224" font-size="9.6" font-weight="700" fill="#1e3a8a">64-bit CAS via PCIe AtomicOps</text>
+  <text x="503" y="246" font-size="9.6" fill="#475569">us-scale; -89% max read spike</text>
+
+  <line x1="693" y1="192" x2="714" y2="192" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- 1D Remote Pinned DRAM -->
+  <rect x="717" y="114" width="198" height="156" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="727" y="134" font-size="10.8" font-weight="700" fill="#166534">3. Pinned DRAM &amp; Benchmarks</text>
+  <text x="727" y="158" font-size="9.6" fill="#14532d">Flat PGAS; 0 remote CPU IRQs</text>
+  <text x="727" y="180" font-size="9.6" fill="#14532d">Target host CPUs remain idle</text>
+  <text x="727" y="202" font-size="9.6" font-weight="700" fill="#166534">CC 40–180x faster, 6–22x RAM</text>
+  <text x="727" y="224" font-size="9.6" fill="#14532d">&gt;100x vs shuffle (28.5 GB)</text>
+  <text x="727" y="246" font-size="9.6" fill="#14532d">PPR 11.3–26.5x; GBBS exact</text>
+
+  <!-- Track 2: Pallas TPU -->
+  <rect x="24" y="292" width="912" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="292" width="912" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="310" width="912" height="10" fill="#dbeafe"/>
+  <text x="36" y="311" font-size="12" font-weight="700" fill="#1e3a8a">Track 2 · Pallas TPU v6e Sparse SpMM Kernel (111.5 MiB flat HBM vs. 20.2 GiB native JAX)</text>
+
+  <!-- 2A Baseline -->
+  <rect x="45" y="328" width="198" height="158" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="55" y="348" font-size="10.8" font-weight="700" fill="#92400e">Baseline: Native JAX SpMM</text>
+  <text x="55" y="372" font-size="9.6" fill="#78350f">TPU MXU targets dense matmuls</text>
+  <text x="55" y="394" font-size="9.6" fill="#78350f">Sparse Y = A @ X gathers edges</text>
+  <text x="55" y="416" font-size="9.6" font-weight="700" fill="#b45309">HBM stores O(|E|xD) tensor</text>
+  <text x="55" y="438" font-size="9.6" fill="#78350f">Scales linearly to 20.2 GiB</text>
+  <text x="55" y="460" font-size="9.6" fill="#78350f">Exhausts single TPU v6e chip</text>
+
+  <rect x="244" y="397" width="24" height="20" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="256" y="411" font-size="10" font-weight="700" fill="#92400e" text-anchor="middle">vs</text>
+
+  <!-- 2B SMEM + VMEM -->
+  <rect x="269" y="328" width="198" height="158" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="279" y="348" font-size="10.8" font-weight="700" fill="#1d4ed8">1. SMEM COO Edge Streaming</text>
+  <text x="279" y="372" font-size="9.6" fill="#334155">Skip host-side CSR conversion</text>
+  <text x="279" y="394" font-size="9.6" font-weight="700" fill="#1e3a8a">Stream 4,096-edge COO blocks</text>
+  <text x="279" y="416" font-size="9.6" fill="#334155">via SMEM; zero HBM edge tensor</text>
+  <text x="279" y="438" font-size="9.6" fill="#334155">Expand VMEM scope 16→122 MiB</text>
+  <text x="279" y="460" font-size="9.6" fill="#475569">Keep node tables on-chip VMEM</text>
+
+  <line x1="469" y1="407" x2="490" y2="407" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- 2C VREG + VJP -->
+  <rect x="493" y="328" width="198" height="158" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="503" y="348" font-size="10.8" font-weight="700" fill="#1d4ed8">2. 3D VREG &amp; Zero-Float VJP</text>
+  <text x="503" y="372" font-size="9.6" fill="#334155">Align features as (8,128) VREG</text>
+  <text x="503" y="394" font-size="9.6" fill="#334155">4x unroll + reg store-to-load</text>
+  <text x="503" y="416" font-size="9.6" fill="#334155">forwarding avoids VMEM stalls</text>
+  <text x="503" y="438" font-size="9.6" font-weight="700" fill="#1e3a8a">custom_vjp saves 0 float acts</text>
+  <text x="503" y="460" font-size="9.6" fill="#475569">Swap row/col for dX=A^T@dY</text>
+
+  <line x1="693" y1="407" x2="714" y2="407" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- 2D TPU Results -->
+  <rect x="717" y="328" width="198" height="158" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="727" y="348" font-size="10.8" font-weight="700" fill="#166534">3. TPU v6e Measured Outcomes</text>
+  <text x="727" y="372" font-size="9.6" font-weight="700" fill="#166534">Constant 111.5 MiB temp HBM</text>
+  <text x="727" y="394" font-size="9.6" fill="#14532d">Up to 185.8x drop (20.97M)</text>
+  <text x="727" y="416" font-size="9.6" fill="#14532d">Forward 10.5x–14.7x faster</text>
+  <text x="727" y="438" font-size="9.6" fill="#14532d">Backward / e2e 8x–12x faster</text>
+  <text x="727" y="460" font-size="9.6" fill="#14532d">Strict parity vs. native JAX</text>
+
+  <text x="24" y="519" font-size="10.5" fill="#64748b">Assistant diagram (not an original figure): architecture &amp; measurements synthesized from Google Antigravity blog</text>
+</svg>

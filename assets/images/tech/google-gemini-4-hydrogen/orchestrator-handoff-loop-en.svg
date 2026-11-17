@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Gemini 4 Hydrogen and Orchestrator intra-trajectory bidirectional handoff diagram">
+  <title>Gemini 4 Hydrogen and Orchestrator intra-trajectory bidirectional handoff diagram</title>
+  <desc>Contrasting upfront prompt routing and /swarm against Carbon &lt;-&gt; Hydrogen mid-trajectory handoffs</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc"/>
+  <rect x="14" y="14" width="932" height="512" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="32" y="46" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">Gemini 4 Hydrogen: Intra-Trajectory Orchestrator vs. Static &amp; Parallel Dispatch</text>
+<text x="32" y="68" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start">Contrasting upfront prompt routing and /swarm against Carbon &lt;-&gt; Hydrogen mid-trajectory handoffs</text>
+<line x1="32" y1="80" x2="928" y2="80" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="30" y="92" width="286" height="330" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="44" y="114" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">Baselines: Upfront Routing &amp; Parallel Roles</text>
+<rect x="42" y="126" width="262" height="136" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+<text x="54" y="148" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="start">1. Static Prompt Router (Upfront)</text>
+<text x="54" y="172" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• Guesses complexity from prompt 0</text>
+<text x="54" y="193" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• Commits full trajectory to one tier</text>
+<text x="54" y="214" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• Breaks when hidden deps appear</text>
+<text x="54" y="235" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• All-Carbon slows loops &amp; burns quota</text>
+<rect x="42" y="274" width="262" height="136" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+<text x="54" y="296" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="start">2. Parallel /swarm &amp; SDK Role Split</text>
+<text x="54" y="320" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• /swarm: Carbon coordinates worktrees;</text>
+<text x="54" y="341" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">  Hydrogen runs parallel workers/verifiers</text>
+<text x="54" y="362" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• Antigravity SDK: Hydrogen triage &amp; PR</text>
+<text x="54" y="383" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">  UI; Carbon refactors &amp; security checks</text>
+<rect x="330" y="92" width="600" height="330" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.3"/>
+<text x="346" y="114" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#1e3a8a" text-anchor="start">Orchestrator: Bidirectional Carbon &lt;-&gt; Hydrogen Handoff (Illustrative Flow)</text>
+<rect x="346" y="128" width="234" height="136" rx="9" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.6"/>
+<rect x="358" y="138" width="112" height="20" rx="10" fill="#dbeafe"/>
+<text x="414" y="152" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#1e3a8a" text-anchor="middle">Phase A · Planner</text>
+<text x="358" y="178" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#0f172a" text-anchor="start">Carbon: Read-Only Exploration</text>
+<text x="358" y="201" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• Reads code &amp; traces dependencies</text>
+<text x="358" y="221" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• Clarifies ambiguities read-only</text>
+<text x="358" y="241" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• Builds plan + explicit triggers</text>
+<line x1="582" y1="196" x2="678" y2="196" stroke="#1d4ed8" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+<rect x="590" y="171" width="80" height="18" rx="4" fill="#eff6ff"/>
+<text x="630" y="184" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#1d4ed8" text-anchor="middle">plan + triggers</text>
+<rect x="682" y="128" width="234" height="136" rx="9" fill="#ffffff" stroke="#0284c7" stroke-width="1.6"/>
+<rect x="694" y="138" width="112" height="20" rx="10" fill="#dbeafe"/>
+<text x="750" y="152" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">Phase B · Executor</text>
+<text x="694" y="178" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#0f172a" text-anchor="start">Hydrogen: Fast Edit-Test Loop</text>
+<text x="694" y="201" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• Edits code, packages &amp; runs tests</text>
+<text x="694" y="221" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• Parallel read/search call batching</text>
+<text x="694" y="241" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">• 2.5x faster on T-Bench 4.1 (high)</text>
+<line x1="792" y1="266" x2="792" y2="306" stroke="#1d4ed8" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+<rect x="800" y="274" width="108" height="20" rx="4" fill="#eff6ff"/>
+<text x="806" y="288" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="start">friction / stalled</text>
+<rect x="466" y="310" width="450" height="100" rx="9" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.4"/>
+<rect x="478" y="320" width="120" height="20" rx="10" fill="#dbeafe"/>
+<text x="538" y="334" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#1e3a8a" text-anchor="middle">Phase C · Escalation</text>
+<text x="608" y="335" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#0f172a" text-anchor="start">Handback to Carbon: Inspect &amp; Re-Plan</text>
+<text x="478" y="362" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">When Hydrogen hits friction or a trigger fires, control returns to Carbon:</text>
+<text x="478" y="382" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">inspects current repo/test state, repairs the plan, and hands back to execute.</text>
+<path d="M 464 360 L 404 360 L 404 268" fill="none" stroke="#1d4ed8" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+<rect x="342" y="280" width="122" height="20" rx="4" fill="#eff6ff"/>
+<text x="403" y="294" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">revised plan</text>
+<rect x="30" y="434" width="900" height="78" rx="9" fill="#f1f5f9" stroke="#475569" stroke-width="1.2" stroke-dasharray="6,4"/>
+<text x="46" y="456" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#0f172a" text-anchor="start">Undisclosed Internals (Omitted from Nov 12 Launch Blog, Antigravity Post &amp; X Thread)</text>
+<text x="46" y="478" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">• Exact re-planning trigger predicates, friction thresholds, and retry/escalation caps</text>
+<text x="46" y="498" font-family="'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', 'Lato', 'Inter', system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#334155" text-anchor="start">• State/KV serialization format, rollback guarantees, and Argon vs. Carbon orchestrator diffs</text>
+</svg>

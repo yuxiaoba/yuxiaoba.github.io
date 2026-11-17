@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Near-zero untied token embeddings amplification chain, FP32 clip overflow, and batch trigger funnel" style="background:#ffffff;font-family:'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'DejaVu Sans', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="33" font-size="16.2" font-weight="700" fill="#0f172a">Near-Zero Untied Embeddings: Multi-Layer Amplification to FP32 Silent Zeroing</text>
+  <text x="24" y="52" font-size="9.9" fill="#475569">arXiv:2611.04449v1 (§§2–4, Figs. 1–5, Tables 1 &amp; 4–7) · 291-Repo Census → Gate Zeroing + Pre-RMSNorm 10³⁰⁺ Blowup → FP32 Overflow</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Panel 1 -->
+  <rect x="20" y="72" width="318" height="214" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="72" width="318" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="90" width="318" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="98" x2="338" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="30" y="89.5" font-size="10.6" font-weight="700" fill="#1e3a8a">1. 291-Repo Census &amp; Weight-Decay Origin</text>
+  <text x="30" y="114" font-size="8.7" fill="#475569">291 HF repos (280 tables): reachable rows ‖e_v‖₂ &lt; 10⁻⁶</text>
+
+  <text x="110" y="135" text-anchor="end" font-size="8.7" fill="#334155">Tied Transf.</text>
+  <rect x="116" y="127" width="3" height="10" rx="2" fill="#94a3b8"/>
+  <text x="124" y="135.5" font-size="8.5" font-weight="600" fill="#334155">0% (0/80)</text>
+
+  <text x="110" y="156" text-anchor="end" font-size="8.7" fill="#334155">Tied Gated</text>
+  <rect x="116" y="148" width="3" height="10" rx="2" fill="#94a3b8"/>
+  <text x="124" y="156.5" font-size="8.5" font-weight="600" fill="#334155">0% (0/21)</text>
+
+  <text x="110" y="177" text-anchor="end" font-size="8.7" fill="#1e3a8a">Untied Transf.</text>
+  <rect x="116" y="169" width="55.6" height="10" rx="2" fill="#3b82f6"/>
+  <text x="177" y="177.5" font-size="8.4" font-weight="600" fill="#1d4ed8">30.9% (47/152, safe t&gt;0)</text>
+
+  <text x="110" y="198" text-anchor="end" font-size="8.7" font-weight="700" fill="#991b1b">Untied Gated</text>
+  <rect x="116" y="190" width="94.7" height="10" rx="2" fill="#dc2626"/>
+  <text x="216" y="198.5" font-size="8.5" font-weight="700" fill="#991b1b">52.6% (20/38, stalls)</text>
+
+  <rect x="28" y="214" width="302" height="64" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="36" y="229" font-size="8.4" font-weight="700" fill="#0f172a">Origin: untied unseen E_in rows receive 0 grad</text>
+  <text x="36" y="244" font-size="8.3" fill="#334155">• AdamW (1−ηλ)^T shrinks norms to 10⁻⁶–10⁻³⁶</text>
+  <text x="36" y="259" font-size="8.3" fill="#334155">• OLMoE check: 251/251 unseen in 364M-tok sample</text>
+  <text x="36" y="272" font-size="8.1" fill="#475569">• 92% (901/979) keep E_out ≥0.3× median (silent!)</text>
+
+  <!-- Panel 2 -->
+  <rect x="350" y="72" width="590" height="214" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="350" y="72" width="590" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="350" y="90" width="590" height="8" fill="#eff6ff"/>
+  <line x1="350" y1="98" x2="940" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="362" y="89.5" font-size="10.6" font-weight="700" fill="#1e3a8a">2. Signal Propagation: Transformer Recovery vs. Gated Blowup (t &gt; 0, r ≪ √(εd))</text>
+
+  <rect x="360" y="106" width="570" height="48" rx="6" fill="#f8fafc" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="368" y="114" width="104" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="420" y="127" text-anchor="middle" font-size="8.7" font-weight="700" fill="#1d4ed8">Transformer (K=0)</text>
+  <text x="420" y="146" text-anchor="middle" font-size="7.9" fill="#475569">Llama-3.1 / Falcon3</text>
+
+  <rect x="480" y="113" width="64" height="34" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="512" y="128" text-anchor="middle" font-size="8.6" font-weight="700" fill="#0f172a">e_t ≈ 0</text>
+  <text x="512" y="141" text-anchor="middle" font-size="7.8" fill="#475569">near-zero row</text>
+  <line x1="544" y1="130" x2="558" y2="130" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+
+  <rect x="560" y="113" width="84" height="34" rx="4" fill="#eff6ff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="602" y="128" text-anchor="middle" font-size="8.6" font-weight="700" fill="#1e3a8a">Pre-RMSNorm</text>
+  <text x="602" y="141" text-anchor="middle" font-size="7.8" fill="#475569">Layer 0 norm</text>
+  <line x1="644" y1="130" x2="658" y2="130" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+
+  <rect x="660" y="113" width="122" height="34" rx="4" fill="#eff6ff" stroke="#3b82f6" stroke-width="0.9"/>
+  <text x="721" y="128" text-anchor="middle" font-size="8.4" font-weight="700" fill="#1e3a8a">Softmax Attn (e_&lt;t)</text>
+  <text x="721" y="141" text-anchor="middle" font-size="7.8" fill="#334155">pulls normal V_&lt;t ctx</text>
+  <line x1="782" y1="130" x2="796" y2="130" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+
+  <rect x="798" y="113" width="124" height="34" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="860" y="128" text-anchor="middle" font-size="8.5" font-weight="700" fill="#166534">h₁ restores Θ(√d)</text>
+  <text x="860" y="141" text-anchor="middle" font-size="7.9" font-weight="600" fill="#15803d">Grad 56–98 (O(1) safe)</text>
+
+  <rect x="360" y="160" width="570" height="82" rx="6" fill="#ffffff" stroke="#fca5a5" stroke-width="1.1"/>
+  <rect x="368" y="168" width="104" height="19" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+  <text x="420" y="181" text-anchor="middle" font-size="8.7" font-weight="700" fill="#991b1b">Gated / Hybrid (K)</text>
+  <text x="368" y="201" font-size="7.9" fill="#334155">• Mamba / DeltaNet:</text>
+  <text x="374" y="213" font-size="7.8" fill="#475569">φ(h̃) = SiLU(Wz h̃) = 0</text>
+  <text x="368" y="226" font-size="7.9" fill="#334155">• xLSTM (σ gate fails):</text>
+  <text x="374" y="237" font-size="7.8" fill="#475569">linear q_t = W_q h̃ = 0</text>
+
+  <rect x="480" y="168" width="64" height="44" rx="4" fill="#fef2f2" stroke="#fca5a5" stroke-width="0.9"/>
+  <text x="512" y="186" text-anchor="middle" font-size="8.6" font-weight="700" fill="#991b1b">e_t ≈ 0</text>
+  <text x="512" y="201" text-anchor="middle" font-size="7.8" fill="#7f1d1d">r ≪ √(εd)</text>
+  <line x1="544" y1="190" x2="558" y2="190" stroke="#b91c1c" stroke-width="1.4" marker-end="url(#arr-red)"/>
+
+  <rect x="560" y="168" width="104" height="44" rx="4" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="612" y="184" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1e3a8a">Pre-RMSNorm</text>
+  <text x="612" y="197" text-anchor="middle" font-size="7.8" fill="#1d4ed8">divides by √ε</text>
+  <text x="612" y="208" text-anchor="middle" font-size="7.7" font-weight="700" fill="#b91c1c">bwd ×316–1000/layer</text>
+  <line x1="664" y1="190" x2="678" y2="190" stroke="#b91c1c" stroke-width="1.4" marker-end="url(#arr-red)"/>
+
+  <rect x="680" y="168" width="118" height="44" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="739" y="184" text-anchor="middle" font-size="8.4" font-weight="700" fill="#92400e">φ(0)=0 zeros s_{t-1}</text>
+  <text x="739" y="197" text-anchor="middle" font-size="7.8" fill="#78350f">readout shrinks O(r)</text>
+  <text x="739" y="208" text-anchor="middle" font-size="7.7" fill="#92400e">residual stays ≪ √(εd)</text>
+  <line x1="798" y1="190" x2="812" y2="190" stroke="#b91c1c" stroke-width="1.4" marker-end="url(#arr-red)"/>
+
+  <rect x="814" y="168" width="108" height="66" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.1"/>
+  <text x="868" y="183" text-anchor="middle" font-size="8.3" font-weight="700" fill="#991b1b">K-layer compound</text>
+  <text x="868" y="197" text-anchor="middle" font-size="7.9" font-weight="700" fill="#b91c1c">Nemotron-4B: 2.1e35</text>
+  <text x="868" y="211" text-anchor="middle" font-size="7.9" fill="#7f1d1d">xLSTM-7B: 1.0e32</text>
+  <text x="868" y="225" text-anchor="middle" font-size="7.8" fill="#7f1d1d">Falcon-H1: 4.8e6</text>
+
+  <path d="M 739 212 L 739 228 L 612 228 L 612 214" fill="none" stroke="#b91c1c" stroke-width="1.2" marker-end="url(#arr-red)"/>
+  <text x="676" y="238" text-anchor="middle" font-size="7.7" font-weight="600" fill="#991b1b">Eq.(4): min(√(εd)/r, G_K) until Attn</text>
+
+  <rect x="360" y="248" width="570" height="30" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="370" y="266.5" font-size="8.5" font-weight="600" fill="#1e3a8a">Causal Patch (Table 4, Nemotron-4B): cut L0 bwd only → 1.74×10³¹ (inf); open L0 fwd ST only → 6.71 (−34 OOM)</text>
+
+  <!-- Panel 3 -->
+  <rect x="20" y="298" width="452" height="198" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="298" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="316" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="324" x2="472" y2="324" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="315.5" font-size="10.6" font-weight="700" fill="#1e3a8a">3. FP32 Clip Overflow &amp; AdamW Update Split (§4.1, Table 7)</text>
+
+  <rect x="30" y="331" width="432" height="53" rx="5" fill="#fee2e2" stroke="#fca5a5" stroke-width="1"/>
+  <text x="40" y="346" font-size="8.8" font-weight="700" fill="#991b1b">Overflow Threshold: abs(g_i) &gt; √FLT_MAX = 1.84 × 10¹⁹ (PyTorch / HF / FSDP2)</text>
+  <text x="40" y="361" font-size="8.4" fill="#7f1d1d">• g_i² → +∞ → G = inf → α_eff = 1.0/∞ = 0.0 → zeroes ALL current-batch grads</text>
+  <text x="40" y="376" font-size="8.1" fill="#991b1b">• No NaN or exception (Megatron-Core aborts if check_for_nan_in_grad else zeroes)</text>
+
+  <rect x="30" y="391" width="432" height="19" rx="3" fill="#eff6ff"/>
+  <text x="36" y="404" font-size="8.3" font-weight="700" fill="#1e3a8a">Regime (Table 7)</text>
+  <text x="162" y="404" font-size="8.3" font-weight="700" fill="#1e3a8a">‖∆θ_other‖₂</text>
+  <text x="244" y="404" font-size="8.3" font-weight="700" fill="#1e3a8a">Fresh ‖δθ_batch‖₂</text>
+  <text x="364" y="404" font-size="8.3" font-weight="700" fill="#1e3a8a">Triggered Row</text>
+
+  <text x="36" y="423" font-size="8.2" fill="#334155">Nemotron Clean (247)</text>
+  <text x="162" y="423" font-size="8.2" fill="#334155">0.263</text>
+  <text x="244" y="423" font-size="8.2" fill="#15803d">0.114 (42.6%, 99.9% wts)</text>
+  <text x="364" y="423" font-size="8.2" fill="#334155">Normal update</text>
+
+  <text x="36" y="441" font-size="8.2" fill="#334155">Falcon-H1 Early (~10⁶)</text>
+  <text x="162" y="441" font-size="8.2" fill="#334155">3.49e-2</text>
+  <text x="244" y="441" font-size="8.2" fill="#b45309">2.42e-4 (0.55%, −335×)</text>
+  <text x="364" y="441" font-size="8.2" fill="#334155">Healed (AdamW)</text>
+
+  <rect x="30" y="448" width="432" height="19" rx="3" fill="#fef2f2"/>
+  <text x="36" y="461" font-size="8.2" font-weight="700" fill="#991b1b">Nemotron inf (48)</text>
+  <text x="162" y="461" font-size="8.2" font-weight="700" fill="#991b1b">0.245 (stale!)</text>
+  <text x="244" y="461" font-size="8.2" font-weight="700" fill="#b91c1c">0.000 (0.0%, 0/3.56B)</text>
+  <text x="364" y="461" font-size="8.2" font-weight="700" fill="#991b1b">29 stuck 6.58e-36</text>
+
+  <text x="32" y="484" font-size="8.0" fill="#475569">Note: FP64 global norm avoids inf yet zeroes backbone on 18 first hits (α_eff ~10⁻³¹ &lt; ε_Adam).</text>
+
+  <!-- Panel 4 -->
+  <rect x="488" y="298" width="452" height="198" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="298" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="316" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="324" x2="940" y2="324" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="315.5" font-size="10.6" font-weight="700" fill="#1e3a8a">4. Est. 128-Seq Batch Trigger Rates (Fig. 5b) &amp; Funnel (Table 6)</text>
+
+  <text x="642" y="344" text-anchor="end" font-size="8.4" fill="#334155">En. Web / Code / Math</text>
+  <rect x="650" y="336" width="3" height="9" rx="2" fill="#94a3b8"/>
+  <text x="658" y="344" font-size="8.3" fill="#475569">0.0% (unseen in En. evals)</text>
+
+  <text x="642" y="361" text-anchor="end" font-size="8.4" fill="#334155">Aya SFT (Nemotron-4B)</text>
+  <rect x="650" y="353" width="19.1" height="9" rx="2" fill="#60a5fa"/>
+  <text x="675" y="361" font-size="8.3" fill="#1e3a8a">10.6%</text>
+
+  <text x="642" y="378" text-anchor="end" font-size="8.4" fill="#334155">Thai CPT (Falcon-H1-1.5B)</text>
+  <rect x="650" y="370" width="126.9" height="9" rx="2" fill="#2563eb"/>
+  <text x="783" y="378" font-size="8.3" font-weight="600" fill="#1d4ed8">70.5% (up to 97.4%)</text>
+
+  <text x="642" y="395" text-anchor="end" font-size="8.4" font-weight="700" fill="#991b1b">Telugu CPT (Nemotron-4B)</text>
+  <rect x="650" y="387" width="171.7" height="9" rx="2" fill="#dc2626"/>
+  <text x="828" y="395" font-size="8.3" font-weight="700" fill="#991b1b">95.4%</text>
+
+  <text x="642" y="412" text-anchor="end" font-size="8.4" font-weight="700" fill="#991b1b">Mongolian / Chat SFT</text>
+  <rect x="650" y="404" width="180.0" height="9" rx="2" fill="#991b1b"/>
+  <text x="836" y="412" font-size="8.3" font-weight="700" fill="#991b1b">100% (Kimi t=0)</text>
+
+  <rect x="498" y="424" width="432" height="38" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="506" y="439" font-size="8.3" font-weight="700" fill="#0f172a">Nemotron-4B Telugu 1,000-step funnel (16,384 tok/step, 3 seeds, Table 6):</text>
+  <text x="506" y="454" font-size="8.3" font-weight="700" fill="#1d4ed8">62 NZ rows (0.047% vocab) → 32.3 ppm → 22.5% hit batches → 19.8% inf zeroed</text>
+
+  <rect x="498" y="468" width="432" height="21" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="506" y="481.5" font-size="8.1" fill="#334155">Unaffected: LoRA freezes E_in (0/9) · On-policy RL samples E_out (0/16,384); full-param RL hits tags</text>
+
+  <text x="20" y="517" font-size="8.8" fill="#475569">Note: Forward activations stay finite throughout (unlike Mamba-2 #529); stalling requires untied E_in, zero-at-origin readout, and E_in updates.</text>
+</svg>

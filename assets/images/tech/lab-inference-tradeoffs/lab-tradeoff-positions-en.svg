@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="37" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">The LAB Inference Tradeoff: Three Edges, Binding Premise &amp; Two Modes</text>
+  <text x="24" y="57" font-size="11.2" font-weight="400" fill="#475569" text-anchor="start">Borrows CAP / PACELC shape (not a mathematical proof): binds when no tested model can answer before the deadline</text>
+  <line x1="24" y1="67" x2="936" y2="67" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="76" width="466" height="364" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="76" width="466" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="94" width="466" height="10" fill="#dbeafe"/>
+  <text x="36" y="95" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">LAB Triangle &amp; Three Workload Policy Positions</text>
+  <polygon points="257,152 114,344 400,344" fill="#eff6ff" fill-opacity="0.72" stroke="#1d4ed8" stroke-width="2.2" stroke-linejoin="round"/>
+  <rect x="147" y="108" width="220" height="40" rx="6" fill="#1e3a8a"/>
+  <text x="257" y="125" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">Behavior (B)</text>
+  <text x="257" y="141" font-size="9.8" font-weight="400" fill="#bfdbfe" text-anchor="middle">Format · Decisions · Tools · Escalation Rules</text>
+  <rect x="186" y="260" width="142" height="54" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="257" y="278" font-size="10.8" font-weight="700" fill="#1d4ed8" text-anchor="middle">Tested Replicas</text>
+  <text x="257" y="294" font-size="9.6" font-weight="400" fill="#334155" text-anchor="middle">Reaches center only</text>
+  <text x="257" y="308" font-size="9.4" font-weight="400" fill="#64748b" text-anchor="middle">Shared limits &amp; drift remain</text>
+  <rect x="32" y="174" width="160" height="60" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="112" y="192" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="middle">LB · No Fallback</text>
+  <text x="112" y="209" font-size="9.6" font-weight="400" fill="#334155" text-anchor="middle">One tested model: fast &amp; faithful</text>
+  <text x="112" y="224" font-size="9.4" font-weight="400" fill="#475569" text-anchor="middle">Loses Availability on outage</text>
+  <line x1="192" y1="204" x2="218" y2="204" stroke="#3b82f6" stroke-width="1.3" stroke-dasharray="3 2"/>
+  <rect x="322" y="174" width="160" height="60" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="402" y="192" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="middle">AB · Wait It Out</text>
+  <text x="402" y="209" font-size="9.6" font-weight="400" fill="#334155" text-anchor="middle">Queue/retry model (or refuse)</text>
+  <text x="402" y="224" font-size="9.4" font-weight="400" fill="#475569" text-anchor="middle">Holds B &amp; A; deadlines slip</text>
+  <line x1="322" y1="204" x2="296" y2="204" stroke="#3b82f6" stroke-width="1.3" stroke-dasharray="3 2"/>
+  <rect x="32" y="352" width="140" height="46" rx="6" fill="#1e3a8a"/>
+  <text x="102" y="370" font-size="11.2" font-weight="700" fill="#ffffff" text-anchor="middle">Latency (L)</text>
+  <text x="102" y="387" font-size="9.6" font-weight="400" fill="#bfdbfe" text-anchor="middle">Useful answer on time</text>
+  <rect x="342" y="352" width="140" height="46" rx="6" fill="#1e3a8a"/>
+  <text x="412" y="370" font-size="11.2" font-weight="700" fill="#ffffff" text-anchor="middle">Availability (A)</text>
+  <text x="412" y="387" font-size="9.6" font-weight="400" fill="#bfdbfe" text-anchor="middle">Work keeps finishing</text>
+  <line x1="257" y1="344" x2="257" y2="364" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <rect x="178" y="364" width="158" height="64" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="257" y="382" font-size="10.8" font-weight="700" fill="#92400e" text-anchor="middle">LA · Reroute</text>
+  <text x="257" y="399" font-size="9.5" font-weight="400" fill="#78350f" text-anchor="middle">Route to reachable/faster model</text>
+  <text x="257" y="415" font-size="9.3" font-weight="400" fill="#b45309" text-anchor="middle">API stays up; B drifts if untested</text>
+  <rect x="502" y="76" width="434" height="114" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="502" y="76" width="434" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="502" y="94" width="434" height="10" fill="#dbeafe"/>
+  <text x="514" y="95" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">Mode 1 · Under Stress: Availability vs. Behavior</text>
+  <text x="514" y="122" font-size="10.3" font-weight="400" fill="#334155" text-anchor="start">• Hypothetical limit: 20m primary outage, 10s deadline (source example)</text>
+  <text x="514" y="142" font-size="10.3" font-weight="600" fill="#0f172a" text-anchor="start">• Binding condition: neither trusted model nor any tested backup fits deadline</text>
+  <text x="514" y="162" font-size="10.1" font-weight="400" fill="#b45309" text-anchor="start">• Accidental LA: 2:14 p.m. hypothetical router drops errors while risk rules break</text>
+  <text x="514" y="180" font-size="9.9" font-weight="400" fill="#475569" text-anchor="start">• Strict AB variant: refusing instead of guessing holds B, completes 0 work now</text>
+  <rect x="502" y="200" width="434" height="112" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="502" y="200" width="434" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="502" y="218" width="434" height="10" fill="#dbeafe"/>
+  <text x="514" y="219" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">Mode 2 · Normal Ops: Latency &amp; Cost vs. Behavior</text>
+  <text x="514" y="246" font-size="10.3" font-weight="400" fill="#334155" text-anchor="start">• Intentional switch with no outage: route simple tasks to smaller, faster models</text>
+  <text x="514" y="266" font-size="10.3" font-weight="600" fill="#0f172a" text-anchor="start">• Soft tradeoff, not hard impossibility: cheaper model might match B once tested</text>
+  <text x="514" y="286" font-size="10.1" font-weight="400" fill="#475569" text-anchor="start">• Per-workload isolation: summaries, tools &amp; payment decisions cannot share 1 policy</text>
+  <rect x="502" y="322" width="434" height="118" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="502" y="322" width="434" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="502" y="340" width="434" height="10" fill="#dbeafe"/>
+  <text x="514" y="341" font-size="11.5" font-weight="700" fill="#1e3a8a" text-anchor="start">All the Time · Behavioral Drift Without Any Failover</text>
+  <text x="514" y="368" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">1. Version retirements and mutable aliases (&quot;latest&quot;) moving underneath</text>
+  <text x="514" y="389" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">2. Same open-weight model varies across providers (precision, stack, limits)</text>
+  <text x="514" y="410" font-size="10.2" font-weight="400" fill="#334155" text-anchor="start">3. Non-determinism under fixed config + correlated quota/capacity shortages</text>
+  <rect x="24" y="452" width="912" height="50" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="36" y="472" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Why separate Latency from Availability: a chat reply 1m late fails (L &amp; A overlap); a nightly batch 1h late still counts</text>
+  <text x="36" y="491" font-size="10.2" font-weight="400" fill="#1e40af" text-anchor="start">Definitions: L = useful answer before deadline (fast error != L) | A = work completes despite faults | B = rule compliance, not verbatim match</text>
+  <text x="24" y="522" font-size="10.2" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram synthesized from Sunil Mallya&#x27;s &quot;The LAB Problem&quot; prose (not an original figure; unverified stats omitted)</text>
+</svg>

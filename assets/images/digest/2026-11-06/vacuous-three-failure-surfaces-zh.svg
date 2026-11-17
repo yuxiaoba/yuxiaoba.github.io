@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Verified but Vacuous 三重条件审计失效面与 ensures-binding gate 静态 AST 检查流程">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="14" y="14" width="932" height="512" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" rx="10"/>
+  <text x="30" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="16.5" font-weight="700" fill="#0f172a">三重条件审计失效面与 ensures-binding gate 静态检查</text>
+  <text x="30" y="59" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" fill="#475569">arXiv:2611.05590v1 §§2–3 · 三面依次按条件子集评测（非逻辑蕴含层级）：面 A 通过不蕴含面 B，面 B 通过不蕴含面 C</text>
+  <line x1="30" y1="68" x2="930" y2="68" stroke="#bfdbfe" stroke-width="1"/>
+
+  <!-- Card A: Surface A -->
+  <rect x="28" y="78" width="284" height="212" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="38" y="87" width="88" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="82" y="100" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">面 A · 全量样本</text>
+  <text x="134" y="100.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#0f172a">验证器接受</text>
+  <rect x="38" y="113" width="264" height="54" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="46" y="129" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">检查：dafny verify / verus 返回 0</text>
+  <text x="46" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">拦截：类型错误、局部证明缺口、</text>
+  <text x="46" y="159" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">循环终止性/良构性失败及缺失引理</text>
+  <rect x="38" y="172" width="264" height="54" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.9"/>
+  <text x="46" y="188" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.6" font-weight="700" fill="#991b1b">盲区（推迟至面 B）：</text>
+  <text x="46" y="204" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#7f1d1d">无任何 ensures 后置条件（空证明义务）</text>
+  <text x="46" y="218" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#7f1d1d">或用 {:axiom} / {:verify false} 绕过</text>
+  <rect x="38" y="232" width="264" height="48" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="46" y="248" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="700" fill="#0f172a">method find_max(nums) returns (r: int)</text>
+  <text x="46" y="263" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.5" fill="#475569">{ r := 0; } // 无 ensures，verify=0</text>
+  <text x="46" y="275" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#b91c1c">MaxCorrect 谓词被悬空，面 A 放行 / 面 B 拦截</text>
+
+  <!-- Arrow A -> B -->
+  <line x1="314" y1="184" x2="336" y2="184" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- Card B: Surface B -->
+  <rect x="338" y="78" width="284" height="212" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="348" y="87" width="94" height="19" rx="5" fill="#1d4ed8"/>
+  <text x="395" y="100" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#ffffff">面 B · 条件于 A</text>
+  <text x="450" y="100.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#0f172a">句法规约绑定</text>
+  <rect x="348" y="113" width="264" height="54" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="356" y="129" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">检查：ensures-binding gate (&lt;10 ms)</text>
+  <text x="356" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">拦截：缺失对配对 Spec 文件符号的引用</text>
+  <text x="356" y="159" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">（含无外部引用的有效内联 ensures 契约）</text>
+  <rect x="348" y="172" width="264" height="54" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.9"/>
+  <text x="356" y="188" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.6" font-weight="700" fill="#92400e">盲区（推迟至面 C）：</text>
+  <text x="356" y="204" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#78350f">有名字但语义空洞或过弱的规约谓词</text>
+  <text x="356" y="218" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#78350f">如 predicate P(x) { true } 或 { r &gt;= 0 }</text>
+  <rect x="348" y="232" width="264" height="48" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="356" y="248" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="700" fill="#0f172a">predicate MaxCorrect(...) { r &gt;= 0 }</text>
+  <text x="356" y="263" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.5" fill="#475569">ensures MaxCorrect(nums, r) // 绑定满足</text>
+  <text x="356" y="275" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#b45309">面 A 与面 B 均放行，但并未约束最大值语义</text>
+
+  <!-- Arrow B -> C -->
+  <line x1="624" y1="184" x2="646" y2="184" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- Card C: Surface C -->
+  <rect x="648" y="78" width="284" height="212" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="658" y="87" width="94" height="19" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="705" y="100" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">面 C · 条件于 B</text>
+  <text x="760" y="100.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#0f172a">语义规约忠实度</text>
+  <rect x="658" y="113" width="264" height="54" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="666" y="129" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">检查：Post2Exe（正/反例）与隐藏测试</text>
+  <text x="666" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">拦截：将后置条件编译为可执行谓词后，</text>
+  <text x="666" y="159" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">仍会放行反例错误输出的欠约束规约</text>
+  <rect x="658" y="172" width="264" height="54" rx="6" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.9"/>
+  <text x="666" y="188" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.6" font-weight="700" fill="#0369a1">残余测试边界：</text>
+  <text x="666" y="204" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#0c4a6e">测试集未覆盖的需求角落仍无法测出；</text>
+  <text x="666" y="218" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#0c4a6e">隐藏测试代理隐含信任转译器与 Oracle</text>
+  <rect x="658" y="232" width="264" height="48" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="666" y="248" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="700" fill="#0f172a">find_max([5, 3, 7]) ==&gt; r = 0</text>
+  <text x="666" y="263" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.5" fill="#475569">0 &gt;= 0 为真，负例测试判为语义漏过</text>
+  <text x="666" y="275" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.4" fill="#1d4ed8">Post2Exe 将可执行规约拉回反例校验</text>
+
+  <!-- Bottom Left: ensures-binding gate AST Walk -->
+  <rect x="28" y="300" width="544" height="194" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="40" y="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">D. ensures-binding gate 静态 AST 检查流程（§3 与附录 C · 零 SMT 开销 · &lt;10 ms/组件）</text>
+  <rect x="40" y="329" width="520" height="26" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="300" y="346" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="10.2" font-weight="700" fill="#1e3a8a">Accept(M, S)  &lt;=&gt;  n ≥ 1  ∧  ∃ i ∈ [1..n], ∃ p ∈ Preds(S) : p ∈ Ids(Eᵢ)</text>
+
+  <rect x="40" y="363" width="162" height="88" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="48" y="380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">1. 解析 Impl.dfy</text>
+  <text x="48" y="397" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#334155">• 提取方法内全部 ensures</text>
+  <text x="48" y="413" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#334155">• 若 n = 0 立即拒绝</text>
+  <text x="48" y="429" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#475569">  (防止空条件真空满足)</text>
+  <text x="48" y="444" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#1d4ed8">HumanEval 94.7% 止步此步</text>
+
+  <line x1="204" y1="407" x2="217" y2="407" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+
+  <rect x="219" y="363" width="162" height="88" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="227" y="380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">2. 枚举 Preds(S)</text>
+  <text x="227" y="397" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#334155">• 定位同工作区 Spec.dfy</text>
+  <text x="227" y="413" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#334155">• 递归追踪 include 支持文件</text>
+  <text x="227" y="429" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#334155">• 收集顶层 predicate 与</text>
+  <text x="227" y="444" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#334155">  function（仅取 Spec 侧）</text>
+
+  <line x1="383" y1="407" x2="396" y2="407" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+
+  <rect x="398" y="363" width="162" height="88" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="406" y="380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">3. 校验标识符绑定</text>
+  <text x="406" y="397" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#334155">• 遍历各子句 Eᵢ 的标识符</text>
+  <text x="406" y="413" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#334155">• 支持 Spec.Pred 限定引用</text>
+  <text x="406" y="429" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.9" fill="#334155">• 排除 forall/exists 约束变量</text>
+  <text x="406" y="444" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#1d4ed8">至少 1 条命中即通过（∃i）</text>
+
+  <rect x="40" y="458" width="520" height="27" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="48" y="475" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" fill="#334155">VCG 上线前内部审计（三套 Python 基准）：约 <tspan font-weight="700" fill="#1d4ed8">27%</tspan> 已过 dafny verify 的组件未过此门；结构拒收率不等同语义错率。</text>
+
+  <!-- Bottom Right: Existing Systems Matrix (Table 6) -->
+  <rect x="586" y="300" width="346" height="194" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="598" y="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.8" font-weight="700" fill="#1d4ed8">E. 既有系统三面评测覆盖矩阵（附录 D 表 6）</text>
+  <rect x="596" y="329" width="326" height="156" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.9"/>
+
+  <rect x="602" y="335" width="314" height="20" rx="4" fill="#eff6ff"/>
+  <text x="608" y="349" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">系统 / 评测框架</text>
+  <text x="720" y="349" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">面 A</text>
+  <text x="758" y="349" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">面 B (绑定)</text>
+  <text x="836" y="349" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">面 C (语义)</text>
+
+  <text x="608" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#334155">Li et al. (2025)</text>
+  <text x="720" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#15803d" font-weight="700">报告</text>
+  <text x="758" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#64748b">未报告</text>
+  <text x="836" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#475569">仅运行时夹具</text>
+  <line x1="604" y1="376" x2="914" y2="376" stroke="#e2e8f0" stroke-width="0.8"/>
+
+  <text x="608" y="391" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#334155">VeriContest (2026)</text>
+  <text x="720" y="391" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#15803d" font-weight="700">报告</text>
+  <text x="758" y="391" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#64748b">未报告</text>
+  <text x="836" y="391" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#1d4ed8" font-weight="700">Post2Exe</text>
+  <line x1="604" y1="397" x2="914" y2="397" stroke="#e2e8f0" stroke-width="0.8"/>
+
+  <text x="608" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#334155">AxDafny (2026)</text>
+  <text x="720" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#15803d" font-weight="700">报告</text>
+  <text x="758" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#1d4ed8">规则+LLM审查</text>
+  <text x="836" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#64748b">未报告</text>
+
+  <rect x="602" y="420" width="314" height="22" rx="4" fill="#dbeafe"/>
+  <text x="608" y="434" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="700" fill="#1e3a8a">VCG (本文)</text>
+  <text x="720" y="434" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="700" fill="#1e3a8a">报告</text>
+  <text x="758" y="434" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" font-weight="700" fill="#1e3a8a">Binding Gate</text>
+  <text x="836" y="434" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" font-weight="700" fill="#1e3a8a">Rust+Post2Exe</text>
+
+  <rect x="602" y="447" width="314" height="32" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="609" y="460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#334155">单独汇报面 B 会留下 VCG 的语义盲区；单独汇报面 C 则会</text>
+  <text x="609" y="473" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.6" fill="#1d4ed8">漏掉 Li@Opus 仅 1.9% 绑定的句法空洞（建议 B、C 并报）。</text>
+
+  <text x="30" y="514" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" fill="#475569">来源：arXiv:2611.05590v1 表 1、§§2–3、§8 及附录 C–D；“条件顺序评测”用于隔离统计对象，不代表属性之间的逻辑包含关系。</text>
+</svg>

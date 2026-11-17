@@ -1,0 +1,99 @@
+{
+  "id": "kamaji-hami",
+  "source_url": "https://www.cncf.io/blog/2026/10/23/multi-tenant-gpu-kubernetes-on-simulated-hardware-with-kamaji-and-hami/",
+  "source_title": "Multi-tenant GPU Kubernetes on simulated hardware with Kamaji and HAMi",
+  "source_authors": [
+    "Anish Bista"
+  ],
+  "source_org": "CNCF Blog",
+  "source_date": "2026-10-23",
+  "note_date": "2026-10-25",
+  "published_at": "2026-10-25T08:48:16.922011+08:00",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": ".preview/research-jobs/runs/20261025-083001-94da20398c-62f3d8/work/sources/downloads/cncf-blog-2026-10-23-multi-tenant-gpu-kubernetes-kamaji-hami-main.txt",
+      "kind": "extracted_text"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://www.cncf.io/blog/2026/10/23/multi-tenant-gpu-kubernetes-on-simulated-hardware-with-kamaji-and-hami/",
+    "https://github.com/clastix/kamaji",
+    "https://kamaji.clastix.io/",
+    "https://github.com/Project-HAMi/HAMi",
+    "https://project-hami.io/",
+    "https://github.com/Project-HAMi/mock-device-plugin"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/kamaji-hami.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/kamaji-hami.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/kamaji-hami/architecture.jpg",
+        "origin": "primary_source_preserved",
+        "preserved_untouched": true,
+        "source": "https://www.cncf.io/blog/2026/10/23/multi-tenant-gpu-kubernetes-on-simulated-hardware-with-kamaji-and-hami/",
+        "recorded_prior_sha256": "d86ec8fa023d37d3cfc17e6ca8f80ea9e814ea28b06124b61eed5a58ea46049e",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/kamaji-hami/kamaji-hami-control-plane-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/kamaji-hami/kamaji-hami-control-plane-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/kamaji-hami/simulated-vs-physical-gpu-fid-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/kamaji-hami/simulated-vs-physical-gpu-fid-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "c905d1763591ab6f3cf1caa51a8d5e4a89fee8cd4b8b43fa8e2cc80ef3854178",
+      "en_md_sha256": "325ff3fa30ac30294f360d9548009dc9ee7eedb4864b1b3d1771b78c2c57748a",
+      "svgs": {
+        "/assets/images/tech/kamaji-hami/kamaji-hami-control-plane-zh.svg": "719575659fee8dd6aef8622dc0aadc6a69bd07332b5a9a6d07430026260b352d",
+        "/assets/images/tech/kamaji-hami/kamaji-hami-control-plane-en.svg": "76dadcca74b5d7f8370118f9fc3cad1bffd7411e3fe60d05caf8194af871f5af",
+        "/assets/images/tech/kamaji-hami/simulated-vs-physical-gpu-fid-zh.svg": "8f77c4b60d673ce2418284ec5fe5c3c3cd5a910439420938aae5d24f09a4a2e7",
+        "/assets/images/tech/kamaji-hami/simulated-vs-physical-gpu-fid-en.svg": "cd9a27a7d9311bd7485b953d1819119a183bae045f04330b73a954d688fbef67"
+      },
+      "preserved": {
+        "architecture.jpg": "d86ec8fa023d37d3cfc17e6ca8f80ea9e814ea28b06124b61eed5a58ea46049e"
+      }
+    },
+    "playwright_total": 35,
+    "playwright_passed": 35,
+    "playwright_failed": 0
+  }
+}

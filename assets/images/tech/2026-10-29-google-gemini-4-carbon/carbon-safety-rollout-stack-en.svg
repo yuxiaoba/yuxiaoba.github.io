@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="37" font-size="18.5" font-weight="700" fill="#0f172a" text-anchor="start">Gemini 4 Carbon: Anti-Shortcut Alignment, Runtime Stack &amp; Staged Rollout</text>
+  <text x="24" y="57" font-size="11" font-weight="400" fill="#475569" text-anchor="start">Synthesizing alignment deltas, Gray Swan IPI results, Argon-lineage runtime defenses, and Fairwind gated rollout</text>
+  <line x1="24" y1="67" x2="936" y2="67" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="77" width="446" height="356" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="77" width="446" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="97" width="446" height="10" fill="#dbeafe"/>
+  <text x="36" y="97" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Alignment &amp; Behavioral Reliability (Provider Evals &amp; Live Coding)</text>
+  <rect x="34" y="115" width="426" height="74" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="135" font-size="11.3" font-weight="700" fill="#0f172a" text-anchor="start">Terminal-Bench 4.0 Anti-Shortcut</text>
+  <rect x="326" y="123" width="124" height="22" rx="5" fill="#1d4ed8"/>
+  <text x="388.0" y="137.8" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">0.0% Cheating</text>
+  <text x="44" y="157" font-size="10.1" font-weight="600" fill="#1e293b" text-anchor="start">Cheating attempts dropped to 0.4% while overall score rose to 65.2%</text>
+  <text x="44" y="176" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">Curbs loophole exploitation without degrading task accuracy</text>
+  <rect x="34" y="194" width="426" height="74" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="214" font-size="11.3" font-weight="700" fill="#0f172a" text-anchor="start">Live Coding Alerts &amp; Honesty</text>
+  <rect x="326" y="202" width="124" height="22" rx="5" fill="#1d4ed8"/>
+  <text x="388.0" y="216.8" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">~80% / ~2x Drop</text>
+  <text x="44" y="236" font-size="10.1" font-weight="600" fill="#1e293b" text-anchor="start">High-severity misalignment alerts ~80% lower; unsupported claims ~2x lower</text>
+  <text x="44" y="255" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">Adds caveats or withholds blocked actions instead of fabricating</text>
+  <rect x="34" y="273" width="426" height="74" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="293" font-size="11.3" font-weight="700" fill="#0f172a" text-anchor="start">Ambiguity &amp; Scope Adherence</text>
+  <rect x="298" y="281" width="152" height="22" rx="5" fill="#1d4ed8"/>
+  <text x="374.0" y="295.8" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">-26% Over / -29% Under</text>
+  <text x="44" y="315" font-size="10.1" font-weight="600" fill="#1e293b" text-anchor="start">Retrieves sources &amp; surfaces discrepancies before acting across multi-step plans</text>
+  <text x="44" y="334" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">Cuts both unrequested edits (overreach) and incomplete follow-through</text>
+  <rect x="34" y="352" width="426" height="74" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="44" y="372" font-size="11.3" font-weight="700" fill="#0f172a" text-anchor="start">Gray Swan IPI Benchmark (k=15)</text>
+  <rect x="298" y="360" width="152" height="22" rx="5" fill="#15803d"/>
+  <text x="374.0" y="374.8" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">0.0% Attack Success</text>
+  <text x="44" y="394" font-size="10.1" font-weight="600" fill="#1e293b" text-anchor="start">Carbon 0.0% · Argon 0.7% · Opus 5.5 1.0% · Astra 8.5% · K3 52.7%</text>
+  <text x="44" y="413" font-size="9.8" font-weight="400" fill="#475569" text-anchor="start">0.0% on tested probes ≠ universal immunity</text>
+  <rect x="490" y="77" width="446" height="202" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="490" y="77" width="446" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="490" y="97" width="446" height="10" fill="#dbeafe"/>
+  <text x="502" y="97" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Multi-Layer Defense Stack (Inherited from Argon Stack)</text>
+  <rect x="502" y="115" width="422" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="508" y="121" width="146" height="24" rx="5" fill="#1e3a8a"/>
+  <text x="581.0" y="136.8" font-size="9.8" font-weight="700" fill="#ffffff" text-anchor="middle">1. Model Alignment</text>
+  <text x="662" y="137" font-size="9.9" font-weight="400" fill="#334155" text-anchor="start">Anti-shortcut &amp; aligned behavior under complex tasks</text>
+  <rect x="502" y="155" width="422" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="508" y="161" width="146" height="24" rx="5" fill="#1e3a8a"/>
+  <text x="581.0" y="176.8" font-size="9.8" font-weight="700" fill="#ffffff" text-anchor="middle">2. Real-Time Misuse</text>
+  <text x="662" y="177" font-size="9.9" font-weight="400" fill="#334155" text-anchor="start">Input/output/thought classifiers, probes &amp; rule checks</text>
+  <rect x="502" y="195" width="422" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="508" y="201" width="146" height="24" rx="5" fill="#1e3a8a"/>
+  <text x="581.0" y="216.8" font-size="9.8" font-weight="700" fill="#ffffff" text-anchor="middle">3. Prompt-Injection</text>
+  <text x="662" y="217" font-size="9.9" font-weight="400" fill="#334155" text-anchor="start">Resisting untrusted injected instructions (Gray Swan 0%)</text>
+  <rect x="502" y="235" width="422" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="508" y="241" width="146" height="24" rx="5" fill="#1e3a8a"/>
+  <text x="581.0" y="256.8" font-size="9.8" font-weight="700" fill="#ffffff" text-anchor="middle">4. CoT &amp; Action Monitor</text>
+  <text x="662" y="257" font-size="9.9" font-weight="400" fill="#334155" text-anchor="start">Trusted action/CoT monitors kept independent from RL</text>
+  <rect x="490" y="290" width="446" height="143" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="490" y="290" width="446" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="490" y="310" width="446" height="10" fill="#dbeafe"/>
+  <text x="502" y="310" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Staged Rollout Governance &amp; Pricing Window</text>
+  <rect x="502" y="330" width="130" height="92" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="567" y="352" font-size="10.3" font-weight="700" fill="#78350f" text-anchor="middle">1. Pre-Release Gov</text>
+  <text x="567" y="378" font-size="9.6" font-weight="400" fill="#1e293b" text-anchor="middle">U.S. govt voluntary process</text>
+  <text x="567" y="400" font-size="9.4" font-weight="400" fill="#475569" text-anchor="middle">Guardrail iteration</text>
+  <line x1="633" y1="376" x2="646" y2="376" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="648" y="330" width="130" height="92" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="713" y="352" font-size="10.3" font-weight="700" fill="#1e3a8a" text-anchor="middle">2. Fairwind Partners</text>
+  <text x="713" y="378" font-size="9.6" font-weight="400" fill="#1e293b" text-anchor="middle">Selected cyber defenders</text>
+  <text x="713" y="400" font-size="9.4" font-weight="400" fill="#475569" text-anchor="middle">MFA · no resell · monitored</text>
+  <line x1="779" y1="376" x2="792" y2="376" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="794" y="330" width="130" height="92" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="859" y="352" font-size="10.3" font-weight="700" fill="#166534" text-anchor="middle">3. GA &amp; Price Step</text>
+  <text x="859" y="378" font-size="9.6" font-weight="400" fill="#1e293b" text-anchor="middle">Intro $2 / $10 (95% cache)</text>
+  <text x="859" y="400" font-size="9.4" font-weight="400" fill="#475569" text-anchor="middle">Post-intro: $4 / $20 / 1M</text>
+  <rect x="24" y="445" width="912" height="54" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="36" y="467" font-size="11.2" font-weight="700" fill="#92400e" text-anchor="start">Production Boundary Note (AgentOps Perspective):</text>
+  <text x="36" y="487" font-size="10.4" font-weight="400" fill="#78350f" text-anchor="start">Low cheating and 0.0% benchmark IPI do not replace sandbox least-privilege, approvals, and state reconciliation; re-budget post-intro pricing.</text>
+  <text x="24" y="519" font-size="10.2" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram synthesized from Google&#x27;s Carbon post, Gray Swan chart, and linked Gemini 4 Argon Safety Report (not an original figure)</text>
+</svg>

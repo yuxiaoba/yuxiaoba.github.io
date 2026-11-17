@@ -1,0 +1,155 @@
+{
+  "id": "2026-11-05-vllm-bangkok-serving-agentic-workload",
+  "source_url": "https://vllmbangkok.com/en/blog/serving-the-agentic-workload/",
+  "source_title": "Serving the agentic workload: Simon Mo on what AI agents change in vLLM",
+  "source_author": "Natdhanai Praneenatthavee (@agicafet)",
+  "source_org": "vLLM Bangkok (summarizing Simon Mo, Inferact, at Modal Runtime 2026)",
+  "source_published_at": "2026-11-04",
+  "note_date": "2026-11-05",
+  "updated_at": "2026-11-16T12:00:00+08:00",
+  "authoring_source": "assistant",
+  "english_translation": "assistant",
+  "assistant_translated": true,
+  "frozen_sources": [
+    {
+      "path": ".preview/research-jobs/depth-repair-2026-11-05/work/evidence/2026-11-05-vllm-bangkok-serving-agentic-workload.txt",
+      "role": "frozen_vllm_bangkok_summary_capture",
+      "sha256": "pending_parent_shell_verification"
+    },
+    {
+      "path": ".preview/research-jobs/owner-alignment-2026-11-05/work/evidence/vllm-bangkok-serving-agentic-workload-0.txt",
+      "role": "frozen_x_thread_and_article_capture_0",
+      "sha256": "pending_parent_shell_verification"
+    },
+    {
+      "path": ".preview/research-jobs/owner-alignment-2026-11-05/work/evidence/vllm-bangkok-serving-agentic-workload-1.txt",
+      "role": "frozen_vllm_bangkok_single_line_capture_1",
+      "sha256": "pending_parent_shell_verification"
+    }
+  ],
+  "primary_cross_checked_references": [
+    {
+      "title": "Serving Agentic Workloads at Scale with vLLM x Mooncake",
+      "url": "https://vllm.ai/blog/2026-05-06-mooncake-store",
+      "date": "2026-05-06"
+    },
+    {
+      "title": "vLLM x AgentX: Optimizing for Real-World Agentic Serving",
+      "url": "https://blog.vllm.ai/2026/09/08/vllm-agentx.html",
+      "date": "2026-09-08"
+    },
+    {
+      "title": "700 TPS on Kimi K3: A Case for TPU Megakernels",
+      "url": "https://inferact.ai/blog/tpu-megakernels",
+      "date": "2026-09"
+    },
+    {
+      "title": "[Roadmap] vLLM Roadmap Q4 2026",
+      "url": "https://github.com/vllm-project/vllm/issues/61024",
+      "date": "2026-10-10"
+    },
+    {
+      "title": "Scaling Kimi K3 on AMD Instinct MI355X",
+      "url": "https://blog.vllm.ai/2026/10/16/scaling-kimi-k3-on-amd-instinct-mi355x.html",
+      "date": "2026-10-16"
+    },
+    {
+      "title": "Announcing New vLLM and SGLang Inference Engines on TPU",
+      "url": "https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/",
+      "date": "2026-10-20"
+    },
+    {
+      "title": "Hybrid KV Cache Manager (vLLM Design Docs)",
+      "url": "https://docs.vllm.ai/en/latest/design/hybrid_kv_cache_manager.html"
+    },
+    {
+      "title": "Jenga: Effective Memory Management for Serving LLM with Heterogeneity",
+      "url": "https://arxiv.org/abs/2503.18292",
+      "date": "2025-03-24"
+    },
+    {
+      "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving",
+      "url": "https://arxiv.org/abs/2401.09670",
+      "date": "2024-01-18"
+    },
+    {
+      "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "url": "https://arxiv.org/abs/2309.06180",
+      "date": "2023-09-12"
+    }
+  ],
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/2026-11-05-vllm-bangkok-serving-agentic-workload.md",
+      "sha256": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/2026-11-05-vllm-bangkok-serving-agentic-workload.md",
+      "sha256": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/mooncake-kv-pool.png",
+        "origin": "preserved_existing_summary_slide",
+        "preserved_untouched": true,
+        "source": "https://vllmbangkok.com/en/blog/serving-the-agentic-workload/",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/agentic-kv-reuse-topology-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/agentic-kv-reuse-topology-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/talk-lineage-and-eval-boundaries-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/talk-lineage-and-eval-boundaries-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "Subagent executed without shell commands per tool rule; parent agent to render SVG PNGs, inspect visually, apply chmod 0644/0755, populate SHA-256 digests, rebuild preview, and run Playwright verification.",
+    "pending_actions": [
+      "svg_to_png_visual_inspection",
+      "chmod_0644_files_0755_dir",
+      "sha256_backfill",
+      "jekyll_preview_build_and_playwright_checks"
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-16T04:09:01.462257+00:00",
+    "preview_release": "20261116-120700-2e64116a",
+    "sha256": {
+      "zh_md_sha256": "983763633d7dc2ef53fe516dd4b8fb29b02cd01ddea31db87818fa47dffcd4b8",
+      "en_md_sha256": "20afe14485d569fc257b599090d152d0beae70f244297ec59c9ac15935443fb9",
+      "svgs": {
+        "/assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/agentic-kv-reuse-topology-zh.svg": "9ad73624607ab144364ffb157e1f22fa0c3f7444fc66c246fdea6434d0a49b66",
+        "/assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/agentic-kv-reuse-topology-en.svg": "69609c533564b506319b98ff3c153df91e583c4a6ea3783d9ba9419a551a2321",
+        "/assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/talk-lineage-and-eval-boundaries-zh.svg": "0ed0346a8254324a46d6a11a21c024e9f1e3f85e4f0f90b9eefabb8d4a5dca92",
+        "/assets/images/tech/2026-11-05-vllm-bangkok-serving-agentic-workload/talk-lineage-and-eval-boundaries-en.svg": "8b7c767e05d07d8530e20df8ce0ce0e6333386e71466ca95a99db69ca068a1d8"
+      },
+      "preserved": {
+        "mooncake-kv-pool.png": "43fe3f67095fb9539d29bace0cfe7995379d24f3f16d289c5b683f0f666ada90"
+      }
+    },
+    "playwright_total": 35,
+    "playwright_passed": 35,
+    "playwright_failed": 0
+  }
+}

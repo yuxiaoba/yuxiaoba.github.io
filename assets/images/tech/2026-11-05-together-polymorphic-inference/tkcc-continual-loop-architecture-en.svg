@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18" font-weight="700" fill="#0f172a" text-anchor="start">Together Compiler (TKCC): Tiered Persistent Engine &amp; Cost Model Loop</text>
+  <text x="24" y="56" font-size="11" font-weight="400" fill="#475569" text-anchor="start">Synthesized from Polymorphic Inference, Together Compiler blog &amp; technical report (2026-11-04)</text>
+  <line x1="24" y1="66" x2="936" y2="66" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24" y="76" width="232" height="376" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="76" width="232" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="94" width="232" height="10" fill="#dbeafe"/>
+  <text x="36" y="95" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">1. Drift &amp; Parallelism Model</text>
+  <rect x="32" y="112" width="216" height="144" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="42" y="130" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">Production Drift Drivers (§3)</text>
+  <text x="42" y="150" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">• Regional use: ~97K vs ~70K ISL</text>
+  <text x="42" y="171" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">• 2-wk shift: 10K-&gt;18K (+8pp cache)</text>
+  <text x="42" y="192" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">• Post-release: +80% prompt length</text>
+  <text x="42" y="213" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">• 3-day burst: P90 18K-&gt;33K (-4pp)</text>
+  <text x="42" y="234" font-size="9.8" font-weight="400" fill="#1e293b" text-anchor="start">• 1-wk OSL 700-&gt;1.7K; thinking 2x</text>
+  <rect x="32" y="264" width="216" height="178" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="282" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="start">3-Tier Cost Model (§4.3 / App. D)</text>
+  <text x="42" y="302" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• Space: N&lt;=4096 (TP/EP/CP/DP)</text>
+  <text x="42" y="324" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• Prune: 1.5s TTFT · 40 TPS SLAs</text>
+  <text x="42" y="346" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• C = min(C_mem, C_spd) -&gt; TPM</text>
+  <text x="42" y="368" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• Spec -&gt; microbench -&gt; measured fwd</text>
+  <text x="42" y="390" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• Live skew: Zipf/emp MoE π_e + MTP</text>
+  <text x="42" y="412" font-size="9.8" font-weight="400" fill="#334155" text-anchor="start">• Kimi K3 prod: +24% TPS, +18% TPM</text>
+  <line x1="256" y1="264" x2="269" y2="264" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="272" y="76" width="428" height="376" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="272" y="76" width="428" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="272" y="94" width="428" height="10" fill="#dbeafe"/>
+  <text x="284" y="95" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">2. Parallel Agents &amp; Tiered Persistent Engine</text>
+  <rect x="282" y="112" width="408" height="86" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="292" y="130" font-size="11" font-weight="700" fill="#1e3a8a" text-anchor="start">Parallel Agents Edit Raw Engine Source (tkcc_forward.py)</text>
+  <text x="292" y="150" font-size="9.7" font-weight="400" fill="#1e293b" text-anchor="start">• Msg-board sync: 2.3x–4.7x faster; raw code unlocks MLA metadata (1.7–2.5x)</text>
+  <text x="292" y="169" font-size="9.7" font-weight="400" fill="#1e293b" text-anchor="start">• Dropping expert KB beats KB by 25–31%; naive prompt ensemble 6.2x vs 4.9x</text>
+  <text x="292" y="188" font-size="9.7" font-weight="400" fill="#475569" text-anchor="start">• Plain Markdown logs &lt;0.5% overhead (vs 8% / 12.6s per CLI graph call)</text>
+  <line x1="486" y1="198" x2="486" y2="220" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="326" y="201" width="320" height="16" rx="4" fill="#dbeafe" stroke="#60a5fa" stroke-width="0.8"/>
+  <text x="486" y="213" font-size="9.3" font-weight="700" fill="#1e3a8a" text-anchor="middle">RPC hot_reload + CUDA-graph recapture (9.0s vs 467s cold)</text>
+  <rect x="282" y="222" width="408" height="174" rx="6" fill="#f8fafc" stroke="#60a5fa" stroke-width="1.1"/>
+  <text x="486" y="239" font-size="9.6" font-weight="600" fill="#1d4ed8" text-anchor="middle">Weights &amp; KV Locked · Prefix Cache Reuse 2.6x · P/D Split Variance 6.6% -&gt; 2.7%</text>
+  <rect x="290" y="248" width="186" height="140" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="290" y="248" width="186" height="22" rx="6" fill="#eff6ff"/>
+  <text x="383" y="263" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">Fast Tier (Screening)</text>
+  <text x="298" y="286" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">• 12 layers · 3 min startup</text>
+  <text x="298" y="307" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">• 17s reload · 28s median job</text>
+  <text x="298" y="328" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">• 0.05% variance + CUPTI trace</text>
+  <text x="298" y="349" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">• Isolates 3.9/1k IMA crashes</text>
+  <text x="298" y="370" font-size="9.6" font-weight="400" fill="#334155" text-anchor="start">• Rapid pruning before full run</text>
+  <line x1="476" y1="318" x2="493" y2="318" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="496" y="248" width="186" height="140" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="496" y="248" width="186" height="22" rx="6" fill="#dbeafe"/>
+  <text x="589" y="263" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">Slow Tier (Full Fidelity)</text>
+  <text x="504" y="286" font-size="9.6" font-weight="400" fill="#0f172a" text-anchor="start">• 60 layers · 11 min startup</text>
+  <text x="504" y="307" font-size="9.6" font-weight="400" fill="#0f172a" text-anchor="start">• 45s reload · 64s median job</text>
+  <text x="504" y="328" font-size="9.6" font-weight="400" fill="#0f172a" text-anchor="start">• 0.14% variance · 0 crashes/1k</text>
+  <text x="504" y="349" font-size="9.6" font-weight="400" fill="#0f172a" text-anchor="start">• Real MoE skew &amp; sparse-k data</text>
+  <text x="504" y="370" font-size="9.6" font-weight="400" fill="#0f172a" text-anchor="start">• Confirms end-to-end speedup</text>
+  <rect x="282" y="404" width="408" height="40" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="486" y="420" font-size="10" font-weight="700" fill="#1e3a8a" text-anchor="middle">252x experiment throughput · 11x less agent idling vs restart-based systems</text>
+  <text x="486" y="436" font-size="9.5" font-weight="400" fill="#1e40af" text-anchor="middle">10h B200 GLM-5.3: Two-tier tests 1,354 vs 168 candidates (8.1x) -&gt; +7.2% faster</text>
+  <line x1="700" y1="264" x2="713" y2="264" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="716" y="76" width="220" height="376" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="716" y="76" width="220" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="716" y="94" width="220" height="10" fill="#dbeafe"/>
+  <text x="728" y="95" font-size="11.8" font-weight="700" fill="#1e3a8a" text-anchor="start">3. Gates, Rollout &amp; Bounds</text>
+  <rect x="724" y="112" width="204" height="104" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <text x="734" y="130" font-size="10.8" font-weight="700" fill="#166534" text-anchor="start">Pre-Deploy Verification</text>
+  <text x="734" y="149" font-size="9.4" font-weight="400" fill="#14532d" text-anchor="start">• KV-cache contamination &amp; quality suite</text>
+  <text x="734" y="168" font-size="9.4" font-weight="400" fill="#14532d" text-anchor="start">• Bit-exact + RNG parity on 8 sci models</text>
+  <text x="734" y="187" font-size="9.4" font-weight="400" fill="#14532d" text-anchor="start">• Zero quantization edits in AgentX runs</text>
+  <text x="734" y="206" font-size="9.4" font-weight="400" fill="#14532d" text-anchor="start">• Gap: LLM ULP/KL tolerances undisclosed</text>
+  <rect x="724" y="224" width="204" height="96" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="734" y="242" font-size="10.8" font-weight="700" fill="#1e3a8a" text-anchor="start">Regime-Aware Dispatch</text>
+  <text x="734" y="261.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">• Integrate best config + fwd.py</text>
+  <text x="734" y="278.5" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">• Kimi K3 persistent MoE down-proj:</text>
+  <text x="734" y="296.0" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">  +2.8–5% at conc 22–78</text>
+  <text x="734" y="313.5" font-size="9.4" font-weight="400" fill="#1e293b" text-anchor="start">  Disabled at conc 8 (-6.6% slower)</text>
+  <rect x="724" y="328" width="204" height="114" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <text x="734" y="346" font-size="10.8" font-weight="700" fill="#92400e" text-anchor="start">Observed Faults &amp; Bottlenecks</text>
+  <text x="734" y="364.0" font-size="9.3" font-weight="400" fill="#78350f" text-anchor="start">• GLM-5.3: 9x Xid 154 GPU resets</text>
+  <text x="734" y="381.5" font-size="9.3" font-weight="400" fill="#78350f" text-anchor="start">  (2 machines removed from cluster)</text>
+  <text x="734" y="399.0" font-size="9.3" font-weight="400" fill="#78350f" text-anchor="start">• Model safety bans blocked edits</text>
+  <text x="734" y="416.5" font-size="9.3" font-weight="400" fill="#78350f" text-anchor="start">• 52.7–57.0% agent time waiting gate</text>
+  <text x="734" y="434.0" font-size="9.3" font-weight="400" fill="#78350f" text-anchor="start">• Drift hysteresis &amp; rollback private</text>
+  <rect x="24" y="462" width="912" height="40" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="486" y="480" font-size="10.5" font-weight="600" fill="#1e3a8a" text-anchor="middle">Continual Feedback Loop: Traffic drift, concurrency shift, or new chip SKU -&gt; re-run cost model &amp; recompile (&lt;=24h, &lt;=2 nodes/model)</text>
+  <text x="486" y="495" font-size="9.2" font-weight="400" fill="#475569" text-anchor="middle">Note: 761s cold start &amp; Fast/Slow tier stats from Paper Table 1 (TRT-LLM MiniMax-M3.1-Flash); 467s vs 9.0s from Compiler Blog Table 1</text>
+  <text x="24" y="522" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">Assistant diagram synthesized from Together AI&#x27;s Polymorphic Inference &amp; Together Compiler posts and report (not an original figure)</text>
+</svg>

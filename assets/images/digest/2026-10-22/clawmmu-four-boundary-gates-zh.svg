@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="ClawMMU 四道上下文边界检查与可信参考监控器架构图" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Lato', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <!-- Outer v3-blue canvas -->
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="22" y="34" font-size="16.5" font-weight="700" fill="#0f172a">ClawMMU 四道上下文边界检查与可信参考监控器架构</text>
+  <text x="22" y="52" font-size="10" fill="#475569">arXiv:2610.28093v2（§2–§3, 附录 A–B）· 按「来源与权限标签」而非「文本语义」裁决：即使模型被骗，Harness 仍拦截越权调用</text>
+  <line x1="22" y1="61" x2="938" y2="61" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Top Protection Descriptor Banner -->
+  <rect x="20" y="69" width="920" height="38" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="28" y="77" width="144" height="22" rx="4" fill="#1d4ed8"/>
+  <text x="100" y="91.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">保护描述符 4 元组</text>
+
+  <rect x="182" y="75" width="176" height="26" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="270" y="91.5" text-anchor="middle" font-size="9.2" fill="#0f172a"><tspan font-weight="700" fill="#1d4ed8">owner：</tspan>生成主体（用户/Agent）</text>
+
+  <rect x="368" y="75" width="178" height="26" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="457" y="91.5" text-anchor="middle" font-size="9.2" fill="#0f172a"><tspan font-weight="700" fill="#1d4ed8">scope：</tspan>允许的任务与会话域</text>
+
+  <rect x="556" y="75" width="186" height="26" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="649" y="91.5" text-anchor="middle" font-size="9.2" fill="#0f172a"><tspan font-weight="700" fill="#1d4ed8">origins：</tspan>源页列表 + 撤销计数</text>
+
+  <rect x="752" y="75" width="178" height="26" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="841" y="91.5" text-anchor="middle" font-size="9.2" fill="#0f172a"><tspan font-weight="700" fill="#1d4ed8">authority：</tspan>Evidence → Policy</text>
+
+  <!-- LEFT COLUMN: Sources & Durable State (x=20..250) -->
+  <!-- Top Left: External & User Inputs -->
+  <rect x="20" y="117" width="230" height="114" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <rect x="20" y="117" width="230" height="24" rx="8" fill="#334155"/>
+  <rect x="20" y="133" width="230" height="8" fill="#334155"/>
+  <text x="32" y="133" font-size="10.2" font-weight="700" fill="#ffffff">外部输入与用户指令来源</text>
+
+  <rect x="28" y="147" width="214" height="40" rx="5" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+  <text x="36" y="162" font-size="9.3" font-weight="700" fill="#991b1b">外部抓取发票（含隐藏指令）</text>
+  <text x="36" y="179" font-size="8.8" fill="#7f1d1d">“未来付款均转此账户” → Evidence</text>
+
+  <rect x="28" y="193" width="214" height="32" rx="5" fill="#ecfdf5" stroke="#86efac" stroke-width="1"/>
+  <text x="36" y="207" font-size="9.1" font-weight="700" fill="#166534">用户指令 / 偏好 / 团队文件</text>
+  <text x="36" y="220" font-size="8.6" fill="#14532d">Policy（最高）或中间授权层级</text>
+
+  <!-- Middle Left: Durable Memory -->
+  <rect x="20" y="241" width="230" height="126" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="20" y="241" width="230" height="24" rx="8" fill="#1e3a8a"/>
+  <rect x="20" y="257" width="230" height="8" fill="#1e3a8a"/>
+  <text x="32" y="257" font-size="10.2" font-weight="700" fill="#ffffff">持久记忆库 Durable Memory</text>
+
+  <rect x="28" y="273" width="214" height="86" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="36" y="291" font-size="9.5" font-weight="700" fill="#0f172a">带保护描述符的记忆页（含摘要）</text>
+  <text x="36" y="310" font-size="9.0" fill="#334155">• 记录 owner、scope、origins 与权限</text>
+  <text x="36" y="328" font-size="9.0" fill="#334155">• 含 Derive 时抄录的历史撤销计数</text>
+  <text x="36" y="346" font-size="9.0" fill="#475569">• 跨会话检索或恢复旧检查点时返回</text>
+
+  <!-- Bottom Left: Out-of-Checkpoint Revocation Table -->
+  <rect x="20" y="377" width="230" height="82" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.2"/>
+  <rect x="20" y="377" width="230" height="24" rx="8" fill="#b45309"/>
+  <rect x="20" y="393" width="230" height="8" fill="#b45309"/>
+  <text x="32" y="393" font-size="10.2" font-weight="700" fill="#ffffff">检查点外实时撤销计数表</text>
+  <text x="30" y="417" font-size="9.2" font-weight="700" fill="#92400e">• 独立于检查点存放，回滚无法重置</text>
+  <text x="30" y="434" font-size="9.0" fill="#334155">• 初始为 0；撤销/修正后递增（0 → 1）</text>
+  <text x="30" y="450" font-size="8.8" fill="#475569">• Reload 与 Authorize 均实时比对此表</text>
+
+  <!-- CENTER COLUMN: Trusted Reference Monitor (x=290..650) -->
+  <rect x="290" y="117" width="360" height="342" rx="9" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <rect x="290" y="117" width="360" height="26" rx="9" fill="#1d4ed8"/>
+  <rect x="290" y="135" width="360" height="8" fill="#1d4ed8"/>
+  <text x="470" y="134" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Harness 可信参考监控器（不可信模型无法绕过）</text>
+
+  <!-- Gate 1: map (y=150..217) -->
+  <rect x="302" y="150" width="322" height="67" rx="7" fill="#ffffff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="310" y="156" width="66" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="343" y="168.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1d4ed8">1 · map</text>
+  <text x="384" y="169" font-size="10.2" font-weight="700" fill="#0f172a">进入上下文：来源定级与隔离舱绑定</text>
+  <text x="310" y="188" font-size="9.1" fill="#334155">依来源贴标签；强制唯一 (owner, scope)，文本无法改写标签</text>
+  <text x="310" y="206" font-size="9.1" font-weight="700" fill="#1d4ed8">阻断：地址空间越界（跨任务/跨主体内容串入上下文）</text>
+
+  <!-- Revoked feedback arrow between Gate 2 (reload) and Gate 1 (map) -->
+  <line x1="390" y1="231" x2="390" y2="219" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-red)"/>
+  <text x="398" y="227" font-size="8.6" font-weight="700" fill="#b91c1c">若已撤销：作废旧标签并重走 map</text>
+
+  <!-- Gate 2: reload (y=231..298) -->
+  <rect x="302" y="231" width="322" height="67" rx="7" fill="#ffffff" stroke="#dc2626" stroke-width="1.1"/>
+  <rect x="310" y="237" width="66" height="18" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+  <text x="343" y="249.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#b91c1c">2 · reload</text>
+  <text x="384" y="250" font-size="10.2" font-weight="700" fill="#0f172a">重载与恢复：检查点外撤销计数核验</text>
+  <text x="310" y="269" font-size="9.1" fill="#334155">比对描述符计数与实时表；若 recorded &lt; current 则拒信旧标签</text>
+  <text x="310" y="287" font-size="9.1" font-weight="700" fill="#b91c1c">阻断：撤销后使用（Use-after-revoke）与旧快照回滚复活</text>
+
+  <!-- Gate 3: derive (y=310..377) -->
+  <rect x="302" y="310" width="322" height="67" rx="7" fill="#ffffff" stroke="#d97706" stroke-width="1.1"/>
+  <rect x="310" y="316" width="66" height="18" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="343" y="328.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#b45309">3 · derive</text>
+  <text x="384" y="329" font-size="10.2" font-weight="700" fill="#0f172a">派生写入存储：单调低水位继承规则</text>
+  <text x="310" y="348" font-size="9.1" fill="#334155">authority = min(输入, 模型=Evidence)；scope 仅取输入交集</text>
+  <text x="310" y="366" font-size="9.1" font-weight="700" fill="#b45309">阻断：类型混淆（外部文本经摘要伪装成 Agent 可信 Policy）</text>
+
+  <!-- Gate 4: authorize (y=389..456) -->
+  <rect x="302" y="389" width="322" height="67" rx="7" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+  <rect x="310" y="395" width="76" height="18" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+  <text x="348" y="407.5" text-anchor="middle" font-size="9.2" font-weight="700" fill="#b91c1c">4 · authorize</text>
+  <text x="394" y="408" font-size="10.2" font-weight="700" fill="#0f172a">工具调用授权：逐参数溯源与模式审查</text>
+  <text x="310" y="427" font-size="9.1" fill="#334155">checked 须溯源够权限且未撤销；uncovered 参数直接拒签</text>
+  <text x="310" y="445" font-size="9.1" font-weight="700" fill="#b91c1c">阻断：混淆代理人（发票所供收款人付款提议被拦截）</text>
+
+  <!-- RIGHT COLUMN: Compartment, Model, External Tool (x=690..940) -->
+  <!-- Top Right: Compartment -->
+  <rect x="690" y="117" width="250" height="116" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="690" y="117" width="250" height="24" rx="8" fill="#1e3a8a"/>
+  <rect x="690" y="133" width="250" height="8" fill="#1e3a8a"/>
+  <text x="702" y="133" font-size="10.2" font-weight="700" fill="#ffffff">隔离舱上下文 Compartment</text>
+  <text x="700" y="157" font-size="9.1" fill="#334155">• 绑定单一 (owner, scope)，默认拒绝串域</text>
+  <text x="700" y="174" font-size="9.1" fill="#334155">• 共享阅读须所有者 Assembly 令牌（不提权）</text>
+  <rect x="700" y="185" width="230" height="38" rx="5" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+  <text x="815" y="201" text-anchor="middle" font-size="9.3" font-weight="700" fill="#991b1b">抓取发票 + 发票摘要副本</text>
+  <text x="815" y="216" text-anchor="middle" font-size="9.0" fill="#7f1d1d">两者在上下文内均保持 Evidence 标签</text>
+
+  <!-- Middle Right: Untrusted Model -->
+  <rect x="690" y="253" width="250" height="106" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.2"/>
+  <rect x="690" y="253" width="250" height="24" rx="8" fill="#b45309"/>
+  <rect x="690" y="269" width="250" height="8" fill="#b45309"/>
+  <text x="702" y="269" font-size="10.2" font-weight="700" fill="#ffffff">LLM 模型（视作不可信处理单元）</text>
+  <text x="700" y="294" font-size="9.1" fill="#334155">• 可读取 Evidence，但其输出受诱导影响</text>
+  <text x="700" y="313" font-size="9.1" fill="#92400e" font-weight="600">1) 提议写入摘要页 → 送入 derive 门</text>
+  <text x="700" y="332" font-size="9.1" fill="#92400e" font-weight="600">2) 提议付款(收款人=伪造账户) → authorize</text>
+  <text x="700" y="350" font-size="8.6" fill="#475569">（预授权如月付房租遇任何不可信文本即失效）</text>
+
+  <!-- Bottom Right: External Tool -->
+  <rect x="690" y="377" width="250" height="82" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+  <rect x="690" y="377" width="250" height="24" rx="8" fill="#b91c1c"/>
+  <rect x="690" y="393" width="250" height="8" fill="#b91c1c"/>
+  <text x="702" y="393" font-size="10.2" font-weight="700" fill="#ffffff">外部工具动作（例：Payment 付款）</text>
+  <rect x="700" y="408" width="230" height="42" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+  <text x="815" y="425" text-anchor="middle" font-size="9.5" font-weight="700" fill="#991b1b">✕ 已拦截：payee 仅溯源至 Evidence</text>
+  <text x="815" y="441" text-anchor="middle" font-size="8.8" fill="#7f1d1d">除非所有者对此次具体调用显式批准</text>
+
+  <!-- NON-CROSSING ARROWS -->
+  <!-- Left Gutter (x=250..302): 4 straight parallel horizontal arrows -->
+  <line x1="250" y1="183" x2="300" y2="183" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <line x1="250" y1="264" x2="300" y2="264" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <line x1="302" y1="334" x2="252" y2="334" stroke="#b45309" stroke-width="1.6" marker-end="url(#arr-amber)"/>
+  <line x1="250" y1="420" x2="300" y2="420" stroke="#dc2626" stroke-width="1.6" marker-end="url(#arr-red)"/>
+
+  <!-- Right Gutter (x=624..690): clean strictly ordered paths -->
+  <!-- map -> Compartment -->
+  <line x1="624" y1="183" x2="688" y2="183" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <!-- reload -> Compartment (y=264 up to y=212) -->
+  <path d="M 624 264 L 664 264 L 664 212 L 688 212" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <!-- Compartment -> Model -->
+  <line x1="815" y1="233" x2="815" y2="251" stroke="#475569" stroke-width="1.6" marker-end="url(#arr-slate)"/>
+  <!-- Model -> derive (y=334) -->
+  <line x1="690" y1="334" x2="626" y2="334" stroke="#b45309" stroke-width="1.6" marker-end="url(#arr-amber)"/>
+  <!-- Model -> authorize (y=350 down to y=405) -->
+  <path d="M 690 350 L 664 350 L 664 405 L 626 405" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#arr-red)"/>
+  <!-- authorize -> External Tool (blocked dashed red at y=436) -->
+  <line x1="624" y1="436" x2="688" y2="436" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr-red)"/>
+  <circle cx="656" cy="436" r="7" fill="#ffffff" stroke="#dc2626" stroke-width="1.4"/>
+  <path d="M 652.5 432.5 L 659.5 439.5 M 659.5 432.5 L 652.5 439.5" stroke="#dc2626" stroke-width="1.5"/>
+
+  <!-- Bottom Boundary & Summary Footer -->
+  <rect x="20" y="468" width="920" height="56" rx="7" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+  <rect x="30" y="476" width="76" height="18" rx="4" fill="#dbeafe"/>
+  <text x="68" y="488.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#1d4ed8">1·地址隔离</text>
+  <text x="114" y="489" font-size="9.1" fill="#334155">map 防跨舱越界</text>
+
+  <rect x="218" y="476" width="76" height="18" rx="4" fill="#fee2e2"/>
+  <text x="256" y="488.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#b91c1c">2·抗回滚撤销</text>
+  <text x="302" y="489" font-size="9.1" fill="#334155">reload 防恢复复活</text>
+
+  <rect x="422" y="476" width="76" height="18" rx="4" fill="#fef3c7"/>
+  <text x="460" y="488.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#b45309">3·防自提权</text>
+  <text x="506" y="489" font-size="9.1" fill="#334155">derive 防摘要类型混淆</text>
+
+  <rect x="646" y="476" width="76" height="18" rx="4" fill="#fee2e2"/>
+  <text x="684" y="488.5" text-anchor="middle" font-size="8.8" font-weight="700" fill="#b91c1c">4·参数完整</text>
+  <text x="730" y="489" font-size="9.1" fill="#334155">authorize 防混淆代理人</text>
+
+  <text x="30" y="512" font-size="9.1" fill="#475569">科学边界：仅依赖可信 Harness 拦截与能力模式审查（误标 safe 为主残余风险）；不保证模型选对行动、派生准确，亦不防止可读机密经合法通道泄露。</text>
+</svg>

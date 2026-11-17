@@ -3,7 +3,7 @@ id: autoscaling-mtss
 title: 2026年10月21日｜扩容不等于恢复：用 MTSS 衡量用户等待
 date: '2026-10-21'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: manual-research
 source_type: tech
@@ -18,7 +18,9 @@ permalink: /tech/zh/autoscaling-mtss/
 authorship: assistant
 translation_source: assistant
 published_at: '2026-10-21T20:01:12.710220+08:00'
-updated_at: '2026-10-21T20:01:12.710220+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 David Morrison（drmorr） · Applied Computing Research Labs · 2026-10-05 · [原文](https://blog.appliedcomputing.io/p/key-autoscaling-metric-2-mean-time)
 

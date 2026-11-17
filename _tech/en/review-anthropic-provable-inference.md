@@ -3,7 +3,7 @@ id: review-anthropic-provable-inference
 title: 2026-11-04 | Progress on provable inference for large language models
 date: '2026-11-04'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -16,8 +16,10 @@ tags:
 - systems-reliability
 translation_source: assistant-created bilingual notes
 permalink: /tech/en/review-anthropic-provable-inference/
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
 ---
-
 FlashProve addresses which committed model performed a computation, rather than whether its answer is correct. A provider commits to hidden weights and produces a zkSNARK that anyone holding the commitment, input and result can check without the weights. It hides weights and expert choices, not architecture. Proving that approved inference occurred does not prove that the server performed no other work.
 
 The implementation proves after the fact. Finished text is recomputed through a parallel, prefill-like path; work scales with the MoE experts actually used. Segmented host-to-device streaming lets one H100 work with substantial host memory. Evaluation uses 4-bit Llama 4 Maverick and integer arithmetic. Each request contains a 1,024-token window, but each proof checks one token. Proving 24 requests takes about 223 seconds: the quoted 110 tokens/s counts contextual processing, not 110 newly generated tokens proved each second. A proof is about 18.78MB and takes about 17 seconds to check on 24 CPU threads. Offline commitment takes around 39 minutes and has a request-count lifetime.

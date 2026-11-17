@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Lato', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24.0" y="34.0" font-size="17.5" font-weight="700" fill="#0f172a" text-anchor="start">PerfRace Curation Funnel, Controlled Baselines (v1 Record), and Ablation Boundaries</text>
+  <text x="24.0" y="53.0" font-size="10.3" font-weight="400" fill="#475569" text-anchor="start">From arXiv:2611.09218v1 (§3, §5, Tables 1–2, App. A–B) · Note: v2 temporarily withdrawn 2026-11-09 pending Claude Code compliance clarification</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="24.0" y="72.0" width="912.0" height="122.0" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24.0" y="72.0" width="912.0" height="24.0" rx="8" fill="#dbeafe"/>
+  <rect x="24.0" y="88.0" width="912.0" height="8" fill="#dbeafe"/>
+  <text x="36.0" y="87.8" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="start">PerfRace Construction Funnel &amp; Shadow Verification Boundary (§3.2–3.4, Table 9, Fig 17–20)</text>
+  <rect x="34.0" y="104.0" width="144.0" height="80.0" rx="6" fill="#f8fafc" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="44.0" y="123.0" font-size="12.5" font-weight="700" fill="#1d4ed8" text-anchor="start">103,475</text>
+  <text x="44.0" y="140.0" font-size="9.6" font-weight="700" fill="#0f172a" text-anchor="start">GitHub Agent Candidates</text>
+  <text x="44.0" y="158.0" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">118,517 raw PR/push repos</text>
+  <text x="44.0" y="174.0" font-size="8.8" font-weight="400" fill="#475569" text-anchor="start">104,428 meta; 103,475 valid</text>
+  <line x1="180" y1="144" x2="189" y2="144" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <rect x="192.0" y="104.0" width="148.0" height="80.0" rx="6" fill="#f8fafc" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="202.0" y="123.0" font-size="12.5" font-weight="700" fill="#1d4ed8" text-anchor="start">7,257</text>
+  <text x="202.0" y="140.0" font-size="9.6" font-weight="700" fill="#0f172a" text-anchor="start">Deterministic Precheck</text>
+  <text x="202.0" y="158.0" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">10–4,999★ (-93,992 &lt;10★)</text>
+  <text x="202.0" y="174.0" font-size="8.8" font-weight="400" fill="#475569" text-anchor="start">Redist. license · ≤500MiB/25k</text>
+  <line x1="342" y1="144" x2="351" y2="144" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <rect x="354.0" y="104.0" width="158.0" height="80.0" rx="6" fill="#f8fafc" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="364.0" y="123.0" font-size="12.5" font-weight="700" fill="#1d4ed8" text-anchor="start">239</text>
+  <text x="364.0" y="140.0" font-size="9.6" font-weight="700" fill="#0f172a" text-anchor="start">LLM 4-Gate Filter</text>
+  <text x="364.0" y="158.0" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">GPT-5.6-Luna source audit</text>
+  <text x="364.0" y="174.0" font-size="8.8" font-weight="400" fill="#475569" text-anchor="start">Cut potential(-4,462)/eval(-3,066)</text>
+  <line x1="514" y1="144" x2="523" y2="144" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <rect x="526.0" y="104.0" width="182.0" height="80.0" rx="6" fill="#f8fafc" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="536.0" y="123.0" font-size="12.5" font-weight="700" fill="#1d4ed8" text-anchor="start">100 Tasks</text>
+  <text x="536.0" y="140.0" font-size="9.6" font-weight="700" fill="#0f172a" text-anchor="start">Agent–Human Pair Verification</text>
+  <text x="536.0" y="158.0" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">Reject 132 Real./6 Reliab./1 Fin.</text>
+  <text x="536.0" y="174.0" font-size="8.8" font-weight="400" fill="#475569" text-anchor="start">99 CV&lt;10% · all 100 red-teamed</text>
+  <line x1="710" y1="144" x2="722" y2="144" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <rect x="724.0" y="104.0" width="202.0" height="80.0" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="734.0" y="122.0" font-size="9.8" font-weight="700" fill="#1e3a8a" text-anchor="start">40 Train / 10 Val / 50 Test</text>
+  <text x="734.0" y="140.0" font-size="8.8" font-weight="400" fill="#1e293b" text-anchor="start">7 domains · 16 langs · med 4.5h/$8.83</text>
+  <text x="734.0" y="157.0" font-size="8.8" font-weight="400" fill="#334155" text-anchor="start">Shadow Judge pauses agent container</text>
+  <text x="734.0" y="173.0" font-size="8.8" font-weight="400" fill="#475569" text-anchor="start">Med 4.9m eval (cap 20m) inside B=4h</text>
+  <rect x="24.0" y="204.0" width="514.0" height="296.0" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24.0" y="204.0" width="514.0" height="26.0" rx="8" fill="#1e3a8a"/>
+  <rect x="24.0" y="222.0" width="514.0" height="8" fill="#1e3a8a"/>
+  <text x="36.0" y="221.2" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">Main Comparison on 50 Test Tasks (3×4h Runs, Table 1)</text>
+  <text x="36.0" y="248.0" font-size="9.4" font-weight="700" fill="#475569" text-anchor="start">Method</text>
+  <text x="154.0" y="248.0" font-size="9.4" font-weight="700" fill="#475569" text-anchor="start">Speedup@4h (Harmonic ↑)</text>
+  <text x="356.0" y="248.0" font-size="9.4" font-weight="700" fill="#475569" text-anchor="start">Mean Cost</text>
+  <text x="452.0" y="248.0" font-size="9.4" font-weight="700" fill="#475569" text-anchor="start">Speedup/$ ↑</text>
+  <line x1="34" y1="255" x2="526" y2="255" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="238.3" y1="258" x2="238.3" y2="432" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="238.3" y="444.0" font-size="8.4" font-weight="400" fill="#64748b" text-anchor="middle">1.0× base</text>
+  <rect x="34.0" y="262.0" width="492.0" height="38.0" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.0"/>
+  <text x="42.0" y="278.0" font-size="9.8" font-weight="700" fill="#0f172a" text-anchor="start">BOXBOX</text>
+  <text x="42.0" y="292.0" font-size="8.3" font-weight="400" fill="#475569" text-anchor="start">In-task self-rev + reload</text>
+  <rect x="154" y="273" width="143.5" height="15" rx="3" fill="#1d4ed8"/>
+  <text x="303.5" y="284.0" font-size="9.6" font-weight="700" fill="#0f172a" text-anchor="start">1.702×</text>
+  <text x="364.0" y="284.0" font-size="9.6" font-weight="600" fill="#1e293b" text-anchor="start">$16.43</text>
+  <text x="460.0" y="284.0" font-size="9.6" font-weight="700" fill="#1d4ed8" text-anchor="start">0.4886</text>
+  <rect x="34.0" y="305.0" width="492.0" height="38.0" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="42.0" y="321.0" font-size="9.8" font-weight="700" fill="#0f172a" text-anchor="start">Harness Scaling</text>
+  <text x="42.0" y="335.0" font-size="8.3" font-weight="400" fill="#475569" text-anchor="start">Attempt-level outer loop</text>
+  <rect x="154" y="316" width="129.8" height="15" rx="3" fill="#3b82f6"/>
+  <text x="289.8" y="327.0" font-size="9.6" font-weight="700" fill="#0f172a" text-anchor="start">1.539×</text>
+  <text x="364.0" y="327.0" font-size="9.6" font-weight="600" fill="#1e293b" text-anchor="start">$12.98</text>
+  <text x="460.0" y="327.0" font-size="9.6" font-weight="700" fill="#334155" text-anchor="start">0.2872</text>
+  <rect x="34.0" y="348.0" width="492.0" height="38.0" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="42.0" y="364.0" font-size="9.8" font-weight="700" fill="#0f172a" text-anchor="start">Frozen Harness</text>
+  <text x="42.0" y="378.0" font-size="8.3" font-weight="400" fill="#475569" text-anchor="start">Fixed Terminus-KIRA</text>
+  <rect x="154" y="359" width="121.6" height="15" rx="3" fill="#64748b"/>
+  <text x="281.6" y="370.0" font-size="9.6" font-weight="700" fill="#0f172a" text-anchor="start">1.442×</text>
+  <text x="364.0" y="370.0" font-size="9.6" font-weight="600" fill="#1e293b" text-anchor="start">$23.22</text>
+  <text x="460.0" y="370.0" font-size="9.6" font-weight="700" fill="#334155" text-anchor="start">0.2142</text>
+  <rect x="34.0" y="391.0" width="492.0" height="38.0" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="42.0" y="407.0" font-size="9.8" font-weight="700" fill="#0f172a" text-anchor="start">Harness Evolution</text>
+  <text x="42.0" y="421.0" font-size="8.3" font-weight="400" fill="#475569" text-anchor="start">Offline 40tr/10val (h24)</text>
+  <rect x="154" y="402" width="108.0" height="15" rx="3" fill="#94a3b8"/>
+  <text x="268.0" y="413.0" font-size="9.6" font-weight="700" fill="#0f172a" text-anchor="start">1.281×</text>
+  <text x="364.0" y="413.0" font-size="9.6" font-weight="600" fill="#1e293b" text-anchor="start">$24.56*</text>
+  <text x="460.0" y="413.0" font-size="9.6" font-weight="700" fill="#334155" text-anchor="start">0.1243</text>
+  <rect x="34.0" y="450.0" width="492.0" height="42.0" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="42.0" y="466.0" font-size="8.8" font-weight="400" fill="#1e293b" text-anchor="start">• BOXBOX review share (150 runs): median 5 reviews/run (92% in 3–6), 2.1% task time, 13.8% model cost.</text>
+  <text x="42.0" y="482.0" font-size="8.8" font-weight="400" fill="#475569" text-anchor="start">• *HE test-only $24.56 rises to ≥$33.73/run when amortizing $200.34 train + $1,176.12 val across 150 runs (Table 4).</text>
+  <rect x="550.0" y="204.0" width="386.0" height="296.0" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="550.0" y="204.0" width="386.0" height="26.0" rx="8" fill="#1e3a8a"/>
+  <rect x="550.0" y="222.0" width="386.0" height="8" fill="#1e3a8a"/>
+  <text x="562.0" y="221.2" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="start">14-Task Ablation (Table 2) &amp; Failure / Metric Caveats</text>
+  <text x="562.0" y="246.0" font-size="9.2" font-weight="700" fill="#475569" text-anchor="start">Ablation Variant</text>
+  <text x="692.0" y="246.0" font-size="9.2" font-weight="700" fill="#475569" text-anchor="start">Speedup@4h</text>
+  <text x="814.0" y="246.0" font-size="9.2" font-weight="700" fill="#475569" text-anchor="start">Cost</text>
+  <text x="874.0" y="246.0" font-size="9.2" font-weight="700" fill="#475569" text-anchor="start">Spd/$</text>
+  <line x1="560" y1="252" x2="926" y2="252" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="560.0" y="258.0" width="366.0" height="34.0" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.0"/>
+  <text x="568.0" y="272.0" font-size="9.3" font-weight="700" fill="#0f172a" text-anchor="start">Full BOXBOX</text>
+  <text x="568.0" y="285.0" font-size="8.1" font-weight="400" fill="#475569" text-anchor="start">Agent trigger + full edit</text>
+  <rect x="692" y="268" width="66.8" height="13" rx="3" fill="#1d4ed8"/>
+  <text x="763.8" y="278.0" font-size="8.9" font-weight="700" fill="#0f172a" text-anchor="start">1.584×</text>
+  <text x="816.0" y="278.0" font-size="9.0" font-weight="600" fill="#1e293b" text-anchor="start">$15.07</text>
+  <text x="874.0" y="278.0" font-size="9.0" font-weight="700" fill="#1d4ed8" text-anchor="start">0.3452</text>
+  <rect x="560.0" y="296.0" width="366.0" height="34.0" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="568.0" y="310.0" font-size="9.3" font-weight="700" fill="#0f172a" text-anchor="start">w/o Agent Trigger</text>
+  <text x="568.0" y="323.0" font-size="8.1" font-weight="400" fill="#475569" text-anchor="start">Fixed 30-min schedule</text>
+  <rect x="692" y="306" width="63.6" height="13" rx="3" fill="#64748b"/>
+  <text x="760.6" y="316.0" font-size="8.9" font-weight="700" fill="#0f172a" text-anchor="start">1.508×</text>
+  <text x="816.0" y="316.0" font-size="9.0" font-weight="600" fill="#1e293b" text-anchor="start">$21.58</text>
+  <text x="874.0" y="316.0" font-size="9.0" font-weight="700" fill="#334155" text-anchor="start">0.1338</text>
+  <rect x="560.0" y="334.0" width="366.0" height="34.0" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="568.0" y="348.0" font-size="9.3" font-weight="700" fill="#0f172a" text-anchor="start">w/o Full Editing</text>
+  <text x="568.0" y="361.0" font-size="8.1" font-weight="400" fill="#475569" text-anchor="start">Predefined edit scope</text>
+  <rect x="692" y="344" width="56.9" height="13" rx="3" fill="#94a3b8"/>
+  <text x="753.9" y="354.0" font-size="8.9" font-weight="700" fill="#0f172a" text-anchor="start">1.349×</text>
+  <text x="816.0" y="354.0" font-size="9.0" font-weight="600" fill="#1e293b" text-anchor="start">$16.07</text>
+  <text x="874.0" y="354.0" font-size="9.0" font-weight="700" fill="#334155" text-anchor="start">0.1132</text>
+  <rect x="560.0" y="376.0" width="366.0" height="116.0" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.0"/>
+  <text x="570.0" y="394.0" font-size="9.5" font-weight="700" fill="#92400e" text-anchor="start">Observed Failures &amp; Metric Caveats (App. A.2–A.3 &amp; Eq. 2)</text>
+  <text x="570.0" y="413.0" font-size="8.6" font-weight="400" fill="#1e293b" text-anchor="start">• HE path bug blocked 473 submissions over ~3h 46m on mirage task</text>
+  <text x="570.0" y="430.0" font-size="8.6" font-weight="400" fill="#1e293b" text-anchor="start">• HS mid-run gap: 113 varied repeat checks in kitops without new eval</text>
+  <text x="570.0" y="447.0" font-size="8.6" font-weight="400" fill="#334155" text-anchor="start">• Speedup/$ is arithmetic mean of S_i/Cost_i, NOT Speedup@4h / mean cost</text>
+  <text x="570.0" y="464.0" font-size="8.5" font-weight="400" fill="#334155" text-anchor="start">• Single model (GPT-5.6-Luna), Linux CPU tasks; 14-task subset varies vs 50</text>
+  <text x="570.0" y="481.0" font-size="8.4" font-weight="400" fill="#475569" text-anchor="start">• 620 updates: Rules 42.9%, Feedback 40.8%, Tools 16.9%, Skills 16.6%</text>
+  <text x="24.0" y="521.0" font-size="9.6" font-weight="400" fill="#64748b" text-anchor="start">Diagram from arXiv:2611.09218v1 · Summarizes v1 reported runs (GPT-5.6-Luna high, Linux x86-64 CPU); withdrawn numbers are not active comparative evidence</text>
+</svg>

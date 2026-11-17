@@ -3,22 +3,23 @@ id: frontier-training-containment
 title: 2026-10-24 | Training Containment Beyond the Host
 date: '2026-10-24'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
 tags:
 - agent-reliability
 - systems-reliability
-summary: How offline interaction, layered isolation, and high-compute red teaming
-  constrain frontier-model actions.
+summary: How offline interaction, layered isolation, and high-compute red teaming constrain frontier-model actions.
 long_read: true
 source_url: https://openai.com/index/securing-our-frontier-model-training-environment/
 permalink: /tech/en/frontier-training-containment/
 authoring_source: assistant
 translation_source: assistant
 published_at: '2026-10-26T11:44:51.392682+08:00'
-updated_at: '2026-10-26T11:44:51.392682+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 Training environments need code execution, information retrieval, and application interaction, each of which expands the consequences of unexpected actions. OpenAI’s report states a concrete containment requirement: unauthorized resources should remain inaccessible even when agents actively seek ways around restrictions. The useful development is a combined argument covering offline interaction, sandboxes, hosts, cloud networks, monitoring, and stopping mechanisms. [Original: Securing our frontier model training environment](https://openai.com/index/securing-our-frontier-model-training-environment/).
 

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="LEAP 实证结果：ShareGPT 服务延迟、跨域相关性恢复、设计消融与 CPU 吞吐边界">
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="14" y="14" width="932" height="512" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" rx="10"/>
+  <text x="30" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="17" font-weight="700" fill="#0f172a">LEAP 实证结果：跨域相关性恢复、Serving 延迟对比与设计消融</text>
+  <text x="30" y="59" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="11.2" fill="#475569">arXiv:2610.41359v1 · Qwen3-8B / Llama-3.1-8B / Mistral-7B · 单卡 A800 80GB + Xeon Gold 6348 (vLLM 0.8.5)</text>
+  <line x1="30" y1="68" x2="930" y2="68" stroke="#bfdbfe" stroke-width="1"/>
+
+  <!-- Quadrant 1: Top-Left (Table 3 & Table 8) -->
+  <rect x="28" y="78" width="444" height="206" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="42" y="99" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12.1" font-weight="700" fill="#1d4ed8">1. ShareGPT 实测 Mean PTL 与参数量 (表 3 &amp; 表 8)</text>
+
+  <!-- Row 1: FCFS -->
+  <text x="42" y="123" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.0" font-weight="600" fill="#334155">FCFS (无头)</text>
+  <rect x="146" y="114" width="166" height="11" rx="3" fill="#e2e8f0"/>
+  <rect x="146" y="114" width="166" height="11" rx="3" fill="#94a3b8"/>
+  <text x="460" y="123" text-anchor="end" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.6" fill="#0f172a">250.97 ms/t · 1094 t/s</text>
+
+  <!-- Row 2: TRAIL -->
+  <text x="42" y="144" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.0" font-weight="600" fill="#334155">TRAIL (2.12M)</text>
+  <rect x="146" y="135" width="166" height="11" rx="3" fill="#e2e8f0"/>
+  <rect x="146" y="135" width="71.1" height="11" rx="3" fill="#94a3b8"/>
+  <text x="460" y="144" text-anchor="end" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.6" fill="#0f172a">107.42 ms/t ·  945 t/s</text>
+
+  <!-- Row 3: TIE -->
+  <text x="42" y="165" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.0" font-weight="600" fill="#334155">TIE (185.2M)</text>
+  <rect x="146" y="156" width="166" height="11" rx="3" fill="#e2e8f0"/>
+  <rect x="146" y="156" width="51.9" height="11" rx="3" fill="#60a5fa"/>
+  <text x="460" y="165" text-anchor="end" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.6" fill="#0f172a"> 78.48 ms/t · 1090 t/s</text>
+
+  <!-- Row 4: SSJF -->
+  <text x="42" y="186" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.0" font-weight="600" fill="#334155">SSJF (109.6M)</text>
+  <rect x="146" y="177" width="166" height="11" rx="3" fill="#e2e8f0"/>
+  <rect x="146" y="177" width="50.3" height="11" rx="3" fill="#60a5fa"/>
+  <text x="460" y="186" text-anchor="end" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.6" fill="#0f172a"> 76.07 ms/t · 1108 t/s</text>
+
+  <!-- Row 5: LTR -->
+  <text x="42" y="207" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.0" font-weight="600" fill="#334155">LTR (125.2M)</text>
+  <rect x="146" y="198" width="166" height="11" rx="3" fill="#e2e8f0"/>
+  <rect x="146" y="198" width="50.0" height="11" rx="3" fill="#60a5fa"/>
+  <text x="460" y="207" text-anchor="end" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.6" fill="#0f172a"> 75.62 ms/t · 1121 t/s</text>
+
+  <!-- Row 6: LEAP (highlighted) -->
+  <rect x="38" y="214" width="426" height="22" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="42" y="229" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.2" font-weight="700" fill="#1d4ed8">LEAP (4,097)</text>
+  <rect x="146" y="219" width="166" height="11" rx="3" fill="#bfdbfe"/>
+  <rect x="146" y="219" width="42.1" height="11" rx="3" fill="#1d4ed8"/>
+  <text x="460" y="229" text-anchor="end" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.7" font-weight="700" fill="#1d4ed8"> 63.58 ms/t · 1142 t/s</text>
+
+  <rect x="38" y="243" width="426" height="32" rx="5" fill="#ffffff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="48" y="257" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">全成本实测 (2.65 req/s)：Mean PTL 降 15.9%–40.8%，TTFT 持平 FCFS (55.27 vs 55.10 ms)</text>
+  <text x="48" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" fill="#475569">较最强基线 LTR：吞吐 +1.9% (1141.93 vs 1120.88 tok/s)，预测器参数少 30,569×</text>
+
+  <!-- Quadrant 2: Top-Right (Fig 5 & Table 4) -->
+  <rect x="486" y="78" width="446" height="206" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="99" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12.1" font-weight="700" fill="#1d4ed8">2. LMSYS 跨域迁移：Spearman ρ 与 RLS 恢复 (图 5 &amp; 表 4)</text>
+
+  <!-- Card 2A: Aya -->
+  <rect x="498" y="109" width="422" height="72" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="508" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.4" font-weight="700" fill="#0f172a">跨语言迁移至 Aya (Qwen3-8B)：RLS 在线更新恢复排名相关性</text>
+  <rect x="780" y="113" width="130" height="18" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+  <text x="845" y="125" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.4" font-weight="700" fill="#166534">ρ +64.7% (仅改读出)</text>
+  <text x="508" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" fill="#475569">冻结 LEAP</text>
+  <rect x="578" y="136" width="220" height="10" rx="3" fill="#e2e8f0"/>
+  <rect x="578" y="136" width="109.6" height="10" rx="3" fill="#60a5fa"/>
+  <text x="808" y="145" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.5" fill="#0f172a">0.498</text>
+  <text x="508" y="161" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="700" fill="#1d4ed8">LEAP+RLS</text>
+  <rect x="578" y="152" width="220" height="10" rx="3" fill="#e2e8f0"/>
+  <rect x="578" y="152" width="180.4" height="10" rx="3" fill="#1d4ed8"/>
+  <text x="808" y="161" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.5" font-weight="700" fill="#1d4ed8">0.820</text>
+  <text x="508" y="175" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#475569">Aya 1.5× 负载仿真均值 (不含预测耗时)：TIE 190.06s → LEAP 180.59s → LEAP+RLS 161.18s</text>
+
+  <!-- Card 2B: MATH + Caveat -->
+  <rect x="498" y="187" width="422" height="88" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="508" y="204" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.4" font-weight="700" fill="#0f172a">迁移至 MATH 与高负载服务效用 (表 4 · 匹配 Aging γ=0.9, τ=30 s)</text>
+  <text x="508" y="221" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.4" fill="#334155">• 冻结 LEAP 已在 Alpaca/MATH 保持高位排序；MATH 1.5× 负载较 TIE 降 14.7%</text>
+  <text x="508" y="236" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.4" fill="#334155">• MATH 1.5× 仿真响应：TIE 118.34s → 冻结 LEAP 100.94s → LEAP+RLS 94.36s</text>
+  <rect x="506" y="244" width="406" height="24" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="514" y="260" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="600" fill="#92400e">尾部权衡：MATH 上 RLS 改善均值但推高 P95；LEAP / LEAP+RLS / TIE 的 P95 均高于 FCFS</text>
+
+  <!-- Quadrant 3: Bottom-Left (Ablations Tables 2, 6, 7) -->
+  <rect x="28" y="294" width="444" height="202" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="42" y="315" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12.1" font-weight="700" fill="#1d4ed8">3. 关键设计消融：静态单层 + √L 权衡 (表 2, 6, 7)</text>
+
+  <rect x="40" y="325" width="420" height="50" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="50" y="342" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.3" font-weight="700" fill="#0f172a">解码期动态刷新 (-D) 降 MAE 却拉高响应时延 (表 2)</text>
+  <text x="50" y="357" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#334155">• LEAP-S→D：MAE 降 (154.6→142.0 / 111.9→103.8)，ΔResp 反增 +9.42% / +8.37%</text>
+  <text x="50" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#475569">• TRAIL-S→D：MAE 降 (244.7→167.0 / 170.7→108.8)，ΔResp 反增 +12.89% / +9.16%</text>
+
+  <rect x="40" y="381" width="420" height="50" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="50" y="398" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.3" font-weight="700" fill="#0f172a">目标映射对比：√L 兼顾短请求与长尾分离 (表 6, 两库均值)</text>
+  <text x="50" y="413" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#334155">• log L：短 50.7 / 长 310.4 (总 155.9, ρ 0.9122) · 原始 L：短 105.4 / 长 266.3 (总 162.7)</text>
+  <text x="50" y="426" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="600" fill="#1d4ed8">• √L (默认)：短 68.5 / 长 279.3，全量 MAE 最优 149.6 且 Spearman ρ 最高 0.9161</text>
+
+  <rect x="40" y="437" width="420" height="49" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="50" y="454" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.3" font-weight="700" fill="#0f172a">单层 Block 30 vs. 全层串联读出 (表 7, Qwen3-8B)</text>
+  <text x="50" y="469" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#334155">• 全层均值 MAE 仅降 3.3% (149.53→144.63, ρ 0.9160→0.9204)，零传输仿真几乎无收益</text>
+  <text x="50" y="481" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#475569">• 单层将 FP32 特征体积压缩 37× (592 KiB → 16 KiB)，显著减负 D2H 拷贝与缓存</text>
+
+  <!-- Quadrant 4: Bottom-Right (Fig 7, Table 5, Scope Bounds) -->
+  <rect x="486" y="294" width="446" height="202" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="315" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12.1" font-weight="700" fill="#1d4ed8">4. 单核 CPU 吞吐能力与系统边界 (图 7, 表 5, §7)</text>
+
+  <rect x="498" y="325" width="422" height="50" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="508" y="342" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.3" font-weight="700" fill="#0f172a">单核 CPU 评分吞吐压测 (图 7 · batch=8, 含 D2H/聚合)</text>
+  <text x="508" y="357" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="600" fill="#166534">• LEAP：无损跟上 10,000 pred/s，饱和近 58,000/s，全程 P95 时延 &lt; 3 ms</text>
+  <text x="508" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#475569">• 文本编码器 (TIE/LTR/SSJF) 仅数条/s；隐状态基线 (TRAIL/EGTP) 饱和于 10–数千/s</text>
+
+  <rect x="498" y="381" width="422" height="48" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="508" y="398" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.3" font-weight="700" fill="#0f172a">跨骨干尺度迁移 (表 5 · Qwen3 0.6B–32B 单次采样标签)</text>
+  <text x="508" y="413" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#334155">• ShareGPT ρ 0.836–0.915，LMSYS ρ 0.910–0.938（0.6B 长序列排序不可靠）</text>
+  <text x="508" y="425" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" fill="#475569">• 各档模型基于各自生成输出评测，因此未将参数规模与输出分布完全解耦</text>
+
+  <rect x="498" y="435" width="422" height="51" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="508" y="452" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.1" font-weight="700" fill="#92400e">工程核算与原型边界 (§7 &amp; 附录 A–C)</text>
+  <text x="508" y="467" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" fill="#78350f">• 30,569× 仅指读出权重；部署仍需 ~64 MiB P 矩阵、O(Nd) 缓存与 O(qd²+q²d) 更新</text>
+  <text x="508" y="480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" fill="#78350f">• 未覆盖温度/top-k 条件、多 GPU、Prefix Cache 与 Chunked Prefill 场景</text>
+
+  <text x="30" y="514" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.1" fill="#475569">注：表 3 与图 6 为共享宿主机单次运行观测；表 4 仿真不含预测器开销；测试标签为受 2,048 token 上限截断的首次生成长度。</text>
+</svg>

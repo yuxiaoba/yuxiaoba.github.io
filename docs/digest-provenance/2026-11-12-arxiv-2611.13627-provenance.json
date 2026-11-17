@@ -1,0 +1,256 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-12-arxiv-2611.13627",
+  "paper_id": "arxiv-2611.13627",
+  "anchor_id": "paper-arxiv-2611.13627",
+  "digest_date": "2026-11-12",
+  "updated_at_utc": "2026-11-15T13:08:14Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-12.md",
+    "en_target": "_digest/en/daily-2026-11-12.md",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.13627v1.",
+    "adjacent_dependency_isolation": "Self-contained entry; zero cross-references to #paper-arxiv-2611.14106 (ProofCoder)."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.13627",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "No v2 revision or withdrawal notice present on arXiv as of 2026-11-15.",
+    "title": "Curriculum Proof Repair with Learned Counterexamples",
+    "title_abs_case": "Curriculum proof repair with learned counterexamples",
+    "authors": [
+      "Yuechun Sun",
+      "Jun Yang",
+      "Kexin Pei"
+    ],
+    "affiliation": "Department of Computer Science, University of Chicago",
+    "categories": [
+      "cs.PL",
+      "cs.LG"
+    ],
+    "submitted_utc": "Tue, 10 Nov 2026 06:14:20 UTC",
+    "submitted_date": "2026-11-10",
+    "pdf_template_note": "40th Conference on Neural Information Processing Systems (NeurIPS 2026)",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.13627",
+      "abs_v1": "https://arxiv.org/abs/2611.13627v1",
+      "pdf": "https://arxiv.org/pdf/2611.13627",
+      "html_v1": "https://arxiv.org/html/2611.13627v1",
+      "github": "https://github.com/Etha-Sun/Topoverus",
+      "huggingface": "https://huggingface.co/YuechunSun/TopoVerus-32B"
+    },
+    "github_http_status_checked": 200,
+    "huggingface_http_status_checked": 200,
+    "frozen_manifest_hashes": {
+      "page.html": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261112-083004-ff7108eff3-bb92bc/work/sources/arxiv-2611.13627/page.html",
+        "bytes": 42961,
+        "sha256": "a4c454387de39ad3cfcbba3543cee28c08959f992acf32c59191516cc3bab693"
+      },
+      "full.html": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261112-083004-ff7108eff3-bb92bc/work/sources/arxiv-2611.13627/full.html",
+        "bytes": 639730,
+        "sha256": "d536b887249982d6ff71eff62acbd8f5e1d99468ea2518d1704094581f6f7ae8"
+      },
+      "pdf.pdf": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261112-083004-ff7108eff3-bb92bc/work/sources/arxiv-2611.13627/pdf.pdf",
+        "bytes": 524056,
+        "sha256": "af4ba32090b7b0e1312a611d9d93900eecf04d2efa588871fc77555e10f6523a"
+      }
+    },
+    "live_fetch_hashes": {
+      "abs_html": {
+        "url": "https://arxiv.org/abs/2611.13627",
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/topoverus-stage/live_abs.html",
+        "bytes": 42961,
+        "sha256": "a4c454387de39ad3cfcbba3543cee28c08959f992acf32c59191516cc3bab693",
+        "matches_frozen_page_html": true
+      },
+      "full_html": {
+        "url": "https://arxiv.org/html/2611.13627v1",
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/topoverus-stage/live_full.html",
+        "bytes": 639730,
+        "sha256": "d536b887249982d6ff71eff62acbd8f5e1d99468ea2518d1704094581f6f7ae8",
+        "matches_frozen_full_html": true
+      },
+      "pdf": {
+        "url": "https://arxiv.org/pdf/2611.13627",
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/topoverus-stage/live_paper.pdf",
+        "bytes": 524056,
+        "sha256": "af4ba32090b7b0e1312a611d9d93900eecf04d2efa588871fc77555e10f6523a",
+        "matches_frozen_pdf_pdf": true
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "base_model": "QwQ-32B",
+    "sft_teacher": "Claude Sonnet 4.6",
+    "training_programs_count": 249,
+    "sft_trajectories_count": 461,
+    "offline_graph_benchmark_files": 531,
+    "offline_graph_exact_within_budget_pct": 98,
+    "offline_graph_budget_b": 256,
+    "offline_graph_calls_naive_vs_pruned": {
+      "naive": 81143,
+      "pruned": 9216,
+      "reduction": "8.8x",
+      "leetcode_reduction": "25.9x"
+    },
+    "offline_graph_runtime_min": 64,
+    "offline_graph_mean_verus_call_sec": 0.42,
+    "eval_benchmarks_count": 7,
+    "eval_total_problems": 471,
+    "eval_suite_counts": {
+      "VerusBench": 26,
+      "DafnyBench": 17,
+      "HumanEval": 15,
+      "LeetCode": 5,
+      "VeriCogen": 89,
+      "ObfsBench": 266,
+      "VeruSAGE": 53
+    },
+    "eval_budget_per_chain_steps": 10,
+    "headline_micro_safe_pass": {
+      "CTX-Dep": {
+        "at_1": 61.6,
+        "at_3": 72.2
+      },
+      "CTX-Binary": {
+        "at_1": 53.7,
+        "at_3": 67.9
+      },
+      "Sonnet-4.5": {
+        "at_1": 55.9,
+        "at_3": 65.9
+      }
+    },
+    "headline_macro_safe_pass": {
+      "CTX-Dep": {
+        "at_1": 54.0,
+        "at_3": 61.5
+      },
+      "CTX-Binary": {
+        "at_1": 51.0,
+        "at_3": 61.4
+      },
+      "Sonnet-4.5": {
+        "at_1": 51.6,
+        "at_3": 57.8
+      }
+    },
+    "transfer_table2_frozen_states": 118,
+    "scaling_table5_subset_problems": 63,
+    "ordering_table7_paired_tasks": {
+      "count": 24,
+      "coverage_binary_vs_dep": [
+        98.6,
+        98.5
+      ],
+      "edge_satisfaction_binary_vs_dep": [
+        43.8,
+        95.8
+      ],
+      "full_ordering_count_binary_vs_dep": [
+        "10/24",
+        "23/24"
+      ]
+    },
+    "explicit_limitations": [
+      "Learned counterexample (sigma, tau, psi) reachability/soundness is not formally verified by an external solver; soundness rests solely on Verus + Lynette.",
+      "Micro-average lead is heavily weighted by ObfsBench (266/471 = 56.5%); on VeruSAGE systems tasks (53), CTX-Dep (30.2%/43.4%) trails Sonnet-4.5 (75.5%/84.9%), DeepSeek-V4 (58.5%/66.0%), and Qwen3-Coder (45.3%/64.2%).",
+      "Single-trajectory refers to generating counterexample+reasoning+repair in one forward pass per turn, while standard test repair uses up to 10 Verus feedback iterations (3 chains for @3).",
+      "R_dep applies to loop invariants only; RL runs used 1 seed (NeurIPS Checklist item 7); fixed scalars lambda_dep, lambda_format, and G_format penalties are omitted from PDF text."
+    ]
+  },
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-12.md",
+      "original_file_bytes_before_rewrite": 44406,
+      "original_file_sha256_before_rewrite": "3f8a242252bdbbf61c9f5acc473ca521d01466676064241adb9a65fed1979649",
+      "file_bytes_before_this_patch": 86759,
+      "file_sha256_before_this_patch": "8748ecb62cca96f3b9573ce27727dc08a0ef20500a8d28387400a8a09fa9c688",
+      "file_bytes_after": 86845,
+      "file_sha256_after": "3f8a94eb2e78f310b3b049df83f83daf33c0de724c089ac0ee000929a6eeecb4",
+      "prefix_bytes": 40085,
+      "prefix_sha256_before": "8ce2881925b9650c1271c21a7427a74c605f70222a6774422e5cb2ea1347e76b",
+      "prefix_sha256_after": "8ce2881925b9650c1271c21a7427a74c605f70222a6774422e5cb2ea1347e76b",
+      "prefix_unchanged": true,
+      "suffix_bytes": 26302,
+      "suffix_sha256_before": "8ae2d18a9ae4b39340f2cbf1c1f40052ae54a40dde35a6882f8b2db72893a964",
+      "suffix_sha256_after": "8ae2d18a9ae4b39340f2cbf1c1f40052ae54a40dde35a6882f8b2db72893a964",
+      "suffix_unchanged": true,
+      "original_old_section_bytes": 1091,
+      "original_old_section_sha256": "8bf303d95830ebfe37732e80463e2ca94a628ba57f0bbffe813a9e22fbeac509",
+      "new_section_bytes": 20458,
+      "new_section_sha256": "96b4e67a50449ba809e5fbf088068cf0584961390b9a179f09672f78ff18dfc1",
+      "mode_octal": "0o644"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-12.md",
+      "original_file_bytes_before_rewrite": 47473,
+      "original_file_sha256_before_rewrite": "994226884161cd70dcac040821f2775f95a8a44ad26bf48e91f6a65a49ad9d4a",
+      "file_bytes_before_this_patch": 87372,
+      "file_sha256_before_this_patch": "a1bff7f76d9e9a19e057ab7541cebd83f31debd5973c665937f469b2629227c5",
+      "file_bytes_after": 87458,
+      "file_sha256_after": "e621aee9abc9331fe7326d5839df0a692585e2360779a95961156d53646c2b5d",
+      "prefix_bytes": 42897,
+      "prefix_sha256_before": "e70be2ba4e3e7525c84bdf9bac8d792fff033dcef7a852bf13b84b4661c6f29c",
+      "prefix_sha256_after": "e70be2ba4e3e7525c84bdf9bac8d792fff033dcef7a852bf13b84b4661c6f29c",
+      "prefix_unchanged": true,
+      "suffix_bytes": 24775,
+      "suffix_sha256_before": "a648b6fe154572572bb4b02a63ed6e55d79b6f722b75505edb0b750160ccd9eb",
+      "suffix_sha256_after": "a648b6fe154572572bb4b02a63ed6e55d79b6f722b75505edb0b750160ccd9eb",
+      "suffix_unchanged": true,
+      "original_old_section_bytes": 1177,
+      "original_old_section_sha256": "e139f76075ca0380b380276e2313fd7c3bdef9375e0a89854527f92031c30d24",
+      "new_section_bytes": 19786,
+      "new_section_sha256": "1dade7e256a4aa6400ec71ae750b6662b7264d7d53a9e9353b3baa2c23a99116",
+      "mode_octal": "0o644"
+    }
+  },
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "topoverus_svgs": {
+      "topoverus-curriculum-pipeline-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-12/topoverus-curriculum-pipeline-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-12/topoverus-curriculum-pipeline-zh.svg",
+        "bytes": 16866,
+        "sha256": "c84af206002f74d3131d98721dbcc560f89b630273e014538af60d5d4cea20ac",
+        "mode_octal": "0o644"
+      },
+      "topoverus-curriculum-pipeline-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-12/topoverus-curriculum-pipeline-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-12/topoverus-curriculum-pipeline-en.svg",
+        "bytes": 17296,
+        "sha256": "93bb42cdb5aaefa36c59806cbc027906d823cc1ab3ca42905ff180f4ecef68a1",
+        "mode_octal": "0o644"
+      },
+      "topoverus-eval-mechanisms-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-12/topoverus-eval-mechanisms-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-12/topoverus-eval-mechanisms-zh.svg",
+        "bytes": 20384,
+        "sha256": "9c4a58bbd9f871c8413410e8b810f439cb1f2907be3f32ca97d88b9459419fca",
+        "mode_octal": "0o644"
+      },
+      "topoverus-eval-mechanisms-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-12/topoverus-eval-mechanisms-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-12/topoverus-eval-mechanisms-en.svg",
+        "bytes": 20298,
+        "sha256": "c7978c7f10f87de7a15c1038aa4ef64851dfa06903da3430205729bfeb55d628",
+        "mode_octal": "0o644"
+      }
+    },
+    "preserved_preexisting_or_sibling_assets": [
+      "bursts.png",
+      "mobile-ai-factory-architecture-en.svg",
+      "mobile-ai-factory-architecture-zh.svg",
+      "mobile-ai-factory-evidence-en.svg",
+      "mobile-ai-factory-evidence-zh.svg",
+      "plumbline.png",
+      "rsi-tax.png",
+      "trajectory.png",
+      "wikitrace.png"
+    ]
+  }
+}

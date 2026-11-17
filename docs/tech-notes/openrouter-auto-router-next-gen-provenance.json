@@ -1,0 +1,113 @@
+{
+  "id": "openrouter-auto-router-next-gen",
+  "source_url": "https://openrouter.ai/blog/announcements/auto-and-auto-code-routers/",
+  "source_title": "Introducing the New Auto and Auto Code Routers",
+  "source_authors": [
+    "Brian Thomas"
+  ],
+  "source_org": "OpenRouter",
+  "source_date": "2026-11-06",
+  "note_date": "2026-11-08",
+  "published_at": "2026-11-08T19:33:04.213507+08:00",
+  "updated_at": "2026-11-17T10:00:00+08:00",
+  "frozen_primary_sources": [
+    {
+      "path": ".preview/research-jobs/runs/20261108-191005-d6b320eabe-fd4d87/work/sources/openrouter-auto-router-next-gen.clean.txt",
+      "kind": "extracted_text"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261108-191005-d6b320eabe-fd4d87/work/sources/openrouter-auto-router-next-gen.html",
+      "kind": "raw_html"
+    },
+    {
+      "path": ".preview/research-jobs/runs/20261108-191005-d6b320eabe-fd4d87/work/sources/x_exports/2118886096729981308/post.json",
+      "kind": "x_lead_export"
+    }
+  ],
+  "referenced_primary_links": [
+    "https://openrouter.ai/blog/announcements/auto-and-auto-code-routers/",
+    "https://openrouter.ai/docs/guides/routing/routers/auto-router",
+    "https://openrouter.ai/docs/guides/features/router-metadata#enabling-router-metadata",
+    "https://openrouter.ai/docs/guides/routing/provider-selection",
+    "https://openrouter.ai/benchmarks/routers",
+    "https://openrouter.ai/openrouter/auto",
+    "https://openrouter.ai/openrouter/auto-code",
+    "https://openrouter.ai/blog/announcements/how-we-rebuilt-provider-routing/",
+    "https://openrouter.ai/blog/announcements/model-router-benchmarks/",
+    "https://arxiv.org/abs/2611.08285"
+  ],
+  "authoring_source": "assistant",
+  "translation_source": "assistant",
+  "assistant_translated": true,
+  "snapshot_omissions_noted": [
+    "benchmark-comparison-light.png / benchmark-comparison-dark.png and router-page-live-routing.png were not saved locally in the frozen snapshot; only HTML alt attributes and prose summaries exist on disk and are explicitly bounded as unverified at per-benchmark cell granularity."
+  ],
+  "verification": {
+    "status": "pending_parent_shell_verification",
+    "note": "run_command skipped per workflow constraint; SVG-to-PNG check, chmod 0644, SHA-256 backfill, preview build, and Playwright checks run in parent batch."
+  },
+  "files": {
+    "zh_markdown": {
+      "path": "_tech/zh/openrouter-auto-router-next-gen.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "en_markdown": {
+      "path": "_tech/en/openrouter-auto-router-next-gen.md",
+      "sha256_status": "pending_parent_shell_verification"
+    },
+    "images": [
+      {
+        "path": "assets/images/tech/openrouter-auto-router-next-gen/official.png",
+        "origin": "primary_source_preserved",
+        "preserved_untouched": true,
+        "source": "https://openrouter.ai/blog/images/auto-and-auto-code-routers/chat-routing-insights.png",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/openrouter-auto-router-next-gen/openrouter-autorouter-pipeline-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/openrouter-auto-router-next-gen/openrouter-autorouter-pipeline-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/openrouter-auto-router-next-gen/routing-pareto-eval-boundaries-zh.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      },
+      {
+        "path": "assets/images/tech/openrouter-auto-router-next-gen/routing-pareto-eval-boundaries-en.svg",
+        "origin": "assistant_v3_blue_diagram",
+        "source": "assistant://drawn-from-source-prose",
+        "sha256_status": "pending_parent_shell_verification"
+      }
+    ]
+  },
+  "verification_status": "VERIFIED",
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T02:36:42.213383+00:00",
+    "preview_release": "20261117-103322-70780dbd",
+    "sha256": {
+      "zh_md_sha256": "50bf5215adce14f33fe88b7111ed9555e05d249ddbb4f52315ba4fb8bd4d3bda",
+      "en_md_sha256": "dee3c9aa8d30f9e641ef53ebe25d9656af53be1f95de5354fd17b83e59548aa9",
+      "svgs": {
+        "/assets/images/tech/openrouter-auto-router-next-gen/openrouter-autorouter-pipeline-zh.svg": "b7f9621d8a5037bab6ddbf6c75c30cd1f976e8973eff03b728e9d0603cfdb2e2",
+        "/assets/images/tech/openrouter-auto-router-next-gen/openrouter-autorouter-pipeline-en.svg": "0d385a4ee4cb150aa6975c2a8d0c73b2d5bcac3dc44d9c91058f84f936a5d1f9",
+        "/assets/images/tech/openrouter-auto-router-next-gen/routing-pareto-eval-boundaries-zh.svg": "3c079089b7931bae94eed739bd75f0f9a70931e22ccd48d887d85dc3421fc05a",
+        "/assets/images/tech/openrouter-auto-router-next-gen/routing-pareto-eval-boundaries-en.svg": "cc6a6e49dd8acce3674b7d563e621dbc15b47438428c5f1e962cd1a183a7c322"
+      },
+      "preserved": {
+        "official.png": "1de9713501c447fad7c3fa84fe8cffa3b95865b4d5856b0af82e84c8e3ea0bfc"
+      }
+    },
+    "playwright_total": 35,
+    "playwright_passed": 35,
+    "playwright_failed": 0
+  }
+}

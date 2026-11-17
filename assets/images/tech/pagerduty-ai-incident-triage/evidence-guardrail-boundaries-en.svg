@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Lato','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;">
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="38" font-size="18.5" font-weight="700" fill="#0f172a">Triage Guardrails, Failure Routing &amp; Post Scope Comparison</text>
+  <text x="24" y="57" font-size="11" fill="#475569">Separating deployed triage from unvalidated roadmap items, reversible toggles, and the Nov 2026 PD Labs benchmark post</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Section Header -->
+  <rect x="24" y="78" width="912" height="26" rx="6" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+  <text x="36" y="95" font-size="11.5" font-weight="700" fill="#1e3a8a">Failure-Type Routing Matrix: Matching Remediation Speed to Reversibility &amp; Validation</text>
+
+  <!-- 4 Cards (w=219, gap=12, x=24, 255, 486, 717) -->
+  <!-- Card 1 -->
+  <rect x="24" y="112" width="219" height="164" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="36" y="122" width="124" height="20" rx="5" fill="#1d4ed8"/>
+  <text x="98" y="136" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">Upstream Failure</text>
+  <text x="36" y="160" font-size="11" font-weight="700" fill="#0f172a">Not Internal AI Drift</text>
+  <text x="36" y="180" font-size="10.2" fill="#334155">Cause: API / DB outage</text>
+  <text x="36" y="198" font-size="10.2" fill="#334155">Breaks AI output downstream</text>
+  <line x1="36" y1="212" x2="231" y2="212" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="36" y="233" font-size="10.2" font-weight="600" fill="#1e3a8a">Path: Standard infra ops</text>
+  <text x="36" y="255" font-size="9.8" fill="#475569">Today: cross-stack context</text>
+
+  <!-- Card 2 -->
+  <rect x="255" y="112" width="219" height="164" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.1"/>
+  <rect x="267" y="122" width="120" height="20" rx="5" fill="#15803d"/>
+  <text x="327" y="136" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">Model Latency</text>
+  <text x="267" y="160" font-size="11" font-weight="700" fill="#0f172a">Reversible Runtime Toggle</text>
+  <text x="267" y="180" font-size="10.2" fill="#334155">Cause: primary model stall</text>
+  <text x="267" y="198" font-size="10.2" fill="#334155">Low semantic edit risk</text>
+  <line x1="267" y1="212" x2="462" y2="212" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="267" y="233" font-size="10.2" font-weight="600" fill="#166534">Path: Pre-approved fallback</text>
+  <text x="267" y="255" font-size="9.8" fill="#475569">Roadmap: routed auto-fix</text>
+
+  <!-- Card 3 -->
+  <rect x="486" y="112" width="219" height="164" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.1"/>
+  <rect x="498" y="122" width="136" height="20" rx="5" fill="#b45309"/>
+  <text x="566" y="136" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">Tool / Hallucination</text>
+  <text x="498" y="160" font-size="11" font-weight="700" fill="#0f172a">Skip 2 a.m. Hasty Patches</text>
+  <text x="498" y="180" font-size="10.2" fill="#334155">Cause: prompt / RAG / model</text>
+  <text x="498" y="198" font-size="10.2" fill="#334155">Case: tool-selection drop</text>
+  <line x1="498" y1="212" x2="693" y2="212" stroke="#fde68a" stroke-width="1"/>
+  <text x="498" y="233" font-size="10.2" font-weight="600" fill="#92400e">Path: Ticket + trace replay</text>
+  <text x="498" y="255" font-size="9.8" fill="#475569">Gate: scoped code skill</text>
+
+  <!-- Card 4 -->
+  <rect x="717" y="112" width="219" height="164" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.1"/>
+  <rect x="729" y="122" width="136" height="20" rx="5" fill="#475569"/>
+  <text x="797" y="136" font-size="10.2" font-weight="700" fill="#ffffff" text-anchor="middle">Noisy Judge Eval</text>
+  <text x="729" y="160" font-size="11" font-weight="700" fill="#0f172a">Small-Sample Score Jitter</text>
+  <text x="729" y="180" font-size="10.2" fill="#334155">Cause: judge LLM variance</text>
+  <text x="729" y="198" font-size="10.2" fill="#334155">May recover on fresh traffic</text>
+  <line x1="729" y1="212" x2="924" y2="212" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="729" y="233" font-size="10.2" font-weight="600" fill="#334155">Path: Recovery check / re-eval</text>
+  <text x="729" y="255" font-size="9.8" fill="#475569">Roadmap: ingress noise filter</text>
+
+  <!-- Bottom Left Panel: Maturity Split -->
+  <rect x="24" y="290" width="446" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="290" width="446" height="30" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="310" width="446" height="10" fill="#dbeafe"/>
+  <text x="36" y="310" font-size="11.5" font-weight="700" fill="#1e3a8a">Maturity Boundary: Demonstrated Today vs. Roadmap</text>
+
+  <rect x="36" y="332" width="422" height="74" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="48" y="352" font-size="11" font-weight="700" fill="#1d4ed8">Demonstrated Today (July 2026 Walkthrough)</text>
+  <text x="48" y="372" font-size="10.2" fill="#1e293b">• Arize + GitHub connectors pull monitor state, traces &amp; diffs</text>
+  <text x="48" y="392" font-size="10.2" fill="#334155">• Runbook skill triage + scoped prompt suggestion (replay-gated)</text>
+
+  <rect x="36" y="414" width="422" height="74" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="48" y="434" font-size="11" font-weight="700" fill="#b45309">Future Directions (Explicitly Unvalidated Yet)</text>
+  <text x="48" y="454" font-size="10.2" fill="#78350f">• Auto score re-check · Failure classification &amp; auto-routing</text>
+  <text x="48" y="474" font-size="10.2" fill="#92400e">• Multi-tool ingest · Light workflows · Autonomous Operations</text>
+
+  <!-- Bottom Right Panel: Post Split -->
+  <rect x="490" y="290" width="446" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="490" y="290" width="446" height="30" rx="8" fill="#1e3a8a"/>
+  <rect x="490" y="310" width="446" height="10" fill="#1e3a8a"/>
+  <text x="502" y="310" font-size="11.5" font-weight="700" fill="#ffffff">Post Scope Split: July AI Triage vs. Nov PD Labs</text>
+
+  <rect x="502" y="332" width="422" height="74" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="514" y="352" font-size="11" font-weight="700" fill="#1d4ed8">This Note (Jul 21 / Curated Aug 4): AI Quality Triage</text>
+  <text x="514" y="372" font-size="10.2" fill="#1e293b">• Target: AI-feature drift (Insights Agent tool-selection drop)</text>
+  <text x="514" y="392" font-size="10.2" fill="#334155">• Basis: Arize traces + GitHub + Skills; qualitative case study</text>
+
+  <rect x="502" y="414" width="422" height="74" rx="6" fill="#f8fafc" stroke="#64748b" stroke-width="1"/>
+  <text x="514" y="434" font-size="11" font-weight="700" fill="#0f172a">Nov Companion (Nov 3 / 4): PD Labs SRE Agent</text>
+  <text x="514" y="454" font-size="10.2" fill="#1e293b">• Target: Infra outages (revisable hypotheses + topology graph)</text>
+  <text x="514" y="474" font-size="10.2" fill="#334155">• Basis: Code/Helm facts + 17-scenario EKS/Chaos benchmark</text>
+
+  <text x="24" y="518" font-size="10.2" fill="#64748b">Assistant diagram (not an original figure) clarifying deployed triage, future directions, and Nov 2026 PD Labs scope without invented stats</text>
+</svg>

@@ -1,0 +1,526 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-05-arxiv-2611.04321",
+  "paper_id": "arxiv-2611.04321",
+  "anchor_id": "paper-arxiv-2611.04321",
+  "digest_date": "2026-11-05",
+  "updated_at_utc": "2026-11-17T02:35:00Z",
+  "assistant_translated": true,
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-05.md",
+    "en_target": "_digest/en/daily-2026-11-05.md",
+    "staged_zh_path": "/root/.gemini/antigravity-cli/brain/54233528-76a3-43c5-a08c-5ec6e2f4be1c/scratch/d2a-sections/2611.04321/section_zh.md",
+    "staged_en_path": "/root/.gemini/antigravity-cli/brain/54233528-76a3-43c5-a08c-5ec6e2f4be1c/scratch/d2a-sections/2611.04321/section_en.md",
+    "staging_note": "Staged in the active subagent brain scratch directory because write_file enforces writing only inside the workspace or the current conversation brain directory and run_command is prohibited by subagent isolation rules.",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.04321v1."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.04321",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "v1 only at verification time (submitted Tue, 3 Nov 2026 04:57:47 UTC; no v2 revision or withdrawal notice in frozen arXiv HTML or web verification as of 2026-11-17).",
+    "venue_note": "Accepted at the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP 2026)",
+    "title": "ATC: Agent Trajectory Control for Role-Contract Enforcement in Black-Box Multi-Agent Systems",
+    "authors": [
+      "Maisha Maliha",
+      "Vishal Pramanik",
+      "Sumit Kumar Jha"
+    ],
+    "affiliations": [
+      "University of Oklahoma",
+      "University of Florida"
+    ],
+    "categories": [
+      "cs.AI",
+      "cs.MA"
+    ],
+    "submitted_utc": "Tue, 3 Nov 2026 04:57:47 UTC",
+    "submitted_date": "2026-11-03",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.04321",
+      "abs_v1": "https://arxiv.org/abs/2611.04321v1",
+      "pdf": "https://arxiv.org/pdf/2611.04321",
+      "html_v1": "https://arxiv.org/html/2611.04321v1",
+      "github": "https://github.com/VishalPramanik/ATC",
+      "github_pdf_footnote": "https://github.com/VishalPramanik/ATC.git"
+    },
+    "source_artifacts": {
+      "frozen_abs_html": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.04321.html",
+        "lines": 602,
+        "sha256": "f7c0c86c0689fe67453bd8e07810d21925f8580e5643600dd268775c89f82db8",
+        "sha256_status": "pending_parent_computation",
+        "bytes": 42118
+      },
+      "frozen_abs_txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.04321.txt",
+        "lines": 4,
+        "sha256": "f426fed18e62176e5178e23f70e2ffb5bfd095f0e194bd6436de3e069c784fa0",
+        "sha256_status": "pending_parent_computation",
+        "bytes": 1724
+      },
+      "extracted_full_paper_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sources/2611.04321.txt",
+        "lines": 1183,
+        "sha256": "6d525d8079ae7847ccfc0417f2d4edc366833d23563d01c02694e171e8d70d06",
+        "sha256_status": "pending_parent_computation",
+        "bytes": 108183
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "pilot_diagnostic_table1": {
+      "D_out_stable_vs_drifted": [
+        0.18,
+        0.57
+      ],
+      "D_leak_stable_vs_drifted": [
+        0.11,
+        0.49
+      ],
+      "D_ling_stable_vs_drifted": [
+        0.07,
+        0.36
+      ],
+      "D_logic_stable_vs_drifted": [
+        0.05,
+        0.31
+      ],
+      "E_raw_stable_vs_drifted": [
+        0.36,
+        1.47
+      ],
+      "out_leak_correlation": 0.76
+    },
+    "atc_hyperparameters_table11": {
+      "alpha": 1.0,
+      "beta": 1.0,
+      "gamma": 0.5,
+      "delta": 0.75,
+      "lambda": 0.5,
+      "rho": 0.95,
+      "role_basis_rank_ki": 16,
+      "default_behavior_encoder": "BAAI/bge-large-en-v1.5"
+    },
+    "shared_runtime_settings_table10": {
+      "temperature": 0.2,
+      "top_p": 0.95,
+      "max_output_tokens_per_turn": 512,
+      "max_turns_per_episode": 200,
+      "context_budget_tokens": 128000,
+      "retrieval_top_k": 10,
+      "seeds": 3,
+      "summary_interval_turns": 20
+    },
+    "main_results_table2_atc_vs_sop_role": {
+      "S1_Hom_10": {
+        "EntCollabBench": {
+          "SOP_Role": [
+            68.1,
+            82.6,
+            0.23
+          ],
+          "ATC": [
+            74.6,
+            91.8,
+            0.13
+          ]
+        },
+        "MultiAgentBench": {
+          "SOP_Role": [
+            61.9,
+            80.2,
+            0.26
+          ],
+          "ATC": [
+            68.7,
+            90.4,
+            0.15
+          ]
+        },
+        "SWE_bench_Verified": {
+          "SOP_Role": [
+            36.9,
+            78.6,
+            0.28
+          ],
+          "ATC": [
+            42.3,
+            88.7,
+            0.17
+          ]
+        }
+      },
+      "S2_Het_10": {
+        "EntCollabBench": {
+          "SOP_Role": [
+            67.5,
+            80.4,
+            0.26
+          ],
+          "ATC": [
+            75.8,
+            92.7,
+            0.12
+          ]
+        },
+        "MultiAgentBench": {
+          "SOP_Role": [
+            62.1,
+            78.5,
+            0.28
+          ],
+          "ATC": [
+            70.2,
+            91.6,
+            0.14
+          ]
+        },
+        "SWE_bench_Verified": {
+          "SOP_Role": [
+            36.8,
+            76.3,
+            0.31
+          ],
+          "ATC": [
+            43.6,
+            89.9,
+            0.16
+          ]
+        }
+      },
+      "S3_Het_12": {
+        "EntCollabBench": {
+          "SOP_Role": [
+            66.8,
+            78.2,
+            0.29
+          ],
+          "ATC": [
+            76.4,
+            93.5,
+            0.11
+          ]
+        },
+        "MultiAgentBench": {
+          "SOP_Role": [
+            61.5,
+            76.1,
+            0.31
+          ],
+          "ATC": [
+            71.1,
+            92.8,
+            0.13
+          ]
+        },
+        "SWE_bench_Verified": {
+          "SOP_Role": [
+            36.4,
+            74.0,
+            0.33
+          ],
+          "ATC": [
+            44.2,
+            91.2,
+            0.15
+          ]
+        }
+      }
+    },
+    "ablations_and_stress_entcollabbench_s3": {
+      "table3_component_ablation": {
+        "Full_ATC": [
+          76.4,
+          93.5,
+          0.11
+        ],
+        "wo_role_subspace": [
+          68.2,
+          80.1,
+          0.27
+        ],
+        "wo_leakage_penalty": [
+          70.4,
+          84.3,
+          0.22
+        ],
+        "wo_linguistic_term": [
+          72.1,
+          87.5,
+          0.19
+        ],
+        "wo_logical_contract": [
+          71.6,
+          86.8,
+          0.2
+        ],
+        "wo_regeneration": [
+          69.7,
+          82.9,
+          0.24
+        ]
+      },
+      "table4_correction_objective": {
+        "No_correction": [
+          59.2,
+          67.4,
+          0.41
+        ],
+        "Hard_role_reminder": [
+          62.9,
+          72.6,
+          0.35
+        ],
+        "Pure_projection_Pi_z": [
+          71.3,
+          86.1,
+          0.2
+        ],
+        "Hard_orthogonality_to_Fi": [
+          69.8,
+          87.0,
+          0.18
+        ],
+        "Full_ATC_objective": [
+          76.4,
+          93.5,
+          0.11
+        ]
+      },
+      "table5_stress_tests_atc_vs_sop_role": {
+        "Role_confuse": {
+          "SOP_Role": 57.9,
+          "ATC": 70.8
+        },
+        "Authority_swap": {
+          "SOP_Role": 55.2,
+          "ATC": 68.4
+        },
+        "Late_correction": {
+          "SOP_Role": 58.6,
+          "ATC": 72.1
+        }
+      },
+      "table6_and_15_lambda_and_overlap_audit": {
+        "lambda_0_00": [
+          71.3,
+          86.1,
+          0.2
+        ],
+        "lambda_0_25": [
+          74.2,
+          90.4,
+          0.15
+        ],
+        "lambda_0_50": {
+          "metrics": [
+            76.4,
+            93.5,
+            0.11
+          ],
+          "harmful_over_correction_pct": 5.6,
+          "content_preserved_pct": 94.3
+        },
+        "lambda_1_00": [
+          75.8,
+          92.7,
+          0.12
+        ],
+        "lambda_2_00": {
+          "metrics": [
+            73.6,
+            90.8,
+            0.15
+          ],
+          "harmful_over_correction_pct": 18.4,
+          "content_preserved_pct": 82.1
+        },
+        "audited_overlap_turns": 100
+      },
+      "table7_scale_sensitivity": {
+        "Hom_5": [
+          72.9,
+          92.1,
+          0.12
+        ],
+        "Hom_10": [
+          74.6,
+          91.8,
+          0.13
+        ],
+        "Het_10": [
+          75.8,
+          92.7,
+          0.12
+        ],
+        "Het_12": [
+          76.4,
+          93.5,
+          0.11
+        ],
+        "Het_16": [
+          75.1,
+          91.4,
+          0.14
+        ]
+      },
+      "table8_cost_and_latency": {
+        "Prompt_Only": {
+          "calls": 12.4,
+          "tokens_k": 116.0,
+          "latency_s": 24.3,
+          "rcg_c": 0.0
+        },
+        "SOP_Role": {
+          "calls": 13.6,
+          "tokens_k": 126.2,
+          "latency_s": 28.5,
+          "rcg_c": 0.86
+        },
+        "ATC": {
+          "calls": 15.2,
+          "tokens_k": 132.8,
+          "latency_s": 32.4,
+          "rcg_c": 1.97
+        }
+      },
+      "table13_behavior_encoder_scale": {
+        "bge_large_en_v1_5": [
+          76.4,
+          93.5,
+          0.11,
+          "1.00x"
+        ],
+        "bge_base_en_v1_5": [
+          75.2,
+          91.8,
+          0.14,
+          "0.62x"
+        ],
+        "bge_small_en_v1_5": [
+          73.6,
+          89.4,
+          0.17,
+          "0.34x"
+        ]
+      },
+      "table14_gated_atc": {
+        "tau_0_50": {
+          "corrected_pct": 24.7,
+          "primary": 71.3,
+          "rc": 85.1,
+          "rde": 0.21,
+          "tokens_k": 128.1,
+          "latency_s": 29.7
+        },
+        "tau_0_35": {
+          "corrected_pct": 46.8,
+          "primary": 73.9,
+          "rc": 89.2,
+          "rde": 0.16,
+          "tokens_k": 129.9,
+          "latency_s": 30.8
+        },
+        "tau_0_20": {
+          "corrected_pct": 72.6,
+          "primary": 75.6,
+          "rc": 92.1,
+          "rde": 0.13,
+          "tokens_k": 131.5,
+          "latency_s": 31.7
+        }
+      },
+      "fig5_turn_component_breakdown_verifier_to_planner": {
+        "D_out": [
+          0.57,
+          0.2
+        ],
+        "D_leak": [
+          0.49,
+          0.14
+        ],
+        "D_ling": [
+          0.36,
+          0.12
+        ],
+        "D_logic": [
+          0.31,
+          0.09
+        ]
+      }
+    }
+  },
+  "explicit_limitations": [
+    "Message-boundary governance intercepts text entering shared context c_t; it does not enforce RBAC/sandboxing on external tool calls already executed mid-turn, nor does role consistency guarantee factual accuracy, completeness, or safety (§8).",
+    "Adapting ATC to a new domain requires manually authoring role descriptions, role-consistent demonstrations, speech-act masks b_i, and logical contracts C_i=(O_i, B_i); Appendix A4.5 notes demo counts, predicate counts, and curation hours are omitted from the PDF, and exact S1-S3 model checkpoints plus L/S classifier details reside in repository configs.",
+    "Evaluation uses predefined static roles (10-12 roles) and an automated fixed-rubric Judge(y_{i,t}, r_i) without human validation or multi-judge robustness checks (§8); 3-seed means omit standard deviation/CI intervals; CAA/SEA baselines assume white-box activation access unavailable for closed APIs.",
+    "Proposition 3 (Eq. 12) guarantees local monotonicity only on the pre-regeneration continuous vector objective, not on post-regeneration realized text D_ling/D_logic (Appendix A1.4); excessive lambda (2.00) triples harmful over-correction from 5.6% to 18.4% (Table 15).",
+    "Subagent close reading audited extracted primary text (1,183 lines) and verified arXiv/GitHub metadata without locally executing ATC rollouts or verifying SHA-256 hashes (deferred to parent under run_command ban)."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "atc_svgs": {
+      "atc-role-contract-gate-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/atc-role-contract-gate-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/atc-role-contract-gate-zh.svg",
+        "sha256": "8a341cef29561888194dbc113d5e99ca9b3685cb68f2abfedb3b91f0e2febd31",
+        "sha256_status": "pending_parent_verification",
+        "bytes": 15075
+      },
+      "atc-role-contract-gate-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/atc-role-contract-gate-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/atc-role-contract-gate-en.svg",
+        "sha256": "38525100a2986b6543fc6ac0aee6b459494f19e318422997e9f86606cac62e55",
+        "sha256_status": "pending_parent_verification",
+        "bytes": 14747
+      },
+      "atc-drift-evidence-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/atc-drift-evidence-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/atc-drift-evidence-zh.svg",
+        "sha256": "ede5c31c0b5e43904ffcd59ee980c1e727650a8a0f2cd11c8b39b260cc52d071",
+        "sha256_status": "pending_parent_verification",
+        "bytes": 18724
+      },
+      "atc-drift-evidence-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/atc-drift-evidence-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/atc-drift-evidence-en.svg",
+        "sha256": "4550990d83709ea76d6e03628b8f66f1f5fa96718725efb5cbd9f1a2beec099f",
+        "sha256_status": "pending_parent_verification",
+        "bytes": 18559
+      }
+    }
+  },
+  "verification_status": "VERIFIED",
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-05.md",
+      "file_bytes_before": 46498,
+      "file_sha256_before": "a57afb9010f0516ba9d15d89c96ef1b07029938279a9d9c03e5902f04f3b8762",
+      "file_bytes_after": 258981,
+      "file_sha256_after": "0c569250568c0975f5704c11bbdfcfff48ddadc7366026be70dc954ece1ce395",
+      "old_section_bytes": 741,
+      "old_section_sha256": "53a685a8cdd6b41682f97bd0e24ad394204958a325c946cb3a5d0749fa95604f",
+      "new_section_bytes": 25891,
+      "new_section_sha256": "5b86b05d6ba6cfe4a56fb9a9f9d7f806c2e4343b602a88b140d55e7cab01caff"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-05.md",
+      "file_bytes_before": 49237,
+      "file_sha256_before": "d5c507de897b4e0644651175c569f11bfe5df1cfa94b53b4227ec9422a1d0e06",
+      "file_bytes_after": 247387,
+      "file_sha256_after": "00dc837b0349415fa884dbc628828870d27be980bb81f30127ddd5602addd7a0",
+      "old_section_bytes": 869,
+      "old_section_sha256": "becfbe2a546eaf0f65e81e459e6ecbf4f81fce9408f93e162f56ee1b815b1678",
+      "new_section_bytes": 25057,
+      "new_section_sha256": "4545787fce4847aa64ab756c3d4b6c299e37503ab82153dfa07b7d060e0e8d93"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:08:32.604936+00:00",
+    "preview_release": "20261117-110758-45bc53b9",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

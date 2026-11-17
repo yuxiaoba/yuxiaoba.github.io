@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Done Is Not Correct 定量实证四象限图：静默失败率、先测后报契约消融、信心校准与容差敏感性" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;">
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="16.5" font-weight="700" fill="#0f172a">定量实证：静默失败率压降、契约消融、校准与容差敏感性</text>
+  <text x="24" y="53" font-size="10.2" fill="#475569">arXiv:2611.10063v1（§5 表 1–2、图 1–3）· 四家模型 × 13 任务 × 3 次采样（主样本每架构 n=156，共 468 次）</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Panel A: Top-Left -->
+  <rect x="20" y="72" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="72" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="90" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="98" x2="472" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="89.5" font-size="10.8" font-weight="700" fill="#1e3a8a">A. 四模型静默失败率与成功率（表 1，每格 n=39）</text>
+
+  <!-- Gridlines for Panel A: x0=122, 1%=6.0px (25%=150px, x=272) -->
+  <line x1="122" y1="108" x2="122" y2="230" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="122" y="240" text-anchor="middle" font-size="8.0" fill="#64748b">0%</text>
+  <line x1="182" y1="108" x2="182" y2="230" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="182" y="240" text-anchor="middle" font-size="8.0" fill="#64748b">10%</text>
+  <line x1="242" y1="108" x2="242" y2="230" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="242" y="240" text-anchor="middle" font-size="8.0" fill="#64748b">20%</text>
+  <line x1="272" y1="108" x2="272" y2="230" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="272" y="240" text-anchor="middle" font-size="8.0" fill="#64748b">25%</text>
+
+  <!-- Haiku -->
+  <text x="115" y="123" text-anchor="end" font-size="9.0" font-weight="700" fill="#0f172a">haiku-4-5</text>
+  <rect x="122" y="110" width="126.0" height="6.2" rx="1.5" fill="#d97706"/>
+  <text x="252" y="115.5" font-size="7.9" font-weight="600" fill="#92400e">21% (成 46%)</text>
+  <rect x="122" y="118" width="18.0" height="6.2" rx="1.5" fill="#1d4ed8"/>
+  <text x="144" y="123.5" font-size="7.9" font-weight="700" fill="#1d4ed8">3% (成 62%)</text>
+  <rect x="122" y="126" width="2.5" height="6.2" rx="1.5" fill="#60a5fa"/>
+  <text x="129" y="131.5" font-size="7.9" fill="#334155">0% (成 41%)</text>
+
+  <!-- DeepSeek -->
+  <text x="115" y="153" text-anchor="end" font-size="9.0" font-weight="700" fill="#0f172a">deepseek-v3.2</text>
+  <rect x="122" y="140" width="108.0" height="6.2" rx="1.5" fill="#d97706"/>
+  <text x="234" y="145.5" font-size="7.9" font-weight="600" fill="#92400e">18% (成 36%)</text>
+  <rect x="122" y="148" width="30.0" height="6.2" rx="1.5" fill="#1d4ed8"/>
+  <text x="156" y="153.5" font-size="7.9" font-weight="700" fill="#1d4ed8">5% (成 54%)</text>
+  <rect x="122" y="156" width="2.5" height="6.2" rx="1.5" fill="#60a5fa"/>
+  <text x="129" y="161.5" font-size="7.9" fill="#334155">0% (成 38%)</text>
+
+  <!-- Sonnet -->
+  <text x="115" y="183" text-anchor="end" font-size="9.0" font-weight="700" fill="#0f172a">sonnet-4-6</text>
+  <rect x="122" y="170" width="60.0" height="6.2" rx="1.5" fill="#d97706"/>
+  <text x="186" y="175.5" font-size="7.9" font-weight="600" fill="#92400e">10% (成 90%)</text>
+  <rect x="122" y="178" width="2.5" height="6.2" rx="1.5" fill="#1d4ed8"/>
+  <text x="129" y="183.5" font-size="7.9" font-weight="700" fill="#1d4ed8">0% (成 100%)</text>
+  <rect x="122" y="186" width="18.0" height="6.2" rx="1.5" fill="#60a5fa"/>
+  <text x="144" y="191.5" font-size="7.9" fill="#334155">3% (成 95%)</text>
+
+  <!-- Qwen -->
+  <text x="115" y="213" text-anchor="end" font-size="9.0" font-weight="700" fill="#0f172a">qwen3.7-max</text>
+  <rect x="122" y="200" width="48.0" height="6.2" rx="1.5" fill="#d97706"/>
+  <text x="174" y="205.5" font-size="7.9" font-weight="600" fill="#92400e">8% (成 85%)</text>
+  <rect x="122" y="208" width="30.0" height="6.2" rx="1.5" fill="#1d4ed8"/>
+  <text x="156" y="213.5" font-size="7.9" font-weight="700" fill="#1d4ed8">5% (成 95%)</text>
+  <rect x="122" y="216" width="48.0" height="6.2" rx="1.5" fill="#60a5fa"/>
+  <text x="174" y="221.5" font-size="7.9" fill="#334155">8% (成 72%)</text>
+
+  <!-- Legend Box Panel A -->
+  <rect x="330" y="108" width="132" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <rect x="338" y="120" width="10" height="7" rx="1.5" fill="#d97706"/>
+  <text x="353" y="126.5" font-size="8.4" fill="#334155">单发 (Single-shot)</text>
+  <rect x="338" y="139" width="10" height="7" rx="1.5" fill="#1d4ed8"/>
+  <text x="353" y="145.5" font-size="8.4" font-weight="700" fill="#1e3a8a">强制工具 (Tool-use)</text>
+  <rect x="338" y="158" width="10" height="7" rx="1.5" fill="#60a5fa"/>
+  <text x="353" y="164.5" font-size="8.4" fill="#334155">多角色 (Multi-agent)</text>
+
+  <rect x="30" y="248" width="432" height="22" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="38" y="262.5" font-size="8.7" font-weight="700" fill="#1d4ed8">汇总 (n=156)：SS 14.1% (22) → TU 3.2% (5, McNemar p&lt;10⁻⁴) · MA 2.6% (4)</text>
+
+  <!-- Panel B: Top-Right -->
+  <rect x="488" y="72" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="72" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="90" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="98" x2="940" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="89.5" font-size="10.8" font-weight="700" fill="#1e3a8a">B. 声称覆盖率、精准率与单变量契约消融（F1–F2）</text>
+
+  <rect x="498" y="106" width="432" height="29" rx="5" fill="#fffbeb" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="508" y="124" font-size="8.9" font-weight="700" fill="#92400e">单发 (SS)</text>
+  <text x="618" y="124" font-size="8.8" fill="#78350f">声明 98.1% · 精准 64.1% · 静默 22 · 成功 64.1%</text>
+
+  <rect x="498" y="140" width="432" height="29" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="508" y="158" font-size="8.9" font-weight="700" fill="#334155">旧契约消融 TU</text>
+  <text x="618" y="158" font-size="8.8" fill="#334155">同反馈允许未测声明 · 精准 67.6% · 静默 14 · 成功 64.1%</text>
+
+  <rect x="498" y="174" width="432" height="31" rx="5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="508" y="193" font-size="9.0" font-weight="700" fill="#1d4ed8">固定先测后报 TU</text>
+  <text x="618" y="193" font-size="8.9" font-weight="700" fill="#1e3a8a">声明 80.8% · 精准 96.0% · 静默 5 · 成功 77.6%</text>
+
+  <rect x="498" y="210" width="432" height="29" rx="5" fill="#f8fafc" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="508" y="228" font-size="8.9" font-weight="700" fill="#0369a1">多角色 (MA)</text>
+  <text x="618" y="228" font-size="8.8" fill="#334155">声明 57.1% · 精准 95.5% · 静默 4 · 成功 61.5% (53 崩溃)</text>
+
+  <rect x="498" y="245" width="432" height="25" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="506" y="261" font-size="8.6" font-weight="700" fill="#1e3a8a">契约归因：Legacy 14 vs 固定 5 (Fisher p=0.056) · 精准率 p&lt;10⁻⁹ · 成功率 p=0.013</text>
+
+  <!-- Panel C: Bottom-Left -->
+  <rect x="20" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="316" x2="472" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="307.5" font-size="10.8" font-weight="700" fill="#1e3a8a">C. 信心校准（ECE / AUROC）与 CDS 零发现（F3–F4）</text>
+
+  <text x="32" y="334" font-size="9.2" font-weight="700" fill="#0f172a">汇总 ECE：SS 0.324（均值 0.97）→ TU 0.091 / MA 0.110（三模型 AUROC 上升）</text>
+
+  <rect x="32" y="342" width="206" height="32" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="40" y="355.5" font-size="8.7" font-weight="700" fill="#1d4ed8">haiku-4-5</text>
+  <text x="40" y="368.5" font-size="8.4" fill="#334155">AUROC 0.72 → 0.98 (TU) / 0.99 (MA)</text>
+
+  <rect x="246" y="342" width="214" height="32" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="254" y="355.5" font-size="8.7" font-weight="700" fill="#1d4ed8">sonnet-4-6</text>
+  <text x="254" y="368.5" font-size="8.4" fill="#334155">AUROC 0.93 → 1.00 (MA；TU 无负例)</text>
+
+  <rect x="32" y="379" width="206" height="32" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="40" y="392.5" font-size="8.7" font-weight="700" fill="#1d4ed8">deepseek-v3.2</text>
+  <text x="40" y="405.5" font-size="8.4" fill="#334155">AUROC 0.65 → 0.83 (TU) / 0.93 (MA)</text>
+
+  <rect x="246" y="379" width="214" height="32" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="254" y="392.5" font-size="8.7" font-weight="700" fill="#b45309">qwen3.7-max（置信度饱和例外）</text>
+  <text x="254" y="405.5" font-size="8.4" fill="#78350f">AUROC 0.65 → 0.50 / 0.55（恒报 1.0）</text>
+
+  <rect x="32" y="420" width="428" height="66" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="437" font-size="9.2" font-weight="700" fill="#0f172a">CDS 角色间上下文分歧（预测未成形，不识「有效但错」）</text>
+  <text x="42" y="455" font-size="8.6" fill="#334155">• 区分崩溃 vs 通过：0.518 vs 0.105（AUROC 0.86），不优于轮数 (0.87) / valid (0.94)</text>
+  <text x="42" y="473" font-size="8.6" font-weight="600" fill="#1d4ed8">• 7 个有效但错零件均值 CDS 0.107，与通过件 (0.105) 完全不可区分（F4）</text>
+
+  <!-- Panel D: Bottom-Right -->
+  <rect x="488" y="290" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="316" x2="940" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="307.5" font-size="10.8" font-weight="700" fill="#1e3a8a">D. 容差带缩放敏感性（表 2）与审校双边界（F5–F7）</text>
+
+  <rect x="498" y="324" width="432" height="19" rx="3" fill="#eff6ff"/>
+  <text x="504" y="337" font-size="8.6" font-weight="700" fill="#1d4ed8">容差缩放</text>
+  <text x="588" y="337" font-size="8.6" font-weight="700" fill="#1d4ed8">SS 静默</text>
+  <text x="668" y="337" font-size="8.6" font-weight="700" fill="#1d4ed8">TU 静默</text>
+  <text x="742" y="337" font-size="8.6" font-weight="700" fill="#1d4ed8">MA 静默</text>
+  <text x="816" y="337" font-size="8.6" font-weight="700" fill="#1d4ed8">SS−TU (McNemar p)</text>
+
+  <text x="504" y="357" font-size="8.5" fill="#334155">×0.25 (严)</text>
+  <text x="588" y="357" font-size="8.5" fill="#334155">21.1% (33)</text>
+  <text x="668" y="357" font-size="8.5" fill="#334155">10.9% (17)</text>
+  <text x="742" y="357" font-size="8.5" fill="#334155">9.0% (14)</text>
+  <text x="816" y="357" font-size="8.5" fill="#334155">10.3 pp (&lt;0.001)</text>
+
+  <text x="504" y="375" font-size="8.5" fill="#334155">×0.5</text>
+  <text x="588" y="375" font-size="8.5" fill="#334155">14.1% (22)</text>
+  <text x="668" y="375" font-size="8.5" fill="#334155">3.2% (5)</text>
+  <text x="742" y="375" font-size="8.5" fill="#334155">2.6% (4)</text>
+  <text x="816" y="375" font-size="8.5" fill="#334155">10.9 pp (&lt;0.001)</text>
+
+  <rect x="498" y="381" width="432" height="17" rx="3" fill="#dbeafe"/>
+  <text x="504" y="393" font-size="8.5" font-weight="700" fill="#1e3a8a">×1 (公开标准)</text>
+  <text x="588" y="393" font-size="8.5" font-weight="700" fill="#1e3a8a">14.1% (22)</text>
+  <text x="668" y="393" font-size="8.5" font-weight="700" fill="#1e3a8a">3.2% (5)</text>
+  <text x="742" y="393" font-size="8.5" font-weight="700" fill="#1e3a8a">2.6% (4)</text>
+  <text x="816" y="393" font-size="8.5" font-weight="700" fill="#1e3a8a">10.9 pp (&lt;0.001)</text>
+
+  <text x="504" y="411" font-size="8.5" fill="#334155">×2</text>
+  <text x="588" y="411" font-size="8.5" fill="#334155">12.8% (20)</text>
+  <text x="668" y="411" font-size="8.5" fill="#334155">3.2% (5)</text>
+  <text x="742" y="411" font-size="8.5" fill="#334155">2.6% (4)</text>
+  <text x="816" y="411" font-size="8.5" fill="#334155">9.6 pp (&lt;0.001)</text>
+
+  <text x="504" y="429" font-size="8.5" fill="#334155">×4 (宽)</text>
+  <text x="588" y="429" font-size="8.5" fill="#334155">9.6% (15)</text>
+  <text x="668" y="429" font-size="8.5" fill="#334155">3.2% (5)</text>
+  <text x="742" y="429" font-size="8.5" fill="#334155">2.6% (4)</text>
+  <text x="816" y="429" font-size="8.5" fill="#334155">6.4 pp (0.006)</text>
+
+  <rect x="498" y="439" width="432" height="47" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="506" y="455" font-size="8.5" font-weight="600" fill="#0f172a">• 排除歧义题 t2-lbracket (n=144)：SS 11.1% vs TU 1.4% (p=0.0005)；T4 静默=0</text>
+  <text x="506" y="473" font-size="8.5" fill="#334155">• 外部盲审推翻 3/18 静默判罚 (SS 12.8% / TU 2.6%)；≥×0.5 时 TU 零变动</text>
+
+  <text x="24" y="521" font-size="8.9" fill="#64748b">注：Sonnet 与 Qwen 旧契约消融臂运行于 3 个月后（Sonnet 改经 OpenRouter）；均值 tokens (入/出)：SS 211/735，TU 2,821/1,549，MA 2,279/2,787。</text>
+</svg>

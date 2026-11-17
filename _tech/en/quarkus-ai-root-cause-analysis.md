@@ -1,6 +1,6 @@
 ---
 date: '2026-11-12'
-published: true
+published: false
 layout: article
 maintenance: daily-research
 translation_source: assistant
@@ -14,11 +14,12 @@ source_url: https://quarkus.io/blog/ai-root-cause-analysis/
 tags:
 - observability
 - agent-reliability
-summary: An MCP pipeline correlating traces, logs, and metrics, with a trade-off between
-  context filtering and diagnostic evidence.
+summary: An MCP pipeline correlating traces, logs, and metrics, with a trade-off between context filtering and diagnostic evidence.
 permalink: /tech/en/quarkus-ai-root-cause-analysis/
 published_at: '2026-11-12T08:58:59.941917+08:00'
-updated_at: '2026-11-12T08:58:59.941917+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 [AI Root Cause Analysis: LLM-Powered Root-Cause Analysis for Distributed Systems](https://quarkus.io/blog/ai-root-cause-analysis/)  
 Ales Justin · 2026-11-10

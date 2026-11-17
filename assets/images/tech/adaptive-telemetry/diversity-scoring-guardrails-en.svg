@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Lato', sans-serif;">
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <text x="24" y="35" font-size="18" font-weight="700" fill="#0f172a">9-Attribute Diversity Fingerprints, 24h Trace Recovery &amp; Auto-Apply Gates</text>
+  <text x="24" y="54" font-size="11" fill="#475569">Mapping documented span keys, 15m buckets, truncation tags, and Cost-first estimate budgets onto incident blind spots &amp; guardrails</text>
+  <line x1="24" y1="64" x2="936" y2="64" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top-Left Panel: Diversity Sampling -->
+  <rect x="24" y="74" width="480" height="204" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="74" width="480" height="24" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="90" width="480" height="8" fill="#dbeafe"/>
+  <text x="36" y="90" font-size="11.2" font-weight="700" fill="#1e3a8a">Diversity Sampling: 9-Attribute Fingerprint &amp; 15-Minute Quota</text>
+
+  <rect x="34" y="106" width="234" height="162" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="123" font-size="10.4" font-weight="700" fill="#1d4ed8">Server &amp; Consumer Spans Only</text>
+  <text x="44" y="142" font-size="9.4" fill="#1e293b">1. service.name · k8s.cluster.name</text>
+  <text x="44" y="159" font-size="9.4" fill="#1e293b">2. k8s.namespace.name</text>
+  <text x="44" y="176" font-size="9.4" fill="#1e293b">3. db.system.name · db.collection.name</text>
+  <text x="44" y="193" font-size="9.4" fill="#1e293b">4. http.route · http.response.status_code</text>
+  <text x="44" y="210" font-size="9.4" fill="#1e293b">5. rpc.method · rpc.grpc.status_code</text>
+  <line x1="44" y1="222" x2="258" y2="222" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="44" y="240" font-size="9.1" fill="#475569">Omits tenant, model, or agent tool attrs</text>
+  <text x="44" y="256" font-size="9.1" fill="#475569">Client/internal spans do not split keys</text>
+
+  <rect x="276" y="106" width="218" height="162" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="286" y="123" font-size="10.4" font-weight="700" fill="#b45309">15m Bucket Rules &amp; Blind Spots</text>
+  <text x="286" y="142" font-size="9.5" fill="#78350f">• Quota: &gt;= 1 trace / key / 15m window</text>
+  <text x="286" y="159" font-size="9.5" fill="#78350f">• 2nd..Nth hits rely on other policies</text>
+  <line x1="286" y1="171" x2="484" y2="171" stroke="#fde68a" stroke-width="1"/>
+  <text x="286" y="189" font-size="9.4" font-weight="600" fill="#92400e">Blind Spot 1: No Tail Latency Shape</text>
+  <text x="286" y="205" font-size="9.1" fill="#78350f">1 example cannot estimate p95/p99</text>
+  <text x="286" y="226" font-size="9.4" font-weight="600" fill="#92400e">Blind Spot 2: Shared-Key Masking</text>
+  <text x="286" y="242" font-size="9.1" fill="#78350f">2 distinct bugs on same route + 500:</text>
+  <text x="286" y="258" font-size="9.1" fill="#78350f">first hit fills quota; 2nd can drop</text>
+
+  <!-- Top-Right Panel: 24h Dropped Trace Recovery -->
+  <rect x="518" y="74" width="418" height="204" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="518" y="74" width="418" height="24" rx="8" fill="#dbeafe"/>
+  <rect x="518" y="90" width="418" height="8" fill="#dbeafe"/>
+  <text x="530" y="90" font-size="11.2" font-weight="700" fill="#1e3a8a">24h Dropped-Trace Recovery Ladder &amp; Span Provenance</text>
+
+  <rect x="528" y="106" width="398" height="46" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="538" y="124" font-size="10.1" font-weight="700" fill="#0f172a">Step 1 (0-24h, Auto on All Tenants): Exact Trace-ID Lookup Only</text>
+  <text x="538" y="141" font-size="9.3" fill="#475569">Needs trace_id from logs, exemplars, or tickets; unqueried traces expire at 24h</text>
+
+  <rect x="528" y="158" width="398" height="62" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="538" y="175" font-size="10.1" font-weight="700" fill="#1d4ed8">Step 2 (1st Hit Writes to Tempo): Tags Applied to Every Span</text>
+  <text x="538" y="193" font-size="9.2" fill="#1e293b">• grafana.adaptivetraces.restored = true (separates restored vs. sampled)</text>
+  <text x="538" y="210" font-size="9.2" fill="#1e293b">• Large traces add truncated=true &amp; truncated_percentage (doc ex: 93.93%)</text>
+
+  <rect x="528" y="226" width="398" height="42" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+  <text x="538" y="243" font-size="9.8" font-weight="700" fill="#991b1b">Search Ceiling: TraceQL on restored traces is best-effort only</text>
+  <text x="538" y="259" font-size="9.1" fill="#7f1d1d">Heavy truncation on long multi-turn agent traces can drop late tool-error spans</text>
+
+  <!-- Bottom-Left Panel: Auto-Apply Gate -->
+  <rect x="24" y="288" width="448" height="188" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="288" width="448" height="24" rx="8" fill="#1e3a8a"/>
+  <rect x="24" y="304" width="448" height="8" fill="#1e3a8a"/>
+  <text x="36" y="304" font-size="11.2" font-weight="700" fill="#ffffff">Adaptive Metrics Auto-Apply: Gate Policies &amp; Rule Precedence</text>
+
+  <rect x="34" y="320" width="208" height="92" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="44" y="338" font-size="10.1" font-weight="700" fill="#1d4ed8">unbounded (Coverage-first)</text>
+  <text x="44" y="356" font-size="9.2" fill="#1e293b">• Default if gate/policy is omitted</text>
+  <text x="44" y="373" font-size="9.2" fill="#334155">• Applies all recs incl. series-adding</text>
+  <text x="44" y="390" font-size="9.2" fill="#334155">• Restores detail for new queries</text>
+  <text x="44" y="405" font-size="9" fill="#475569">Prioritizes usage fit over series cap</text>
+
+  <rect x="252" y="320" width="210" height="92" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="262" y="338" font-size="10.1" font-weight="700" fill="#166534">no-increase (Cost-first)</text>
+  <text x="262" y="356" font-size="9.2" fill="#1e293b">• Applies series-reducing recs first</text>
+  <text x="262" y="373" font-size="9.2" fill="#334155">• Caps additions to same-cycle savings</text>
+  <text x="262" y="390" font-size="9.2" fill="#334155">• Over-budget adds stay pending in UI</text>
+  <text x="262" y="405" font-size="9" fill="#166534">Must be explicitly configured in API/TF</text>
+
+  <rect x="34" y="420" width="428" height="46" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="44" y="438" font-size="9.4" font-weight="700" fill="#92400e">Caution: Cost-first uses last-cycle estimates—NOT live pre/post counts</text>
+  <text x="44" y="456" font-size="9" fill="#78350f">Auto-Apply may alter exact-match rules (skips affix/drop) → set Exemptions first</text>
+
+  <!-- Bottom-Right Panel: SRE & Agent Guardrails -->
+  <rect x="486" y="288" width="450" height="188" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="486" y="288" width="450" height="24" rx="8" fill="#1e3a8a"/>
+  <rect x="486" y="304" width="450" height="8" fill="#1e3a8a"/>
+  <text x="498" y="304" font-size="11.2" font-weight="700" fill="#ffffff">Engineering Guardrails for Anomaly Detection &amp; Agent Triage</text>
+
+  <rect x="496" y="320" width="430" height="32" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="340" font-size="9.6" fill="#0f172a">1. Byte-based ~15s Volumetric sampling biases raw trace counts across services</text>
+
+  <rect x="496" y="357" width="430" height="32" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="377" font-size="9.6" fill="#0f172a">2. Log sampler policy versions &amp; timestamps so detectors ignore sampling shifts</text>
+
+  <rect x="496" y="394" width="430" height="32" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="414" font-size="9.6" fill="#0f172a">3. Emit trace_id in logs &amp; tool errors; test agent trace sizes vs. truncation</text>
+
+  <rect x="496" y="431" width="430" height="35" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="506" y="447" font-size="9.4" font-weight="600" fill="#1e3a8a">4. Exempt rare audit/SLO metrics before Auto-Apply; treat forthcoming Log Replay</text>
+  <text x="506" y="460" font-size="9.2" fill="#1e40af">   separately from GA 24h ID lookup and online TraceQL-searchable retention</text>
+
+  <!-- Bottom Banner -->
+  <rect x="24" y="482" width="912" height="28" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="36" y="500" font-size="10.1" font-weight="600" fill="#1e3a8a">Evidence Boundary: "25% higher info density" &amp; "cut volume by 90%" omit workload &amp; metric specs—validate on local fault-replay suites</text>
+
+  <text x="24" y="527" font-size="10" fill="#64748b">Assistant diagram (not an original figure) detailing 9 diversity keys, restored trace tags, Auto-Apply gate fields, and diagnostic blind-spot controls</text>
+</svg>

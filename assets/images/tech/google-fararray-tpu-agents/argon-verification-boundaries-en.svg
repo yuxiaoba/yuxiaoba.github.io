@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Noto Sans SC','PingFang SC','Lato','Microsoft YaHei',sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="36" font-size="18" font-weight="700" fill="#0f172a">Human Invariants, Zero-Facade Gates &amp; Evidence Boundaries</text>
+  <text x="24" y="56" font-size="11.5" fill="#475569">Separating human specs, Teamwork proposer/auditor loops, and external verification limits</text>
+  <line x1="24" y1="68" x2="936" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Top Row: 3 Columns -->
+  <!-- Col 1 -->
+  <rect x="24" y="78" width="292" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="24" y="78" width="292" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="24" y="96" width="292" height="10" fill="#dbeafe"/>
+  <text x="36" y="97" font-size="11.8" font-weight="700" fill="#1e3a8a">1. Human-Specified Contracts</text>
+
+  <rect x="34" y="114" width="272" height="76" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="44" y="134" font-size="11" font-weight="700" fill="#1d4ed8">Interfaces &amp; Memory Layouts</text>
+  <text x="44" y="155" font-size="10.2" fill="#334155">Define flat PGAS &amp; transport APIs</text>
+  <text x="44" y="176" font-size="10.2" fill="#334155">Set COO streaming &amp; SMEM/VMEM</text>
+
+  <rect x="34" y="198" width="272" height="76" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="44" y="218" font-size="11" font-weight="700" fill="#1d4ed8">Invariants &amp; Zero-Mock Rules</text>
+  <text x="44" y="239" font-size="10.2" fill="#334155">Specify float &amp; partition parity</text>
+  <text x="44" y="260" font-size="10.2" fill="#334155">Ban mocks/stubs in acceptance</text>
+
+  <line x1="317" y1="181" x2="332" y2="181" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Col 2 -->
+  <rect x="334" y="78" width="292" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="334" y="78" width="292" height="28" rx="8" fill="#dbeafe"/>
+  <rect x="334" y="96" width="292" height="10" fill="#dbeafe"/>
+  <text x="346" y="97" font-size="11.8" font-weight="700" fill="#1e3a8a">2. Teamwork Execution &amp; Telemetry</text>
+
+  <rect x="344" y="114" width="272" height="76" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="354" y="134" font-size="11" font-weight="700" fill="#1d4ed8">FarArray 5-Milestone Pipeline</text>
+  <text x="354" y="155" font-size="10.2" fill="#334155">Transport → Arena → Doorbells</text>
+  <text x="354" y="176" font-size="10.2" fill="#334155">→ Dist. Algos → Live Audit</text>
+
+  <rect x="344" y="198" width="272" height="76" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="354" y="218" font-size="11" font-weight="700" fill="#1d4ed8">Proposer + Hardware Telemetry</text>
+  <text x="354" y="239" font-size="10.2" fill="#334155">RDMA verbs / io_uring / Pallas</text>
+  <text x="354" y="260" font-size="10.2" fill="#0f172a">Telemetry cuts max read tail 89%</text>
+
+  <line x1="627" y1="181" x2="642" y2="181" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Col 3 -->
+  <rect x="644" y="78" width="292" height="206" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.2"/>
+  <rect x="644" y="78" width="292" height="28" rx="8" fill="#dcfce7"/>
+  <rect x="644" y="96" width="292" height="10" fill="#dcfce7"/>
+  <text x="656" y="97" font-size="11.8" font-weight="700" fill="#166534">3. Auditor &amp; Zero-Facade Gate</text>
+
+  <rect x="654" y="114" width="272" height="76" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+  <text x="664" y="134" font-size="11" font-weight="700" fill="#166534">4-Tier End-to-End Real Suite</text>
+  <text x="664" y="155" font-size="10.2" fill="#14532d">Auditor enforces "Zero-Facade"</text>
+  <text x="664" y="176" font-size="10.2" fill="#14532d">Functional, scale, stress, crash</text>
+
+  <rect x="654" y="198" width="272" height="76" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+  <text x="664" y="218" font-size="11" font-weight="700" fill="#166534">Kernel &amp; Partition Correctness</text>
+  <text x="664" y="239" font-size="10.2" fill="#14532d">GIN/GCN fwd+bwd parity vs. JAX</text>
+  <text x="664" y="260" font-size="10.2" fill="#14532d">100% partition parity vs. GBBS</text>
+
+  <!-- Bottom Row: Evidence Boundaries -->
+  <rect x="24" y="298" width="912" height="200" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2"/>
+  <rect x="24" y="298" width="912" height="28" rx="8" fill="#fef3c7"/>
+  <rect x="24" y="316" width="912" height="10" fill="#fef3c7"/>
+  <text x="36" y="317" font-size="12" font-weight="700" fill="#92400e">Evidence &amp; Verification Boundaries: Reported Scope vs. Undisclosed Details</text>
+
+  <!-- B1 -->
+  <rect x="36" y="336" width="280" height="150" rx="6" fill="#ffffff" stroke="#fcd34d" stroke-width="1.1"/>
+  <text x="48" y="357" font-size="11" font-weight="700" fill="#92400e">1. Non-Collapsible Baselines</text>
+  <text x="48" y="382" font-size="10" fill="#334155">40–180x / 6–22x vs. TCP KV</text>
+  <text x="48" y="406" font-size="10" fill="#334155">&gt;100x DRAM vs. shuffle (28.5 GB)</text>
+  <text x="48" y="430" font-size="10" fill="#334155">11.3–26.5x vs. MR + Remote KV</text>
+  <text x="48" y="454" font-size="10" fill="#334155">1.14T run shows 0 OOM feasibility</text>
+
+  <!-- B2 -->
+  <rect x="340" y="336" width="280" height="150" rx="6" fill="#ffffff" stroke="#fcd34d" stroke-width="1.1"/>
+  <text x="352" y="357" font-size="11" font-weight="700" fill="#92400e">2. Undisclosed Specs &amp; Limits</text>
+  <text x="352" y="382" font-size="10" fill="#334155">Code &amp; harnesses not open-sourced</text>
+  <text x="352" y="406" font-size="10" fill="#334155">Cluster NIC/node/chip counts absent</text>
+  <text x="352" y="430" font-size="10" fill="#334155">122 MiB VMEM tested on 50K x 256D</text>
+  <text x="352" y="454" font-size="10" fill="#334155">Dtype &amp; parity tolerance unstated</text>
+
+  <!-- B3 -->
+  <rect x="644" y="336" width="280" height="150" rx="6" fill="#ffffff" stroke="#fcd34d" stroke-width="1.1"/>
+  <text x="656" y="357" font-size="11" font-weight="700" fill="#92400e">3. Time-Compression Caveats</text>
+  <text x="656" y="382" font-size="10" fill="#334155">"1 yr → 5 hr" is an internal estimate</text>
+  <text x="656" y="406" font-size="10" fill="#334155">Relies on DGF, SNAP, GBBS, Pallas</text>
+  <text x="656" y="430" font-size="10" fill="#334155">Needs human specs &amp; real hardware</text>
+  <text x="656" y="454" font-size="10" fill="#334155">No Argon vs. Teamwork ablation</text>
+
+  <text x="24" y="519" font-size="10.5" fill="#64748b">Assistant diagram (not an original figure): summarizing human gates, Zero-Facade checks &amp; evidence boundaries from Google blog</text>
+</svg>

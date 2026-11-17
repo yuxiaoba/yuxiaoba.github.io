@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Meta² empirical benchmark and ablation charts: top-left shows main accuracy on Terminal-Bench 2.1 and DeepSWE 1.1; top-right shows 5-setting component ablations and task-local isolation; bottom-left shows checkpoint interval L cost-performance curve; bottom-right compares offline/online USD cost and audit boundaries" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Lato', 'Noto Sans', sans-serif;">
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="16.2" font-weight="700" fill="#0f172a">Meta² Empirical Results: Benchmarks, Ablations, Checkpoint Tradeoff &amp; Cost</text>
+  <text x="24" y="53" font-size="10.0" fill="#475569">arXiv:2611.05139v1 (§4 Tables 1–2, 4–5 &amp; Figs. 3–4, 9) · 1:2 train/test split; Terminal-Bench 2.1 mean@5 (60 tasks), DeepSWE 1.1 mean@3 (75 tasks)</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Panel A: Main Benchmark Results -->
+  <rect x="18" y="72" width="456" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="18" y="72" width="456" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="18" y="90" width="456" height="8" fill="#eff6ff"/>
+  <line x1="18" y1="98" x2="474" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="30" y="89.5" font-size="10.7" font-weight="700" fill="#1e3a8a">A. Main Pass-Rate Comparison (GPT-5.6-Terra, % ± Sample SD)</text>
+
+  <rect x="134" y="105" width="10" height="8" rx="2" fill="#1d4ed8"/>
+  <text x="148" y="112.5" font-size="8.5" fill="#1e3a8a" font-weight="600">Terminal-Bench 2.1 (mean@5)</text>
+  <rect x="304" y="105" width="10" height="8" rx="2" fill="#60a5fa"/>
+  <text x="318" y="112.5" font-size="8.5" fill="#334155">DeepSWE 1.1 (mean@3)</text>
+
+  <!-- Row 1: Meta2 -->
+  <rect x="26" y="118" width="440" height="21" rx="3" fill="#eff6ff"/>
+  <text x="130" y="131.5" text-anchor="end" font-size="9.0" font-weight="700" fill="#1d4ed8">Meta² (ours)</text>
+  <rect x="136" y="120.5" width="137.7" height="6.5" rx="1.8" fill="#1d4ed8"/>
+  <rect x="136" y="128.5" width="75.5" height="6.5" rx="1.8" fill="#60a5fa"/>
+  <text x="279" y="131.5" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.7" font-weight="700" fill="#1d4ed8">81.00±0.91 / 44.44±0.77</text>
+
+  <!-- Row 2: TF-GRPO -->
+  <text x="130" y="152.5" text-anchor="end" font-size="8.7" fill="#334155">TF-GRPO (Self-Evo)</text>
+  <rect x="136" y="142" width="126.9" height="6.2" rx="1.8" fill="#3b82f6"/>
+  <rect x="136" y="149.5" width="61.9" height="6.2" rx="1.8" fill="#93c5fd"/>
+  <text x="269" y="152.5" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.5" fill="#475569">74.67±4.62 / 36.44±5.39</text>
+
+  <!-- Row 3: Meta-Harness -->
+  <text x="130" y="173.5" text-anchor="end" font-size="8.7" fill="#334155">Meta-Harness (Offline)</text>
+  <rect x="136" y="163" width="124.7" height="6.2" rx="1.8" fill="#3b82f6"/>
+  <rect x="136" y="170.5" width="63.5" height="6.2" rx="1.8" fill="#93c5fd"/>
+  <text x="267" y="173.5" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.5" fill="#475569">73.33±4.41 / 37.33±2.67</text>
+
+  <!-- Row 4: Continual Harness -->
+  <text x="130" y="194.5" text-anchor="end" font-size="8.7" fill="#334155">Continual (Cross-Task)</text>
+  <rect x="136" y="184" width="123.5" height="6.2" rx="1.8" fill="#0f766e"/>
+  <rect x="136" y="191.5" width="57.4" height="6.2" rx="1.8" fill="#99f6e4"/>
+  <text x="265" y="194.5" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.5" fill="#475569">72.67±4.65 / 33.78±5.05</text>
+
+  <!-- Row 5: Pi agent -->
+  <text x="130" y="215.5" text-anchor="end" font-size="8.7" fill="#334155">Pi agent (Best Human)</text>
+  <rect x="136" y="205" width="117.3" height="6.2" rx="1.8" fill="#64748b"/>
+  <rect x="136" y="212.5" width="66.5" height="6.2" rx="1.8" fill="#cbd5e1"/>
+  <text x="259" y="215.5" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.5" fill="#475569">69.00±4.94 / 39.11±6.71</text>
+
+  <!-- Row 6: NexAU Seed -->
+  <text x="130" y="236.5" text-anchor="end" font-size="8.7" fill="#334155">NexAU Seed h(0)</text>
+  <rect x="136" y="226" width="112.8" height="6.2" rx="1.8" fill="#94a3b8"/>
+  <rect x="136" y="233.5" width="58.9" height="6.2" rx="1.8" fill="#e2e8f0"/>
+  <text x="255" y="236.5" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.5" fill="#475569">66.33±2.17 / 34.67±1.33</text>
+
+  <rect x="28" y="247" width="436" height="25" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="36" y="263" font-size="8.4" fill="#1e3a8a">DeepSeek-V4-Flash (TB): Meta² 77.67±3.84% &gt; Continual 74.67% &gt; AHE 71.33% &gt; Seed 70.00% (own ℳ)</text>
+
+  <!-- Panel B: Component Ablations (Fig. 4) -->
+  <rect x="486" y="72" width="456" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="486" y="72" width="456" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="486" y="90" width="456" height="8" fill="#eff6ff"/>
+  <line x1="486" y1="98" x2="942" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="498" y="89.5" font-size="10.7" font-weight="700" fill="#1e3a8a">B. Component Ablations &amp; Reset Isolation (GPT-5.6-Terra, Fig. 4)</text>
+
+  <rect x="646" y="105" width="10" height="8" rx="2" fill="#1d4ed8"/>
+  <text x="660" y="112.5" font-size="8.5" fill="#1e3a8a" font-weight="600">TB 2.1 (%)</text>
+  <rect x="742" y="105" width="10" height="8" rx="2" fill="#93c5fd"/>
+  <text x="756" y="112.5" font-size="8.5" fill="#334155">DeepSWE 1.1 (%)</text>
+
+  <!-- Ablation 1 -->
+  <text x="640" y="135" text-anchor="end" font-size="8.6" fill="#334155">1. Task Agent Alone h(0)</text>
+  <rect x="646" y="123" width="109.4" height="6.8" rx="1.8" fill="#94a3b8"/>
+  <rect x="646" y="131.5" width="57.2" height="6.8" rx="1.8" fill="#cbd5e1"/>
+  <text x="761" y="135" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.4" fill="#475569">66.33 / 34.67</text>
+
+  <!-- Ablation 2 -->
+  <text x="640" y="162" text-anchor="end" font-size="8.6" fill="#334155">2. + Online Evolver (no ℳ)</text>
+  <rect x="646" y="150" width="123.2" height="6.8" rx="1.8" fill="#3b82f6"/>
+  <rect x="646" y="158.5" width="60.1" height="6.8" rx="1.8" fill="#93c5fd"/>
+  <text x="775" y="162" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.4" fill="#334155">74.67 / 36.44 (+8.3/+1.8)</text>
+
+  <!-- Ablation 3 -->
+  <text x="640" y="189" text-anchor="end" font-size="8.6" fill="#334155">3. + Self-Distilled ℳ</text>
+  <rect x="646" y="177" width="127.1" height="6.8" rx="1.8" fill="#60a5fa"/>
+  <rect x="646" y="185.5" width="58.7" height="6.8" rx="1.8" fill="#bfdbfe"/>
+  <text x="779" y="189" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.4" fill="#b45309">77.00 / 35.56 (SWE -0.88)</text>
+
+  <!-- Ablation 4: Highlight Meta2 -->
+  <rect x="494" y="201" width="440" height="25" rx="4" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="640" y="217" text-anchor="end" font-size="8.8" font-weight="700" fill="#1d4ed8">4. + Contrastive ℳ (Meta²)</text>
+  <rect x="646" y="205" width="133.7" height="7.2" rx="1.8" fill="#1d4ed8"/>
+  <rect x="646" y="214" width="73.3" height="7.2" rx="1.8" fill="#60a5fa"/>
+  <text x="786" y="217" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.6" font-weight="700" fill="#1d4ed8">81.00 / 44.44 (+14.7/+9.8)</text>
+
+  <!-- Ablation 5: Retaining edits -->
+  <rect x="494" y="230" width="440" height="24" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="640" y="245" text-anchor="end" font-size="8.6" font-weight="600" fill="#92400e">5. + Retaining Edits Across Tasks</text>
+  <rect x="646" y="234" width="129.2" height="6.8" rx="1.8" fill="#d97706"/>
+  <rect x="646" y="242" width="64.5" height="6.8" rx="1.8" fill="#fcd34d"/>
+  <text x="781" y="245" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.4" font-weight="600" fill="#92400e">78.33 / 39.11 (-2.7/-5.3)</text>
+
+  <text x="496" y="270" font-size="8.3" fill="#475569">Finding: 3-arm contrasts beat self-distillation by +8.88 pp on DeepSWE; carrying edits hurts.</text>
+
+  <!-- Panel C: Checkpoint Interval Tradeoff (Fig. 3) -->
+  <rect x="18" y="288" width="456" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="18" y="288" width="456" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="18" y="306" width="456" height="8" fill="#eff6ff"/>
+  <line x1="18" y1="314" x2="474" y2="314" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="30" y="305.5" font-size="10.7" font-weight="700" fill="#1e3a8a">C. Checkpoint Interval L Tradeoff (TB 2.1, §4.4, Fig. 3)</text>
+
+  <line x1="72" y1="328" x2="72" y2="424" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="72" y1="424" x2="444" y2="424" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="72" y1="342" x2="444" y2="342" stroke="#f1f5f9" stroke-width="1"/>
+  <line x1="72" y1="376" x2="444" y2="376" stroke="#f1f5f9" stroke-width="1"/>
+  <line x1="72" y1="400" x2="444" y2="400" stroke="#f1f5f9" stroke-width="1"/>
+
+  <text x="66" y="334" text-anchor="end" font-size="8.0" fill="#64748b">84%</text>
+  <text x="66" y="378" text-anchor="end" font-size="8.0" fill="#64748b">76%</text>
+  <text x="66" y="422" text-anchor="end" font-size="8.0" fill="#64748b">68%</text>
+  <text x="72" y="436" text-anchor="middle" font-size="8.0" fill="#64748b">$55</text>
+  <text x="178" y="436" text-anchor="middle" font-size="8.0" fill="#64748b">$65</text>
+  <text x="283" y="436" text-anchor="middle" font-size="8.0" fill="#64748b">$75</text>
+  <text x="389" y="436" text-anchor="middle" font-size="8.0" fill="#64748b">$85</text>
+  <text x="444" y="436" text-anchor="end" font-size="8.0" fill="#64748b">Online Cost (USD)</text>
+
+  <line x1="72" y1="396.0" x2="444" y2="396.0" stroke="#0f766e" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="218" y="391.5" font-size="8.0" fill="#0f766e">Continual Harness baseline 72.67% ($83.48)</text>
+  <line x1="72" y1="404.0" x2="444" y2="404.0" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="218" y="415.0" font-size="8.0" fill="#475569">ACE baseline 71.33% ($64.09)</text>
+
+  <polyline points="174.7,346.0 275.2,350.0 372.3,358.0" fill="none" stroke="#1d4ed8" stroke-width="1.8"/>
+  <circle cx="174.7" cy="346.0" r="5" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.4"/>
+  <text x="78" y="335.5" font-size="8.4" font-weight="700" fill="#1d4ed8">L=5 ★ 81.00% ($64.72)</text>
+
+  <circle cx="275.2" cy="350.0" r="4" fill="#3b82f6" stroke="#ffffff" stroke-width="1.2"/>
+  <text x="284" y="338.5" text-anchor="middle" font-size="8.1" font-weight="600" fill="#1e3a8a">L=3: 80.33% ($74.22)</text>
+
+  <circle cx="372.3" cy="358.0" r="4" fill="#3b82f6" stroke="#ffffff" stroke-width="1.2"/>
+  <text x="366" y="373.5" text-anchor="middle" font-size="8.1" font-weight="600" fill="#1e3a8a">L=1: 79.00% ($83.41)</text>
+
+  <line x1="115.3" y1="328" x2="115.3" y2="424" stroke="#60a5fa" stroke-width="1" stroke-dasharray="2 2"/>
+  <text x="119" y="378" font-size="8.0" fill="#1d4ed8">L=11 drops to $59.10</text>
+
+  <rect x="28" y="446" width="436" height="42" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="36" y="462" font-size="8.4" fill="#0f172a">• Frequent L=1/3 raises cost without gain; sparse L=11 lowers cost &amp; score</text>
+  <text x="36" y="479" font-size="8.4" font-weight="600" fill="#1d4ed8">• All tested schedules L ∈ {1, 3, 5, 7, 9, 11} outperform every baseline (Fig. 3)</text>
+
+  <!-- Panel D: Cost Breakdown & Boundaries -->
+  <rect x="486" y="288" width="456" height="208" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="486" y="288" width="456" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="486" y="306" width="456" height="8" fill="#eff6ff"/>
+  <line x1="486" y1="314" x2="942" y2="314" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="498" y="305.5" font-size="10.7" font-weight="700" fill="#1e3a8a">D. Offline / Online / Full USD Cost &amp; Caveats (Tables 1–2, §F.1)</text>
+
+  <rect x="496" y="319" width="436" height="18" rx="3" fill="#eff6ff"/>
+  <text x="502" y="331" font-size="8.4" font-weight="700" fill="#1e3a8a">Suite · Backbone · Method</text>
+  <text x="698" y="331" text-anchor="end" font-size="8.4" font-weight="700" fill="#1e3a8a">Offline</text>
+  <text x="762" y="331" text-anchor="end" font-size="8.4" font-weight="700" fill="#1e3a8a">Online</text>
+  <text x="826" y="331" text-anchor="end" font-size="8.4" font-weight="700" fill="#1e3a8a">Full ($)</text>
+  <text x="926" y="331" text-anchor="end" font-size="8.4" font-weight="700" fill="#1e3a8a">Score</text>
+
+  <rect x="496" y="339" width="436" height="14.5" rx="2" fill="#dbeafe"/>
+  <text x="502" y="349.2" font-size="8.1" font-weight="700" fill="#1d4ed8">TB (Terra) · Meta²</text>
+  <text x="698" y="349.2" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" font-weight="700" fill="#1d4ed8">110.19</text>
+  <text x="762" y="349.2" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" font-weight="700" fill="#1d4ed8">64.72</text>
+  <text x="826" y="349.2" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" font-weight="700" fill="#1d4ed8">174.91</text>
+  <text x="926" y="349.2" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" font-weight="700" fill="#1d4ed8">81.00%</text>
+
+  <text x="502" y="364.5" font-size="8.1" fill="#334155">TB (Terra) · Meta-Harness</text>
+  <text x="698" y="364.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" fill="#334155">160.51</text>
+  <text x="762" y="364.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" fill="#334155">38.34</text>
+  <text x="826" y="364.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" fill="#334155">198.85</text>
+  <text x="926" y="364.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" fill="#334155">73.33%</text>
+
+  <text x="502" y="379.5" font-size="8.1" fill="#334155">TB (Terra) · Continual Harness</text>
+  <text x="698" y="379.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" fill="#334155">28.75</text>
+  <text x="762" y="379.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" fill="#334155">83.48</text>
+  <text x="826" y="379.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" fill="#334155">112.23</text>
+  <text x="926" y="379.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" fill="#334155">72.67%</text>
+
+  <rect x="496" y="385" width="436" height="14.5" rx="2" fill="#dbeafe"/>
+  <text x="502" y="395.2" font-size="8.1" font-weight="700" fill="#1d4ed8">DeepSWE (Terra) · Meta²</text>
+  <text x="698" y="395.2" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" font-weight="700" fill="#1d4ed8">238.52</text>
+  <text x="762" y="395.2" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" font-weight="700" fill="#1d4ed8">129.34</text>
+  <text x="826" y="395.2" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" font-weight="700" fill="#1d4ed8">367.86</text>
+  <text x="926" y="395.2" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" font-weight="700" fill="#1d4ed8">44.44%</text>
+
+  <text x="502" y="410.5" font-size="8.1" fill="#334155">DeepSWE (Terra) · Meta-Harness</text>
+  <text x="698" y="410.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" fill="#334155">781.56</text>
+  <text x="762" y="410.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" fill="#334155">89.19</text>
+  <text x="826" y="410.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" fill="#334155">870.75</text>
+  <text x="926" y="410.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.1" fill="#334155">37.33%</text>
+
+  <text x="502" y="425.5" font-size="8.1" font-weight="600" fill="#1e3a8a">TB (DeepSeek) · Meta² vs. Continual</text>
+  <text x="698" y="425.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.0" fill="#1e3a8a">81.9/2.8</text>
+  <text x="762" y="425.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.0" fill="#1e3a8a">33.5/36.0</text>
+  <text x="826" y="425.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.0" fill="#1e3a8a">115.4/38.8</text>
+  <text x="926" y="425.5" text-anchor="end" font-family="'SFMono-Regular', Consolas, monospace" font-size="8.0" fill="#1e3a8a">77.7/74.7%</text>
+
+  <rect x="496" y="436" width="436" height="52" rx="5" fill="#fffbeb" stroke="#f59e0b" stroke-width="0.9"/>
+  <text x="504" y="451" font-size="8.2" font-weight="700" fill="#92400e">Critical Audit Boundaries (§4.2–4.3, §F.1):</text>
+  <text x="504" y="466" font-size="8.0" fill="#78350f">• Separate ℳ built per backbone (no zero-shot transfer); DeepSeek untested on DeepSWE</text>
+  <text x="504" y="481" font-size="8.0" fill="#78350f">• Offline spend amortizes only across future reuse; batch count R &amp; checkpoint latency unprinted</text>
+
+  <text x="20" y="518" font-size="8.8" fill="#64748b">Source: arXiv:2611.05139v1 Tables 1, 2, 4, 5 and Figs. 3, 4, 9; USD costs computed from LiteLLM proxy per-call headers; not independently reproduced.</text>
+</svg>

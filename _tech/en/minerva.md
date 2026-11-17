@@ -3,7 +3,7 @@ id: minerva
 title: 2026-10-23 | Minerva Connects AI-Cluster Telemetry to Job-Level Diagnosis
 date: '2026-10-23'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -11,15 +11,16 @@ tags:
 - observability
 - anomaly-detection
 - systems-reliability
-summary: How topology, alarm correlation, and Sherlock support Minerva operations,
-  and where product claims stop short of measured outcomes.
+summary: How topology, alarm correlation, and Sherlock support Minerva operations, and where product claims stop short of measured outcomes.
 long_read: true
 source_url: https://blogs.nvidia.com/blog/minerva-platform-infrastructure/
 permalink: /tech/en/minerva/
 translation_source: assistant
 authorship: assistant
 published_at: '2026-10-23T08:58:47.180720+08:00'
-updated_at: '2026-10-23T08:58:47.180720+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 Failures in AI clusters often appear first as lost output: a slow GPU, congested network segment, or NVMe drive degrading under load can stall an entire training job. Minerva's significant move is to place component signals back into job context, asking which infrastructure issue is harming which workload instead of leaving network, compute, and scheduling teams to interpret separate dashboards.
 

@@ -3,7 +3,7 @@ id: localpay
 title: 2026年10月21日｜LocalPay：把支付失败变成可重复的本地测试
 date: '2026-10-21'
 lang: zh
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
@@ -16,8 +16,10 @@ source_url: https://github.com/karthikrshet/localpay
 permalink: /tech/zh/localpay/
 authorship: assistant
 translation_source: assistant
-published_at: "2026-10-21T13:08:08.256303+08:00"
-updated_at: "2026-10-21T13:08:08.256303+08:00"
+published_at: '2026-10-21T13:08:08.256303+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 Karthik Rajesh Shet（karthikrshet）· 仓库创建于 2026-10-19；作者公告于 2026-10-20  
 主源：[LocalPay](https://github.com/karthikrshet/localpay) · [Compatibility matrix](https://github.com/karthikrshet/localpay/blob/main/docs/compat.md)

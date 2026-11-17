@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="ReproBridge-Bench 四模型复现成功率、下游 API 节省、组件消融与跨基准迁移结果图" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', 'Lato', sans-serif;">
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="33" font-size="16.4" font-weight="700" fill="#0f172a">实证评测：四模型复现成功率、下游成本、组件消融与跨基准迁移</text>
+  <text x="24" y="52" font-size="9.9" fill="#475569">arXiv:2611.08452v1（Tables 3–6, 14–17, §4.2–4.7）· 36 篇 ICML 2026 Spotlight / 1,029 项任务（主表为 3 轮评估均值 ± SD）</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+  <rect x="20" y="72" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="72" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="90" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="98" x2="472" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="89.5" font-size="10.8" font-weight="700" fill="#1e3a8a">A. 四模型成功率跃升与模型间极差收敛（Table 3）</text>
+
+  <rect x="30" y="104" width="206" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="133" y="117" text-anchor="middle" font-size="8.7" font-weight="700" fill="#1d4ed8">四模型均值：76.4% → 92.6%（+16.2 pp）</text>
+  <rect x="244" y="104" width="218" height="19" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+  <text x="353" y="117" text-anchor="middle" font-size="8.7" font-weight="700" fill="#166534">跨模型极差：21.6 → 3.9 pp（全 &gt;90%）</text>
+
+  <line x1="122" y1="129" x2="122" y2="246" stroke="#cbd5e1" stroke-width="0.9"/>
+  <line x1="247" y1="129" x2="247" y2="246" stroke="#e2e8f0" stroke-width="0.9"/>
+  <line x1="322" y1="129" x2="322" y2="246" stroke="#e2e8f0" stroke-width="0.9"/>
+  <line x1="372" y1="129" x2="372" y2="246" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="122" y="257" text-anchor="middle" font-size="8.2" fill="#64748b">0%</text>
+  <text x="247" y="257" text-anchor="middle" font-size="8.2" fill="#64748b">50%</text>
+  <text x="322" y="257" text-anchor="middle" font-size="8.2" fill="#64748b">80%</text>
+  <text x="372" y="257" text-anchor="middle" font-size="8.2" fill="#64748b">100%</text>
+
+  <text x="115" y="146" text-anchor="end" font-size="9.2" font-weight="700" fill="#0f172a">Sonnet 4.6</text>
+  <rect x="122" y="133" width="180.8" height="9" rx="2" fill="#94a3b8"/>
+  <text x="307" y="140.5" font-size="8.2" fill="#475569">72.3±1.1%</text>
+  <rect x="122" y="144" width="229.0" height="10" rx="2" fill="#1d4ed8"/>
+  <text x="355" y="152" font-size="8.4" font-weight="700" fill="#1d4ed8">91.6±3.4% (+19.3)</text>
+
+  <text x="115" y="175" text-anchor="end" font-size="9.2" font-weight="700" fill="#0f172a">Sonnet 5</text>
+  <rect x="122" y="162" width="191.3" height="9" rx="2" fill="#94a3b8"/>
+  <text x="317" y="169.5" font-size="8.2" fill="#475569">76.5±2.8%</text>
+  <rect x="122" y="173" width="233.3" height="10" rx="2" fill="#1d4ed8"/>
+  <text x="359" y="181" font-size="8.4" font-weight="700" fill="#1d4ed8">93.3±1.4% (+16.8)</text>
+
+  <text x="115" y="204" text-anchor="end" font-size="9.2" font-weight="700" fill="#0f172a">Opus 5</text>
+  <rect x="122" y="191" width="223.0" height="9" rx="2" fill="#94a3b8"/>
+  <text x="349" y="198.5" font-size="8.2" fill="#475569">89.2±1.2%</text>
+  <rect x="122" y="202" width="236.8" height="10" rx="2" fill="#1d4ed8"/>
+  <text x="363" y="210" font-size="8.4" font-weight="700" fill="#1d4ed8">94.7±2.2% (+5.5)</text>
+
+  <text x="115" y="233" text-anchor="end" font-size="9.2" font-weight="700" fill="#0f172a">Gemini 3.8</text>
+  <rect x="122" y="220" width="169.0" height="9" rx="2" fill="#94a3b8"/>
+  <text x="295" y="227.5" font-size="8.2" fill="#475569">67.6±1.9%</text>
+  <rect x="122" y="231" width="227.0" height="10" rx="2" fill="#1d4ed8"/>
+  <text x="353" y="239" font-size="8.4" font-weight="700" fill="#1d4ed8">90.8±1.1% (+23.2)</text>
+
+  <rect x="30" y="264" width="9" height="8" rx="1.5" fill="#94a3b8"/>
+  <text x="43" y="271.5" font-size="8.2" fill="#475569">Raw 原始代码</text>
+  <rect x="122" y="264" width="9" height="8" rx="1.5" fill="#1d4ed8"/>
+  <text x="135" y="271.5" font-size="8.2" font-weight="600" fill="#1e3a8a">RRA 四件套 · 下游改代码会话 113/144 → 54/144</text>
+
+  <rect x="488" y="72" width="452" height="206" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="72" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="90" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="98" x2="940" y2="98" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="89.5" font-size="10.8" font-weight="700" fill="#1e3a8a">B. 下游 API 节省（-19.7%）、状态迁移与回本轮数</text>
+
+  <text x="500" y="114" font-size="8.4" font-weight="600" fill="#475569">每轮 36 篇下游 API 支出（Raw → RRA）· 构建 API 总投入 $5,026（$139.61/篇）</text>
+
+  <text x="500" y="131" font-size="8.6" font-weight="700" fill="#0f172a">Sonnet 4.6</text>
+  <text x="580" y="131" font-size="8.5" fill="#334155">$3,165 → $2,512</text>
+  <rect x="688" y="121" width="114" height="14" rx="3" fill="#dbeafe"/>
+  <text x="745" y="131" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">-20.6%（省 $653）</text>
+  <rect x="810" y="121" width="118" height="14" rx="3" fill="#dcfce7"/>
+  <text x="869" y="131" text-anchor="middle" font-size="8.1" font-weight="700" fill="#166534">API 回本：8 轮</text>
+
+  <text x="500" y="148" font-size="8.6" font-weight="700" fill="#0f172a">Sonnet 5</text>
+  <text x="580" y="148" font-size="8.5" fill="#334155">$1,726 → $1,317</text>
+  <rect x="688" y="138" width="114" height="14" rx="3" fill="#dbeafe"/>
+  <text x="745" y="148" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">-23.7%（省 $409）</text>
+  <rect x="810" y="138" width="118" height="14" rx="3" fill="#dcfce7"/>
+  <text x="869" y="148" text-anchor="middle" font-size="8.1" font-weight="700" fill="#166534">API 回本：13 轮</text>
+
+  <text x="500" y="165" font-size="8.6" font-weight="700" fill="#0f172a">Opus 5</text>
+  <text x="580" y="165" font-size="8.5" fill="#334155">$3,480 → $2,865</text>
+  <rect x="688" y="155" width="114" height="14" rx="3" fill="#dbeafe"/>
+  <text x="745" y="165" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">-17.7%（省 $615）</text>
+  <rect x="810" y="155" width="118" height="14" rx="3" fill="#dcfce7"/>
+  <text x="869" y="165" text-anchor="middle" font-size="8.1" font-weight="700" fill="#166534">API 回本：9 轮</text>
+
+  <text x="500" y="182" font-size="8.6" font-weight="700" fill="#0f172a">Gemini 3.8</text>
+  <text x="580" y="182" font-size="8.5" fill="#334155">$392 → $326</text>
+  <rect x="688" y="172" width="114" height="14" rx="3" fill="#dbeafe"/>
+  <text x="745" y="182" text-anchor="middle" font-size="8.2" font-weight="700" fill="#1d4ed8">-16.8%（省 $66）</text>
+  <rect x="810" y="172" width="118" height="14" rx="3" fill="#f1f5f9"/>
+  <text x="869" y="182" text-anchor="middle" font-size="8.1" font-weight="600" fill="#475569">Token 降 18.3%</text>
+
+  <rect x="498" y="193" width="432" height="77" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="208" font-size="8.9" font-weight="700" fill="#0f172a">首轮 4,116 项次状态迁移（Table 14 &amp; 17）：Raw 3,143 → RRA 3,820（净增 +677）</text>
+  <rect x="506" y="216" width="416" height="22" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="0.9"/>
+  <text x="514" y="230.5" font-size="8.3" font-weight="600" fill="#166534">✓ 挽回 813 项失败：348 数值不符 + 255 审计无效匹配 + 210 执行/资源受阻未运行</text>
+  <rect x="506" y="242" width="416" height="22" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.9"/>
+  <text x="514" y="256.5" font-size="8.2" font-weight="600" fill="#991b1b">✗ 136 项回退：84 数值不符 + 31 资源受限 + 11 审计 + 10 阻塞（4 篇论文占 68.4%）</text>
+
+  <rect x="20" y="290" width="452" height="212" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="316" x2="472" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="307.5" font-size="10.8" font-weight="700" fill="#1e3a8a">C. 组件消融与普通输出目录对照（Table 6, 287 项）</text>
+  <text x="32" y="330" font-size="8.4" fill="#475569">Sonnet 5 · 随机 12 篇论文（287 项任务）· 消融同时删去剩余文档对被移除组件的说明</text>
+
+  <line x1="154" y1="337" x2="154" y2="481" stroke="#cbd5e1" stroke-width="0.9"/>
+  <line x1="242" y1="337" x2="242" y2="481" stroke="#e2e8f0" stroke-width="0.9"/>
+  <line x1="330" y1="337" x2="330" y2="481" stroke="#e2e8f0" stroke-width="0.9"/>
+  <line x1="374" y1="337" x2="374" y2="481" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="154" y="492" text-anchor="middle" font-size="8.0" fill="#64748b">50%</text>
+  <text x="242" y="492" text-anchor="middle" font-size="8.0" fill="#64748b">70%</text>
+  <text x="330" y="492" text-anchor="middle" font-size="8.0" fill="#64748b">90%</text>
+  <text x="374" y="492" text-anchor="middle" font-size="8.0" fill="#64748b">100%</text>
+
+  <text x="148" y="350" text-anchor="end" font-size="8.6" fill="#475569">Raw 原始代码</text>
+  <rect x="154" y="340" width="105.2" height="13" rx="2" fill="#94a3b8"/>
+  <text x="264" y="350" font-size="8.3" fill="#475569">73.9%</text>
+
+  <text x="148" y="370" text-anchor="end" font-size="8.6" fill="#334155">Ordinary 普通输出</text>
+  <rect x="154" y="360" width="137.3" height="13" rx="2" fill="#64748b"/>
+  <text x="296" y="370" font-size="8.3" font-weight="600" fill="#334155">81.2%（比完整 RRA 低 11.8 pp）</text>
+
+  <rect x="28" y="378" width="434" height="19" rx="3" fill="#eff6ff"/>
+  <text x="148" y="391" text-anchor="end" font-size="8.8" font-weight="700" fill="#1e3a8a">Full RRA 完整制品</text>
+  <rect x="154" y="381" width="189.2" height="13" rx="2" fill="#1d4ed8"/>
+  <text x="348" y="391" font-size="8.6" font-weight="700" fill="#1d4ed8">93.0%</text>
+
+  <text x="148" y="411" text-anchor="end" font-size="8.5" fill="#1e293b">− 实验启动器</text>
+  <rect x="154" y="401" width="175.6" height="13" rx="2" fill="#3b82f6"/>
+  <text x="335" y="411" font-size="8.3" fill="#1e3a8a">89.9%（-3.1 pp）</text>
+
+  <text x="148" y="431" text-anchor="end" font-size="8.5" fill="#1e293b">− 复现指南</text>
+  <rect x="154" y="421" width="172.5" height="13" rx="2" fill="#3b82f6"/>
+  <text x="331" y="431" font-size="8.3" fill="#1e3a8a">89.2%（-3.8 pp）</text>
+
+  <text x="148" y="451" text-anchor="end" font-size="8.5" fill="#1e293b">− 环境配置</text>
+  <rect x="154" y="441" width="169.4" height="13" rx="2" fill="#60a5fa"/>
+  <text x="328" y="451" font-size="8.3" fill="#1e3a8a">88.5%（-4.5 pp）</text>
+
+  <text x="148" y="471" text-anchor="end" font-size="8.6" font-weight="700" fill="#92400e">− 修订代码</text>
+  <rect x="154" y="461" width="166.3" height="13" rx="2" fill="#d97706"/>
+  <text x="325" y="471" font-size="8.3" font-weight="700" fill="#b45309">87.8%（-5.2 pp，损伤最大）</text>
+
+  <rect x="488" y="290" width="452" height="212" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="290" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="308" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="316" x2="940" y2="316" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="307.5" font-size="10.8" font-weight="700" fill="#1e3a8a">D. 外部 CORE-Bench Hard 与权重/阈值敏感性</text>
+
+  <rect x="498" y="323" width="432" height="86" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="506" y="338" font-size="8.9" font-weight="700" fill="#0f172a">CORE-Bench Hard（45 capsules / 79 题，Sonnet 4.5 复现；Sonnet 5 构建）</text>
+  <text x="506" y="352" font-size="7.9" fill="#64748b">交接方式</text>
+  <text x="580" y="352" font-size="7.9" fill="#64748b">总成功率</text>
+  <text x="642" y="352" font-size="7.9" fill="#64748b">CS(18) / Med(13) / Soc(14)</text>
+  <text x="802" y="352" font-size="7.9" fill="#64748b">成功单价</text>
+  <text x="872" y="352" font-size="7.9" fill="#64748b">中位耗时</text>
+
+  <text x="506" y="368" font-size="8.4" fill="#334155">Raw 原始</text>
+  <text x="580" y="368" font-size="8.4" fill="#334155">62.2%</text>
+  <text x="642" y="368" font-size="8.4" fill="#334155">50.0% / 76.9% / 64.3%</text>
+  <text x="802" y="368" font-size="8.4" fill="#334155">$8.43</text>
+  <text x="872" y="368" font-size="8.4" fill="#334155">33.0 min</text>
+
+  <text x="506" y="383" font-size="8.4" fill="#334155">VERITAS</text>
+  <text x="580" y="383" font-size="8.4" fill="#334155">68.9%</text>
+  <text x="642" y="383" font-size="8.4" fill="#334155">61.1% / 84.6% / 64.3%</text>
+  <text x="802" y="383" font-size="8.4" fill="#334155">$6.78</text>
+  <text x="872" y="383" font-size="8.4" fill="#334155">24.5 min</text>
+
+  <rect x="502" y="389" width="424" height="17" rx="3" fill="#dbeafe"/>
+  <text x="506" y="400.5" font-size="8.5" font-weight="700" fill="#1d4ed8">RRA 制品</text>
+  <text x="580" y="400.5" font-size="8.5" font-weight="700" fill="#1d4ed8">73.3%</text>
+  <text x="642" y="400.5" font-size="8.5" font-weight="700" fill="#1d4ed8">66.7% / 84.6% / 71.4%</text>
+  <text x="802" y="400.5" font-size="8.5" font-weight="700" fill="#1d4ed8">$4.34</text>
+  <text x="872" y="400.5" font-size="8.5" font-weight="700" fill="#1d4ed8">14.4 min</text>
+
+  <rect x="498" y="416" width="432" height="78" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="506" y="432" font-size="8.8" font-weight="700" fill="#0f172a">1) 论文等权宏观均值（36 篇，95% 区间，首轮）：全模型均显著净提升</text>
+  <text x="514" y="447" font-size="8.2" fill="#334155">S4.6: 69.9→89.7%（25 升 8 平 3 降）· S5: 75.1→90.6%（23/9/4）</text>
+  <text x="514" y="460" font-size="8.2" fill="#334155">O5: 87.5→94.2%（16 升 15 平 5 降）· G3.8: 67.2→87.9%（25/5/6）</text>
+  <text x="506" y="476" font-size="8.8" font-weight="700" fill="#1d4ed8">2) 收紧至 80% 兼容区间（1,029 项，首轮）：数值更严下优势继续放大</text>
+  <text x="514" y="489" font-size="8.2" font-weight="600" fill="#1e293b">S4.6 +26.9 pp · S5 +26.5 pp · O5 +10.3 pp · G3.8 47.7%→86.8% (+39.1 pp)</text>
+
+  <text x="20" y="523" font-size="8.5" fill="#64748b">注：下游 API 支出未计入 $5,026 构建 API、审计 API、8×H100 GPU 集群执行、5 人参考核验及维护成本；不同厂商 CLI/harness 存在差异，跨模型对比仅作描述性参考。</text>
+</svg>

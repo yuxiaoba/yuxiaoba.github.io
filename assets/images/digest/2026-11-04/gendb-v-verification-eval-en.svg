@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#ffffff;font-family:'Lato', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="8" y="8" width="944" height="524" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="17.0" font-weight="700" fill="#0f172a" text-anchor="start">GenDB-V Evaluation: Template vs. General Engine &amp; Unverified Synthesis Audit</text>
+  <text x="24" y="53" font-size="10.3" font-weight="400" fill="#475569" text-anchor="start">Based on arXiv:2611.02779v1 (§6, Tables 2–3, Figs. 4–5): Dual Xeon Gold 5218 (32C/64T, 384 GB RAM), Claude Opus 5.5</text>
+  <line x1="24" y1="63" x2="936" y2="63" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="20" y="73" width="466" height="449" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="73" width="466" height="28" rx="8" fill="#1e3a8a"/>
+  <rect x="20" y="93" width="466" height="8" fill="#1e3a8a"/>
+  <text x="32" y="91.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">1. Two Distinct Performance Regimes (vs. DuckDB 1.5.6 / Umbra 26.08)</text>
+  <rect x="30" y="108" width="446" height="214" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="40" y="126" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="start">Regime A · Template-Specialized Engines (28 Templates, Eq. 4)</text>
+  <text x="40" y="141" font-size="8.9" font-weight="400" fill="#475569" text-anchor="start">Geometric-mean speedup across 1/32/64T (log scale 1×–100×); 28/28 formally verified</text>
+  <line x1="232.0" y1="152" x2="232.0" y2="274" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="232.0" y="286" font-size="8.4" font-weight="400" fill="#475569" text-anchor="middle">1×</text>
+  <line x1="302.6" y1="152" x2="302.6" y2="274" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="302.6" y="286" font-size="8.4" font-weight="400" fill="#475569" text-anchor="middle">5×</text>
+  <line x1="333.0" y1="152" x2="333.0" y2="274" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="333.0" y="286" font-size="8.4" font-weight="400" fill="#475569" text-anchor="middle">10×</text>
+  <line x1="403.6" y1="152" x2="403.6" y2="274" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="403.6" y="286" font-size="8.4" font-weight="400" fill="#475569" text-anchor="middle">50×</text>
+  <line x1="434.0" y1="152" x2="434.0" y2="274" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="434.0" y="286" font-size="8.4" font-weight="400" fill="#475569" text-anchor="middle">100×</text>
+  <text x="40" y="169" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">TPC-H Joint vs DuckDB</text>
+  <rect x="232" y="158" width="173.0" height="14" rx="3" fill="#1d4ed8"/>
+  <text x="410.0" y="169" font-size="9.1" font-weight="700" fill="#0f172a" text-anchor="start">51.6×</text>
+  <text x="40" y="193" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">TPC-H Joint vs Umbra</text>
+  <rect x="232" y="182" width="135.6" height="14" rx="3" fill="#3b82f6"/>
+  <text x="372.6" y="193" font-size="9.1" font-weight="700" fill="#0f172a" text-anchor="start">22.0×</text>
+  <text x="40" y="217" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">SEC-EDGAR Joint vs DuckDB</text>
+  <rect x="232" y="206" width="180.5" height="14" rx="3" fill="#1e3a8a"/>
+  <text x="417.5" y="217" font-size="9.1" font-weight="700" fill="#0f172a" text-anchor="start">61.3×</text>
+  <text x="40" y="241" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">SEC-EDGAR Joint vs Umbra</text>
+  <rect x="232" y="230" width="146.6" height="14" rx="3" fill="#2563eb"/>
+  <text x="383.6" y="241" font-size="9.1" font-weight="700" fill="#0f172a" text-anchor="start">28.3×</text>
+  <text x="40" y="265" font-size="9.1" font-weight="600" fill="#334155" text-anchor="start">Plain Arrays (no storage opt)</text>
+  <rect x="232" y="254" width="74.7" height="14" rx="3" fill="#bfdbfe" stroke="#3b82f6" stroke-width="0.9"/>
+  <line x1="258.7" y1="254" x2="258.7" y2="268" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="312.7" y="265" font-size="8.8" font-weight="700" fill="#1e3a8a" text-anchor="start">1.84–5.49× (geomean range)</text>
+  <text x="40" y="301" font-size="8.6" font-weight="400" fill="#334155" text-anchor="start">Plain arrays beat DuckDB on 65/66 (TPC-H) &amp; 18/18 (SEC); Umbra on 55/66 &amp; 15/18</text>
+  <text x="40" y="315" font-size="8.6" font-weight="400" fill="#475569" text-anchor="start">Joint 64T total time: TPC-H 0.749s (DuckDB 16.740s), SEC 0.076s (DuckDB 1.555s)</text>
+  <rect x="30" y="332" width="446" height="180" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="40" y="350" font-size="10.2" font-weight="700" fill="#1d4ed8" text-anchor="start">Regime B · Single General-Purpose Engine (Any Q ∈ Q_Σ, TPC-H SF100)</text>
+  <text x="40" y="366" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">Evolution: v0 ref interpreter (2/22 at SF1) → v2 ($594, full SF100) → v16 ($1,229)</text>
+  <text x="40" y="381" font-size="8.9" font-weight="400" fill="#0f172a" text-anchor="start">v16 total workload time: 109.3 s (1T) · 9.16 s (64T) via verified rewrites &amp; fusion</text>
+  <line x1="232.0" y1="391" x2="232.0" y2="458" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="232.0" y="471" font-size="8.3" font-weight="400" fill="#475569" text-anchor="middle">1×</text>
+  <line x1="302.6" y1="391" x2="302.6" y2="458" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="302.6" y="471" font-size="8.3" font-weight="400" fill="#475569" text-anchor="middle">5×</text>
+  <line x1="333.0" y1="391" x2="333.0" y2="458" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="333.0" y="471" font-size="8.3" font-weight="400" fill="#475569" text-anchor="middle">10×</text>
+  <text x="40" y="410" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">General v16 vs DuckDB (64T / 1T)</text>
+  <rect x="232" y="398" width="53.7" height="15" rx="3" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1"/>
+  <rect x="232" y="398" width="25.8" height="15" rx="3" fill="#1d4ed8"/>
+  <text x="291.7" y="410" font-size="9.2" font-weight="700" fill="#1d4ed8" text-anchor="start">1.8× / 3.4×</text>
+  <text x="40" y="437" font-size="9.1" font-weight="600" fill="#0f172a" text-anchor="start">General v16 vs Umbra (64T / 1T)</text>
+  <rect x="232" y="425" width="18.4" height="15" rx="3" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <rect x="232" y="425" width="10.5" height="15" rx="3" fill="#60a5fa"/>
+  <text x="256.4" y="437" font-size="9.2" font-weight="700" fill="#1d4ed8" text-anchor="start">1.27× / 1.52×</text>
+  <rect x="40" y="481" width="426" height="23" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="48" y="496" font-size="8.7" font-weight="700" fill="#1e3a8a" text-anchor="start">Scope Guard: Template 22–61.3× reflects per-template co-design; general engine is 1.27–3.4×.</text>
+  <rect x="500" y="73" width="440" height="449" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="500" y="73" width="440" height="28" rx="8" fill="#0f172a"/>
+  <rect x="500" y="93" width="440" height="8" fill="#0f172a"/>
+  <text x="512" y="91.5" font-size="10.8" font-weight="700" fill="#ffffff" text-anchor="start">2. Unverified Synthesis Audit (vs. Bespoke OLAP) &amp; Scope</text>
+  <rect x="510" y="108" width="420" height="174" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="520" y="126" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="start">Correctness Audit: Bespoke OLAP (SynnoDB) vs. GenDB-V (§6.4)</text>
+  <rect x="520" y="134" width="194" height="44" rx="5" fill="#ffffff" stroke="#94a3b8" stroke-width="1.0"/>
+  <text x="530" y="151" font-size="9.1" font-weight="700" fill="#334155" text-anchor="start">Bespoke OLAP (Testing Only)</text>
+  <text x="530" y="168" font-size="10.0" font-weight="700" fill="#0f172a" text-anchor="start">16 / 28 templates fail valid DBs</text>
+  <rect x="724" y="134" width="196" height="44" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="734" y="151" font-size="9.1" font-weight="700" fill="#1d4ed8" text-anchor="start">GenDB-V (Full-Domain Proof)</text>
+  <text x="734" y="168" font-size="10.0" font-weight="700" fill="#1e3a8a" text-anchor="start">0 / 28 fail (matches DuckDB)</text>
+  <text x="520" y="196" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• TPC-H (10/22 fail): 32-bit overflow (Q1/6/14/15); &gt;64 lines (Q21)</text>
+  <text x="520" y="212" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">  assumed ship&gt;order (Q7), unique nation (Q7/9/11), n_key&lt;32 (Q2)</text>
+  <text x="520" y="229" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• SEC-EDGAR (6/6 fail): negative fiscal/SIC; Q1 group &gt; 2^24 rows</text>
+  <text x="520" y="246" font-size="8.9" font-weight="400" fill="#0f172a" text-anchor="start">• SEC Q6 sentinel collision: drops valid group on SF3 unseen binding (21/22)</text>
+  <text x="520" y="265" font-size="8.9" font-weight="400" fill="#475569" text-anchor="start">• Threading: Bespoke slows at 64T vs 32T; GenDB-V treats threads as cap</text>
+  <rect x="510" y="292" width="420" height="110" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.0"/>
+  <text x="520" y="310" font-size="10.2" font-weight="700" fill="#1e3a8a" text-anchor="start">Synthesis Cost &amp; Code/Proof Size (§6.6, Claude Opus 5.5)</text>
+  <rect x="520" y="320" width="128" height="72" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="528" y="336" font-size="8.9" font-weight="700" fill="#1e3a8a" text-anchor="start">Joint Templates (28)</text>
+  <text x="528" y="357" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="start">$2,310</text>
+  <text x="528" y="373" font-size="8.2" font-weight="400" fill="#334155" text-anchor="start">$1,868 + $442 (TPC/SEC)</text>
+  <text x="528" y="385" font-size="8.2" font-weight="400" fill="#475569" text-anchor="start">Median 5.4h / 3.5h</text>
+  <rect x="656" y="320" width="128" height="72" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="664" y="336" font-size="8.9" font-weight="700" fill="#1e3a8a" text-anchor="start">Template LOC</text>
+  <text x="664" y="357" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="start">77% Proof</text>
+  <text x="664" y="373" font-size="8.2" font-weight="400" fill="#334155" text-anchor="start">Median ~6.5k / ~5.9k</text>
+  <text x="664" y="385" font-size="8.2" font-weight="400" fill="#475569" text-anchor="start">Plain $1,285 + $390</text>
+  <rect x="792" y="320" width="128" height="72" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.0"/>
+  <text x="800" y="336" font-size="8.9" font-weight="700" fill="#1e3a8a" text-anchor="start">General Engine v16</text>
+  <text x="800" y="357" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="start">$1,229</text>
+  <text x="800" y="373" font-size="8.2" font-weight="400" fill="#334155" text-anchor="start">~104,000 total LOC</text>
+  <text x="800" y="385" font-size="8.2" font-weight="400" fill="#475569" text-anchor="start">68% specs &amp; proofs</text>
+  <rect x="510" y="412" width="420" height="100" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="520" y="430" font-size="10.2" font-weight="700" fill="#0f172a" text-anchor="start">Scope Limits &amp; Uncovered Features (§3.1, §5.2, §6.1)</text>
+  <text x="520" y="449" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• Read-only analytical fragment: no window funcs, recursion, OLTP/WAL</text>
+  <text x="520" y="466" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• Parallelism limited to read-only fork-join; shared mutable concurrency TBD</text>
+  <text x="520" y="483" font-size="8.9" font-weight="400" fill="#334155" text-anchor="start">• SQLSpec itself is trusted (PG-validated), not proved against another spec</text>
+  <text x="520" y="500" font-size="8.9" font-weight="400" fill="#475569" text-anchor="start">• Concurrent JetStream is closed-source &amp; NOT NULL; no direct head-to-head</text>
+</svg>

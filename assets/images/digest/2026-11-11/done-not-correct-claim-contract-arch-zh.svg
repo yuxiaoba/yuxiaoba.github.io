@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Done Is Not Correct 三种 Agent 架构、几何核反馈隔离与强制先测后报契约图" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="34" font-size="16.5" font-weight="700" fill="#0f172a">Done Is Not Correct：三种 Agent 架构与强制先测后报契约</text>
+  <text x="24" y="53" font-size="10.2" fill="#475569">arXiv:2611.10063v1（§3 与附录 B）· build123d / OpenCascade 隔离执行 + 13 任务 / 122 项核查（容差带而非视觉评分）</text>
+  <line x1="24" y1="62" x2="936" y2="62" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Column 1: Single-Shot -->
+  <rect x="20" y="72" width="292" height="258" rx="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <rect x="20" y="72" width="292" height="28" rx="9" fill="#475569"/>
+  <rect x="20" y="92" width="292" height="8" fill="#475569"/>
+  <text x="32" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">1. 单发生成（Single-shot · 1.0 步）</text>
+
+  <rect x="32" y="110" width="268" height="46" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="128" font-size="9.5" font-weight="700" fill="#0f172a">自然语言规格 + 建模约束</text>
+  <text x="42" y="145" font-size="8.9" fill="#475569">T1 / T2 / T4 规范 · 单位 mm · +Z 轴约定</text>
+
+  <line x1="166" y1="156" x2="166" y2="168" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-slate)"/>
+
+  <rect x="32" y="170" width="268" height="52" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="188" font-size="9.5" font-weight="700" fill="#0f172a">一次生成全部代码与完成声明</text>
+  <text x="42" y="204" font-size="8.9" fill="#334155">1 个 build123d Python 块 + DONE + 信心</text>
+  <text x="42" y="216.5" font-size="8.5" fill="#64748b">均值 211 输入 / 735 输出 tokens</text>
+
+  <line x1="166" y1="222" x2="166" y2="234" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-slate)"/>
+
+  <rect x="32" y="236" width="268" height="44" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="42" y="253" font-size="9.3" font-weight="700" fill="#92400e">无几何核测量反馈</text>
+  <text x="42" y="269" font-size="8.7" fill="#78350f">声明均值 0.97；未见实际实体即提交</text>
+
+  <rect x="32" y="288" width="268" height="32" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+  <text x="166" y="308" text-anchor="middle" font-size="9.3" font-weight="700" fill="#991b1b">声明 98% · 静默失败 14.1% (22/156)</text>
+
+  <!-- Column 2: Enforced Tool-Use -->
+  <rect x="334" y="72" width="292" height="258" rx="9" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.6"/>
+  <rect x="334" y="72" width="292" height="28" rx="9" fill="#1d4ed8"/>
+  <rect x="334" y="92" width="292" height="8" fill="#1d4ed8"/>
+  <text x="346" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">2. 强制工具循环（≤4 轮 + 1 确认）</text>
+
+  <rect x="346" y="110" width="268" height="46" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="356" y="128" font-size="9.5" font-weight="700" fill="#1e3a8a">子进程沙箱运行 build123d（60s）</text>
+  <text x="356" y="145" font-size="8.9" fill="#334155">隔离 OpenCascade 崩溃；提取实体几何</text>
+
+  <line x1="480" y1="156" x2="480" y2="168" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="346" y="170" width="268" height="52" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <text x="356" y="188" font-size="9.5" font-weight="700" fill="#1e3a8a">只返回实测 JSON，不泄露目标/容差</text>
+  <text x="356" y="204" font-size="8.8" fill="#1e293b">valid_solid, bbox, volume, com, cylinders</text>
+  <text x="356" y="216.5" font-size="8.5" fill="#475569">无通过/失败提示；Agent 自行对照规格</text>
+
+  <line x1="480" y1="222" x2="480" y2="234" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="346" y="236" width="268" height="44" rx="6" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.2"/>
+  <text x="356" y="253" font-size="9.3" font-weight="700" fill="#1d4ed8">先测后报契约（Measure-then-Claim）</text>
+  <text x="356" y="269" font-size="8.7" fill="#1e3a8a">拦截未测代码的 DONE；须审阅终版测量</text>
+
+  <rect x="346" y="288" width="268" height="32" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.1"/>
+  <text x="480" y="308" text-anchor="middle" font-size="9.2" font-weight="700" fill="#166534">声明 80.8% · 静默 3.2% (5/156) · 精准 96%</text>
+
+  <!-- Column 3: Multi-Agent -->
+  <rect x="648" y="72" width="292" height="258" rx="9" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="648" y="72" width="292" height="28" rx="9" fill="#1e3a8a"/>
+  <rect x="648" y="92" width="292" height="8" fill="#1e3a8a"/>
+  <text x="660" y="90.5" font-size="10.8" font-weight="700" fill="#ffffff">3. 多角色流水线（Planner→Coder→Checker）</text>
+
+  <rect x="660" y="110" width="268" height="46" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="670" y="128" font-size="9.5" font-weight="700" fill="#0f172a">同模型三角色（1 规划 + ≤3 轮核验）</text>
+  <text x="670" y="145" font-size="8.9" fill="#334155">Planner/Coder 输出构建计划与 DIMS JSON</text>
+
+  <line x1="794" y1="156" x2="794" y2="168" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="660" y="170" width="268" height="52" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="670" y="188" font-size="9.5" font-weight="700" fill="#1e3a8a">信息等价的 Checker 核验</text>
+  <text x="670" y="204" font-size="8.8" fill="#334155">读取同源核测量 + watertight（不见 Oracle）</text>
+  <text x="670" y="216.5" font-size="8.5" fill="#475569">二手转述反馈使 Coder 崩溃率升高（53 题）</text>
+
+  <line x1="794" y1="222" x2="794" y2="234" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <rect x="660" y="236" width="268" height="44" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="670" y="253" font-size="9.3" font-weight="700" fill="#0f172a">上下文分歧 CDS（2% 相对容差）</text>
+  <text x="670" y="269" font-size="8.7" fill="#475569">识别未成形(0.518)，难辨有效错件(0.107)</text>
+
+  <rect x="660" y="288" width="268" height="32" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1"/>
+  <text x="794" y="308" text-anchor="middle" font-size="9.2" font-weight="700" fill="#075985">声明 57.1% · 静默 2.6% (4/156) · 成功 61.5%</text>
+
+  <!-- Bottom Oracle Panel -->
+  <rect x="20" y="342" width="920" height="160" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="342" width="920" height="26" rx="9" fill="#eff6ff"/>
+  <rect x="20" y="360" width="920" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="368" x2="940" y2="368" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="359" font-size="11.0" font-weight="700" fill="#1e3a8a">自审计几何核 Oracle、定义与双边校准边界（独立于 Agent，无视觉裁判模型）</text>
+
+  <rect x="32" y="378" width="288" height="114" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="396" font-size="9.8" font-weight="700" fill="#1d4ed8">13 任务 · 122 项 B-rep 机检属性</text>
+  <text x="42" y="415" font-size="8.9" fill="#334155">• T1 单特征(5) / T2 多特征(6) / T4 编辑(2)</text>
+  <text x="42" y="433" font-size="8.9" fill="#334155">• 58 approx · 13 range · 13 equal · 13 valid</text>
+  <text x="42" y="451" font-size="8.9" fill="#334155">• 22 圆柱(按轴向区间合并) · 3 螺栓圆周</text>
+  <text x="42" y="472" font-size="8.7" fill="#475569">注：不含多零件装配、干涉与可制造性检查</text>
+
+  <rect x="336" y="378" width="288" height="114" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="346" y="396" font-size="9.8" font-weight="700" fill="#1d4ed8">静默失败与 Oracle 加固自检</text>
+  <text x="346" y="415" font-size="8.9" fill="#0f172a">• 定义：v(有效实体) ∧ d(DONE) ∧ ¬pass</text>
+  <text x="346" y="433" font-size="8.9" fill="#334155">• 排除编译崩溃(¬v)与诚实未声明(¬d)</text>
+  <text x="346" y="451" font-size="8.9" fill="#334155">• 加固补全轴向长度/单孔/质心/±8%体积：</text>
+  <text x="346" y="472" font-size="8.8" font-weight="600" fill="#1d4ed8">  重判 519 次中 18 项 pass→fail（0 反向）</text>
+
+  <rect x="640" y="378" width="288" height="114" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="650" y="396" font-size="9.8" font-weight="700" fill="#1d4ed8">参考解校准门与盲审双边界</text>
+  <text x="650" y="415" font-size="8.9" fill="#334155">• 13 个 Siemens NX 参考解须 100% 过检</text>
+  <text x="650" y="433" font-size="8.9" fill="#334155">• 工程师盲审 81 件：总 κ=0.64 (82.7%)</text>
+  <text x="650" y="451" font-size="8.9" fill="#334155">• 去歧义题 t2-lbracket 后 κ=0.87 (93.5%)</text>
+  <text x="650" y="472" font-size="8.7" fill="#475569">• 外部盲审仅推翻 3/18 静默失败（双向有界）</text>
+
+  <text x="24" y="521" font-size="9.0" fill="#64748b">注：单变量消融（相同核反馈但允许未测代码同行声明 DONE）使静默失败由 5 增至 14（Fisher p=0.056），归因于声明契约而非迭代反馈本身。</text>
+</svg>

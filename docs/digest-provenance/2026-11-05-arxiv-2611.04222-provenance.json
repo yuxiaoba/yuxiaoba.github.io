@@ -1,0 +1,289 @@
+{
+  "schema_version": "1.0",
+  "record_id": "2026-11-05-arxiv-2611.04222",
+  "paper_id": "arxiv-2611.04222",
+  "anchor_id": "paper-arxiv-2611.04222",
+  "digest_date": "2026-11-05",
+  "updated_at_utc": "2026-11-17T02:45:00Z",
+  "assistant_translated": true,
+  "verification_status": "VERIFIED",
+  "bilingual_scope": {
+    "zh_target": "_digest/zh/daily-2026-11-05.md",
+    "en_target": "_digest/en/daily-2026-11-05.md",
+    "staged_zh_section": "/root/.gemini/antigravity-cli/brain/ae01a260-6791-43c5-809a-4967b1b2e19f/scratch/d2a-sections/2611.04222/section_zh.md",
+    "staged_en_section": "/root/.gemini/antigravity-cli/brain/ae01a260-6791-43c5-809a-4967b1b2e19f/scratch/d2a-sections/2611.04222/section_en.md",
+    "requested_parent_staging_dir": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sections/2611.04222/",
+    "staging_path_note": "write_file enforces writing within this subagent session's own artifact/brain directory rather than the parent session's directory, and run_command is disabled; parent can read/copy directly from staged_zh_section and staged_en_section above.",
+    "translation_provenance": "Assistant-authored Chinese close reading and paired English technical close reading derived directly from primary arXiv:2611.04222v1 PDF and frozen abstract."
+  },
+  "primary_source": {
+    "arxiv_id": "2611.04222",
+    "arxiv_version_verified": "v1",
+    "withdrawal_or_v2_status": "No v2 revision or withdrawal notice observed on arXiv as of 2026-11-17.",
+    "title": "GC-MoE: Overlapping Expert-Parallel Token Dispatch with FP8/FP4 Grouped GEMM via CUDA Green Contexts",
+    "authors": [
+      "Yong Li",
+      "Kan Liu",
+      "Tao Lan"
+    ],
+    "affiliation": "Alibaba Group (alibaba-inc.com)",
+    "categories": [
+      "cs.DC"
+    ],
+    "submitted_date": "2026-11-03",
+    "manuscript_date": "2026-11-02",
+    "evaluated_release": "GC-MoE 0.3.1 (commit 9bdb81f)",
+    "urls": {
+      "abs": "https://arxiv.org/abs/2611.04222",
+      "pdf": "https://arxiv.org/pdf/2611.04222",
+      "github": "https://github.com/Bruce-Lee-LY/gc-moe"
+    },
+    "github_url_verified_via_search": true,
+    "local_source_artifacts": {
+      "hash_note": "Subagent restricted from run_command; parent verification step computes exact SHA-256 and byte lengths.",
+      "frozen_abstract_txt": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261105-083003-01da9513ed-fd256c/work/sources/pages/arxiv-2611.04222.txt",
+        "lines": 4,
+        "sha256": "62e612e98b3161cc2a5de36a6a4e3697954f14ce151c221aeeb51a96d591a465",
+        "bytes": 2070
+      },
+      "extracted_full_txt": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sources/2611.04222.txt",
+        "lines": 1196,
+        "sha256": "667b10ebd0c76ef2113324aa60b33f29bdc40fbd3594178e50f27d915ca0f864",
+        "bytes": 94046
+      },
+      "primary_pdf": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/d2a-sources/2611.04222.pdf",
+        "pages": 25,
+        "sha256": "7190fe6187980a384c51889f9ca1884523eb479d8fff36a7b034b6af89ef308d",
+        "bytes": 1770079
+      }
+    }
+  },
+  "verified_claims_and_metrics": {
+    "environment": {
+      "gpus": [
+        "8x NVIDIA H20 (Hopper, sm_90a)",
+        "8x NVIDIA B300 (Blackwell, CC 10.3, sm_103f)"
+      ],
+      "cuda_ptxas": "CUDA 13.2, ptxas 13.2.78",
+      "pytorch": "2.11.0 (cu130)",
+      "kernel_dsl": "NVIDIA CUTLASS DSL (CuTe) 4.8.1",
+      "baseline": "DeepGEMM 2.8.2+fcad603 (fp8_fp4_mega_moe on B300; author SM90 port sm90_fp8_fp4_mega_moe on H20)"
+    },
+    "partition_and_graph_design": {
+      "b300_total_sms": 148,
+      "b300_default_dispatch_request": 16,
+      "b300_aligned_comm_sms": 20,
+      "b300_aligned_compute_sms": 128,
+      "h20_default_dispatch_sms": 4,
+      "workqueue_scope": "CU_WORKQUEUE_SCOPE_GREEN_CTX_BALANCED (wqConcurrencyLimit=1)",
+      "graph_nodes_sm103": 3,
+      "graph_nodes_sm90_with_fused_shared": 4,
+      "by_value_peer_descriptor_bytes": 592,
+      "peer_descriptor_offsets_max": 72,
+      "tma_tensor_maps_by_value_sm103": 18,
+      "device_code_lines": {
+        "sm103": 1935,
+        "sm90": 1305
+      }
+    },
+    "workloads": {
+      "GLM-5.2": {
+        "H": 6144,
+        "I": 2048,
+        "E": 256,
+        "top_k": 8,
+        "shared_experts": 1,
+        "shared_k_group": 128,
+        "routed_recipe": "(1, 1, 32)"
+      },
+      "DeepSeek-V4.1-Flash": {
+        "H": 5120,
+        "I": 2304,
+        "E": 384,
+        "top_k": 6,
+        "shared_experts": 1,
+        "shared_k_group": 32,
+        "routed_recipe": "(1, 1, 32)"
+      }
+    },
+    "decode_speedups_vs_mega_moe": {
+      "total_measured_points": 54,
+      "points_faster_count": 54,
+      "tokens_per_rank_sweep": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "h20_dsv4_routed_9pts": {
+        "mean": 1.1881,
+        "peak": 1.2957,
+        "peak_tokens_per_rank": 16,
+        "min": 1.0291,
+        "min_tokens_per_rank": 256
+      },
+      "h20_dsv4_shared_9pts_vs_unfused_mega": {
+        "mean_vs_mega_unfused": 1.188,
+        "peak_vs_mega_unfused": 1.3533,
+        "peak_tokens_per_rank": 8,
+        "within_operator_mean_vs_gc_unfused": 1.0307,
+        "within_operator_dips_T32_64_128": [
+          0.9854,
+          0.9852,
+          0.9728
+        ]
+      },
+      "b300_routed_18pts": {
+        "overall_mean": 1.1059,
+        "glm5_2_mean": 1.1024,
+        "glm5_2_range": [
+          1.0846,
+          1.1284
+        ],
+        "dsv4_1_flash_mean": 1.1094,
+        "dsv4_1_flash_range": [
+          1.0879,
+          1.1893
+        ]
+      },
+      "b300_fused_shared_18pts_feature_matched": {
+        "overall_mean": 1.123,
+        "glm5_2_mean": 1.1306,
+        "glm5_2_range": [
+          1.1037,
+          1.1669
+        ],
+        "dsv4_1_flash_mean": 1.1154,
+        "dsv4_1_flash_range": [
+          1.0712,
+          1.2092
+        ]
+      }
+    },
+    "analytic_throughput_and_bandwidth": {
+      "h20_dsv4_tflops_T8": {
+        "mega": 73.805,
+        "gc": 95.597,
+        "delta_pct": 29.5
+      },
+      "h20_dsv4_tflops_T256": {
+        "mega": 1251.393,
+        "gc": 1287.785
+      },
+      "h20_dsv4_hbm_model_peak_T32_gbs": {
+        "mega": 14973.9,
+        "gc": 18931.9,
+        "delta_pct": 26.4
+      },
+      "h20_dsv4_nvlink_model_T256_gbs": {
+        "mega": 239.719,
+        "gc": 246.69,
+        "delta_pct": 2.9
+      },
+      "b300_glm5_2_tflops_T1": {
+        "mega": 75.28,
+        "gc": 82.453
+      },
+      "b300_glm5_2_tflops_T256": {
+        "mega": 7524.828,
+        "gc": 8490.679,
+        "delta_pct": 12.8
+      }
+    },
+    "numerical_accuracy": {
+      "h20_routed_cases": 47,
+      "h20_routed_rank_checks": 376,
+      "h20_routed_min_cos_vs_bf16": 0.977039,
+      "h20_routed_min_cos_gc_vs_mega": 0.99999976,
+      "h20_routed_max_abs_err": 0.109375,
+      "h20_routed_max_rel_l2": 0.00600836286321,
+      "h20_shared_cases": 47,
+      "h20_shared_rank_checks": 376,
+      "h20_shared_min_cos_vs_bf16": 0.99,
+      "h20_shared_min_cos_gc_vs_mega": 0.9999997,
+      "h20_shared_max_abs_err": 0.0625,
+      "h20_shared_max_rel_l2": 5.81e-05,
+      "b300_cases": 94,
+      "b300_rank_checks": 752,
+      "b300_min_cos_routed": 0.97,
+      "b300_min_cos_shared": 0.99
+    }
+  },
+  "explicit_limitations": [
+    "Isolated single-layer MoE CUDA Graph replay with pre-quantized inputs and capacity 256; does not measure end-to-end TPOT/TTFT inside a full serving engine or prefill workloads (where 128 compute SMs become the bottleneck).",
+    "Section 8 explicitly omits both a controlled partition-size (dispatch_sms) sweep and an overlap-on/off ablation in v1, so Green-Context overlap, K128 weight prepacking, and tag-2 removal gains are not separately decomposed.",
+    "H20 baseline uses an author-written SM90 reference port (sm90_fp8_fp4_mega_moe) because public DeepGEMM 2.8.2 ships SM100 only, and the H20 shared-expert baseline runs two unfused kernels (1.188x vs unfused Mega vs 1.123x feature-matched on B300).",
+    "Hard Appendix A Table 12 constraints: I <= 4096 (mod 128), H mod 256 = 0, k + 1[shared] <= 32, E <= 2048 global (<= 512/rank, E mod P = 0), P <= 72 ranks, routed (1,1,32) SwiGLU only, single process per peer-accessible GPU, and serialized calls per single-instance workspace.",
+    "HBM working-set bandwidth and NVLink payload bandwidth in Table 9 are analytic models rather than hardware PMU counters."
+  ],
+  "visual_assets": {
+    "palette": "v3-blue",
+    "viewbox": "0 0 960 540",
+    "hash_note": "Subagent restricted from run_command; parent step computes exact SVG disk SHA-256s and byte counts and executes PNG/Playwright rendering.",
+    "gc_moe_svgs": {
+      "gc-moe-green-context-split-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/gc-moe-green-context-split-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/gc-moe-green-context-split-zh.svg",
+        "sha256": "7a14d4a3c2f750a3d4daafff878490085445bdd1e902bde9e4922bbd5cb2e0a3",
+        "bytes": 20448
+      },
+      "gc-moe-green-context-split-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/gc-moe-green-context-split-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/gc-moe-green-context-split-en.svg",
+        "sha256": "3f1089d9c6fcb572c06a46037346624ab9e8107295f6550f2fc2463cde0e78ff",
+        "bytes": 19855
+      },
+      "gc-moe-decode-speedup-boundaries-zh.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/gc-moe-decode-speedup-boundaries-zh.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/gc-moe-decode-speedup-boundaries-zh.svg",
+        "sha256": "4bbe679eb8005cac157afb68148af7b07439ab9222b914d2a49fd3a8097966c1",
+        "bytes": 18710
+      },
+      "gc-moe-decode-speedup-boundaries-en.svg": {
+        "site_path": "/assets/images/digest/2026-11-05/gc-moe-decode-speedup-boundaries-en.svg",
+        "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-05/gc-moe-decode-speedup-boundaries-en.svg",
+        "sha256": "b59134751b30da94fd9dc90534051bdc2997d6891f9b1ec9262070bf40fa5054",
+        "bytes": 18165
+      }
+    }
+  },
+  "surgical_patch_integrity": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-05.md",
+      "file_bytes_before": 46498,
+      "file_sha256_before": "a57afb9010f0516ba9d15d89c96ef1b07029938279a9d9c03e5902f04f3b8762",
+      "file_bytes_after": 258981,
+      "file_sha256_after": "0c569250568c0975f5704c11bbdfcfff48ddadc7366026be70dc954ece1ce395",
+      "old_section_bytes": 756,
+      "old_section_sha256": "646d1e03fdce681021a09fc302c9efb1f00b709a55f9e1392507fc7da4d51d8e",
+      "new_section_bytes": 27199,
+      "new_section_sha256": "4fe114b7d796ea6d8baa0014ac1d9681cf25a1ec921bdd2fa72d037bf72bb7d4"
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-05.md",
+      "file_bytes_before": 49237,
+      "file_sha256_before": "d5c507de897b4e0644651175c569f11bfe5df1cfa94b53b4227ec9422a1d0e06",
+      "file_bytes_after": 247387,
+      "file_sha256_after": "00dc837b0349415fa884dbc628828870d27be980bb81f30127ddd5602addd7a0",
+      "old_section_bytes": 875,
+      "old_section_sha256": "3eb3980f99ddb58357c21f8487c99bf490d9818137f2ac197cb72ab81d7a8736",
+      "new_section_bytes": 24261,
+      "new_section_sha256": "a9f23efe5b72c7a441f1add54077bf1655f9b385ea589f46dd8c4c4a6f2fd83f"
+    }
+  },
+  "host_verification": {
+    "verified_at_utc": "2026-11-17T03:08:32.604936+00:00",
+    "preview_release": "20261117-110758-45bc53b9",
+    "playwright_section_total": 12,
+    "playwright_section_passed": 12,
+    "playwright_section_failed": 0
+  }
+}

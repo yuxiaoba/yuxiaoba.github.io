@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Planner-Executor-Reviewer 提交闸门机制、四组实验信息通道审计与功能崩塌对比图" style="background:#ffffff;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 8.5 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <rect x="6" y="6" width="948" height="528" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="24" y="33" font-size="16.5" font-weight="700" fill="#0f172a">PER 多智能体团队中的角色分工、Reviewer 提交闸门与信息通道</text>
+  <text x="24" y="51" font-size="10.2" fill="#475569">arXiv:2611.03931v1（§3–§5.1, Fig. 1, Table 1 &amp; S4）· 固定 3-Agent 拓扑、6 轮循环上限、贪心解码 (T=0) 与 gpt-oss-120b 评测器</text>
+  <line x1="24" y1="60" x2="936" y2="60" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Top Panel: Control Loop -->
+  <rect x="20" y="69" width="920" height="191" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+  <rect x="20" y="69" width="920" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="87" width="920" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="95" x2="940" y2="95" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="86.5" font-size="11.0" font-weight="700" fill="#1e3a8a">A. 单轮审议循环与外部反馈回流（每题至多 6 轮：3 个外轮 × 2 个内轮）</text>
+
+  <!-- FAIL Feedback Bus -->
+  <path d="M 810 132 L 810 111 L 108 111 L 108 129" fill="none" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <line x1="292" y1="111" x2="292" y2="129" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <line x1="504" y1="111" x2="504" y2="129" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <rect x="536" y="101" width="244" height="19" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="658" y="114" text-anchor="middle" font-size="9.4" font-weight="700" fill="#1e3a8a">FAIL：判定与修复提示（下轮可见 1 次）</text>
+
+  <!-- Planner Card -->
+  <rect x="32" y="132" width="152" height="80" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.1"/>
+  <text x="108" y="149" text-anchor="middle" font-size="10.6" font-weight="700" fill="#0f172a">Planner（Slot 1）</text>
+  <text x="41" y="167" font-size="9.0" fill="#334155">RS：禁计算/作答 (0.00–0.18)</text>
+  <text x="41" y="183" font-size="9.0" fill="#1d4ed8">RF：直接作答 (0.89–0.98)</text>
+  <text x="41" y="199" font-size="9.0" fill="#475569">SE：JSON 模式无答案字段</text>
+
+  <line x1="184" y1="172" x2="213" y2="172" stroke="#475569" stroke-width="1.5" marker-end="url(#arr-slate)"/>
+
+  <!-- Executor Card -->
+  <rect x="216" y="132" width="152" height="80" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.1"/>
+  <text x="292" y="149" text-anchor="middle" font-size="10.6" font-weight="700" fill="#0f172a">Executor（Slot 2）</text>
+  <text x="225" y="167" font-size="9.0" fill="#334155">RS / RF 均直接推导并给出</text>
+  <text x="225" y="183" font-size="9.0" fill="#334155">最终答案（0.91–1.00）</text>
+  <text x="225" y="199" font-size="9.0" fill="#475569">SE：仅见解析计划与题干</text>
+
+  <line x1="368" y1="172" x2="397" y2="172" stroke="#475569" stroke-width="1.5" marker-end="url(#arr-slate)"/>
+
+  <!-- Reviewer Gate Card -->
+  <rect x="400" y="132" width="208" height="80" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.4"/>
+  <text x="504" y="149" text-anchor="middle" font-size="10.6" font-weight="700" fill="#92400e">Reviewer（Slot 3 · 提交闸门）</text>
+  <text x="410" y="167" font-size="9.0" fill="#78350f">以 [Agree] / [Continue] 控制提交权</text>
+  <text x="410" y="183" font-size="9.0" fill="#92400e">gemma-4 RS：53% 拒绝发生于首交前</text>
+  <text x="410" y="199" font-size="9.0" fill="#b45309">自由轮仅 25% 批准（RF 高达 96%）</text>
+
+  <!-- Gate Bar & Approve Arrow -->
+  <line x1="608" y1="172" x2="688" y2="172" stroke="#b45309" stroke-width="1.7" marker-end="url(#arr-amber)"/>
+  <line x1="632" y1="156" x2="632" y2="188" stroke="#b45309" stroke-width="3.0"/>
+  <text x="655" y="152" text-anchor="middle" font-size="9.1" font-weight="700" fill="#92400e">批准 [Agree]</text>
+  <text x="655" y="193" text-anchor="middle" font-size="8.9" fill="#475569">提交评测</text>
+
+  <!-- Evaluator Card -->
+  <rect x="691" y="132" width="237" height="80" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="810" y="149" text-anchor="middle" font-size="10.6" font-weight="700" fill="#1e3a8a">Oracle 评测器（gpt-oss-120b）</text>
+  <text x="701" y="167" font-size="9.0" fill="#1e293b">掌握参考答案（写提示时禁直接泄露）</text>
+  <text x="701" y="183" font-size="9.0" fill="#1d4ed8">PASS：立即结束轨迹并记正确</text>
+  <text x="701" y="199" font-size="9.0" fill="#475569">全程未提交：预算耗尽后终局评分一次</text>
+
+  <!-- No Approval Internal Cycle -->
+  <path d="M 504 212 L 504 237 L 108 237 L 108 215" fill="none" stroke="#64748b" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#arr-slate)"/>
+  <rect x="158" y="227" width="296" height="19" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="306" y="240" text-anchor="middle" font-size="9.2" font-weight="600" fill="#334155">未批准（[Continue]）：无外部反馈，进入下一轮内部讨论</text>
+
+  <!-- Bottom Left: 4 Experimental Arms -->
+  <rect x="20" y="269" width="452" height="227" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="20" y="269" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="20" y="287" width="452" height="8" fill="#eff6ff"/>
+  <line x1="20" y1="295" x2="472" y2="295" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="32" y="286.5" font-size="11.0" font-weight="700" fill="#1e3a8a">B. 四组条件对照与信息渠道审计（§4, Table 1）</text>
+
+  <!-- Row 1: RS -->
+  <rect x="30" y="303" width="432" height="42" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <rect x="38" y="311" width="66" height="18" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="71" y="323.5" text-anchor="middle" font-size="9.1" font-weight="700" fill="#1e3a8a">RS 基线</text>
+  <text x="112" y="322" font-size="9.6" font-weight="700" fill="#0f172a">常规 Planner–Executor–Reviewer 角色提示</text>
+  <text x="112" y="338" font-size="8.9" fill="#475569">反馈入各角色 advice 槽 · 保持分工，Reviewer 严格把关</text>
+
+  <!-- Row 2: RF -->
+  <rect x="30" y="350" width="432" height="42" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.1"/>
+  <rect x="38" y="358" width="66" height="18" rx="4" fill="#1d4ed8"/>
+  <text x="71" y="370.5" text-anchor="middle" font-size="9.1" font-weight="700" fill="#ffffff">RF 主对照</text>
+  <text x="112" y="369" font-size="9.6" font-weight="700" fill="#1e3a8a">字节一致通用提示（删除全部角色约束，探索性）</text>
+  <text x="112" y="385" font-size="8.9" fill="#1e293b">反馈作为 [Evaluator] 历史条目 · 同等获取反馈但少拦阻</text>
+
+  <!-- Row 3: RF- -->
+  <rect x="30" y="397" width="432" height="42" rx="5" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <rect x="38" y="405" width="66" height="18" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="71" y="417.5" text-anchor="middle" font-size="9.1" font-weight="700" fill="#92400e">RF− 诊断</text>
+  <text x="112" y="416" font-size="9.6" font-weight="700" fill="#78350f">同 RF 提示，但完全省略 [Evaluator] 反馈条目</text>
+  <text x="112" y="432" font-size="8.9" fill="#92400e">揭示「改写提示顺手切断反馈通道」造成的伪角色优势</text>
+
+  <!-- Row 4: SE -->
+  <rect x="30" y="444" width="432" height="42" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <rect x="38" y="452" width="66" height="18" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+  <text x="71" y="464.5" text-anchor="middle" font-size="9.1" font-weight="700" fill="#334155">SE 强制</text>
+  <text x="112" y="463" font-size="9.6" font-weight="700" fill="#0f172a">JSON 模式结构化强制（Planner 无最终答案字段）</text>
+  <text x="112" y="479" font-size="8.9" fill="#475569">反馈入 advice 槽 · 仅做于 Omni-MATH，8–17% 轨迹耗死</text>
+
+  <!-- Bottom Right: Collapse vs First-Pass -->
+  <rect x="488" y="269" width="452" height="227" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.1"/>
+  <rect x="488" y="269" width="452" height="26" rx="8" fill="#eff6ff"/>
+  <rect x="488" y="287" width="452" height="8" fill="#eff6ff"/>
+  <line x1="488" y1="295" x2="940" y2="295" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="500" y="286.5" font-size="11.0" font-weight="700" fill="#1e3a8a">C. 分工崩塌与首答准确率（Omni-MATH, Table 1 &amp; S2）</text>
+
+  <text x="500" y="313" font-size="9.3" font-weight="700" fill="#334155">首轮功能崩塌率（三代理全报答案）</text>
+  <text x="734" y="313" font-size="9.3" font-weight="700" fill="#334155">首答准确率 &amp; 单代理对照</text>
+
+  <!-- gemma-4 -->
+  <text x="500" y="335" font-size="9.3" font-weight="700" fill="#0f172a">gemma-4-31B</text>
+  <rect x="578" y="325" width="2" height="7" rx="1.5" fill="#64748b"/>
+  <text x="584" y="332" font-size="8.3" fill="#475569">RS 0.000</text>
+  <rect x="578" y="335" width="97" height="7" rx="1.5" fill="#1d4ed8"/>
+  <text x="679" y="342" font-size="8.3" font-weight="700" fill="#1d4ed8">RF 0.974</text>
+
+  <rect x="734" y="321" width="194" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="742" y="335" font-size="8.9" font-weight="700" fill="#0f172a">首答 0.802 vs 0.802 (±0.000)</text>
+  <text x="742" y="350" font-size="8.4" fill="#475569">单代理 0.869 均胜双团队</text>
+
+  <!-- gpt-oss -->
+  <text x="500" y="380" font-size="9.3" font-weight="700" fill="#0f172a">gpt-oss-120b</text>
+  <rect x="578" y="370" width="12" height="7" rx="1.5" fill="#64748b"/>
+  <text x="594" y="377" font-size="8.3" fill="#475569">RS 0.120</text>
+  <rect x="578" y="380" width="88" height="7" rx="1.5" fill="#1d4ed8"/>
+  <text x="670" y="387" font-size="8.3" font-weight="700" fill="#1d4ed8">RF 0.883</text>
+
+  <rect x="734" y="366" width="194" height="36" rx="5" fill="#eff6ff" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="742" y="380" font-size="8.9" font-weight="700" fill="#1e3a8a">首答 0.713 → 0.763 (+0.050)</text>
+  <text x="742" y="395" font-size="8.4" fill="#1d4ed8">RF− 0.819 胜单代理 0.790</text>
+
+  <!-- Llama-3.3 -->
+  <text x="500" y="425" font-size="9.3" font-weight="700" fill="#0f172a">Llama-3.3-70B</text>
+  <rect x="578" y="415" width="2" height="7" rx="1.5" fill="#64748b"/>
+  <text x="584" y="422" font-size="8.3" fill="#475569">RS 0.000</text>
+  <rect x="578" y="425" width="90" height="7" rx="1.5" fill="#1d4ed8"/>
+  <text x="672" y="432" font-size="8.3" font-weight="700" fill="#1d4ed8">RF 0.900</text>
+
+  <rect x="734" y="411" width="194" height="36" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+  <text x="742" y="425" font-size="8.9" font-weight="700" fill="#0f172a">首答 0.308 vs 0.316 (+0.008)</text>
+  <text x="742" y="440" font-size="8.4" fill="#475569">SE 仍有 7.1–18.8% 未真分工</text>
+
+  <!-- Bottom note inside C -->
+  <rect x="500" y="454" width="428" height="32" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.9"/>
+  <text x="509" y="468" font-size="8.5" fill="#334155">• 改变主要来自 Planner 禁令解除：回答率从 0.000–0.183 升至 0.889–0.979</text>
+  <text x="509" y="481" font-size="8.5" fill="#64748b">• 日志缺陷披露：gpt-oss RF 75.7% 消息缺隐藏推理，非缺陷周期仍崩塌 0.821</text>
+
+  <!-- Footer -->
+  <rect x="20" y="505" width="12" height="10" rx="2" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="37" y="514" font-size="9.0" fill="#334155">蓝框：Oracle 评测与角色外对照</text>
+  <rect x="200" y="505" width="12" height="10" rx="2" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+  <text x="217" y="514" font-size="9.0" fill="#334155">琥珀框：Reviewer 提交闸门与诊断组</text>
+  <text x="415" y="514" font-size="8.9" fill="#64748b">注：单代理参照来自早期同题集；P1a 计算禁令失效并重定为作者检核。</text>
+  <text x="20" y="528" font-size="8.9" fill="#64748b">完整分工依赖「禁止 Planner 作答」单条约束，但取消角色后首答准确率在 Omni-MATH 与 SciBench 均未下降。</text>
+</svg>

@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Agentic Verified Optimization and AQUEDUCT architecture: left side migrates C, C++, Go, and Rust programs into native Lean via candidate diversity, test generation, and alternating repair; right side co-searches Lean rewrites and equivalence proofs under a four-check kernel gate.">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="#f8fafc" rx="12"/>
+  <rect x="14" y="14" width="932" height="512" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" rx="10"/>
+
+  <!-- Header -->
+  <text x="30" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="16.5" font-weight="700" fill="#0f172a">Agentic Verified Optimization &amp; AQUEDUCT: Migration + Kernel-Checked Equivalence</text>
+  <text x="30" y="57" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.5" fill="#475569">arXiv:2610.30188v1 (§3–§4, App. A–B) · Codex + GPT-5.6 Sol (xhigh) · Lean 4.18.0 Reference-Counted Native Runtime</text>
+  <line x1="30" y1="67" x2="930" y2="67" stroke="#bfdbfe" stroke-width="1"/>
+
+  <!-- Left Panel: AQUEDUCT Migration -->
+  <rect x="28" y="76" width="424" height="420" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="40" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">A. AQUEDUCT: Existing Software → Native Lean 4 Reference</text>
+
+  <!-- A1: Source Repo + Oracle -->
+  <rect x="38" y="104" width="404" height="52" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="46" y="111" width="84" height="18" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="88" y="123.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.5" font-weight="700" fill="#1d4ed8">Source + Oracle</text>
+  <text x="138" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.8" font-weight="700" fill="#0f172a">40 ProgramBench Repos (C / C++ / Go / Rust)</text>
+  <text x="46" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">258–1.52M LOC · Original acts as oracle (18,642 / 39,857 supported tests)</text>
+
+  <line x1="135" y1="156" x2="135" y2="166" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <line x1="345" y1="156" x2="345" y2="166" stroke="#475569" stroke-width="1.3" stroke-dasharray="3 2" marker-end="url(#arrow-slate)"/>
+
+  <!-- A2 Left: 3 Candidate Strategies -->
+  <rect x="38" y="168" width="194" height="96" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="46" y="175" width="102" height="18" rx="5" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.9"/>
+  <text x="97" y="187.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#0369a1">3 Candidate Ports</text>
+  <text x="46" y="208" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">• A: Breadth-first (18 picked)</text>
+  <text x="46" y="224" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">• B: Fixture-first (20 picked)</text>
+  <text x="46" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">• C: Ledger-guided (2 picked)</text>
+  <text x="46" y="255" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#1d4ed8">Native Lean only; self-tests isolated</text>
+
+  <!-- Arrow from frozen candidates to test agents -->
+  <line x1="232" y1="216" x2="246" y2="216" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- A2 Right: 3 Test-Design Agents -->
+  <rect x="248" y="168" width="194" height="96" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="256" y="175" width="108" height="18" rx="5" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.9"/>
+  <text x="310" y="187.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#0369a1">3 Test Agents (T)</text>
+  <text x="256" y="208" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">• Diff. execution + shrinking</text>
+  <text x="256" y="224" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">• Coverage-guided fuzzing</text>
+  <text x="256" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">• Source mutation targets</text>
+  <text x="256" y="255" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#1d4ed8">33,671 tests; disagrees grow T</text>
+
+  <line x1="135" y1="264" x2="135" y2="275" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <line x1="345" y1="264" x2="345" y2="275" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- A3: Deterministic Controller + Repair + Audit -->
+  <rect x="38" y="277" width="404" height="110" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="46" y="285" width="112" height="18" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="102" y="297.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">Controller + Audit</text>
+  <text x="166" y="298" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.6" font-weight="700" fill="#0f172a">No Agent Judges Its Own Work</text>
+  <text x="46" y="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#334155">1. Select candidate by family-weighted agreement on shared corpus T</text>
+  <text x="46" y="338" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#334155">2. Alternate repair &amp; test growth; reject fixes that regress withheld checks</text>
+  <text x="46" y="356" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" fill="#334155">3. Final audit blocks FFI/subprocess calls to original or hardcoded answers</text>
+  <text x="46" y="374" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.3" font-weight="700" fill="#1d4ed8">4. Hidden eval (Thidden): 87.68% recovery vs 68.17% single-agent (+19.50 pp)</text>
+
+  <line x1="240" y1="387" x2="240" y2="399" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- A4: Frozen Reference Output -->
+  <rect x="38" y="401" width="404" height="84" rx="7" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+  <rect x="46" y="409" width="112" height="18" rx="5" fill="#dcfce7" stroke="#86efac" stroke-width="0.9"/>
+  <text x="102" y="421.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#15803d">Migrated Port f</text>
+  <text x="166" y="422" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.6" font-weight="700" fill="#0f172a">Reference Specification Inside Lean Repo R</text>
+  <text x="46" y="443" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" fill="#334155">17 repos (51 scenarios) + 189 Verina functions serve as fixed behavioral specs</text>
+  <rect x="46" y="453" width="388" height="23" rx="5" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.9"/>
+  <text x="240" y="468" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" font-weight="600" fill="#b45309">Caveat: Port fidelity rests on tests (7zip 62.74%, 938 open); unproved vs native</text>
+
+  <!-- Connector across gutter from Panel A4 to Panel B1 -->
+  <path d="M 442 443 L 465 443 L 465 142 L 486 142" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- Right Panel: Agentic Verified Optimization & Kernel Gate -->
+  <rect x="478" y="76" width="454" height="420" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="490" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">B. Verified Optimization: Co-Search &amp; 4-Check Kernel Gate</text>
+
+  <!-- B1: Objective & Scope -->
+  <rect x="488" y="104" width="434" height="76" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="498" y="111" width="96" height="18" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="546" y="123.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">Task &amp; Scope</text>
+  <text x="602" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.6" font-weight="700" fill="#0f172a">Reference f Replaces Manual Specification</text>
+  <rect x="498" y="133" width="414" height="21" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="705" y="147" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.2" font-weight="700" fill="#1d4ed8">minimize_{f', π} t_B(f')   s.t.   π : f = f'   (Eq. 1; B withheld)</text>
+  <text x="498" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.0" fill="#334155">Covers pure &amp; Lean monads (Id / StateM / Except) + RC arrays; excludes opaque IO / FFI</text>
+
+  <line x1="705" y1="180" x2="705" y2="192" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- B2: Joint Implementation + Proof Search -->
+  <rect x="488" y="194" width="434" height="114" rx="7" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.2"/>
+  <rect x="498" y="201" width="108" height="18" rx="5" fill="#1d4ed8"/>
+  <text x="552" y="213.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#ffffff">Joint Co-Search</text>
+  <text x="614" y="214" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.6" font-weight="700" fill="#0f172a">Agent Co-Revises Rewrite f' and Proof π</text>
+
+  <rect x="498" y="226" width="194" height="52" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="595" y="242" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">Faster Implementation f'</text>
+  <text x="595" y="256" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#334155">Algorithm · Data Repr · Eval Order</text>
+  <text x="595" y="269" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#475569">e.g., 2^n recursion → O(n^2) DP</text>
+
+  <line x1="692" y1="252" x2="716" y2="252" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <rect x="718" y="226" width="194" height="52" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="815" y="242" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.8" font-weight="700" fill="#1d4ed8">Equivalence Proof π</text>
+  <text x="815" y="256" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" fill="#334155">∀x, f(x) = f'(x) + helper lemmas</text>
+  <text x="815" y="269" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#475569">Reusable across repo rewrites (Gron)</text>
+
+  <rect x="498" y="284" width="414" height="17" rx="4" fill="#ffffff" stroke="#93c5fd" stroke-width="0.8"/>
+  <text x="705" y="295.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.5" fill="#1e40af">Lean errors &amp; proof goals steer edits; guarded specialization ∀x, P(x)→f(x)=g(x) allowed</text>
+
+  <line x1="705" y1="308" x2="705" y2="320" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- B3: Four-Check Kernel Gate -->
+  <rect x="488" y="322" width="434" height="163" rx="7" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="498" y="329" width="116" height="18" rx="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.9"/>
+  <text x="556" y="341.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.2" font-weight="700" fill="#1d4ed8">Kernel Gate (App. A)</text>
+  <text x="622" y="342" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="10.6" font-weight="700" fill="#0f172a">Fresh Copy of Repo R Blocks Exploits</text>
+
+  <rect x="498" y="352" width="414" height="23" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="502" y="355" width="118" height="17" rx="4" fill="#dbeafe"/>
+  <text x="561" y="366.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">1. Build &amp; @[csimp]</text>
+  <text x="628" y="366.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">f &amp; callers byte-identical; register π, rebuild R'</text>
+
+  <rect x="498" y="379" width="414" height="23" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="502" y="382" width="118" height="17" rx="4" fill="#e0f2fe"/>
+  <text x="561" y="393.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#0369a1">2. Axiom Whitelist</text>
+  <text x="628" y="393.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">Only {propext, Quot.sound, Classical.choice}; no sorryAx</text>
+
+  <rect x="498" y="406" width="414" height="23" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="502" y="409" width="118" height="17" rx="4" fill="#dcfce7"/>
+  <text x="561" y="420.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#15803d">3. Computable Only</text>
+  <text x="628" y="420.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">Bans partial, unsafe, @[implemented_by], @[extern]</text>
+
+  <rect x="498" y="433" width="414" height="23" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+  <rect x="502" y="436" width="118" height="17" rx="4" fill="#fee2e2"/>
+  <text x="561" y="447.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.7" font-weight="700" fill="#b91c1c">4. Kernel-Only Check</text>
+  <text x="628" y="447.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="8.8" fill="#334155">Bans native_decide &amp; equality-altering instances</text>
+
+  <text x="705" y="474" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.1" font-weight="700" fill="#1d4ed8">Timing (EPYC 9654, 1 core, 9 paired trials): Micro (f vs f') &amp; Macro (R vs R')</text>
+
+  <!-- Footer -->
+  <text x="30" y="513" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', sans-serif" font-size="9.6" fill="#475569">* TCB &amp; boundary: Lean compiler/runtime and test-validated AQUEDUCT migration remain trusted; proof π verifies Lean-to-Lean equality f = f' across all inputs.</text>
+</svg>

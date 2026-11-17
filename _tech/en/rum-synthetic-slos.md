@@ -3,22 +3,23 @@ id: rum-synthetic-slos
 title: '2026-10-20 | Journey SLOs: measuring probe availability and real experience'
 date: '2026-10-20'
 lang: en
-published: true
+published: false
 layout: article
 maintenance: daily-research
 source_type: tech
 tags:
 - observability
 - systems-reliability
-summary: RUM and synthetic tests answer different reliability questions. Event denominators,
-  time granularity, and missing data determine how their SLIs should work together.
+summary: RUM and synthetic tests answer different reliability questions. Event denominators, time granularity, and missing data determine how their SLIs should work together.
 long_read: true
 source_url: https://www.datadoghq.com/blog/rum-synthetic-slos-slis/
 permalink: /tech/en/rum-synthetic-slos/
 authorship: assistant
 translation_source: assistant-authored bilingual analysis and translation
 published_at: '2026-10-23T12:22:02.560508+08:00'
-updated_at: '2026-10-23T12:22:02.560508+08:00'
+updated_at: '2026-11-17T17:10:37.556022+08:00'
+editorial_status: withdrawn
+editorial_review_date: '2026-11-17'
 ---
 A successful backend request does not necessarily mean a user completed an operation. A broken browser script, a wait on a weak connection, or a missing confirmation can fall outside backend availability metrics. The useful shift in this Datadog article is to organize reliability around a complete user journey, then observe it through both real user monitoring (RUM) and synthetic tests. The question is whether the measurements represent what users encounter, rather than how many green indicators a dashboard collects.
 

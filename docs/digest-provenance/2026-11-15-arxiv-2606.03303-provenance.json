@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-16T03:00:55.830887+00:00",
+  "article": {
+    "id": "daily-2026-11-15",
+    "anchor": "paper-arxiv-2606.03303",
+    "title_zh": "LEAP：用可复用证明图保存搜索进展",
+    "title_en": "LEAP: preserving progress in a reusable proof graph",
+    "paper_title": "LEAP: Supercharging LLMs for Formal Mathematics with Agentic Frameworks",
+    "zh_path": "_digest/zh/daily-2026-11-15.md",
+    "en_path": "_digest/en/daily-2026-11-15.md",
+    "zh_url": "/digest/zh/daily/2026-11-15/#paper-arxiv-2606.03303",
+    "en_url": "/digest/en/daily/2026-11-15/#paper-arxiv-2606.03303",
+    "assistant_translated": true,
+    "translation_origin": "assistant-authored bilingual content grounded in verified primary paper arXiv:2606.03303"
+  },
+  "primary_source": {
+    "arxiv_id": "2606.03303",
+    "active_version": "v3",
+    "withdrawn": false,
+    "versions": {
+      "v1": "2026-06-02T08:16:42Z",
+      "v2": "2026-06-03T06:16:05Z",
+      "v3": "2026-11-12T18:13:31Z"
+    },
+    "authors": [
+      "Po-Nien Kung",
+      "Linfeng Song",
+      "Dawsen Hwang",
+      "Jinsung Yoon",
+      "Chun-Liang Li",
+      "Simone Severini",
+      "Mirek Olšák",
+      "Edward Lockhart",
+      "Quoc V Le",
+      "Burak Gokturk",
+      "Thang Luong",
+      "Tomas Pfister",
+      "Nanyun Peng"
+    ],
+    "affiliations": [
+      "Google Cloud AI Research",
+      "Google Cloud",
+      "Google DeepMind",
+      "UCLA"
+    ],
+    "urls": {
+      "abs": "https://arxiv.org/abs/2606.03303",
+      "pdf_latest": "https://arxiv.org/pdf/2606.03303",
+      "pdf_v3": "https://arxiv.org/pdf/2606.03303v3",
+      "pdf_v1": "https://arxiv.org/pdf/2606.03303v1",
+      "html_v3": "https://arxiv.org/html/2606.03303v3",
+      "project_page": "https://billkunghappy.github.io/LEAP/",
+      "code_repo": "https://github.com/google-deepmind/superhuman/tree/main/leap",
+      "benchmark": "https://imobench.github.io"
+    },
+    "artifacts": {
+      "live_abs_html": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/leap-stage/live-abs.html",
+        "sha256": "8585c4fedc892009d2d8124e6958a2af3657ec68bc7ea339a3d619eccdb600b2"
+      },
+      "live_paper_pdf": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/leap-stage/live-paper.pdf",
+        "sha256": "ed2dc9f08c5c32904f33dea45cefcbec97ade70a95cdf969e157ecd5108b6e1f"
+      },
+      "frozen_abs_html": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261115-152008-f35810481d-7eb821/work/sources/arxiv-2606.03303-abs.html",
+        "sha256": "8585c4fedc892009d2d8124e6958a2af3657ec68bc7ea339a3d619eccdb600b2"
+      },
+      "frozen_paper_pdf": {
+        "path": "/home/GB-Project/yuxiaoba.github.io/.preview/research-jobs/runs/20261115-152008-f35810481d-7eb821/work/sources/arxiv-2606.03303.pdf",
+        "sha256": "ed2dc9f08c5c32904f33dea45cefcbec97ade70a95cdf969e157ecd5108b6e1f"
+      },
+      "v1_paper_pdf": {
+        "path": "/root/.gemini/antigravity-cli/brain/151be13a-2bae-44cf-a94b-71b25706bafd/scratch/leap-stage/v1-paper.pdf",
+        "sha256": "f43762f041edd4b40219d61a2bfcd0e7831c32e647b6702ff499eca6297965ec"
+      }
+    }
+  },
+  "diagrams": [
+    {
+      "id": "leap-proof-dag-workflow-zh",
+      "path": "assets/images/digest/2026-11-15/leap-proof-dag-workflow-zh.svg",
+      "web_path": "/assets/images/digest/2026-11-15/leap-proof-dag-workflow-zh.svg",
+      "sha256": "550e8244a77ca6c60b9ae92c6d8652e67d3a15dd94b7fe22ac1c8a861826fcba",
+      "palette": "v3-blue",
+      "dimensions": "960x540"
+    },
+    {
+      "id": "leap-proof-dag-workflow-en",
+      "path": "assets/images/digest/2026-11-15/leap-proof-dag-workflow-en.svg",
+      "web_path": "/assets/images/digest/2026-11-15/leap-proof-dag-workflow-en.svg",
+      "sha256": "27af0baf1d0020e52e9ebe4f2145accf372ad95ffb49041bf1f31bf04e58971a",
+      "palette": "v3-blue",
+      "dimensions": "960x540"
+    },
+    {
+      "id": "leap-proof-dag-eval-ablation-zh",
+      "path": "assets/images/digest/2026-11-15/leap-proof-dag-eval-ablation-zh.svg",
+      "web_path": "/assets/images/digest/2026-11-15/leap-proof-dag-eval-ablation-zh.svg",
+      "sha256": "c5f7d5acbc3200d2d1d9f34a7b4c8cbcf98b6b83053485fa7f7522ec48b7fdb4",
+      "palette": "v3-blue",
+      "dimensions": "960x540"
+    },
+    {
+      "id": "leap-proof-dag-eval-ablation-en",
+      "path": "assets/images/digest/2026-11-15/leap-proof-dag-eval-ablation-en.svg",
+      "web_path": "/assets/images/digest/2026-11-15/leap-proof-dag-eval-ablation-en.svg",
+      "sha256": "09b6edd109c6f05498cc3c72f59949efcd4bf98a4a086cb996e60627c5d12f34",
+      "palette": "v3-blue",
+      "dimensions": "960x540"
+    }
+  ],
+  "preserved_existing_assets": {
+    "leap.png": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-15/leap.png",
+      "sha256": "a49d530946c6a3b47b15fc4d32f2d0a1735138d78df207122475de692df5664c"
+    },
+    "colfa.png": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-15/colfa.png",
+      "sha256": "aae1fdf1ad3bd9e4343594ddff0ab3eb9b865256559e82d66bcb92b410d44b50"
+    },
+    "duodiscover.png": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/assets/images/digest/2026-11-15/duodiscover.png",
+      "sha256": "3578c42494fbad5e63f214a59b5d093fa84038250ebdb817aa4ca371cdc6aefe"
+    }
+  },
+  "daily_file_surgical_patches": {
+    "zh": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/zh/daily-2026-11-15.md",
+      "before_sha256": "d172e6bf3d38096952ed3a07f72190160621d5a707ccef238d227aa8dcfdf492",
+      "after_sha256": "54094ade295f8971ac0d740a21ecdffc377474f2057dc9951f80c84c2769403e",
+      "prefix_sha256_before": "5e2b9e2f4ffb31f0b3ed3f03616d44975958059184a35e46c421f0277068090a",
+      "prefix_sha256_after": "5e2b9e2f4ffb31f0b3ed3f03616d44975958059184a35e46c421f0277068090a",
+      "suffix_sha256_before": "febfe3a9a5ad0081e651b0333efdd151f2197c211ef71e0ade63bebce132eef9",
+      "suffix_sha256_after": "febfe3a9a5ad0081e651b0333efdd151f2197c211ef71e0ade63bebce132eef9",
+      "before_bytes": 11821,
+      "after_bytes": 30183,
+      "prefix_identical": true,
+      "suffix_identical": true
+    },
+    "en": {
+      "path": "/home/GB-Project/yuxiaoba.github.io/_digest/en/daily-2026-11-15.md",
+      "before_sha256": "a6d8f20aa06a3575db50b0f4ea2e7560b81944e4482b16acba19b37cbc73b52c",
+      "after_sha256": "468876ac0efa3b42cd4ee0795e1c0432f34ea459566bda0adaccf8cd47b9863a",
+      "prefix_sha256_before": "376992d011795cffc6d679adc9b40beb617efc814ef9a97f06ed0ff148557b5a",
+      "prefix_sha256_after": "376992d011795cffc6d679adc9b40beb617efc814ef9a97f06ed0ff148557b5a",
+      "suffix_sha256_before": "c3c0827c66c48b11ed94cf29bdbd2bee281497314963d23d18df8a7084849924",
+      "suffix_sha256_after": "c3c0827c66c48b11ed94cf29bdbd2bee281497314963d23d18df8a7084849924",
+      "before_bytes": 13376,
+      "after_bytes": 29943,
+      "prefix_identical": true,
+      "suffix_identical": true
+    }
+  }
+}
