@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: sentry-agent-tracing-five-things
 title: '2026-11-06 | Technical Reading: Five Workflows with Sentry Agent Tracing — Span Modeling, Eval Exports, Triage, and Cost Alerts'
 date: '2026-11-06'

@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: pi-durable-runtime
 title: 'Pi Durable: durable tasks, recovery, and the limits of safe replay'
 date: '2026-11-12'

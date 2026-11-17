@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: gimlet-draft-model-disaggregation
 title: '2026-11-13 | Disaggregating the Drafter: How Gimlet Labs Splits Draft Prefill
   and Decode Across GPUs and Fast Accelerators'

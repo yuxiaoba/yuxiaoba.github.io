@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: review-haoailab-pika-h3-flex
 title: '2026-11-04 | Pika H3 Flex in FastVideo: 7x Faster, and Near Real Time in 4-bit'
 date: '2026-11-04'

@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: pagerduty-ai-incident-triage
 title: '2026-08-04 | First-Pass Triage for AI Incidents: PagerDuty SRE Agent Architecture
   and Guardrails'

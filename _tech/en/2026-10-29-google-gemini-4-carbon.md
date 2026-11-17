@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: 2026-10-29-google-gemini-4-carbon
 title: '2026-10-29 | Gemini 4 Carbon: Long-Horizon Engineering, Security Evals, and
   Staged Access'

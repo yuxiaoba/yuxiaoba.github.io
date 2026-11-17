@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: cncf-faster-llm-inference-startup
 title: '2026-11-08 | LLM Inference Startup: State Boundaries, Weight Sharing, Snapshots, and K8s Orchestration'
 date: '2026-11-08'

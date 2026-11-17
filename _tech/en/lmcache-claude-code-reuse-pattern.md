@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: lmcache-claude-code-reuse-pattern
 title: '2026-11-13 | Under the Hood of Claude Code: Role Isolation, 92% Prefix Reuse, and KV Cache Invalidation'
 date: '2026-11-13'

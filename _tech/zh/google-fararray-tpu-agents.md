@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: google-fararray-tpu-agents
 title: 2026年10月30日｜FarArray 与 Pallas TPU 内核：Gemini 4 Argon 智能体的底层系统协同设计
 date: '2026-10-30'

@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: openrouter-auto-router-next-gen
 title: '2026年11月8日｜缓存感知模型路由：OpenRouter 新版 Auto 与 Auto Code 的双层架构、回退边界与评测剖析'
 date: '2026-11-08'

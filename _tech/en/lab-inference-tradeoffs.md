@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: lab-inference-tradeoffs
 title: '2026-10-25 | LAB: Designing Model Failover Around Behavioral Contracts'
 date: '2026-10-25'

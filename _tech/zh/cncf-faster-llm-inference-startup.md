@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: cncf-faster-llm-inference-startup
 title: 2026年11月8日｜LLM 推理冷启动：状态边界、权重复用、快照兼容与 K8s 编排
 date: '2026-11-08'

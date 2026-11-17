@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: ukaisi-alignment
 title: "2026年10月24日｜Anthropic × UK AISI 联合对齐评估解析：任务越界、轨迹重采样与外部复现边界"
 date: '2026-10-24'

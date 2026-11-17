@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: llamacpp-kv-fallback
 title: '2026年11月4日｜量化 KV Cache 静默回退 CPU：llama.cpp #28455 的调度根因、实测边界与可观测门控'
 date: '2026-11-04'

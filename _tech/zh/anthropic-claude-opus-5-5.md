@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: anthropic-claude-opus-5-5
 title: 2026年11月8日｜Opus 5.5：成本曲线与实际服务模型都需要重新核对
 date: '2026-11-08'

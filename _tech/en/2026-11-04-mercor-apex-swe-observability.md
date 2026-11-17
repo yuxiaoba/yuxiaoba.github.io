@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: 2026-11-04-mercor-apex-swe-observability
 title: '2026-11-04 | APEX-SWE Observability: Telemetry Sandboxes, Dual-Track Grading, and Miss-Rate Attribution Boundaries'
 date: '2026-11-04'

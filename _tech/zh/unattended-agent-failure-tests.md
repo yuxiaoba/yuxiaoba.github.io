@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: unattended-agent-failure-tests
 title: 2026年10月20日｜无人值守 Agent：上线前应验证的七类失败场景
 date: '2026-10-20'

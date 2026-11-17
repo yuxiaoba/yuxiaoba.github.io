@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: lab-inference-tradeoffs
 title: 2026年10月25日｜LAB：把模型切换后的行为纳入推理可靠性设计
 date: '2026-10-25'

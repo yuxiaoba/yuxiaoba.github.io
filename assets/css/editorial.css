@@ -381,3 +381,21 @@
 #warm-directions .paper-subnav a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border:1px solid var(--rule);border-radius:7px;color:var(--ink);text-decoration:none}
 #warm-directions .paper-subnav a[aria-current="page"]{color:var(--accent);background:var(--surface,#f1f5f9);border-color:var(--accent)}
 #warm-directions .paper-subnav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Two research directions: isolated AI4SRE / SRE4AI preview. */
+#warm-directions .personal-site .rd-two-directions .rd-definition{margin:0 0 18px;color:var(--quiet);font-size:13px;line-height:1.65}
+#warm-directions .personal-site .rd-two-directions .rd-grid{align-items:stretch}
+#warm-directions .personal-site .rd-two-directions .rd-node{padding:22px;text-align:left}
+#warm-directions .personal-site .rd-two-directions .rd-subtitle{display:block;font-size:17px;line-height:1.5;font-weight:600;margin-top:8px}
+#warm-directions .personal-site .rd-two-directions .rd-sketch{height:80px;margin:14px 0}
+#warm-directions .personal-site .rd-two-directions .rd-description{display:block;font-size:14px;line-height:1.85;margin-bottom:18px}
+#warm-directions .personal-site .rd-two-directions .rd-topics{padding-top:14px;border-top:1px solid var(--rule)}
+#warm-directions .personal-site .rd-two-directions .rd-topics strong{font-size:13px;line-height:1.7}
+#warm-directions .personal-site .rd-two-directions figcaption{min-height:4.5em;align-items:flex-start}
+#warm-directions .personal-site .rd-two-directions .rd-hint{display:none}
+@media(max-width:600px){#warm-directions .personal-site .rd-two-directions .rd-node{padding:18px}#warm-directions .personal-site .rd-two-directions .rd-definition{font-size:12px}}
+
+/* Share desktop row sizes so bilingual descriptions cannot offset the topics. */
+@media(min-width:601px){
+ #warm-directions .personal-site .rd-two-directions .rd-node{display:grid;grid-template-rows:subgrid;grid-row:span 5;align-items:start;row-gap:0}
+}

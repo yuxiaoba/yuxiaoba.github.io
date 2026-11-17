@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: pagerduty-ai-incident-triage
 title: 2026年8月4日｜AI 事故第一轮分诊：PagerDuty SRE Agent 的证据联动与操作边界
 date: '2026-08-04'

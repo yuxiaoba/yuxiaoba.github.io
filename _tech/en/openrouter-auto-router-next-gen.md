@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: openrouter-auto-router-next-gen
 title: '2026-11-08 | Cache-Aware Model Routing: OpenRouter’s Next-Gen Auto & Auto Code Architecture, Failover Boundaries, and Evaluation Limits'
 date: '2026-11-08'

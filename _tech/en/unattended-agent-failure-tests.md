@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: unattended-agent-failure-tests
 title: '2026-10-20 | Unattended Agents: Seven Failure Scenarios to Validate Before
   Release'

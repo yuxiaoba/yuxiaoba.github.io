@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: claude-agent-observability
 title: '2026-10-14 | Technical Deep Dive: Claude Platform Agent Observability — Dual-Path OTel Collection, Privacy Tiering & Trace-to-Eval Boundaries'
 date: '2026-10-14'

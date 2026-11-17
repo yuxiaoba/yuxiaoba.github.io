@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: 2026-11-05-together-polymorphic-inference
 title: '2026年11月5日｜Polymorphic Inference 与 Together Compiler：面向多态负载的持续编译与运行边界'
 date: '2026-11-05'

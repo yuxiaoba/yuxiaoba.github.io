@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: pi-durable-runtime
 title: Pi Durable：持久任务、恢复与安全重放的边界
 date: '2026-11-12'

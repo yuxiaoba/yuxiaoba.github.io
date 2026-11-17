@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: review-skyhook-radar-k8s-ai-sre-mcp
 title: 2026年10月31日｜Radar：Kubernetes Informer 状态图、事件去重与受限 MCP 上下文设计
 date: '2026-10-31'

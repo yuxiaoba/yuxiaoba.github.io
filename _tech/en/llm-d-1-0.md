@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: llm-d-1-0
 title: '2026-10-20 | llm-d 1.0 Deep Dive: Kubernetes-Native Inference Routing, NIXL P/D Disaggregation, and Tiered KV Offload'
 date: '2026-10-20'

@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: review-haoailab-pika-h3-flex
 title: 2026-11-04｜FastVideo Pika H3：核对资源与精度后的加速
 date: '2026-11-04'

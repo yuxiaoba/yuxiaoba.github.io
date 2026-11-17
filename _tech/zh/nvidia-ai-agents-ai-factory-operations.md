@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: nvidia-ai-agents-ai-factory-operations
 title: '2026年11月5日｜技术阅读：NVIDIA AI Factory Operations Agent——跨层集群运维的多智能体架构、只读工具边界与人工确认护栏'
 date: '2026-11-05'

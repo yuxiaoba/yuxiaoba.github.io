@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: knowledge-graph-context
 title: 2026年10月20日｜Grafana Knowledge Graph：让诊断从实体关系出发
 date: '2026-10-20'

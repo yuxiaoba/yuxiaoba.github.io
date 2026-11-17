@@ -1,4 +1,20 @@
 en:
+  tech_reading_sections: Technical reading sections
+  tech_deep_read: Technical close readings
+  all_tech_close_readings: All technical close readings
+  research_sre_definition: "SRE = Software Reliability Engineering"
+  research_bidirectional_description: "AI4SRE uses AI to improve software reliability. SRE4AI applies reliability engineering to AI systems. Fault injection and recovery validation support both directions."
+  research_bidirectional_caption: "Select a direction to explore how fault injection and recovery validation support it."
+  ai4sre_title: "AI for software reliability"
+  sre4ai_title: "Reliability engineering for AI"
+  ai4sre_description: "Use AI to understand complex software systems, diagnose failures and support recovery, improving reliability and operational efficiency."
+  sre4ai_description: "Study failures, runtime reliability and performance in LLM and agent systems, making training, inference and task execution more reliable and efficient."
+  ai4sre_focus: "Fault detection · Root cause analysis · Recovery"
+  sre4ai_focus: "LLM systems · Agent runtimes · Optimization"
+  ai4sre_method_short: "Inject faults to evaluate AI diagnosis and recovery."
+  sre4ai_method_short: "Stress execution paths to validate fault tolerance and recovery."
+  ai4sre_method: "AI4SRE: fault injection creates controlled diagnostic scenarios to test whether AI locates the cause, chooses a sound response and helps restore service."
+  sre4ai_method: "SRE4AI: inject failures into training, inference and agent execution to locate weaknesses and validate fault tolerance, state consistency and recovery."
   bookmarks: Saved notes
   bookmarks_intro: Keep useful papers, technical notes, and excerpts together.
   bookmarks_local: Saved only in this browser, without signing in. Devices and preview/production sites do not sync automatically. Export a backup before clearing browser data.
@@ -145,6 +161,22 @@ en:
   digest_days: editions
   daily_reading: Daily reading
 zh:
+  tech_reading_sections: 技术笔记分类
+  tech_deep_read: 技术精读
+  all_tech_close_readings: 全部技术精读
+  research_sre_definition: "SRE = Software Reliability Engineering（软件可靠性工程）"
+  research_bidirectional_description: "AI4SRE 用 AI 提升软件可靠性；SRE4AI 让 AI 系统可靠、高效地运行。故障注入与恢复验证融入两条主线。"
+  research_bidirectional_caption: "点击方向，了解故障注入与恢复验证如何融入研究。"
+  ai4sre_title: "AI 赋能软件可靠性工程"
+  sre4ai_title: "面向 AI 系统的可靠性工程"
+  ai4sre_description: "利用 AI 理解复杂软件系统的运行行为，开展故障检测、根因分析与自动化恢复，提升系统可靠性与运行效率。"
+  sre4ai_description: "研究大模型与智能体系统的故障机理、运行时可靠性与性能优化，提升训练、推理和任务执行的稳定性与效率。"
+  ai4sre_focus: "故障检测 · 根因分析 · 自动化恢复"
+  sre4ai_focus: "大模型系统 · Agent 运行时 · 性能优化"
+  ai4sre_method_short: "通过故障注入，验证 AI 的诊断与恢复能力。"
+  sre4ai_method_short: "通过异常实验，检验系统的容错与恢复机制。"
+  ai4sre_method: "AI4SRE：用故障注入构建受控诊断场景，检验 AI 能否找准原因、选择合理处置，并帮助系统恢复。"
+  sre4ai_method: "SRE4AI：向训练、推理和 Agent 执行链路注入异常，识别薄弱环节，验证容错、状态一致性与恢复机制。"
   bookmarks: 我的收藏
   bookmarks_intro: 留下值得回看的论文、技术笔记和重要摘录。
   bookmarks_local: 收藏仅保存在当前浏览器，无需登录。不同设备及预览站与正式站之间不会自动同步；清除浏览器数据前请先导出备份。

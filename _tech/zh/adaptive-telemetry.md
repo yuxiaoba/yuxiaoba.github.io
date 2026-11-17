@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: adaptive-telemetry
 title: 2026年10月20日｜Adaptive Telemetry 深度拆解：按字节分层采样、9 属性多样性指纹与 Auto-Apply 护栏
 date: '2026-10-20'

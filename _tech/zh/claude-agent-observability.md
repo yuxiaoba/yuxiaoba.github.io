@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: claude-agent-observability
 title: '2026年10月14日｜技术深度：Claude Platform Agent 可观测性——双路径 OTel 采集、合规脱敏分级与 Trace-to-Eval 边界'
 date: '2026-10-14'

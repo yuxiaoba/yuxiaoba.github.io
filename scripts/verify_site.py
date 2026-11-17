@@ -40,8 +40,8 @@ def audit(site):
         check(saved.select_one('[data-bookmark-shelf]') is not None and not saved.select('[data-pagefind-body],.saved-note'),f'private bookmarks start empty and unindexed {lang}')
         home=soup(site/prefix/'index.html')
         diagram=home.select_one('[data-research-diagram]')
-        check(diagram is not None and [n.get('data-direction') for n in diagram.select('button[disabled]')]==['cloud','ai','chaos'],f'research diagram has a static no-JS fallback {lang}')
-        check(len(diagram.select('.rd-topics strong'))==4 and diagram.select_one('.rd-method-note').get_text(strip=True),f'research directions remain readable without JavaScript {lang}')
+        check(diagram is not None and [n.get('data-direction') for n in diagram.select('button[disabled]')]==['cloud','ai'],f'research diagram has a static no-JS fallback {lang}')
+        check(len(diagram.select('.rd-topics strong'))==2 and len(diagram.select('.rd-description'))==2 and diagram.select_one('.rd-definition').get_text(strip=True),f'research directions remain readable without JavaScript {lang}')
         for collection in ['digest','tech']:
             archive=soup(site/prefix/collection/'index.html')
             attribution=archive.select_one('.note-attribution')
@@ -72,13 +72,14 @@ def audit(site):
             check(all(c.select_one('h3 a')['href'].startswith('/'+collection+'/'+lang+'/') for c in cards),f'recent {collection} language isolation {lang}')
             check(all(not re.match(r'^\d{4}[-年]',c.select_one('h3').text.strip()) for c in cards),f'date separated from title {collection} {lang}')
             archive=soup(site/prefix/collection/'index.html')
+            archive_entries=[m for m in entries if not m.get('tech_deep_read')] if collection=='tech' else entries
             groups=archive.select('.archive-month')
-            expected_months=sorted({str(m['date'])[:7] for m in entries},reverse=True)
-            if len(entries)>1:
+            expected_months=sorted({str(m['date'])[:7] for m in archive_entries},reverse=True)
+            if len(archive_entries)>1:
                 check([g['id'] for g in groups]==['month-'+m for m in expected_months],f'{collection} month groups ordered {lang}')
                 check([g.has_attr('open') for g in groups]==[True]+[False]*(len(groups)-1),f'{collection} latest month open only {lang}')
                 for group,month in zip(groups,expected_months):
-                    count=sum(str(m['date']).startswith(month) for m in entries)
+                    count=sum(str(m['date']).startswith(month) for m in archive_entries)
                     check(len(group.select('.digest-archive-row'))==count,f'{collection} month entries preserved {month} {lang}')
                     check(group.select_one('.archive-month-count').text.strip().split()[0]==str(count),f'{collection} month count {month} {lang}')
         close=soup(site/prefix/'digest/close-readings/index.html')
@@ -88,6 +89,15 @@ def audit(site):
         for path in close_paths:
             check(close.select_one(f'.digest-archive-row a[href="{path}"],.digest-feature a[href="{path}"]') is not None,f'close reading listed separately {lang} {path}')
             check(daily.select_one(f'.digest-archive-row a[href="{path}"],.digest-feature a[href="{path}"]') is None,f'close reading absent from daily list {lang} {path}')
+        tech_close=soup(site/prefix/'tech/close-readings/index.html')
+        check(tech_close.select_one('.paper-subnav a[aria-current="page"]')['href']=='/'+prefix+'tech/close-readings/',f'tech close reading subnavigation {lang}')
+        tech_daily=soup(site/prefix/'tech/index.html')
+        check(tech_daily.select_one('.paper-subnav a[aria-current="page"]')['href']=='/'+prefix+'tech/',f'tech daily subnavigation {lang}')
+        tech_close_paths=[metadata(p)['permalink'] for p in (ROOT/'_tech'/lang).rglob('*.md') if metadata(p).get('published') is True and metadata(p).get('tech_deep_read')]
+        check(len(tech_close_paths)>=1,f'tech close readings present {lang}')
+        for path in tech_close_paths:
+            check(tech_close.select_one(f'.digest-archive-row a[href="{path}"],.digest-feature a[href="{path}"]') is not None,f'tech close reading listed separately {lang} {path}')
+            check(tech_daily.select_one(f'.digest-archive-row a[href="{path}"],.digest-feature a[href="{path}"]') is None,f'tech close reading absent from daily list {lang} {path}')
         for source in (ROOT/'_digest'/lang).rglob('*.md'):
             meta=metadata(source)
             if meta.get('published') is not True or not meta.get('paper_deep_read'):
@@ -161,6 +171,7 @@ def fixtures():
             p=source/f'_{collection}'/lang/(name+'.md');p.parent.mkdir(parents=True,exist_ok=True)
             meta={'title':title,'date':when,'published':published,'summary':'测试导读' if lang=='zh' else 'A test summary'}
             if collection=='digest' and name in {'2026-10-10-paired','2026-10-10-draft','2026-10-10-only','2026-10-10-unpublished-translation'}:meta.update({'paper_deep_read':True,'long_read':True})
+            if collection=='tech' and name in {'tech-deep-paired','tech-deep-draft','tech-deep-only'}:meta.update({'tech_deep_read':True,'long_read':True})
             if updated:meta['updated_at']=updated
             p.write_text('---\n'+yaml.safe_dump(meta,allow_unicode=True)+'---\n\n'+extra)
         for col in ['digest','kitchen']:
@@ -171,6 +182,10 @@ def fixtures():
             article(col,'zh','2026-10-10-only','仅中文测试文章')
             article(col,'zh','2026-10-10-unpublished-translation','译文草稿测试')
             article(col,'en','2026-10-10-unpublished-translation','DRAFT_TRANSLATION_NEVER_OUTPUT',False)
+        for lang in ['zh','en']:
+            article('tech',lang,'tech-deep-paired','技术精读双语测试' if lang=='zh' else 'Paired tech close reading fixture',when='2026-10-10')
+            article('tech',lang,'tech-deep-draft','TECH_DEEP_DRAFT_NEVER_OUTPUT',False,when='2026-10-10')
+        article('tech','zh','tech-deep-only','仅中文技术精读测试',when='2026-10-10')
         for lang in ['zh','en']:
             photo_meta={'title':'PHOTO_FEED_FIXTURE','date':'2026-01-01','published':True,'layout':'life-album','photo_album':True,'location':'Fixture location','photos':[{'src':'/assets/images/photos/guangba.jpg','width':400,'height':500,'alt':'Fixture photo','caption':'Fixture caption'}]*3}
             (source/f'_kitchen/{lang}/feed-photos.md').write_text('---\n'+yaml.safe_dump(photo_meta)+'---\n')
@@ -279,6 +294,25 @@ def fixtures():
         missing=soup(dest/'digest/zh/2026-10-10-only/index.html')
         check(missing.select_one('.language-switch a[lang="en"]')['href']=='/digest/?translation=missing','close reading missing translation fallback')
         check('digest/en/2026-10-10-only/index.html' not in search_manifest['pages'],'untranslated close reading absent from English index')
+        for lang,prefix in [('en',''),('zh','zh/')]:
+            t_close=soup(dest/prefix/'tech/close-readings/index.html')
+            t_daily=soup(dest/prefix/'tech/index.html')
+            t_href=f'/tech/{lang}/tech-deep-paired/'
+            check(t_close.select_one(f'.digest-archive-row a[href="{t_href}"]') is not None,f'tech close reading fixture listed separately {lang}')
+            check(t_daily.select_one(f'.digest-archive-row a[href="{t_href}"]') is None,f'tech close reading fixture absent from daily tech list {lang}')
+            t_deep=soup(dest/f'tech/{lang}/tech-deep-paired/index.html')
+            t_label=yaml.safe_load((ROOT/'_data/locales.yml').read_text())[lang]['tech_deep_read']
+            check(t_deep.select_one('.article-header .eyebrow').get_text(strip=True)==t_label,f'tech close reading label from Markdown {lang}')
+            check(t_deep.select_one('.digest-back')['href']=='/'+prefix+'tech/close-readings/',f'tech close reading back link {lang}')
+            check(t_deep.select_one('[data-pagefind-filter="type:tech"]') is not None,f'tech close reading is classified as tech {lang}')
+            other='zh' if lang=='en' else 'en'
+            check(t_deep.select_one(f'.language-switch a[lang="{other}"]')['href']==f'/tech/{other}/tech-deep-paired/',f'tech close reading paired language {lang}')
+            check(f'tech/{lang}/tech-deep-paired/index.html' in search_manifest['pages'],f'tech close reading indexed {lang}')
+            check(f'tech/{lang}/tech-deep-draft/index.html' not in search_manifest['pages'] and not (dest/f'tech/{lang}/tech-deep-draft/index.html').exists(),f'tech close reading draft excluded {lang}')
+        check(soup(dest/'zh/tech/close-readings/index.html').select_one('.digest-archive-row a[href="/tech/zh/tech-deep-only/"]') is not None,'untranslated tech close reading listed in zh')
+        check(soup(dest/'tech/close-readings/index.html').select_one('a[href="/tech/zh/tech-deep-only/"]') is None,'untranslated tech close reading isolated from en')
+        check('tech/en/tech-deep-only/index.html' not in search_manifest['pages'],'untranslated tech close reading absent from English index')
+        check(soup(dest/'tech/zh/tech-deep-only/index.html').select_one('.language-switch a[lang="en"]')['href']=='/tech/?translation=missing','tech close reading missing translation fallback')
         for col in ['digest','kitchen']:
             for lang in ['en','zh']:
                 article_page=dest/col/lang/'2026-10-10-paired/index.html'

@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: 2026-11-05-vllm-bangkok-serving-agentic-workload
 title: '2026-11-05 | Technical Reading: How Agentic Workloads Reshape vLLM — Simon Mo''s Runtime 2026 Talk and Primary Evidence'
 date: '2026-11-05'

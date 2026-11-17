@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: sentry-agent-tracing-five-things
 title: '2026年11月6日｜技术阅读：Sentry Agent Tracing 五条工作流——Span 层次、导出评测、成功样本分诊与成本告警'
 date: '2026-11-06'
