@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: kamaji-hami
 title: '2026-10-25 | Testing Multi-Tenant GPU Scheduling Without GPUs: Kamaji Control Planes, HAMi Mock Devices, and Fidelity Boundaries'
 date: '2026-10-25'

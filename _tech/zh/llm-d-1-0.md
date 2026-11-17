@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: llm-d-1-0
 title: 2026年10月20日｜llm-d 1.0 深度解析：Kubernetes 分布式推理路由、NIXL P/D 解耦与分层 KV 卸载边界
 date: '2026-10-20'

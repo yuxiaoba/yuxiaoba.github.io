@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: building-ai-sre
 title: 2026年10月12日｜AI SRE从原型到生产：答案之外的工程
 date: '2026-10-12'

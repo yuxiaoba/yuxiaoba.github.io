@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: llamacpp-kv-fallback
 title: '2026-11-04 | Silent CPU Fallback on Quantized KV Caches: Dispatch Root Cause, Benchmarks, and Gates in llama.cpp #28455'
 date: '2026-11-04'

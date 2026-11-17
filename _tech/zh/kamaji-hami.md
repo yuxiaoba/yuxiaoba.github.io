@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: kamaji-hami
 title: 2026年10月25日｜无 GPU 验证多租户调度链路：Kamaji 托管控制面与 HAMi 模拟设备边界解析
 date: '2026-10-25'

@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: gimlet-draft-model-disaggregation
 title: 2026年11月13日｜草稿模型也做 PD 分离：Gimlet Labs 对投机解码异构放置、验证拐点与系统边界的建模解析
 date: '2026-11-13'

@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: 2026-10-29-google-gemini-4-carbon
 title: 2026年10月29日｜Gemini 4 Carbon：长程工程、攻防安全评估与受控访问边界
 date: '2026-10-29'

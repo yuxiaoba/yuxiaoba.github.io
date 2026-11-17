@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 date: '2026-11-12'
 published: true
 layout: article

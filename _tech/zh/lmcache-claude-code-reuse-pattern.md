@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: lmcache-claude-code-reuse-pattern
 title: '2026年11月13日｜拆解 Claude Code 轨迹：角色隔离、92% 前缀复用与 KV 缓存失效边界'
 date: '2026-11-13'

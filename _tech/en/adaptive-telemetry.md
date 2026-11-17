@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: adaptive-telemetry
 title: '2026-10-20 | Deep Dive into Grafana Adaptive Telemetry: Byte-Budget Sampling, 9-Attribute Diversity Fingerprints, and Auto-Apply Guardrails'
 date: '2026-10-20'

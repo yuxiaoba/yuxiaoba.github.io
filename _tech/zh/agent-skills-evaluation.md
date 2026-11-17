@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: agent-skills-evaluation
 title: 2026年10月20日｜Agent Skills：遵循指令，是否真的带来收益？
 date: '2026-10-20'

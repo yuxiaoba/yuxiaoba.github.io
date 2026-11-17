@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: review-skyhook-radar-k8s-ai-sre-mcp
 title: '2026-10-31 | Radar: Kubernetes Informer State Graph, Event Deduplication, and Constrained MCP Diagnostics'
 date: '2026-10-31'

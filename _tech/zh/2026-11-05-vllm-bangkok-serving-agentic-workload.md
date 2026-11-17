@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: 2026-11-05-vllm-bangkok-serving-agentic-workload
 title: '2026年11月5日｜技术阅读：Agent 负载如何改变 vLLM 推理服务——Simon Mo Runtime 2026 演讲解析与一手实验溯源'
 date: '2026-11-05'

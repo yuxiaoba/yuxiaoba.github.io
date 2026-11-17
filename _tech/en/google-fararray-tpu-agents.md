@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: google-fararray-tpu-agents
 title: '2026-10-30 | FarArray and Pallas TPU Kernels: Systems Co-Design with Gemini 4 Argon Agents'
 date: '2026-10-30'

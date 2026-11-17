@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: 2026-11-04-mercor-apex-swe-observability
 title: '2026年11月4日｜APEX-SWE Observability：生产遥测排障基准、双轨评分与“约三成未通过率”归因边界'
 date: '2026-11-04'

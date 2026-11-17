@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: google-gemini-4-hydrogen
 title: 2026年11月13日｜Gemini 4 Hydrogen 与 Orchestrator：轨迹内模型交接与口径审计
 date: '2026-11-13'

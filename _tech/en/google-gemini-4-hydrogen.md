@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: google-gemini-4-hydrogen
 title: '2026-11-13 | Gemini 4 Hydrogen and Orchestrator: Intra-Trajectory Handoffs and Cost Audit'
 date: '2026-11-13'

@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: agent-skills-evaluation
 title: '2026-10-20 | Agent Skills: Does Following Instructions Actually Help?'
 date: '2026-10-20'

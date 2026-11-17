@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: building-ai-sre
 title: '2026-10-12 | Building an AI SRE: The Engineering Beyond an Answer'
 date: '2026-10-12'

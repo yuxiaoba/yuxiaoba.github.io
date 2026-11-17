@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: gpu-cluster-readiness
 title: '2026年10月3日｜GPU 集群就绪验证：NVIDIA NVCRE 的主动负载、分级 API 与二分隔离'
 date: '2026-10-03'

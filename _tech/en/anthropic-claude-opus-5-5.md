@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: anthropic-claude-opus-5-5
 title: '2026-11-08 | Opus 5.5: reading the cost curve and the model actually serving
   a task'

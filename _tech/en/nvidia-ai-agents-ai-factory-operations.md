@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: nvidia-ai-agents-ai-factory-operations
 title: '2026-11-05 | Technical Reading: NVIDIA AI Factory Operations Agent — Multi-Agent Cluster Correlation, Read-Only Tool Boundaries, and HITL Guardrails'
 date: '2026-11-05'

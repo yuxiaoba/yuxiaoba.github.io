@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: ukaisi-alignment
 title: "2026-10-24 | Anthropic x UK AISI Joint Alignment Assessment: Task Overreach, Trace Resampling, and Reproducibility Limits"
 date: '2026-10-24'

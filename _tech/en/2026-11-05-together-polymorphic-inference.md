@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: 2026-11-05-together-polymorphic-inference
 title: '2026-11-05 | Polymorphic Inference & Together Compiler: Continual Compilation for Shifting Workloads'
 date: '2026-11-05'

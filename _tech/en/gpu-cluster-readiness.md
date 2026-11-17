@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: gpu-cluster-readiness
 title: '2026-10-03 | GPU Cluster Readiness: Active Load Validation, Layered APIs, and Bisection Isolation in NVIDIA NVCRE'
 date: '2026-10-03'

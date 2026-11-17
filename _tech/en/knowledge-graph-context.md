@@ -1,5 +1,4 @@
 ---
-tech_deep_read: true
 id: knowledge-graph-context
 title: '2026-10-20 | Grafana Knowledge Graph: starting investigations from entity relationships'
 date: '2026-10-20'
