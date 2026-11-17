@@ -93,7 +93,10 @@ def audit(site):
         check(tech_close.select_one('.paper-subnav a[aria-current="page"]')['href']=='/'+prefix+'tech/close-readings/',f'tech close reading subnavigation {lang}')
         tech_daily=soup(site/prefix/'tech/index.html')
         check(tech_daily.select_one('.paper-subnav a[aria-current="page"]')['href']=='/'+prefix+'tech/',f'tech daily subnavigation {lang}')
-        tech_close_paths=[metadata(p)['permalink'] for p in (ROOT/'_tech'/lang).rglob('*.md') if metadata(p).get('published') is True and metadata(p).get('tech_deep_read')]
+        check(not tech_daily.select('.topic-guides') and not tech_close.select('.topic-guides'),f'topic guides block removed from tech pages {lang}')
+        topics_redir=soup(site/prefix/'topics/index.html')
+        check(topics_redir.select_one('meta[http-equiv="refresh"]') is not None and f'/{prefix}tech/close-readings/' in topics_redir.select_one('meta[http-equiv="refresh"]')['content'],f'topics compatibility redirect {lang}')
+        tech_close_paths=[metadata(p)['permalink'] for p in (ROOT/'_tech'/lang).rglob('*.md') if metadata(p).get('published') is True and (metadata(p).get('tech_deep_read') or metadata(p).get('topic_guide'))]
         check(len(tech_close_paths)>=1,f'tech close readings present {lang}')
         for path in tech_close_paths:
             check(tech_close.select_one(f'.digest-archive-row a[href="{path}"],.digest-feature a[href="{path}"]') is not None,f'tech close reading listed separately {lang} {path}')
@@ -243,22 +246,25 @@ def fixtures():
         search_manifest=json.loads((dest/'pagefind/status.json').read_text())
         for lang,prefix in [('en',''),('zh','zh/')]:
             other='zh' if lang=='en' else 'en'
-            index=soup(dest/prefix/'topics/index.html')
+            redir=soup(dest/prefix/'topics/index.html')
+            index=soup(dest/prefix/'tech/close-readings/index.html')
             archive=soup(dest/prefix/'tech/index.html')
             route=f'/tech/{lang}/topics/paired/'
-            check(index.select_one(f'.topic-guide[href="{route}"]') is not None,f'topic fixture automatically listed {lang}')
-            check(archive.select_one(f'.topic-guide[href="{route}"]') is not None,f'topic fixture visible at tech entrance {lang}')
-            check(not archive.select('.archive-month [href*="/topics/"]'),f'topics excluded from monthly archive {lang}')
+            check(redir.select_one('meta[http-equiv="refresh"]') is not None and f'/{prefix}tech/close-readings/' in redir.select_one('meta[http-equiv="refresh"]')['content'],f'topics compatibility redirect {lang}')
+            check(not archive.select('.topic-guides') and not index.select('.topic-guides'),f'topic guides block removed from tech pages {lang}')
+            check(index.select_one(f'.digest-archive-row a[href="{route}"],.digest-feature a[href="{route}"]') is not None,f'topic fixture merged into tech close readings {lang}')
+            check(not archive.select(f'[href="{route}"]') and not archive.select('.archive-month [href*="/topics/"]'),f'topics excluded from monthly archive {lang}')
             check(not soup(dest/prefix/'index.html').select('.home-updates [href*="/topics/"]'),f'topics do not replace latest Tech Notes {lang}')
             check(f'tech/{lang}/topics/paired/index.html' in search_manifest['pages'],f'topic fixture indexed {lang}')
             check(f'tech/{lang}/topics/draft/index.html' not in search_manifest['pages'],f'topic draft excluded from search {lang}')
             check(not (dest/f'tech/{lang}/topics/draft/index.html').exists(),f'topic draft has no page {lang}')
-            check(not index.select(f'.topic-guide[href^="/tech/{other}/"]'),f'topic index language isolation {lang}')
+            check(not index.select(f'a[href^="/tech/{other}/"]'),f'topic index language isolation {lang}')
             detail=soup(dest/f'tech/{lang}/topics/paired/index.html')
             check(detail.select_one(f'.language-switch a[lang="{other}"]')['href']==f'/tech/{other}/topics/paired/',f'topic translation pairing {lang}')
+            check(detail.select_one('.digest-back')['href']==f'/{prefix}tech/close-readings/',f'topic back link points to tech close readings {lang}')
         for name in ['only','unpublished-translation']:
             page=soup(dest/f'tech/zh/topics/{name}/index.html')
-            check(page.select_one('.language-switch a[lang="en"]')['href']=='/topics/?translation=missing',f'topic missing translation fallback {name}')
+            check(page.select_one('.language-switch a[lang="en"]')['href']=='/tech/close-readings/?translation=missing',f'topic missing translation fallback {name}')
             check(f'tech/en/topics/{name}/index.html' not in search_manifest['pages'],f'topic untranslated content not indexed in English {name}')
         for col in ['digest','tech']:
             for lang,prefix in [('en',''),('zh','zh/')]:

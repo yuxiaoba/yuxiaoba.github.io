@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: topic-recursive-self-improvement
 title: RSI 专题：从自改代码到可验证的 AI 研发闭环
 date: '2026-11-11'

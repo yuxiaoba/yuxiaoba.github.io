@@ -1,4 +1,5 @@
 ---
+tech_deep_read: true
 id: topic-recursive-self-improvement
 title: 'RSI: from self-editing code to verifiable AI R&D loops'
 date: '2026-11-11'

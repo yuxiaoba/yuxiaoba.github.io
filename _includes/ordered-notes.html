@@ -3,6 +3,7 @@
 {%- assign note_candidates = include.collection | where: 'lang', lang | where: 'published', true -%}
 {%- if include.guides -%}
   {%- assign note_candidates = note_candidates | where: 'topic_guide', true -%}
+{%- elsif include.include_guides -%}
 {%- else -%}
   {%- assign note_candidates = note_candidates | where_exp: 'note', 'note.topic_guide != true' -%}
 {%- endif -%}
