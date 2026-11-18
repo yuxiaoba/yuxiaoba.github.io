@@ -95,7 +95,7 @@ interest:
 service:
 - name: 'Program Committee: FSE 2027; FSE 2026 (IVR); ICSME 2026 (TDDS & VER); APSEC 2025; EuroSys 2025 (Shadow)'
 - name: 'Artifact Evaluation: OSDI 2022; USENIX ATC 2022'
-- name: 'Reviewer: TSE, TOSEM, TSC, TPDS, TC, TMC, KDD 2026, WWW 2024, PR, EAAI, TCC, JSEP, JSS, EMSE, Computer Networks, J Supercomput'
+- name: 'Reviewer: TSE, TOSEM, TSC, TPDS, TC, TMC, EuroSys 2027, WWW 2027, KDD 2026, WWW 2024, ASE Journal, PR, EAAI, TCC, JSEP, JSS, EMSE, Computer Networks, J Supercomput'
 - name: 'Sub-reviewer: TOSEM; ICSOC 2022; ISSTA 2025'
   hidden: true
 

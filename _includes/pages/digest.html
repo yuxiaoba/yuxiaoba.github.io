@@ -1,5 +1,5 @@
 {% include ordered-notes.html collection=site.digest %}{% assign all_paper_entries = ordered_notes %}{% if page.paper_reading_view == 'deep' %}{% assign entries = all_paper_entries | where: 'paper_deep_read', true %}{% else %}{% assign entries = all_paper_entries | where_exp: 'note', 'note.paper_deep_read != true' %}{% endif %}
-<section class="subpage notes-page"><div class="eyebrow">{{ t.notes_kicker }}</div><h1>{{ t.digest }}{% if lang == 'en' %}.{% endif %}</h1><p class="subpage-lead">{{ t.reading_note }}</p>
+<section class="subpage notes-page"><div class="eyebrow">{{ t.notes_kicker }}</div><h1>{{ t.digest }}</h1><p class="subpage-lead">{{ t.reading_note }}</p>
 <p class="door-detail note-attribution">{{ t.note_attribution }}</p>
 <p class="translation-notice" data-translation-notice role="status" hidden>{{ t.missing }}</p>
 <nav class="paper-subnav" aria-label="{{ t.paper_reading_sections }}"><a href="{{ prefix | append: '/digest/' | relative_url }}"{% unless page.paper_reading_view == 'deep' %} aria-current="page"{% endunless %}>{{ t.paper_daily_readings }}</a><a href="{{ prefix | append: '/digest/close-readings/' | relative_url }}"{% if page.paper_reading_view == 'deep' %} aria-current="page"{% endif %}>{{ t.paper_deep_read }}</a></nav>

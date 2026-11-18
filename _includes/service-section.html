@@ -1,0 +1,59 @@
+<section class="service"><h2>{{ t.service }}</h2><ul class="service-ledger">
+{%- assign visible_index = 0 -%}
+{%- for item in localized.service -%}
+  {%- unless item.hidden -%}
+    {%- assign visible_index = visible_index | plus: 1 -%}
+    {%- assign normalized_entry = item.name | replace_first: '：', ': ' -%}
+    {%- if normalized_entry contains ': ' -%}
+      {%- assign parts = normalized_entry | split: ': ' -%}
+      {%- assign service_role = parts | first | strip -%}
+      {%- assign role_prefix = service_role | append: ': ' -%}
+      {%- assign service_body = normalized_entry | remove_first: role_prefix | strip -%}
+    {%- else -%}
+      {%- assign service_role = '' -%}
+      {%- assign service_body = normalized_entry | strip -%}
+    {%- endif -%}
+    {%- assign venue_list = service_body | replace: '；', '|' | replace: ';', '|' | replace: '、', '|' | replace: ',', '|' | split: '|' -%}
+    <li class="service-group" data-service-kind="{{ visible_index }}">
+      {%- if service_role != '' -%}
+      <div class="service-role"><span class="service-role-icon" aria-hidden="true"></span><span class="service-role-name">{{ service_role | escape }}</span></div>
+      {%- endif -%}
+      <div class="service-venues">
+        {%- for raw_venue in venue_list -%}
+          {%- assign v = raw_venue | strip -%}
+          {%- if v != '' -%}
+            {%- assign v_main = v -%}
+            {%- assign v_note = '' -%}
+            {%- if v contains '（' -%}
+              {%- assign np = v | split: '（' -%}
+              {%- assign v_main = np | first | strip -%}
+              {%- assign note_inner = np | last | remove: '）' | strip -%}
+              {%- if note_inner != '' -%}{% capture v_note %}（{{ note_inner }}）{% endcapture %}{%- endif -%}
+            {%- elsif v contains '(' -%}
+              {%- assign np = v | split: '(' -%}
+              {%- assign v_main = np | first | strip -%}
+              {%- assign note_inner = np | last | remove: ')' | strip -%}
+              {%- if note_inner != '' -%}{% capture v_note %}({{ note_inner }}){% endcapture %}{%- endif -%}
+            {%- endif -%}
+            {%- assign words = v_main | split: ' ' -%}
+            {%- assign v_last = words | last -%}
+            {%- assign v_last_num = v_last | plus: 0 -%}
+            {%- capture v_last_num_str -%}{{ v_last_num }}{%- endcapture -%}
+            {%- assign is_dated = false -%}
+            {%- assign is_recent = false -%}
+            {%- assign v_prefix = v_main -%}
+            {%- if words.size > 1 and v_last.size == 4 and v_last_num_str == v_last and v_last_num >= 2000 and v_last_num <= 2099 -%}
+              {%- assign is_dated = true -%}
+              {%- if v_last_num >= 2026 -%}{%- assign is_recent = true -%}{%- endif -%}
+              {%- assign prefix_count = words.size | minus: 1 -%}
+              {%- assign prefix_words = words | slice: 0, prefix_count -%}
+              {%- assign v_prefix = prefix_words | join: ' ' -%}
+            {%- endif -%}
+            <span class="service-chip{% if is_dated %} is-dated{% endif %}{% if is_recent %} is-recent{% endif %}">{%- if is_dated -%}<span class="service-venue-name">{{ v_prefix | escape }}</span> <span class="service-venue-year">{{ v_last | escape }}</span>{%- else -%}<span class="service-venue-name">{{ v_main | escape }}</span>{%- endif -%}{%- if v_note != '' %} <span class="service-venue-note">{{ v_note | escape }}</span>{%- endif -%}</span> 
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </li>
+  {%- endunless -%}
+{%- endfor -%}
+</ul></section>

@@ -14,4 +14,4 @@
 
 </section>
 <section class="profile-credentials"><section><h2>{{ t.education }}</h2>{% for item in localized.education %}<div class="education-entry"><time>{{ item.date }}</time><h3>{{ item.name }}</h3><p>{{ item.position }}</p>{% if item.advisor %}<p class="education-advisor">{{ item.advisor }}</p>{% endif %}</div>{% endfor %}</section><section><h2>{{ t.awards }}</h2><ul class="awards-list">{% for item in localized.awards %}<li><time>{{ item.date }}</time><span>{{ item.name }}</span></li>{% endfor %}</ul></section></section>
-<section class="service"><h2>{{ t.service }}</h2><ul>{% for item in localized.service %}{% unless item.hidden %}<li>{{ item.name }}</li>{% endunless %}{% endfor %}</ul></section>
+{% include service-section.html %}

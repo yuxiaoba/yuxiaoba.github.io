@@ -1,0 +1,17 @@
+{%- assign display_title = include.note.title -%}
+{%- assign prefix2 = display_title | slice: 0, 2 -%}
+{%- if prefix2 == '20' -%}
+  {%- if display_title contains '｜' -%}
+    {%- assign first_seg = display_title | split: '｜' | first -%}
+    {%- if first_seg.size <= 13 -%}
+      {%- assign cut = first_seg | append: '｜' -%}
+      {%- assign display_title = display_title | remove_first: cut | strip -%}
+    {%- endif -%}
+  {%- elsif display_title contains ' | ' -%}
+    {%- assign first_seg = display_title | split: ' | ' | first -%}
+    {%- if first_seg.size <= 12 -%}
+      {%- assign cut = first_seg | append: ' | ' -%}
+      {%- assign display_title = display_title | remove_first: cut | strip -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}

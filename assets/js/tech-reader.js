@@ -33,6 +33,25 @@
       item.append(link); list.append(item);
     });
     nav.append(list); toc.append(summary, nav);
+    const tocLinks = [...list.querySelectorAll('a')];
+    let techTocPending = false;
+    const updateTechToc = () => {
+      let current = 0;
+      headings.forEach((heading, index) => {
+        if (heading.getBoundingClientRect().top <= 130) current = index;
+      });
+      tocLinks.forEach((link, index) => {
+        if (index === current) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+      techTocPending = false;
+    };
+    const scheduleTechToc = () => {
+      if (!techTocPending) { techTocPending = true; requestAnimationFrame(updateTechToc); }
+    };
+    window.addEventListener('scroll', scheduleTechToc, { passive: true });
+    window.addEventListener('resize', scheduleTechToc, { passive: true });
+    updateTechToc();
     if (topic) {
       const layout = document.createElement('div');
       layout.className = 'topic-reading-layout';

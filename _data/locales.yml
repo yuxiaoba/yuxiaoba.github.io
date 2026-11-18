@@ -1,7 +1,7 @@
 en:
   tech_reading_sections: Technical reading sections
   tech_deep_read: Technical close readings
-  all_tech_close_readings: All technical close readings
+  all_tech_close_readings: '← All technical close readings'
   research_sre_definition: "SRE = Software Reliability Engineering"
   research_bidirectional_description: "AI4SRE uses AI to improve software reliability. SRE4AI applies reliability engineering to AI systems. Fault injection and recovery validation support both directions."
   research_bidirectional_caption: "Select a direction to explore how fault injection and recovery validation support it."
@@ -163,7 +163,7 @@ en:
 zh:
   tech_reading_sections: 技术笔记分类
   tech_deep_read: 技术精读
-  all_tech_close_readings: 全部技术精读
+  all_tech_close_readings: '← 全部技术精读'
   research_sre_definition: "SRE = Software Reliability Engineering（软件可靠性工程）"
   research_bidirectional_description: "AI4SRE 用 AI 提升软件可靠性；SRE4AI 让 AI 系统可靠、高效地运行。故障注入与恢复验证融入两条主线。"
   research_bidirectional_caption: "点击方向，了解故障注入与恢复验证如何融入研究。"

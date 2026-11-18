@@ -1,4 +1,5 @@
 {% include ordered-notes.html collection=site.digest %}{% assign recent_digests = ordered_notes | where_exp: 'note', 'note.paper_deep_read != true' %}{% assign recent_close_readings = ordered_notes | where: 'paper_deep_read', true %}
+{% include ordered-notes.html collection=site.tech include_guides=true %}{% assign tech_with_guides = ordered_notes %}{% assign recent_tech_close = '' | split: ',' %}{% for note in tech_with_guides %}{% if note.tech_deep_read == true or note.topic_guide == true %}{% assign recent_tech_close = recent_tech_close | push: note %}{% endif %}{% endfor %}
 {% include ordered-notes.html collection=site.tech %}{% assign recent_tech = ordered_notes %}
 <section class="home-updates" aria-labelledby="recent-updates-heading">
 <h2 id="recent-updates-heading">{{ t.recent_updates }}</h2>
@@ -11,6 +12,7 @@
 <div class="update-column update-tech">
 <div class="update-column-heading"><span>{{ t.tech }}</span><a href="{{ prefix | append: '/tech/' | relative_url }}">{{ t.all_tech_short }} <span aria-hidden="true">↗</span></a></div>
 {% if recent_tech.size > 0 %}{% for entry in recent_tech limit:2 %}{% include recent-note.html entry=entry %}{% endfor %}{% else %}<p class="update-empty">{{ t.empty_tech }}</p>{% endif %}
+{% if recent_tech_close.size > 0 %}<a class="recent-read" href="{{ prefix | append: '/tech/close-readings/' | relative_url }}">{{ t.tech_deep_read }} <span aria-hidden="true">↗</span></a>{% endif %}
 </div>
 </div>
 </section>

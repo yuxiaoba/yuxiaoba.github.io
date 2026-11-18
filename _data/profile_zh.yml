@@ -38,6 +38,6 @@ awards:
 service:
 - name: 程序委员会：FSE 2027；FSE 2026（IVR）；ICSME 2026（TDDS 与 VER）；APSEC 2025；EuroSys 2025（影子委员会）
 - name: 工件评审：OSDI 2022；USENIX ATC 2022
-- name: 期刊／会议审稿：TSE、TOSEM、TSC、TPDS、TC、TMC、KDD 2026、WWW 2024、PR、EAAI、TCC、JSEP、JSS、EMSE、Computer Networks、J Supercomput
+- name: 期刊／会议审稿：TSE、TOSEM、TSC、TPDS、TC、TMC、EuroSys 2027、WWW 2027、KDD 2026、WWW 2024、ASE Journal、PR、EAAI、TCC、JSEP、JSS、EMSE、Computer Networks、J Supercomput
 - name: 协助审稿：TOSEM；ICSOC 2022；ISSTA 2025
   hidden: true
