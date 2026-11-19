@@ -1,0 +1,440 @@
+{
+  "source": {
+    "title": "不同Harness的Agent Loop怎么做？Claude Code、Codex等6套方案详解",
+    "account": "PaperWeekly",
+    "author": "风儿轻轻er",
+    "url": "https://mp.weixin.qq.com/s/GryGhL7SLCPwDQF0VjsPeg",
+    "sha256": "95af2a2c785f7487ac4fbd77622980d6547f39cd2d1d4740fe34a196b2915565",
+    "links": [
+      {
+        "text": "",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&mid=2247722761&idx=1&sn=d2c88fa05c98123185572dfd7691186b&scene=21#wechat_redirect"
+      },
+      {
+        "text": "",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&mid=2247722169&idx=2&sn=fdb17581cfd7cf4fc0f4a9db4a156059&scene=21#wechat_redirect"
+      },
+      {
+        "text": "",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&mid=2247722551&idx=1&sn=3f160eef716d526a144bbdc7f6efa31f&scene=21#wechat_redirect"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_gif/Psho9dm7oDHKVtfYDubjKdZRUjAfBQQicXjoZWJ3qnK42ooD4eeJUfJBM4SSZVa2RE5lO0j6rWwzliby0j9u4bDg/640?wx_fmt=gif&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=0",
+        "alt": "图片"
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_png/Psho9dm7oDGhKg9nnSz5qQrwKvXibt3wulOVRfC18yCkd6xXqGq22h6QUk8chptF0fnQ4uXeZtAktYMrWwG2SyQ/640?wx_fmt=png#imgIndex=3",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_jpg/nFNzd9xjFeDwWtt1L7DicQibeq4QTTFps0VRsgWMcM20icQzB86uNvgwyGEVAWcI9WEZB7icIgvNfInpZgsXUJNnwgVmgN2l8q5jPl5aycv8lL0/640?wx_fmt=jpeg",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_png/Psho9dm7oDGhKg9nnSz5qQrwKvXibt3wuhfgUpIfdPSqH8YjjHbCUiaaKsMA36bIMsMtGNKoBcus5py06M0fvx3A/640?wx_fmt=png#imgIndex=7",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_jpg/nFNzd9xjFeDicvSos967Yp1ibDwy7xAy0kydhhGYxkj4egaMQhoslYIibHlUfsAQLHegiaFt0vHPeANIwNtdrvuP5MH2XPdlnzIuwTbPvn0ztVA/640?wx_fmt=jpeg",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_png/Psho9dm7oDGhKg9nnSz5qQrwKvXibt3wukOjHSmSsEuRCB0fJu69CtdNgLnvFPDUCgeicOppBKuDvniaD3q8XWQ0Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=3",
+        "alt": "图片"
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/nFNzd9xjFeDoHB2M1lzwCTVehyTgg8XHGrwxRk9pQ1BlJECRmkqibVMialtNf4pIB8ebszcuMxMZr2yFrFYNvdupia9pRlia09jcg2kDVUsosAM/640?wx_fmt=jpeg",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_png/Psho9dm7oDGhKg9nnSz5qQrwKvXibt3wuiaLfO9V4lkD8cXK7ImEicqib5bPGH6syOrWzicR2KaqPyAicMccs8icC03Gw/640?wx_fmt=png#imgIndex=11",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_jpg/nFNzd9xjFeBJBuFkPzZiczYcqMSzFU3hDrRcKTib9czfYGbGHT0DictZ3EVaQia3UqSH4sDWvIebWiaFY9Y6DVohvTKV7xGwyPqOtCeWGsNb75SI/640?wx_fmt=jpeg",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_png/Psho9dm7oDGhKg9nnSz5qQrwKvXibt3wukGHdevfTibLOpic6945Lrhqmt43pKicyIhGs4m7ANzKOfY9RJgmTicZGdg/640?wx_fmt=png#imgIndex=13",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_jpg/nFNzd9xjFeC83qnReU6C4kibyKr73zrsZRoZaUYtD6LWJTK3Gnfick2iatQBgS5MmXEWCGaJOfIibYClwHukXdibWvkBLjQKic85zmR72TK8otGQc/640?wx_fmt=jpeg",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_png/Psho9dm7oDGhKg9nnSz5qQrwKvXibt3wuJXXicvv3JrPNYrFlYadg4ibA8SxC6OvibZyBHGuub04X1AXxeRTC0WUJA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&tp=webp#imgIndex=19",
+        "alt": "图片"
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/nFNzd9xjFeCSUyYjMK2EZSeTyObvZvZGSyILmm0tX8icW6eLUTlWmWmVPMW4lGek3yN6Xr1nqquSDBEu0ELm3hO20w3vZEofzKooFKO9ib31A/640?wx_fmt=jpeg",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/sz_mmbiz_png/RBRgSeVXhYOajVOiaI5LZYZV4WnD7RoibMuibVib6ZSiaUasponBsEwJfg8FyLjySpm8SBxGquEWqKj4tMCImktRopffI0tVvnAhEu7ZqqejLqLw/640?wx_fmt=png&from=appmsg#imgIndex=14",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_png/RBRgSeVXhYNZJto6TzeDvgxPe2zv02mG5dWKVn2OqNuZfcH3mX12Q9DUYNjnp2SXGPdkydx9uJBrnt4egGBYVJVP1pjEYS0sqhPicib9vibUQE/640?wx_fmt=png&from=appmsg#imgIndex=15",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_png/RBRgSeVXhYOBLmMSCBicQc9xh8V2sLtmeC8h3fOU18btdSAXgdFrroruUsavHPbzPtAPbtic0cpt60lQcOLnVULRHgrgngZuMNX6K98P2D4hQ/640?wx_fmt=png&from=appmsg#imgIndex=16",
+        "alt": ""
+      },
+      {
+        "url": "https://mmbiz.qpic.cn/mmbiz_png/VBcD02jFhgnZ3nlEAOI3MyTd7jqeD6cq8uTbkM2xZNpribyNr9liaPJ722zaHxd0YpQvib2nxOYmWibydCVY7W94ew/640?wx_fmt=jpeg#imgIndex=41",
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      },
+      {
+        "url": null,
+        "alt": ""
+      }
+    ]
+  },
+  "source_published_at": "2026-10-28T20:08:02+08:00",
+  "checked_at": "2026-11-19",
+  "code_sources": [
+    {
+      "repo": "openai/codex",
+      "commit": "d1d1ba0b837d34f314b7f469896e8babbc91f949",
+      "files": [
+        {
+          "path": "codex-rs/core/src/session/turn.rs",
+          "url": "https://raw.githubusercontent.com/openai/codex/d1d1ba0b837d34f314b7f469896e8babbc91f949/codex-rs/core/src/session/turn.rs",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/openai--codex/codex-rs/core/src/session/turn.rs",
+          "sha256": "1eff0b646ed02c02c2aac83479131a336b082ccfc9a6cc6b7d40fc268388cf88"
+        },
+        {
+          "path": "codex-rs/core/src/tools/parallel.rs",
+          "url": "https://raw.githubusercontent.com/openai/codex/d1d1ba0b837d34f314b7f469896e8babbc91f949/codex-rs/core/src/tools/parallel.rs",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/openai--codex/codex-rs/core/src/tools/parallel.rs",
+          "sha256": "755fdf1ff1145dd4bf020b0a0eb4a41497bae882f3cd4604878dcdf49427290e"
+        },
+        {
+          "path": "codex-rs/core/src/tools/orchestrator.rs",
+          "url": "https://raw.githubusercontent.com/openai/codex/d1d1ba0b837d34f314b7f469896e8babbc91f949/codex-rs/core/src/tools/orchestrator.rs",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/openai--codex/codex-rs/core/src/tools/orchestrator.rs",
+          "sha256": "47a46738d350bafcde5aab85101273a6b33c249d1d7698d26a769e12f0a8b302"
+        }
+      ]
+    },
+    {
+      "repo": "anomalyco/opencode",
+      "commit": "88ca792e024aa2085fa6e15288be37037c4871d2",
+      "files": [
+        {
+          "path": "packages/core/src/session/runner/llm.ts",
+          "url": "https://raw.githubusercontent.com/anomalyco/opencode/88ca792e024aa2085fa6e15288be37037c4871d2/packages/core/src/session/runner/llm.ts",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/anomalyco--opencode/packages/core/src/session/runner/llm.ts",
+          "sha256": "04be4f888e90189a3e54ef0b85f7e80cd166842bf7c2f1018b971dc2b3bd44fe"
+        },
+        {
+          "path": "packages/core/src/session/runner/step.ts",
+          "url": "https://raw.githubusercontent.com/anomalyco/opencode/88ca792e024aa2085fa6e15288be37037c4871d2/packages/core/src/session/runner/step.ts",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/anomalyco--opencode/packages/core/src/session/runner/step.ts",
+          "sha256": "0a0cc4ee22b0c732e8810ad79dd03cdce3f637e5a7d05e6ae41e0f6d69bb7462"
+        },
+        {
+          "path": "packages/core/src/session/inbox.ts",
+          "url": "https://raw.githubusercontent.com/anomalyco/opencode/88ca792e024aa2085fa6e15288be37037c4871d2/packages/core/src/session/inbox.ts",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/anomalyco--opencode/packages/core/src/session/inbox.ts",
+          "sha256": "98adf0f19cb049450b2ce6af15cee0f3e13b268d379a77a0431addbe0d30e98e"
+        }
+      ]
+    },
+    {
+      "repo": "earendil-works/pi",
+      "commit": "5a14e69c067d40dfbff4f2fff7d3b34c897e2dc9",
+      "files": [
+        {
+          "path": "packages/agent/src/agent-loop.ts",
+          "url": "https://raw.githubusercontent.com/earendil-works/pi/5a14e69c067d40dfbff4f2fff7d3b34c897e2dc9/packages/agent/src/agent-loop.ts",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/earendil-works--pi/packages/agent/src/agent-loop.ts",
+          "sha256": "a2c7dc92644bae8655a263e1f5b6ecca6a0d3057002f978e709ed27ec8dd5a92"
+        },
+        {
+          "path": "packages/coding-agent/src/core/agent-session.ts",
+          "url": "https://raw.githubusercontent.com/earendil-works/pi/5a14e69c067d40dfbff4f2fff7d3b34c897e2dc9/packages/coding-agent/src/core/agent-session.ts",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/earendil-works--pi/packages/coding-agent/src/core/agent-session.ts",
+          "sha256": "3a5ab80a136bebd9a17c1726f416e28b02dd7c78aacd96dc86059d6de03d011f"
+        }
+      ]
+    },
+    {
+      "repo": "can1357/oh-my-pi",
+      "commit": "57771ae562b9345e0579bceb2d68d585e3e6927e",
+      "files": [
+        {
+          "path": "packages/agent/src/agent-loop.ts",
+          "url": "https://raw.githubusercontent.com/can1357/oh-my-pi/57771ae562b9345e0579bceb2d68d585e3e6927e/packages/agent/src/agent-loop.ts",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/can1357--oh-my-pi/packages/agent/src/agent-loop.ts",
+          "sha256": "edb63316aff3d907cca077b814b91d9ff6e7ab80f645bd2038208e01743c9398"
+        },
+        {
+          "path": "docs/provider-streaming-internals.md",
+          "url": "https://raw.githubusercontent.com/can1357/oh-my-pi/57771ae562b9345e0579bceb2d68d585e3e6927e/docs/provider-streaming-internals.md",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/can1357--oh-my-pi/docs/provider-streaming-internals.md",
+          "sha256": "c68cf6da7140dd188c02ba591d4ec8c891bee8ad0fb61b43d7199a4bae179ac4"
+        }
+      ]
+    },
+    {
+      "repo": "deepseek-ai/deepseek-harness",
+      "commit": "2e39e70496aa02986ca6a820c5d497e816b69d7e",
+      "files": [
+        {
+          "path": "packages/core/agent-loop/src/agent.ts",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/2e39e70496aa02986ca6a820c5d497e816b69d7e/packages/core/agent-loop/src/agent.ts",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/deepseek-ai--deepseek-harness/packages/core/agent-loop/src/agent.ts",
+          "sha256": "6fa6bd4c0ab2aaea988b92a3fd079fa38271f4b8065ec325a6ab09ec93eb13c8"
+        },
+        {
+          "path": "packages/core/agent-loop/README.md",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/2e39e70496aa02986ca6a820c5d497e816b69d7e/packages/core/agent-loop/README.md",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/deepseek-ai--deepseek-harness/packages/core/agent-loop/README.md",
+          "sha256": "63beae37c800961fc795c1597fc526ec8186d0c6a7088c7aff19993528483f2f"
+        },
+        {
+          "path": "packages/compaction/README.md",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/2e39e70496aa02986ca6a820c5d497e816b69d7e/packages/compaction/README.md",
+          "status": 200,
+          "local_file": ".preview/agent-loop-close-reading/sources/deepseek-ai--deepseek-harness/packages/compaction/README.md",
+          "sha256": "df5bfac02a13077befa6d9239804debc14adeb61a12e15ad1caf9cc92d735426"
+        }
+      ]
+    }
+  ],
+  "primary_docs": [
+    "https://code.claude.com/docs/en/how-claude-code-works",
+    "https://code.claude.com/docs/en/hooks"
+  ],
+  "authorship": "assistant analysis and English translation",
+  "version_findings": [
+    "DeepSeek agent/request cannot change model/provider/effort after step preparation in pinned source; README marks hook deprecated.",
+    "OpenCode pinned dev Outcome includes OutputLimit; article pseudocode is not an exact current API."
+  ],
+  "scope": "Static source review; no framework execution or performance ranking. Six original Chinese article diagrams retained unchanged with credit and bilingual explanations; four SVG assets are two assistant-created concepts in both languages.",
+  "figures": {
+    "assets/images/tech/coding-agent-loop-harness-close-reading/loop-en.svg": "346579769c169c90ff1bb769cf30b5c25cc434b090c417f884ce5e4f728dcd9f",
+    "assets/images/tech/coding-agent-loop-harness-close-reading/loop-zh.svg": "c4e7c7070c60eca12e969705190c10b3b930043b84b51781a3ea8c183185dbea",
+    "assets/images/tech/coding-agent-loop-harness-close-reading/recovery-en.svg": "d25b3fe6d7184d3d059bd86d04acf09bbae0528c41c56f455acbcf324c0ec1f1",
+    "assets/images/tech/coding-agent-loop-harness-close-reading/recovery-zh.svg": "f0f0c3204eea73013a4dda2d4e2cc7248006f9e0d96f9688bd052f2fb2b72546"
+  },
+  "original_figures": [
+    {
+      "framework": "claude-code",
+      "path": "assets/images/tech/coding-agent-loop-harness-close-reading/claude-code-original.jpg",
+      "source_url": "https://mmbiz.qpic.cn/mmbiz_jpg/nFNzd9xjFeDwWtt1L7DicQibeq4QTTFps0VRsgWMcM20icQzB86uNvgwyGEVAWcI9WEZB7icIgvNfInpZgsXUJNnwgVmgN2l8q5jPl5aycv8lL0/640?wx_fmt=jpeg",
+      "article_url": "https://mp.weixin.qq.com/s/GryGhL7SLCPwDQF0VjsPeg",
+      "sha256": "312abc28728a70b998d8ca91fea07482b75f88ba169ec2c36da2561b4f7a81f8",
+      "dimensions": [
+        1080,
+        730
+      ],
+      "language": "zh",
+      "kind": "original article diagram, unmodified",
+      "visual_review": "Matched to framework heading and fully inspected; original bytes preserved; source credit and bilingual alt/caption included. DeepSeek/OpenCode version caveats adjacent to figures."
+    },
+    {
+      "framework": "codex",
+      "path": "assets/images/tech/coding-agent-loop-harness-close-reading/codex-original.jpg",
+      "source_url": "https://mmbiz.qpic.cn/mmbiz_jpg/nFNzd9xjFeDicvSos967Yp1ibDwy7xAy0kydhhGYxkj4egaMQhoslYIibHlUfsAQLHegiaFt0vHPeANIwNtdrvuP5MH2XPdlnzIuwTbPvn0ztVA/640?wx_fmt=jpeg",
+      "article_url": "https://mp.weixin.qq.com/s/GryGhL7SLCPwDQF0VjsPeg",
+      "sha256": "fff03e248b3b9caff2a779e56be1cd5c970cf94e376df6f56c3d1b0c6720c9bf",
+      "dimensions": [
+        1080,
+        735
+      ],
+      "language": "zh",
+      "kind": "original article diagram, unmodified",
+      "visual_review": "Matched to framework heading and fully inspected; original bytes preserved; source credit and bilingual alt/caption included. DeepSeek/OpenCode version caveats adjacent to figures."
+    },
+    {
+      "framework": "opencode",
+      "path": "assets/images/tech/coding-agent-loop-harness-close-reading/opencode-original.jpg",
+      "source_url": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/nFNzd9xjFeDoHB2M1lzwCTVehyTgg8XHGrwxRk9pQ1BlJECRmkqibVMialtNf4pIB8ebszcuMxMZr2yFrFYNvdupia9pRlia09jcg2kDVUsosAM/640?wx_fmt=jpeg",
+      "article_url": "https://mp.weixin.qq.com/s/GryGhL7SLCPwDQF0VjsPeg",
+      "sha256": "dd9d0d98e35e0c595bde0aadd30540d58dc75181af8a6f107f78e4f90d50c593",
+      "dimensions": [
+        1080,
+        753
+      ],
+      "language": "zh",
+      "kind": "original article diagram, unmodified",
+      "visual_review": "Matched to framework heading and fully inspected; original bytes preserved; source credit and bilingual alt/caption included. DeepSeek/OpenCode version caveats adjacent to figures."
+    },
+    {
+      "framework": "pi",
+      "path": "assets/images/tech/coding-agent-loop-harness-close-reading/pi-original.jpg",
+      "source_url": "https://mmbiz.qpic.cn/mmbiz_jpg/nFNzd9xjFeBJBuFkPzZiczYcqMSzFU3hDrRcKTib9czfYGbGHT0DictZ3EVaQia3UqSH4sDWvIebWiaFY9Y6DVohvTKV7xGwyPqOtCeWGsNb75SI/640?wx_fmt=jpeg",
+      "article_url": "https://mp.weixin.qq.com/s/GryGhL7SLCPwDQF0VjsPeg",
+      "sha256": "95afa2a9985c16a16a6859ee7417beb1dcedd6891adec65f2d0cc8aee661c2cf",
+      "dimensions": [
+        1080,
+        764
+      ],
+      "language": "zh",
+      "kind": "original article diagram, unmodified",
+      "visual_review": "Matched to framework heading and fully inspected; original bytes preserved; source credit and bilingual alt/caption included. DeepSeek/OpenCode version caveats adjacent to figures."
+    },
+    {
+      "framework": "oh-my-pi",
+      "path": "assets/images/tech/coding-agent-loop-harness-close-reading/oh-my-pi-original.jpg",
+      "source_url": "https://mmbiz.qpic.cn/mmbiz_jpg/nFNzd9xjFeC83qnReU6C4kibyKr73zrsZRoZaUYtD6LWJTK3Gnfick2iatQBgS5MmXEWCGaJOfIibYClwHukXdibWvkBLjQKic85zmR72TK8otGQc/640?wx_fmt=jpeg",
+      "article_url": "https://mp.weixin.qq.com/s/GryGhL7SLCPwDQF0VjsPeg",
+      "sha256": "0c964454e60ae63b6b7eaa8ed1b7a4fbea48e73897e189ff5e35c7ec8b5e560a",
+      "dimensions": [
+        1080,
+        746
+      ],
+      "language": "zh",
+      "kind": "original article diagram, unmodified",
+      "visual_review": "Matched to framework heading and fully inspected; original bytes preserved; source credit and bilingual alt/caption included. DeepSeek/OpenCode version caveats adjacent to figures."
+    },
+    {
+      "framework": "deepseek-harness",
+      "path": "assets/images/tech/coding-agent-loop-harness-close-reading/deepseek-harness-original.jpg",
+      "source_url": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/nFNzd9xjFeCSUyYjMK2EZSeTyObvZvZGSyILmm0tX8icW6eLUTlWmWmVPMW4lGek3yN6Xr1nqquSDBEu0ELm3hO20w3vZEofzKooFKO9ib31A/640?wx_fmt=jpeg",
+      "article_url": "https://mp.weixin.qq.com/s/GryGhL7SLCPwDQF0VjsPeg",
+      "sha256": "0cb2be79d78ddd83c5057fc08de95e0cfabaa6e313a85483be8bd5d680e48c1f",
+      "dimensions": [
+        1080,
+        746
+      ],
+      "language": "zh",
+      "kind": "original article diagram, unmodified",
+      "visual_review": "Matched to framework heading and fully inspected; original bytes preserved; source credit and bilingual alt/caption included. DeepSeek/OpenCode version caveats adjacent to figures."
+    }
+  ]
+}
