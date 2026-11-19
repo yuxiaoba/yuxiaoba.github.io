@@ -15,7 +15,7 @@ abstract: >-
 authors:
 - Junjie Huang
 - Yuedong Zhong
-- Guangba Yu†
+- Guangba Yu
 - Zhihan Jiang
 - Minzhi Yan
 - Wenfei Luan
