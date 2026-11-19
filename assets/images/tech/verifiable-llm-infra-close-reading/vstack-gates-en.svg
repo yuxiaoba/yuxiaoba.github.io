@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 570" width="1440" height="855" role="img" aria-label="vstack Anti-Reward-Hacking Architecture: S0–S8 Pipeline, 3-Role Isolation &amp; Exposure Gate">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="570" fill="#f8fafc" rx="12"/>
+  <rect x="12" y="12" width="936" height="546" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" rx="10"/>
+<text x="28" y="38" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="16.5" font-weight="700" fill="#0f172a">vstack Anti-Reward-Hacking Architecture: S0–S8 Pipeline, 3-Role Isolation &amp; Exposure Gate</text>
+  <text x="28" y="57" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569">hao-ai-lab/vstack @ 16a4c03 · The blog&#x27;s 5 conceptual stages expand into 9 skills (S0–S8) and mechanical gates in code</text>
+  <line x1="28" y1="67" x2="932" y2="67" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="28" y="77" width="288" height="120" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="38" y="86" width="268" height="22" rx="5" fill="#1d4ed8"/>
+  <text x="46" y="100.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">Role 1 · Coordinator (vstack-main)</text>
+  <text x="40" y="123" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.0" font-weight="700" fill="#1e293b">Holds and hash-locks proof targets</text>
+  <text x="40" y="143" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• Runs check_spec_pins.sh (sha256sum)</text>
+  <text x="40" y="161" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• Seals blind holdout H from worker context</text>
+  <text x="40" y="179" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• Runs scope_check.py &amp; Gate 4 clean rerun</text>
+  <rect x="336" y="77" width="288" height="120" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="346" y="86" width="268" height="22" rx="5" fill="#0f172a"/>
+  <text x="354" y="100.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">Role 2 · Worker (vstack-worker)</text>
+  <text x="348" y="123" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.0" font-weight="700" fill="#1e293b">Authors models, proofs &amp; repros</text>
+  <text x="348" y="143" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• Anchors transitions to file:line@commit</text>
+  <text x="348" y="161" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• Cannot modify pinned spec or theorem files</text>
+  <text x="348" y="179" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• Must supply ANCHORS.tsv &amp; negative mutants</text>
+  <rect x="644" y="77" width="288" height="120" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <rect x="654" y="86" width="268" height="22" rx="5" fill="#92400e"/>
+  <text x="662" y="100.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">Role 3 · Red-Team (vstack-redteam)</text>
+  <text x="656" y="123" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.0" font-weight="700" fill="#1e293b">Adversarially tries to refute claims</text>
+  <text x="656" y="143" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• Checks no outer code guard blocks the trace</text>
+  <text x="656" y="161" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• Rejects intended behavior &amp; bogus freedom</text>
+  <text x="656" y="179" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• Enforces independent Gate 2 veto at S5/S6</text>
+  <rect x="28" y="210" width="904" height="156" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="40" y="230" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="11.0" font-weight="700" fill="#0f172a">Actual 9-Skill Workflow in Source (skills/vstack-s0..s8) &amp; Mechanical Checks (docs/gates.md)</text>
+  <rect x="40" y="242" width="88" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="84" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S0 Decomp</text>
+  <text x="84" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">scope</text>
+  <line x1="128" y1="264" x2="138" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="139" y="242" width="88" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="183" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S1 Select</text>
+  <text x="183" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">TLC/Z3</text>
+  <line x1="227" y1="264" x2="237" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="238" y="242" width="88" height="44" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="282" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S2 Spec</text>
+  <text x="282" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">hash pin</text>
+  <line x1="326" y1="264" x2="336" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="337" y="242" width="88" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="381" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S3 Model</text>
+  <text x="381" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">anchored</text>
+  <line x1="425" y1="264" x2="435" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="436" y="242" width="88" height="44" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="480" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S4 Calib</text>
+  <text x="480" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">trace/mut</text>
+  <line x1="524" y1="264" x2="534" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="535" y="242" width="88" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="579" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S5 Red</text>
+  <text x="579" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">refute</text>
+  <line x1="623" y1="264" x2="633" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="634" y="242" width="88" height="44" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="678" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S6 Hunt</text>
+  <text x="678" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">engine</text>
+  <line x1="722" y1="264" x2="732" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="733" y="242" width="88" height="44" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="777" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S7 Prove</text>
+  <text x="777" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">TLAPS</text>
+  <line x1="821" y1="264" x2="831" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="832" y="242" width="88" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="876" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S8 Maint</text>
+  <text x="876" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">PR CI</text>
+  <rect x="40" y="298" width="214" height="58" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="48" y="315" text-anchor="start" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.5" font-weight="700" fill="#1d4ed8">assumptions_check.sh</text>
+  <text x="48" y="332" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">Top-10-line \* ASSUMES: must be</text>
+  <text x="48" y="347" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">checked as INVARIANT/PROPERTY in .cfg</text>
+  <rect x="262" y="298" width="214" height="58" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="270" y="315" text-anchor="start" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.5" font-weight="700" fill="#1d4ed8">op_mirror.sh</text>
+  <text x="270" y="332" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">Normalized field diff vs IDEAL.tla</text>
+  <text x="270" y="347" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">Blocks silent unreviewed rewrites</text>
+  <rect x="484" y="298" width="214" height="58" rx="6" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="492" y="315" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#065f46">Anti-Vacuity Triad</text>
+  <text x="492" y="332" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">Negative mutant fails when weakened</text>
+  <text x="492" y="347" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">~W_* witness reached · Fix flip passes</text>
+  <rect x="706" y="298" width="214" height="58" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <text x="714" y="315" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#92400e">Documented Gate Limits</text>
+  <text x="714" y="332" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">scope_check.py audits Git paths only</text>
+  <text x="714" y="347" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">model-adequacy.md is readout, not gate</text>
+  <rect x="28" y="380" width="232" height="174" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+  <text x="40" y="400" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.8" font-weight="700" fill="#991b1b">4 Agent Reward Hacks Blocked</text>
+  <text x="40" y="424" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.4" font-weight="400" fill="#7f1d1d">1. Weakening invariants / deleting timeouts</text>
+  <text x="40" y="448" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.4" font-weight="400" fill="#7f1d1d">2. Unchecked ASSUME hiding the race</text>
+  <text x="40" y="472" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.4" font-weight="400" fill="#7f1d1d">3. Reporting Bug_*/Mut_* flags as hits</text>
+  <text x="40" y="496" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.4" font-weight="400" fill="#7f1d1d">4. Shell models restating single-line bugs</text>
+  <text x="40" y="536" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.3" font-weight="700" fill="#991b1b">→ Any cheat fails Gate 1a / 1b</text>
+  <rect x="272" y="380" width="660" height="174" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.1"/>
+  <text x="286" y="400" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.8" font-weight="700" fill="#1d4ed8">Four-Part Exposure Gate &amp; Strict Method Separation (docs/exposure-gate.md)</text>
+  <rect x="286" y="412" width="146" height="84" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="359" y="429" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">Gate 1a · Zero Switch</text>
+  <text x="359" y="449" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">All Bug_*/Mut_*</text>
+  <text x="359" y="465" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">flags must be OFF</text>
+  <text x="359" y="481" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#64748b">(calibration separated)</text>
+  <line x1="432" y1="454" x2="443" y2="454" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="444" y="412" width="146" height="84" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="517" y="429" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">Gate 1b · Emergence</text>
+  <text x="517" y="449" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">Multi-step violation</text>
+  <text x="517" y="465" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">passes under control</text>
+  <text x="517" y="481" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#64748b">&amp; passes once patched</text>
+  <line x1="590" y1="454" x2="601" y2="454" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="602" y="412" width="146" height="84" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="675" y="429" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">Gate 2 · Red-Team</text>
+  <text x="675" y="449" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">Independent refutation</text>
+  <text x="675" y="465" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">fails; reachable path</text>
+  <text x="675" y="481" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#64748b">no bogus model liberty</text>
+  <line x1="748" y1="454" x2="759" y2="454" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="760" y="412" width="146" height="84" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="833" y="429" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">Gate 3–4 · Real+Clean</text>
+  <text x="833" y="449" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">Real-engine repro</text>
+  <text x="833" y="465" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">next to live control</text>
+  <text x="833" y="481" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#64748b">+ coordinator clean rerun</text>
+  <rect x="286" y="505" width="632" height="38" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="298" y="521" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.2" font-weight="700" fill="#0f172a">Ledger classification discipline: TLC/Apalache passing Gates 1–4 = model_check; Z3 descriptor = smt;</text>
+  <text x="298" y="536" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.0" font-weight="400" fill="#475569">differential sweeps and experimental/audit hits without models are logged as exhaustive_sweep or experiment — never mislabeled as model_check.</text>
+</svg>

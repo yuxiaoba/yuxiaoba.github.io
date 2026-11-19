@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 580" width="1440" height="870" role="img" aria-label="PdLedger 六态 (page, gen) 能力状态机与本地 RDMA 超时不可能性">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="580" fill="#f8fafc" rx="12"/>
+  <rect x="12" y="12" width="936" height="556" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" rx="10"/>
+<text x="28" y="38" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="16.5" font-weight="700" fill="#0f172a">PdLedger 六态 (page, gen) 能力状态机与本地 RDMA 超时不可能性</text>
+  <text x="28" y="57" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.3" font-weight="400" fill="#475569">hao-ai-lab/veriserve @ 8345c9c (ledger.py 1,774 行) · 补全博客简图省略的 SHARED / DUP 前缀共享与 shared_quarantine 路径</text>
+  <line x1="28" y1="67" x2="932" y2="67" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="28" y="78" width="614" height="346" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="42" y="97" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#1e293b">六态物理页生命周期 (FREE=0, PRIVATE=1, SHARED=2, DRAINING=3, QUARANTINED=4, DUP=5)</text>
+  <rect x="190" y="110" width="150" height="58" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.3"/>
+  <text x="265" y="130" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="11.0" font-weight="700" fill="#065f46">FREE (0)</text>
+  <text x="265" y="146" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.0" font-weight="400" fill="#047857">free 池；末页留作 dummy</text>
+  <text x="265" y="160" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.6" font-weight="400" fill="#065f46">pown[p]=0 · 仅1..pool_pages-1</text>
+  <rect x="44" y="206" width="184" height="72" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="136" y="226" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="11.0" font-weight="700" fill="#1d4ed8">PRIVATE (1)</text>
+  <text x="136" y="243" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.0" font-weight="400" fill="#1e3a8a">独占 (page, gen)；gen/xid 单调递增</text>
+  <text x="136" y="258" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.7" font-weight="400" fill="#334155">d_expect 暴露 D 页 · p_post 出站读</text>
+  <text x="136" y="271" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#475569">k_launch 绑定 int32 表+行</text>
+  <rect x="44" y="328" width="212" height="82" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="150" y="348" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="11.0" font-weight="700" fill="#1d4ed8">DRAINING (3)</text>
+  <text x="150" y="365" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">release(gen) 时仍有 pops 或 _kpin</text>
+  <text x="150" y="381" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#1e3a8a">等待 d_landed / d_stopped / step_done</text>
+  <text x="150" y="397" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.7" font-weight="700" fill="#1d4ed8">无确认禁止提前复用 (Isolation)</text>
+  <rect x="330" y="328" width="294" height="82" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.4"/>
+  <text x="477" y="348" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="11.0" font-weight="700" fill="#92400e">QUARANTINED (4)</text>
+  <text x="477" y="365" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#78350f">d_unstopped：超时 / 失败写 / peer_lost (Unquar=FALSE)</text>
+  <text x="477" y="381" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#92400e">请求立刻失败退出不挂起，物理页进程期永久隔离 (q_total+1)</text>
+  <text x="477" y="398" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.7" font-weight="700" fill="#b45309">注：永久隔离不满足页级 Finality，以容量换 Isolation</text>
+  <rect x="412" y="110" width="212" height="94" rx="8" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.3"/>
+  <text x="518" y="129" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="10.5" font-weight="700" fill="#1d4ed8">SHARED (2) · Prefill 1页</text>
+  <text x="518" y="147" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">限 1 个完整前缀页 (多页链不在范围)</text>
+  <text x="518" y="163" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#475569">seal/hit 登记 holders (req/entry/quar)</text>
+  <text x="518" y="179" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#047857">prefc==0 → evict / flush_shared 回 FREE</text>
+  <text x="518" y="195" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#b45309">出站失败→永久入 shared_quarantine（禁逐出）</text>
+  <rect x="412" y="226" width="212" height="72" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="518" y="245" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="10.3" font-weight="700" fill="#334155">DUP (5) · dedup 重映射暂留</text>
+  <text x="518" y="262" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">dedup 将重复私页重映射至 SHARED</text>
+  <text x="518" y="278" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.7" font-weight="400" fill="#475569">原 old 页保留至 prefix_steps 读完</text>
+  <text x="518" y="292" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="400" fill="#047857">_try_free → 回 FREE</text>
+  <path d="M 412 232 L 328 171" fill="none" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2" marker-end="url(#arr-slate)"/>
+  <path d="M 190 154 L 140 204" fill="none" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <rect x="115.0" y="163.5" width="58" height="14" rx="3.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.6"/>
+  <text x="144" y="173.5" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.4" font-weight="700" fill="#1d4ed8">alloc(gen)</text>
+  <line x1="120" y1="278" x2="120" y2="326" stroke="#1d4ed8" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+  <rect x="52.0" y="297.5" width="56" height="14" rx="3.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.6"/>
+  <text x="80" y="307.5" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.4" font-weight="700" fill="#1d4ed8">release()</text>
+  <path d="M 244 328 Q 270 246 270 171" fill="none" stroke="#059669" stroke-width="1.6" marker-end="url(#arr-slate)"/>
+  <rect x="224.0" y="221.5" width="92" height="14" rx="3.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.6"/>
+  <text x="270" y="231.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.4" font-weight="700" fill="#065f46">pops=∅ ∧ ¬_kpin</text>
+  <line x1="256" y1="369" x2="328" y2="369" stroke="#b45309" stroke-width="1.6" marker-end="url(#arr-amber)"/>
+  <rect x="260.0" y="344.5" width="64" height="14" rx="3.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.6"/>
+  <text x="292" y="354.5" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.4" font-weight="700" fill="#b45309">d_unstopped</text>
+  <path d="M 228 264 L 368 326" fill="none" stroke="#b45309" stroke-width="1.3" stroke-dasharray="3 2" marker-end="url(#arr-amber)"/>
+  <path d="M 218 206 Q 310 156 410 166" fill="none" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <rect x="296.0" y="164.5" width="44" height="14" rx="3.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.6"/>
+  <text x="318" y="174.5" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.4" font-weight="700" fill="#1d4ed8">seal()</text>
+  <line x1="412" y1="138" x2="343" y2="138" stroke="#059669" stroke-width="1.5" marker-end="url(#arr-slate)"/>
+  <rect x="354.0" y="115.5" width="48" height="14" rx="3.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.6"/>
+  <text x="378" y="125.5" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.4" font-weight="700" fill="#065f46">evict()</text>
+  <line x1="228" y1="248" x2="410" y2="258" stroke="#475569" stroke-width="1.4" marker-end="url(#arr-slate)"/>
+  <rect x="334.0" y="245.5" width="48" height="14" rx="3.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.6"/>
+  <text x="358" y="255.5" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="8.4" font-weight="700" fill="#334155">dedup()</text>
+  <rect x="654" y="78" width="278" height="176" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <text x="668" y="98" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#92400e">条件不可能性 (LegacyImpossibility.tla)</text>
+  <text x="668" y="118.0" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.1" font-weight="700" fill="#78350f">前提 1 · DelayedAccess (最坏情况假设):</text>
+  <text x="668" y="134.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.1" font-weight="400" fill="#78350f">  未撤销的单边 RDMA 写/读可能在任意</text>
+  <text x="668" y="151.0" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.1" font-weight="400" fill="#78350f">  本地有限历史之后继续触达物理 GPU 页</text>
+  <text x="668" y="167.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.1" font-weight="700" fill="#78350f">前提 2 · LocalPolicy:</text>
+  <text x="668" y="184.0" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.1" font-weight="400" fill="#78350f">  相同本地观察必须做相同页回收决策</text>
+  <text x="668" y="200.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.1" font-weight="700" fill="#78350f">结论 ⇒ 不可能同时保证 Isolation 与</text>
+  <text x="668" y="217.0" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.1" font-weight="400" fill="#78350f">  页级 Finality (归还 FREE)。</text>
+  <text x="668" y="233.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.1" font-weight="700" fill="#92400e">Z3 验证：合取 UNSAT；缺任一前提变 SAT。</text>
+  <rect x="654" y="264" width="278" height="160" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="668" y="284" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#1d4ed8">PdLedger 运行时硬守卫 (ledger.py)</text>
+  <text x="668" y="304.0" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.0" font-weight="400" fill="#334155">• 9 字段握手校验: 对等比对 7 项含 dtype 与</text>
+  <text x="668" y="320.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.0" font-weight="400" fill="#334155">  model_id（防仅字节相同但语义错配）</text>
+  <text x="668" y="337.0" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.0" font-weight="400" fill="#334155">• 防重放与墓碑: (peer, peer_xid) 去重，</text>
+  <text x="668" y="353.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.0" font-weight="400" fill="#334155">  乱序消息错配 gen/room/xid 直接丢弃</text>
+  <text x="668" y="370.0" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.0" font-weight="400" fill="#334155">• 内核同步边界: d_mark_visible 前置</text>
+  <text x="668" y="386.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.0" font-weight="400" fill="#334155">  GPUDirect flush；k_launch 独立反向验证</text>
+  <text x="668" y="403.0" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.0" font-weight="400" fill="#334155">• 致命停机: 任何不变量破坏抛 LedgerViolation</text>
+  <rect x="28" y="438" width="288" height="114" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+  <text x="40" y="460" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.0" font-weight="700" fill="#991b1b">传统局部超时 (SGLang / vLLM 旧路径)</text>
+  <text x="40" y="484" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.4" font-weight="400" fill="#1e293b">直接回收到空闲池/前缀缓存</text>
+  <text x="40" y="506" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.2" font-weight="700" fill="#991b1b">✗ 无停止证据 → 跨请求静默 KV 覆盖 (HTTP 200)</text>
+  <text x="40" y="534" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#475569">边界：PdLedger 仅保护抽象转移与单页前缀</text>
+  <rect x="336" y="438" width="288" height="114" rx="8" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="348" y="460" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.0" font-weight="700" fill="#065f46">有停止证据的取消 (PdLedger DRAINING)</text>
+  <text x="348" y="484" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.4" font-weight="400" fill="#1e293b">等待 d_stopped / d_landed / KDone</text>
+  <text x="348" y="506" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.2" font-weight="700" fill="#065f46">✓ 同时保住 Isolation、Integrity 与 Conservation</text>
+  <text x="348" y="534" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#475569">边界：PdLedger 仅保护抽象转移与单页前缀</text>
+  <rect x="644" y="438" width="288" height="114" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <text x="656" y="460" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.0" font-weight="700" fill="#92400e">无停止证据超时 (PdLedger QUARANTINED)</text>
+  <text x="656" y="484" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.4" font-weight="400" fill="#1e293b">请求立即失败；页永久隔离不入 FREE/缓存</text>
+  <text x="656" y="506" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.2" font-weight="700" fill="#92400e">✓ 保住 Isolation + 请求推进，显式放弃页级 Finality</text>
+  <text x="656" y="534" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#475569">边界：PdLedger 仅保护抽象转移与单页前缀</text>
+</svg>

@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 570" width="1440" height="855" role="img" aria-label="vstack 防奖励作弊架构：S0–S8 流水线、三方角色隔离与四道曝光门禁">
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#475569"/>
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="570" fill="#f8fafc" rx="12"/>
+  <rect x="12" y="12" width="936" height="546" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" rx="10"/>
+<text x="28" y="38" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="16.5" font-weight="700" fill="#0f172a">vstack 防奖励作弊架构：S0–S8 流水线、三方角色隔离与四道曝光门禁</text>
+  <text x="28" y="57" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569">hao-ai-lab/vstack @ 16a4c03 · 博客「5 阶段」在开源插件中展开为 9 个技能阶段（S0–S8）与物理机械检查</text>
+  <line x1="28" y1="67" x2="932" y2="67" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="28" y="77" width="288" height="120" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="38" y="86" width="268" height="22" rx="5" fill="#1d4ed8"/>
+  <text x="46" y="100.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">角色 1 · 协调者 (vstack-main)</text>
+  <text x="40" y="123" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.0" font-weight="700" fill="#1e293b">持有并哈希锁定规约目标</text>
+  <text x="40" y="143" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• 运行 check_spec_pins.sh (sha256sum)</text>
+  <text x="40" y="161" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• 保管盲测集 H，移除 worker 上下文线索</text>
+  <text x="40" y="179" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• 执行 scope_check.py 与 Gate 4 干净重验</text>
+  <rect x="336" y="77" width="288" height="120" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="346" y="86" width="268" height="22" rx="5" fill="#0f172a"/>
+  <text x="354" y="100.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">角色 2 · 执行者 (vstack-worker)</text>
+  <text x="348" y="123" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.0" font-weight="700" fill="#1e293b">编写模型、证明与硬件复现</text>
+  <text x="348" y="143" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• 沿 S0–S8 产出 file:line@commit 锚点模型</text>
+  <text x="348" y="161" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• 无权改写 SPEC_PINS 内的目标与定理声明</text>
+  <text x="348" y="179" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• 必须提交 ANCHORS.tsv 与负向变异Witness</text>
+  <rect x="644" y="77" width="288" height="120" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <rect x="654" y="86" width="268" height="22" rx="5" fill="#92400e"/>
+  <text x="662" y="100.5" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">角色 3 · 红队 (vstack-redteam)</text>
+  <text x="656" y="123" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.0" font-weight="700" fill="#1e293b">独立尝试证伪发现与防空洞</text>
+  <text x="656" y="143" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• 核查无外层保护使反例实际不可达</text>
+  <text x="656" y="161" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• 排除文档明确允许行为与虚假模型自由度</text>
+  <text x="656" y="179" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="400" fill="#334155">• 在 S5/S6 行使 Gate 2 独立否决权</text>
+  <rect x="28" y="210" width="904" height="156" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="40" y="230" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="11.0" font-weight="700" fill="#0f172a">源码实际 9 阶段技能流水线 (skills/vstack-s0..s8) 与机械防伪检查 (docs/gates.md)</text>
+  <rect x="40" y="242" width="88" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="84" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S0 分解</text>
+  <text x="84" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">边界</text>
+  <line x1="128" y1="264" x2="138" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="139" y="242" width="88" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="183" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S1 选型</text>
+  <text x="183" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">TLC/Z3</text>
+  <line x1="227" y1="264" x2="237" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="238" y="242" width="88" height="44" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="282" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S2 规约</text>
+  <text x="282" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">哈希锁定</text>
+  <line x1="326" y1="264" x2="336" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="337" y="242" width="88" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="381" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S3 建模</text>
+  <text x="381" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">代码锚定</text>
+  <line x1="425" y1="264" x2="435" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="436" y="242" width="88" height="44" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="480" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S4 校准</text>
+  <text x="480" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">Trace/Mut</text>
+  <line x1="524" y1="264" x2="534" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="535" y="242" width="88" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="579" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S5 红队</text>
+  <text x="579" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">攻击复核</text>
+  <line x1="623" y1="264" x2="633" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="634" y="242" width="88" height="44" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="678" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S6 猎虫</text>
+  <text x="678" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">实机对照</text>
+  <line x1="722" y1="264" x2="732" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="733" y="242" width="88" height="44" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="777" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S7 证明</text>
+  <text x="777" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">TLAPS</text>
+  <line x1="821" y1="264" x2="831" y2="264" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="832" y="242" width="88" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+  <text x="876" y="260" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.8" font-weight="700" fill="#0f172a">S8 维护</text>
+  <text x="876" y="276" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#475569">PR回归</text>
+  <rect x="40" y="298" width="214" height="58" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="48" y="315" text-anchor="start" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.5" font-weight="700" fill="#1d4ed8">assumptions_check.sh</text>
+  <text x="48" y="332" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">前10行 \* ASSUMES: 必须作为</text>
+  <text x="48" y="347" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">INVARIANT/PROPERTY 写入 .cfg</text>
+  <rect x="262" y="298" width="214" height="58" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="270" y="315" text-anchor="start" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="9.5" font-weight="700" fill="#1d4ed8">op_mirror.sh</text>
+  <text x="270" y="332" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">对照 IDEAL.tla 校验操作镜像</text>
+  <text x="270" y="347" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">防语义重写却未经白名单审阅</text>
+  <rect x="484" y="298" width="214" height="58" rx="6" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="492" y="315" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#065f46">反空洞三元组 (Anti-Vacuity)</text>
+  <text x="492" y="332" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">Negative mutant 删保护必挂</text>
+  <text x="492" y="347" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">~W_* 可达见证 · Fix flip 反转</text>
+  <rect x="706" y="298" width="214" height="58" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <text x="714" y="315" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.5" font-weight="700" fill="#92400e">真实脚本边界 (诚实标注)</text>
+  <text x="714" y="332" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">scope_check.py 仅查 Git 路径非沙箱</text>
+  <text x="714" y="347" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.8" font-weight="400" fill="#334155">model-adequacy 属读数非门槛</text>
+  <rect x="28" y="380" width="232" height="174" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+  <text x="40" y="400" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.8" font-weight="700" fill="#991b1b">拦截 4 类 Agent 奖励作弊</text>
+  <text x="40" y="424" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.4" font-weight="400" fill="#7f1d1d">1. 偷偷放宽不变量或删超时分支</text>
+  <text x="40" y="448" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.4" font-weight="400" fill="#7f1d1d">2. 用未检查 ASSUME 假设掉竞态</text>
+  <text x="40" y="472" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.4" font-weight="400" fill="#7f1d1d">3. 依赖 Bug_*/Mut_* 开关自导自演</text>
+  <text x="40" y="496" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.4" font-weight="400" fill="#7f1d1d">4. 外壳模型：只用常量重述代码缺陷</text>
+  <text x="40" y="536" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.3" font-weight="700" fill="#991b1b">→ 任一作弊即被 Gate 1a/1b 拦截</text>
+  <rect x="272" y="380" width="660" height="174" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.1"/>
+  <text x="286" y="400" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="10.8" font-weight="700" fill="#1d4ed8">四道曝光门禁 (Exposure Gate) 与方法分类严格隔离</text>
+  <rect x="286" y="412" width="146" height="84" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="359" y="429" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">Gate 1a · 零开关</text>
+  <text x="359" y="449" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">所有 Bug_*/Mut_*</text>
+  <text x="359" y="465" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">开关必须关闭</text>
+  <text x="359" y="481" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#64748b">（校准运行单列）</text>
+  <line x1="432" y1="454" x2="443" y2="454" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="444" y="412" width="146" height="84" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="517" y="429" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">Gate 1b · 非外壳涌现</text>
+  <text x="517" y="449" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">多步交互产生违规</text>
+  <text x="517" y="465" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">且部署对照配置通过</text>
+  <text x="517" y="481" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#64748b">打补丁后通过检查</text>
+  <line x1="590" y1="454" x2="601" y2="454" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="602" y="412" width="146" height="84" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="675" y="429" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">Gate 2 · 红队复审</text>
+  <text x="675" y="449" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">独立 Agent 尝试证伪</text>
+  <text x="675" y="465" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">无外层守卫挡住路径</text>
+  <text x="675" y="481" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#64748b">未依赖虚假自由度</text>
+  <line x1="748" y1="454" x2="759" y2="454" stroke="#1d4ed8" stroke-width="1.4" marker-end="url(#arr-blue)"/>
+  <rect x="760" y="412" width="146" height="84" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="833" y="429" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.6" font-weight="700" fill="#1d4ed8">Gate 3–4 · 实机+重算</text>
+  <text x="833" y="449" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">S6 真实引擎同运行</text>
+  <text x="833" y="465" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.9" font-weight="400" fill="#334155">紧邻健康对照复现</text>
+  <text x="833" y="481" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="8.6" font-weight="400" fill="#64748b">协调者干净副本重算</text>
+  <rect x="286" y="505" width="632" height="38" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="0.9"/>
+  <text x="298" y="521" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.2" font-weight="700" fill="#0f172a">台账口径隔离：通过 Gate 1–4 的 TLC/Apalache 记为 model_check；Z3 描述符记为 smt；</text>
+  <text x="298" y="536" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans CJK SC', 'Helvetica Neue', Arial, sans-serif" font-size="9.0" font-weight="400" fill="#475569">无抽象模型的测试/代码审计/差分扫描分别单列为 experiment 与 exhaustive_sweep，禁止充当形式化成果。</text>
+</svg>

@@ -1,0 +1,119 @@
+{
+  "id": "verifiable-llm-infra-close-reading",
+  "title_zh": "vstack 与 VeriServe 精读：可验证 LLM 推理系统的形式化门禁与生命周期边界",
+  "title_en": "vstack and VeriServe Close Reading: Formal Gates and KV-Page Lifecycle Boundaries for Verifiable LLM Serving",
+  "blog_url": "https://haoailab.com/blogs/verifiable-llm-infra/",
+  "blog_sha256": "33a7b3350e08f6f4fc9cfad1b11089254d99e3e4732025933e0dfe1275136ca5",
+  "vstack_repo": "https://github.com/hao-ai-lab/vstack",
+  "vstack_commit": "16a4c0351b058130ae4a4ff6d520625c0da22b1d",
+  "veriserve_repo": "https://github.com/hao-ai-lab/veriserve",
+  "veriserve_commit": "8345c9c9da1e45b4988599e488c8566130a2fc19",
+  "source_hashes": {
+    "hao-ai-lab/vstack@16a4c0351b058130ae4a4ff6d520625c0da22b1d:README.md": "a0ee319a30ff4be5bc4c64c5195855275c3013f8dd7f0513ef648a73a98a7173",
+    "hao-ai-lab/vstack@16a4c0351b058130ae4a4ff6d520625c0da22b1d:bugs/verified-bugs.csv": "47252ab66103b3d41870078ce96f5448f81e1cdf919214462418fb4838d8a8d2",
+    "hao-ai-lab/vstack@16a4c0351b058130ae4a4ff6d520625c0da22b1d:docs/gates.md": "7b327d3dbbc0571517f30d873633393594458b8bba24a5e09a1dd8586eb7a708",
+    "hao-ai-lab/vstack@16a4c0351b058130ae4a4ff6d520625c0da22b1d:docs/exposure-gate.md": "fb35bc342dd1f5c7b94a223ae2f766fb3489edf7e731730772d780841e128e53",
+    "hao-ai-lab/vstack@16a4c0351b058130ae4a4ff6d520625c0da22b1d:docs/model-adequacy.md": "c5b819983706169ee972b208ba8d293777013c966b1c7704ae75200c0a670050",
+    "hao-ai-lab/vstack@16a4c0351b058130ae4a4ff6d520625c0da22b1d:docs/trace-validation.md": "b2ff5a41007de69a50a9d35e1f5bd8e39dab8200003271a8f721ca0875c6ade0",
+    "hao-ai-lab/vstack@16a4c0351b058130ae4a4ff6d520625c0da22b1d:scripts/check_spec_pins.sh": "025892c81f600304e8fa3b84878b78b086515f306fd32a05ad109a482450ce5d",
+    "hao-ai-lab/vstack@16a4c0351b058130ae4a4ff6d520625c0da22b1d:scripts/assumptions_check.sh": "223ad62e65ba25cdf1b30cabad5ad9098964b48f000786dcaae9636e5cafda2e",
+    "hao-ai-lab/vstack@16a4c0351b058130ae4a4ff6d520625c0da22b1d:agents/vstack-redteam.md": "b39cf68f53e951198275f584967702e1fc6d046dba8f5a9ce6d118eed4742f32",
+    "hao-ai-lab/veriserve@8345c9c9da1e45b4988599e488c8566130a2fc19:README.md": "3ed4893f3ee0ec87ff49e585d3950829648590b1ac41335268fe6eaef51283f2",
+    "hao-ai-lab/veriserve@8345c9c9da1e45b4988599e488c8566130a2fc19:python/minisgl/disagg/ledger.py": "44d877176896f84d3e86460b11c40a2706b3fb5d7de938f924aa298ef3a6dfd5",
+    "hao-ai-lab/veriserve@8345c9c9da1e45b4988599e488c8566130a2fc19:python/minisgl/disagg/trace.py": "7c9c9a85a0aa7e03a693fcd3ee62a9828604e952e68f9f4565b5202af4fc26a0",
+    "hao-ai-lab/veriserve@8345c9c9da1e45b4988599e488c8566130a2fc19:verification/pd-disagg/spec/README.md": "bf1d68aad9e0dd71c3f5c6b81e4f8fc533e66bc7ee0711d99af89db71b4abfe2",
+    "hao-ai-lab/veriserve@8345c9c9da1e45b4988599e488c8566130a2fc19:verification/pd-disagg/spec/PdCore.tla": "4ad48c2442115c83d0f81ce8bc11e52be6cfe2d1bbc191b5b6344e9e0a80384a",
+    "hao-ai-lab/veriserve@8345c9c9da1e45b4988599e488c8566130a2fc19:verification/pd-disagg/case-studies/README.md": "8ba357ce861532873bd015028a1712058e5b82b1b4f1ee6b780a41692febb7c3",
+    "hao-ai-lab/veriserve@8345c9c9da1e45b4988599e488c8566130a2fc19:verification/pd-disagg/case-studies/impossibility/README.md": "ddecc2d3cf46126ca79b6b1a1879981b6af7b707e043cb725a27204a0b1f5330",
+    "hao-ai-lab/veriserve@8345c9c9da1e45b4988599e488c8566130a2fc19:verification/pd-disagg/proofs/README.md": "c603d503a0c4d2f9dd38007d76489394713b2c94f60dfd1581919e18a7088c3d",
+    "hao-ai-lab/veriserve@8345c9c9da1e45b4988599e488c8566130a2fc19:verification/pd-disagg/trace/README.md": "a1b538cd8960083185c57dc40ce25f77fcd61bf8c1432e0bb9639b57df415116",
+    "hao-ai-lab/veriserve@8345c9c9da1e45b4988599e488c8566130a2fc19:verification/pd-disagg/address/RESULTS.md": "2e69ae261a4318c828b8c4387123bd5f56c1338af2ff9ec22a1f143265ec8270"
+  },
+  "upstream_pr_snapshot_2026_11_18": {
+    "sgl-project/sglang#48883": {
+      "state": "closed",
+      "merged": false
+    },
+    "sgl-project/sglang#48889": {
+      "state": "closed",
+      "merged": false
+    },
+    "sgl-project/sglang#48960": {
+      "state": "closed",
+      "merged": false
+    },
+    "sgl-project/sglang#48979": {
+      "state": "closed",
+      "merged": false
+    },
+    "sgl-project/sglang#48982": {
+      "state": "closed",
+      "merged": false
+    },
+    "sgl-project/sglang#50147": {
+      "state": "merged_via_csv_VS-002",
+      "merged": true
+    },
+    "vllm-project/vllm#66443": {
+      "state": "open",
+      "merged": false
+    },
+    "vllm-project/vllm#62065": {
+      "state": "open",
+      "merged": false
+    }
+  },
+  "authoring_source": "assistant",
+  "english_translation": "assistant-created",
+  "benchmarks_or_solvers_executed": false,
+  "figures": [
+    {
+      "language": "zh",
+      "path": "/assets/images/tech/verifiable-llm-infra-close-reading/vstack-gates-zh.svg",
+      "sha256": "0cf6aa668e5deae766dfabf9c500f9f050e5c21790416b2ae08261aa46f41782",
+      "width": 1440,
+      "height": 855,
+      "origin": "assistant explanatory v3-blue vector diagram from pinned vstack@16a4c03"
+    },
+    {
+      "language": "en",
+      "path": "/assets/images/tech/verifiable-llm-infra-close-reading/vstack-gates-en.svg",
+      "sha256": "b4966ab7ac8b49aaa8fa6f7cff845008d2085d9506654a97b5a92a06ebd0d7be",
+      "width": 1440,
+      "height": 855,
+      "origin": "assistant explanatory v3-blue vector diagram from pinned vstack@16a4c03"
+    },
+    {
+      "language": "zh",
+      "path": "/assets/images/tech/verifiable-llm-infra-close-reading/pdledger-lifecycle-zh.svg",
+      "sha256": "42121538de6476da86b4f5f82ab55523fde8b26836a1b1f7756c87142b8d844a",
+      "width": 1440,
+      "height": 870,
+      "origin": "assistant explanatory v3-blue vector diagram from pinned veriserve@8345c9c"
+    },
+    {
+      "language": "en",
+      "path": "/assets/images/tech/verifiable-llm-infra-close-reading/pdledger-lifecycle-en.svg",
+      "sha256": "f4512c2d0b5a6ceec65a0cbb0aa18672a17fbd4f70e59ac7cd4cdab5d86c2ee3",
+      "width": 1440,
+      "height": 870,
+      "origin": "assistant explanatory v3-blue vector diagram from pinned veriserve@8345c9c"
+    },
+    {
+      "language": "zh",
+      "path": "/assets/images/tech/verifiable-llm-infra-close-reading/verification-boundaries-zh.svg",
+      "sha256": "e5984be30da392996e5002bb07903365ef9316ac6c4a6ef727d8dfd66d3b2942",
+      "width": 1440,
+      "height": 855,
+      "origin": "assistant explanatory v3-blue vector diagram reconciling proofs/trace/case-studies/verified-bugs.csv"
+    },
+    {
+      "language": "en",
+      "path": "/assets/images/tech/verifiable-llm-infra-close-reading/verification-boundaries-en.svg",
+      "sha256": "2c28aa3d06842310aba1a48440cc205afb502bfee15f0d09438d8f7d75de96c9",
+      "width": 1440,
+      "height": 855,
+      "origin": "assistant explanatory v3-blue vector diagram reconciling proofs/trace/case-studies/verified-bugs.csv"
+    }
+  ]
+}
