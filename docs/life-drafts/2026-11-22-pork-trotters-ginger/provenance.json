@@ -1,0 +1,40 @@
+{
+  "owner_cooked": true,
+  "publication_authorized": true,
+  "photos": [
+    {
+      "original": "微信图片_20261122205755_494_3.jpg",
+      "sha256": "773bcc99af9b27e6a7f2713a1a442e6c383041aa8eb8d5af8d8a6ac04911cfeb",
+      "name": "finished",
+      "width": 1800,
+      "height": 1543
+    },
+    {
+      "original": "微信图片_20261122205756_495_3.jpg",
+      "sha256": "2d9c572f8cca08109bdf1f98e6e375f5ac9717bb12ddbed72cfa1cdcbcb2ed73",
+      "name": "bowl",
+      "width": 1800,
+      "height": 1543
+    },
+    {
+      "original": "微信图片_20261122210725_15276_19.jpg",
+      "sha256": "ebd695adf6f614f23d0307b7d4c32aad266450452b0dd83476270ef1aa2bd781",
+      "name": "sweet-vinegar",
+      "width": 1013,
+      "height": 1800
+    },
+    {
+      "original": "微信图片_20261122210738_15277_19.jpg",
+      "sha256": "349b116da8072ec53d283739ad09e59cd1ec2d1fbd55551d519a1ba35623b0e3",
+      "name": "preparation",
+      "width": 1800,
+      "height": 1013
+    }
+  ],
+  "processing": "ImageMagick auto-orient, proportional resize to 1800px, strip EXIF, JPEG/WebP; originals unchanged; visible camera border preserved",
+  "translation": "assistant",
+  "sources": [
+    "https://www.gzns.gov.cn/gznsqfb/gkmlpt/content/10/10908/post_10908831.html",
+    "https://gzgfwh.gzhu.edu.cn/info/1049/1425.htm"
+  ]
+}

@@ -2,7 +2,7 @@
 layout: warm
 ---
 <article class="life-album" data-photo-group>
-<p class="album-kicker">{{ page.location | escape }} · {{ page.date | date: '%Y.%m.%d' }}</p>
+<p class="album-kicker">{% if page.location %}{{ page.location | escape }} · {% endif %}{{ page.date | date: '%Y.%m.%d' }}</p>
 <h1>{{ page.title | escape }}</h1>
 {{ content }}
 {% for photo in page.photos %}
