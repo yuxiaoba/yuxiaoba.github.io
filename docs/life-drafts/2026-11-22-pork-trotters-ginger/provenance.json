@@ -1,37 +1,47 @@
 {
   "owner_cooked": true,
   "publication_authorized": true,
+  "retouch_authorized_by_user_2026_11_22": true,
   "photos": [
     {
-      "original": "微信图片_20261122205755_494_3.jpg",
-      "sha256": "773bcc99af9b27e6a7f2713a1a442e6c383041aa8eb8d5af8d8a6ac04911cfeb",
       "name": "finished",
       "width": 1800,
-      "height": 1543
+      "height": 1350,
+      "jpg_sha256": "09b50536e999d7f9723c86cb3e68c90f373df0b830708ac376dd1666feb531bf",
+      "webp_sha256": "355e93ba3cb49962b441219ae4df9630b10a265651ab3d87c258815ba3372e7e",
+      "original": "微信图片_20261122205755_494_3.jpg",
+      "original_sha256": "773bcc99af9b27e6a7f2713a1a442e6c383041aa8eb8d5af8d8a6ac04911cfeb"
     },
     {
-      "original": "微信图片_20261122205756_495_3.jpg",
-      "sha256": "2d9c572f8cca08109bdf1f98e6e375f5ac9717bb12ddbed72cfa1cdcbcb2ed73",
-      "name": "bowl",
-      "width": 1800,
-      "height": 1543
-    },
-    {
-      "original": "微信图片_20261122210725_15276_19.jpg",
-      "sha256": "ebd695adf6f614f23d0307b7d4c32aad266450452b0dd83476270ef1aa2bd781",
-      "name": "sweet-vinegar",
-      "width": 1013,
-      "height": 1800
-    },
-    {
-      "original": "微信图片_20261122210738_15277_19.jpg",
-      "sha256": "349b116da8072ec53d283739ad09e59cd1ec2d1fbd55551d519a1ba35623b0e3",
       "name": "preparation",
       "width": 1800,
-      "height": 1013
+      "height": 1350,
+      "jpg_sha256": "dc3551cc6ff001c1294c60f8bfd486606359a30acbe9d82e6f0d25fa072390b3",
+      "webp_sha256": "a94d2ae067f8f59659e6d778dfdea39ebd2e8fd9717463add0f657d321cf8307",
+      "original": "微信图片_20261122210738_15277_19.jpg",
+      "original_sha256": "349b116da8072ec53d283739ad09e59cd1ec2d1fbd55551d519a1ba35623b0e3"
+    },
+    {
+      "name": "sweet-vinegar",
+      "width": 1800,
+      "height": 1350,
+      "jpg_sha256": "a6988a380bedbda5d590afeaeba630a23227e93a2857a8680cf616cacfc13ea1",
+      "webp_sha256": "f811b615c05f848e14232ff1ff8137add68e21b7bf2403b1c0fa076e5afca39e",
+      "original": "微信图片_20261122210725_15276_19.jpg",
+      "original_sha256": "ebd695adf6f614f23d0307b7d4c32aad266450452b0dd83476270ef1aa2bd781"
+    },
+    {
+      "name": "bowl",
+      "width": 1800,
+      "height": 1350,
+      "jpg_sha256": "0fa9d39a3d9c313c0f9191d3d92d6ddeea873259aa5bd9373706c1b0cb06c778",
+      "webp_sha256": "e58f513ff5e033520eed2d9704290df188e77d716ee15b8486fa9051d83df368",
+      "original": "微信图片_20261122205756_495_3.jpg",
+      "original_sha256": "2d9c572f8cca08109bdf1f98e6e375f5ac9717bb12ddbed72cfa1cdcbcb2ed73"
     }
   ],
-  "processing": "ImageMagick auto-orient, proportional resize to 1800px, strip EXIF, JPEG/WebP; originals unchanged; visible camera border preserved",
+  "processing": "EXIF auto-orient & full strip; 4:3 (1800x1350) editorial framing crop removing bottom vivo watermark and kitchen edge clutter; +2.8 deg roll correction and subtle background depth-of-field softening on sweet-vinegar; warm culinary white-balance & curve polish; Lanczos resize to 1800x1350; raw files in .incoming/ untouched.",
+  "authoring_source": "assistant",
   "translation": "assistant",
   "sources": [
     "https://www.gzns.gov.cn/gznsqfb/gkmlpt/content/10/10908/post_10908831.html",

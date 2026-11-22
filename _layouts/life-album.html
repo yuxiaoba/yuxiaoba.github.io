@@ -4,10 +4,12 @@ layout: warm
 <article class="life-album" data-photo-group>
 <p class="album-kicker">{% if page.location %}{{ page.location | escape }} · {% endif %}{{ page.date | date: '%Y.%m.%d' }}</p>
 <h1>{{ page.title | escape }}</h1>
-{{ content }}
+{% assign lead_html = content | strip %}{% if lead_html != '' %}<div class="album-lead">{{ content }}</div>{% endif %}
 {% for photo in page.photos %}
 {% if forloop.index == 2 %}<div class="album-details">{% endif %}
-<figure{% if forloop.first %} class="album-hero"{% endif %}><a href="{{ photo.src | relative_url }}" data-photo-open data-photo-caption="{{ photo.caption | escape }}"><picture>{% if photo.webp %}<source type="image/webp" srcset="{{ photo.webp | relative_url }}">{% endif %}<img src="{{ photo.src | relative_url }}" width="{{ photo.width }}" height="{{ photo.height }}" alt="{{ photo.alt | escape }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"></picture></a>{% if photo.caption %}<figcaption>{{ photo.caption | escape }}</figcaption>{% endif %}</figure>
+{% capture full_caption %}{% if photo.title %}{{ photo.title }} — {% endif %}{{ photo.caption }}{% endcapture %}
+<figure{% if forloop.first %} class="album-hero"{% endif %}><a href="{{ photo.src | relative_url }}" data-photo-open data-photo-caption="{{ full_caption | strip | escape }}"><picture>{% if photo.webp %}<source type="image/webp" srcset="{{ photo.webp | relative_url }}">{% endif %}<img src="{{ photo.src | relative_url }}" width="{{ photo.width }}" height="{{ photo.height }}" alt="{{ photo.alt | escape }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"></picture></a>{% if photo.title or photo.caption %}<figcaption>{% if photo.title %}<strong>{{ photo.title | escape }}</strong>{% endif %}{{ photo.caption | escape }}</figcaption>{% endif %}</figure>
 {% if forloop.last and page.photos.size > 1 %}</div>{% endif %}
 {% endfor %}
+{% if page.note %}<div class="album-note">{{ page.note | markdownify }}</div>{% endif %}
 </article>
