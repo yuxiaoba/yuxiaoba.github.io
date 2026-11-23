@@ -1,0 +1,156 @@
+{
+  "id": "tensorlean-close-reading",
+  "title_zh": "TensorLean 深度精读：从张量规约到 PTX 汇编级验证的生产内核边界",
+  "title_en": "TensorLean Close Reading: PTX-Level Formal Verification of Production GPU Kernels and Its Trust Boundaries",
+  "blog_url": "https://tensorlean.ai/",
+  "blog_published_date": "2026-11-20",
+  "repo_url": "https://github.com/TensorLean/TensorLean",
+  "repo_commit": "3e83208f3b11fa96ca9e2097e2f1bd524b0c60c2",
+  "repo_commit_date": "2026-11-22T01:19:13Z",
+  "prover_open_sourced_at_commit": false,
+  "audit_date": "2026-11-23",
+  "source_hashes": {
+    "https://tensorlean.ai/": "df5efaf0ab9677e17ec36224be3cd38020deab39db99e0c29f67e65762c9ee6a",
+    "TensorLean/TensorLean@3e83208:README.md": "8fa299c7a495a8151cc52c083aff3c8918caa9bbb1df058619f17290dee1bde5",
+    "certik_blog": "04757909d48825b757802e7c7fff64ae2ed4b57772a25cd992c5e97056c641fe"
+  },
+  "upstream_pr_snapshot_2026_11_23": {
+    "merged": [
+      "Dao-AILab/flash-attention#3152",
+      "tile-ai/TileOPs#1728",
+      "tile-ai/TileOPs#1730",
+      "tile-ai/tilelang#2700"
+    ],
+    "open": [
+      "Dao-AILab/flash-attention#3001",
+      "Dao-AILab/flash-attention#3004",
+      "Dao-AILab/flash-attention#3015",
+      "Dao-AILab/flash-attention#3040",
+      "Dao-AILab/flash-attention#3105",
+      "Dao-AILab/flash-attention#3137",
+      "Dao-AILab/flash-attention#3196",
+      "deepseek-ai/DeepGEMM#477",
+      "deepseek-ai/DeepGEMM#515",
+      "linkedin/Liger-Kernel#1525",
+      "triton-lang/triton#12226"
+    ],
+    "closed_unmerged": []
+  },
+  "authoring_source": "assistant",
+  "english_translation": "assistant-created",
+  "benchmarks_or_solvers_executed": false,
+  "figures": [
+    {
+      "language": "shared (zh & en)",
+      "path": "/assets/images/tech/tensorlean-close-reading/orig-00-hero.png",
+      "source_figure_id": "figure-hero",
+      "sha256": "790ca564b4a62426a3af03b6a09f43615d6bbe029b8e1e3a6414c64d648f86d2",
+      "width": 1736,
+      "height": 598,
+      "bytes": 101254,
+      "origin": "verbatim screenshot capture from https://tensorlean.ai/ (Nov 20, 2026) under light theme & reduced-motion, PNG metadata stripped",
+      "visually_inspected": true
+    },
+    {
+      "language": "shared (zh & en)",
+      "path": "/assets/images/tech/tensorlean-close-reading/orig-01-spec-attention.png",
+      "source_figure_id": "figure-spec-code-attention",
+      "sha256": "ff9fc93d59f179d5debde917af5daa67ddf31b22f967618b616c0cc054d8d99e",
+      "width": 1736,
+      "height": 1018,
+      "bytes": 111340,
+      "origin": "verbatim screenshot capture from https://tensorlean.ai/ (Nov 20, 2026) under light theme & reduced-motion, PNG metadata stripped",
+      "visually_inspected": true
+    },
+    {
+      "language": "shared (zh & en)",
+      "path": "/assets/images/tech/tensorlean-close-reading/orig-02-spec-square.png",
+      "source_figure_id": "figure-spec-square",
+      "sha256": "bdb9d7d77a3894591f93ca5c51bf3f5c29c6563180c5a33cddec1912d688041b",
+      "width": 1736,
+      "height": 440,
+      "bytes": 45669,
+      "origin": "verbatim screenshot capture from https://tensorlean.ai/ (Nov 20, 2026) under light theme & reduced-motion, PNG metadata stripped",
+      "visually_inspected": true
+    },
+    {
+      "language": "shared (zh & en)",
+      "path": "/assets/images/tech/tensorlean-close-reading/orig-03-spec-shape.png",
+      "source_figure_id": "figure-spec-shape",
+      "sha256": "02e5ad48674470bb2aaf50cbf64e87aa515804e3d6ce9d0efecf03769df2a74c",
+      "width": 1736,
+      "height": 606,
+      "bytes": 63053,
+      "origin": "verbatim screenshot capture from https://tensorlean.ai/ (Nov 20, 2026) under light theme & reduced-motion, PNG metadata stripped",
+      "visually_inspected": true
+    },
+    {
+      "language": "shared (zh & en)",
+      "path": "/assets/images/tech/tensorlean-close-reading/orig-04-spec-by-operation.png",
+      "source_figure_id": "figure-spec-code-by-operation",
+      "sha256": "2ea005fc058ab94f057504aac6ea5e84ebf8ddf0d32e9744879a1a23f562053d",
+      "width": 1736,
+      "height": 756,
+      "bytes": 64633,
+      "origin": "verbatim screenshot capture from https://tensorlean.ai/ (Nov 20, 2026) under light theme & reduced-motion, PNG metadata stripped",
+      "visually_inspected": true
+    },
+    {
+      "language": "shared (zh & en)",
+      "path": "/assets/images/tech/tensorlean-close-reading/orig-05-proof-pipeline.png",
+      "source_figure_id": "figure-proof-pipeline",
+      "sha256": "d232027a43046862fb4b3a31b6f12d2eb4da8a314de2d036a8087ff63775ee4b",
+      "width": 1960,
+      "height": 1472,
+      "bytes": 204631,
+      "origin": "verbatim screenshot capture from https://tensorlean.ai/ (Nov 20, 2026) under light theme & reduced-motion, PNG metadata stripped",
+      "visually_inspected": true
+    },
+    {
+      "language": "shared (zh & en)",
+      "path": "/assets/images/tech/tensorlean-close-reading/orig-06-spec-flashattention.png",
+      "source_figure_id": "figure-spec-code-flashattention",
+      "sha256": "a1b627c7d20b954ae8aa0c2231ed9ad111927206d5b4cad743d750aa00cf2e7b",
+      "width": 1736,
+      "height": 772,
+      "bytes": 66899,
+      "origin": "verbatim screenshot capture from https://tensorlean.ai/ (Nov 20, 2026) under light theme & reduced-motion, PNG metadata stripped",
+      "visually_inspected": true
+    },
+    {
+      "language": "shared (zh & en)",
+      "path": "/assets/images/tech/tensorlean-close-reading/orig-07-cta-tasks.png",
+      "source_figure_id": "figure-cta-tasks",
+      "sha256": "46c2e80f639c4a090e5045f59c2693b87ca34c154090abe920ff69f0a5cc9c18",
+      "width": 1736,
+      "height": 1082,
+      "bytes": 138850,
+      "origin": "verbatim screenshot capture from https://tensorlean.ai/ (Nov 20, 2026) under light theme & reduced-motion, PNG metadata stripped",
+      "visually_inspected": true
+    },
+    {
+      "language": "shared (zh & en)",
+      "path": "/assets/images/tech/tensorlean-close-reading/orig-08-fa3-verif-time.png",
+      "source_figure_id": "figure-fa3-verification-time",
+      "sha256": "610133b677eb14db7e6c4dc9c24219c8b2fd7e929d3e07976315693a69e29c93",
+      "width": 1736,
+      "height": 860,
+      "bytes": 69311,
+      "origin": "verbatim screenshot capture from https://tensorlean.ai/ (Nov 20, 2026) under light theme & reduced-motion, PNG metadata stripped",
+      "visually_inspected": true
+    },
+    {
+      "language": "shared (zh & en)",
+      "path": "/assets/images/tech/tensorlean-close-reading/orig-09-bug-categories.png",
+      "source_figure_id": "figure-bug-categories",
+      "sha256": "54e9d871fe63f5b7f804bb12973b661f0b5b9af3694d2dc56e2a75092052e084",
+      "width": 1736,
+      "height": 978,
+      "bytes": 71882,
+      "origin": "verbatim screenshot capture from https://tensorlean.ai/ (Nov 20, 2026) under light theme & reduced-motion, PNG metadata stripped",
+      "visually_inspected": true
+    }
+  ],
+  "figures_mode": "original_untranslated_from_tensorlean_ai_per_user_preference",
+  "publication_authorized": true
+}
